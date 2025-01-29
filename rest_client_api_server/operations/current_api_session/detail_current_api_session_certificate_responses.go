@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DetailCurrentAPISessionCertificateOKCode is the HTTP code returned for type DetailCurrentAPISessionCertificateOK
 const DetailCurrentAPISessionCertificateOKCode int = 200
 
-/*DetailCurrentAPISessionCertificateOK A response containing a single API Session certificate
+/*
+DetailCurrentAPISessionCertificateOK A response containing a single API Session certificate
 
 swagger:response detailCurrentApiSessionCertificateOK
 */
@@ -84,7 +85,8 @@ func (o *DetailCurrentAPISessionCertificateOK) WriteResponse(rw http.ResponseWri
 // DetailCurrentAPISessionCertificateUnauthorizedCode is the HTTP code returned for type DetailCurrentAPISessionCertificateUnauthorized
 const DetailCurrentAPISessionCertificateUnauthorizedCode int = 401
 
-/*DetailCurrentAPISessionCertificateUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+DetailCurrentAPISessionCertificateUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response detailCurrentApiSessionCertificateUnauthorized
 */
@@ -128,7 +130,8 @@ func (o *DetailCurrentAPISessionCertificateUnauthorized) WriteResponse(rw http.R
 // DetailCurrentAPISessionCertificateNotFoundCode is the HTTP code returned for type DetailCurrentAPISessionCertificateNotFound
 const DetailCurrentAPISessionCertificateNotFoundCode int = 404
 
-/*DetailCurrentAPISessionCertificateNotFound The requested resource does not exist
+/*
+DetailCurrentAPISessionCertificateNotFound The requested resource does not exist
 
 swagger:response detailCurrentApiSessionCertificateNotFound
 */
@@ -172,7 +175,8 @@ func (o *DetailCurrentAPISessionCertificateNotFound) WriteResponse(rw http.Respo
 // DetailCurrentAPISessionCertificateTooManyRequestsCode is the HTTP code returned for type DetailCurrentAPISessionCertificateTooManyRequests
 const DetailCurrentAPISessionCertificateTooManyRequestsCode int = 429
 
-/*DetailCurrentAPISessionCertificateTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+DetailCurrentAPISessionCertificateTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response detailCurrentApiSessionCertificateTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *DetailCurrentAPISessionCertificateTooManyRequests) WriteResponse(rw htt
 // DetailCurrentAPISessionCertificateServiceUnavailableCode is the HTTP code returned for type DetailCurrentAPISessionCertificateServiceUnavailable
 const DetailCurrentAPISessionCertificateServiceUnavailableCode int = 503
 
-/*DetailCurrentAPISessionCertificateServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+DetailCurrentAPISessionCertificateServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response detailCurrentApiSessionCertificateServiceUnavailable
 */

@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // PatchAuthPolicyOKCode is the HTTP code returned for type PatchAuthPolicyOK
 const PatchAuthPolicyOKCode int = 200
 
-/*PatchAuthPolicyOK The patch request was successful and the resource has been altered
+/*
+PatchAuthPolicyOK The patch request was successful and the resource has been altered
 
 swagger:response patchAuthPolicyOK
 */
@@ -84,7 +85,8 @@ func (o *PatchAuthPolicyOK) WriteResponse(rw http.ResponseWriter, producer runti
 // PatchAuthPolicyBadRequestCode is the HTTP code returned for type PatchAuthPolicyBadRequest
 const PatchAuthPolicyBadRequestCode int = 400
 
-/*PatchAuthPolicyBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+PatchAuthPolicyBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response patchAuthPolicyBadRequest
 */
@@ -128,7 +130,8 @@ func (o *PatchAuthPolicyBadRequest) WriteResponse(rw http.ResponseWriter, produc
 // PatchAuthPolicyUnauthorizedCode is the HTTP code returned for type PatchAuthPolicyUnauthorized
 const PatchAuthPolicyUnauthorizedCode int = 401
 
-/*PatchAuthPolicyUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+PatchAuthPolicyUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response patchAuthPolicyUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *PatchAuthPolicyUnauthorized) WriteResponse(rw http.ResponseWriter, prod
 // PatchAuthPolicyNotFoundCode is the HTTP code returned for type PatchAuthPolicyNotFound
 const PatchAuthPolicyNotFoundCode int = 404
 
-/*PatchAuthPolicyNotFound The requested resource does not exist
+/*
+PatchAuthPolicyNotFound The requested resource does not exist
 
 swagger:response patchAuthPolicyNotFound
 */
@@ -216,7 +220,8 @@ func (o *PatchAuthPolicyNotFound) WriteResponse(rw http.ResponseWriter, producer
 // PatchAuthPolicyTooManyRequestsCode is the HTTP code returned for type PatchAuthPolicyTooManyRequests
 const PatchAuthPolicyTooManyRequestsCode int = 429
 
-/*PatchAuthPolicyTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+PatchAuthPolicyTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response patchAuthPolicyTooManyRequests
 */
@@ -260,7 +265,8 @@ func (o *PatchAuthPolicyTooManyRequests) WriteResponse(rw http.ResponseWriter, p
 // PatchAuthPolicyServiceUnavailableCode is the HTTP code returned for type PatchAuthPolicyServiceUnavailable
 const PatchAuthPolicyServiceUnavailableCode int = 503
 
-/*PatchAuthPolicyServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+PatchAuthPolicyServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response patchAuthPolicyServiceUnavailable
 */

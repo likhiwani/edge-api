@@ -30,13 +30,14 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // CreateCurrentAPISessionCertificateReader is a Reader for the CreateCurrentAPISessionCertificate structure.
@@ -78,7 +79,7 @@ func (o *CreateCurrentAPISessionCertificateReader) ReadResponse(response runtime
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[POST /current-api-session/certificates] createCurrentApiSessionCertificate", response, response.Code())
 	}
 }
 
@@ -87,7 +88,8 @@ func NewCreateCurrentAPISessionCertificateCreated() *CreateCurrentAPISessionCert
 	return &CreateCurrentAPISessionCertificateCreated{}
 }
 
-/* CreateCurrentAPISessionCertificateCreated describes a response with status code 201, with default header values.
+/*
+CreateCurrentAPISessionCertificateCreated describes a response with status code 201, with default header values.
 
 A response of a create API Session certificate
 */
@@ -95,9 +97,46 @@ type CreateCurrentAPISessionCertificateCreated struct {
 	Payload *rest_model.CreateCurrentAPISessionCertificateEnvelope
 }
 
-func (o *CreateCurrentAPISessionCertificateCreated) Error() string {
-	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateCreated  %+v", 201, o.Payload)
+// IsSuccess returns true when this create current Api session certificate created response has a 2xx status code
+func (o *CreateCurrentAPISessionCertificateCreated) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this create current Api session certificate created response has a 3xx status code
+func (o *CreateCurrentAPISessionCertificateCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create current Api session certificate created response has a 4xx status code
+func (o *CreateCurrentAPISessionCertificateCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create current Api session certificate created response has a 5xx status code
+func (o *CreateCurrentAPISessionCertificateCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create current Api session certificate created response a status code equal to that given
+func (o *CreateCurrentAPISessionCertificateCreated) IsCode(code int) bool {
+	return code == 201
+}
+
+// Code gets the status code for the create current Api session certificate created response
+func (o *CreateCurrentAPISessionCertificateCreated) Code() int {
+	return 201
+}
+
+func (o *CreateCurrentAPISessionCertificateCreated) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateCreated %s", 201, payload)
+}
+
+func (o *CreateCurrentAPISessionCertificateCreated) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateCreated %s", 201, payload)
+}
+
 func (o *CreateCurrentAPISessionCertificateCreated) GetPayload() *rest_model.CreateCurrentAPISessionCertificateEnvelope {
 	return o.Payload
 }
@@ -119,7 +158,8 @@ func NewCreateCurrentAPISessionCertificateBadRequest() *CreateCurrentAPISessionC
 	return &CreateCurrentAPISessionCertificateBadRequest{}
 }
 
-/* CreateCurrentAPISessionCertificateBadRequest describes a response with status code 400, with default header values.
+/*
+CreateCurrentAPISessionCertificateBadRequest describes a response with status code 400, with default header values.
 
 The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 */
@@ -127,9 +167,46 @@ type CreateCurrentAPISessionCertificateBadRequest struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *CreateCurrentAPISessionCertificateBadRequest) Error() string {
-	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateBadRequest  %+v", 400, o.Payload)
+// IsSuccess returns true when this create current Api session certificate bad request response has a 2xx status code
+func (o *CreateCurrentAPISessionCertificateBadRequest) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this create current Api session certificate bad request response has a 3xx status code
+func (o *CreateCurrentAPISessionCertificateBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create current Api session certificate bad request response has a 4xx status code
+func (o *CreateCurrentAPISessionCertificateBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create current Api session certificate bad request response has a 5xx status code
+func (o *CreateCurrentAPISessionCertificateBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create current Api session certificate bad request response a status code equal to that given
+func (o *CreateCurrentAPISessionCertificateBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
+// Code gets the status code for the create current Api session certificate bad request response
+func (o *CreateCurrentAPISessionCertificateBadRequest) Code() int {
+	return 400
+}
+
+func (o *CreateCurrentAPISessionCertificateBadRequest) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateBadRequest %s", 400, payload)
+}
+
+func (o *CreateCurrentAPISessionCertificateBadRequest) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateBadRequest %s", 400, payload)
+}
+
 func (o *CreateCurrentAPISessionCertificateBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -151,7 +228,8 @@ func NewCreateCurrentAPISessionCertificateUnauthorized() *CreateCurrentAPISessio
 	return &CreateCurrentAPISessionCertificateUnauthorized{}
 }
 
-/* CreateCurrentAPISessionCertificateUnauthorized describes a response with status code 401, with default header values.
+/*
+CreateCurrentAPISessionCertificateUnauthorized describes a response with status code 401, with default header values.
 
 The supplied session does not have the correct access rights to request this resource
 */
@@ -159,9 +237,46 @@ type CreateCurrentAPISessionCertificateUnauthorized struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *CreateCurrentAPISessionCertificateUnauthorized) Error() string {
-	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateUnauthorized  %+v", 401, o.Payload)
+// IsSuccess returns true when this create current Api session certificate unauthorized response has a 2xx status code
+func (o *CreateCurrentAPISessionCertificateUnauthorized) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this create current Api session certificate unauthorized response has a 3xx status code
+func (o *CreateCurrentAPISessionCertificateUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create current Api session certificate unauthorized response has a 4xx status code
+func (o *CreateCurrentAPISessionCertificateUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create current Api session certificate unauthorized response has a 5xx status code
+func (o *CreateCurrentAPISessionCertificateUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create current Api session certificate unauthorized response a status code equal to that given
+func (o *CreateCurrentAPISessionCertificateUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
+// Code gets the status code for the create current Api session certificate unauthorized response
+func (o *CreateCurrentAPISessionCertificateUnauthorized) Code() int {
+	return 401
+}
+
+func (o *CreateCurrentAPISessionCertificateUnauthorized) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateUnauthorized %s", 401, payload)
+}
+
+func (o *CreateCurrentAPISessionCertificateUnauthorized) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateUnauthorized %s", 401, payload)
+}
+
 func (o *CreateCurrentAPISessionCertificateUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -183,7 +298,8 @@ func NewCreateCurrentAPISessionCertificateTooManyRequests() *CreateCurrentAPISes
 	return &CreateCurrentAPISessionCertificateTooManyRequests{}
 }
 
-/* CreateCurrentAPISessionCertificateTooManyRequests describes a response with status code 429, with default header values.
+/*
+CreateCurrentAPISessionCertificateTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -191,9 +307,46 @@ type CreateCurrentAPISessionCertificateTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *CreateCurrentAPISessionCertificateTooManyRequests) Error() string {
-	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this create current Api session certificate too many requests response has a 2xx status code
+func (o *CreateCurrentAPISessionCertificateTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this create current Api session certificate too many requests response has a 3xx status code
+func (o *CreateCurrentAPISessionCertificateTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create current Api session certificate too many requests response has a 4xx status code
+func (o *CreateCurrentAPISessionCertificateTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create current Api session certificate too many requests response has a 5xx status code
+func (o *CreateCurrentAPISessionCertificateTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create current Api session certificate too many requests response a status code equal to that given
+func (o *CreateCurrentAPISessionCertificateTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the create current Api session certificate too many requests response
+func (o *CreateCurrentAPISessionCertificateTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *CreateCurrentAPISessionCertificateTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateTooManyRequests %s", 429, payload)
+}
+
+func (o *CreateCurrentAPISessionCertificateTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateTooManyRequests %s", 429, payload)
+}
+
 func (o *CreateCurrentAPISessionCertificateTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -215,7 +368,8 @@ func NewCreateCurrentAPISessionCertificateServiceUnavailable() *CreateCurrentAPI
 	return &CreateCurrentAPISessionCertificateServiceUnavailable{}
 }
 
-/* CreateCurrentAPISessionCertificateServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CreateCurrentAPISessionCertificateServiceUnavailable describes a response with status code 503, with default header values.
 
 The request could not be completed due to the server being busy or in a temporarily bad state
 */
@@ -223,9 +377,46 @@ type CreateCurrentAPISessionCertificateServiceUnavailable struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *CreateCurrentAPISessionCertificateServiceUnavailable) Error() string {
-	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateServiceUnavailable  %+v", 503, o.Payload)
+// IsSuccess returns true when this create current Api session certificate service unavailable response has a 2xx status code
+func (o *CreateCurrentAPISessionCertificateServiceUnavailable) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this create current Api session certificate service unavailable response has a 3xx status code
+func (o *CreateCurrentAPISessionCertificateServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create current Api session certificate service unavailable response has a 4xx status code
+func (o *CreateCurrentAPISessionCertificateServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create current Api session certificate service unavailable response has a 5xx status code
+func (o *CreateCurrentAPISessionCertificateServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create current Api session certificate service unavailable response a status code equal to that given
+func (o *CreateCurrentAPISessionCertificateServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
+// Code gets the status code for the create current Api session certificate service unavailable response
+func (o *CreateCurrentAPISessionCertificateServiceUnavailable) Code() int {
+	return 503
+}
+
+func (o *CreateCurrentAPISessionCertificateServiceUnavailable) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateServiceUnavailable %s", 503, payload)
+}
+
+func (o *CreateCurrentAPISessionCertificateServiceUnavailable) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateServiceUnavailable %s", 503, payload)
+}
+
 func (o *CreateCurrentAPISessionCertificateServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

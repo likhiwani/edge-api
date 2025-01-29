@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DeleteTransitRouterOKCode is the HTTP code returned for type DeleteTransitRouterOK
 const DeleteTransitRouterOKCode int = 200
 
-/*DeleteTransitRouterOK The delete request was successful and the resource has been removed
+/*
+DeleteTransitRouterOK The delete request was successful and the resource has been removed
 
 swagger:response deleteTransitRouterOK
 */
@@ -84,7 +85,8 @@ func (o *DeleteTransitRouterOK) WriteResponse(rw http.ResponseWriter, producer r
 // DeleteTransitRouterBadRequestCode is the HTTP code returned for type DeleteTransitRouterBadRequest
 const DeleteTransitRouterBadRequestCode int = 400
 
-/*DeleteTransitRouterBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+DeleteTransitRouterBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response deleteTransitRouterBadRequest
 */
@@ -128,7 +130,8 @@ func (o *DeleteTransitRouterBadRequest) WriteResponse(rw http.ResponseWriter, pr
 // DeleteTransitRouterUnauthorizedCode is the HTTP code returned for type DeleteTransitRouterUnauthorized
 const DeleteTransitRouterUnauthorizedCode int = 401
 
-/*DeleteTransitRouterUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+DeleteTransitRouterUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response deleteTransitRouterUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *DeleteTransitRouterUnauthorized) WriteResponse(rw http.ResponseWriter, 
 // DeleteTransitRouterNotFoundCode is the HTTP code returned for type DeleteTransitRouterNotFound
 const DeleteTransitRouterNotFoundCode int = 404
 
-/*DeleteTransitRouterNotFound The requested resource does not exist
+/*
+DeleteTransitRouterNotFound The requested resource does not exist
 
 swagger:response deleteTransitRouterNotFound
 */
@@ -216,7 +220,8 @@ func (o *DeleteTransitRouterNotFound) WriteResponse(rw http.ResponseWriter, prod
 // DeleteTransitRouterConflictCode is the HTTP code returned for type DeleteTransitRouterConflict
 const DeleteTransitRouterConflictCode int = 409
 
-/*DeleteTransitRouterConflict The resource requested to be removed/altered cannot be as it is referenced by another object.
+/*
+DeleteTransitRouterConflict The resource requested to be removed/altered cannot be as it is referenced by another object.
 
 swagger:response deleteTransitRouterConflict
 */
@@ -260,7 +265,8 @@ func (o *DeleteTransitRouterConflict) WriteResponse(rw http.ResponseWriter, prod
 // DeleteTransitRouterTooManyRequestsCode is the HTTP code returned for type DeleteTransitRouterTooManyRequests
 const DeleteTransitRouterTooManyRequestsCode int = 429
 
-/*DeleteTransitRouterTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+DeleteTransitRouterTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response deleteTransitRouterTooManyRequests
 */
@@ -304,7 +310,8 @@ func (o *DeleteTransitRouterTooManyRequests) WriteResponse(rw http.ResponseWrite
 // DeleteTransitRouterServiceUnavailableCode is the HTTP code returned for type DeleteTransitRouterServiceUnavailable
 const DeleteTransitRouterServiceUnavailableCode int = 503
 
-/*DeleteTransitRouterServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+DeleteTransitRouterServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response deleteTransitRouterServiceUnavailable
 */

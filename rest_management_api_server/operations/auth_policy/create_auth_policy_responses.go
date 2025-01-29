@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // CreateAuthPolicyCreatedCode is the HTTP code returned for type CreateAuthPolicyCreated
 const CreateAuthPolicyCreatedCode int = 201
 
-/*CreateAuthPolicyCreated The create request was successful and the resource has been added at the following location
+/*
+CreateAuthPolicyCreated The create request was successful and the resource has been added at the following location
 
 swagger:response createAuthPolicyCreated
 */
@@ -84,7 +85,8 @@ func (o *CreateAuthPolicyCreated) WriteResponse(rw http.ResponseWriter, producer
 // CreateAuthPolicyBadRequestCode is the HTTP code returned for type CreateAuthPolicyBadRequest
 const CreateAuthPolicyBadRequestCode int = 400
 
-/*CreateAuthPolicyBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+CreateAuthPolicyBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response createAuthPolicyBadRequest
 */
@@ -128,7 +130,8 @@ func (o *CreateAuthPolicyBadRequest) WriteResponse(rw http.ResponseWriter, produ
 // CreateAuthPolicyUnauthorizedCode is the HTTP code returned for type CreateAuthPolicyUnauthorized
 const CreateAuthPolicyUnauthorizedCode int = 401
 
-/*CreateAuthPolicyUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+CreateAuthPolicyUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response createAuthPolicyUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *CreateAuthPolicyUnauthorized) WriteResponse(rw http.ResponseWriter, pro
 // CreateAuthPolicyTooManyRequestsCode is the HTTP code returned for type CreateAuthPolicyTooManyRequests
 const CreateAuthPolicyTooManyRequestsCode int = 429
 
-/*CreateAuthPolicyTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+CreateAuthPolicyTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response createAuthPolicyTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *CreateAuthPolicyTooManyRequests) WriteResponse(rw http.ResponseWriter, 
 // CreateAuthPolicyServiceUnavailableCode is the HTTP code returned for type CreateAuthPolicyServiceUnavailable
 const CreateAuthPolicyServiceUnavailableCode int = 503
 
-/*CreateAuthPolicyServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+CreateAuthPolicyServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response createAuthPolicyServiceUnavailable
 */

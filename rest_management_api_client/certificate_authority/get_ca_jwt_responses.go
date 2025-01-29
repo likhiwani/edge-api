@@ -30,13 +30,14 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // GetCaJWTReader is a Reader for the GetCaJWT structure.
@@ -78,7 +79,7 @@ func (o *GetCaJWTReader) ReadResponse(response runtime.ClientResponse, consumer 
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[GET /cas/{id}/jwt] getCaJwt", response, response.Code())
 	}
 }
 
@@ -87,7 +88,8 @@ func NewGetCaJWTOK() *GetCaJWTOK {
 	return &GetCaJWTOK{}
 }
 
-/* GetCaJWTOK describes a response with status code 200, with default header values.
+/*
+GetCaJWTOK describes a response with status code 200, with default header values.
 
 The result is the JWT text to validate the CA
 */
@@ -95,9 +97,46 @@ type GetCaJWTOK struct {
 	Payload string
 }
 
-func (o *GetCaJWTOK) Error() string {
-	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtOK  %+v", 200, o.Payload)
+// IsSuccess returns true when this get ca Jwt o k response has a 2xx status code
+func (o *GetCaJWTOK) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this get ca Jwt o k response has a 3xx status code
+func (o *GetCaJWTOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get ca Jwt o k response has a 4xx status code
+func (o *GetCaJWTOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get ca Jwt o k response has a 5xx status code
+func (o *GetCaJWTOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get ca Jwt o k response a status code equal to that given
+func (o *GetCaJWTOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the get ca Jwt o k response
+func (o *GetCaJWTOK) Code() int {
+	return 200
+}
+
+func (o *GetCaJWTOK) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtOK %s", 200, payload)
+}
+
+func (o *GetCaJWTOK) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtOK %s", 200, payload)
+}
+
 func (o *GetCaJWTOK) GetPayload() string {
 	return o.Payload
 }
@@ -117,7 +156,8 @@ func NewGetCaJWTUnauthorized() *GetCaJWTUnauthorized {
 	return &GetCaJWTUnauthorized{}
 }
 
-/* GetCaJWTUnauthorized describes a response with status code 401, with default header values.
+/*
+GetCaJWTUnauthorized describes a response with status code 401, with default header values.
 
 The supplied session does not have the correct access rights to request this resource
 */
@@ -125,9 +165,46 @@ type GetCaJWTUnauthorized struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *GetCaJWTUnauthorized) Error() string {
-	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtUnauthorized  %+v", 401, o.Payload)
+// IsSuccess returns true when this get ca Jwt unauthorized response has a 2xx status code
+func (o *GetCaJWTUnauthorized) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this get ca Jwt unauthorized response has a 3xx status code
+func (o *GetCaJWTUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get ca Jwt unauthorized response has a 4xx status code
+func (o *GetCaJWTUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get ca Jwt unauthorized response has a 5xx status code
+func (o *GetCaJWTUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get ca Jwt unauthorized response a status code equal to that given
+func (o *GetCaJWTUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
+// Code gets the status code for the get ca Jwt unauthorized response
+func (o *GetCaJWTUnauthorized) Code() int {
+	return 401
+}
+
+func (o *GetCaJWTUnauthorized) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtUnauthorized %s", 401, payload)
+}
+
+func (o *GetCaJWTUnauthorized) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtUnauthorized %s", 401, payload)
+}
+
 func (o *GetCaJWTUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -149,7 +226,8 @@ func NewGetCaJWTNotFound() *GetCaJWTNotFound {
 	return &GetCaJWTNotFound{}
 }
 
-/* GetCaJWTNotFound describes a response with status code 404, with default header values.
+/*
+GetCaJWTNotFound describes a response with status code 404, with default header values.
 
 The requested resource does not exist
 */
@@ -157,9 +235,46 @@ type GetCaJWTNotFound struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *GetCaJWTNotFound) Error() string {
-	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtNotFound  %+v", 404, o.Payload)
+// IsSuccess returns true when this get ca Jwt not found response has a 2xx status code
+func (o *GetCaJWTNotFound) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this get ca Jwt not found response has a 3xx status code
+func (o *GetCaJWTNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get ca Jwt not found response has a 4xx status code
+func (o *GetCaJWTNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get ca Jwt not found response has a 5xx status code
+func (o *GetCaJWTNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get ca Jwt not found response a status code equal to that given
+func (o *GetCaJWTNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
+// Code gets the status code for the get ca Jwt not found response
+func (o *GetCaJWTNotFound) Code() int {
+	return 404
+}
+
+func (o *GetCaJWTNotFound) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtNotFound %s", 404, payload)
+}
+
+func (o *GetCaJWTNotFound) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtNotFound %s", 404, payload)
+}
+
 func (o *GetCaJWTNotFound) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -181,7 +296,8 @@ func NewGetCaJWTTooManyRequests() *GetCaJWTTooManyRequests {
 	return &GetCaJWTTooManyRequests{}
 }
 
-/* GetCaJWTTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetCaJWTTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -189,9 +305,46 @@ type GetCaJWTTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *GetCaJWTTooManyRequests) Error() string {
-	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this get ca Jwt too many requests response has a 2xx status code
+func (o *GetCaJWTTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this get ca Jwt too many requests response has a 3xx status code
+func (o *GetCaJWTTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get ca Jwt too many requests response has a 4xx status code
+func (o *GetCaJWTTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get ca Jwt too many requests response has a 5xx status code
+func (o *GetCaJWTTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get ca Jwt too many requests response a status code equal to that given
+func (o *GetCaJWTTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the get ca Jwt too many requests response
+func (o *GetCaJWTTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *GetCaJWTTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtTooManyRequests %s", 429, payload)
+}
+
+func (o *GetCaJWTTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtTooManyRequests %s", 429, payload)
+}
+
 func (o *GetCaJWTTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -213,7 +366,8 @@ func NewGetCaJWTServiceUnavailable() *GetCaJWTServiceUnavailable {
 	return &GetCaJWTServiceUnavailable{}
 }
 
-/* GetCaJWTServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetCaJWTServiceUnavailable describes a response with status code 503, with default header values.
 
 The request could not be completed due to the server being busy or in a temporarily bad state
 */
@@ -221,9 +375,46 @@ type GetCaJWTServiceUnavailable struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *GetCaJWTServiceUnavailable) Error() string {
-	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtServiceUnavailable  %+v", 503, o.Payload)
+// IsSuccess returns true when this get ca Jwt service unavailable response has a 2xx status code
+func (o *GetCaJWTServiceUnavailable) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this get ca Jwt service unavailable response has a 3xx status code
+func (o *GetCaJWTServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get ca Jwt service unavailable response has a 4xx status code
+func (o *GetCaJWTServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get ca Jwt service unavailable response has a 5xx status code
+func (o *GetCaJWTServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get ca Jwt service unavailable response a status code equal to that given
+func (o *GetCaJWTServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
+// Code gets the status code for the get ca Jwt service unavailable response
+func (o *GetCaJWTServiceUnavailable) Code() int {
+	return 503
+}
+
+func (o *GetCaJWTServiceUnavailable) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtServiceUnavailable %s", 503, payload)
+}
+
+func (o *GetCaJWTServiceUnavailable) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtServiceUnavailable %s", 503, payload)
+}
+
 func (o *GetCaJWTServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

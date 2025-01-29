@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewCreateTerminatorParams creates a new CreateTerminatorParams object,
@@ -78,10 +78,12 @@ func NewCreateTerminatorParamsWithHTTPClient(client *http.Client) *CreateTermina
 	}
 }
 
-/* CreateTerminatorParams contains all the parameters to send to the API endpoint
-   for the create terminator operation.
+/*
+CreateTerminatorParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create terminator operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateTerminatorParams struct {
 

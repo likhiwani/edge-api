@@ -44,31 +44,31 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/openziti/edge-api/rest_management_api_server/operations/api_session"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/auth_policy"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/authentication"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/authenticator"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/certificate_authority"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/config"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/controllers"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/current_api_session"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/current_identity"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/database"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/edge_router"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/edge_router_policy"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/enrollment"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/external_jwt_signer"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/identity"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/informational"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/posture_checks"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/role_attributes"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/router"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/service"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/service_edge_router_policy"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/service_policy"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/session"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/terminator"
-	"github.com/openziti/edge-api/rest_management_api_server/operations/well_known"
+	"ztna-core/edge-api/rest_management_api_server/operations/api_session"
+	"ztna-core/edge-api/rest_management_api_server/operations/auth_policy"
+	"ztna-core/edge-api/rest_management_api_server/operations/authentication"
+	"ztna-core/edge-api/rest_management_api_server/operations/authenticator"
+	"ztna-core/edge-api/rest_management_api_server/operations/certificate_authority"
+	"ztna-core/edge-api/rest_management_api_server/operations/config"
+	"ztna-core/edge-api/rest_management_api_server/operations/controllers"
+	"ztna-core/edge-api/rest_management_api_server/operations/current_api_session"
+	"ztna-core/edge-api/rest_management_api_server/operations/current_identity"
+	"ztna-core/edge-api/rest_management_api_server/operations/database"
+	"ztna-core/edge-api/rest_management_api_server/operations/edge_router"
+	"ztna-core/edge-api/rest_management_api_server/operations/edge_router_policy"
+	"ztna-core/edge-api/rest_management_api_server/operations/enrollment"
+	"ztna-core/edge-api/rest_management_api_server/operations/external_jwt_signer"
+	"ztna-core/edge-api/rest_management_api_server/operations/identity"
+	"ztna-core/edge-api/rest_management_api_server/operations/informational"
+	"ztna-core/edge-api/rest_management_api_server/operations/posture_checks"
+	"ztna-core/edge-api/rest_management_api_server/operations/role_attributes"
+	"ztna-core/edge-api/rest_management_api_server/operations/router"
+	"ztna-core/edge-api/rest_management_api_server/operations/service"
+	"ztna-core/edge-api/rest_management_api_server/operations/service_edge_router_policy"
+	"ztna-core/edge-api/rest_management_api_server/operations/service_policy"
+	"ztna-core/edge-api/rest_management_api_server/operations/session"
+	"ztna-core/edge-api/rest_management_api_server/operations/terminator"
+	"ztna-core/edge-api/rest_management_api_server/operations/well_known"
 )
 
 // NewZitiEdgeManagementAPI creates a new ZitiEdgeManagement instance
@@ -2670,6 +2670,6 @@ func (o *ZitiEdgeManagementAPI) AddMiddlewareFor(method, path string, builder mi
 	}
 	o.Init()
 	if h, ok := o.handlers[um][path]; ok {
-		o.handlers[method][path] = builder(h)
+		o.handlers[um][path] = builder(h)
 	}
 }

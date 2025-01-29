@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewCreateConfigTypeParams creates a new CreateConfigTypeParams object,
@@ -78,10 +78,12 @@ func NewCreateConfigTypeParamsWithHTTPClient(client *http.Client) *CreateConfigT
 	}
 }
 
-/* CreateConfigTypeParams contains all the parameters to send to the API endpoint
-   for the create config type operation.
+/*
+CreateConfigTypeParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create config type operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateConfigTypeParams struct {
 

@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DeleteEnrollmentOKCode is the HTTP code returned for type DeleteEnrollmentOK
 const DeleteEnrollmentOKCode int = 200
 
-/*DeleteEnrollmentOK The delete request was successful and the resource has been removed
+/*
+DeleteEnrollmentOK The delete request was successful and the resource has been removed
 
 swagger:response deleteEnrollmentOK
 */
@@ -84,7 +85,8 @@ func (o *DeleteEnrollmentOK) WriteResponse(rw http.ResponseWriter, producer runt
 // DeleteEnrollmentBadRequestCode is the HTTP code returned for type DeleteEnrollmentBadRequest
 const DeleteEnrollmentBadRequestCode int = 400
 
-/*DeleteEnrollmentBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+DeleteEnrollmentBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response deleteEnrollmentBadRequest
 */
@@ -128,7 +130,8 @@ func (o *DeleteEnrollmentBadRequest) WriteResponse(rw http.ResponseWriter, produ
 // DeleteEnrollmentUnauthorizedCode is the HTTP code returned for type DeleteEnrollmentUnauthorized
 const DeleteEnrollmentUnauthorizedCode int = 401
 
-/*DeleteEnrollmentUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+DeleteEnrollmentUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response deleteEnrollmentUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *DeleteEnrollmentUnauthorized) WriteResponse(rw http.ResponseWriter, pro
 // DeleteEnrollmentNotFoundCode is the HTTP code returned for type DeleteEnrollmentNotFound
 const DeleteEnrollmentNotFoundCode int = 404
 
-/*DeleteEnrollmentNotFound The requested resource does not exist
+/*
+DeleteEnrollmentNotFound The requested resource does not exist
 
 swagger:response deleteEnrollmentNotFound
 */
@@ -216,7 +220,8 @@ func (o *DeleteEnrollmentNotFound) WriteResponse(rw http.ResponseWriter, produce
 // DeleteEnrollmentTooManyRequestsCode is the HTTP code returned for type DeleteEnrollmentTooManyRequests
 const DeleteEnrollmentTooManyRequestsCode int = 429
 
-/*DeleteEnrollmentTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+DeleteEnrollmentTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response deleteEnrollmentTooManyRequests
 */
@@ -260,7 +265,8 @@ func (o *DeleteEnrollmentTooManyRequests) WriteResponse(rw http.ResponseWriter, 
 // DeleteEnrollmentServiceUnavailableCode is the HTTP code returned for type DeleteEnrollmentServiceUnavailable
 const DeleteEnrollmentServiceUnavailableCode int = 503
 
-/*DeleteEnrollmentServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+DeleteEnrollmentServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response deleteEnrollmentServiceUnavailable
 */

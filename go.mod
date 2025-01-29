@@ -1,4 +1,4 @@
-module github.com/openziti/edge-api
+module ztna-core/edge-api
 
 go 1.21
 

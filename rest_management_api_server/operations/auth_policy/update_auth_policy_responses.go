@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // UpdateAuthPolicyOKCode is the HTTP code returned for type UpdateAuthPolicyOK
 const UpdateAuthPolicyOKCode int = 200
 
-/*UpdateAuthPolicyOK The update request was successful and the resource has been altered
+/*
+UpdateAuthPolicyOK The update request was successful and the resource has been altered
 
 swagger:response updateAuthPolicyOK
 */
@@ -84,7 +85,8 @@ func (o *UpdateAuthPolicyOK) WriteResponse(rw http.ResponseWriter, producer runt
 // UpdateAuthPolicyBadRequestCode is the HTTP code returned for type UpdateAuthPolicyBadRequest
 const UpdateAuthPolicyBadRequestCode int = 400
 
-/*UpdateAuthPolicyBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+UpdateAuthPolicyBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response updateAuthPolicyBadRequest
 */
@@ -128,7 +130,8 @@ func (o *UpdateAuthPolicyBadRequest) WriteResponse(rw http.ResponseWriter, produ
 // UpdateAuthPolicyUnauthorizedCode is the HTTP code returned for type UpdateAuthPolicyUnauthorized
 const UpdateAuthPolicyUnauthorizedCode int = 401
 
-/*UpdateAuthPolicyUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+UpdateAuthPolicyUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response updateAuthPolicyUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *UpdateAuthPolicyUnauthorized) WriteResponse(rw http.ResponseWriter, pro
 // UpdateAuthPolicyNotFoundCode is the HTTP code returned for type UpdateAuthPolicyNotFound
 const UpdateAuthPolicyNotFoundCode int = 404
 
-/*UpdateAuthPolicyNotFound The requested resource does not exist
+/*
+UpdateAuthPolicyNotFound The requested resource does not exist
 
 swagger:response updateAuthPolicyNotFound
 */
@@ -216,7 +220,8 @@ func (o *UpdateAuthPolicyNotFound) WriteResponse(rw http.ResponseWriter, produce
 // UpdateAuthPolicyTooManyRequestsCode is the HTTP code returned for type UpdateAuthPolicyTooManyRequests
 const UpdateAuthPolicyTooManyRequestsCode int = 429
 
-/*UpdateAuthPolicyTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+UpdateAuthPolicyTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response updateAuthPolicyTooManyRequests
 */
@@ -260,7 +265,8 @@ func (o *UpdateAuthPolicyTooManyRequests) WriteResponse(rw http.ResponseWriter, 
 // UpdateAuthPolicyServiceUnavailableCode is the HTTP code returned for type UpdateAuthPolicyServiceUnavailable
 const UpdateAuthPolicyServiceUnavailableCode int = 503
 
-/*UpdateAuthPolicyServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+UpdateAuthPolicyServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response updateAuthPolicyServiceUnavailable
 */

@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewUpdateAuthenticatorParams creates a new UpdateAuthenticatorParams object,
@@ -78,10 +78,12 @@ func NewUpdateAuthenticatorParamsWithHTTPClient(client *http.Client) *UpdateAuth
 	}
 }
 
-/* UpdateAuthenticatorParams contains all the parameters to send to the API endpoint
-   for the update authenticator operation.
+/*
+UpdateAuthenticatorParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the update authenticator operation.
+
+	Typically these are written to a http.Request.
 */
 type UpdateAuthenticatorParams struct {
 

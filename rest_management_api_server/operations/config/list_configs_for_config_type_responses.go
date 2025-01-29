@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListConfigsForConfigTypeOKCode is the HTTP code returned for type ListConfigsForConfigTypeOK
 const ListConfigsForConfigTypeOKCode int = 200
 
-/*ListConfigsForConfigTypeOK A list of configs
+/*
+ListConfigsForConfigTypeOK A list of configs
 
 swagger:response listConfigsForConfigTypeOK
 */
@@ -84,7 +85,8 @@ func (o *ListConfigsForConfigTypeOK) WriteResponse(rw http.ResponseWriter, produ
 // ListConfigsForConfigTypeUnauthorizedCode is the HTTP code returned for type ListConfigsForConfigTypeUnauthorized
 const ListConfigsForConfigTypeUnauthorizedCode int = 401
 
-/*ListConfigsForConfigTypeUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+ListConfigsForConfigTypeUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response listConfigsForConfigTypeUnauthorized
 */
@@ -128,7 +130,8 @@ func (o *ListConfigsForConfigTypeUnauthorized) WriteResponse(rw http.ResponseWri
 // ListConfigsForConfigTypeTooManyRequestsCode is the HTTP code returned for type ListConfigsForConfigTypeTooManyRequests
 const ListConfigsForConfigTypeTooManyRequestsCode int = 429
 
-/*ListConfigsForConfigTypeTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+ListConfigsForConfigTypeTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response listConfigsForConfigTypeTooManyRequests
 */
@@ -172,7 +175,8 @@ func (o *ListConfigsForConfigTypeTooManyRequests) WriteResponse(rw http.Response
 // ListConfigsForConfigTypeServiceUnavailableCode is the HTTP code returned for type ListConfigsForConfigTypeServiceUnavailable
 const ListConfigsForConfigTypeServiceUnavailableCode int = 503
 
-/*ListConfigsForConfigTypeServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+ListConfigsForConfigTypeServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response listConfigsForConfigTypeServiceUnavailable
 */

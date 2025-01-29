@@ -30,13 +30,14 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // EnableIdentityReader is a Reader for the EnableIdentity structure.
@@ -78,7 +79,7 @@ func (o *EnableIdentityReader) ReadResponse(response runtime.ClientResponse, con
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[POST /identities/{id}/enable] enableIdentity", response, response.Code())
 	}
 }
 
@@ -87,7 +88,8 @@ func NewEnableIdentityOK() *EnableIdentityOK {
 	return &EnableIdentityOK{}
 }
 
-/* EnableIdentityOK describes a response with status code 200, with default header values.
+/*
+EnableIdentityOK describes a response with status code 200, with default header values.
 
 Base empty response
 */
@@ -95,9 +97,46 @@ type EnableIdentityOK struct {
 	Payload *rest_model.Empty
 }
 
-func (o *EnableIdentityOK) Error() string {
-	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityOK  %+v", 200, o.Payload)
+// IsSuccess returns true when this enable identity o k response has a 2xx status code
+func (o *EnableIdentityOK) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this enable identity o k response has a 3xx status code
+func (o *EnableIdentityOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this enable identity o k response has a 4xx status code
+func (o *EnableIdentityOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this enable identity o k response has a 5xx status code
+func (o *EnableIdentityOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this enable identity o k response a status code equal to that given
+func (o *EnableIdentityOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the enable identity o k response
+func (o *EnableIdentityOK) Code() int {
+	return 200
+}
+
+func (o *EnableIdentityOK) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityOK %s", 200, payload)
+}
+
+func (o *EnableIdentityOK) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityOK %s", 200, payload)
+}
+
 func (o *EnableIdentityOK) GetPayload() *rest_model.Empty {
 	return o.Payload
 }
@@ -119,7 +158,8 @@ func NewEnableIdentityUnauthorized() *EnableIdentityUnauthorized {
 	return &EnableIdentityUnauthorized{}
 }
 
-/* EnableIdentityUnauthorized describes a response with status code 401, with default header values.
+/*
+EnableIdentityUnauthorized describes a response with status code 401, with default header values.
 
 The supplied session does not have the correct access rights to request this resource
 */
@@ -127,9 +167,46 @@ type EnableIdentityUnauthorized struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *EnableIdentityUnauthorized) Error() string {
-	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityUnauthorized  %+v", 401, o.Payload)
+// IsSuccess returns true when this enable identity unauthorized response has a 2xx status code
+func (o *EnableIdentityUnauthorized) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this enable identity unauthorized response has a 3xx status code
+func (o *EnableIdentityUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this enable identity unauthorized response has a 4xx status code
+func (o *EnableIdentityUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this enable identity unauthorized response has a 5xx status code
+func (o *EnableIdentityUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this enable identity unauthorized response a status code equal to that given
+func (o *EnableIdentityUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
+// Code gets the status code for the enable identity unauthorized response
+func (o *EnableIdentityUnauthorized) Code() int {
+	return 401
+}
+
+func (o *EnableIdentityUnauthorized) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityUnauthorized %s", 401, payload)
+}
+
+func (o *EnableIdentityUnauthorized) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityUnauthorized %s", 401, payload)
+}
+
 func (o *EnableIdentityUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -151,7 +228,8 @@ func NewEnableIdentityNotFound() *EnableIdentityNotFound {
 	return &EnableIdentityNotFound{}
 }
 
-/* EnableIdentityNotFound describes a response with status code 404, with default header values.
+/*
+EnableIdentityNotFound describes a response with status code 404, with default header values.
 
 The requested resource does not exist
 */
@@ -159,9 +237,46 @@ type EnableIdentityNotFound struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *EnableIdentityNotFound) Error() string {
-	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityNotFound  %+v", 404, o.Payload)
+// IsSuccess returns true when this enable identity not found response has a 2xx status code
+func (o *EnableIdentityNotFound) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this enable identity not found response has a 3xx status code
+func (o *EnableIdentityNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this enable identity not found response has a 4xx status code
+func (o *EnableIdentityNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this enable identity not found response has a 5xx status code
+func (o *EnableIdentityNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this enable identity not found response a status code equal to that given
+func (o *EnableIdentityNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
+// Code gets the status code for the enable identity not found response
+func (o *EnableIdentityNotFound) Code() int {
+	return 404
+}
+
+func (o *EnableIdentityNotFound) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityNotFound %s", 404, payload)
+}
+
+func (o *EnableIdentityNotFound) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityNotFound %s", 404, payload)
+}
+
 func (o *EnableIdentityNotFound) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -183,7 +298,8 @@ func NewEnableIdentityTooManyRequests() *EnableIdentityTooManyRequests {
 	return &EnableIdentityTooManyRequests{}
 }
 
-/* EnableIdentityTooManyRequests describes a response with status code 429, with default header values.
+/*
+EnableIdentityTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -191,9 +307,46 @@ type EnableIdentityTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *EnableIdentityTooManyRequests) Error() string {
-	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this enable identity too many requests response has a 2xx status code
+func (o *EnableIdentityTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this enable identity too many requests response has a 3xx status code
+func (o *EnableIdentityTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this enable identity too many requests response has a 4xx status code
+func (o *EnableIdentityTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this enable identity too many requests response has a 5xx status code
+func (o *EnableIdentityTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this enable identity too many requests response a status code equal to that given
+func (o *EnableIdentityTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the enable identity too many requests response
+func (o *EnableIdentityTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *EnableIdentityTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityTooManyRequests %s", 429, payload)
+}
+
+func (o *EnableIdentityTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityTooManyRequests %s", 429, payload)
+}
+
 func (o *EnableIdentityTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -215,7 +368,8 @@ func NewEnableIdentityServiceUnavailable() *EnableIdentityServiceUnavailable {
 	return &EnableIdentityServiceUnavailable{}
 }
 
-/* EnableIdentityServiceUnavailable describes a response with status code 503, with default header values.
+/*
+EnableIdentityServiceUnavailable describes a response with status code 503, with default header values.
 
 The request could not be completed due to the server being busy or in a temporarily bad state
 */
@@ -223,9 +377,46 @@ type EnableIdentityServiceUnavailable struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *EnableIdentityServiceUnavailable) Error() string {
-	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityServiceUnavailable  %+v", 503, o.Payload)
+// IsSuccess returns true when this enable identity service unavailable response has a 2xx status code
+func (o *EnableIdentityServiceUnavailable) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this enable identity service unavailable response has a 3xx status code
+func (o *EnableIdentityServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this enable identity service unavailable response has a 4xx status code
+func (o *EnableIdentityServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this enable identity service unavailable response has a 5xx status code
+func (o *EnableIdentityServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this enable identity service unavailable response a status code equal to that given
+func (o *EnableIdentityServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
+// Code gets the status code for the enable identity service unavailable response
+func (o *EnableIdentityServiceUnavailable) Code() int {
+	return 503
+}
+
+func (o *EnableIdentityServiceUnavailable) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityServiceUnavailable %s", 503, payload)
+}
+
+func (o *EnableIdentityServiceUnavailable) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityServiceUnavailable %s", 503, payload)
+}
+
 func (o *EnableIdentityServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

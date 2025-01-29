@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewReEnrollAuthenticatorParams creates a new ReEnrollAuthenticatorParams object,
@@ -78,10 +78,12 @@ func NewReEnrollAuthenticatorParamsWithHTTPClient(client *http.Client) *ReEnroll
 	}
 }
 
-/* ReEnrollAuthenticatorParams contains all the parameters to send to the API endpoint
-   for the re enroll authenticator operation.
+/*
+ReEnrollAuthenticatorParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the re enroll authenticator operation.
+
+	Typically these are written to a http.Request.
 */
 type ReEnrollAuthenticatorParams struct {
 

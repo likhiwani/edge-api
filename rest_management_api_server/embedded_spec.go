@@ -36716,8 +36716,8 @@ func init() {
         ],
         "description": "Shows an QR code image for unverified MFA enrollments. 404s if the MFA enrollment has been completed or not started.\n",
         "produces": [
-          "application/json",
-          "image/png"
+          "image/png",
+          "application/json"
         ],
         "tags": [
           "Current Identity",
@@ -51647,8 +51647,8 @@ func init() {
         "security": [],
         "description": "Return the body of the specification (i.e. Swagger, OpenAPI 2.0, 3.0, etc).",
         "produces": [
-          "application/json",
-          "text/yaml"
+          "text/yaml",
+          "application/json"
         ],
         "tags": [
           "Informational"

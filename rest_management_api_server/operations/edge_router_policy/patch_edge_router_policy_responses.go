@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // PatchEdgeRouterPolicyOKCode is the HTTP code returned for type PatchEdgeRouterPolicyOK
 const PatchEdgeRouterPolicyOKCode int = 200
 
-/*PatchEdgeRouterPolicyOK The patch request was successful and the resource has been altered
+/*
+PatchEdgeRouterPolicyOK The patch request was successful and the resource has been altered
 
 swagger:response patchEdgeRouterPolicyOK
 */
@@ -84,7 +85,8 @@ func (o *PatchEdgeRouterPolicyOK) WriteResponse(rw http.ResponseWriter, producer
 // PatchEdgeRouterPolicyBadRequestCode is the HTTP code returned for type PatchEdgeRouterPolicyBadRequest
 const PatchEdgeRouterPolicyBadRequestCode int = 400
 
-/*PatchEdgeRouterPolicyBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+PatchEdgeRouterPolicyBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response patchEdgeRouterPolicyBadRequest
 */
@@ -128,7 +130,8 @@ func (o *PatchEdgeRouterPolicyBadRequest) WriteResponse(rw http.ResponseWriter, 
 // PatchEdgeRouterPolicyUnauthorizedCode is the HTTP code returned for type PatchEdgeRouterPolicyUnauthorized
 const PatchEdgeRouterPolicyUnauthorizedCode int = 401
 
-/*PatchEdgeRouterPolicyUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+PatchEdgeRouterPolicyUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response patchEdgeRouterPolicyUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *PatchEdgeRouterPolicyUnauthorized) WriteResponse(rw http.ResponseWriter
 // PatchEdgeRouterPolicyNotFoundCode is the HTTP code returned for type PatchEdgeRouterPolicyNotFound
 const PatchEdgeRouterPolicyNotFoundCode int = 404
 
-/*PatchEdgeRouterPolicyNotFound The requested resource does not exist
+/*
+PatchEdgeRouterPolicyNotFound The requested resource does not exist
 
 swagger:response patchEdgeRouterPolicyNotFound
 */
@@ -216,7 +220,8 @@ func (o *PatchEdgeRouterPolicyNotFound) WriteResponse(rw http.ResponseWriter, pr
 // PatchEdgeRouterPolicyTooManyRequestsCode is the HTTP code returned for type PatchEdgeRouterPolicyTooManyRequests
 const PatchEdgeRouterPolicyTooManyRequestsCode int = 429
 
-/*PatchEdgeRouterPolicyTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+PatchEdgeRouterPolicyTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response patchEdgeRouterPolicyTooManyRequests
 */
@@ -260,7 +265,8 @@ func (o *PatchEdgeRouterPolicyTooManyRequests) WriteResponse(rw http.ResponseWri
 // PatchEdgeRouterPolicyServiceUnavailableCode is the HTTP code returned for type PatchEdgeRouterPolicyServiceUnavailable
 const PatchEdgeRouterPolicyServiceUnavailableCode int = 503
 
-/*PatchEdgeRouterPolicyServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+PatchEdgeRouterPolicyServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response patchEdgeRouterPolicyServiceUnavailable
 */

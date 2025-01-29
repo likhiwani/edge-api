@@ -238,6 +238,11 @@ func (m *ClientExternalJWTSignerDetail) ContextValidate(ctx context.Context, for
 func (m *ClientExternalJWTSignerDetail) contextValidateTargetToken(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.TargetToken != nil {
+
+		if swag.IsZero(m.TargetToken) { // not required
+			return nil
+		}
+
 		if err := m.TargetToken.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("targetToken")

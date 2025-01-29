@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DetailTerminatorOKCode is the HTTP code returned for type DetailTerminatorOK
 const DetailTerminatorOKCode int = 200
 
-/*DetailTerminatorOK A single terminator
+/*
+DetailTerminatorOK A single terminator
 
 swagger:response detailTerminatorOK
 */
@@ -84,7 +85,8 @@ func (o *DetailTerminatorOK) WriteResponse(rw http.ResponseWriter, producer runt
 // DetailTerminatorUnauthorizedCode is the HTTP code returned for type DetailTerminatorUnauthorized
 const DetailTerminatorUnauthorizedCode int = 401
 
-/*DetailTerminatorUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+DetailTerminatorUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response detailTerminatorUnauthorized
 */
@@ -128,7 +130,8 @@ func (o *DetailTerminatorUnauthorized) WriteResponse(rw http.ResponseWriter, pro
 // DetailTerminatorNotFoundCode is the HTTP code returned for type DetailTerminatorNotFound
 const DetailTerminatorNotFoundCode int = 404
 
-/*DetailTerminatorNotFound The requested resource does not exist
+/*
+DetailTerminatorNotFound The requested resource does not exist
 
 swagger:response detailTerminatorNotFound
 */
@@ -172,7 +175,8 @@ func (o *DetailTerminatorNotFound) WriteResponse(rw http.ResponseWriter, produce
 // DetailTerminatorTooManyRequestsCode is the HTTP code returned for type DetailTerminatorTooManyRequests
 const DetailTerminatorTooManyRequestsCode int = 429
 
-/*DetailTerminatorTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+DetailTerminatorTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response detailTerminatorTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *DetailTerminatorTooManyRequests) WriteResponse(rw http.ResponseWriter, 
 // DetailTerminatorServiceUnavailableCode is the HTTP code returned for type DetailTerminatorServiceUnavailable
 const DetailTerminatorServiceUnavailableCode int = 503
 
-/*DetailTerminatorServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+DetailTerminatorServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response detailTerminatorServiceUnavailable
 */

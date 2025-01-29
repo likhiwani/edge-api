@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DeleteCurrentAPISessionOKCode is the HTTP code returned for type DeleteCurrentAPISessionOK
 const DeleteCurrentAPISessionOKCode int = 200
 
-/*DeleteCurrentAPISessionOK Base empty response
+/*
+DeleteCurrentAPISessionOK Base empty response
 
 swagger:response deleteCurrentApiSessionOK
 */
@@ -84,7 +85,8 @@ func (o *DeleteCurrentAPISessionOK) WriteResponse(rw http.ResponseWriter, produc
 // DeleteCurrentAPISessionUnauthorizedCode is the HTTP code returned for type DeleteCurrentAPISessionUnauthorized
 const DeleteCurrentAPISessionUnauthorizedCode int = 401
 
-/*DeleteCurrentAPISessionUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+DeleteCurrentAPISessionUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response deleteCurrentApiSessionUnauthorized
 */

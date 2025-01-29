@@ -30,13 +30,14 @@ package authenticator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // UpdateAuthenticatorReader is a Reader for the UpdateAuthenticator structure.
@@ -84,7 +85,7 @@ func (o *UpdateAuthenticatorReader) ReadResponse(response runtime.ClientResponse
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[PUT /authenticators/{id}] updateAuthenticator", response, response.Code())
 	}
 }
 
@@ -93,7 +94,8 @@ func NewUpdateAuthenticatorOK() *UpdateAuthenticatorOK {
 	return &UpdateAuthenticatorOK{}
 }
 
-/* UpdateAuthenticatorOK describes a response with status code 200, with default header values.
+/*
+UpdateAuthenticatorOK describes a response with status code 200, with default header values.
 
 The update request was successful and the resource has been altered
 */
@@ -101,9 +103,46 @@ type UpdateAuthenticatorOK struct {
 	Payload *rest_model.Empty
 }
 
-func (o *UpdateAuthenticatorOK) Error() string {
-	return fmt.Sprintf("[PUT /authenticators/{id}][%d] updateAuthenticatorOK  %+v", 200, o.Payload)
+// IsSuccess returns true when this update authenticator o k response has a 2xx status code
+func (o *UpdateAuthenticatorOK) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this update authenticator o k response has a 3xx status code
+func (o *UpdateAuthenticatorOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update authenticator o k response has a 4xx status code
+func (o *UpdateAuthenticatorOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this update authenticator o k response has a 5xx status code
+func (o *UpdateAuthenticatorOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update authenticator o k response a status code equal to that given
+func (o *UpdateAuthenticatorOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the update authenticator o k response
+func (o *UpdateAuthenticatorOK) Code() int {
+	return 200
+}
+
+func (o *UpdateAuthenticatorOK) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /authenticators/{id}][%d] updateAuthenticatorOK %s", 200, payload)
+}
+
+func (o *UpdateAuthenticatorOK) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /authenticators/{id}][%d] updateAuthenticatorOK %s", 200, payload)
+}
+
 func (o *UpdateAuthenticatorOK) GetPayload() *rest_model.Empty {
 	return o.Payload
 }
@@ -125,7 +164,8 @@ func NewUpdateAuthenticatorBadRequest() *UpdateAuthenticatorBadRequest {
 	return &UpdateAuthenticatorBadRequest{}
 }
 
-/* UpdateAuthenticatorBadRequest describes a response with status code 400, with default header values.
+/*
+UpdateAuthenticatorBadRequest describes a response with status code 400, with default header values.
 
 The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 */
@@ -133,9 +173,46 @@ type UpdateAuthenticatorBadRequest struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *UpdateAuthenticatorBadRequest) Error() string {
-	return fmt.Sprintf("[PUT /authenticators/{id}][%d] updateAuthenticatorBadRequest  %+v", 400, o.Payload)
+// IsSuccess returns true when this update authenticator bad request response has a 2xx status code
+func (o *UpdateAuthenticatorBadRequest) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this update authenticator bad request response has a 3xx status code
+func (o *UpdateAuthenticatorBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update authenticator bad request response has a 4xx status code
+func (o *UpdateAuthenticatorBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update authenticator bad request response has a 5xx status code
+func (o *UpdateAuthenticatorBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update authenticator bad request response a status code equal to that given
+func (o *UpdateAuthenticatorBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
+// Code gets the status code for the update authenticator bad request response
+func (o *UpdateAuthenticatorBadRequest) Code() int {
+	return 400
+}
+
+func (o *UpdateAuthenticatorBadRequest) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /authenticators/{id}][%d] updateAuthenticatorBadRequest %s", 400, payload)
+}
+
+func (o *UpdateAuthenticatorBadRequest) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /authenticators/{id}][%d] updateAuthenticatorBadRequest %s", 400, payload)
+}
+
 func (o *UpdateAuthenticatorBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -157,7 +234,8 @@ func NewUpdateAuthenticatorUnauthorized() *UpdateAuthenticatorUnauthorized {
 	return &UpdateAuthenticatorUnauthorized{}
 }
 
-/* UpdateAuthenticatorUnauthorized describes a response with status code 401, with default header values.
+/*
+UpdateAuthenticatorUnauthorized describes a response with status code 401, with default header values.
 
 The supplied session does not have the correct access rights to request this resource
 */
@@ -165,9 +243,46 @@ type UpdateAuthenticatorUnauthorized struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *UpdateAuthenticatorUnauthorized) Error() string {
-	return fmt.Sprintf("[PUT /authenticators/{id}][%d] updateAuthenticatorUnauthorized  %+v", 401, o.Payload)
+// IsSuccess returns true when this update authenticator unauthorized response has a 2xx status code
+func (o *UpdateAuthenticatorUnauthorized) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this update authenticator unauthorized response has a 3xx status code
+func (o *UpdateAuthenticatorUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update authenticator unauthorized response has a 4xx status code
+func (o *UpdateAuthenticatorUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update authenticator unauthorized response has a 5xx status code
+func (o *UpdateAuthenticatorUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update authenticator unauthorized response a status code equal to that given
+func (o *UpdateAuthenticatorUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
+// Code gets the status code for the update authenticator unauthorized response
+func (o *UpdateAuthenticatorUnauthorized) Code() int {
+	return 401
+}
+
+func (o *UpdateAuthenticatorUnauthorized) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /authenticators/{id}][%d] updateAuthenticatorUnauthorized %s", 401, payload)
+}
+
+func (o *UpdateAuthenticatorUnauthorized) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /authenticators/{id}][%d] updateAuthenticatorUnauthorized %s", 401, payload)
+}
+
 func (o *UpdateAuthenticatorUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -189,7 +304,8 @@ func NewUpdateAuthenticatorNotFound() *UpdateAuthenticatorNotFound {
 	return &UpdateAuthenticatorNotFound{}
 }
 
-/* UpdateAuthenticatorNotFound describes a response with status code 404, with default header values.
+/*
+UpdateAuthenticatorNotFound describes a response with status code 404, with default header values.
 
 The requested resource does not exist
 */
@@ -197,9 +313,46 @@ type UpdateAuthenticatorNotFound struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *UpdateAuthenticatorNotFound) Error() string {
-	return fmt.Sprintf("[PUT /authenticators/{id}][%d] updateAuthenticatorNotFound  %+v", 404, o.Payload)
+// IsSuccess returns true when this update authenticator not found response has a 2xx status code
+func (o *UpdateAuthenticatorNotFound) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this update authenticator not found response has a 3xx status code
+func (o *UpdateAuthenticatorNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update authenticator not found response has a 4xx status code
+func (o *UpdateAuthenticatorNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update authenticator not found response has a 5xx status code
+func (o *UpdateAuthenticatorNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update authenticator not found response a status code equal to that given
+func (o *UpdateAuthenticatorNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
+// Code gets the status code for the update authenticator not found response
+func (o *UpdateAuthenticatorNotFound) Code() int {
+	return 404
+}
+
+func (o *UpdateAuthenticatorNotFound) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /authenticators/{id}][%d] updateAuthenticatorNotFound %s", 404, payload)
+}
+
+func (o *UpdateAuthenticatorNotFound) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /authenticators/{id}][%d] updateAuthenticatorNotFound %s", 404, payload)
+}
+
 func (o *UpdateAuthenticatorNotFound) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -221,7 +374,8 @@ func NewUpdateAuthenticatorTooManyRequests() *UpdateAuthenticatorTooManyRequests
 	return &UpdateAuthenticatorTooManyRequests{}
 }
 
-/* UpdateAuthenticatorTooManyRequests describes a response with status code 429, with default header values.
+/*
+UpdateAuthenticatorTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -229,9 +383,46 @@ type UpdateAuthenticatorTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *UpdateAuthenticatorTooManyRequests) Error() string {
-	return fmt.Sprintf("[PUT /authenticators/{id}][%d] updateAuthenticatorTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this update authenticator too many requests response has a 2xx status code
+func (o *UpdateAuthenticatorTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this update authenticator too many requests response has a 3xx status code
+func (o *UpdateAuthenticatorTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update authenticator too many requests response has a 4xx status code
+func (o *UpdateAuthenticatorTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this update authenticator too many requests response has a 5xx status code
+func (o *UpdateAuthenticatorTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this update authenticator too many requests response a status code equal to that given
+func (o *UpdateAuthenticatorTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the update authenticator too many requests response
+func (o *UpdateAuthenticatorTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *UpdateAuthenticatorTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /authenticators/{id}][%d] updateAuthenticatorTooManyRequests %s", 429, payload)
+}
+
+func (o *UpdateAuthenticatorTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /authenticators/{id}][%d] updateAuthenticatorTooManyRequests %s", 429, payload)
+}
+
 func (o *UpdateAuthenticatorTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -253,7 +444,8 @@ func NewUpdateAuthenticatorServiceUnavailable() *UpdateAuthenticatorServiceUnava
 	return &UpdateAuthenticatorServiceUnavailable{}
 }
 
-/* UpdateAuthenticatorServiceUnavailable describes a response with status code 503, with default header values.
+/*
+UpdateAuthenticatorServiceUnavailable describes a response with status code 503, with default header values.
 
 The request could not be completed due to the server being busy or in a temporarily bad state
 */
@@ -261,9 +453,46 @@ type UpdateAuthenticatorServiceUnavailable struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *UpdateAuthenticatorServiceUnavailable) Error() string {
-	return fmt.Sprintf("[PUT /authenticators/{id}][%d] updateAuthenticatorServiceUnavailable  %+v", 503, o.Payload)
+// IsSuccess returns true when this update authenticator service unavailable response has a 2xx status code
+func (o *UpdateAuthenticatorServiceUnavailable) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this update authenticator service unavailable response has a 3xx status code
+func (o *UpdateAuthenticatorServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this update authenticator service unavailable response has a 4xx status code
+func (o *UpdateAuthenticatorServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this update authenticator service unavailable response has a 5xx status code
+func (o *UpdateAuthenticatorServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this update authenticator service unavailable response a status code equal to that given
+func (o *UpdateAuthenticatorServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
+// Code gets the status code for the update authenticator service unavailable response
+func (o *UpdateAuthenticatorServiceUnavailable) Code() int {
+	return 503
+}
+
+func (o *UpdateAuthenticatorServiceUnavailable) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /authenticators/{id}][%d] updateAuthenticatorServiceUnavailable %s", 503, payload)
+}
+
+func (o *UpdateAuthenticatorServiceUnavailable) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PUT /authenticators/{id}][%d] updateAuthenticatorServiceUnavailable %s", 503, payload)
+}
+
 func (o *UpdateAuthenticatorServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

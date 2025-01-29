@@ -30,13 +30,14 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // AssociateIdentitysServiceConfigsReader is a Reader for the AssociateIdentitysServiceConfigs structure.
@@ -84,7 +85,7 @@ func (o *AssociateIdentitysServiceConfigsReader) ReadResponse(response runtime.C
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[POST /identities/{id}/service-configs] associateIdentitysServiceConfigs", response, response.Code())
 	}
 }
 
@@ -93,7 +94,8 @@ func NewAssociateIdentitysServiceConfigsOK() *AssociateIdentitysServiceConfigsOK
 	return &AssociateIdentitysServiceConfigsOK{}
 }
 
-/* AssociateIdentitysServiceConfigsOK describes a response with status code 200, with default header values.
+/*
+AssociateIdentitysServiceConfigsOK describes a response with status code 200, with default header values.
 
 Base empty response
 */
@@ -101,9 +103,46 @@ type AssociateIdentitysServiceConfigsOK struct {
 	Payload *rest_model.Empty
 }
 
-func (o *AssociateIdentitysServiceConfigsOK) Error() string {
-	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsOK  %+v", 200, o.Payload)
+// IsSuccess returns true when this associate identitys service configs o k response has a 2xx status code
+func (o *AssociateIdentitysServiceConfigsOK) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this associate identitys service configs o k response has a 3xx status code
+func (o *AssociateIdentitysServiceConfigsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this associate identitys service configs o k response has a 4xx status code
+func (o *AssociateIdentitysServiceConfigsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this associate identitys service configs o k response has a 5xx status code
+func (o *AssociateIdentitysServiceConfigsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this associate identitys service configs o k response a status code equal to that given
+func (o *AssociateIdentitysServiceConfigsOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the associate identitys service configs o k response
+func (o *AssociateIdentitysServiceConfigsOK) Code() int {
+	return 200
+}
+
+func (o *AssociateIdentitysServiceConfigsOK) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsOK %s", 200, payload)
+}
+
+func (o *AssociateIdentitysServiceConfigsOK) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsOK %s", 200, payload)
+}
+
 func (o *AssociateIdentitysServiceConfigsOK) GetPayload() *rest_model.Empty {
 	return o.Payload
 }
@@ -125,7 +164,8 @@ func NewAssociateIdentitysServiceConfigsBadRequest() *AssociateIdentitysServiceC
 	return &AssociateIdentitysServiceConfigsBadRequest{}
 }
 
-/* AssociateIdentitysServiceConfigsBadRequest describes a response with status code 400, with default header values.
+/*
+AssociateIdentitysServiceConfigsBadRequest describes a response with status code 400, with default header values.
 
 The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 */
@@ -133,9 +173,46 @@ type AssociateIdentitysServiceConfigsBadRequest struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *AssociateIdentitysServiceConfigsBadRequest) Error() string {
-	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsBadRequest  %+v", 400, o.Payload)
+// IsSuccess returns true when this associate identitys service configs bad request response has a 2xx status code
+func (o *AssociateIdentitysServiceConfigsBadRequest) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this associate identitys service configs bad request response has a 3xx status code
+func (o *AssociateIdentitysServiceConfigsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this associate identitys service configs bad request response has a 4xx status code
+func (o *AssociateIdentitysServiceConfigsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this associate identitys service configs bad request response has a 5xx status code
+func (o *AssociateIdentitysServiceConfigsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this associate identitys service configs bad request response a status code equal to that given
+func (o *AssociateIdentitysServiceConfigsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
+// Code gets the status code for the associate identitys service configs bad request response
+func (o *AssociateIdentitysServiceConfigsBadRequest) Code() int {
+	return 400
+}
+
+func (o *AssociateIdentitysServiceConfigsBadRequest) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsBadRequest %s", 400, payload)
+}
+
+func (o *AssociateIdentitysServiceConfigsBadRequest) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsBadRequest %s", 400, payload)
+}
+
 func (o *AssociateIdentitysServiceConfigsBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -157,7 +234,8 @@ func NewAssociateIdentitysServiceConfigsUnauthorized() *AssociateIdentitysServic
 	return &AssociateIdentitysServiceConfigsUnauthorized{}
 }
 
-/* AssociateIdentitysServiceConfigsUnauthorized describes a response with status code 401, with default header values.
+/*
+AssociateIdentitysServiceConfigsUnauthorized describes a response with status code 401, with default header values.
 
 The supplied session does not have the correct access rights to request this resource
 */
@@ -165,9 +243,46 @@ type AssociateIdentitysServiceConfigsUnauthorized struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *AssociateIdentitysServiceConfigsUnauthorized) Error() string {
-	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsUnauthorized  %+v", 401, o.Payload)
+// IsSuccess returns true when this associate identitys service configs unauthorized response has a 2xx status code
+func (o *AssociateIdentitysServiceConfigsUnauthorized) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this associate identitys service configs unauthorized response has a 3xx status code
+func (o *AssociateIdentitysServiceConfigsUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this associate identitys service configs unauthorized response has a 4xx status code
+func (o *AssociateIdentitysServiceConfigsUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this associate identitys service configs unauthorized response has a 5xx status code
+func (o *AssociateIdentitysServiceConfigsUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this associate identitys service configs unauthorized response a status code equal to that given
+func (o *AssociateIdentitysServiceConfigsUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
+// Code gets the status code for the associate identitys service configs unauthorized response
+func (o *AssociateIdentitysServiceConfigsUnauthorized) Code() int {
+	return 401
+}
+
+func (o *AssociateIdentitysServiceConfigsUnauthorized) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsUnauthorized %s", 401, payload)
+}
+
+func (o *AssociateIdentitysServiceConfigsUnauthorized) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsUnauthorized %s", 401, payload)
+}
+
 func (o *AssociateIdentitysServiceConfigsUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -189,7 +304,8 @@ func NewAssociateIdentitysServiceConfigsNotFound() *AssociateIdentitysServiceCon
 	return &AssociateIdentitysServiceConfigsNotFound{}
 }
 
-/* AssociateIdentitysServiceConfigsNotFound describes a response with status code 404, with default header values.
+/*
+AssociateIdentitysServiceConfigsNotFound describes a response with status code 404, with default header values.
 
 The requested resource does not exist
 */
@@ -197,9 +313,46 @@ type AssociateIdentitysServiceConfigsNotFound struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *AssociateIdentitysServiceConfigsNotFound) Error() string {
-	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsNotFound  %+v", 404, o.Payload)
+// IsSuccess returns true when this associate identitys service configs not found response has a 2xx status code
+func (o *AssociateIdentitysServiceConfigsNotFound) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this associate identitys service configs not found response has a 3xx status code
+func (o *AssociateIdentitysServiceConfigsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this associate identitys service configs not found response has a 4xx status code
+func (o *AssociateIdentitysServiceConfigsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this associate identitys service configs not found response has a 5xx status code
+func (o *AssociateIdentitysServiceConfigsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this associate identitys service configs not found response a status code equal to that given
+func (o *AssociateIdentitysServiceConfigsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
+// Code gets the status code for the associate identitys service configs not found response
+func (o *AssociateIdentitysServiceConfigsNotFound) Code() int {
+	return 404
+}
+
+func (o *AssociateIdentitysServiceConfigsNotFound) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsNotFound %s", 404, payload)
+}
+
+func (o *AssociateIdentitysServiceConfigsNotFound) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsNotFound %s", 404, payload)
+}
+
 func (o *AssociateIdentitysServiceConfigsNotFound) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -221,7 +374,8 @@ func NewAssociateIdentitysServiceConfigsTooManyRequests() *AssociateIdentitysSer
 	return &AssociateIdentitysServiceConfigsTooManyRequests{}
 }
 
-/* AssociateIdentitysServiceConfigsTooManyRequests describes a response with status code 429, with default header values.
+/*
+AssociateIdentitysServiceConfigsTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -229,9 +383,46 @@ type AssociateIdentitysServiceConfigsTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *AssociateIdentitysServiceConfigsTooManyRequests) Error() string {
-	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this associate identitys service configs too many requests response has a 2xx status code
+func (o *AssociateIdentitysServiceConfigsTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this associate identitys service configs too many requests response has a 3xx status code
+func (o *AssociateIdentitysServiceConfigsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this associate identitys service configs too many requests response has a 4xx status code
+func (o *AssociateIdentitysServiceConfigsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this associate identitys service configs too many requests response has a 5xx status code
+func (o *AssociateIdentitysServiceConfigsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this associate identitys service configs too many requests response a status code equal to that given
+func (o *AssociateIdentitysServiceConfigsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the associate identitys service configs too many requests response
+func (o *AssociateIdentitysServiceConfigsTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *AssociateIdentitysServiceConfigsTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsTooManyRequests %s", 429, payload)
+}
+
+func (o *AssociateIdentitysServiceConfigsTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsTooManyRequests %s", 429, payload)
+}
+
 func (o *AssociateIdentitysServiceConfigsTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -253,7 +444,8 @@ func NewAssociateIdentitysServiceConfigsServiceUnavailable() *AssociateIdentitys
 	return &AssociateIdentitysServiceConfigsServiceUnavailable{}
 }
 
-/* AssociateIdentitysServiceConfigsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+AssociateIdentitysServiceConfigsServiceUnavailable describes a response with status code 503, with default header values.
 
 The request could not be completed due to the server being busy or in a temporarily bad state
 */
@@ -261,9 +453,46 @@ type AssociateIdentitysServiceConfigsServiceUnavailable struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *AssociateIdentitysServiceConfigsServiceUnavailable) Error() string {
-	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsServiceUnavailable  %+v", 503, o.Payload)
+// IsSuccess returns true when this associate identitys service configs service unavailable response has a 2xx status code
+func (o *AssociateIdentitysServiceConfigsServiceUnavailable) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this associate identitys service configs service unavailable response has a 3xx status code
+func (o *AssociateIdentitysServiceConfigsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this associate identitys service configs service unavailable response has a 4xx status code
+func (o *AssociateIdentitysServiceConfigsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this associate identitys service configs service unavailable response has a 5xx status code
+func (o *AssociateIdentitysServiceConfigsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this associate identitys service configs service unavailable response a status code equal to that given
+func (o *AssociateIdentitysServiceConfigsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
+// Code gets the status code for the associate identitys service configs service unavailable response
+func (o *AssociateIdentitysServiceConfigsServiceUnavailable) Code() int {
+	return 503
+}
+
+func (o *AssociateIdentitysServiceConfigsServiceUnavailable) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsServiceUnavailable %s", 503, payload)
+}
+
+func (o *AssociateIdentitysServiceConfigsServiceUnavailable) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsServiceUnavailable %s", 503, payload)
+}
+
 func (o *AssociateIdentitysServiceConfigsServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

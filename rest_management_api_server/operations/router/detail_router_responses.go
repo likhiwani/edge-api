@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DetailRouterOKCode is the HTTP code returned for type DetailRouterOK
 const DetailRouterOKCode int = 200
 
-/*DetailRouterOK A single router
+/*
+DetailRouterOK A single router
 
 swagger:response detailRouterOK
 */
@@ -84,7 +85,8 @@ func (o *DetailRouterOK) WriteResponse(rw http.ResponseWriter, producer runtime.
 // DetailRouterUnauthorizedCode is the HTTP code returned for type DetailRouterUnauthorized
 const DetailRouterUnauthorizedCode int = 401
 
-/*DetailRouterUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+DetailRouterUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response detailRouterUnauthorized
 */
@@ -128,7 +130,8 @@ func (o *DetailRouterUnauthorized) WriteResponse(rw http.ResponseWriter, produce
 // DetailRouterNotFoundCode is the HTTP code returned for type DetailRouterNotFound
 const DetailRouterNotFoundCode int = 404
 
-/*DetailRouterNotFound The requested resource does not exist
+/*
+DetailRouterNotFound The requested resource does not exist
 
 swagger:response detailRouterNotFound
 */
@@ -172,7 +175,8 @@ func (o *DetailRouterNotFound) WriteResponse(rw http.ResponseWriter, producer ru
 // DetailRouterTooManyRequestsCode is the HTTP code returned for type DetailRouterTooManyRequests
 const DetailRouterTooManyRequestsCode int = 429
 
-/*DetailRouterTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+DetailRouterTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response detailRouterTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *DetailRouterTooManyRequests) WriteResponse(rw http.ResponseWriter, prod
 // DetailRouterServiceUnavailableCode is the HTTP code returned for type DetailRouterServiceUnavailable
 const DetailRouterServiceUnavailableCode int = 503
 
-/*DetailRouterServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+DetailRouterServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response detailRouterServiceUnavailable
 */

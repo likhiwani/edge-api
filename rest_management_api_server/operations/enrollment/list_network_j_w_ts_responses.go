@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListNetworkJWTsOKCode is the HTTP code returned for type ListNetworkJWTsOK
 const ListNetworkJWTsOKCode int = 200
 
-/*ListNetworkJWTsOK A list of network JWTs
+/*
+ListNetworkJWTsOK A list of network JWTs
 
 swagger:response listNetworkJWTsOK
 */
@@ -84,7 +85,8 @@ func (o *ListNetworkJWTsOK) WriteResponse(rw http.ResponseWriter, producer runti
 // ListNetworkJWTsBadRequestCode is the HTTP code returned for type ListNetworkJWTsBadRequest
 const ListNetworkJWTsBadRequestCode int = 400
 
-/*ListNetworkJWTsBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+ListNetworkJWTsBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response listNetworkJWTsBadRequest
 */
@@ -128,7 +130,8 @@ func (o *ListNetworkJWTsBadRequest) WriteResponse(rw http.ResponseWriter, produc
 // ListNetworkJWTsTooManyRequestsCode is the HTTP code returned for type ListNetworkJWTsTooManyRequests
 const ListNetworkJWTsTooManyRequestsCode int = 429
 
-/*ListNetworkJWTsTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+ListNetworkJWTsTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response listNetworkJWTsTooManyRequests
 */

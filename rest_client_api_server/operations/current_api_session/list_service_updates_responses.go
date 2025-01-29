@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListServiceUpdatesOKCode is the HTTP code returned for type ListServiceUpdatesOK
 const ListServiceUpdatesOKCode int = 200
 
-/*ListServiceUpdatesOK Data indicating necessary service updates
+/*
+ListServiceUpdatesOK Data indicating necessary service updates
 
 swagger:response listServiceUpdatesOK
 */
@@ -84,7 +85,8 @@ func (o *ListServiceUpdatesOK) WriteResponse(rw http.ResponseWriter, producer ru
 // ListServiceUpdatesUnauthorizedCode is the HTTP code returned for type ListServiceUpdatesUnauthorized
 const ListServiceUpdatesUnauthorizedCode int = 401
 
-/*ListServiceUpdatesUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+ListServiceUpdatesUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response listServiceUpdatesUnauthorized
 */
@@ -128,7 +130,8 @@ func (o *ListServiceUpdatesUnauthorized) WriteResponse(rw http.ResponseWriter, p
 // ListServiceUpdatesTooManyRequestsCode is the HTTP code returned for type ListServiceUpdatesTooManyRequests
 const ListServiceUpdatesTooManyRequestsCode int = 429
 
-/*ListServiceUpdatesTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+ListServiceUpdatesTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response listServiceUpdatesTooManyRequests
 */
@@ -172,7 +175,8 @@ func (o *ListServiceUpdatesTooManyRequests) WriteResponse(rw http.ResponseWriter
 // ListServiceUpdatesServiceUnavailableCode is the HTTP code returned for type ListServiceUpdatesServiceUnavailable
 const ListServiceUpdatesServiceUnavailableCode int = 503
 
-/*ListServiceUpdatesServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+ListServiceUpdatesServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response listServiceUpdatesServiceUnavailable
 */

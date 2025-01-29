@@ -30,7 +30,6 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"context"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -39,7 +38,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/validate"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewDisassociateIdentitysServiceConfigsParams creates a new DisassociateIdentitysServiceConfigsParams object
@@ -95,7 +94,7 @@ func (o *DisassociateIdentitysServiceConfigsParams) BindRequest(r *http.Request,
 				res = append(res, err)
 			}
 
-			ctx := validate.WithOperationRequest(context.Background())
+			ctx := validate.WithOperationRequest(r.Context())
 			if err := body.ContextValidate(ctx, route.Formats); err != nil {
 				res = append(res, err)
 			}

@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewUpdateTransitRouterParams creates a new UpdateTransitRouterParams object,
@@ -78,10 +78,12 @@ func NewUpdateTransitRouterParamsWithHTTPClient(client *http.Client) *UpdateTran
 	}
 }
 
-/* UpdateTransitRouterParams contains all the parameters to send to the API endpoint
-   for the update transit router operation.
+/*
+UpdateTransitRouterParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the update transit router operation.
+
+	Typically these are written to a http.Request.
 */
 type UpdateTransitRouterParams struct {
 

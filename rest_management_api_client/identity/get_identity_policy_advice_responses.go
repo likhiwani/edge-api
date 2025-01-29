@@ -30,13 +30,14 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // GetIdentityPolicyAdviceReader is a Reader for the GetIdentityPolicyAdvice structure.
@@ -78,7 +79,7 @@ func (o *GetIdentityPolicyAdviceReader) ReadResponse(response runtime.ClientResp
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[GET /identities/{id}/policy-advice/{serviceId}] getIdentityPolicyAdvice", response, response.Code())
 	}
 }
 
@@ -87,7 +88,8 @@ func NewGetIdentityPolicyAdviceOK() *GetIdentityPolicyAdviceOK {
 	return &GetIdentityPolicyAdviceOK{}
 }
 
-/* GetIdentityPolicyAdviceOK describes a response with status code 200, with default header values.
+/*
+GetIdentityPolicyAdviceOK describes a response with status code 200, with default header values.
 
 Returns the document that represents the policy advice
 */
@@ -95,9 +97,46 @@ type GetIdentityPolicyAdviceOK struct {
 	Payload *rest_model.GetIdentityPolicyAdviceEnvelope
 }
 
-func (o *GetIdentityPolicyAdviceOK) Error() string {
-	return fmt.Sprintf("[GET /identities/{id}/policy-advice/{serviceId}][%d] getIdentityPolicyAdviceOK  %+v", 200, o.Payload)
+// IsSuccess returns true when this get identity policy advice o k response has a 2xx status code
+func (o *GetIdentityPolicyAdviceOK) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this get identity policy advice o k response has a 3xx status code
+func (o *GetIdentityPolicyAdviceOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get identity policy advice o k response has a 4xx status code
+func (o *GetIdentityPolicyAdviceOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get identity policy advice o k response has a 5xx status code
+func (o *GetIdentityPolicyAdviceOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get identity policy advice o k response a status code equal to that given
+func (o *GetIdentityPolicyAdviceOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the get identity policy advice o k response
+func (o *GetIdentityPolicyAdviceOK) Code() int {
+	return 200
+}
+
+func (o *GetIdentityPolicyAdviceOK) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/policy-advice/{serviceId}][%d] getIdentityPolicyAdviceOK %s", 200, payload)
+}
+
+func (o *GetIdentityPolicyAdviceOK) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/policy-advice/{serviceId}][%d] getIdentityPolicyAdviceOK %s", 200, payload)
+}
+
 func (o *GetIdentityPolicyAdviceOK) GetPayload() *rest_model.GetIdentityPolicyAdviceEnvelope {
 	return o.Payload
 }
@@ -119,7 +158,8 @@ func NewGetIdentityPolicyAdviceUnauthorized() *GetIdentityPolicyAdviceUnauthoriz
 	return &GetIdentityPolicyAdviceUnauthorized{}
 }
 
-/* GetIdentityPolicyAdviceUnauthorized describes a response with status code 401, with default header values.
+/*
+GetIdentityPolicyAdviceUnauthorized describes a response with status code 401, with default header values.
 
 The supplied session does not have the correct access rights to request this resource
 */
@@ -127,9 +167,46 @@ type GetIdentityPolicyAdviceUnauthorized struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *GetIdentityPolicyAdviceUnauthorized) Error() string {
-	return fmt.Sprintf("[GET /identities/{id}/policy-advice/{serviceId}][%d] getIdentityPolicyAdviceUnauthorized  %+v", 401, o.Payload)
+// IsSuccess returns true when this get identity policy advice unauthorized response has a 2xx status code
+func (o *GetIdentityPolicyAdviceUnauthorized) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this get identity policy advice unauthorized response has a 3xx status code
+func (o *GetIdentityPolicyAdviceUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get identity policy advice unauthorized response has a 4xx status code
+func (o *GetIdentityPolicyAdviceUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get identity policy advice unauthorized response has a 5xx status code
+func (o *GetIdentityPolicyAdviceUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get identity policy advice unauthorized response a status code equal to that given
+func (o *GetIdentityPolicyAdviceUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
+// Code gets the status code for the get identity policy advice unauthorized response
+func (o *GetIdentityPolicyAdviceUnauthorized) Code() int {
+	return 401
+}
+
+func (o *GetIdentityPolicyAdviceUnauthorized) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/policy-advice/{serviceId}][%d] getIdentityPolicyAdviceUnauthorized %s", 401, payload)
+}
+
+func (o *GetIdentityPolicyAdviceUnauthorized) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/policy-advice/{serviceId}][%d] getIdentityPolicyAdviceUnauthorized %s", 401, payload)
+}
+
 func (o *GetIdentityPolicyAdviceUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -151,7 +228,8 @@ func NewGetIdentityPolicyAdviceNotFound() *GetIdentityPolicyAdviceNotFound {
 	return &GetIdentityPolicyAdviceNotFound{}
 }
 
-/* GetIdentityPolicyAdviceNotFound describes a response with status code 404, with default header values.
+/*
+GetIdentityPolicyAdviceNotFound describes a response with status code 404, with default header values.
 
 The requested resource does not exist
 */
@@ -159,9 +237,46 @@ type GetIdentityPolicyAdviceNotFound struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *GetIdentityPolicyAdviceNotFound) Error() string {
-	return fmt.Sprintf("[GET /identities/{id}/policy-advice/{serviceId}][%d] getIdentityPolicyAdviceNotFound  %+v", 404, o.Payload)
+// IsSuccess returns true when this get identity policy advice not found response has a 2xx status code
+func (o *GetIdentityPolicyAdviceNotFound) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this get identity policy advice not found response has a 3xx status code
+func (o *GetIdentityPolicyAdviceNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get identity policy advice not found response has a 4xx status code
+func (o *GetIdentityPolicyAdviceNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get identity policy advice not found response has a 5xx status code
+func (o *GetIdentityPolicyAdviceNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get identity policy advice not found response a status code equal to that given
+func (o *GetIdentityPolicyAdviceNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
+// Code gets the status code for the get identity policy advice not found response
+func (o *GetIdentityPolicyAdviceNotFound) Code() int {
+	return 404
+}
+
+func (o *GetIdentityPolicyAdviceNotFound) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/policy-advice/{serviceId}][%d] getIdentityPolicyAdviceNotFound %s", 404, payload)
+}
+
+func (o *GetIdentityPolicyAdviceNotFound) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/policy-advice/{serviceId}][%d] getIdentityPolicyAdviceNotFound %s", 404, payload)
+}
+
 func (o *GetIdentityPolicyAdviceNotFound) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -183,7 +298,8 @@ func NewGetIdentityPolicyAdviceTooManyRequests() *GetIdentityPolicyAdviceTooMany
 	return &GetIdentityPolicyAdviceTooManyRequests{}
 }
 
-/* GetIdentityPolicyAdviceTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetIdentityPolicyAdviceTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -191,9 +307,46 @@ type GetIdentityPolicyAdviceTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *GetIdentityPolicyAdviceTooManyRequests) Error() string {
-	return fmt.Sprintf("[GET /identities/{id}/policy-advice/{serviceId}][%d] getIdentityPolicyAdviceTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this get identity policy advice too many requests response has a 2xx status code
+func (o *GetIdentityPolicyAdviceTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this get identity policy advice too many requests response has a 3xx status code
+func (o *GetIdentityPolicyAdviceTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get identity policy advice too many requests response has a 4xx status code
+func (o *GetIdentityPolicyAdviceTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get identity policy advice too many requests response has a 5xx status code
+func (o *GetIdentityPolicyAdviceTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get identity policy advice too many requests response a status code equal to that given
+func (o *GetIdentityPolicyAdviceTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the get identity policy advice too many requests response
+func (o *GetIdentityPolicyAdviceTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *GetIdentityPolicyAdviceTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/policy-advice/{serviceId}][%d] getIdentityPolicyAdviceTooManyRequests %s", 429, payload)
+}
+
+func (o *GetIdentityPolicyAdviceTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/policy-advice/{serviceId}][%d] getIdentityPolicyAdviceTooManyRequests %s", 429, payload)
+}
+
 func (o *GetIdentityPolicyAdviceTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -215,7 +368,8 @@ func NewGetIdentityPolicyAdviceServiceUnavailable() *GetIdentityPolicyAdviceServ
 	return &GetIdentityPolicyAdviceServiceUnavailable{}
 }
 
-/* GetIdentityPolicyAdviceServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetIdentityPolicyAdviceServiceUnavailable describes a response with status code 503, with default header values.
 
 The request could not be completed due to the server being busy or in a temporarily bad state
 */
@@ -223,9 +377,46 @@ type GetIdentityPolicyAdviceServiceUnavailable struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *GetIdentityPolicyAdviceServiceUnavailable) Error() string {
-	return fmt.Sprintf("[GET /identities/{id}/policy-advice/{serviceId}][%d] getIdentityPolicyAdviceServiceUnavailable  %+v", 503, o.Payload)
+// IsSuccess returns true when this get identity policy advice service unavailable response has a 2xx status code
+func (o *GetIdentityPolicyAdviceServiceUnavailable) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this get identity policy advice service unavailable response has a 3xx status code
+func (o *GetIdentityPolicyAdviceServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get identity policy advice service unavailable response has a 4xx status code
+func (o *GetIdentityPolicyAdviceServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get identity policy advice service unavailable response has a 5xx status code
+func (o *GetIdentityPolicyAdviceServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get identity policy advice service unavailable response a status code equal to that given
+func (o *GetIdentityPolicyAdviceServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
+// Code gets the status code for the get identity policy advice service unavailable response
+func (o *GetIdentityPolicyAdviceServiceUnavailable) Code() int {
+	return 503
+}
+
+func (o *GetIdentityPolicyAdviceServiceUnavailable) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/policy-advice/{serviceId}][%d] getIdentityPolicyAdviceServiceUnavailable %s", 503, payload)
+}
+
+func (o *GetIdentityPolicyAdviceServiceUnavailable) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/policy-advice/{serviceId}][%d] getIdentityPolicyAdviceServiceUnavailable %s", 503, payload)
+}
+
 func (o *GetIdentityPolicyAdviceServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

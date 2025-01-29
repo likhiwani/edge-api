@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // CreateServiceEdgeRouterPolicyCreatedCode is the HTTP code returned for type CreateServiceEdgeRouterPolicyCreated
 const CreateServiceEdgeRouterPolicyCreatedCode int = 201
 
-/*CreateServiceEdgeRouterPolicyCreated The create request was successful and the resource has been added at the following location
+/*
+CreateServiceEdgeRouterPolicyCreated The create request was successful and the resource has been added at the following location
 
 swagger:response createServiceEdgeRouterPolicyCreated
 */
@@ -84,7 +85,8 @@ func (o *CreateServiceEdgeRouterPolicyCreated) WriteResponse(rw http.ResponseWri
 // CreateServiceEdgeRouterPolicyBadRequestCode is the HTTP code returned for type CreateServiceEdgeRouterPolicyBadRequest
 const CreateServiceEdgeRouterPolicyBadRequestCode int = 400
 
-/*CreateServiceEdgeRouterPolicyBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+CreateServiceEdgeRouterPolicyBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response createServiceEdgeRouterPolicyBadRequest
 */
@@ -128,7 +130,8 @@ func (o *CreateServiceEdgeRouterPolicyBadRequest) WriteResponse(rw http.Response
 // CreateServiceEdgeRouterPolicyUnauthorizedCode is the HTTP code returned for type CreateServiceEdgeRouterPolicyUnauthorized
 const CreateServiceEdgeRouterPolicyUnauthorizedCode int = 401
 
-/*CreateServiceEdgeRouterPolicyUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+CreateServiceEdgeRouterPolicyUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response createServiceEdgeRouterPolicyUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *CreateServiceEdgeRouterPolicyUnauthorized) WriteResponse(rw http.Respon
 // CreateServiceEdgeRouterPolicyTooManyRequestsCode is the HTTP code returned for type CreateServiceEdgeRouterPolicyTooManyRequests
 const CreateServiceEdgeRouterPolicyTooManyRequestsCode int = 429
 
-/*CreateServiceEdgeRouterPolicyTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+CreateServiceEdgeRouterPolicyTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response createServiceEdgeRouterPolicyTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *CreateServiceEdgeRouterPolicyTooManyRequests) WriteResponse(rw http.Res
 // CreateServiceEdgeRouterPolicyServiceUnavailableCode is the HTTP code returned for type CreateServiceEdgeRouterPolicyServiceUnavailable
 const CreateServiceEdgeRouterPolicyServiceUnavailableCode int = 503
 
-/*CreateServiceEdgeRouterPolicyServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+CreateServiceEdgeRouterPolicyServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response createServiceEdgeRouterPolicyServiceUnavailable
 */

@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // EnrollUpdbOKCode is the HTTP code returned for type EnrollUpdbOK
 const EnrollUpdbOKCode int = 200
 
-/*EnrollUpdbOK Base empty response
+/*
+EnrollUpdbOK Base empty response
 
 swagger:response enrollUpdbOK
 */
@@ -84,7 +85,8 @@ func (o *EnrollUpdbOK) WriteResponse(rw http.ResponseWriter, producer runtime.Pr
 // EnrollUpdbNotFoundCode is the HTTP code returned for type EnrollUpdbNotFound
 const EnrollUpdbNotFoundCode int = 404
 
-/*EnrollUpdbNotFound The requested resource does not exist
+/*
+EnrollUpdbNotFound The requested resource does not exist
 
 swagger:response enrollUpdbNotFound
 */
@@ -128,7 +130,8 @@ func (o *EnrollUpdbNotFound) WriteResponse(rw http.ResponseWriter, producer runt
 // EnrollUpdbTooManyRequestsCode is the HTTP code returned for type EnrollUpdbTooManyRequests
 const EnrollUpdbTooManyRequestsCode int = 429
 
-/*EnrollUpdbTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+EnrollUpdbTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response enrollUpdbTooManyRequests
 */
@@ -172,7 +175,8 @@ func (o *EnrollUpdbTooManyRequests) WriteResponse(rw http.ResponseWriter, produc
 // EnrollUpdbServiceUnavailableCode is the HTTP code returned for type EnrollUpdbServiceUnavailable
 const EnrollUpdbServiceUnavailableCode int = 503
 
-/*EnrollUpdbServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+EnrollUpdbServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response enrollUpdbServiceUnavailable
 */

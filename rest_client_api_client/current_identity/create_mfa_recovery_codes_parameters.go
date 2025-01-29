@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewCreateMfaRecoveryCodesParams creates a new CreateMfaRecoveryCodesParams object,
@@ -78,10 +78,12 @@ func NewCreateMfaRecoveryCodesParamsWithHTTPClient(client *http.Client) *CreateM
 	}
 }
 
-/* CreateMfaRecoveryCodesParams contains all the parameters to send to the API endpoint
-   for the create mfa recovery codes operation.
+/*
+CreateMfaRecoveryCodesParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create mfa recovery codes operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateMfaRecoveryCodesParams struct {
 

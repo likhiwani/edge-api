@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DeleteServicePolicyOKCode is the HTTP code returned for type DeleteServicePolicyOK
 const DeleteServicePolicyOKCode int = 200
 
-/*DeleteServicePolicyOK The delete request was successful and the resource has been removed
+/*
+DeleteServicePolicyOK The delete request was successful and the resource has been removed
 
 swagger:response deleteServicePolicyOK
 */
@@ -84,7 +85,8 @@ func (o *DeleteServicePolicyOK) WriteResponse(rw http.ResponseWriter, producer r
 // DeleteServicePolicyBadRequestCode is the HTTP code returned for type DeleteServicePolicyBadRequest
 const DeleteServicePolicyBadRequestCode int = 400
 
-/*DeleteServicePolicyBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+DeleteServicePolicyBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response deleteServicePolicyBadRequest
 */
@@ -128,7 +130,8 @@ func (o *DeleteServicePolicyBadRequest) WriteResponse(rw http.ResponseWriter, pr
 // DeleteServicePolicyUnauthorizedCode is the HTTP code returned for type DeleteServicePolicyUnauthorized
 const DeleteServicePolicyUnauthorizedCode int = 401
 
-/*DeleteServicePolicyUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+DeleteServicePolicyUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response deleteServicePolicyUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *DeleteServicePolicyUnauthorized) WriteResponse(rw http.ResponseWriter, 
 // DeleteServicePolicyNotFoundCode is the HTTP code returned for type DeleteServicePolicyNotFound
 const DeleteServicePolicyNotFoundCode int = 404
 
-/*DeleteServicePolicyNotFound The requested resource does not exist
+/*
+DeleteServicePolicyNotFound The requested resource does not exist
 
 swagger:response deleteServicePolicyNotFound
 */
@@ -216,7 +220,8 @@ func (o *DeleteServicePolicyNotFound) WriteResponse(rw http.ResponseWriter, prod
 // DeleteServicePolicyConflictCode is the HTTP code returned for type DeleteServicePolicyConflict
 const DeleteServicePolicyConflictCode int = 409
 
-/*DeleteServicePolicyConflict The resource requested to be removed/altered cannot be as it is referenced by another object.
+/*
+DeleteServicePolicyConflict The resource requested to be removed/altered cannot be as it is referenced by another object.
 
 swagger:response deleteServicePolicyConflict
 */
@@ -260,7 +265,8 @@ func (o *DeleteServicePolicyConflict) WriteResponse(rw http.ResponseWriter, prod
 // DeleteServicePolicyTooManyRequestsCode is the HTTP code returned for type DeleteServicePolicyTooManyRequests
 const DeleteServicePolicyTooManyRequestsCode int = 429
 
-/*DeleteServicePolicyTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+DeleteServicePolicyTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response deleteServicePolicyTooManyRequests
 */
@@ -304,7 +310,8 @@ func (o *DeleteServicePolicyTooManyRequests) WriteResponse(rw http.ResponseWrite
 // DeleteServicePolicyServiceUnavailableCode is the HTTP code returned for type DeleteServicePolicyServiceUnavailable
 const DeleteServicePolicyServiceUnavailableCode int = 503
 
-/*DeleteServicePolicyServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+DeleteServicePolicyServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response deleteServicePolicyServiceUnavailable
 */

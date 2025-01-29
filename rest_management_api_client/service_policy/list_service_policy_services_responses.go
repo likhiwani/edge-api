@@ -30,13 +30,14 @@ package service_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListServicePolicyServicesReader is a Reader for the ListServicePolicyServices structure.
@@ -78,7 +79,7 @@ func (o *ListServicePolicyServicesReader) ReadResponse(response runtime.ClientRe
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[GET /service-policies/{id}/services] listServicePolicyServices", response, response.Code())
 	}
 }
 
@@ -87,7 +88,8 @@ func NewListServicePolicyServicesOK() *ListServicePolicyServicesOK {
 	return &ListServicePolicyServicesOK{}
 }
 
-/* ListServicePolicyServicesOK describes a response with status code 200, with default header values.
+/*
+ListServicePolicyServicesOK describes a response with status code 200, with default header values.
 
 A list of services
 */
@@ -95,9 +97,46 @@ type ListServicePolicyServicesOK struct {
 	Payload *rest_model.ListServicesEnvelope
 }
 
-func (o *ListServicePolicyServicesOK) Error() string {
-	return fmt.Sprintf("[GET /service-policies/{id}/services][%d] listServicePolicyServicesOK  %+v", 200, o.Payload)
+// IsSuccess returns true when this list service policy services o k response has a 2xx status code
+func (o *ListServicePolicyServicesOK) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this list service policy services o k response has a 3xx status code
+func (o *ListServicePolicyServicesOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list service policy services o k response has a 4xx status code
+func (o *ListServicePolicyServicesOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this list service policy services o k response has a 5xx status code
+func (o *ListServicePolicyServicesOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list service policy services o k response a status code equal to that given
+func (o *ListServicePolicyServicesOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the list service policy services o k response
+func (o *ListServicePolicyServicesOK) Code() int {
+	return 200
+}
+
+func (o *ListServicePolicyServicesOK) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/services][%d] listServicePolicyServicesOK %s", 200, payload)
+}
+
+func (o *ListServicePolicyServicesOK) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/services][%d] listServicePolicyServicesOK %s", 200, payload)
+}
+
 func (o *ListServicePolicyServicesOK) GetPayload() *rest_model.ListServicesEnvelope {
 	return o.Payload
 }
@@ -119,7 +158,8 @@ func NewListServicePolicyServicesBadRequest() *ListServicePolicyServicesBadReque
 	return &ListServicePolicyServicesBadRequest{}
 }
 
-/* ListServicePolicyServicesBadRequest describes a response with status code 400, with default header values.
+/*
+ListServicePolicyServicesBadRequest describes a response with status code 400, with default header values.
 
 The requested resource does not exist
 */
@@ -127,9 +167,46 @@ type ListServicePolicyServicesBadRequest struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *ListServicePolicyServicesBadRequest) Error() string {
-	return fmt.Sprintf("[GET /service-policies/{id}/services][%d] listServicePolicyServicesBadRequest  %+v", 400, o.Payload)
+// IsSuccess returns true when this list service policy services bad request response has a 2xx status code
+func (o *ListServicePolicyServicesBadRequest) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this list service policy services bad request response has a 3xx status code
+func (o *ListServicePolicyServicesBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list service policy services bad request response has a 4xx status code
+func (o *ListServicePolicyServicesBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list service policy services bad request response has a 5xx status code
+func (o *ListServicePolicyServicesBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list service policy services bad request response a status code equal to that given
+func (o *ListServicePolicyServicesBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
+// Code gets the status code for the list service policy services bad request response
+func (o *ListServicePolicyServicesBadRequest) Code() int {
+	return 400
+}
+
+func (o *ListServicePolicyServicesBadRequest) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/services][%d] listServicePolicyServicesBadRequest %s", 400, payload)
+}
+
+func (o *ListServicePolicyServicesBadRequest) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/services][%d] listServicePolicyServicesBadRequest %s", 400, payload)
+}
+
 func (o *ListServicePolicyServicesBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -151,7 +228,8 @@ func NewListServicePolicyServicesUnauthorized() *ListServicePolicyServicesUnauth
 	return &ListServicePolicyServicesUnauthorized{}
 }
 
-/* ListServicePolicyServicesUnauthorized describes a response with status code 401, with default header values.
+/*
+ListServicePolicyServicesUnauthorized describes a response with status code 401, with default header values.
 
 The supplied session does not have the correct access rights to request this resource
 */
@@ -159,9 +237,46 @@ type ListServicePolicyServicesUnauthorized struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *ListServicePolicyServicesUnauthorized) Error() string {
-	return fmt.Sprintf("[GET /service-policies/{id}/services][%d] listServicePolicyServicesUnauthorized  %+v", 401, o.Payload)
+// IsSuccess returns true when this list service policy services unauthorized response has a 2xx status code
+func (o *ListServicePolicyServicesUnauthorized) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this list service policy services unauthorized response has a 3xx status code
+func (o *ListServicePolicyServicesUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list service policy services unauthorized response has a 4xx status code
+func (o *ListServicePolicyServicesUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list service policy services unauthorized response has a 5xx status code
+func (o *ListServicePolicyServicesUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list service policy services unauthorized response a status code equal to that given
+func (o *ListServicePolicyServicesUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
+// Code gets the status code for the list service policy services unauthorized response
+func (o *ListServicePolicyServicesUnauthorized) Code() int {
+	return 401
+}
+
+func (o *ListServicePolicyServicesUnauthorized) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/services][%d] listServicePolicyServicesUnauthorized %s", 401, payload)
+}
+
+func (o *ListServicePolicyServicesUnauthorized) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/services][%d] listServicePolicyServicesUnauthorized %s", 401, payload)
+}
+
 func (o *ListServicePolicyServicesUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -183,7 +298,8 @@ func NewListServicePolicyServicesTooManyRequests() *ListServicePolicyServicesToo
 	return &ListServicePolicyServicesTooManyRequests{}
 }
 
-/* ListServicePolicyServicesTooManyRequests describes a response with status code 429, with default header values.
+/*
+ListServicePolicyServicesTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -191,9 +307,46 @@ type ListServicePolicyServicesTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *ListServicePolicyServicesTooManyRequests) Error() string {
-	return fmt.Sprintf("[GET /service-policies/{id}/services][%d] listServicePolicyServicesTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this list service policy services too many requests response has a 2xx status code
+func (o *ListServicePolicyServicesTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this list service policy services too many requests response has a 3xx status code
+func (o *ListServicePolicyServicesTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list service policy services too many requests response has a 4xx status code
+func (o *ListServicePolicyServicesTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list service policy services too many requests response has a 5xx status code
+func (o *ListServicePolicyServicesTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list service policy services too many requests response a status code equal to that given
+func (o *ListServicePolicyServicesTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the list service policy services too many requests response
+func (o *ListServicePolicyServicesTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *ListServicePolicyServicesTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/services][%d] listServicePolicyServicesTooManyRequests %s", 429, payload)
+}
+
+func (o *ListServicePolicyServicesTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/services][%d] listServicePolicyServicesTooManyRequests %s", 429, payload)
+}
+
 func (o *ListServicePolicyServicesTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -215,7 +368,8 @@ func NewListServicePolicyServicesServiceUnavailable() *ListServicePolicyServices
 	return &ListServicePolicyServicesServiceUnavailable{}
 }
 
-/* ListServicePolicyServicesServiceUnavailable describes a response with status code 503, with default header values.
+/*
+ListServicePolicyServicesServiceUnavailable describes a response with status code 503, with default header values.
 
 The request could not be completed due to the server being busy or in a temporarily bad state
 */
@@ -223,9 +377,46 @@ type ListServicePolicyServicesServiceUnavailable struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *ListServicePolicyServicesServiceUnavailable) Error() string {
-	return fmt.Sprintf("[GET /service-policies/{id}/services][%d] listServicePolicyServicesServiceUnavailable  %+v", 503, o.Payload)
+// IsSuccess returns true when this list service policy services service unavailable response has a 2xx status code
+func (o *ListServicePolicyServicesServiceUnavailable) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this list service policy services service unavailable response has a 3xx status code
+func (o *ListServicePolicyServicesServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list service policy services service unavailable response has a 4xx status code
+func (o *ListServicePolicyServicesServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this list service policy services service unavailable response has a 5xx status code
+func (o *ListServicePolicyServicesServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this list service policy services service unavailable response a status code equal to that given
+func (o *ListServicePolicyServicesServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
+// Code gets the status code for the list service policy services service unavailable response
+func (o *ListServicePolicyServicesServiceUnavailable) Code() int {
+	return 503
+}
+
+func (o *ListServicePolicyServicesServiceUnavailable) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/services][%d] listServicePolicyServicesServiceUnavailable %s", 503, payload)
+}
+
+func (o *ListServicePolicyServicesServiceUnavailable) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/services][%d] listServicePolicyServicesServiceUnavailable %s", 503, payload)
+}
+
 func (o *ListServicePolicyServicesServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

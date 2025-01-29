@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewUpdateServiceParams creates a new UpdateServiceParams object,
@@ -78,10 +78,12 @@ func NewUpdateServiceParamsWithHTTPClient(client *http.Client) *UpdateServicePar
 	}
 }
 
-/* UpdateServiceParams contains all the parameters to send to the API endpoint
-   for the update service operation.
+/*
+UpdateServiceParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the update service operation.
+
+	Typically these are written to a http.Request.
 */
 type UpdateServiceParams struct {
 

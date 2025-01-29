@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // EnrollCaOKCode is the HTTP code returned for type EnrollCaOK
 const EnrollCaOKCode int = 200
 
-/*EnrollCaOK Base empty response
+/*
+EnrollCaOK Base empty response
 
 swagger:response enrollCaOK
 */
@@ -84,7 +85,8 @@ func (o *EnrollCaOK) WriteResponse(rw http.ResponseWriter, producer runtime.Prod
 // EnrollCaNotFoundCode is the HTTP code returned for type EnrollCaNotFound
 const EnrollCaNotFoundCode int = 404
 
-/*EnrollCaNotFound The requested resource does not exist
+/*
+EnrollCaNotFound The requested resource does not exist
 
 swagger:response enrollCaNotFound
 */
@@ -128,7 +130,8 @@ func (o *EnrollCaNotFound) WriteResponse(rw http.ResponseWriter, producer runtim
 // EnrollCaTooManyRequestsCode is the HTTP code returned for type EnrollCaTooManyRequests
 const EnrollCaTooManyRequestsCode int = 429
 
-/*EnrollCaTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+EnrollCaTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response enrollCaTooManyRequests
 */
@@ -172,7 +175,8 @@ func (o *EnrollCaTooManyRequests) WriteResponse(rw http.ResponseWriter, producer
 // EnrollCaServiceUnavailableCode is the HTTP code returned for type EnrollCaServiceUnavailable
 const EnrollCaServiceUnavailableCode int = 503
 
-/*EnrollCaServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+EnrollCaServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response enrollCaServiceUnavailable
 */

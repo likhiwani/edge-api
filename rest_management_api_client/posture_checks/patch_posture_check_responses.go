@@ -30,13 +30,14 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // PatchPostureCheckReader is a Reader for the PatchPostureCheck structure.
@@ -84,7 +85,7 @@ func (o *PatchPostureCheckReader) ReadResponse(response runtime.ClientResponse, 
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[PATCH /posture-checks/{id}] patchPostureCheck", response, response.Code())
 	}
 }
 
@@ -93,7 +94,8 @@ func NewPatchPostureCheckOK() *PatchPostureCheckOK {
 	return &PatchPostureCheckOK{}
 }
 
-/* PatchPostureCheckOK describes a response with status code 200, with default header values.
+/*
+PatchPostureCheckOK describes a response with status code 200, with default header values.
 
 The patch request was successful and the resource has been altered
 */
@@ -101,9 +103,46 @@ type PatchPostureCheckOK struct {
 	Payload *rest_model.Empty
 }
 
-func (o *PatchPostureCheckOK) Error() string {
-	return fmt.Sprintf("[PATCH /posture-checks/{id}][%d] patchPostureCheckOK  %+v", 200, o.Payload)
+// IsSuccess returns true when this patch posture check o k response has a 2xx status code
+func (o *PatchPostureCheckOK) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this patch posture check o k response has a 3xx status code
+func (o *PatchPostureCheckOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this patch posture check o k response has a 4xx status code
+func (o *PatchPostureCheckOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this patch posture check o k response has a 5xx status code
+func (o *PatchPostureCheckOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this patch posture check o k response a status code equal to that given
+func (o *PatchPostureCheckOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the patch posture check o k response
+func (o *PatchPostureCheckOK) Code() int {
+	return 200
+}
+
+func (o *PatchPostureCheckOK) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /posture-checks/{id}][%d] patchPostureCheckOK %s", 200, payload)
+}
+
+func (o *PatchPostureCheckOK) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /posture-checks/{id}][%d] patchPostureCheckOK %s", 200, payload)
+}
+
 func (o *PatchPostureCheckOK) GetPayload() *rest_model.Empty {
 	return o.Payload
 }
@@ -125,7 +164,8 @@ func NewPatchPostureCheckBadRequest() *PatchPostureCheckBadRequest {
 	return &PatchPostureCheckBadRequest{}
 }
 
-/* PatchPostureCheckBadRequest describes a response with status code 400, with default header values.
+/*
+PatchPostureCheckBadRequest describes a response with status code 400, with default header values.
 
 The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 */
@@ -133,9 +173,46 @@ type PatchPostureCheckBadRequest struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *PatchPostureCheckBadRequest) Error() string {
-	return fmt.Sprintf("[PATCH /posture-checks/{id}][%d] patchPostureCheckBadRequest  %+v", 400, o.Payload)
+// IsSuccess returns true when this patch posture check bad request response has a 2xx status code
+func (o *PatchPostureCheckBadRequest) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this patch posture check bad request response has a 3xx status code
+func (o *PatchPostureCheckBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this patch posture check bad request response has a 4xx status code
+func (o *PatchPostureCheckBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this patch posture check bad request response has a 5xx status code
+func (o *PatchPostureCheckBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this patch posture check bad request response a status code equal to that given
+func (o *PatchPostureCheckBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
+// Code gets the status code for the patch posture check bad request response
+func (o *PatchPostureCheckBadRequest) Code() int {
+	return 400
+}
+
+func (o *PatchPostureCheckBadRequest) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /posture-checks/{id}][%d] patchPostureCheckBadRequest %s", 400, payload)
+}
+
+func (o *PatchPostureCheckBadRequest) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /posture-checks/{id}][%d] patchPostureCheckBadRequest %s", 400, payload)
+}
+
 func (o *PatchPostureCheckBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -157,7 +234,8 @@ func NewPatchPostureCheckUnauthorized() *PatchPostureCheckUnauthorized {
 	return &PatchPostureCheckUnauthorized{}
 }
 
-/* PatchPostureCheckUnauthorized describes a response with status code 401, with default header values.
+/*
+PatchPostureCheckUnauthorized describes a response with status code 401, with default header values.
 
 The supplied session does not have the correct access rights to request this resource
 */
@@ -165,9 +243,46 @@ type PatchPostureCheckUnauthorized struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *PatchPostureCheckUnauthorized) Error() string {
-	return fmt.Sprintf("[PATCH /posture-checks/{id}][%d] patchPostureCheckUnauthorized  %+v", 401, o.Payload)
+// IsSuccess returns true when this patch posture check unauthorized response has a 2xx status code
+func (o *PatchPostureCheckUnauthorized) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this patch posture check unauthorized response has a 3xx status code
+func (o *PatchPostureCheckUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this patch posture check unauthorized response has a 4xx status code
+func (o *PatchPostureCheckUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this patch posture check unauthorized response has a 5xx status code
+func (o *PatchPostureCheckUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this patch posture check unauthorized response a status code equal to that given
+func (o *PatchPostureCheckUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
+// Code gets the status code for the patch posture check unauthorized response
+func (o *PatchPostureCheckUnauthorized) Code() int {
+	return 401
+}
+
+func (o *PatchPostureCheckUnauthorized) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /posture-checks/{id}][%d] patchPostureCheckUnauthorized %s", 401, payload)
+}
+
+func (o *PatchPostureCheckUnauthorized) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /posture-checks/{id}][%d] patchPostureCheckUnauthorized %s", 401, payload)
+}
+
 func (o *PatchPostureCheckUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -189,7 +304,8 @@ func NewPatchPostureCheckNotFound() *PatchPostureCheckNotFound {
 	return &PatchPostureCheckNotFound{}
 }
 
-/* PatchPostureCheckNotFound describes a response with status code 404, with default header values.
+/*
+PatchPostureCheckNotFound describes a response with status code 404, with default header values.
 
 The requested resource does not exist
 */
@@ -197,9 +313,46 @@ type PatchPostureCheckNotFound struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *PatchPostureCheckNotFound) Error() string {
-	return fmt.Sprintf("[PATCH /posture-checks/{id}][%d] patchPostureCheckNotFound  %+v", 404, o.Payload)
+// IsSuccess returns true when this patch posture check not found response has a 2xx status code
+func (o *PatchPostureCheckNotFound) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this patch posture check not found response has a 3xx status code
+func (o *PatchPostureCheckNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this patch posture check not found response has a 4xx status code
+func (o *PatchPostureCheckNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this patch posture check not found response has a 5xx status code
+func (o *PatchPostureCheckNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this patch posture check not found response a status code equal to that given
+func (o *PatchPostureCheckNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
+// Code gets the status code for the patch posture check not found response
+func (o *PatchPostureCheckNotFound) Code() int {
+	return 404
+}
+
+func (o *PatchPostureCheckNotFound) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /posture-checks/{id}][%d] patchPostureCheckNotFound %s", 404, payload)
+}
+
+func (o *PatchPostureCheckNotFound) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /posture-checks/{id}][%d] patchPostureCheckNotFound %s", 404, payload)
+}
+
 func (o *PatchPostureCheckNotFound) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -221,7 +374,8 @@ func NewPatchPostureCheckTooManyRequests() *PatchPostureCheckTooManyRequests {
 	return &PatchPostureCheckTooManyRequests{}
 }
 
-/* PatchPostureCheckTooManyRequests describes a response with status code 429, with default header values.
+/*
+PatchPostureCheckTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -229,9 +383,46 @@ type PatchPostureCheckTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *PatchPostureCheckTooManyRequests) Error() string {
-	return fmt.Sprintf("[PATCH /posture-checks/{id}][%d] patchPostureCheckTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this patch posture check too many requests response has a 2xx status code
+func (o *PatchPostureCheckTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this patch posture check too many requests response has a 3xx status code
+func (o *PatchPostureCheckTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this patch posture check too many requests response has a 4xx status code
+func (o *PatchPostureCheckTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this patch posture check too many requests response has a 5xx status code
+func (o *PatchPostureCheckTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this patch posture check too many requests response a status code equal to that given
+func (o *PatchPostureCheckTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the patch posture check too many requests response
+func (o *PatchPostureCheckTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *PatchPostureCheckTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /posture-checks/{id}][%d] patchPostureCheckTooManyRequests %s", 429, payload)
+}
+
+func (o *PatchPostureCheckTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /posture-checks/{id}][%d] patchPostureCheckTooManyRequests %s", 429, payload)
+}
+
 func (o *PatchPostureCheckTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -253,7 +444,8 @@ func NewPatchPostureCheckServiceUnavailable() *PatchPostureCheckServiceUnavailab
 	return &PatchPostureCheckServiceUnavailable{}
 }
 
-/* PatchPostureCheckServiceUnavailable describes a response with status code 503, with default header values.
+/*
+PatchPostureCheckServiceUnavailable describes a response with status code 503, with default header values.
 
 The request could not be completed due to the server being busy or in a temporarily bad state
 */
@@ -261,9 +453,46 @@ type PatchPostureCheckServiceUnavailable struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *PatchPostureCheckServiceUnavailable) Error() string {
-	return fmt.Sprintf("[PATCH /posture-checks/{id}][%d] patchPostureCheckServiceUnavailable  %+v", 503, o.Payload)
+// IsSuccess returns true when this patch posture check service unavailable response has a 2xx status code
+func (o *PatchPostureCheckServiceUnavailable) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this patch posture check service unavailable response has a 3xx status code
+func (o *PatchPostureCheckServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this patch posture check service unavailable response has a 4xx status code
+func (o *PatchPostureCheckServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this patch posture check service unavailable response has a 5xx status code
+func (o *PatchPostureCheckServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this patch posture check service unavailable response a status code equal to that given
+func (o *PatchPostureCheckServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
+// Code gets the status code for the patch posture check service unavailable response
+func (o *PatchPostureCheckServiceUnavailable) Code() int {
+	return 503
+}
+
+func (o *PatchPostureCheckServiceUnavailable) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /posture-checks/{id}][%d] patchPostureCheckServiceUnavailable %s", 503, payload)
+}
+
+func (o *PatchPostureCheckServiceUnavailable) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[PATCH /posture-checks/{id}][%d] patchPostureCheckServiceUnavailable %s", 503, payload)
+}
+
 func (o *PatchPostureCheckServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

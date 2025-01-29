@@ -30,13 +30,14 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // EnrollOttReader is a Reader for the EnrollOtt structure.
@@ -72,7 +73,7 @@ func (o *EnrollOttReader) ReadResponse(response runtime.ClientResponse, consumer
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[POST /enroll/ott] enrollOtt", response, response.Code())
 	}
 }
 
@@ -81,7 +82,8 @@ func NewEnrollOttOK() *EnrollOttOK {
 	return &EnrollOttOK{}
 }
 
-/* EnrollOttOK describes a response with status code 200, with default header values.
+/*
+EnrollOttOK describes a response with status code 200, with default header values.
 
 A response containing and identities client certificate chains
 */
@@ -89,9 +91,46 @@ type EnrollOttOK struct {
 	Payload *rest_model.EnrollmentCertsEnvelope
 }
 
-func (o *EnrollOttOK) Error() string {
-	return fmt.Sprintf("[POST /enroll/ott][%d] enrollOttOK  %+v", 200, o.Payload)
+// IsSuccess returns true when this enroll ott o k response has a 2xx status code
+func (o *EnrollOttOK) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this enroll ott o k response has a 3xx status code
+func (o *EnrollOttOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this enroll ott o k response has a 4xx status code
+func (o *EnrollOttOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this enroll ott o k response has a 5xx status code
+func (o *EnrollOttOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this enroll ott o k response a status code equal to that given
+func (o *EnrollOttOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the enroll ott o k response
+func (o *EnrollOttOK) Code() int {
+	return 200
+}
+
+func (o *EnrollOttOK) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /enroll/ott][%d] enrollOttOK %s", 200, payload)
+}
+
+func (o *EnrollOttOK) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /enroll/ott][%d] enrollOttOK %s", 200, payload)
+}
+
 func (o *EnrollOttOK) GetPayload() *rest_model.EnrollmentCertsEnvelope {
 	return o.Payload
 }
@@ -113,7 +152,8 @@ func NewEnrollOttNotFound() *EnrollOttNotFound {
 	return &EnrollOttNotFound{}
 }
 
-/* EnrollOttNotFound describes a response with status code 404, with default header values.
+/*
+EnrollOttNotFound describes a response with status code 404, with default header values.
 
 The requested resource does not exist
 */
@@ -121,9 +161,46 @@ type EnrollOttNotFound struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *EnrollOttNotFound) Error() string {
-	return fmt.Sprintf("[POST /enroll/ott][%d] enrollOttNotFound  %+v", 404, o.Payload)
+// IsSuccess returns true when this enroll ott not found response has a 2xx status code
+func (o *EnrollOttNotFound) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this enroll ott not found response has a 3xx status code
+func (o *EnrollOttNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this enroll ott not found response has a 4xx status code
+func (o *EnrollOttNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this enroll ott not found response has a 5xx status code
+func (o *EnrollOttNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this enroll ott not found response a status code equal to that given
+func (o *EnrollOttNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
+// Code gets the status code for the enroll ott not found response
+func (o *EnrollOttNotFound) Code() int {
+	return 404
+}
+
+func (o *EnrollOttNotFound) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /enroll/ott][%d] enrollOttNotFound %s", 404, payload)
+}
+
+func (o *EnrollOttNotFound) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /enroll/ott][%d] enrollOttNotFound %s", 404, payload)
+}
+
 func (o *EnrollOttNotFound) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -145,7 +222,8 @@ func NewEnrollOttTooManyRequests() *EnrollOttTooManyRequests {
 	return &EnrollOttTooManyRequests{}
 }
 
-/* EnrollOttTooManyRequests describes a response with status code 429, with default header values.
+/*
+EnrollOttTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -153,9 +231,46 @@ type EnrollOttTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *EnrollOttTooManyRequests) Error() string {
-	return fmt.Sprintf("[POST /enroll/ott][%d] enrollOttTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this enroll ott too many requests response has a 2xx status code
+func (o *EnrollOttTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this enroll ott too many requests response has a 3xx status code
+func (o *EnrollOttTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this enroll ott too many requests response has a 4xx status code
+func (o *EnrollOttTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this enroll ott too many requests response has a 5xx status code
+func (o *EnrollOttTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this enroll ott too many requests response a status code equal to that given
+func (o *EnrollOttTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the enroll ott too many requests response
+func (o *EnrollOttTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *EnrollOttTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /enroll/ott][%d] enrollOttTooManyRequests %s", 429, payload)
+}
+
+func (o *EnrollOttTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /enroll/ott][%d] enrollOttTooManyRequests %s", 429, payload)
+}
+
 func (o *EnrollOttTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -177,7 +292,8 @@ func NewEnrollOttServiceUnavailable() *EnrollOttServiceUnavailable {
 	return &EnrollOttServiceUnavailable{}
 }
 
-/* EnrollOttServiceUnavailable describes a response with status code 503, with default header values.
+/*
+EnrollOttServiceUnavailable describes a response with status code 503, with default header values.
 
 The request could not be completed due to the server being busy or in a temporarily bad state
 */
@@ -185,9 +301,46 @@ type EnrollOttServiceUnavailable struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *EnrollOttServiceUnavailable) Error() string {
-	return fmt.Sprintf("[POST /enroll/ott][%d] enrollOttServiceUnavailable  %+v", 503, o.Payload)
+// IsSuccess returns true when this enroll ott service unavailable response has a 2xx status code
+func (o *EnrollOttServiceUnavailable) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this enroll ott service unavailable response has a 3xx status code
+func (o *EnrollOttServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this enroll ott service unavailable response has a 4xx status code
+func (o *EnrollOttServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this enroll ott service unavailable response has a 5xx status code
+func (o *EnrollOttServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this enroll ott service unavailable response a status code equal to that given
+func (o *EnrollOttServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
+// Code gets the status code for the enroll ott service unavailable response
+func (o *EnrollOttServiceUnavailable) Code() int {
+	return 503
+}
+
+func (o *EnrollOttServiceUnavailable) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /enroll/ott][%d] enrollOttServiceUnavailable %s", 503, payload)
+}
+
+func (o *EnrollOttServiceUnavailable) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /enroll/ott][%d] enrollOttServiceUnavailable %s", 503, payload)
+}
+
 func (o *EnrollOttServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListAuthenticatorsOKCode is the HTTP code returned for type ListAuthenticatorsOK
 const ListAuthenticatorsOKCode int = 200
 
-/*ListAuthenticatorsOK A list of authenticators
+/*
+ListAuthenticatorsOK A list of authenticators
 
 swagger:response listAuthenticatorsOK
 */
@@ -84,7 +85,8 @@ func (o *ListAuthenticatorsOK) WriteResponse(rw http.ResponseWriter, producer ru
 // ListAuthenticatorsBadRequestCode is the HTTP code returned for type ListAuthenticatorsBadRequest
 const ListAuthenticatorsBadRequestCode int = 400
 
-/*ListAuthenticatorsBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+ListAuthenticatorsBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response listAuthenticatorsBadRequest
 */
@@ -128,7 +130,8 @@ func (o *ListAuthenticatorsBadRequest) WriteResponse(rw http.ResponseWriter, pro
 // ListAuthenticatorsUnauthorizedCode is the HTTP code returned for type ListAuthenticatorsUnauthorized
 const ListAuthenticatorsUnauthorizedCode int = 401
 
-/*ListAuthenticatorsUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+ListAuthenticatorsUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response listAuthenticatorsUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *ListAuthenticatorsUnauthorized) WriteResponse(rw http.ResponseWriter, p
 // ListAuthenticatorsTooManyRequestsCode is the HTTP code returned for type ListAuthenticatorsTooManyRequests
 const ListAuthenticatorsTooManyRequestsCode int = 429
 
-/*ListAuthenticatorsTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+ListAuthenticatorsTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response listAuthenticatorsTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *ListAuthenticatorsTooManyRequests) WriteResponse(rw http.ResponseWriter
 // ListAuthenticatorsServiceUnavailableCode is the HTTP code returned for type ListAuthenticatorsServiceUnavailable
 const ListAuthenticatorsServiceUnavailableCode int = 503
 
-/*ListAuthenticatorsServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+ListAuthenticatorsServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response listAuthenticatorsServiceUnavailable
 */

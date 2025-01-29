@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // CreateEdgeRouterCreatedCode is the HTTP code returned for type CreateEdgeRouterCreated
 const CreateEdgeRouterCreatedCode int = 201
 
-/*CreateEdgeRouterCreated The create request was successful and the resource has been added at the following location
+/*
+CreateEdgeRouterCreated The create request was successful and the resource has been added at the following location
 
 swagger:response createEdgeRouterCreated
 */
@@ -84,7 +85,8 @@ func (o *CreateEdgeRouterCreated) WriteResponse(rw http.ResponseWriter, producer
 // CreateEdgeRouterBadRequestCode is the HTTP code returned for type CreateEdgeRouterBadRequest
 const CreateEdgeRouterBadRequestCode int = 400
 
-/*CreateEdgeRouterBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+CreateEdgeRouterBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response createEdgeRouterBadRequest
 */
@@ -128,7 +130,8 @@ func (o *CreateEdgeRouterBadRequest) WriteResponse(rw http.ResponseWriter, produ
 // CreateEdgeRouterUnauthorizedCode is the HTTP code returned for type CreateEdgeRouterUnauthorized
 const CreateEdgeRouterUnauthorizedCode int = 401
 
-/*CreateEdgeRouterUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+CreateEdgeRouterUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response createEdgeRouterUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *CreateEdgeRouterUnauthorized) WriteResponse(rw http.ResponseWriter, pro
 // CreateEdgeRouterTooManyRequestsCode is the HTTP code returned for type CreateEdgeRouterTooManyRequests
 const CreateEdgeRouterTooManyRequestsCode int = 429
 
-/*CreateEdgeRouterTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+CreateEdgeRouterTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response createEdgeRouterTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *CreateEdgeRouterTooManyRequests) WriteResponse(rw http.ResponseWriter, 
 // CreateEdgeRouterServiceUnavailableCode is the HTTP code returned for type CreateEdgeRouterServiceUnavailable
 const CreateEdgeRouterServiceUnavailableCode int = 503
 
-/*CreateEdgeRouterServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+CreateEdgeRouterServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response createEdgeRouterServiceUnavailable
 */

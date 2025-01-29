@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // UpdateTransitRouterOKCode is the HTTP code returned for type UpdateTransitRouterOK
 const UpdateTransitRouterOKCode int = 200
 
-/*UpdateTransitRouterOK The update request was successful and the resource has been altered
+/*
+UpdateTransitRouterOK The update request was successful and the resource has been altered
 
 swagger:response updateTransitRouterOK
 */
@@ -84,7 +85,8 @@ func (o *UpdateTransitRouterOK) WriteResponse(rw http.ResponseWriter, producer r
 // UpdateTransitRouterBadRequestCode is the HTTP code returned for type UpdateTransitRouterBadRequest
 const UpdateTransitRouterBadRequestCode int = 400
 
-/*UpdateTransitRouterBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+UpdateTransitRouterBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response updateTransitRouterBadRequest
 */
@@ -128,7 +130,8 @@ func (o *UpdateTransitRouterBadRequest) WriteResponse(rw http.ResponseWriter, pr
 // UpdateTransitRouterUnauthorizedCode is the HTTP code returned for type UpdateTransitRouterUnauthorized
 const UpdateTransitRouterUnauthorizedCode int = 401
 
-/*UpdateTransitRouterUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+UpdateTransitRouterUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response updateTransitRouterUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *UpdateTransitRouterUnauthorized) WriteResponse(rw http.ResponseWriter, 
 // UpdateTransitRouterNotFoundCode is the HTTP code returned for type UpdateTransitRouterNotFound
 const UpdateTransitRouterNotFoundCode int = 404
 
-/*UpdateTransitRouterNotFound The requested resource does not exist
+/*
+UpdateTransitRouterNotFound The requested resource does not exist
 
 swagger:response updateTransitRouterNotFound
 */
@@ -216,7 +220,8 @@ func (o *UpdateTransitRouterNotFound) WriteResponse(rw http.ResponseWriter, prod
 // UpdateTransitRouterTooManyRequestsCode is the HTTP code returned for type UpdateTransitRouterTooManyRequests
 const UpdateTransitRouterTooManyRequestsCode int = 429
 
-/*UpdateTransitRouterTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+UpdateTransitRouterTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response updateTransitRouterTooManyRequests
 */
@@ -260,7 +265,8 @@ func (o *UpdateTransitRouterTooManyRequests) WriteResponse(rw http.ResponseWrite
 // UpdateTransitRouterServiceUnavailableCode is the HTTP code returned for type UpdateTransitRouterServiceUnavailable
 const UpdateTransitRouterServiceUnavailableCode int = 503
 
-/*UpdateTransitRouterServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+UpdateTransitRouterServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response updateTransitRouterServiceUnavailable
 */

@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListSpecsOKCode is the HTTP code returned for type ListSpecsOK
 const ListSpecsOKCode int = 200
 
-/*ListSpecsOK A list of specifications
+/*
+ListSpecsOK A list of specifications
 
 swagger:response listSpecsOK
 */

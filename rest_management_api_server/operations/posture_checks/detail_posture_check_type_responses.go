@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DetailPostureCheckTypeOKCode is the HTTP code returned for type DetailPostureCheckTypeOK
 const DetailPostureCheckTypeOKCode int = 200
 
-/*DetailPostureCheckTypeOK Retrieves a singular posture check type by id
+/*
+DetailPostureCheckTypeOK Retrieves a singular posture check type by id
 
 swagger:response detailPostureCheckTypeOK
 */
@@ -84,7 +85,8 @@ func (o *DetailPostureCheckTypeOK) WriteResponse(rw http.ResponseWriter, produce
 // DetailPostureCheckTypeUnauthorizedCode is the HTTP code returned for type DetailPostureCheckTypeUnauthorized
 const DetailPostureCheckTypeUnauthorizedCode int = 401
 
-/*DetailPostureCheckTypeUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+DetailPostureCheckTypeUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response detailPostureCheckTypeUnauthorized
 */
@@ -128,7 +130,8 @@ func (o *DetailPostureCheckTypeUnauthorized) WriteResponse(rw http.ResponseWrite
 // DetailPostureCheckTypeNotFoundCode is the HTTP code returned for type DetailPostureCheckTypeNotFound
 const DetailPostureCheckTypeNotFoundCode int = 404
 
-/*DetailPostureCheckTypeNotFound The requested resource does not exist
+/*
+DetailPostureCheckTypeNotFound The requested resource does not exist
 
 swagger:response detailPostureCheckTypeNotFound
 */
@@ -172,7 +175,8 @@ func (o *DetailPostureCheckTypeNotFound) WriteResponse(rw http.ResponseWriter, p
 // DetailPostureCheckTypeTooManyRequestsCode is the HTTP code returned for type DetailPostureCheckTypeTooManyRequests
 const DetailPostureCheckTypeTooManyRequestsCode int = 429
 
-/*DetailPostureCheckTypeTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+DetailPostureCheckTypeTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response detailPostureCheckTypeTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *DetailPostureCheckTypeTooManyRequests) WriteResponse(rw http.ResponseWr
 // DetailPostureCheckTypeServiceUnavailableCode is the HTTP code returned for type DetailPostureCheckTypeServiceUnavailable
 const DetailPostureCheckTypeServiceUnavailableCode int = 503
 
-/*DetailPostureCheckTypeServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+DetailPostureCheckTypeServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response detailPostureCheckTypeServiceUnavailable
 */

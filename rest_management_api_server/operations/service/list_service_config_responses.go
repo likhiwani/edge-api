@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListServiceConfigOKCode is the HTTP code returned for type ListServiceConfigOK
 const ListServiceConfigOKCode int = 200
 
-/*ListServiceConfigOK A list of configs
+/*
+ListServiceConfigOK A list of configs
 
 swagger:response listServiceConfigOK
 */
@@ -84,7 +85,8 @@ func (o *ListServiceConfigOK) WriteResponse(rw http.ResponseWriter, producer run
 // ListServiceConfigBadRequestCode is the HTTP code returned for type ListServiceConfigBadRequest
 const ListServiceConfigBadRequestCode int = 400
 
-/*ListServiceConfigBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+ListServiceConfigBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response listServiceConfigBadRequest
 */
@@ -128,7 +130,8 @@ func (o *ListServiceConfigBadRequest) WriteResponse(rw http.ResponseWriter, prod
 // ListServiceConfigUnauthorizedCode is the HTTP code returned for type ListServiceConfigUnauthorized
 const ListServiceConfigUnauthorizedCode int = 401
 
-/*ListServiceConfigUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+ListServiceConfigUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response listServiceConfigUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *ListServiceConfigUnauthorized) WriteResponse(rw http.ResponseWriter, pr
 // ListServiceConfigTooManyRequestsCode is the HTTP code returned for type ListServiceConfigTooManyRequests
 const ListServiceConfigTooManyRequestsCode int = 429
 
-/*ListServiceConfigTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+ListServiceConfigTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response listServiceConfigTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *ListServiceConfigTooManyRequests) WriteResponse(rw http.ResponseWriter,
 // ListServiceConfigServiceUnavailableCode is the HTTP code returned for type ListServiceConfigServiceUnavailable
 const ListServiceConfigServiceUnavailableCode int = 503
 
-/*ListServiceConfigServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+ListServiceConfigServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response listServiceConfigServiceUnavailable
 */

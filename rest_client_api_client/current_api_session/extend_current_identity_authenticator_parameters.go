@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewExtendCurrentIdentityAuthenticatorParams creates a new ExtendCurrentIdentityAuthenticatorParams object,
@@ -78,10 +78,12 @@ func NewExtendCurrentIdentityAuthenticatorParamsWithHTTPClient(client *http.Clie
 	}
 }
 
-/* ExtendCurrentIdentityAuthenticatorParams contains all the parameters to send to the API endpoint
-   for the extend current identity authenticator operation.
+/*
+ExtendCurrentIdentityAuthenticatorParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extend current identity authenticator operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtendCurrentIdentityAuthenticatorParams struct {
 

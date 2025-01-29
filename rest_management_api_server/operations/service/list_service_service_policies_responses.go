@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListServiceServicePoliciesOKCode is the HTTP code returned for type ListServiceServicePoliciesOK
 const ListServiceServicePoliciesOKCode int = 200
 
-/*ListServiceServicePoliciesOK A list of service policies
+/*
+ListServiceServicePoliciesOK A list of service policies
 
 swagger:response listServiceServicePoliciesOK
 */
@@ -84,7 +85,8 @@ func (o *ListServiceServicePoliciesOK) WriteResponse(rw http.ResponseWriter, pro
 // ListServiceServicePoliciesBadRequestCode is the HTTP code returned for type ListServiceServicePoliciesBadRequest
 const ListServiceServicePoliciesBadRequestCode int = 400
 
-/*ListServiceServicePoliciesBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+ListServiceServicePoliciesBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response listServiceServicePoliciesBadRequest
 */
@@ -128,7 +130,8 @@ func (o *ListServiceServicePoliciesBadRequest) WriteResponse(rw http.ResponseWri
 // ListServiceServicePoliciesUnauthorizedCode is the HTTP code returned for type ListServiceServicePoliciesUnauthorized
 const ListServiceServicePoliciesUnauthorizedCode int = 401
 
-/*ListServiceServicePoliciesUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+ListServiceServicePoliciesUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response listServiceServicePoliciesUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *ListServiceServicePoliciesUnauthorized) WriteResponse(rw http.ResponseW
 // ListServiceServicePoliciesTooManyRequestsCode is the HTTP code returned for type ListServiceServicePoliciesTooManyRequests
 const ListServiceServicePoliciesTooManyRequestsCode int = 429
 
-/*ListServiceServicePoliciesTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+ListServiceServicePoliciesTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response listServiceServicePoliciesTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *ListServiceServicePoliciesTooManyRequests) WriteResponse(rw http.Respon
 // ListServiceServicePoliciesServiceUnavailableCode is the HTTP code returned for type ListServiceServicePoliciesServiceUnavailable
 const ListServiceServicePoliciesServiceUnavailableCode int = 503
 
-/*ListServiceServicePoliciesServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+ListServiceServicePoliciesServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response listServiceServicePoliciesServiceUnavailable
 */

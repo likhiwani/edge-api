@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // PatchAuthenticatorOKCode is the HTTP code returned for type PatchAuthenticatorOK
 const PatchAuthenticatorOKCode int = 200
 
-/*PatchAuthenticatorOK The patch request was successful and the resource has been altered
+/*
+PatchAuthenticatorOK The patch request was successful and the resource has been altered
 
 swagger:response patchAuthenticatorOK
 */
@@ -84,7 +85,8 @@ func (o *PatchAuthenticatorOK) WriteResponse(rw http.ResponseWriter, producer ru
 // PatchAuthenticatorBadRequestCode is the HTTP code returned for type PatchAuthenticatorBadRequest
 const PatchAuthenticatorBadRequestCode int = 400
 
-/*PatchAuthenticatorBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+PatchAuthenticatorBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response patchAuthenticatorBadRequest
 */
@@ -128,7 +130,8 @@ func (o *PatchAuthenticatorBadRequest) WriteResponse(rw http.ResponseWriter, pro
 // PatchAuthenticatorUnauthorizedCode is the HTTP code returned for type PatchAuthenticatorUnauthorized
 const PatchAuthenticatorUnauthorizedCode int = 401
 
-/*PatchAuthenticatorUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+PatchAuthenticatorUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response patchAuthenticatorUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *PatchAuthenticatorUnauthorized) WriteResponse(rw http.ResponseWriter, p
 // PatchAuthenticatorNotFoundCode is the HTTP code returned for type PatchAuthenticatorNotFound
 const PatchAuthenticatorNotFoundCode int = 404
 
-/*PatchAuthenticatorNotFound The requested resource does not exist
+/*
+PatchAuthenticatorNotFound The requested resource does not exist
 
 swagger:response patchAuthenticatorNotFound
 */
@@ -216,7 +220,8 @@ func (o *PatchAuthenticatorNotFound) WriteResponse(rw http.ResponseWriter, produ
 // PatchAuthenticatorTooManyRequestsCode is the HTTP code returned for type PatchAuthenticatorTooManyRequests
 const PatchAuthenticatorTooManyRequestsCode int = 429
 
-/*PatchAuthenticatorTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+PatchAuthenticatorTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response patchAuthenticatorTooManyRequests
 */
@@ -260,7 +265,8 @@ func (o *PatchAuthenticatorTooManyRequests) WriteResponse(rw http.ResponseWriter
 // PatchAuthenticatorServiceUnavailableCode is the HTTP code returned for type PatchAuthenticatorServiceUnavailable
 const PatchAuthenticatorServiceUnavailableCode int = 503
 
-/*PatchAuthenticatorServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+PatchAuthenticatorServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response patchAuthenticatorServiceUnavailable
 */

@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewCreateCaParams creates a new CreateCaParams object,
@@ -78,10 +78,12 @@ func NewCreateCaParamsWithHTTPClient(client *http.Client) *CreateCaParams {
 	}
 }
 
-/* CreateCaParams contains all the parameters to send to the API endpoint
-   for the create ca operation.
+/*
+CreateCaParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create ca operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateCaParams struct {
 

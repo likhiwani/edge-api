@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DetailSpecOKCode is the HTTP code returned for type DetailSpecOK
 const DetailSpecOKCode int = 200
 
-/*DetailSpecOK A single specification
+/*
+DetailSpecOK A single specification
 
 swagger:response detailSpecOK
 */

@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListIdentitysEdgeRouterPoliciesOKCode is the HTTP code returned for type ListIdentitysEdgeRouterPoliciesOK
 const ListIdentitysEdgeRouterPoliciesOKCode int = 200
 
-/*ListIdentitysEdgeRouterPoliciesOK A list of edge router policies
+/*
+ListIdentitysEdgeRouterPoliciesOK A list of edge router policies
 
 swagger:response listIdentitysEdgeRouterPoliciesOK
 */
@@ -84,7 +85,8 @@ func (o *ListIdentitysEdgeRouterPoliciesOK) WriteResponse(rw http.ResponseWriter
 // ListIdentitysEdgeRouterPoliciesUnauthorizedCode is the HTTP code returned for type ListIdentitysEdgeRouterPoliciesUnauthorized
 const ListIdentitysEdgeRouterPoliciesUnauthorizedCode int = 401
 
-/*ListIdentitysEdgeRouterPoliciesUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+ListIdentitysEdgeRouterPoliciesUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response listIdentitysEdgeRouterPoliciesUnauthorized
 */
@@ -128,7 +130,8 @@ func (o *ListIdentitysEdgeRouterPoliciesUnauthorized) WriteResponse(rw http.Resp
 // ListIdentitysEdgeRouterPoliciesNotFoundCode is the HTTP code returned for type ListIdentitysEdgeRouterPoliciesNotFound
 const ListIdentitysEdgeRouterPoliciesNotFoundCode int = 404
 
-/*ListIdentitysEdgeRouterPoliciesNotFound The requested resource does not exist
+/*
+ListIdentitysEdgeRouterPoliciesNotFound The requested resource does not exist
 
 swagger:response listIdentitysEdgeRouterPoliciesNotFound
 */
@@ -172,7 +175,8 @@ func (o *ListIdentitysEdgeRouterPoliciesNotFound) WriteResponse(rw http.Response
 // ListIdentitysEdgeRouterPoliciesTooManyRequestsCode is the HTTP code returned for type ListIdentitysEdgeRouterPoliciesTooManyRequests
 const ListIdentitysEdgeRouterPoliciesTooManyRequestsCode int = 429
 
-/*ListIdentitysEdgeRouterPoliciesTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+ListIdentitysEdgeRouterPoliciesTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response listIdentitysEdgeRouterPoliciesTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *ListIdentitysEdgeRouterPoliciesTooManyRequests) WriteResponse(rw http.R
 // ListIdentitysEdgeRouterPoliciesServiceUnavailableCode is the HTTP code returned for type ListIdentitysEdgeRouterPoliciesServiceUnavailable
 const ListIdentitysEdgeRouterPoliciesServiceUnavailableCode int = 503
 
-/*ListIdentitysEdgeRouterPoliciesServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+ListIdentitysEdgeRouterPoliciesServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response listIdentitysEdgeRouterPoliciesServiceUnavailable
 */

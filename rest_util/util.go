@@ -20,7 +20,7 @@ import (
 	"crypto/tls"
 	openApiRuntime "github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 	"net/http"
 	"time"
 )

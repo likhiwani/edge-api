@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // PatchPostureCheckOKCode is the HTTP code returned for type PatchPostureCheckOK
 const PatchPostureCheckOKCode int = 200
 
-/*PatchPostureCheckOK The patch request was successful and the resource has been altered
+/*
+PatchPostureCheckOK The patch request was successful and the resource has been altered
 
 swagger:response patchPostureCheckOK
 */
@@ -84,7 +85,8 @@ func (o *PatchPostureCheckOK) WriteResponse(rw http.ResponseWriter, producer run
 // PatchPostureCheckBadRequestCode is the HTTP code returned for type PatchPostureCheckBadRequest
 const PatchPostureCheckBadRequestCode int = 400
 
-/*PatchPostureCheckBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+PatchPostureCheckBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response patchPostureCheckBadRequest
 */
@@ -128,7 +130,8 @@ func (o *PatchPostureCheckBadRequest) WriteResponse(rw http.ResponseWriter, prod
 // PatchPostureCheckUnauthorizedCode is the HTTP code returned for type PatchPostureCheckUnauthorized
 const PatchPostureCheckUnauthorizedCode int = 401
 
-/*PatchPostureCheckUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+PatchPostureCheckUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response patchPostureCheckUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *PatchPostureCheckUnauthorized) WriteResponse(rw http.ResponseWriter, pr
 // PatchPostureCheckNotFoundCode is the HTTP code returned for type PatchPostureCheckNotFound
 const PatchPostureCheckNotFoundCode int = 404
 
-/*PatchPostureCheckNotFound The requested resource does not exist
+/*
+PatchPostureCheckNotFound The requested resource does not exist
 
 swagger:response patchPostureCheckNotFound
 */
@@ -216,7 +220,8 @@ func (o *PatchPostureCheckNotFound) WriteResponse(rw http.ResponseWriter, produc
 // PatchPostureCheckTooManyRequestsCode is the HTTP code returned for type PatchPostureCheckTooManyRequests
 const PatchPostureCheckTooManyRequestsCode int = 429
 
-/*PatchPostureCheckTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+PatchPostureCheckTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response patchPostureCheckTooManyRequests
 */
@@ -260,7 +265,8 @@ func (o *PatchPostureCheckTooManyRequests) WriteResponse(rw http.ResponseWriter,
 // PatchPostureCheckServiceUnavailableCode is the HTTP code returned for type PatchPostureCheckServiceUnavailable
 const PatchPostureCheckServiceUnavailableCode int = 503
 
-/*PatchPostureCheckServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+PatchPostureCheckServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response patchPostureCheckServiceUnavailable
 */

@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewCreateEdgeRouterParams creates a new CreateEdgeRouterParams object,
@@ -78,10 +78,12 @@ func NewCreateEdgeRouterParamsWithHTTPClient(client *http.Client) *CreateEdgeRou
 	}
 }
 
-/* CreateEdgeRouterParams contains all the parameters to send to the API endpoint
-   for the create edge router operation.
+/*
+CreateEdgeRouterParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create edge router operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateEdgeRouterParams struct {
 

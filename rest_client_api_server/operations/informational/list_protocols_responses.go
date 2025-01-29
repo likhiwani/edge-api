@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListProtocolsOKCode is the HTTP code returned for type ListProtocolsOK
 const ListProtocolsOKCode int = 200
 
-/*ListProtocolsOK A list of supported Edge protocols
+/*
+ListProtocolsOK A list of supported Edge protocols
 
 swagger:response listProtocolsOK
 */
@@ -84,7 +85,8 @@ func (o *ListProtocolsOK) WriteResponse(rw http.ResponseWriter, producer runtime
 // ListProtocolsTooManyRequestsCode is the HTTP code returned for type ListProtocolsTooManyRequests
 const ListProtocolsTooManyRequestsCode int = 429
 
-/*ListProtocolsTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+ListProtocolsTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response listProtocolsTooManyRequests
 */
@@ -128,7 +130,8 @@ func (o *ListProtocolsTooManyRequests) WriteResponse(rw http.ResponseWriter, pro
 // ListProtocolsServiceUnavailableCode is the HTTP code returned for type ListProtocolsServiceUnavailable
 const ListProtocolsServiceUnavailableCode int = 503
 
-/*ListProtocolsServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+ListProtocolsServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response listProtocolsServiceUnavailable
 */

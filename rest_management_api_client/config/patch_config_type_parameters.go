@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewPatchConfigTypeParams creates a new PatchConfigTypeParams object,
@@ -78,10 +78,12 @@ func NewPatchConfigTypeParamsWithHTTPClient(client *http.Client) *PatchConfigTyp
 	}
 }
 
-/* PatchConfigTypeParams contains all the parameters to send to the API endpoint
-   for the patch config type operation.
+/*
+PatchConfigTypeParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the patch config type operation.
+
+	Typically these are written to a http.Request.
 */
 type PatchConfigTypeParams struct {
 

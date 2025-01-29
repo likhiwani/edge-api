@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewPatchAuthenticatorParams creates a new PatchAuthenticatorParams object,
@@ -78,10 +78,12 @@ func NewPatchAuthenticatorParamsWithHTTPClient(client *http.Client) *PatchAuthen
 	}
 }
 
-/* PatchAuthenticatorParams contains all the parameters to send to the API endpoint
-   for the patch authenticator operation.
+/*
+PatchAuthenticatorParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the patch authenticator operation.
+
+	Typically these are written to a http.Request.
 */
 type PatchAuthenticatorParams struct {
 

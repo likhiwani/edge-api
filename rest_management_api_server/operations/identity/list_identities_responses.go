@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListIdentitiesOKCode is the HTTP code returned for type ListIdentitiesOK
 const ListIdentitiesOKCode int = 200
 
-/*ListIdentitiesOK A list of identities
+/*
+ListIdentitiesOK A list of identities
 
 swagger:response listIdentitiesOK
 */
@@ -84,7 +85,8 @@ func (o *ListIdentitiesOK) WriteResponse(rw http.ResponseWriter, producer runtim
 // ListIdentitiesBadRequestCode is the HTTP code returned for type ListIdentitiesBadRequest
 const ListIdentitiesBadRequestCode int = 400
 
-/*ListIdentitiesBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+ListIdentitiesBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response listIdentitiesBadRequest
 */
@@ -128,7 +130,8 @@ func (o *ListIdentitiesBadRequest) WriteResponse(rw http.ResponseWriter, produce
 // ListIdentitiesUnauthorizedCode is the HTTP code returned for type ListIdentitiesUnauthorized
 const ListIdentitiesUnauthorizedCode int = 401
 
-/*ListIdentitiesUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+ListIdentitiesUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response listIdentitiesUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *ListIdentitiesUnauthorized) WriteResponse(rw http.ResponseWriter, produ
 // ListIdentitiesTooManyRequestsCode is the HTTP code returned for type ListIdentitiesTooManyRequests
 const ListIdentitiesTooManyRequestsCode int = 429
 
-/*ListIdentitiesTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+ListIdentitiesTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response listIdentitiesTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *ListIdentitiesTooManyRequests) WriteResponse(rw http.ResponseWriter, pr
 // ListIdentitiesServiceUnavailableCode is the HTTP code returned for type ListIdentitiesServiceUnavailable
 const ListIdentitiesServiceUnavailableCode int = 503
 
-/*ListIdentitiesServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+ListIdentitiesServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response listIdentitiesServiceUnavailable
 */

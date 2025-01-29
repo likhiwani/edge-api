@@ -4,13 +4,13 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-GO_SWAGGER_VERSION="v0.29.0"
-GO_SWAGGER_HASH="09ae1192ca9a941bbb534aca09e6bdc562c95ef3"
+GO_SWAGGER_VERSION="v0.31.0"
+GO_SWAGGER_HASH="77f973a51c1dd3a8b95466b1c08cd9e529a69cfa"
 if ! command -v swagger &>/dev/null \
 || [[ "$(swagger version | awk '$1~/^version:/{print $2}')" != "${GO_SWAGGER_VERSION}" \
 || "$(swagger version | awk '$1~/^commit:/{print $2}')" != "${GO_SWAGGER_HASH}" ]]
 then
-  echo >&2 "Go Swagger executable 'swagger' ${GO_SWAGGER_VERSION} (${GO_SWAGGER_HASH}) is required. Download the binary from GitHub: https://github.com/go-swagger/go-swagger/releases/tag/v0.29.0"
+  echo >&2 "Go Swagger executable 'swagger' ${GO_SWAGGER_VERSION} (${GO_SWAGGER_HASH}) is required. Download the binary from GitHub: https://github.com/go-swagger/go-swagger/releases/tag/v0.31.0"
   exit 1
 fi
 
@@ -28,12 +28,21 @@ scriptDir=$(dirname "$scriptPath")
 rootDir=$(realpath "$scriptDir/..")
 
 clientSourceSpec=$(realpath "$rootDir/source/client.yml")
-clientSwagSpec=$(realpath -m "$rootDir/client.yml")
+clientSwagSpec=$(realpath -q "$rootDir/client.yml")
 
 managementSourceSpec=$(realpath "$rootDir/source/management.yml")
-managementSwagSpec=$(realpath -m "$rootDir/management.yml")
+managementSwagSpec=$(realpath -q "$rootDir/management.yml")
 
 copyrightFile=$(realpath "$scriptDir/template.copyright.txt")
+
+echo "Script path $scriptPath"
+echo "Script dir $scriptDir"
+echo "Root dir $rootDir"
+echo "Client source spec $clientSourceSpec"
+echo "Client swag spec $clientSwagSpec"
+echo "Management source spec $managementSourceSpec"
+echo "Management swag spec $managementSwagSpec"
+echo "Copyright file $copyrightFile"
 
 echo "...flattening client spec"
 echo swagger flatten "$clientSourceSpec" -o "$clientSwagSpec" --format yaml
@@ -43,27 +52,27 @@ swagger flatten "$managementSourceSpec" -o "$managementSwagSpec" --format yaml
 
 codeTarget="$rootDir"
 
-clientServerPath=$(realpath -m "$codeTarget/rest_client_api_server")
+clientServerPath=$(realpath -q "$codeTarget/rest_client_api_server")
 echo "...removing any existing server from $clientServerPath"
 rm -rf "$clientServerPath"
 mkdir -p "$clientServerPath"
 
-clientClientPath=$(realpath -m "$codeTarget/rest_client_api_client")
+clientClientPath=$(realpath -q "$codeTarget/rest_client_api_client")
 echo "...removing any existing client from $clientClientPath"
 rm -rf "$clientClientPath"
 mkdir -p "$clientClientPath"
 
-managementServerPath=$(realpath -m "$codeTarget/rest_management_api_server")
+managementServerPath=$(realpath -q "$codeTarget/rest_management_api_server")
 echo "...removing any existing server from $managementServerPath"
 rm -rf "$managementServerPath"
 mkdir -p "$managementServerPath"
 
-managementClientPath=$(realpath -m "$codeTarget/rest_management_api_client")
+managementClientPath=$(realpath -q "$codeTarget/rest_management_api_client")
 echo "...removing any existing client from $managementClientPath"
 rm -rf "$managementClientPath"
 mkdir -p "$managementClientPath"
 
-modelPath=$(realpath -m "$codeTarget/rest_model")
+modelPath=$(realpath -q "$codeTarget/rest_model")
 echo "...removing any existing model from $modelPath"
 rm -rf "$modelPath"
 mkdir -p "$modelPath"
@@ -103,6 +112,6 @@ fi
 echo "...fixing go module deps"
 prev=$(pwd)
 cd "$codeTarget"
-go mod init github.com/openziti/edge-api || true
+go mod init ztna-core/edge-api || true
 go mod tidy
 cd "$prev"

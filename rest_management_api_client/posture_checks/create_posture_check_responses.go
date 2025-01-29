@@ -30,13 +30,14 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // CreatePostureCheckReader is a Reader for the CreatePostureCheck structure.
@@ -78,7 +79,7 @@ func (o *CreatePostureCheckReader) ReadResponse(response runtime.ClientResponse,
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[POST /posture-checks] createPostureCheck", response, response.Code())
 	}
 }
 
@@ -87,7 +88,8 @@ func NewCreatePostureCheckCreated() *CreatePostureCheckCreated {
 	return &CreatePostureCheckCreated{}
 }
 
-/* CreatePostureCheckCreated describes a response with status code 201, with default header values.
+/*
+CreatePostureCheckCreated describes a response with status code 201, with default header values.
 
 The create request was successful and the resource has been added at the following location
 */
@@ -95,9 +97,46 @@ type CreatePostureCheckCreated struct {
 	Payload *rest_model.CreateEnvelope
 }
 
-func (o *CreatePostureCheckCreated) Error() string {
-	return fmt.Sprintf("[POST /posture-checks][%d] createPostureCheckCreated  %+v", 201, o.Payload)
+// IsSuccess returns true when this create posture check created response has a 2xx status code
+func (o *CreatePostureCheckCreated) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this create posture check created response has a 3xx status code
+func (o *CreatePostureCheckCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create posture check created response has a 4xx status code
+func (o *CreatePostureCheckCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create posture check created response has a 5xx status code
+func (o *CreatePostureCheckCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create posture check created response a status code equal to that given
+func (o *CreatePostureCheckCreated) IsCode(code int) bool {
+	return code == 201
+}
+
+// Code gets the status code for the create posture check created response
+func (o *CreatePostureCheckCreated) Code() int {
+	return 201
+}
+
+func (o *CreatePostureCheckCreated) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /posture-checks][%d] createPostureCheckCreated %s", 201, payload)
+}
+
+func (o *CreatePostureCheckCreated) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /posture-checks][%d] createPostureCheckCreated %s", 201, payload)
+}
+
 func (o *CreatePostureCheckCreated) GetPayload() *rest_model.CreateEnvelope {
 	return o.Payload
 }
@@ -119,7 +158,8 @@ func NewCreatePostureCheckBadRequest() *CreatePostureCheckBadRequest {
 	return &CreatePostureCheckBadRequest{}
 }
 
-/* CreatePostureCheckBadRequest describes a response with status code 400, with default header values.
+/*
+CreatePostureCheckBadRequest describes a response with status code 400, with default header values.
 
 The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 */
@@ -127,9 +167,46 @@ type CreatePostureCheckBadRequest struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *CreatePostureCheckBadRequest) Error() string {
-	return fmt.Sprintf("[POST /posture-checks][%d] createPostureCheckBadRequest  %+v", 400, o.Payload)
+// IsSuccess returns true when this create posture check bad request response has a 2xx status code
+func (o *CreatePostureCheckBadRequest) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this create posture check bad request response has a 3xx status code
+func (o *CreatePostureCheckBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create posture check bad request response has a 4xx status code
+func (o *CreatePostureCheckBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create posture check bad request response has a 5xx status code
+func (o *CreatePostureCheckBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create posture check bad request response a status code equal to that given
+func (o *CreatePostureCheckBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
+// Code gets the status code for the create posture check bad request response
+func (o *CreatePostureCheckBadRequest) Code() int {
+	return 400
+}
+
+func (o *CreatePostureCheckBadRequest) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /posture-checks][%d] createPostureCheckBadRequest %s", 400, payload)
+}
+
+func (o *CreatePostureCheckBadRequest) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /posture-checks][%d] createPostureCheckBadRequest %s", 400, payload)
+}
+
 func (o *CreatePostureCheckBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -151,7 +228,8 @@ func NewCreatePostureCheckUnauthorized() *CreatePostureCheckUnauthorized {
 	return &CreatePostureCheckUnauthorized{}
 }
 
-/* CreatePostureCheckUnauthorized describes a response with status code 401, with default header values.
+/*
+CreatePostureCheckUnauthorized describes a response with status code 401, with default header values.
 
 The supplied session does not have the correct access rights to request this resource
 */
@@ -159,9 +237,46 @@ type CreatePostureCheckUnauthorized struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *CreatePostureCheckUnauthorized) Error() string {
-	return fmt.Sprintf("[POST /posture-checks][%d] createPostureCheckUnauthorized  %+v", 401, o.Payload)
+// IsSuccess returns true when this create posture check unauthorized response has a 2xx status code
+func (o *CreatePostureCheckUnauthorized) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this create posture check unauthorized response has a 3xx status code
+func (o *CreatePostureCheckUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create posture check unauthorized response has a 4xx status code
+func (o *CreatePostureCheckUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create posture check unauthorized response has a 5xx status code
+func (o *CreatePostureCheckUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create posture check unauthorized response a status code equal to that given
+func (o *CreatePostureCheckUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
+// Code gets the status code for the create posture check unauthorized response
+func (o *CreatePostureCheckUnauthorized) Code() int {
+	return 401
+}
+
+func (o *CreatePostureCheckUnauthorized) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /posture-checks][%d] createPostureCheckUnauthorized %s", 401, payload)
+}
+
+func (o *CreatePostureCheckUnauthorized) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /posture-checks][%d] createPostureCheckUnauthorized %s", 401, payload)
+}
+
 func (o *CreatePostureCheckUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -183,7 +298,8 @@ func NewCreatePostureCheckTooManyRequests() *CreatePostureCheckTooManyRequests {
 	return &CreatePostureCheckTooManyRequests{}
 }
 
-/* CreatePostureCheckTooManyRequests describes a response with status code 429, with default header values.
+/*
+CreatePostureCheckTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -191,9 +307,46 @@ type CreatePostureCheckTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *CreatePostureCheckTooManyRequests) Error() string {
-	return fmt.Sprintf("[POST /posture-checks][%d] createPostureCheckTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this create posture check too many requests response has a 2xx status code
+func (o *CreatePostureCheckTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this create posture check too many requests response has a 3xx status code
+func (o *CreatePostureCheckTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create posture check too many requests response has a 4xx status code
+func (o *CreatePostureCheckTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create posture check too many requests response has a 5xx status code
+func (o *CreatePostureCheckTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create posture check too many requests response a status code equal to that given
+func (o *CreatePostureCheckTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the create posture check too many requests response
+func (o *CreatePostureCheckTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *CreatePostureCheckTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /posture-checks][%d] createPostureCheckTooManyRequests %s", 429, payload)
+}
+
+func (o *CreatePostureCheckTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /posture-checks][%d] createPostureCheckTooManyRequests %s", 429, payload)
+}
+
 func (o *CreatePostureCheckTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -215,7 +368,8 @@ func NewCreatePostureCheckServiceUnavailable() *CreatePostureCheckServiceUnavail
 	return &CreatePostureCheckServiceUnavailable{}
 }
 
-/* CreatePostureCheckServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CreatePostureCheckServiceUnavailable describes a response with status code 503, with default header values.
 
 The request could not be completed due to the server being busy or in a temporarily bad state
 */
@@ -223,9 +377,46 @@ type CreatePostureCheckServiceUnavailable struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *CreatePostureCheckServiceUnavailable) Error() string {
-	return fmt.Sprintf("[POST /posture-checks][%d] createPostureCheckServiceUnavailable  %+v", 503, o.Payload)
+// IsSuccess returns true when this create posture check service unavailable response has a 2xx status code
+func (o *CreatePostureCheckServiceUnavailable) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this create posture check service unavailable response has a 3xx status code
+func (o *CreatePostureCheckServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create posture check service unavailable response has a 4xx status code
+func (o *CreatePostureCheckServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create posture check service unavailable response has a 5xx status code
+func (o *CreatePostureCheckServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create posture check service unavailable response a status code equal to that given
+func (o *CreatePostureCheckServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
+// Code gets the status code for the create posture check service unavailable response
+func (o *CreatePostureCheckServiceUnavailable) Code() int {
+	return 503
+}
+
+func (o *CreatePostureCheckServiceUnavailable) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /posture-checks][%d] createPostureCheckServiceUnavailable %s", 503, payload)
+}
+
+func (o *CreatePostureCheckServiceUnavailable) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /posture-checks][%d] createPostureCheckServiceUnavailable %s", 503, payload)
+}
+
 func (o *CreatePostureCheckServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

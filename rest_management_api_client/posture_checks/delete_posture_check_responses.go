@@ -30,13 +30,14 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DeletePostureCheckReader is a Reader for the DeletePostureCheck structure.
@@ -78,7 +79,7 @@ func (o *DeletePostureCheckReader) ReadResponse(response runtime.ClientResponse,
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[DELETE /posture-checks/{id}] deletePostureCheck", response, response.Code())
 	}
 }
 
@@ -87,7 +88,8 @@ func NewDeletePostureCheckOK() *DeletePostureCheckOK {
 	return &DeletePostureCheckOK{}
 }
 
-/* DeletePostureCheckOK describes a response with status code 200, with default header values.
+/*
+DeletePostureCheckOK describes a response with status code 200, with default header values.
 
 The delete request was successful and the resource has been removed
 */
@@ -95,9 +97,46 @@ type DeletePostureCheckOK struct {
 	Payload *rest_model.Empty
 }
 
-func (o *DeletePostureCheckOK) Error() string {
-	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckOK  %+v", 200, o.Payload)
+// IsSuccess returns true when this delete posture check o k response has a 2xx status code
+func (o *DeletePostureCheckOK) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this delete posture check o k response has a 3xx status code
+func (o *DeletePostureCheckOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete posture check o k response has a 4xx status code
+func (o *DeletePostureCheckOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this delete posture check o k response has a 5xx status code
+func (o *DeletePostureCheckOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete posture check o k response a status code equal to that given
+func (o *DeletePostureCheckOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the delete posture check o k response
+func (o *DeletePostureCheckOK) Code() int {
+	return 200
+}
+
+func (o *DeletePostureCheckOK) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckOK %s", 200, payload)
+}
+
+func (o *DeletePostureCheckOK) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckOK %s", 200, payload)
+}
+
 func (o *DeletePostureCheckOK) GetPayload() *rest_model.Empty {
 	return o.Payload
 }
@@ -119,7 +158,8 @@ func NewDeletePostureCheckForbidden() *DeletePostureCheckForbidden {
 	return &DeletePostureCheckForbidden{}
 }
 
-/* DeletePostureCheckForbidden describes a response with status code 403, with default header values.
+/*
+DeletePostureCheckForbidden describes a response with status code 403, with default header values.
 
 The supplied session does not have the correct access rights to request this resource
 */
@@ -127,9 +167,46 @@ type DeletePostureCheckForbidden struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *DeletePostureCheckForbidden) Error() string {
-	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckForbidden  %+v", 403, o.Payload)
+// IsSuccess returns true when this delete posture check forbidden response has a 2xx status code
+func (o *DeletePostureCheckForbidden) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this delete posture check forbidden response has a 3xx status code
+func (o *DeletePostureCheckForbidden) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete posture check forbidden response has a 4xx status code
+func (o *DeletePostureCheckForbidden) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete posture check forbidden response has a 5xx status code
+func (o *DeletePostureCheckForbidden) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete posture check forbidden response a status code equal to that given
+func (o *DeletePostureCheckForbidden) IsCode(code int) bool {
+	return code == 403
+}
+
+// Code gets the status code for the delete posture check forbidden response
+func (o *DeletePostureCheckForbidden) Code() int {
+	return 403
+}
+
+func (o *DeletePostureCheckForbidden) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckForbidden %s", 403, payload)
+}
+
+func (o *DeletePostureCheckForbidden) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckForbidden %s", 403, payload)
+}
+
 func (o *DeletePostureCheckForbidden) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -151,7 +228,8 @@ func NewDeletePostureCheckNotFound() *DeletePostureCheckNotFound {
 	return &DeletePostureCheckNotFound{}
 }
 
-/* DeletePostureCheckNotFound describes a response with status code 404, with default header values.
+/*
+DeletePostureCheckNotFound describes a response with status code 404, with default header values.
 
 The requested resource does not exist
 */
@@ -159,9 +237,46 @@ type DeletePostureCheckNotFound struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *DeletePostureCheckNotFound) Error() string {
-	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckNotFound  %+v", 404, o.Payload)
+// IsSuccess returns true when this delete posture check not found response has a 2xx status code
+func (o *DeletePostureCheckNotFound) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this delete posture check not found response has a 3xx status code
+func (o *DeletePostureCheckNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete posture check not found response has a 4xx status code
+func (o *DeletePostureCheckNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete posture check not found response has a 5xx status code
+func (o *DeletePostureCheckNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete posture check not found response a status code equal to that given
+func (o *DeletePostureCheckNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
+// Code gets the status code for the delete posture check not found response
+func (o *DeletePostureCheckNotFound) Code() int {
+	return 404
+}
+
+func (o *DeletePostureCheckNotFound) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckNotFound %s", 404, payload)
+}
+
+func (o *DeletePostureCheckNotFound) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckNotFound %s", 404, payload)
+}
+
 func (o *DeletePostureCheckNotFound) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -183,7 +298,8 @@ func NewDeletePostureCheckTooManyRequests() *DeletePostureCheckTooManyRequests {
 	return &DeletePostureCheckTooManyRequests{}
 }
 
-/* DeletePostureCheckTooManyRequests describes a response with status code 429, with default header values.
+/*
+DeletePostureCheckTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -191,9 +307,46 @@ type DeletePostureCheckTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *DeletePostureCheckTooManyRequests) Error() string {
-	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this delete posture check too many requests response has a 2xx status code
+func (o *DeletePostureCheckTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this delete posture check too many requests response has a 3xx status code
+func (o *DeletePostureCheckTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete posture check too many requests response has a 4xx status code
+func (o *DeletePostureCheckTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this delete posture check too many requests response has a 5xx status code
+func (o *DeletePostureCheckTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this delete posture check too many requests response a status code equal to that given
+func (o *DeletePostureCheckTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the delete posture check too many requests response
+func (o *DeletePostureCheckTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *DeletePostureCheckTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckTooManyRequests %s", 429, payload)
+}
+
+func (o *DeletePostureCheckTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckTooManyRequests %s", 429, payload)
+}
+
 func (o *DeletePostureCheckTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -215,7 +368,8 @@ func NewDeletePostureCheckServiceUnavailable() *DeletePostureCheckServiceUnavail
 	return &DeletePostureCheckServiceUnavailable{}
 }
 
-/* DeletePostureCheckServiceUnavailable describes a response with status code 503, with default header values.
+/*
+DeletePostureCheckServiceUnavailable describes a response with status code 503, with default header values.
 
 The request could not be completed due to the server being busy or in a temporarily bad state
 */
@@ -223,9 +377,46 @@ type DeletePostureCheckServiceUnavailable struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *DeletePostureCheckServiceUnavailable) Error() string {
-	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckServiceUnavailable  %+v", 503, o.Payload)
+// IsSuccess returns true when this delete posture check service unavailable response has a 2xx status code
+func (o *DeletePostureCheckServiceUnavailable) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this delete posture check service unavailable response has a 3xx status code
+func (o *DeletePostureCheckServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this delete posture check service unavailable response has a 4xx status code
+func (o *DeletePostureCheckServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this delete posture check service unavailable response has a 5xx status code
+func (o *DeletePostureCheckServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this delete posture check service unavailable response a status code equal to that given
+func (o *DeletePostureCheckServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
+// Code gets the status code for the delete posture check service unavailable response
+func (o *DeletePostureCheckServiceUnavailable) Code() int {
+	return 503
+}
+
+func (o *DeletePostureCheckServiceUnavailable) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckServiceUnavailable %s", 503, payload)
+}
+
+func (o *DeletePostureCheckServiceUnavailable) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckServiceUnavailable %s", 503, payload)
+}
+
 func (o *DeletePostureCheckServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

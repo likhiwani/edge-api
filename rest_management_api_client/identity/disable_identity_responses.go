@@ -30,13 +30,14 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DisableIdentityReader is a Reader for the DisableIdentity structure.
@@ -78,7 +79,7 @@ func (o *DisableIdentityReader) ReadResponse(response runtime.ClientResponse, co
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[POST /identities/{id}/disable] disableIdentity", response, response.Code())
 	}
 }
 
@@ -87,7 +88,8 @@ func NewDisableIdentityOK() *DisableIdentityOK {
 	return &DisableIdentityOK{}
 }
 
-/* DisableIdentityOK describes a response with status code 200, with default header values.
+/*
+DisableIdentityOK describes a response with status code 200, with default header values.
 
 Base empty response
 */
@@ -95,9 +97,46 @@ type DisableIdentityOK struct {
 	Payload *rest_model.Empty
 }
 
-func (o *DisableIdentityOK) Error() string {
-	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityOK  %+v", 200, o.Payload)
+// IsSuccess returns true when this disable identity o k response has a 2xx status code
+func (o *DisableIdentityOK) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this disable identity o k response has a 3xx status code
+func (o *DisableIdentityOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this disable identity o k response has a 4xx status code
+func (o *DisableIdentityOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this disable identity o k response has a 5xx status code
+func (o *DisableIdentityOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this disable identity o k response a status code equal to that given
+func (o *DisableIdentityOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the disable identity o k response
+func (o *DisableIdentityOK) Code() int {
+	return 200
+}
+
+func (o *DisableIdentityOK) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityOK %s", 200, payload)
+}
+
+func (o *DisableIdentityOK) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityOK %s", 200, payload)
+}
+
 func (o *DisableIdentityOK) GetPayload() *rest_model.Empty {
 	return o.Payload
 }
@@ -119,7 +158,8 @@ func NewDisableIdentityUnauthorized() *DisableIdentityUnauthorized {
 	return &DisableIdentityUnauthorized{}
 }
 
-/* DisableIdentityUnauthorized describes a response with status code 401, with default header values.
+/*
+DisableIdentityUnauthorized describes a response with status code 401, with default header values.
 
 The supplied session does not have the correct access rights to request this resource
 */
@@ -127,9 +167,46 @@ type DisableIdentityUnauthorized struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *DisableIdentityUnauthorized) Error() string {
-	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityUnauthorized  %+v", 401, o.Payload)
+// IsSuccess returns true when this disable identity unauthorized response has a 2xx status code
+func (o *DisableIdentityUnauthorized) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this disable identity unauthorized response has a 3xx status code
+func (o *DisableIdentityUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this disable identity unauthorized response has a 4xx status code
+func (o *DisableIdentityUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this disable identity unauthorized response has a 5xx status code
+func (o *DisableIdentityUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this disable identity unauthorized response a status code equal to that given
+func (o *DisableIdentityUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
+// Code gets the status code for the disable identity unauthorized response
+func (o *DisableIdentityUnauthorized) Code() int {
+	return 401
+}
+
+func (o *DisableIdentityUnauthorized) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityUnauthorized %s", 401, payload)
+}
+
+func (o *DisableIdentityUnauthorized) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityUnauthorized %s", 401, payload)
+}
+
 func (o *DisableIdentityUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -151,7 +228,8 @@ func NewDisableIdentityNotFound() *DisableIdentityNotFound {
 	return &DisableIdentityNotFound{}
 }
 
-/* DisableIdentityNotFound describes a response with status code 404, with default header values.
+/*
+DisableIdentityNotFound describes a response with status code 404, with default header values.
 
 The requested resource does not exist
 */
@@ -159,9 +237,46 @@ type DisableIdentityNotFound struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *DisableIdentityNotFound) Error() string {
-	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityNotFound  %+v", 404, o.Payload)
+// IsSuccess returns true when this disable identity not found response has a 2xx status code
+func (o *DisableIdentityNotFound) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this disable identity not found response has a 3xx status code
+func (o *DisableIdentityNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this disable identity not found response has a 4xx status code
+func (o *DisableIdentityNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this disable identity not found response has a 5xx status code
+func (o *DisableIdentityNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this disable identity not found response a status code equal to that given
+func (o *DisableIdentityNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
+// Code gets the status code for the disable identity not found response
+func (o *DisableIdentityNotFound) Code() int {
+	return 404
+}
+
+func (o *DisableIdentityNotFound) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityNotFound %s", 404, payload)
+}
+
+func (o *DisableIdentityNotFound) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityNotFound %s", 404, payload)
+}
+
 func (o *DisableIdentityNotFound) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -183,7 +298,8 @@ func NewDisableIdentityTooManyRequests() *DisableIdentityTooManyRequests {
 	return &DisableIdentityTooManyRequests{}
 }
 
-/* DisableIdentityTooManyRequests describes a response with status code 429, with default header values.
+/*
+DisableIdentityTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -191,9 +307,46 @@ type DisableIdentityTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *DisableIdentityTooManyRequests) Error() string {
-	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this disable identity too many requests response has a 2xx status code
+func (o *DisableIdentityTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this disable identity too many requests response has a 3xx status code
+func (o *DisableIdentityTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this disable identity too many requests response has a 4xx status code
+func (o *DisableIdentityTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this disable identity too many requests response has a 5xx status code
+func (o *DisableIdentityTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this disable identity too many requests response a status code equal to that given
+func (o *DisableIdentityTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the disable identity too many requests response
+func (o *DisableIdentityTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *DisableIdentityTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityTooManyRequests %s", 429, payload)
+}
+
+func (o *DisableIdentityTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityTooManyRequests %s", 429, payload)
+}
+
 func (o *DisableIdentityTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -215,7 +368,8 @@ func NewDisableIdentityServiceUnavailable() *DisableIdentityServiceUnavailable {
 	return &DisableIdentityServiceUnavailable{}
 }
 
-/* DisableIdentityServiceUnavailable describes a response with status code 503, with default header values.
+/*
+DisableIdentityServiceUnavailable describes a response with status code 503, with default header values.
 
 The request could not be completed due to the server being busy or in a temporarily bad state
 */
@@ -223,9 +377,46 @@ type DisableIdentityServiceUnavailable struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *DisableIdentityServiceUnavailable) Error() string {
-	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityServiceUnavailable  %+v", 503, o.Payload)
+// IsSuccess returns true when this disable identity service unavailable response has a 2xx status code
+func (o *DisableIdentityServiceUnavailable) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this disable identity service unavailable response has a 3xx status code
+func (o *DisableIdentityServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this disable identity service unavailable response has a 4xx status code
+func (o *DisableIdentityServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this disable identity service unavailable response has a 5xx status code
+func (o *DisableIdentityServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this disable identity service unavailable response a status code equal to that given
+func (o *DisableIdentityServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
+// Code gets the status code for the disable identity service unavailable response
+func (o *DisableIdentityServiceUnavailable) Code() int {
+	return 503
+}
+
+func (o *DisableIdentityServiceUnavailable) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityServiceUnavailable %s", 503, payload)
+}
+
+func (o *DisableIdentityServiceUnavailable) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityServiceUnavailable %s", 503, payload)
+}
+
 func (o *DisableIdentityServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

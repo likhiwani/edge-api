@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewUpdatePostureCheckParams creates a new UpdatePostureCheckParams object,
@@ -78,10 +78,12 @@ func NewUpdatePostureCheckParamsWithHTTPClient(client *http.Client) *UpdatePostu
 	}
 }
 
-/* UpdatePostureCheckParams contains all the parameters to send to the API endpoint
-   for the update posture check operation.
+/*
+UpdatePostureCheckParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the update posture check operation.
+
+	Typically these are written to a http.Request.
 */
 type UpdatePostureCheckParams struct {
 

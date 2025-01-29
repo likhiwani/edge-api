@@ -5603,15 +5603,23 @@ func init() {
           "$ref": "#/definitions/envInfo"
         },
         "password": {
-          "$ref": "#/definitions/password"
+          "$ref": "#/definitions/authenticatePassword"
         },
         "sdkInfo": {
           "$ref": "#/definitions/sdkInfo"
         },
         "username": {
-          "$ref": "#/definitions/username"
+          "type": "string",
+          "maxLength": 100,
+          "minLength": 4
         }
       }
+    },
+    "authenticatePassword": {
+      "type": "string",
+      "maxLength": 100,
+      "minLength": 5,
+      "x-go-gen-location": "models"
     },
     "authenticatorDetail": {
       "description": "A singular authenticator resource",
@@ -5689,7 +5697,7 @@ func init() {
           ],
           "properties": {
             "currentPassword": {
-              "$ref": "#/definitions/password"
+              "$ref": "#/definitions/authenticatePassword"
             }
           }
         }
@@ -5704,13 +5712,15 @@ func init() {
       ],
       "properties": {
         "password": {
-          "$ref": "#/definitions/password"
+          "$ref": "#/definitions/authenticatePassword"
         },
         "tags": {
           "$ref": "#/definitions/tags"
         },
         "username": {
-          "$ref": "#/definitions/username"
+          "type": "string",
+          "maxLength": 100,
+          "minLength": 4
         }
       }
     },
@@ -5728,7 +5738,7 @@ func init() {
           ],
           "properties": {
             "currentPassword": {
-              "$ref": "#/definitions/password"
+              "$ref": "#/definitions/authenticatePassword"
             }
           }
         }
@@ -10145,8 +10155,8 @@ func init() {
         ],
         "description": "Shows an QR code image for unverified MFA enrollments. 404s if the MFA enrollment has been completed or not started.\n",
         "produces": [
-          "application/json",
-          "image/png"
+          "image/png",
+          "application/json"
         ],
         "tags": [
           "Current Identity",
@@ -10440,14 +10450,14 @@ func init() {
       "post": {
         "description": "present a OTT and CSR to receive a long-lived client certificate",
         "consumes": [
-          "application/json",
           "application/pkcs10",
+          "application/json",
           "application/x-pem-file",
           "text/plain"
         ],
         "produces": [
-          "application/json",
-          "application/x-pem-file"
+          "application/x-pem-file",
+          "application/json"
         ],
         "tags": [
           "Enroll"
@@ -13243,8 +13253,8 @@ func init() {
         "security": [],
         "description": "Return the body of the specification (i.e. Swagger, OpenAPI 2.0, 3.0, etc).",
         "produces": [
-          "application/json",
-          "text/yaml"
+          "text/yaml",
+          "application/json"
         ],
         "tags": [
           "Informational"
@@ -13635,15 +13645,23 @@ func init() {
           "$ref": "#/definitions/envInfo"
         },
         "password": {
-          "$ref": "#/definitions/password"
+          "$ref": "#/definitions/authenticatePassword"
         },
         "sdkInfo": {
           "$ref": "#/definitions/sdkInfo"
         },
         "username": {
-          "$ref": "#/definitions/username"
+          "type": "string",
+          "maxLength": 100,
+          "minLength": 4
         }
       }
+    },
+    "authenticatePassword": {
+      "type": "string",
+      "maxLength": 100,
+      "minLength": 5,
+      "x-go-gen-location": "models"
     },
     "authenticatorDetail": {
       "description": "A singular authenticator resource",
@@ -13721,7 +13739,7 @@ func init() {
           ],
           "properties": {
             "currentPassword": {
-              "$ref": "#/definitions/password"
+              "$ref": "#/definitions/authenticatePassword"
             }
           }
         }
@@ -13736,13 +13754,15 @@ func init() {
       ],
       "properties": {
         "password": {
-          "$ref": "#/definitions/password"
+          "$ref": "#/definitions/authenticatePassword"
         },
         "tags": {
           "$ref": "#/definitions/tags"
         },
         "username": {
-          "$ref": "#/definitions/username"
+          "type": "string",
+          "maxLength": 100,
+          "minLength": 4
         }
       }
     },
@@ -13760,7 +13780,7 @@ func init() {
           ],
           "properties": {
             "currentPassword": {
-              "$ref": "#/definitions/password"
+              "$ref": "#/definitions/authenticatePassword"
             }
           }
         }

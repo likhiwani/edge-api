@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // EnrollErOttOKCode is the HTTP code returned for type EnrollErOttOK
 const EnrollErOttOKCode int = 200
 
-/*EnrollErOttOK A response containing the edge routers signed certificates (server chain, server cert, CAs).
+/*
+EnrollErOttOK A response containing the edge routers signed certificates (server chain, server cert, CAs).
 
 swagger:response enrollErOttOK
 */
@@ -84,7 +85,8 @@ func (o *EnrollErOttOK) WriteResponse(rw http.ResponseWriter, producer runtime.P
 // EnrollErOttTooManyRequestsCode is the HTTP code returned for type EnrollErOttTooManyRequests
 const EnrollErOttTooManyRequestsCode int = 429
 
-/*EnrollErOttTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+EnrollErOttTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response enrollErOttTooManyRequests
 */
@@ -128,7 +130,8 @@ func (o *EnrollErOttTooManyRequests) WriteResponse(rw http.ResponseWriter, produ
 // EnrollErOttServiceUnavailableCode is the HTTP code returned for type EnrollErOttServiceUnavailable
 const EnrollErOttServiceUnavailableCode int = 503
 
-/*EnrollErOttServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+EnrollErOttServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response enrollErOttServiceUnavailable
 */

@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListCurrentAPISessionCertificatesOKCode is the HTTP code returned for type ListCurrentAPISessionCertificatesOK
 const ListCurrentAPISessionCertificatesOKCode int = 200
 
-/*ListCurrentAPISessionCertificatesOK A list of the current API Session's certificate
+/*
+ListCurrentAPISessionCertificatesOK A list of the current API Session's certificate
 
 swagger:response listCurrentApiSessionCertificatesOK
 */
@@ -84,7 +85,8 @@ func (o *ListCurrentAPISessionCertificatesOK) WriteResponse(rw http.ResponseWrit
 // ListCurrentAPISessionCertificatesBadRequestCode is the HTTP code returned for type ListCurrentAPISessionCertificatesBadRequest
 const ListCurrentAPISessionCertificatesBadRequestCode int = 400
 
-/*ListCurrentAPISessionCertificatesBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+ListCurrentAPISessionCertificatesBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response listCurrentApiSessionCertificatesBadRequest
 */
@@ -128,7 +130,8 @@ func (o *ListCurrentAPISessionCertificatesBadRequest) WriteResponse(rw http.Resp
 // ListCurrentAPISessionCertificatesUnauthorizedCode is the HTTP code returned for type ListCurrentAPISessionCertificatesUnauthorized
 const ListCurrentAPISessionCertificatesUnauthorizedCode int = 401
 
-/*ListCurrentAPISessionCertificatesUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+ListCurrentAPISessionCertificatesUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response listCurrentApiSessionCertificatesUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *ListCurrentAPISessionCertificatesUnauthorized) WriteResponse(rw http.Re
 // ListCurrentAPISessionCertificatesTooManyRequestsCode is the HTTP code returned for type ListCurrentAPISessionCertificatesTooManyRequests
 const ListCurrentAPISessionCertificatesTooManyRequestsCode int = 429
 
-/*ListCurrentAPISessionCertificatesTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+ListCurrentAPISessionCertificatesTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response listCurrentApiSessionCertificatesTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *ListCurrentAPISessionCertificatesTooManyRequests) WriteResponse(rw http
 // ListCurrentAPISessionCertificatesServiceUnavailableCode is the HTTP code returned for type ListCurrentAPISessionCertificatesServiceUnavailable
 const ListCurrentAPISessionCertificatesServiceUnavailableCode int = 503
 
-/*ListCurrentAPISessionCertificatesServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+ListCurrentAPISessionCertificatesServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response listCurrentApiSessionCertificatesServiceUnavailable
 */

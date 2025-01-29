@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewAuthenticateMfaParams creates a new AuthenticateMfaParams object,
@@ -78,10 +78,12 @@ func NewAuthenticateMfaParamsWithHTTPClient(client *http.Client) *AuthenticateMf
 	}
 }
 
-/* AuthenticateMfaParams contains all the parameters to send to the API endpoint
-   for the authenticate mfa operation.
+/*
+AuthenticateMfaParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the authenticate mfa operation.
+
+	Typically these are written to a http.Request.
 */
 type AuthenticateMfaParams struct {
 

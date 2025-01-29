@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // UpdateConfigOKCode is the HTTP code returned for type UpdateConfigOK
 const UpdateConfigOKCode int = 200
 
-/*UpdateConfigOK The update request was successful and the resource has been altered
+/*
+UpdateConfigOK The update request was successful and the resource has been altered
 
 swagger:response updateConfigOK
 */
@@ -84,7 +85,8 @@ func (o *UpdateConfigOK) WriteResponse(rw http.ResponseWriter, producer runtime.
 // UpdateConfigBadRequestCode is the HTTP code returned for type UpdateConfigBadRequest
 const UpdateConfigBadRequestCode int = 400
 
-/*UpdateConfigBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+UpdateConfigBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response updateConfigBadRequest
 */
@@ -128,7 +130,8 @@ func (o *UpdateConfigBadRequest) WriteResponse(rw http.ResponseWriter, producer 
 // UpdateConfigUnauthorizedCode is the HTTP code returned for type UpdateConfigUnauthorized
 const UpdateConfigUnauthorizedCode int = 401
 
-/*UpdateConfigUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+UpdateConfigUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response updateConfigUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *UpdateConfigUnauthorized) WriteResponse(rw http.ResponseWriter, produce
 // UpdateConfigNotFoundCode is the HTTP code returned for type UpdateConfigNotFound
 const UpdateConfigNotFoundCode int = 404
 
-/*UpdateConfigNotFound The requested resource does not exist
+/*
+UpdateConfigNotFound The requested resource does not exist
 
 swagger:response updateConfigNotFound
 */
@@ -216,7 +220,8 @@ func (o *UpdateConfigNotFound) WriteResponse(rw http.ResponseWriter, producer ru
 // UpdateConfigTooManyRequestsCode is the HTTP code returned for type UpdateConfigTooManyRequests
 const UpdateConfigTooManyRequestsCode int = 429
 
-/*UpdateConfigTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+UpdateConfigTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response updateConfigTooManyRequests
 */
@@ -260,7 +265,8 @@ func (o *UpdateConfigTooManyRequests) WriteResponse(rw http.ResponseWriter, prod
 // UpdateConfigServiceUnavailableCode is the HTTP code returned for type UpdateConfigServiceUnavailable
 const UpdateConfigServiceUnavailableCode int = 503
 
-/*UpdateConfigServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+UpdateConfigServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response updateConfigServiceUnavailable
 */

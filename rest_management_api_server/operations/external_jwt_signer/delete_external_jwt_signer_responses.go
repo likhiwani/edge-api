@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DeleteExternalJWTSignerOKCode is the HTTP code returned for type DeleteExternalJWTSignerOK
 const DeleteExternalJWTSignerOKCode int = 200
 
-/*DeleteExternalJWTSignerOK The delete request was successful and the resource has been removed
+/*
+DeleteExternalJWTSignerOK The delete request was successful and the resource has been removed
 
 swagger:response deleteExternalJwtSignerOK
 */
@@ -84,7 +85,8 @@ func (o *DeleteExternalJWTSignerOK) WriteResponse(rw http.ResponseWriter, produc
 // DeleteExternalJWTSignerBadRequestCode is the HTTP code returned for type DeleteExternalJWTSignerBadRequest
 const DeleteExternalJWTSignerBadRequestCode int = 400
 
-/*DeleteExternalJWTSignerBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+DeleteExternalJWTSignerBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response deleteExternalJwtSignerBadRequest
 */
@@ -128,7 +130,8 @@ func (o *DeleteExternalJWTSignerBadRequest) WriteResponse(rw http.ResponseWriter
 // DeleteExternalJWTSignerUnauthorizedCode is the HTTP code returned for type DeleteExternalJWTSignerUnauthorized
 const DeleteExternalJWTSignerUnauthorizedCode int = 401
 
-/*DeleteExternalJWTSignerUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+DeleteExternalJWTSignerUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response deleteExternalJwtSignerUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *DeleteExternalJWTSignerUnauthorized) WriteResponse(rw http.ResponseWrit
 // DeleteExternalJWTSignerNotFoundCode is the HTTP code returned for type DeleteExternalJWTSignerNotFound
 const DeleteExternalJWTSignerNotFoundCode int = 404
 
-/*DeleteExternalJWTSignerNotFound The requested resource does not exist
+/*
+DeleteExternalJWTSignerNotFound The requested resource does not exist
 
 swagger:response deleteExternalJwtSignerNotFound
 */
@@ -216,7 +220,8 @@ func (o *DeleteExternalJWTSignerNotFound) WriteResponse(rw http.ResponseWriter, 
 // DeleteExternalJWTSignerTooManyRequestsCode is the HTTP code returned for type DeleteExternalJWTSignerTooManyRequests
 const DeleteExternalJWTSignerTooManyRequestsCode int = 429
 
-/*DeleteExternalJWTSignerTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+DeleteExternalJWTSignerTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response deleteExternalJwtSignerTooManyRequests
 */
@@ -260,7 +265,8 @@ func (o *DeleteExternalJWTSignerTooManyRequests) WriteResponse(rw http.ResponseW
 // DeleteExternalJWTSignerServiceUnavailableCode is the HTTP code returned for type DeleteExternalJWTSignerServiceUnavailable
 const DeleteExternalJWTSignerServiceUnavailableCode int = 503
 
-/*DeleteExternalJWTSignerServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+DeleteExternalJWTSignerServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response deleteExternalJwtSignerServiceUnavailable
 */

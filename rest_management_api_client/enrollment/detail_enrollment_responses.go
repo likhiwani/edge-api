@@ -30,13 +30,14 @@ package enrollment
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DetailEnrollmentReader is a Reader for the DetailEnrollment structure.
@@ -78,7 +79,7 @@ func (o *DetailEnrollmentReader) ReadResponse(response runtime.ClientResponse, c
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[GET /enrollments/{id}] detailEnrollment", response, response.Code())
 	}
 }
 
@@ -87,7 +88,8 @@ func NewDetailEnrollmentOK() *DetailEnrollmentOK {
 	return &DetailEnrollmentOK{}
 }
 
-/* DetailEnrollmentOK describes a response with status code 200, with default header values.
+/*
+DetailEnrollmentOK describes a response with status code 200, with default header values.
 
 A singular enrollment resource
 */
@@ -95,9 +97,46 @@ type DetailEnrollmentOK struct {
 	Payload *rest_model.DetailEnrollmentEnvelope
 }
 
-func (o *DetailEnrollmentOK) Error() string {
-	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentOK  %+v", 200, o.Payload)
+// IsSuccess returns true when this detail enrollment o k response has a 2xx status code
+func (o *DetailEnrollmentOK) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this detail enrollment o k response has a 3xx status code
+func (o *DetailEnrollmentOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this detail enrollment o k response has a 4xx status code
+func (o *DetailEnrollmentOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this detail enrollment o k response has a 5xx status code
+func (o *DetailEnrollmentOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this detail enrollment o k response a status code equal to that given
+func (o *DetailEnrollmentOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the detail enrollment o k response
+func (o *DetailEnrollmentOK) Code() int {
+	return 200
+}
+
+func (o *DetailEnrollmentOK) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentOK %s", 200, payload)
+}
+
+func (o *DetailEnrollmentOK) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentOK %s", 200, payload)
+}
+
 func (o *DetailEnrollmentOK) GetPayload() *rest_model.DetailEnrollmentEnvelope {
 	return o.Payload
 }
@@ -119,7 +158,8 @@ func NewDetailEnrollmentUnauthorized() *DetailEnrollmentUnauthorized {
 	return &DetailEnrollmentUnauthorized{}
 }
 
-/* DetailEnrollmentUnauthorized describes a response with status code 401, with default header values.
+/*
+DetailEnrollmentUnauthorized describes a response with status code 401, with default header values.
 
 The supplied session does not have the correct access rights to request this resource
 */
@@ -127,9 +167,46 @@ type DetailEnrollmentUnauthorized struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *DetailEnrollmentUnauthorized) Error() string {
-	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentUnauthorized  %+v", 401, o.Payload)
+// IsSuccess returns true when this detail enrollment unauthorized response has a 2xx status code
+func (o *DetailEnrollmentUnauthorized) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this detail enrollment unauthorized response has a 3xx status code
+func (o *DetailEnrollmentUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this detail enrollment unauthorized response has a 4xx status code
+func (o *DetailEnrollmentUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this detail enrollment unauthorized response has a 5xx status code
+func (o *DetailEnrollmentUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this detail enrollment unauthorized response a status code equal to that given
+func (o *DetailEnrollmentUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
+// Code gets the status code for the detail enrollment unauthorized response
+func (o *DetailEnrollmentUnauthorized) Code() int {
+	return 401
+}
+
+func (o *DetailEnrollmentUnauthorized) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentUnauthorized %s", 401, payload)
+}
+
+func (o *DetailEnrollmentUnauthorized) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentUnauthorized %s", 401, payload)
+}
+
 func (o *DetailEnrollmentUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -151,7 +228,8 @@ func NewDetailEnrollmentNotFound() *DetailEnrollmentNotFound {
 	return &DetailEnrollmentNotFound{}
 }
 
-/* DetailEnrollmentNotFound describes a response with status code 404, with default header values.
+/*
+DetailEnrollmentNotFound describes a response with status code 404, with default header values.
 
 The requested resource does not exist
 */
@@ -159,9 +237,46 @@ type DetailEnrollmentNotFound struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *DetailEnrollmentNotFound) Error() string {
-	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentNotFound  %+v", 404, o.Payload)
+// IsSuccess returns true when this detail enrollment not found response has a 2xx status code
+func (o *DetailEnrollmentNotFound) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this detail enrollment not found response has a 3xx status code
+func (o *DetailEnrollmentNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this detail enrollment not found response has a 4xx status code
+func (o *DetailEnrollmentNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this detail enrollment not found response has a 5xx status code
+func (o *DetailEnrollmentNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this detail enrollment not found response a status code equal to that given
+func (o *DetailEnrollmentNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
+// Code gets the status code for the detail enrollment not found response
+func (o *DetailEnrollmentNotFound) Code() int {
+	return 404
+}
+
+func (o *DetailEnrollmentNotFound) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentNotFound %s", 404, payload)
+}
+
+func (o *DetailEnrollmentNotFound) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentNotFound %s", 404, payload)
+}
+
 func (o *DetailEnrollmentNotFound) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -183,7 +298,8 @@ func NewDetailEnrollmentTooManyRequests() *DetailEnrollmentTooManyRequests {
 	return &DetailEnrollmentTooManyRequests{}
 }
 
-/* DetailEnrollmentTooManyRequests describes a response with status code 429, with default header values.
+/*
+DetailEnrollmentTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -191,9 +307,46 @@ type DetailEnrollmentTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *DetailEnrollmentTooManyRequests) Error() string {
-	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this detail enrollment too many requests response has a 2xx status code
+func (o *DetailEnrollmentTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this detail enrollment too many requests response has a 3xx status code
+func (o *DetailEnrollmentTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this detail enrollment too many requests response has a 4xx status code
+func (o *DetailEnrollmentTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this detail enrollment too many requests response has a 5xx status code
+func (o *DetailEnrollmentTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this detail enrollment too many requests response a status code equal to that given
+func (o *DetailEnrollmentTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the detail enrollment too many requests response
+func (o *DetailEnrollmentTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *DetailEnrollmentTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentTooManyRequests %s", 429, payload)
+}
+
+func (o *DetailEnrollmentTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentTooManyRequests %s", 429, payload)
+}
+
 func (o *DetailEnrollmentTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -215,7 +368,8 @@ func NewDetailEnrollmentServiceUnavailable() *DetailEnrollmentServiceUnavailable
 	return &DetailEnrollmentServiceUnavailable{}
 }
 
-/* DetailEnrollmentServiceUnavailable describes a response with status code 503, with default header values.
+/*
+DetailEnrollmentServiceUnavailable describes a response with status code 503, with default header values.
 
 The request could not be completed due to the server being busy or in a temporarily bad state
 */
@@ -223,9 +377,46 @@ type DetailEnrollmentServiceUnavailable struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *DetailEnrollmentServiceUnavailable) Error() string {
-	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentServiceUnavailable  %+v", 503, o.Payload)
+// IsSuccess returns true when this detail enrollment service unavailable response has a 2xx status code
+func (o *DetailEnrollmentServiceUnavailable) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this detail enrollment service unavailable response has a 3xx status code
+func (o *DetailEnrollmentServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this detail enrollment service unavailable response has a 4xx status code
+func (o *DetailEnrollmentServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this detail enrollment service unavailable response has a 5xx status code
+func (o *DetailEnrollmentServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this detail enrollment service unavailable response a status code equal to that given
+func (o *DetailEnrollmentServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
+// Code gets the status code for the detail enrollment service unavailable response
+func (o *DetailEnrollmentServiceUnavailable) Code() int {
+	return 503
+}
+
+func (o *DetailEnrollmentServiceUnavailable) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentServiceUnavailable %s", 503, payload)
+}
+
+func (o *DetailEnrollmentServiceUnavailable) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentServiceUnavailable %s", 503, payload)
+}
+
 func (o *DetailEnrollmentServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

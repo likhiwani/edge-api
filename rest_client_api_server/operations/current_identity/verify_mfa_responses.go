@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // VerifyMfaOKCode is the HTTP code returned for type VerifyMfaOK
 const VerifyMfaOKCode int = 200
 
-/*VerifyMfaOK Base empty response
+/*
+VerifyMfaOK Base empty response
 
 swagger:response verifyMfaOK
 */
@@ -84,7 +85,8 @@ func (o *VerifyMfaOK) WriteResponse(rw http.ResponseWriter, producer runtime.Pro
 // VerifyMfaUnauthorizedCode is the HTTP code returned for type VerifyMfaUnauthorized
 const VerifyMfaUnauthorizedCode int = 401
 
-/*VerifyMfaUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+VerifyMfaUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response verifyMfaUnauthorized
 */
@@ -128,7 +130,8 @@ func (o *VerifyMfaUnauthorized) WriteResponse(rw http.ResponseWriter, producer r
 // VerifyMfaNotFoundCode is the HTTP code returned for type VerifyMfaNotFound
 const VerifyMfaNotFoundCode int = 404
 
-/*VerifyMfaNotFound The requested resource does not exist
+/*
+VerifyMfaNotFound The requested resource does not exist
 
 swagger:response verifyMfaNotFound
 */

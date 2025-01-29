@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DataIntegrityResultsOKCode is the HTTP code returned for type DataIntegrityResultsOK
 const DataIntegrityResultsOKCode int = 200
 
-/*DataIntegrityResultsOK A list of data integrity issues found
+/*
+DataIntegrityResultsOK A list of data integrity issues found
 
 swagger:response dataIntegrityResultsOK
 */
@@ -84,7 +85,8 @@ func (o *DataIntegrityResultsOK) WriteResponse(rw http.ResponseWriter, producer 
 // DataIntegrityResultsUnauthorizedCode is the HTTP code returned for type DataIntegrityResultsUnauthorized
 const DataIntegrityResultsUnauthorizedCode int = 401
 
-/*DataIntegrityResultsUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+DataIntegrityResultsUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response dataIntegrityResultsUnauthorized
 */
@@ -128,7 +130,8 @@ func (o *DataIntegrityResultsUnauthorized) WriteResponse(rw http.ResponseWriter,
 // DataIntegrityResultsTooManyRequestsCode is the HTTP code returned for type DataIntegrityResultsTooManyRequests
 const DataIntegrityResultsTooManyRequestsCode int = 429
 
-/*DataIntegrityResultsTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+DataIntegrityResultsTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response dataIntegrityResultsTooManyRequests
 */
@@ -172,7 +175,8 @@ func (o *DataIntegrityResultsTooManyRequests) WriteResponse(rw http.ResponseWrit
 // DataIntegrityResultsServiceUnavailableCode is the HTTP code returned for type DataIntegrityResultsServiceUnavailable
 const DataIntegrityResultsServiceUnavailableCode int = 503
 
-/*DataIntegrityResultsServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+DataIntegrityResultsServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response dataIntegrityResultsServiceUnavailable
 */

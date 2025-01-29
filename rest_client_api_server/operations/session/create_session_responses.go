@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // CreateSessionCreatedCode is the HTTP code returned for type CreateSessionCreated
 const CreateSessionCreatedCode int = 201
 
-/*CreateSessionCreated The create request was successful and the resource has been added at the following location
+/*
+CreateSessionCreated The create request was successful and the resource has been added at the following location
 
 swagger:response createSessionCreated
 */
@@ -84,7 +85,8 @@ func (o *CreateSessionCreated) WriteResponse(rw http.ResponseWriter, producer ru
 // CreateSessionBadRequestCode is the HTTP code returned for type CreateSessionBadRequest
 const CreateSessionBadRequestCode int = 400
 
-/*CreateSessionBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+CreateSessionBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response createSessionBadRequest
 */
@@ -128,7 +130,8 @@ func (o *CreateSessionBadRequest) WriteResponse(rw http.ResponseWriter, producer
 // CreateSessionUnauthorizedCode is the HTTP code returned for type CreateSessionUnauthorized
 const CreateSessionUnauthorizedCode int = 401
 
-/*CreateSessionUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+CreateSessionUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response createSessionUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *CreateSessionUnauthorized) WriteResponse(rw http.ResponseWriter, produc
 // CreateSessionNotFoundCode is the HTTP code returned for type CreateSessionNotFound
 const CreateSessionNotFoundCode int = 404
 
-/*CreateSessionNotFound The requested resource does not exist
+/*
+CreateSessionNotFound The requested resource does not exist
 
 swagger:response createSessionNotFound
 */
@@ -216,7 +220,8 @@ func (o *CreateSessionNotFound) WriteResponse(rw http.ResponseWriter, producer r
 // CreateSessionTooManyRequestsCode is the HTTP code returned for type CreateSessionTooManyRequests
 const CreateSessionTooManyRequestsCode int = 429
 
-/*CreateSessionTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+CreateSessionTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response createSessionTooManyRequests
 */
@@ -260,7 +265,8 @@ func (o *CreateSessionTooManyRequests) WriteResponse(rw http.ResponseWriter, pro
 // CreateSessionServiceUnavailableCode is the HTTP code returned for type CreateSessionServiceUnavailable
 const CreateSessionServiceUnavailableCode int = 503
 
-/*CreateSessionServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+CreateSessionServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response createSessionServiceUnavailable
 */

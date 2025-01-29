@@ -30,13 +30,14 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // GetIdentityFailedServiceRequestsReader is a Reader for the GetIdentityFailedServiceRequests structure.
@@ -78,7 +79,7 @@ func (o *GetIdentityFailedServiceRequestsReader) ReadResponse(response runtime.C
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[GET /identities/{id}/failed-service-requests] getIdentityFailedServiceRequests", response, response.Code())
 	}
 }
 
@@ -87,7 +88,8 @@ func NewGetIdentityFailedServiceRequestsOK() *GetIdentityFailedServiceRequestsOK
 	return &GetIdentityFailedServiceRequestsOK{}
 }
 
-/* GetIdentityFailedServiceRequestsOK describes a response with status code 200, with default header values.
+/*
+GetIdentityFailedServiceRequestsOK describes a response with status code 200, with default header values.
 
 Returns a list of service request failures
 */
@@ -95,9 +97,46 @@ type GetIdentityFailedServiceRequestsOK struct {
 	Payload *rest_model.FailedServiceRequestEnvelope
 }
 
-func (o *GetIdentityFailedServiceRequestsOK) Error() string {
-	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsOK  %+v", 200, o.Payload)
+// IsSuccess returns true when this get identity failed service requests o k response has a 2xx status code
+func (o *GetIdentityFailedServiceRequestsOK) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this get identity failed service requests o k response has a 3xx status code
+func (o *GetIdentityFailedServiceRequestsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get identity failed service requests o k response has a 4xx status code
+func (o *GetIdentityFailedServiceRequestsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get identity failed service requests o k response has a 5xx status code
+func (o *GetIdentityFailedServiceRequestsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get identity failed service requests o k response a status code equal to that given
+func (o *GetIdentityFailedServiceRequestsOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the get identity failed service requests o k response
+func (o *GetIdentityFailedServiceRequestsOK) Code() int {
+	return 200
+}
+
+func (o *GetIdentityFailedServiceRequestsOK) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsOK %s", 200, payload)
+}
+
+func (o *GetIdentityFailedServiceRequestsOK) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsOK %s", 200, payload)
+}
+
 func (o *GetIdentityFailedServiceRequestsOK) GetPayload() *rest_model.FailedServiceRequestEnvelope {
 	return o.Payload
 }
@@ -119,7 +158,8 @@ func NewGetIdentityFailedServiceRequestsUnauthorized() *GetIdentityFailedService
 	return &GetIdentityFailedServiceRequestsUnauthorized{}
 }
 
-/* GetIdentityFailedServiceRequestsUnauthorized describes a response with status code 401, with default header values.
+/*
+GetIdentityFailedServiceRequestsUnauthorized describes a response with status code 401, with default header values.
 
 The supplied session does not have the correct access rights to request this resource
 */
@@ -127,9 +167,46 @@ type GetIdentityFailedServiceRequestsUnauthorized struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *GetIdentityFailedServiceRequestsUnauthorized) Error() string {
-	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsUnauthorized  %+v", 401, o.Payload)
+// IsSuccess returns true when this get identity failed service requests unauthorized response has a 2xx status code
+func (o *GetIdentityFailedServiceRequestsUnauthorized) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this get identity failed service requests unauthorized response has a 3xx status code
+func (o *GetIdentityFailedServiceRequestsUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get identity failed service requests unauthorized response has a 4xx status code
+func (o *GetIdentityFailedServiceRequestsUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get identity failed service requests unauthorized response has a 5xx status code
+func (o *GetIdentityFailedServiceRequestsUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get identity failed service requests unauthorized response a status code equal to that given
+func (o *GetIdentityFailedServiceRequestsUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
+// Code gets the status code for the get identity failed service requests unauthorized response
+func (o *GetIdentityFailedServiceRequestsUnauthorized) Code() int {
+	return 401
+}
+
+func (o *GetIdentityFailedServiceRequestsUnauthorized) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsUnauthorized %s", 401, payload)
+}
+
+func (o *GetIdentityFailedServiceRequestsUnauthorized) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsUnauthorized %s", 401, payload)
+}
+
 func (o *GetIdentityFailedServiceRequestsUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -151,7 +228,8 @@ func NewGetIdentityFailedServiceRequestsNotFound() *GetIdentityFailedServiceRequ
 	return &GetIdentityFailedServiceRequestsNotFound{}
 }
 
-/* GetIdentityFailedServiceRequestsNotFound describes a response with status code 404, with default header values.
+/*
+GetIdentityFailedServiceRequestsNotFound describes a response with status code 404, with default header values.
 
 The requested resource does not exist
 */
@@ -159,9 +237,46 @@ type GetIdentityFailedServiceRequestsNotFound struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *GetIdentityFailedServiceRequestsNotFound) Error() string {
-	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsNotFound  %+v", 404, o.Payload)
+// IsSuccess returns true when this get identity failed service requests not found response has a 2xx status code
+func (o *GetIdentityFailedServiceRequestsNotFound) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this get identity failed service requests not found response has a 3xx status code
+func (o *GetIdentityFailedServiceRequestsNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get identity failed service requests not found response has a 4xx status code
+func (o *GetIdentityFailedServiceRequestsNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get identity failed service requests not found response has a 5xx status code
+func (o *GetIdentityFailedServiceRequestsNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get identity failed service requests not found response a status code equal to that given
+func (o *GetIdentityFailedServiceRequestsNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
+// Code gets the status code for the get identity failed service requests not found response
+func (o *GetIdentityFailedServiceRequestsNotFound) Code() int {
+	return 404
+}
+
+func (o *GetIdentityFailedServiceRequestsNotFound) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsNotFound %s", 404, payload)
+}
+
+func (o *GetIdentityFailedServiceRequestsNotFound) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsNotFound %s", 404, payload)
+}
+
 func (o *GetIdentityFailedServiceRequestsNotFound) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -183,7 +298,8 @@ func NewGetIdentityFailedServiceRequestsTooManyRequests() *GetIdentityFailedServ
 	return &GetIdentityFailedServiceRequestsTooManyRequests{}
 }
 
-/* GetIdentityFailedServiceRequestsTooManyRequests describes a response with status code 429, with default header values.
+/*
+GetIdentityFailedServiceRequestsTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -191,9 +307,46 @@ type GetIdentityFailedServiceRequestsTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *GetIdentityFailedServiceRequestsTooManyRequests) Error() string {
-	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this get identity failed service requests too many requests response has a 2xx status code
+func (o *GetIdentityFailedServiceRequestsTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this get identity failed service requests too many requests response has a 3xx status code
+func (o *GetIdentityFailedServiceRequestsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get identity failed service requests too many requests response has a 4xx status code
+func (o *GetIdentityFailedServiceRequestsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this get identity failed service requests too many requests response has a 5xx status code
+func (o *GetIdentityFailedServiceRequestsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this get identity failed service requests too many requests response a status code equal to that given
+func (o *GetIdentityFailedServiceRequestsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the get identity failed service requests too many requests response
+func (o *GetIdentityFailedServiceRequestsTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *GetIdentityFailedServiceRequestsTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsTooManyRequests %s", 429, payload)
+}
+
+func (o *GetIdentityFailedServiceRequestsTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsTooManyRequests %s", 429, payload)
+}
+
 func (o *GetIdentityFailedServiceRequestsTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -215,7 +368,8 @@ func NewGetIdentityFailedServiceRequestsServiceUnavailable() *GetIdentityFailedS
 	return &GetIdentityFailedServiceRequestsServiceUnavailable{}
 }
 
-/* GetIdentityFailedServiceRequestsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+GetIdentityFailedServiceRequestsServiceUnavailable describes a response with status code 503, with default header values.
 
 The request could not be completed due to the server being busy or in a temporarily bad state
 */
@@ -223,9 +377,46 @@ type GetIdentityFailedServiceRequestsServiceUnavailable struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *GetIdentityFailedServiceRequestsServiceUnavailable) Error() string {
-	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsServiceUnavailable  %+v", 503, o.Payload)
+// IsSuccess returns true when this get identity failed service requests service unavailable response has a 2xx status code
+func (o *GetIdentityFailedServiceRequestsServiceUnavailable) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this get identity failed service requests service unavailable response has a 3xx status code
+func (o *GetIdentityFailedServiceRequestsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this get identity failed service requests service unavailable response has a 4xx status code
+func (o *GetIdentityFailedServiceRequestsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this get identity failed service requests service unavailable response has a 5xx status code
+func (o *GetIdentityFailedServiceRequestsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this get identity failed service requests service unavailable response a status code equal to that given
+func (o *GetIdentityFailedServiceRequestsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
+// Code gets the status code for the get identity failed service requests service unavailable response
+func (o *GetIdentityFailedServiceRequestsServiceUnavailable) Code() int {
+	return 503
+}
+
+func (o *GetIdentityFailedServiceRequestsServiceUnavailable) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsServiceUnavailable %s", 503, payload)
+}
+
+func (o *GetIdentityFailedServiceRequestsServiceUnavailable) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsServiceUnavailable %s", 503, payload)
+}
+
 func (o *GetIdentityFailedServiceRequestsServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

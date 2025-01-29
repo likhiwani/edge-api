@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // GetCurrentIdentityOKCode is the HTTP code returned for type GetCurrentIdentityOK
 const GetCurrentIdentityOKCode int = 200
 
-/*GetCurrentIdentityOK The identity associated with the API Session used to issue the request
+/*
+GetCurrentIdentityOK The identity associated with the API Session used to issue the request
 
 swagger:response getCurrentIdentityOK
 */
@@ -84,7 +85,8 @@ func (o *GetCurrentIdentityOK) WriteResponse(rw http.ResponseWriter, producer ru
 // GetCurrentIdentityUnauthorizedCode is the HTTP code returned for type GetCurrentIdentityUnauthorized
 const GetCurrentIdentityUnauthorizedCode int = 401
 
-/*GetCurrentIdentityUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+GetCurrentIdentityUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response getCurrentIdentityUnauthorized
 */

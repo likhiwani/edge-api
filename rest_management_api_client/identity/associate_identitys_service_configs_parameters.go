@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewAssociateIdentitysServiceConfigsParams creates a new AssociateIdentitysServiceConfigsParams object,
@@ -78,10 +78,12 @@ func NewAssociateIdentitysServiceConfigsParamsWithHTTPClient(client *http.Client
 	}
 }
 
-/* AssociateIdentitysServiceConfigsParams contains all the parameters to send to the API endpoint
-   for the associate identitys service configs operation.
+/*
+AssociateIdentitysServiceConfigsParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the associate identitys service configs operation.
+
+	Typically these are written to a http.Request.
 */
 type AssociateIdentitysServiceConfigsParams struct {
 

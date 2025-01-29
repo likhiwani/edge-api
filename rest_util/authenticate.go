@@ -25,9 +25,9 @@ import (
 	"github.com/go-openapi/runtime"
 	openapiclient "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
-	"github.com/openziti/edge-api/rest_management_api_client"
-	"github.com/openziti/edge-api/rest_management_api_client/authentication"
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_management_api_client"
+	"ztna-core/edge-api/rest_management_api_client/authentication"
+	"ztna-core/edge-api/rest_model"
 	"net/http"
 	"net/url"
 )

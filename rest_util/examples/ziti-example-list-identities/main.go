@@ -19,8 +19,8 @@ package main
 import (
 	"context"
 	"crypto/x509"
-	"github.com/openziti/edge-api/rest_management_api_client/identity"
-	"github.com/openziti/edge-api/rest_util"
+	"ztna-core/edge-api/rest_management_api_client/identity"
+	"ztna-core/edge-api/rest_util"
 	log "github.com/sirupsen/logrus"
 )
 

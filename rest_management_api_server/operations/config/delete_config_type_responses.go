@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DeleteConfigTypeOKCode is the HTTP code returned for type DeleteConfigTypeOK
 const DeleteConfigTypeOKCode int = 200
 
-/*DeleteConfigTypeOK The delete request was successful and the resource has been removed
+/*
+DeleteConfigTypeOK The delete request was successful and the resource has been removed
 
 swagger:response deleteConfigTypeOK
 */
@@ -84,7 +85,8 @@ func (o *DeleteConfigTypeOK) WriteResponse(rw http.ResponseWriter, producer runt
 // DeleteConfigTypeBadRequestCode is the HTTP code returned for type DeleteConfigTypeBadRequest
 const DeleteConfigTypeBadRequestCode int = 400
 
-/*DeleteConfigTypeBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+DeleteConfigTypeBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response deleteConfigTypeBadRequest
 */
@@ -128,7 +130,8 @@ func (o *DeleteConfigTypeBadRequest) WriteResponse(rw http.ResponseWriter, produ
 // DeleteConfigTypeUnauthorizedCode is the HTTP code returned for type DeleteConfigTypeUnauthorized
 const DeleteConfigTypeUnauthorizedCode int = 401
 
-/*DeleteConfigTypeUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+DeleteConfigTypeUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response deleteConfigTypeUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *DeleteConfigTypeUnauthorized) WriteResponse(rw http.ResponseWriter, pro
 // DeleteConfigTypeNotFoundCode is the HTTP code returned for type DeleteConfigTypeNotFound
 const DeleteConfigTypeNotFoundCode int = 404
 
-/*DeleteConfigTypeNotFound The requested resource does not exist
+/*
+DeleteConfigTypeNotFound The requested resource does not exist
 
 swagger:response deleteConfigTypeNotFound
 */
@@ -216,7 +220,8 @@ func (o *DeleteConfigTypeNotFound) WriteResponse(rw http.ResponseWriter, produce
 // DeleteConfigTypeConflictCode is the HTTP code returned for type DeleteConfigTypeConflict
 const DeleteConfigTypeConflictCode int = 409
 
-/*DeleteConfigTypeConflict The resource requested to be removed/altered cannot be as it is referenced by another object.
+/*
+DeleteConfigTypeConflict The resource requested to be removed/altered cannot be as it is referenced by another object.
 
 swagger:response deleteConfigTypeConflict
 */
@@ -260,7 +265,8 @@ func (o *DeleteConfigTypeConflict) WriteResponse(rw http.ResponseWriter, produce
 // DeleteConfigTypeTooManyRequestsCode is the HTTP code returned for type DeleteConfigTypeTooManyRequests
 const DeleteConfigTypeTooManyRequestsCode int = 429
 
-/*DeleteConfigTypeTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+DeleteConfigTypeTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response deleteConfigTypeTooManyRequests
 */
@@ -304,7 +310,8 @@ func (o *DeleteConfigTypeTooManyRequests) WriteResponse(rw http.ResponseWriter, 
 // DeleteConfigTypeServiceUnavailableCode is the HTTP code returned for type DeleteConfigTypeServiceUnavailable
 const DeleteConfigTypeServiceUnavailableCode int = 503
 
-/*DeleteConfigTypeServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+DeleteConfigTypeServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response deleteConfigTypeServiceUnavailable
 */

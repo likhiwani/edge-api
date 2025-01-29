@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewEnrollmentChallengeParams creates a new EnrollmentChallengeParams object,
@@ -78,10 +78,12 @@ func NewEnrollmentChallengeParamsWithHTTPClient(client *http.Client) *Enrollment
 	}
 }
 
-/* EnrollmentChallengeParams contains all the parameters to send to the API endpoint
-   for the enrollment challenge operation.
+/*
+EnrollmentChallengeParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the enrollment challenge operation.
+
+	Typically these are written to a http.Request.
 */
 type EnrollmentChallengeParams struct {
 

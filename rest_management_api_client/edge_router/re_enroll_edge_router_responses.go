@@ -30,13 +30,14 @@ package edge_router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ReEnrollEdgeRouterReader is a Reader for the ReEnrollEdgeRouter structure.
@@ -78,7 +79,7 @@ func (o *ReEnrollEdgeRouterReader) ReadResponse(response runtime.ClientResponse,
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[POST /edge-routers/{id}/re-enroll] reEnrollEdgeRouter", response, response.Code())
 	}
 }
 
@@ -87,7 +88,8 @@ func NewReEnrollEdgeRouterOK() *ReEnrollEdgeRouterOK {
 	return &ReEnrollEdgeRouterOK{}
 }
 
-/* ReEnrollEdgeRouterOK describes a response with status code 200, with default header values.
+/*
+ReEnrollEdgeRouterOK describes a response with status code 200, with default header values.
 
 Base empty response
 */
@@ -95,9 +97,46 @@ type ReEnrollEdgeRouterOK struct {
 	Payload *rest_model.Empty
 }
 
-func (o *ReEnrollEdgeRouterOK) Error() string {
-	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterOK  %+v", 200, o.Payload)
+// IsSuccess returns true when this re enroll edge router o k response has a 2xx status code
+func (o *ReEnrollEdgeRouterOK) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this re enroll edge router o k response has a 3xx status code
+func (o *ReEnrollEdgeRouterOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this re enroll edge router o k response has a 4xx status code
+func (o *ReEnrollEdgeRouterOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this re enroll edge router o k response has a 5xx status code
+func (o *ReEnrollEdgeRouterOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this re enroll edge router o k response a status code equal to that given
+func (o *ReEnrollEdgeRouterOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the re enroll edge router o k response
+func (o *ReEnrollEdgeRouterOK) Code() int {
+	return 200
+}
+
+func (o *ReEnrollEdgeRouterOK) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterOK %s", 200, payload)
+}
+
+func (o *ReEnrollEdgeRouterOK) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterOK %s", 200, payload)
+}
+
 func (o *ReEnrollEdgeRouterOK) GetPayload() *rest_model.Empty {
 	return o.Payload
 }
@@ -119,7 +158,8 @@ func NewReEnrollEdgeRouterUnauthorized() *ReEnrollEdgeRouterUnauthorized {
 	return &ReEnrollEdgeRouterUnauthorized{}
 }
 
-/* ReEnrollEdgeRouterUnauthorized describes a response with status code 401, with default header values.
+/*
+ReEnrollEdgeRouterUnauthorized describes a response with status code 401, with default header values.
 
 The supplied session does not have the correct access rights to request this resource
 */
@@ -127,9 +167,46 @@ type ReEnrollEdgeRouterUnauthorized struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *ReEnrollEdgeRouterUnauthorized) Error() string {
-	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterUnauthorized  %+v", 401, o.Payload)
+// IsSuccess returns true when this re enroll edge router unauthorized response has a 2xx status code
+func (o *ReEnrollEdgeRouterUnauthorized) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this re enroll edge router unauthorized response has a 3xx status code
+func (o *ReEnrollEdgeRouterUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this re enroll edge router unauthorized response has a 4xx status code
+func (o *ReEnrollEdgeRouterUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this re enroll edge router unauthorized response has a 5xx status code
+func (o *ReEnrollEdgeRouterUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this re enroll edge router unauthorized response a status code equal to that given
+func (o *ReEnrollEdgeRouterUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
+// Code gets the status code for the re enroll edge router unauthorized response
+func (o *ReEnrollEdgeRouterUnauthorized) Code() int {
+	return 401
+}
+
+func (o *ReEnrollEdgeRouterUnauthorized) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterUnauthorized %s", 401, payload)
+}
+
+func (o *ReEnrollEdgeRouterUnauthorized) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterUnauthorized %s", 401, payload)
+}
+
 func (o *ReEnrollEdgeRouterUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -151,7 +228,8 @@ func NewReEnrollEdgeRouterNotFound() *ReEnrollEdgeRouterNotFound {
 	return &ReEnrollEdgeRouterNotFound{}
 }
 
-/* ReEnrollEdgeRouterNotFound describes a response with status code 404, with default header values.
+/*
+ReEnrollEdgeRouterNotFound describes a response with status code 404, with default header values.
 
 The requested resource does not exist
 */
@@ -159,9 +237,46 @@ type ReEnrollEdgeRouterNotFound struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *ReEnrollEdgeRouterNotFound) Error() string {
-	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterNotFound  %+v", 404, o.Payload)
+// IsSuccess returns true when this re enroll edge router not found response has a 2xx status code
+func (o *ReEnrollEdgeRouterNotFound) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this re enroll edge router not found response has a 3xx status code
+func (o *ReEnrollEdgeRouterNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this re enroll edge router not found response has a 4xx status code
+func (o *ReEnrollEdgeRouterNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this re enroll edge router not found response has a 5xx status code
+func (o *ReEnrollEdgeRouterNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this re enroll edge router not found response a status code equal to that given
+func (o *ReEnrollEdgeRouterNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
+// Code gets the status code for the re enroll edge router not found response
+func (o *ReEnrollEdgeRouterNotFound) Code() int {
+	return 404
+}
+
+func (o *ReEnrollEdgeRouterNotFound) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterNotFound %s", 404, payload)
+}
+
+func (o *ReEnrollEdgeRouterNotFound) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterNotFound %s", 404, payload)
+}
+
 func (o *ReEnrollEdgeRouterNotFound) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -183,7 +298,8 @@ func NewReEnrollEdgeRouterTooManyRequests() *ReEnrollEdgeRouterTooManyRequests {
 	return &ReEnrollEdgeRouterTooManyRequests{}
 }
 
-/* ReEnrollEdgeRouterTooManyRequests describes a response with status code 429, with default header values.
+/*
+ReEnrollEdgeRouterTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -191,9 +307,46 @@ type ReEnrollEdgeRouterTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *ReEnrollEdgeRouterTooManyRequests) Error() string {
-	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this re enroll edge router too many requests response has a 2xx status code
+func (o *ReEnrollEdgeRouterTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this re enroll edge router too many requests response has a 3xx status code
+func (o *ReEnrollEdgeRouterTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this re enroll edge router too many requests response has a 4xx status code
+func (o *ReEnrollEdgeRouterTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this re enroll edge router too many requests response has a 5xx status code
+func (o *ReEnrollEdgeRouterTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this re enroll edge router too many requests response a status code equal to that given
+func (o *ReEnrollEdgeRouterTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the re enroll edge router too many requests response
+func (o *ReEnrollEdgeRouterTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *ReEnrollEdgeRouterTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterTooManyRequests %s", 429, payload)
+}
+
+func (o *ReEnrollEdgeRouterTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterTooManyRequests %s", 429, payload)
+}
+
 func (o *ReEnrollEdgeRouterTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -215,7 +368,8 @@ func NewReEnrollEdgeRouterServiceUnavailable() *ReEnrollEdgeRouterServiceUnavail
 	return &ReEnrollEdgeRouterServiceUnavailable{}
 }
 
-/* ReEnrollEdgeRouterServiceUnavailable describes a response with status code 503, with default header values.
+/*
+ReEnrollEdgeRouterServiceUnavailable describes a response with status code 503, with default header values.
 
 The request could not be completed due to the server being busy or in a temporarily bad state
 */
@@ -223,9 +377,46 @@ type ReEnrollEdgeRouterServiceUnavailable struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *ReEnrollEdgeRouterServiceUnavailable) Error() string {
-	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterServiceUnavailable  %+v", 503, o.Payload)
+// IsSuccess returns true when this re enroll edge router service unavailable response has a 2xx status code
+func (o *ReEnrollEdgeRouterServiceUnavailable) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this re enroll edge router service unavailable response has a 3xx status code
+func (o *ReEnrollEdgeRouterServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this re enroll edge router service unavailable response has a 4xx status code
+func (o *ReEnrollEdgeRouterServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this re enroll edge router service unavailable response has a 5xx status code
+func (o *ReEnrollEdgeRouterServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this re enroll edge router service unavailable response a status code equal to that given
+func (o *ReEnrollEdgeRouterServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
+// Code gets the status code for the re enroll edge router service unavailable response
+func (o *ReEnrollEdgeRouterServiceUnavailable) Code() int {
+	return 503
+}
+
+func (o *ReEnrollEdgeRouterServiceUnavailable) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterServiceUnavailable %s", 503, payload)
+}
+
+func (o *ReEnrollEdgeRouterServiceUnavailable) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterServiceUnavailable %s", 503, payload)
+}
+
 func (o *ReEnrollEdgeRouterServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

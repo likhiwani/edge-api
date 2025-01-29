@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewExtendRouterEnrollmentParams creates a new ExtendRouterEnrollmentParams object,
@@ -78,10 +78,12 @@ func NewExtendRouterEnrollmentParamsWithHTTPClient(client *http.Client) *ExtendR
 	}
 }
 
-/* ExtendRouterEnrollmentParams contains all the parameters to send to the API endpoint
-   for the extend router enrollment operation.
+/*
+ExtendRouterEnrollmentParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the extend router enrollment operation.
+
+	Typically these are written to a http.Request.
 */
 type ExtendRouterEnrollmentParams struct {
 

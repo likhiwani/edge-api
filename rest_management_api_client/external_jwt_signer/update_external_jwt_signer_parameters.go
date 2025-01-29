@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewUpdateExternalJWTSignerParams creates a new UpdateExternalJWTSignerParams object,
@@ -78,10 +78,12 @@ func NewUpdateExternalJWTSignerParamsWithHTTPClient(client *http.Client) *Update
 	}
 }
 
-/* UpdateExternalJWTSignerParams contains all the parameters to send to the API endpoint
-   for the update external Jwt signer operation.
+/*
+UpdateExternalJWTSignerParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the update external Jwt signer operation.
+
+	Typically these are written to a http.Request.
 */
 type UpdateExternalJWTSignerParams struct {
 

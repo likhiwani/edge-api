@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DeleteSessionOKCode is the HTTP code returned for type DeleteSessionOK
 const DeleteSessionOKCode int = 200
 
-/*DeleteSessionOK The delete request was successful and the resource has been removed
+/*
+DeleteSessionOK The delete request was successful and the resource has been removed
 
 swagger:response deleteSessionOK
 */
@@ -84,7 +85,8 @@ func (o *DeleteSessionOK) WriteResponse(rw http.ResponseWriter, producer runtime
 // DeleteSessionBadRequestCode is the HTTP code returned for type DeleteSessionBadRequest
 const DeleteSessionBadRequestCode int = 400
 
-/*DeleteSessionBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+DeleteSessionBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response deleteSessionBadRequest
 */
@@ -128,7 +130,8 @@ func (o *DeleteSessionBadRequest) WriteResponse(rw http.ResponseWriter, producer
 // DeleteSessionUnauthorizedCode is the HTTP code returned for type DeleteSessionUnauthorized
 const DeleteSessionUnauthorizedCode int = 401
 
-/*DeleteSessionUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+DeleteSessionUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response deleteSessionUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *DeleteSessionUnauthorized) WriteResponse(rw http.ResponseWriter, produc
 // DeleteSessionConflictCode is the HTTP code returned for type DeleteSessionConflict
 const DeleteSessionConflictCode int = 409
 
-/*DeleteSessionConflict The resource requested to be removed/altered cannot be as it is referenced by another object.
+/*
+DeleteSessionConflict The resource requested to be removed/altered cannot be as it is referenced by another object.
 
 swagger:response deleteSessionConflict
 */
@@ -216,7 +220,8 @@ func (o *DeleteSessionConflict) WriteResponse(rw http.ResponseWriter, producer r
 // DeleteSessionTooManyRequestsCode is the HTTP code returned for type DeleteSessionTooManyRequests
 const DeleteSessionTooManyRequestsCode int = 429
 
-/*DeleteSessionTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+DeleteSessionTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response deleteSessionTooManyRequests
 */
@@ -260,7 +265,8 @@ func (o *DeleteSessionTooManyRequests) WriteResponse(rw http.ResponseWriter, pro
 // DeleteSessionServiceUnavailableCode is the HTTP code returned for type DeleteSessionServiceUnavailable
 const DeleteSessionServiceUnavailableCode int = 503
 
-/*DeleteSessionServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+DeleteSessionServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response deleteSessionServiceUnavailable
 */

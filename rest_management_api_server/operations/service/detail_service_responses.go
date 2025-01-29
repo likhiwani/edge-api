@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DetailServiceOKCode is the HTTP code returned for type DetailServiceOK
 const DetailServiceOKCode int = 200
 
-/*DetailServiceOK A single service
+/*
+DetailServiceOK A single service
 
 swagger:response detailServiceOK
 */
@@ -84,7 +85,8 @@ func (o *DetailServiceOK) WriteResponse(rw http.ResponseWriter, producer runtime
 // DetailServiceUnauthorizedCode is the HTTP code returned for type DetailServiceUnauthorized
 const DetailServiceUnauthorizedCode int = 401
 
-/*DetailServiceUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+DetailServiceUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response detailServiceUnauthorized
 */
@@ -128,7 +130,8 @@ func (o *DetailServiceUnauthorized) WriteResponse(rw http.ResponseWriter, produc
 // DetailServiceNotFoundCode is the HTTP code returned for type DetailServiceNotFound
 const DetailServiceNotFoundCode int = 404
 
-/*DetailServiceNotFound The requested resource does not exist
+/*
+DetailServiceNotFound The requested resource does not exist
 
 swagger:response detailServiceNotFound
 */
@@ -172,7 +175,8 @@ func (o *DetailServiceNotFound) WriteResponse(rw http.ResponseWriter, producer r
 // DetailServiceTooManyRequestsCode is the HTTP code returned for type DetailServiceTooManyRequests
 const DetailServiceTooManyRequestsCode int = 429
 
-/*DetailServiceTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+DetailServiceTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response detailServiceTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *DetailServiceTooManyRequests) WriteResponse(rw http.ResponseWriter, pro
 // DetailServiceServiceUnavailableCode is the HTTP code returned for type DetailServiceServiceUnavailable
 const DetailServiceServiceUnavailableCode int = 503
 
-/*DetailServiceServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+DetailServiceServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response detailServiceServiceUnavailable
 */

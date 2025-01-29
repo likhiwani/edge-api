@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DeleteServiceEdgeRouterPolicyOKCode is the HTTP code returned for type DeleteServiceEdgeRouterPolicyOK
 const DeleteServiceEdgeRouterPolicyOKCode int = 200
 
-/*DeleteServiceEdgeRouterPolicyOK The delete request was successful and the resource has been removed
+/*
+DeleteServiceEdgeRouterPolicyOK The delete request was successful and the resource has been removed
 
 swagger:response deleteServiceEdgeRouterPolicyOK
 */
@@ -84,7 +85,8 @@ func (o *DeleteServiceEdgeRouterPolicyOK) WriteResponse(rw http.ResponseWriter, 
 // DeleteServiceEdgeRouterPolicyBadRequestCode is the HTTP code returned for type DeleteServiceEdgeRouterPolicyBadRequest
 const DeleteServiceEdgeRouterPolicyBadRequestCode int = 400
 
-/*DeleteServiceEdgeRouterPolicyBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+DeleteServiceEdgeRouterPolicyBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response deleteServiceEdgeRouterPolicyBadRequest
 */
@@ -128,7 +130,8 @@ func (o *DeleteServiceEdgeRouterPolicyBadRequest) WriteResponse(rw http.Response
 // DeleteServiceEdgeRouterPolicyUnauthorizedCode is the HTTP code returned for type DeleteServiceEdgeRouterPolicyUnauthorized
 const DeleteServiceEdgeRouterPolicyUnauthorizedCode int = 401
 
-/*DeleteServiceEdgeRouterPolicyUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+DeleteServiceEdgeRouterPolicyUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response deleteServiceEdgeRouterPolicyUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *DeleteServiceEdgeRouterPolicyUnauthorized) WriteResponse(rw http.Respon
 // DeleteServiceEdgeRouterPolicyNotFoundCode is the HTTP code returned for type DeleteServiceEdgeRouterPolicyNotFound
 const DeleteServiceEdgeRouterPolicyNotFoundCode int = 404
 
-/*DeleteServiceEdgeRouterPolicyNotFound The requested resource does not exist
+/*
+DeleteServiceEdgeRouterPolicyNotFound The requested resource does not exist
 
 swagger:response deleteServiceEdgeRouterPolicyNotFound
 */
@@ -216,7 +220,8 @@ func (o *DeleteServiceEdgeRouterPolicyNotFound) WriteResponse(rw http.ResponseWr
 // DeleteServiceEdgeRouterPolicyConflictCode is the HTTP code returned for type DeleteServiceEdgeRouterPolicyConflict
 const DeleteServiceEdgeRouterPolicyConflictCode int = 409
 
-/*DeleteServiceEdgeRouterPolicyConflict The resource requested to be removed/altered cannot be as it is referenced by another object.
+/*
+DeleteServiceEdgeRouterPolicyConflict The resource requested to be removed/altered cannot be as it is referenced by another object.
 
 swagger:response deleteServiceEdgeRouterPolicyConflict
 */
@@ -260,7 +265,8 @@ func (o *DeleteServiceEdgeRouterPolicyConflict) WriteResponse(rw http.ResponseWr
 // DeleteServiceEdgeRouterPolicyTooManyRequestsCode is the HTTP code returned for type DeleteServiceEdgeRouterPolicyTooManyRequests
 const DeleteServiceEdgeRouterPolicyTooManyRequestsCode int = 429
 
-/*DeleteServiceEdgeRouterPolicyTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+DeleteServiceEdgeRouterPolicyTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response deleteServiceEdgeRouterPolicyTooManyRequests
 */
@@ -304,7 +310,8 @@ func (o *DeleteServiceEdgeRouterPolicyTooManyRequests) WriteResponse(rw http.Res
 // DeleteServiceEdgeRouterPolicyServiceUnavailableCode is the HTTP code returned for type DeleteServiceEdgeRouterPolicyServiceUnavailable
 const DeleteServiceEdgeRouterPolicyServiceUnavailableCode int = 503
 
-/*DeleteServiceEdgeRouterPolicyServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+DeleteServiceEdgeRouterPolicyServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response deleteServiceEdgeRouterPolicyServiceUnavailable
 */

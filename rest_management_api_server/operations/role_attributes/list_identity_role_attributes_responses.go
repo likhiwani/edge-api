@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListIdentityRoleAttributesOKCode is the HTTP code returned for type ListIdentityRoleAttributesOK
 const ListIdentityRoleAttributesOKCode int = 200
 
-/*ListIdentityRoleAttributesOK A list of role attributes
+/*
+ListIdentityRoleAttributesOK A list of role attributes
 
 swagger:response listIdentityRoleAttributesOK
 */
@@ -84,7 +85,8 @@ func (o *ListIdentityRoleAttributesOK) WriteResponse(rw http.ResponseWriter, pro
 // ListIdentityRoleAttributesBadRequestCode is the HTTP code returned for type ListIdentityRoleAttributesBadRequest
 const ListIdentityRoleAttributesBadRequestCode int = 400
 
-/*ListIdentityRoleAttributesBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+ListIdentityRoleAttributesBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response listIdentityRoleAttributesBadRequest
 */
@@ -128,7 +130,8 @@ func (o *ListIdentityRoleAttributesBadRequest) WriteResponse(rw http.ResponseWri
 // ListIdentityRoleAttributesUnauthorizedCode is the HTTP code returned for type ListIdentityRoleAttributesUnauthorized
 const ListIdentityRoleAttributesUnauthorizedCode int = 401
 
-/*ListIdentityRoleAttributesUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+ListIdentityRoleAttributesUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response listIdentityRoleAttributesUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *ListIdentityRoleAttributesUnauthorized) WriteResponse(rw http.ResponseW
 // ListIdentityRoleAttributesTooManyRequestsCode is the HTTP code returned for type ListIdentityRoleAttributesTooManyRequests
 const ListIdentityRoleAttributesTooManyRequestsCode int = 429
 
-/*ListIdentityRoleAttributesTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+ListIdentityRoleAttributesTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response listIdentityRoleAttributesTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *ListIdentityRoleAttributesTooManyRequests) WriteResponse(rw http.Respon
 // ListIdentityRoleAttributesServiceUnavailableCode is the HTTP code returned for type ListIdentityRoleAttributesServiceUnavailable
 const ListIdentityRoleAttributesServiceUnavailableCode int = 503
 
-/*ListIdentityRoleAttributesServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+ListIdentityRoleAttributesServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response listIdentityRoleAttributesServiceUnavailable
 */

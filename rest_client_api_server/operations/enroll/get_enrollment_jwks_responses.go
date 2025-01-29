@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // GetEnrollmentJwksOKCode is the HTTP code returned for type GetEnrollmentJwksOK
 const GetEnrollmentJwksOKCode int = 200
 
-/*GetEnrollmentJwksOK A JWKS response for enrollment.
+/*
+GetEnrollmentJwksOK A JWKS response for enrollment.
 
 swagger:response getEnrollmentJwksOK
 */

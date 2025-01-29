@@ -44,18 +44,18 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/openziti/edge-api/rest_client_api_server/operations/authentication"
-	"github.com/openziti/edge-api/rest_client_api_server/operations/controllers"
-	"github.com/openziti/edge-api/rest_client_api_server/operations/current_api_session"
-	"github.com/openziti/edge-api/rest_client_api_server/operations/current_identity"
-	"github.com/openziti/edge-api/rest_client_api_server/operations/enroll"
-	"github.com/openziti/edge-api/rest_client_api_server/operations/enrollment"
-	"github.com/openziti/edge-api/rest_client_api_server/operations/external_jwt_signer"
-	"github.com/openziti/edge-api/rest_client_api_server/operations/informational"
-	"github.com/openziti/edge-api/rest_client_api_server/operations/posture_checks"
-	"github.com/openziti/edge-api/rest_client_api_server/operations/service"
-	"github.com/openziti/edge-api/rest_client_api_server/operations/session"
-	"github.com/openziti/edge-api/rest_client_api_server/operations/well_known"
+	"ztna-core/edge-api/rest_client_api_server/operations/authentication"
+	"ztna-core/edge-api/rest_client_api_server/operations/controllers"
+	"ztna-core/edge-api/rest_client_api_server/operations/current_api_session"
+	"ztna-core/edge-api/rest_client_api_server/operations/current_identity"
+	"ztna-core/edge-api/rest_client_api_server/operations/enroll"
+	"ztna-core/edge-api/rest_client_api_server/operations/enrollment"
+	"ztna-core/edge-api/rest_client_api_server/operations/external_jwt_signer"
+	"ztna-core/edge-api/rest_client_api_server/operations/informational"
+	"ztna-core/edge-api/rest_client_api_server/operations/posture_checks"
+	"ztna-core/edge-api/rest_client_api_server/operations/service"
+	"ztna-core/edge-api/rest_client_api_server/operations/session"
+	"ztna-core/edge-api/rest_client_api_server/operations/well_known"
 )
 
 // NewZitiEdgeClientAPI creates a new ZitiEdgeClient instance
@@ -1119,6 +1119,6 @@ func (o *ZitiEdgeClientAPI) AddMiddlewareFor(method, path string, builder middle
 	}
 	o.Init()
 	if h, ok := o.handlers[um][path]; ok {
-		o.handlers[method][path] = builder(h)
+		o.handlers[um][path] = builder(h)
 	}
 }

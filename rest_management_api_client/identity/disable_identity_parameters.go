@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewDisableIdentityParams creates a new DisableIdentityParams object,
@@ -78,10 +78,12 @@ func NewDisableIdentityParamsWithHTTPClient(client *http.Client) *DisableIdentit
 	}
 }
 
-/* DisableIdentityParams contains all the parameters to send to the API endpoint
-   for the disable identity operation.
+/*
+DisableIdentityParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the disable identity operation.
+
+	Typically these are written to a http.Request.
 */
 type DisableIdentityParams struct {
 

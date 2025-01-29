@@ -45,7 +45,7 @@ Update the version numbers in `./source/client.yml` and `./source/management.yml
 
 You must clone two repos in adjacent directories.
 
-1. this repo - https://github.com/openziti/edge-api.git
+1. this repo - https://ztna-core/edge-api.git
 1. the main ziti repo - https://github.com/openziti/ziti.git
 
 ### Generate the Specifications and Test

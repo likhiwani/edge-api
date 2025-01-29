@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListConfigServicesOKCode is the HTTP code returned for type ListConfigServicesOK
 const ListConfigServicesOKCode int = 200
 
-/*ListConfigServicesOK A list of services
+/*
+ListConfigServicesOK A list of services
 
 swagger:response listConfigServicesOK
 */
@@ -84,7 +85,8 @@ func (o *ListConfigServicesOK) WriteResponse(rw http.ResponseWriter, producer ru
 // ListConfigServicesBadRequestCode is the HTTP code returned for type ListConfigServicesBadRequest
 const ListConfigServicesBadRequestCode int = 400
 
-/*ListConfigServicesBadRequest The requested resource does not exist
+/*
+ListConfigServicesBadRequest The requested resource does not exist
 
 swagger:response listConfigServicesBadRequest
 */
@@ -128,7 +130,8 @@ func (o *ListConfigServicesBadRequest) WriteResponse(rw http.ResponseWriter, pro
 // ListConfigServicesUnauthorizedCode is the HTTP code returned for type ListConfigServicesUnauthorized
 const ListConfigServicesUnauthorizedCode int = 401
 
-/*ListConfigServicesUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+ListConfigServicesUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response listConfigServicesUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *ListConfigServicesUnauthorized) WriteResponse(rw http.ResponseWriter, p
 // ListConfigServicesTooManyRequestsCode is the HTTP code returned for type ListConfigServicesTooManyRequests
 const ListConfigServicesTooManyRequestsCode int = 429
 
-/*ListConfigServicesTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+ListConfigServicesTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response listConfigServicesTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *ListConfigServicesTooManyRequests) WriteResponse(rw http.ResponseWriter
 // ListConfigServicesServiceUnavailableCode is the HTTP code returned for type ListConfigServicesServiceUnavailable
 const ListConfigServicesServiceUnavailableCode int = 503
 
-/*ListConfigServicesServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+ListConfigServicesServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response listConfigServicesServiceUnavailable
 */

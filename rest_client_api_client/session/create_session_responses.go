@@ -30,13 +30,14 @@ package session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // CreateSessionReader is a Reader for the CreateSession structure.
@@ -84,7 +85,7 @@ func (o *CreateSessionReader) ReadResponse(response runtime.ClientResponse, cons
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[POST /sessions] createSession", response, response.Code())
 	}
 }
 
@@ -93,7 +94,8 @@ func NewCreateSessionCreated() *CreateSessionCreated {
 	return &CreateSessionCreated{}
 }
 
-/* CreateSessionCreated describes a response with status code 201, with default header values.
+/*
+CreateSessionCreated describes a response with status code 201, with default header values.
 
 The create request was successful and the resource has been added at the following location
 */
@@ -101,9 +103,46 @@ type CreateSessionCreated struct {
 	Payload *rest_model.SessionCreateEnvelope
 }
 
-func (o *CreateSessionCreated) Error() string {
-	return fmt.Sprintf("[POST /sessions][%d] createSessionCreated  %+v", 201, o.Payload)
+// IsSuccess returns true when this create session created response has a 2xx status code
+func (o *CreateSessionCreated) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this create session created response has a 3xx status code
+func (o *CreateSessionCreated) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create session created response has a 4xx status code
+func (o *CreateSessionCreated) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create session created response has a 5xx status code
+func (o *CreateSessionCreated) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create session created response a status code equal to that given
+func (o *CreateSessionCreated) IsCode(code int) bool {
+	return code == 201
+}
+
+// Code gets the status code for the create session created response
+func (o *CreateSessionCreated) Code() int {
+	return 201
+}
+
+func (o *CreateSessionCreated) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /sessions][%d] createSessionCreated %s", 201, payload)
+}
+
+func (o *CreateSessionCreated) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /sessions][%d] createSessionCreated %s", 201, payload)
+}
+
 func (o *CreateSessionCreated) GetPayload() *rest_model.SessionCreateEnvelope {
 	return o.Payload
 }
@@ -125,7 +164,8 @@ func NewCreateSessionBadRequest() *CreateSessionBadRequest {
 	return &CreateSessionBadRequest{}
 }
 
-/* CreateSessionBadRequest describes a response with status code 400, with default header values.
+/*
+CreateSessionBadRequest describes a response with status code 400, with default header values.
 
 The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 */
@@ -133,9 +173,46 @@ type CreateSessionBadRequest struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *CreateSessionBadRequest) Error() string {
-	return fmt.Sprintf("[POST /sessions][%d] createSessionBadRequest  %+v", 400, o.Payload)
+// IsSuccess returns true when this create session bad request response has a 2xx status code
+func (o *CreateSessionBadRequest) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this create session bad request response has a 3xx status code
+func (o *CreateSessionBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create session bad request response has a 4xx status code
+func (o *CreateSessionBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create session bad request response has a 5xx status code
+func (o *CreateSessionBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create session bad request response a status code equal to that given
+func (o *CreateSessionBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
+// Code gets the status code for the create session bad request response
+func (o *CreateSessionBadRequest) Code() int {
+	return 400
+}
+
+func (o *CreateSessionBadRequest) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /sessions][%d] createSessionBadRequest %s", 400, payload)
+}
+
+func (o *CreateSessionBadRequest) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /sessions][%d] createSessionBadRequest %s", 400, payload)
+}
+
 func (o *CreateSessionBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -157,7 +234,8 @@ func NewCreateSessionUnauthorized() *CreateSessionUnauthorized {
 	return &CreateSessionUnauthorized{}
 }
 
-/* CreateSessionUnauthorized describes a response with status code 401, with default header values.
+/*
+CreateSessionUnauthorized describes a response with status code 401, with default header values.
 
 The supplied session does not have the correct access rights to request this resource
 */
@@ -165,9 +243,46 @@ type CreateSessionUnauthorized struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *CreateSessionUnauthorized) Error() string {
-	return fmt.Sprintf("[POST /sessions][%d] createSessionUnauthorized  %+v", 401, o.Payload)
+// IsSuccess returns true when this create session unauthorized response has a 2xx status code
+func (o *CreateSessionUnauthorized) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this create session unauthorized response has a 3xx status code
+func (o *CreateSessionUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create session unauthorized response has a 4xx status code
+func (o *CreateSessionUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create session unauthorized response has a 5xx status code
+func (o *CreateSessionUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create session unauthorized response a status code equal to that given
+func (o *CreateSessionUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
+// Code gets the status code for the create session unauthorized response
+func (o *CreateSessionUnauthorized) Code() int {
+	return 401
+}
+
+func (o *CreateSessionUnauthorized) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /sessions][%d] createSessionUnauthorized %s", 401, payload)
+}
+
+func (o *CreateSessionUnauthorized) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /sessions][%d] createSessionUnauthorized %s", 401, payload)
+}
+
 func (o *CreateSessionUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -189,7 +304,8 @@ func NewCreateSessionNotFound() *CreateSessionNotFound {
 	return &CreateSessionNotFound{}
 }
 
-/* CreateSessionNotFound describes a response with status code 404, with default header values.
+/*
+CreateSessionNotFound describes a response with status code 404, with default header values.
 
 The requested resource does not exist
 */
@@ -197,9 +313,46 @@ type CreateSessionNotFound struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *CreateSessionNotFound) Error() string {
-	return fmt.Sprintf("[POST /sessions][%d] createSessionNotFound  %+v", 404, o.Payload)
+// IsSuccess returns true when this create session not found response has a 2xx status code
+func (o *CreateSessionNotFound) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this create session not found response has a 3xx status code
+func (o *CreateSessionNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create session not found response has a 4xx status code
+func (o *CreateSessionNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create session not found response has a 5xx status code
+func (o *CreateSessionNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create session not found response a status code equal to that given
+func (o *CreateSessionNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
+// Code gets the status code for the create session not found response
+func (o *CreateSessionNotFound) Code() int {
+	return 404
+}
+
+func (o *CreateSessionNotFound) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /sessions][%d] createSessionNotFound %s", 404, payload)
+}
+
+func (o *CreateSessionNotFound) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /sessions][%d] createSessionNotFound %s", 404, payload)
+}
+
 func (o *CreateSessionNotFound) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -221,7 +374,8 @@ func NewCreateSessionTooManyRequests() *CreateSessionTooManyRequests {
 	return &CreateSessionTooManyRequests{}
 }
 
-/* CreateSessionTooManyRequests describes a response with status code 429, with default header values.
+/*
+CreateSessionTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -229,9 +383,46 @@ type CreateSessionTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *CreateSessionTooManyRequests) Error() string {
-	return fmt.Sprintf("[POST /sessions][%d] createSessionTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this create session too many requests response has a 2xx status code
+func (o *CreateSessionTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this create session too many requests response has a 3xx status code
+func (o *CreateSessionTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create session too many requests response has a 4xx status code
+func (o *CreateSessionTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this create session too many requests response has a 5xx status code
+func (o *CreateSessionTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this create session too many requests response a status code equal to that given
+func (o *CreateSessionTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the create session too many requests response
+func (o *CreateSessionTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *CreateSessionTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /sessions][%d] createSessionTooManyRequests %s", 429, payload)
+}
+
+func (o *CreateSessionTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /sessions][%d] createSessionTooManyRequests %s", 429, payload)
+}
+
 func (o *CreateSessionTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -253,7 +444,8 @@ func NewCreateSessionServiceUnavailable() *CreateSessionServiceUnavailable {
 	return &CreateSessionServiceUnavailable{}
 }
 
-/* CreateSessionServiceUnavailable describes a response with status code 503, with default header values.
+/*
+CreateSessionServiceUnavailable describes a response with status code 503, with default header values.
 
 The request could not be completed due to the server being busy or in a temporarily bad state
 */
@@ -261,9 +453,46 @@ type CreateSessionServiceUnavailable struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *CreateSessionServiceUnavailable) Error() string {
-	return fmt.Sprintf("[POST /sessions][%d] createSessionServiceUnavailable  %+v", 503, o.Payload)
+// IsSuccess returns true when this create session service unavailable response has a 2xx status code
+func (o *CreateSessionServiceUnavailable) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this create session service unavailable response has a 3xx status code
+func (o *CreateSessionServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this create session service unavailable response has a 4xx status code
+func (o *CreateSessionServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this create session service unavailable response has a 5xx status code
+func (o *CreateSessionServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this create session service unavailable response a status code equal to that given
+func (o *CreateSessionServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
+// Code gets the status code for the create session service unavailable response
+func (o *CreateSessionServiceUnavailable) Code() int {
+	return 503
+}
+
+func (o *CreateSessionServiceUnavailable) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /sessions][%d] createSessionServiceUnavailable %s", 503, payload)
+}
+
+func (o *CreateSessionServiceUnavailable) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[POST /sessions][%d] createSessionServiceUnavailable %s", 503, payload)
+}
+
 func (o *CreateSessionServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

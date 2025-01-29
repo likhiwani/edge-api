@@ -30,7 +30,6 @@ package external_jwt_signer
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"context"
 	"io"
 	"net/http"
 
@@ -40,7 +39,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/validate"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewPatchExternalJWTSignerParams creates a new PatchExternalJWTSignerParams object
@@ -96,7 +95,7 @@ func (o *PatchExternalJWTSignerParams) BindRequest(r *http.Request, route *middl
 				res = append(res, err)
 			}
 
-			ctx := validate.WithOperationRequest(context.Background())
+			ctx := validate.WithOperationRequest(r.Context())
 			if err := body.ContextValidate(ctx, route.Formats); err != nil {
 				res = append(res, err)
 			}

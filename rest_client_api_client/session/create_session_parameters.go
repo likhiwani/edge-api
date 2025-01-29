@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewCreateSessionParams creates a new CreateSessionParams object,
@@ -78,10 +78,12 @@ func NewCreateSessionParamsWithHTTPClient(client *http.Client) *CreateSessionPar
 	}
 }
 
-/* CreateSessionParams contains all the parameters to send to the API endpoint
-   for the create session operation.
+/*
+CreateSessionParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the create session operation.
+
+	Typically these are written to a http.Request.
 */
 type CreateSessionParams struct {
 

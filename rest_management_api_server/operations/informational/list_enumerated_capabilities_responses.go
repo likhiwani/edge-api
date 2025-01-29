@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListEnumeratedCapabilitiesOKCode is the HTTP code returned for type ListEnumeratedCapabilitiesOK
 const ListEnumeratedCapabilitiesOKCode int = 200
 
-/*ListEnumeratedCapabilitiesOK A typed and enumerated list of capabilities
+/*
+ListEnumeratedCapabilitiesOK A typed and enumerated list of capabilities
 
 swagger:response listEnumeratedCapabilitiesOK
 */

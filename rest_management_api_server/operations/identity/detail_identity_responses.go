@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DetailIdentityOKCode is the HTTP code returned for type DetailIdentityOK
 const DetailIdentityOKCode int = 200
 
-/*DetailIdentityOK A single identity
+/*
+DetailIdentityOK A single identity
 
 swagger:response detailIdentityOK
 */
@@ -84,7 +85,8 @@ func (o *DetailIdentityOK) WriteResponse(rw http.ResponseWriter, producer runtim
 // DetailIdentityUnauthorizedCode is the HTTP code returned for type DetailIdentityUnauthorized
 const DetailIdentityUnauthorizedCode int = 401
 
-/*DetailIdentityUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+DetailIdentityUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response detailIdentityUnauthorized
 */
@@ -128,7 +130,8 @@ func (o *DetailIdentityUnauthorized) WriteResponse(rw http.ResponseWriter, produ
 // DetailIdentityNotFoundCode is the HTTP code returned for type DetailIdentityNotFound
 const DetailIdentityNotFoundCode int = 404
 
-/*DetailIdentityNotFound The requested resource does not exist
+/*
+DetailIdentityNotFound The requested resource does not exist
 
 swagger:response detailIdentityNotFound
 */
@@ -172,7 +175,8 @@ func (o *DetailIdentityNotFound) WriteResponse(rw http.ResponseWriter, producer 
 // DetailIdentityTooManyRequestsCode is the HTTP code returned for type DetailIdentityTooManyRequests
 const DetailIdentityTooManyRequestsCode int = 429
 
-/*DetailIdentityTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+DetailIdentityTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response detailIdentityTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *DetailIdentityTooManyRequests) WriteResponse(rw http.ResponseWriter, pr
 // DetailIdentityServiceUnavailableCode is the HTTP code returned for type DetailIdentityServiceUnavailable
 const DetailIdentityServiceUnavailableCode int = 503
 
-/*DetailIdentityServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+DetailIdentityServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response detailIdentityServiceUnavailable
 */

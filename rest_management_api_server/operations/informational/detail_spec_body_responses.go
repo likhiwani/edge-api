@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DetailSpecBodyOKCode is the HTTP code returned for type DetailSpecBodyOK
 const DetailSpecBodyOKCode int = 200
 
-/*DetailSpecBodyOK Returns the document that represents the specification
+/*
+DetailSpecBodyOK Returns the document that represents the specification
 
 swagger:response detailSpecBodyOK
 */

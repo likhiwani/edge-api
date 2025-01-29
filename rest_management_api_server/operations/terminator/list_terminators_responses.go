@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListTerminatorsOKCode is the HTTP code returned for type ListTerminatorsOK
 const ListTerminatorsOKCode int = 200
 
-/*ListTerminatorsOK A list of terminators
+/*
+ListTerminatorsOK A list of terminators
 
 swagger:response listTerminatorsOK
 */
@@ -84,7 +85,8 @@ func (o *ListTerminatorsOK) WriteResponse(rw http.ResponseWriter, producer runti
 // ListTerminatorsBadRequestCode is the HTTP code returned for type ListTerminatorsBadRequest
 const ListTerminatorsBadRequestCode int = 400
 
-/*ListTerminatorsBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+ListTerminatorsBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response listTerminatorsBadRequest
 */
@@ -128,7 +130,8 @@ func (o *ListTerminatorsBadRequest) WriteResponse(rw http.ResponseWriter, produc
 // ListTerminatorsUnauthorizedCode is the HTTP code returned for type ListTerminatorsUnauthorized
 const ListTerminatorsUnauthorizedCode int = 401
 
-/*ListTerminatorsUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+ListTerminatorsUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response listTerminatorsUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *ListTerminatorsUnauthorized) WriteResponse(rw http.ResponseWriter, prod
 // ListTerminatorsTooManyRequestsCode is the HTTP code returned for type ListTerminatorsTooManyRequests
 const ListTerminatorsTooManyRequestsCode int = 429
 
-/*ListTerminatorsTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+ListTerminatorsTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response listTerminatorsTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *ListTerminatorsTooManyRequests) WriteResponse(rw http.ResponseWriter, p
 // ListTerminatorsServiceUnavailableCode is the HTTP code returned for type ListTerminatorsServiceUnavailable
 const ListTerminatorsServiceUnavailableCode int = 503
 
-/*ListTerminatorsServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+ListTerminatorsServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response listTerminatorsServiceUnavailable
 */

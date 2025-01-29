@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListSummaryOKCode is the HTTP code returned for type ListSummaryOK
 const ListSummaryOKCode int = 200
 
-/*ListSummaryOK Entity counts scopped to the current identitie's access
+/*
+ListSummaryOK Entity counts scopped to the current identitie's access
 
 swagger:response listSummaryOK
 */
@@ -84,7 +85,8 @@ func (o *ListSummaryOK) WriteResponse(rw http.ResponseWriter, producer runtime.P
 // ListSummaryUnauthorizedCode is the HTTP code returned for type ListSummaryUnauthorized
 const ListSummaryUnauthorizedCode int = 401
 
-/*ListSummaryUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+ListSummaryUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response listSummaryUnauthorized
 */
@@ -128,7 +130,8 @@ func (o *ListSummaryUnauthorized) WriteResponse(rw http.ResponseWriter, producer
 // ListSummaryTooManyRequestsCode is the HTTP code returned for type ListSummaryTooManyRequests
 const ListSummaryTooManyRequestsCode int = 429
 
-/*ListSummaryTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+ListSummaryTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response listSummaryTooManyRequests
 */
@@ -172,7 +175,8 @@ func (o *ListSummaryTooManyRequests) WriteResponse(rw http.ResponseWriter, produ
 // ListSummaryServiceUnavailableCode is the HTTP code returned for type ListSummaryServiceUnavailable
 const ListSummaryServiceUnavailableCode int = 503
 
-/*ListSummaryServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+ListSummaryServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response listSummaryServiceUnavailable
 */

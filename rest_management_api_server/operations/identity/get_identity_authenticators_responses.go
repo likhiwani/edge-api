@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // GetIdentityAuthenticatorsOKCode is the HTTP code returned for type GetIdentityAuthenticatorsOK
 const GetIdentityAuthenticatorsOKCode int = 200
 
-/*GetIdentityAuthenticatorsOK A list of authenticators
+/*
+GetIdentityAuthenticatorsOK A list of authenticators
 
 swagger:response getIdentityAuthenticatorsOK
 */
@@ -84,7 +85,8 @@ func (o *GetIdentityAuthenticatorsOK) WriteResponse(rw http.ResponseWriter, prod
 // GetIdentityAuthenticatorsUnauthorizedCode is the HTTP code returned for type GetIdentityAuthenticatorsUnauthorized
 const GetIdentityAuthenticatorsUnauthorizedCode int = 401
 
-/*GetIdentityAuthenticatorsUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+GetIdentityAuthenticatorsUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response getIdentityAuthenticatorsUnauthorized
 */
@@ -128,7 +130,8 @@ func (o *GetIdentityAuthenticatorsUnauthorized) WriteResponse(rw http.ResponseWr
 // GetIdentityAuthenticatorsNotFoundCode is the HTTP code returned for type GetIdentityAuthenticatorsNotFound
 const GetIdentityAuthenticatorsNotFoundCode int = 404
 
-/*GetIdentityAuthenticatorsNotFound The requested resource does not exist
+/*
+GetIdentityAuthenticatorsNotFound The requested resource does not exist
 
 swagger:response getIdentityAuthenticatorsNotFound
 */
@@ -172,7 +175,8 @@ func (o *GetIdentityAuthenticatorsNotFound) WriteResponse(rw http.ResponseWriter
 // GetIdentityAuthenticatorsTooManyRequestsCode is the HTTP code returned for type GetIdentityAuthenticatorsTooManyRequests
 const GetIdentityAuthenticatorsTooManyRequestsCode int = 429
 
-/*GetIdentityAuthenticatorsTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+GetIdentityAuthenticatorsTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response getIdentityAuthenticatorsTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *GetIdentityAuthenticatorsTooManyRequests) WriteResponse(rw http.Respons
 // GetIdentityAuthenticatorsServiceUnavailableCode is the HTTP code returned for type GetIdentityAuthenticatorsServiceUnavailable
 const GetIdentityAuthenticatorsServiceUnavailableCode int = 503
 
-/*GetIdentityAuthenticatorsServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+GetIdentityAuthenticatorsServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response getIdentityAuthenticatorsServiceUnavailable
 */

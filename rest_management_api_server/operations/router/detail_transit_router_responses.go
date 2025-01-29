@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DetailTransitRouterOKCode is the HTTP code returned for type DetailTransitRouterOK
 const DetailTransitRouterOKCode int = 200
 
-/*DetailTransitRouterOK A single router
+/*
+DetailTransitRouterOK A single router
 
 swagger:response detailTransitRouterOK
 */
@@ -84,7 +85,8 @@ func (o *DetailTransitRouterOK) WriteResponse(rw http.ResponseWriter, producer r
 // DetailTransitRouterUnauthorizedCode is the HTTP code returned for type DetailTransitRouterUnauthorized
 const DetailTransitRouterUnauthorizedCode int = 401
 
-/*DetailTransitRouterUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+DetailTransitRouterUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response detailTransitRouterUnauthorized
 */
@@ -128,7 +130,8 @@ func (o *DetailTransitRouterUnauthorized) WriteResponse(rw http.ResponseWriter, 
 // DetailTransitRouterNotFoundCode is the HTTP code returned for type DetailTransitRouterNotFound
 const DetailTransitRouterNotFoundCode int = 404
 
-/*DetailTransitRouterNotFound The requested resource does not exist
+/*
+DetailTransitRouterNotFound The requested resource does not exist
 
 swagger:response detailTransitRouterNotFound
 */
@@ -172,7 +175,8 @@ func (o *DetailTransitRouterNotFound) WriteResponse(rw http.ResponseWriter, prod
 // DetailTransitRouterTooManyRequestsCode is the HTTP code returned for type DetailTransitRouterTooManyRequests
 const DetailTransitRouterTooManyRequestsCode int = 429
 
-/*DetailTransitRouterTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+DetailTransitRouterTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response detailTransitRouterTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *DetailTransitRouterTooManyRequests) WriteResponse(rw http.ResponseWrite
 // DetailTransitRouterServiceUnavailableCode is the HTTP code returned for type DetailTransitRouterServiceUnavailable
 const DetailTransitRouterServiceUnavailableCode int = 503
 
-/*DetailTransitRouterServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+DetailTransitRouterServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response detailTransitRouterServiceUnavailable
 */

@@ -30,13 +30,14 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DetailPostureCheckTypeReader is a Reader for the DetailPostureCheckType structure.
@@ -78,7 +79,7 @@ func (o *DetailPostureCheckTypeReader) ReadResponse(response runtime.ClientRespo
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[GET /posture-check-types/{id}] detailPostureCheckType", response, response.Code())
 	}
 }
 
@@ -87,7 +88,8 @@ func NewDetailPostureCheckTypeOK() *DetailPostureCheckTypeOK {
 	return &DetailPostureCheckTypeOK{}
 }
 
-/* DetailPostureCheckTypeOK describes a response with status code 200, with default header values.
+/*
+DetailPostureCheckTypeOK describes a response with status code 200, with default header values.
 
 Retrieves a singular posture check type by id
 */
@@ -95,9 +97,46 @@ type DetailPostureCheckTypeOK struct {
 	Payload *rest_model.DetailPostureCheckTypeEnvelope
 }
 
-func (o *DetailPostureCheckTypeOK) Error() string {
-	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeOK  %+v", 200, o.Payload)
+// IsSuccess returns true when this detail posture check type o k response has a 2xx status code
+func (o *DetailPostureCheckTypeOK) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this detail posture check type o k response has a 3xx status code
+func (o *DetailPostureCheckTypeOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this detail posture check type o k response has a 4xx status code
+func (o *DetailPostureCheckTypeOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this detail posture check type o k response has a 5xx status code
+func (o *DetailPostureCheckTypeOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this detail posture check type o k response a status code equal to that given
+func (o *DetailPostureCheckTypeOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the detail posture check type o k response
+func (o *DetailPostureCheckTypeOK) Code() int {
+	return 200
+}
+
+func (o *DetailPostureCheckTypeOK) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeOK %s", 200, payload)
+}
+
+func (o *DetailPostureCheckTypeOK) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeOK %s", 200, payload)
+}
+
 func (o *DetailPostureCheckTypeOK) GetPayload() *rest_model.DetailPostureCheckTypeEnvelope {
 	return o.Payload
 }
@@ -119,7 +158,8 @@ func NewDetailPostureCheckTypeUnauthorized() *DetailPostureCheckTypeUnauthorized
 	return &DetailPostureCheckTypeUnauthorized{}
 }
 
-/* DetailPostureCheckTypeUnauthorized describes a response with status code 401, with default header values.
+/*
+DetailPostureCheckTypeUnauthorized describes a response with status code 401, with default header values.
 
 The supplied session does not have the correct access rights to request this resource
 */
@@ -127,9 +167,46 @@ type DetailPostureCheckTypeUnauthorized struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *DetailPostureCheckTypeUnauthorized) Error() string {
-	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeUnauthorized  %+v", 401, o.Payload)
+// IsSuccess returns true when this detail posture check type unauthorized response has a 2xx status code
+func (o *DetailPostureCheckTypeUnauthorized) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this detail posture check type unauthorized response has a 3xx status code
+func (o *DetailPostureCheckTypeUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this detail posture check type unauthorized response has a 4xx status code
+func (o *DetailPostureCheckTypeUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this detail posture check type unauthorized response has a 5xx status code
+func (o *DetailPostureCheckTypeUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this detail posture check type unauthorized response a status code equal to that given
+func (o *DetailPostureCheckTypeUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
+// Code gets the status code for the detail posture check type unauthorized response
+func (o *DetailPostureCheckTypeUnauthorized) Code() int {
+	return 401
+}
+
+func (o *DetailPostureCheckTypeUnauthorized) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeUnauthorized %s", 401, payload)
+}
+
+func (o *DetailPostureCheckTypeUnauthorized) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeUnauthorized %s", 401, payload)
+}
+
 func (o *DetailPostureCheckTypeUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -151,7 +228,8 @@ func NewDetailPostureCheckTypeNotFound() *DetailPostureCheckTypeNotFound {
 	return &DetailPostureCheckTypeNotFound{}
 }
 
-/* DetailPostureCheckTypeNotFound describes a response with status code 404, with default header values.
+/*
+DetailPostureCheckTypeNotFound describes a response with status code 404, with default header values.
 
 The requested resource does not exist
 */
@@ -159,9 +237,46 @@ type DetailPostureCheckTypeNotFound struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *DetailPostureCheckTypeNotFound) Error() string {
-	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeNotFound  %+v", 404, o.Payload)
+// IsSuccess returns true when this detail posture check type not found response has a 2xx status code
+func (o *DetailPostureCheckTypeNotFound) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this detail posture check type not found response has a 3xx status code
+func (o *DetailPostureCheckTypeNotFound) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this detail posture check type not found response has a 4xx status code
+func (o *DetailPostureCheckTypeNotFound) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this detail posture check type not found response has a 5xx status code
+func (o *DetailPostureCheckTypeNotFound) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this detail posture check type not found response a status code equal to that given
+func (o *DetailPostureCheckTypeNotFound) IsCode(code int) bool {
+	return code == 404
+}
+
+// Code gets the status code for the detail posture check type not found response
+func (o *DetailPostureCheckTypeNotFound) Code() int {
+	return 404
+}
+
+func (o *DetailPostureCheckTypeNotFound) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeNotFound %s", 404, payload)
+}
+
+func (o *DetailPostureCheckTypeNotFound) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeNotFound %s", 404, payload)
+}
+
 func (o *DetailPostureCheckTypeNotFound) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -183,7 +298,8 @@ func NewDetailPostureCheckTypeTooManyRequests() *DetailPostureCheckTypeTooManyRe
 	return &DetailPostureCheckTypeTooManyRequests{}
 }
 
-/* DetailPostureCheckTypeTooManyRequests describes a response with status code 429, with default header values.
+/*
+DetailPostureCheckTypeTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -191,9 +307,46 @@ type DetailPostureCheckTypeTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *DetailPostureCheckTypeTooManyRequests) Error() string {
-	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this detail posture check type too many requests response has a 2xx status code
+func (o *DetailPostureCheckTypeTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this detail posture check type too many requests response has a 3xx status code
+func (o *DetailPostureCheckTypeTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this detail posture check type too many requests response has a 4xx status code
+func (o *DetailPostureCheckTypeTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this detail posture check type too many requests response has a 5xx status code
+func (o *DetailPostureCheckTypeTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this detail posture check type too many requests response a status code equal to that given
+func (o *DetailPostureCheckTypeTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the detail posture check type too many requests response
+func (o *DetailPostureCheckTypeTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *DetailPostureCheckTypeTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeTooManyRequests %s", 429, payload)
+}
+
+func (o *DetailPostureCheckTypeTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeTooManyRequests %s", 429, payload)
+}
+
 func (o *DetailPostureCheckTypeTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -215,7 +368,8 @@ func NewDetailPostureCheckTypeServiceUnavailable() *DetailPostureCheckTypeServic
 	return &DetailPostureCheckTypeServiceUnavailable{}
 }
 
-/* DetailPostureCheckTypeServiceUnavailable describes a response with status code 503, with default header values.
+/*
+DetailPostureCheckTypeServiceUnavailable describes a response with status code 503, with default header values.
 
 The request could not be completed due to the server being busy or in a temporarily bad state
 */
@@ -223,9 +377,46 @@ type DetailPostureCheckTypeServiceUnavailable struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *DetailPostureCheckTypeServiceUnavailable) Error() string {
-	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeServiceUnavailable  %+v", 503, o.Payload)
+// IsSuccess returns true when this detail posture check type service unavailable response has a 2xx status code
+func (o *DetailPostureCheckTypeServiceUnavailable) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this detail posture check type service unavailable response has a 3xx status code
+func (o *DetailPostureCheckTypeServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this detail posture check type service unavailable response has a 4xx status code
+func (o *DetailPostureCheckTypeServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this detail posture check type service unavailable response has a 5xx status code
+func (o *DetailPostureCheckTypeServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this detail posture check type service unavailable response a status code equal to that given
+func (o *DetailPostureCheckTypeServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
+// Code gets the status code for the detail posture check type service unavailable response
+func (o *DetailPostureCheckTypeServiceUnavailable) Code() int {
+	return 503
+}
+
+func (o *DetailPostureCheckTypeServiceUnavailable) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeServiceUnavailable %s", 503, payload)
+}
+
+func (o *DetailPostureCheckTypeServiceUnavailable) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeServiceUnavailable %s", 503, payload)
+}
+
 func (o *DetailPostureCheckTypeServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

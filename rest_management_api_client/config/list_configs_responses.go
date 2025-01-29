@@ -30,13 +30,14 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListConfigsReader is a Reader for the ListConfigs structure.
@@ -78,7 +79,7 @@ func (o *ListConfigsReader) ReadResponse(response runtime.ClientResponse, consum
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[GET /configs] listConfigs", response, response.Code())
 	}
 }
 
@@ -87,7 +88,8 @@ func NewListConfigsOK() *ListConfigsOK {
 	return &ListConfigsOK{}
 }
 
-/* ListConfigsOK describes a response with status code 200, with default header values.
+/*
+ListConfigsOK describes a response with status code 200, with default header values.
 
 A list of configs
 */
@@ -95,9 +97,46 @@ type ListConfigsOK struct {
 	Payload *rest_model.ListConfigsEnvelope
 }
 
-func (o *ListConfigsOK) Error() string {
-	return fmt.Sprintf("[GET /configs][%d] listConfigsOK  %+v", 200, o.Payload)
+// IsSuccess returns true when this list configs o k response has a 2xx status code
+func (o *ListConfigsOK) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this list configs o k response has a 3xx status code
+func (o *ListConfigsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list configs o k response has a 4xx status code
+func (o *ListConfigsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this list configs o k response has a 5xx status code
+func (o *ListConfigsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list configs o k response a status code equal to that given
+func (o *ListConfigsOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the list configs o k response
+func (o *ListConfigsOK) Code() int {
+	return 200
+}
+
+func (o *ListConfigsOK) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /configs][%d] listConfigsOK %s", 200, payload)
+}
+
+func (o *ListConfigsOK) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /configs][%d] listConfigsOK %s", 200, payload)
+}
+
 func (o *ListConfigsOK) GetPayload() *rest_model.ListConfigsEnvelope {
 	return o.Payload
 }
@@ -119,7 +158,8 @@ func NewListConfigsBadRequest() *ListConfigsBadRequest {
 	return &ListConfigsBadRequest{}
 }
 
-/* ListConfigsBadRequest describes a response with status code 400, with default header values.
+/*
+ListConfigsBadRequest describes a response with status code 400, with default header values.
 
 The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 */
@@ -127,9 +167,46 @@ type ListConfigsBadRequest struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *ListConfigsBadRequest) Error() string {
-	return fmt.Sprintf("[GET /configs][%d] listConfigsBadRequest  %+v", 400, o.Payload)
+// IsSuccess returns true when this list configs bad request response has a 2xx status code
+func (o *ListConfigsBadRequest) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this list configs bad request response has a 3xx status code
+func (o *ListConfigsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list configs bad request response has a 4xx status code
+func (o *ListConfigsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list configs bad request response has a 5xx status code
+func (o *ListConfigsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list configs bad request response a status code equal to that given
+func (o *ListConfigsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
+// Code gets the status code for the list configs bad request response
+func (o *ListConfigsBadRequest) Code() int {
+	return 400
+}
+
+func (o *ListConfigsBadRequest) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /configs][%d] listConfigsBadRequest %s", 400, payload)
+}
+
+func (o *ListConfigsBadRequest) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /configs][%d] listConfigsBadRequest %s", 400, payload)
+}
+
 func (o *ListConfigsBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -151,7 +228,8 @@ func NewListConfigsUnauthorized() *ListConfigsUnauthorized {
 	return &ListConfigsUnauthorized{}
 }
 
-/* ListConfigsUnauthorized describes a response with status code 401, with default header values.
+/*
+ListConfigsUnauthorized describes a response with status code 401, with default header values.
 
 The supplied session does not have the correct access rights to request this resource
 */
@@ -159,9 +237,46 @@ type ListConfigsUnauthorized struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *ListConfigsUnauthorized) Error() string {
-	return fmt.Sprintf("[GET /configs][%d] listConfigsUnauthorized  %+v", 401, o.Payload)
+// IsSuccess returns true when this list configs unauthorized response has a 2xx status code
+func (o *ListConfigsUnauthorized) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this list configs unauthorized response has a 3xx status code
+func (o *ListConfigsUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list configs unauthorized response has a 4xx status code
+func (o *ListConfigsUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list configs unauthorized response has a 5xx status code
+func (o *ListConfigsUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list configs unauthorized response a status code equal to that given
+func (o *ListConfigsUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
+// Code gets the status code for the list configs unauthorized response
+func (o *ListConfigsUnauthorized) Code() int {
+	return 401
+}
+
+func (o *ListConfigsUnauthorized) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /configs][%d] listConfigsUnauthorized %s", 401, payload)
+}
+
+func (o *ListConfigsUnauthorized) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /configs][%d] listConfigsUnauthorized %s", 401, payload)
+}
+
 func (o *ListConfigsUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -183,7 +298,8 @@ func NewListConfigsTooManyRequests() *ListConfigsTooManyRequests {
 	return &ListConfigsTooManyRequests{}
 }
 
-/* ListConfigsTooManyRequests describes a response with status code 429, with default header values.
+/*
+ListConfigsTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -191,9 +307,46 @@ type ListConfigsTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *ListConfigsTooManyRequests) Error() string {
-	return fmt.Sprintf("[GET /configs][%d] listConfigsTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this list configs too many requests response has a 2xx status code
+func (o *ListConfigsTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this list configs too many requests response has a 3xx status code
+func (o *ListConfigsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list configs too many requests response has a 4xx status code
+func (o *ListConfigsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list configs too many requests response has a 5xx status code
+func (o *ListConfigsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list configs too many requests response a status code equal to that given
+func (o *ListConfigsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the list configs too many requests response
+func (o *ListConfigsTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *ListConfigsTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /configs][%d] listConfigsTooManyRequests %s", 429, payload)
+}
+
+func (o *ListConfigsTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /configs][%d] listConfigsTooManyRequests %s", 429, payload)
+}
+
 func (o *ListConfigsTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -215,7 +368,8 @@ func NewListConfigsServiceUnavailable() *ListConfigsServiceUnavailable {
 	return &ListConfigsServiceUnavailable{}
 }
 
-/* ListConfigsServiceUnavailable describes a response with status code 503, with default header values.
+/*
+ListConfigsServiceUnavailable describes a response with status code 503, with default header values.
 
 The request could not be completed due to the server being busy or in a temporarily bad state
 */
@@ -223,9 +377,46 @@ type ListConfigsServiceUnavailable struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *ListConfigsServiceUnavailable) Error() string {
-	return fmt.Sprintf("[GET /configs][%d] listConfigsServiceUnavailable  %+v", 503, o.Payload)
+// IsSuccess returns true when this list configs service unavailable response has a 2xx status code
+func (o *ListConfigsServiceUnavailable) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this list configs service unavailable response has a 3xx status code
+func (o *ListConfigsServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list configs service unavailable response has a 4xx status code
+func (o *ListConfigsServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this list configs service unavailable response has a 5xx status code
+func (o *ListConfigsServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this list configs service unavailable response a status code equal to that given
+func (o *ListConfigsServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
+// Code gets the status code for the list configs service unavailable response
+func (o *ListConfigsServiceUnavailable) Code() int {
+	return 503
+}
+
+func (o *ListConfigsServiceUnavailable) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /configs][%d] listConfigsServiceUnavailable %s", 503, payload)
+}
+
+func (o *ListConfigsServiceUnavailable) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /configs][%d] listConfigsServiceUnavailable %s", 503, payload)
+}
+
 func (o *ListConfigsServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

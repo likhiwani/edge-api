@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListVersionOKCode is the HTTP code returned for type ListVersionOK
 const ListVersionOKCode int = 200
 
-/*ListVersionOK Version information for the controller
+/*
+ListVersionOK Version information for the controller
 
 swagger:response listVersionOK
 */

@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // GetCurrentIdentityEdgeRoutersOKCode is the HTTP code returned for type GetCurrentIdentityEdgeRoutersOK
 const GetCurrentIdentityEdgeRoutersOKCode int = 200
 
-/*GetCurrentIdentityEdgeRoutersOK A list of edge routers
+/*
+GetCurrentIdentityEdgeRoutersOK A list of edge routers
 
 swagger:response getCurrentIdentityEdgeRoutersOK
 */
@@ -84,7 +85,8 @@ func (o *GetCurrentIdentityEdgeRoutersOK) WriteResponse(rw http.ResponseWriter, 
 // GetCurrentIdentityEdgeRoutersUnauthorizedCode is the HTTP code returned for type GetCurrentIdentityEdgeRoutersUnauthorized
 const GetCurrentIdentityEdgeRoutersUnauthorizedCode int = 401
 
-/*GetCurrentIdentityEdgeRoutersUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+GetCurrentIdentityEdgeRoutersUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response getCurrentIdentityEdgeRoutersUnauthorized
 */
@@ -128,7 +130,8 @@ func (o *GetCurrentIdentityEdgeRoutersUnauthorized) WriteResponse(rw http.Respon
 // GetCurrentIdentityEdgeRoutersTooManyRequestsCode is the HTTP code returned for type GetCurrentIdentityEdgeRoutersTooManyRequests
 const GetCurrentIdentityEdgeRoutersTooManyRequestsCode int = 429
 
-/*GetCurrentIdentityEdgeRoutersTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+GetCurrentIdentityEdgeRoutersTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response getCurrentIdentityEdgeRoutersTooManyRequests
 */
@@ -172,7 +175,8 @@ func (o *GetCurrentIdentityEdgeRoutersTooManyRequests) WriteResponse(rw http.Res
 // GetCurrentIdentityEdgeRoutersServiceUnavailableCode is the HTTP code returned for type GetCurrentIdentityEdgeRoutersServiceUnavailable
 const GetCurrentIdentityEdgeRoutersServiceUnavailableCode int = 503
 
-/*GetCurrentIdentityEdgeRoutersServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+GetCurrentIdentityEdgeRoutersServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response getCurrentIdentityEdgeRoutersServiceUnavailable
 */

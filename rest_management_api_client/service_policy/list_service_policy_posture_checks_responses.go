@@ -30,13 +30,14 @@ package service_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListServicePolicyPostureChecksReader is a Reader for the ListServicePolicyPostureChecks structure.
@@ -78,7 +79,7 @@ func (o *ListServicePolicyPostureChecksReader) ReadResponse(response runtime.Cli
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[GET /service-policies/{id}/posture-checks] listServicePolicyPostureChecks", response, response.Code())
 	}
 }
 
@@ -87,7 +88,8 @@ func NewListServicePolicyPostureChecksOK() *ListServicePolicyPostureChecksOK {
 	return &ListServicePolicyPostureChecksOK{}
 }
 
-/* ListServicePolicyPostureChecksOK describes a response with status code 200, with default header values.
+/*
+ListServicePolicyPostureChecksOK describes a response with status code 200, with default header values.
 
 A list of posture checks
 */
@@ -95,9 +97,46 @@ type ListServicePolicyPostureChecksOK struct {
 	Payload *rest_model.ListPostureCheckEnvelope
 }
 
-func (o *ListServicePolicyPostureChecksOK) Error() string {
-	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksOK  %+v", 200, o.Payload)
+// IsSuccess returns true when this list service policy posture checks o k response has a 2xx status code
+func (o *ListServicePolicyPostureChecksOK) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this list service policy posture checks o k response has a 3xx status code
+func (o *ListServicePolicyPostureChecksOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list service policy posture checks o k response has a 4xx status code
+func (o *ListServicePolicyPostureChecksOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this list service policy posture checks o k response has a 5xx status code
+func (o *ListServicePolicyPostureChecksOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list service policy posture checks o k response a status code equal to that given
+func (o *ListServicePolicyPostureChecksOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the list service policy posture checks o k response
+func (o *ListServicePolicyPostureChecksOK) Code() int {
+	return 200
+}
+
+func (o *ListServicePolicyPostureChecksOK) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksOK %s", 200, payload)
+}
+
+func (o *ListServicePolicyPostureChecksOK) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksOK %s", 200, payload)
+}
+
 func (o *ListServicePolicyPostureChecksOK) GetPayload() *rest_model.ListPostureCheckEnvelope {
 	return o.Payload
 }
@@ -119,7 +158,8 @@ func NewListServicePolicyPostureChecksBadRequest() *ListServicePolicyPostureChec
 	return &ListServicePolicyPostureChecksBadRequest{}
 }
 
-/* ListServicePolicyPostureChecksBadRequest describes a response with status code 400, with default header values.
+/*
+ListServicePolicyPostureChecksBadRequest describes a response with status code 400, with default header values.
 
 The requested resource does not exist
 */
@@ -127,9 +167,46 @@ type ListServicePolicyPostureChecksBadRequest struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *ListServicePolicyPostureChecksBadRequest) Error() string {
-	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksBadRequest  %+v", 400, o.Payload)
+// IsSuccess returns true when this list service policy posture checks bad request response has a 2xx status code
+func (o *ListServicePolicyPostureChecksBadRequest) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this list service policy posture checks bad request response has a 3xx status code
+func (o *ListServicePolicyPostureChecksBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list service policy posture checks bad request response has a 4xx status code
+func (o *ListServicePolicyPostureChecksBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list service policy posture checks bad request response has a 5xx status code
+func (o *ListServicePolicyPostureChecksBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list service policy posture checks bad request response a status code equal to that given
+func (o *ListServicePolicyPostureChecksBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
+// Code gets the status code for the list service policy posture checks bad request response
+func (o *ListServicePolicyPostureChecksBadRequest) Code() int {
+	return 400
+}
+
+func (o *ListServicePolicyPostureChecksBadRequest) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksBadRequest %s", 400, payload)
+}
+
+func (o *ListServicePolicyPostureChecksBadRequest) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksBadRequest %s", 400, payload)
+}
+
 func (o *ListServicePolicyPostureChecksBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -151,7 +228,8 @@ func NewListServicePolicyPostureChecksUnauthorized() *ListServicePolicyPostureCh
 	return &ListServicePolicyPostureChecksUnauthorized{}
 }
 
-/* ListServicePolicyPostureChecksUnauthorized describes a response with status code 401, with default header values.
+/*
+ListServicePolicyPostureChecksUnauthorized describes a response with status code 401, with default header values.
 
 The supplied session does not have the correct access rights to request this resource
 */
@@ -159,9 +237,46 @@ type ListServicePolicyPostureChecksUnauthorized struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *ListServicePolicyPostureChecksUnauthorized) Error() string {
-	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksUnauthorized  %+v", 401, o.Payload)
+// IsSuccess returns true when this list service policy posture checks unauthorized response has a 2xx status code
+func (o *ListServicePolicyPostureChecksUnauthorized) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this list service policy posture checks unauthorized response has a 3xx status code
+func (o *ListServicePolicyPostureChecksUnauthorized) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list service policy posture checks unauthorized response has a 4xx status code
+func (o *ListServicePolicyPostureChecksUnauthorized) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list service policy posture checks unauthorized response has a 5xx status code
+func (o *ListServicePolicyPostureChecksUnauthorized) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list service policy posture checks unauthorized response a status code equal to that given
+func (o *ListServicePolicyPostureChecksUnauthorized) IsCode(code int) bool {
+	return code == 401
+}
+
+// Code gets the status code for the list service policy posture checks unauthorized response
+func (o *ListServicePolicyPostureChecksUnauthorized) Code() int {
+	return 401
+}
+
+func (o *ListServicePolicyPostureChecksUnauthorized) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksUnauthorized %s", 401, payload)
+}
+
+func (o *ListServicePolicyPostureChecksUnauthorized) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksUnauthorized %s", 401, payload)
+}
+
 func (o *ListServicePolicyPostureChecksUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -183,7 +298,8 @@ func NewListServicePolicyPostureChecksTooManyRequests() *ListServicePolicyPostur
 	return &ListServicePolicyPostureChecksTooManyRequests{}
 }
 
-/* ListServicePolicyPostureChecksTooManyRequests describes a response with status code 429, with default header values.
+/*
+ListServicePolicyPostureChecksTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -191,9 +307,46 @@ type ListServicePolicyPostureChecksTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *ListServicePolicyPostureChecksTooManyRequests) Error() string {
-	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this list service policy posture checks too many requests response has a 2xx status code
+func (o *ListServicePolicyPostureChecksTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this list service policy posture checks too many requests response has a 3xx status code
+func (o *ListServicePolicyPostureChecksTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list service policy posture checks too many requests response has a 4xx status code
+func (o *ListServicePolicyPostureChecksTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list service policy posture checks too many requests response has a 5xx status code
+func (o *ListServicePolicyPostureChecksTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list service policy posture checks too many requests response a status code equal to that given
+func (o *ListServicePolicyPostureChecksTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the list service policy posture checks too many requests response
+func (o *ListServicePolicyPostureChecksTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *ListServicePolicyPostureChecksTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksTooManyRequests %s", 429, payload)
+}
+
+func (o *ListServicePolicyPostureChecksTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksTooManyRequests %s", 429, payload)
+}
+
 func (o *ListServicePolicyPostureChecksTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -215,7 +368,8 @@ func NewListServicePolicyPostureChecksServiceUnavailable() *ListServicePolicyPos
 	return &ListServicePolicyPostureChecksServiceUnavailable{}
 }
 
-/* ListServicePolicyPostureChecksServiceUnavailable describes a response with status code 503, with default header values.
+/*
+ListServicePolicyPostureChecksServiceUnavailable describes a response with status code 503, with default header values.
 
 The request could not be completed due to the server being busy or in a temporarily bad state
 */
@@ -223,9 +377,46 @@ type ListServicePolicyPostureChecksServiceUnavailable struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *ListServicePolicyPostureChecksServiceUnavailable) Error() string {
-	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksServiceUnavailable  %+v", 503, o.Payload)
+// IsSuccess returns true when this list service policy posture checks service unavailable response has a 2xx status code
+func (o *ListServicePolicyPostureChecksServiceUnavailable) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this list service policy posture checks service unavailable response has a 3xx status code
+func (o *ListServicePolicyPostureChecksServiceUnavailable) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list service policy posture checks service unavailable response has a 4xx status code
+func (o *ListServicePolicyPostureChecksServiceUnavailable) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this list service policy posture checks service unavailable response has a 5xx status code
+func (o *ListServicePolicyPostureChecksServiceUnavailable) IsServerError() bool {
+	return true
+}
+
+// IsCode returns true when this list service policy posture checks service unavailable response a status code equal to that given
+func (o *ListServicePolicyPostureChecksServiceUnavailable) IsCode(code int) bool {
+	return code == 503
+}
+
+// Code gets the status code for the list service policy posture checks service unavailable response
+func (o *ListServicePolicyPostureChecksServiceUnavailable) Code() int {
+	return 503
+}
+
+func (o *ListServicePolicyPostureChecksServiceUnavailable) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksServiceUnavailable %s", 503, payload)
+}
+
+func (o *ListServicePolicyPostureChecksServiceUnavailable) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksServiceUnavailable %s", 503, payload)
+}
+
 func (o *ListServicePolicyPostureChecksServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

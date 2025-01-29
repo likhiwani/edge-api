@@ -53,12 +53,12 @@ func NewListNetworkJWTs(ctx *middleware.Context, handler ListNetworkJWTsHandler)
 	return &ListNetworkJWTs{Context: ctx, Handler: handler}
 }
 
-/* ListNetworkJWTs swagger:route GET /network-jwts Enrollment listNetworkJWTs
+/*
+	ListNetworkJWTs swagger:route GET /network-jwts Enrollment listNetworkJWTs
 
 Returns a list of JWTs suitable for bootstrapping network trust.
 
 Returns a list of JWTs for trusting a network
-
 */
 type ListNetworkJWTs struct {
 	Context *middleware.Context

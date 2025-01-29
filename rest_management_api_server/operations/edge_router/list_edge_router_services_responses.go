@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListEdgeRouterServicesOKCode is the HTTP code returned for type ListEdgeRouterServicesOK
 const ListEdgeRouterServicesOKCode int = 200
 
-/*ListEdgeRouterServicesOK A list of services
+/*
+ListEdgeRouterServicesOK A list of services
 
 swagger:response listEdgeRouterServicesOK
 */
@@ -84,7 +85,8 @@ func (o *ListEdgeRouterServicesOK) WriteResponse(rw http.ResponseWriter, produce
 // ListEdgeRouterServicesUnauthorizedCode is the HTTP code returned for type ListEdgeRouterServicesUnauthorized
 const ListEdgeRouterServicesUnauthorizedCode int = 401
 
-/*ListEdgeRouterServicesUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+ListEdgeRouterServicesUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response listEdgeRouterServicesUnauthorized
 */
@@ -128,7 +130,8 @@ func (o *ListEdgeRouterServicesUnauthorized) WriteResponse(rw http.ResponseWrite
 // ListEdgeRouterServicesNotFoundCode is the HTTP code returned for type ListEdgeRouterServicesNotFound
 const ListEdgeRouterServicesNotFoundCode int = 404
 
-/*ListEdgeRouterServicesNotFound The requested resource does not exist
+/*
+ListEdgeRouterServicesNotFound The requested resource does not exist
 
 swagger:response listEdgeRouterServicesNotFound
 */
@@ -172,7 +175,8 @@ func (o *ListEdgeRouterServicesNotFound) WriteResponse(rw http.ResponseWriter, p
 // ListEdgeRouterServicesTooManyRequestsCode is the HTTP code returned for type ListEdgeRouterServicesTooManyRequests
 const ListEdgeRouterServicesTooManyRequestsCode int = 429
 
-/*ListEdgeRouterServicesTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+ListEdgeRouterServicesTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response listEdgeRouterServicesTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *ListEdgeRouterServicesTooManyRequests) WriteResponse(rw http.ResponseWr
 // ListEdgeRouterServicesServiceUnavailableCode is the HTTP code returned for type ListEdgeRouterServicesServiceUnavailable
 const ListEdgeRouterServicesServiceUnavailableCode int = 503
 
-/*ListEdgeRouterServicesServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+ListEdgeRouterServicesServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response listEdgeRouterServicesServiceUnavailable
 */

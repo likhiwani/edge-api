@@ -81,7 +81,7 @@ type IdentityDetail struct {
 
 	// edge router connection status
 	// Required: true
-	// Enum: [online offline unknown]
+	// Enum: ["online","offline","unknown"]
 	EdgeRouterConnectionStatus *string `json:"edgeRouterConnectionStatus"`
 
 	// enrollment
@@ -955,6 +955,11 @@ func (m *IdentityDetail) ContextValidate(ctx context.Context, formats strfmt.Reg
 func (m *IdentityDetail) contextValidateAppData(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.AppData != nil {
+
+		if swag.IsZero(m.AppData) { // not required
+			return nil
+		}
+
 		if err := m.AppData.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("appData")
@@ -971,6 +976,7 @@ func (m *IdentityDetail) contextValidateAppData(ctx context.Context, formats str
 func (m *IdentityDetail) contextValidateAuthPolicy(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.AuthPolicy != nil {
+
 		if err := m.AuthPolicy.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("authPolicy")
@@ -987,6 +993,7 @@ func (m *IdentityDetail) contextValidateAuthPolicy(ctx context.Context, formats 
 func (m *IdentityDetail) contextValidateAuthenticators(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Authenticators != nil {
+
 		if err := m.Authenticators.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("authenticators")
@@ -1003,6 +1010,7 @@ func (m *IdentityDetail) contextValidateAuthenticators(ctx context.Context, form
 func (m *IdentityDetail) contextValidateDefaultHostingCost(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.DefaultHostingCost != nil {
+
 		if err := m.DefaultHostingCost.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("defaultHostingCost")
@@ -1017,6 +1025,10 @@ func (m *IdentityDetail) contextValidateDefaultHostingCost(ctx context.Context, 
 }
 
 func (m *IdentityDetail) contextValidateDefaultHostingPrecedence(ctx context.Context, formats strfmt.Registry) error {
+
+	if swag.IsZero(m.DefaultHostingPrecedence) { // not required
+		return nil
+	}
 
 	if err := m.DefaultHostingPrecedence.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -1033,6 +1045,7 @@ func (m *IdentityDetail) contextValidateDefaultHostingPrecedence(ctx context.Con
 func (m *IdentityDetail) contextValidateEnrollment(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Enrollment != nil {
+
 		if err := m.Enrollment.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("enrollment")
@@ -1049,6 +1062,7 @@ func (m *IdentityDetail) contextValidateEnrollment(ctx context.Context, formats 
 func (m *IdentityDetail) contextValidateEnvInfo(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.EnvInfo != nil {
+
 		if err := m.EnvInfo.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("envInfo")
@@ -1081,6 +1095,7 @@ func (m *IdentityDetail) contextValidateRoleAttributes(ctx context.Context, form
 func (m *IdentityDetail) contextValidateSdkInfo(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.SdkInfo != nil {
+
 		if err := m.SdkInfo.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("sdkInfo")
@@ -1125,6 +1140,7 @@ func (m *IdentityDetail) contextValidateServiceHostingPrecedences(ctx context.Co
 func (m *IdentityDetail) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
 
 	if m.Type != nil {
+
 		if err := m.Type.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("type")

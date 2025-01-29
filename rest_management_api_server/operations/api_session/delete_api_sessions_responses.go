@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DeleteAPISessionsOKCode is the HTTP code returned for type DeleteAPISessionsOK
 const DeleteAPISessionsOKCode int = 200
 
-/*DeleteAPISessionsOK The delete request was successful and the resource has been removed
+/*
+DeleteAPISessionsOK The delete request was successful and the resource has been removed
 
 swagger:response deleteApiSessionsOK
 */
@@ -84,7 +85,8 @@ func (o *DeleteAPISessionsOK) WriteResponse(rw http.ResponseWriter, producer run
 // DeleteAPISessionsUnauthorizedCode is the HTTP code returned for type DeleteAPISessionsUnauthorized
 const DeleteAPISessionsUnauthorizedCode int = 401
 
-/*DeleteAPISessionsUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+DeleteAPISessionsUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response deleteApiSessionsUnauthorized
 */
@@ -128,7 +130,8 @@ func (o *DeleteAPISessionsUnauthorized) WriteResponse(rw http.ResponseWriter, pr
 // DeleteAPISessionsForbiddenCode is the HTTP code returned for type DeleteAPISessionsForbidden
 const DeleteAPISessionsForbiddenCode int = 403
 
-/*DeleteAPISessionsForbidden The supplied session does not have the correct access rights to request this resource
+/*
+DeleteAPISessionsForbidden The supplied session does not have the correct access rights to request this resource
 
 swagger:response deleteApiSessionsForbidden
 */
@@ -172,7 +175,8 @@ func (o *DeleteAPISessionsForbidden) WriteResponse(rw http.ResponseWriter, produ
 // DeleteAPISessionsNotFoundCode is the HTTP code returned for type DeleteAPISessionsNotFound
 const DeleteAPISessionsNotFoundCode int = 404
 
-/*DeleteAPISessionsNotFound The requested resource does not exist
+/*
+DeleteAPISessionsNotFound The requested resource does not exist
 
 swagger:response deleteApiSessionsNotFound
 */
@@ -216,7 +220,8 @@ func (o *DeleteAPISessionsNotFound) WriteResponse(rw http.ResponseWriter, produc
 // DeleteAPISessionsTooManyRequestsCode is the HTTP code returned for type DeleteAPISessionsTooManyRequests
 const DeleteAPISessionsTooManyRequestsCode int = 429
 
-/*DeleteAPISessionsTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+DeleteAPISessionsTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response deleteApiSessionsTooManyRequests
 */
@@ -260,7 +265,8 @@ func (o *DeleteAPISessionsTooManyRequests) WriteResponse(rw http.ResponseWriter,
 // DeleteAPISessionsServiceUnavailableCode is the HTTP code returned for type DeleteAPISessionsServiceUnavailable
 const DeleteAPISessionsServiceUnavailableCode int = 503
 
-/*DeleteAPISessionsServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+DeleteAPISessionsServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response deleteApiSessionsServiceUnavailable
 */

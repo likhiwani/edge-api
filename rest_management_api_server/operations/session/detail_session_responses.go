@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DetailSessionOKCode is the HTTP code returned for type DetailSessionOK
 const DetailSessionOKCode int = 200
 
-/*DetailSessionOK A single session
+/*
+DetailSessionOK A single session
 
 swagger:response detailSessionOK
 */
@@ -84,7 +85,8 @@ func (o *DetailSessionOK) WriteResponse(rw http.ResponseWriter, producer runtime
 // DetailSessionUnauthorizedCode is the HTTP code returned for type DetailSessionUnauthorized
 const DetailSessionUnauthorizedCode int = 401
 
-/*DetailSessionUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+DetailSessionUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response detailSessionUnauthorized
 */
@@ -128,7 +130,8 @@ func (o *DetailSessionUnauthorized) WriteResponse(rw http.ResponseWriter, produc
 // DetailSessionNotFoundCode is the HTTP code returned for type DetailSessionNotFound
 const DetailSessionNotFoundCode int = 404
 
-/*DetailSessionNotFound The requested resource does not exist
+/*
+DetailSessionNotFound The requested resource does not exist
 
 swagger:response detailSessionNotFound
 */
@@ -172,7 +175,8 @@ func (o *DetailSessionNotFound) WriteResponse(rw http.ResponseWriter, producer r
 // DetailSessionTooManyRequestsCode is the HTTP code returned for type DetailSessionTooManyRequests
 const DetailSessionTooManyRequestsCode int = 429
 
-/*DetailSessionTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+DetailSessionTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response detailSessionTooManyRequests
 */
@@ -216,7 +220,8 @@ func (o *DetailSessionTooManyRequests) WriteResponse(rw http.ResponseWriter, pro
 // DetailSessionServiceUnavailableCode is the HTTP code returned for type DetailSessionServiceUnavailable
 const DetailSessionServiceUnavailableCode int = 503
 
-/*DetailSessionServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+DetailSessionServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response detailSessionServiceUnavailable
 */

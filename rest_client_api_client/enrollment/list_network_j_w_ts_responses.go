@@ -30,13 +30,14 @@ package enrollment
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // ListNetworkJWTsReader is a Reader for the ListNetworkJWTs structure.
@@ -66,7 +67,7 @@ func (o *ListNetworkJWTsReader) ReadResponse(response runtime.ClientResponse, co
 		}
 		return nil, result
 	default:
-		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
+		return nil, runtime.NewAPIError("[GET /network-jwts] listNetworkJWTs", response, response.Code())
 	}
 }
 
@@ -75,7 +76,8 @@ func NewListNetworkJWTsOK() *ListNetworkJWTsOK {
 	return &ListNetworkJWTsOK{}
 }
 
-/* ListNetworkJWTsOK describes a response with status code 200, with default header values.
+/*
+ListNetworkJWTsOK describes a response with status code 200, with default header values.
 
 A list of network JWTs
 */
@@ -83,9 +85,46 @@ type ListNetworkJWTsOK struct {
 	Payload *rest_model.ListNetworkJWTsEnvelope
 }
 
-func (o *ListNetworkJWTsOK) Error() string {
-	return fmt.Sprintf("[GET /network-jwts][%d] listNetworkJWTsOK  %+v", 200, o.Payload)
+// IsSuccess returns true when this list network j w ts o k response has a 2xx status code
+func (o *ListNetworkJWTsOK) IsSuccess() bool {
+	return true
 }
+
+// IsRedirect returns true when this list network j w ts o k response has a 3xx status code
+func (o *ListNetworkJWTsOK) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list network j w ts o k response has a 4xx status code
+func (o *ListNetworkJWTsOK) IsClientError() bool {
+	return false
+}
+
+// IsServerError returns true when this list network j w ts o k response has a 5xx status code
+func (o *ListNetworkJWTsOK) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list network j w ts o k response a status code equal to that given
+func (o *ListNetworkJWTsOK) IsCode(code int) bool {
+	return code == 200
+}
+
+// Code gets the status code for the list network j w ts o k response
+func (o *ListNetworkJWTsOK) Code() int {
+	return 200
+}
+
+func (o *ListNetworkJWTsOK) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /network-jwts][%d] listNetworkJWTsOK %s", 200, payload)
+}
+
+func (o *ListNetworkJWTsOK) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /network-jwts][%d] listNetworkJWTsOK %s", 200, payload)
+}
+
 func (o *ListNetworkJWTsOK) GetPayload() *rest_model.ListNetworkJWTsEnvelope {
 	return o.Payload
 }
@@ -107,7 +146,8 @@ func NewListNetworkJWTsBadRequest() *ListNetworkJWTsBadRequest {
 	return &ListNetworkJWTsBadRequest{}
 }
 
-/* ListNetworkJWTsBadRequest describes a response with status code 400, with default header values.
+/*
+ListNetworkJWTsBadRequest describes a response with status code 400, with default header values.
 
 The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 */
@@ -115,9 +155,46 @@ type ListNetworkJWTsBadRequest struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *ListNetworkJWTsBadRequest) Error() string {
-	return fmt.Sprintf("[GET /network-jwts][%d] listNetworkJWTsBadRequest  %+v", 400, o.Payload)
+// IsSuccess returns true when this list network j w ts bad request response has a 2xx status code
+func (o *ListNetworkJWTsBadRequest) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this list network j w ts bad request response has a 3xx status code
+func (o *ListNetworkJWTsBadRequest) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list network j w ts bad request response has a 4xx status code
+func (o *ListNetworkJWTsBadRequest) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list network j w ts bad request response has a 5xx status code
+func (o *ListNetworkJWTsBadRequest) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list network j w ts bad request response a status code equal to that given
+func (o *ListNetworkJWTsBadRequest) IsCode(code int) bool {
+	return code == 400
+}
+
+// Code gets the status code for the list network j w ts bad request response
+func (o *ListNetworkJWTsBadRequest) Code() int {
+	return 400
+}
+
+func (o *ListNetworkJWTsBadRequest) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /network-jwts][%d] listNetworkJWTsBadRequest %s", 400, payload)
+}
+
+func (o *ListNetworkJWTsBadRequest) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /network-jwts][%d] listNetworkJWTsBadRequest %s", 400, payload)
+}
+
 func (o *ListNetworkJWTsBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }
@@ -139,7 +216,8 @@ func NewListNetworkJWTsTooManyRequests() *ListNetworkJWTsTooManyRequests {
 	return &ListNetworkJWTsTooManyRequests{}
 }
 
-/* ListNetworkJWTsTooManyRequests describes a response with status code 429, with default header values.
+/*
+ListNetworkJWTsTooManyRequests describes a response with status code 429, with default header values.
 
 The resource requested is rate limited and the rate limit has been exceeded
 */
@@ -147,9 +225,46 @@ type ListNetworkJWTsTooManyRequests struct {
 	Payload *rest_model.APIErrorEnvelope
 }
 
-func (o *ListNetworkJWTsTooManyRequests) Error() string {
-	return fmt.Sprintf("[GET /network-jwts][%d] listNetworkJWTsTooManyRequests  %+v", 429, o.Payload)
+// IsSuccess returns true when this list network j w ts too many requests response has a 2xx status code
+func (o *ListNetworkJWTsTooManyRequests) IsSuccess() bool {
+	return false
 }
+
+// IsRedirect returns true when this list network j w ts too many requests response has a 3xx status code
+func (o *ListNetworkJWTsTooManyRequests) IsRedirect() bool {
+	return false
+}
+
+// IsClientError returns true when this list network j w ts too many requests response has a 4xx status code
+func (o *ListNetworkJWTsTooManyRequests) IsClientError() bool {
+	return true
+}
+
+// IsServerError returns true when this list network j w ts too many requests response has a 5xx status code
+func (o *ListNetworkJWTsTooManyRequests) IsServerError() bool {
+	return false
+}
+
+// IsCode returns true when this list network j w ts too many requests response a status code equal to that given
+func (o *ListNetworkJWTsTooManyRequests) IsCode(code int) bool {
+	return code == 429
+}
+
+// Code gets the status code for the list network j w ts too many requests response
+func (o *ListNetworkJWTsTooManyRequests) Code() int {
+	return 429
+}
+
+func (o *ListNetworkJWTsTooManyRequests) Error() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /network-jwts][%d] listNetworkJWTsTooManyRequests %s", 429, payload)
+}
+
+func (o *ListNetworkJWTsTooManyRequests) String() string {
+	payload, _ := json.Marshal(o.Payload)
+	return fmt.Sprintf("[GET /network-jwts][%d] listNetworkJWTsTooManyRequests %s", 429, payload)
+}
+
 func (o *ListNetworkJWTsTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
 	return o.Payload
 }

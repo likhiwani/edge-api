@@ -39,7 +39,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // NewUpdateEdgeRouterPolicyParams creates a new UpdateEdgeRouterPolicyParams object,
@@ -78,10 +78,12 @@ func NewUpdateEdgeRouterPolicyParamsWithHTTPClient(client *http.Client) *UpdateE
 	}
 }
 
-/* UpdateEdgeRouterPolicyParams contains all the parameters to send to the API endpoint
-   for the update edge router policy operation.
+/*
+UpdateEdgeRouterPolicyParams contains all the parameters to send to the API endpoint
 
-   Typically these are written to a http.Request.
+	for the update edge router policy operation.
+
+	Typically these are written to a http.Request.
 */
 type UpdateEdgeRouterPolicyParams struct {
 

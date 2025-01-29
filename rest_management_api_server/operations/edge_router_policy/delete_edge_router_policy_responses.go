@@ -34,13 +34,14 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/openziti/edge-api/rest_model"
+	"ztna-core/edge-api/rest_model"
 )
 
 // DeleteEdgeRouterPolicyOKCode is the HTTP code returned for type DeleteEdgeRouterPolicyOK
 const DeleteEdgeRouterPolicyOKCode int = 200
 
-/*DeleteEdgeRouterPolicyOK The delete request was successful and the resource has been removed
+/*
+DeleteEdgeRouterPolicyOK The delete request was successful and the resource has been removed
 
 swagger:response deleteEdgeRouterPolicyOK
 */
@@ -84,7 +85,8 @@ func (o *DeleteEdgeRouterPolicyOK) WriteResponse(rw http.ResponseWriter, produce
 // DeleteEdgeRouterPolicyBadRequestCode is the HTTP code returned for type DeleteEdgeRouterPolicyBadRequest
 const DeleteEdgeRouterPolicyBadRequestCode int = 400
 
-/*DeleteEdgeRouterPolicyBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
+/*
+DeleteEdgeRouterPolicyBadRequest The supplied request contains invalid fields or could not be parsed (json and non-json bodies). The error's code, message, and cause fields can be inspected for further information
 
 swagger:response deleteEdgeRouterPolicyBadRequest
 */
@@ -128,7 +130,8 @@ func (o *DeleteEdgeRouterPolicyBadRequest) WriteResponse(rw http.ResponseWriter,
 // DeleteEdgeRouterPolicyUnauthorizedCode is the HTTP code returned for type DeleteEdgeRouterPolicyUnauthorized
 const DeleteEdgeRouterPolicyUnauthorizedCode int = 401
 
-/*DeleteEdgeRouterPolicyUnauthorized The supplied session does not have the correct access rights to request this resource
+/*
+DeleteEdgeRouterPolicyUnauthorized The supplied session does not have the correct access rights to request this resource
 
 swagger:response deleteEdgeRouterPolicyUnauthorized
 */
@@ -172,7 +175,8 @@ func (o *DeleteEdgeRouterPolicyUnauthorized) WriteResponse(rw http.ResponseWrite
 // DeleteEdgeRouterPolicyNotFoundCode is the HTTP code returned for type DeleteEdgeRouterPolicyNotFound
 const DeleteEdgeRouterPolicyNotFoundCode int = 404
 
-/*DeleteEdgeRouterPolicyNotFound The requested resource does not exist
+/*
+DeleteEdgeRouterPolicyNotFound The requested resource does not exist
 
 swagger:response deleteEdgeRouterPolicyNotFound
 */
@@ -216,7 +220,8 @@ func (o *DeleteEdgeRouterPolicyNotFound) WriteResponse(rw http.ResponseWriter, p
 // DeleteEdgeRouterPolicyConflictCode is the HTTP code returned for type DeleteEdgeRouterPolicyConflict
 const DeleteEdgeRouterPolicyConflictCode int = 409
 
-/*DeleteEdgeRouterPolicyConflict The resource requested to be removed/altered cannot be as it is referenced by another object.
+/*
+DeleteEdgeRouterPolicyConflict The resource requested to be removed/altered cannot be as it is referenced by another object.
 
 swagger:response deleteEdgeRouterPolicyConflict
 */
@@ -260,7 +265,8 @@ func (o *DeleteEdgeRouterPolicyConflict) WriteResponse(rw http.ResponseWriter, p
 // DeleteEdgeRouterPolicyTooManyRequestsCode is the HTTP code returned for type DeleteEdgeRouterPolicyTooManyRequests
 const DeleteEdgeRouterPolicyTooManyRequestsCode int = 429
 
-/*DeleteEdgeRouterPolicyTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
+/*
+DeleteEdgeRouterPolicyTooManyRequests The resource requested is rate limited and the rate limit has been exceeded
 
 swagger:response deleteEdgeRouterPolicyTooManyRequests
 */
@@ -304,7 +310,8 @@ func (o *DeleteEdgeRouterPolicyTooManyRequests) WriteResponse(rw http.ResponseWr
 // DeleteEdgeRouterPolicyServiceUnavailableCode is the HTTP code returned for type DeleteEdgeRouterPolicyServiceUnavailable
 const DeleteEdgeRouterPolicyServiceUnavailableCode int = 503
 
-/*DeleteEdgeRouterPolicyServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
+/*
+DeleteEdgeRouterPolicyServiceUnavailable The request could not be completed due to the server being busy or in a temporarily bad state
 
 swagger:response deleteEdgeRouterPolicyServiceUnavailable
 */
