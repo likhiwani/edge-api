@@ -31,7 +31,7 @@ package rest_model
 
 import (
 	"context"
-
+	"encoding/json"
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -100,6 +100,20 @@ func (m *ConfigCreate) validateData(formats strfmt.Registry) error {
 
 	if m.Data == nil {
 		return errors.Required("data", "body", nil)
+	}
+	dataMap, _ := m.Data.(map[string]interface{})
+	allowedPortRanges, ok := dataMap["allowedPortRanges"].([]interface{})
+	if ok {
+		for _, item := range allowedPortRanges {
+			portRangeMap, _ := item.(map[string]interface{})
+			low := portRangeMap["low"].(json.Number) // JSON numbers are float64
+			high := portRangeMap["high"].(json.Number)
+			lowInt, _ := low.Int64()
+			highInt, _ := high.Int64()
+			if lowInt > highInt {
+				return errors.New(400, "low port must be less than or equal to high port")
+			}
+		}
 	}
 
 	return nil

@@ -42,7 +42,7 @@ func VerifyController(controllerAddr string, caPool *x509.CertPool) (bool, error
 		return false, err
 	}
 
-	_, err = httpClient.Get(controllerAddr + "/edge/client/v1/versions")
+	_, err = httpClient.Get(controllerAddr + "/edge/client/v1/version")
 
 	if err != nil {
 		return false, err
