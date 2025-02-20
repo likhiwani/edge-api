@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -54,6 +55,7 @@ type PostureCheckFailureOperatingSystemActual struct {
 
 // Validate validates this posture check failure operating system actual
 func (m *PostureCheckFailureOperatingSystemActual) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateType(formats); err != nil {
@@ -71,6 +73,7 @@ func (m *PostureCheckFailureOperatingSystemActual) Validate(formats strfmt.Regis
 }
 
 func (m *PostureCheckFailureOperatingSystemActual) validateType(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("type", "body", m.Type); err != nil {
 		return err
@@ -80,6 +83,7 @@ func (m *PostureCheckFailureOperatingSystemActual) validateType(formats strfmt.R
 }
 
 func (m *PostureCheckFailureOperatingSystemActual) validateVersion(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("version", "body", m.Version); err != nil {
 		return err
@@ -90,11 +94,13 @@ func (m *PostureCheckFailureOperatingSystemActual) validateVersion(formats strfm
 
 // ContextValidate validates this posture check failure operating system actual based on context it is used
 func (m *PostureCheckFailureOperatingSystemActual) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *PostureCheckFailureOperatingSystemActual) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -103,6 +109,7 @@ func (m *PostureCheckFailureOperatingSystemActual) MarshalBinary() ([]byte, erro
 
 // UnmarshalBinary interface implementation
 func (m *PostureCheckFailureOperatingSystemActual) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureCheckFailureOperatingSystemActual
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

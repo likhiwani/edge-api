@@ -30,6 +30,7 @@ package enrollment
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type DeleteEnrollmentHandlerFunc func(DeleteEnrollmentParams, interface{}) middl
 
 // Handle executing the request and returning a response
 func (fn DeleteEnrollmentHandlerFunc) Handle(params DeleteEnrollmentParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type DeleteEnrollmentHandler interface {
 
 // NewDeleteEnrollment creates a new http.Handler for the delete enrollment operation
 func NewDeleteEnrollment(ctx *middleware.Context, handler DeleteEnrollmentHandler) *DeleteEnrollment {
+    logtrace.LogWithFunctionName()
 	return &DeleteEnrollment{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type DeleteEnrollment struct {
 }
 
 func (o *DeleteEnrollment) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

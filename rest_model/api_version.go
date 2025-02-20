@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -56,6 +57,7 @@ type APIVersion struct {
 
 // Validate validates this api version
 func (m *APIVersion) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validatePath(formats); err != nil {
@@ -69,6 +71,7 @@ func (m *APIVersion) Validate(formats strfmt.Registry) error {
 }
 
 func (m *APIVersion) validatePath(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("path", "body", m.Path); err != nil {
 		return err
@@ -79,11 +82,13 @@ func (m *APIVersion) validatePath(formats strfmt.Registry) error {
 
 // ContextValidate validates this api version based on context it is used
 func (m *APIVersion) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *APIVersion) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -92,6 +97,7 @@ func (m *APIVersion) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *APIVersion) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res APIVersion
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

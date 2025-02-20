@@ -30,6 +30,7 @@ package session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DetailSessionOK struct {
 
 // NewDetailSessionOK creates DetailSessionOK with default headers values
 func NewDetailSessionOK() *DetailSessionOK {
+    logtrace.LogWithFunctionName()
 
 	return &DetailSessionOK{}
 }
 
 // WithPayload adds the payload to the detail session o k response
 func (o *DetailSessionOK) WithPayload(payload *rest_model.DetailSessionManagementEnvelope) *DetailSessionOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail session o k response
 func (o *DetailSessionOK) SetPayload(payload *rest_model.DetailSessionManagementEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailSessionOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DetailSessionUnauthorized struct {
 
 // NewDetailSessionUnauthorized creates DetailSessionUnauthorized with default headers values
 func NewDetailSessionUnauthorized() *DetailSessionUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DetailSessionUnauthorized{}
 }
 
 // WithPayload adds the payload to the detail session unauthorized response
 func (o *DetailSessionUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailSessionUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail session unauthorized response
 func (o *DetailSessionUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailSessionUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DetailSessionNotFound struct {
 
 // NewDetailSessionNotFound creates DetailSessionNotFound with default headers values
 func NewDetailSessionNotFound() *DetailSessionNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DetailSessionNotFound{}
 }
 
 // WithPayload adds the payload to the detail session not found response
 func (o *DetailSessionNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailSessionNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail session not found response
 func (o *DetailSessionNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailSessionNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DetailSessionTooManyRequests struct {
 
 // NewDetailSessionTooManyRequests creates DetailSessionTooManyRequests with default headers values
 func NewDetailSessionTooManyRequests() *DetailSessionTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DetailSessionTooManyRequests{}
 }
 
 // WithPayload adds the payload to the detail session too many requests response
 func (o *DetailSessionTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailSessionTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail session too many requests response
 func (o *DetailSessionTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailSessionTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DetailSessionServiceUnavailable struct {
 
 // NewDetailSessionServiceUnavailable creates DetailSessionServiceUnavailable with default headers values
 func NewDetailSessionServiceUnavailable() *DetailSessionServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DetailSessionServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the detail session service unavailable response
 func (o *DetailSessionServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailSessionServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail session service unavailable response
 func (o *DetailSessionServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailSessionServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

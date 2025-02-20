@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DetailCurrentAPISessionCertificateOK struct {
 
 // NewDetailCurrentAPISessionCertificateOK creates DetailCurrentAPISessionCertificateOK with default headers values
 func NewDetailCurrentAPISessionCertificateOK() *DetailCurrentAPISessionCertificateOK {
+    logtrace.LogWithFunctionName()
 
 	return &DetailCurrentAPISessionCertificateOK{}
 }
 
 // WithPayload adds the payload to the detail current Api session certificate o k response
 func (o *DetailCurrentAPISessionCertificateOK) WithPayload(payload *rest_model.DetailCurrentAPISessionCertificateEnvelope) *DetailCurrentAPISessionCertificateOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail current Api session certificate o k response
 func (o *DetailCurrentAPISessionCertificateOK) SetPayload(payload *rest_model.DetailCurrentAPISessionCertificateEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailCurrentAPISessionCertificateOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DetailCurrentAPISessionCertificateUnauthorized struct {
 
 // NewDetailCurrentAPISessionCertificateUnauthorized creates DetailCurrentAPISessionCertificateUnauthorized with default headers values
 func NewDetailCurrentAPISessionCertificateUnauthorized() *DetailCurrentAPISessionCertificateUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DetailCurrentAPISessionCertificateUnauthorized{}
 }
 
 // WithPayload adds the payload to the detail current Api session certificate unauthorized response
 func (o *DetailCurrentAPISessionCertificateUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailCurrentAPISessionCertificateUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail current Api session certificate unauthorized response
 func (o *DetailCurrentAPISessionCertificateUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailCurrentAPISessionCertificateUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DetailCurrentAPISessionCertificateNotFound struct {
 
 // NewDetailCurrentAPISessionCertificateNotFound creates DetailCurrentAPISessionCertificateNotFound with default headers values
 func NewDetailCurrentAPISessionCertificateNotFound() *DetailCurrentAPISessionCertificateNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DetailCurrentAPISessionCertificateNotFound{}
 }
 
 // WithPayload adds the payload to the detail current Api session certificate not found response
 func (o *DetailCurrentAPISessionCertificateNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailCurrentAPISessionCertificateNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail current Api session certificate not found response
 func (o *DetailCurrentAPISessionCertificateNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailCurrentAPISessionCertificateNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DetailCurrentAPISessionCertificateTooManyRequests struct {
 
 // NewDetailCurrentAPISessionCertificateTooManyRequests creates DetailCurrentAPISessionCertificateTooManyRequests with default headers values
 func NewDetailCurrentAPISessionCertificateTooManyRequests() *DetailCurrentAPISessionCertificateTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DetailCurrentAPISessionCertificateTooManyRequests{}
 }
 
 // WithPayload adds the payload to the detail current Api session certificate too many requests response
 func (o *DetailCurrentAPISessionCertificateTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailCurrentAPISessionCertificateTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail current Api session certificate too many requests response
 func (o *DetailCurrentAPISessionCertificateTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailCurrentAPISessionCertificateTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DetailCurrentAPISessionCertificateServiceUnavailable struct {
 
 // NewDetailCurrentAPISessionCertificateServiceUnavailable creates DetailCurrentAPISessionCertificateServiceUnavailable with default headers values
 func NewDetailCurrentAPISessionCertificateServiceUnavailable() *DetailCurrentAPISessionCertificateServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DetailCurrentAPISessionCertificateServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the detail current Api session certificate service unavailable response
 func (o *DetailCurrentAPISessionCertificateServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailCurrentAPISessionCertificateServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail current Api session certificate service unavailable response
 func (o *DetailCurrentAPISessionCertificateServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailCurrentAPISessionCertificateServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

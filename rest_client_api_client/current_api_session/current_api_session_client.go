@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new current api session API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -115,6 +119,7 @@ DeleteCurrentAPISession logouts
 Terminates the current API session
 */
 func (a *Client) DeleteCurrentAPISession(params *DeleteCurrentAPISessionParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCurrentAPISessionOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteCurrentAPISessionParams()
@@ -156,6 +161,7 @@ CreateCurrentAPISessionCertificate creates an ephemeral certificate for the curr
 Creates an ephemeral certificate for the current API Session. This endpoint expects a PEM encoded CSRs to be provided for fulfillment as a property of a JSON payload. It is up to the client to manage the private key backing the CSR request.
 */
 func (a *Client) CreateCurrentAPISessionCertificate(params *CreateCurrentAPISessionCertificateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateCurrentAPISessionCertificateCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreateCurrentAPISessionCertificateParams()
@@ -197,6 +203,7 @@ DeleteCurrentAPISessionCertificate deletes an ephemeral certificate
 Delete an ephemeral certificateby id
 */
 func (a *Client) DeleteCurrentAPISessionCertificate(params *DeleteCurrentAPISessionCertificateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCurrentAPISessionCertificateOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteCurrentAPISessionCertificateParams()
@@ -238,6 +245,7 @@ DetailCurrentAPISessionCertificate retrieves an ephemeral certificate
 Retrieves a single ephemeral certificate by id
 */
 func (a *Client) DetailCurrentAPISessionCertificate(params *DetailCurrentAPISessionCertificateParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailCurrentAPISessionCertificateOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailCurrentAPISessionCertificateParams()
@@ -279,6 +287,7 @@ DetailCurrentIdentityAuthenticator retrieves an authenticator for the current id
 Retrieves a single authenticator by id. Will only show authenticators assigned to the API session's identity.
 */
 func (a *Client) DetailCurrentIdentityAuthenticator(params *DetailCurrentIdentityAuthenticatorParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailCurrentIdentityAuthenticatorOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailCurrentIdentityAuthenticatorParams()
@@ -324,6 +333,7 @@ The response from this endpoint is a new client certificate which the client mus
 After verification is completion any new connections must be made with new certificate. Prior to verification the old client certificate remains active.
 */
 func (a *Client) ExtendCurrentIdentityAuthenticator(params *ExtendCurrentIdentityAuthenticatorParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtendCurrentIdentityAuthenticatorOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtendCurrentIdentityAuthenticatorParams()
@@ -367,6 +377,7 @@ func (a *Client) ExtendCurrentIdentityAuthenticator(params *ExtendCurrentIdentit
 After receipt, the new client certificate must be used for new authentication requests.
 */
 func (a *Client) ExtendVerifyCurrentIdentityAuthenticator(params *ExtendVerifyCurrentIdentityAuthenticatorParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ExtendVerifyCurrentIdentityAuthenticatorOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtendVerifyCurrentIdentityAuthenticatorParams()
@@ -408,6 +419,7 @@ GetCurrentAPISession returns the current API session
 Retrieves the API session that was used to issue the current request
 */
 func (a *Client) GetCurrentAPISession(params *GetCurrentAPISessionParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCurrentAPISessionOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetCurrentAPISessionParams()
@@ -449,6 +461,7 @@ ListCurrentAPISessionCertificates lists the ephemeral certificates available for
 Retrieves a list of certificate resources for the current API session; supports filtering, sorting, and pagination
 */
 func (a *Client) ListCurrentAPISessionCertificates(params *ListCurrentAPISessionCertificatesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListCurrentAPISessionCertificatesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListCurrentAPISessionCertificatesParams()
@@ -490,6 +503,7 @@ ListCurrentIdentityAuthenticators lists authenticators for the current identity
 Retrieves a list of authenticators assigned to the current API session's identity; supports filtering, sorting, and pagination.
 */
 func (a *Client) ListCurrentIdentityAuthenticators(params *ListCurrentIdentityAuthenticatorsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListCurrentIdentityAuthenticatorsOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListCurrentIdentityAuthenticatorsParams()
@@ -533,6 +547,7 @@ func (a *Client) ListCurrentIdentityAuthenticators(params *ListCurrentIdentityAu
 service refreshes.
 */
 func (a *Client) ListServiceUpdates(params *ListServiceUpdatesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListServiceUpdatesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListServiceUpdatesParams()
@@ -576,6 +591,7 @@ func (a *Client) ListServiceUpdates(params *ListServiceUpdatesParams, authInfo r
 session's identity.
 */
 func (a *Client) PatchCurrentIdentityAuthenticator(params *PatchCurrentIdentityAuthenticatorParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PatchCurrentIdentityAuthenticatorOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPatchCurrentIdentityAuthenticatorParams()
@@ -619,6 +635,7 @@ func (a *Client) PatchCurrentIdentityAuthenticator(params *PatchCurrentIdentityA
 identity.
 */
 func (a *Client) UpdateCurrentIdentityAuthenticator(params *UpdateCurrentIdentityAuthenticatorParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UpdateCurrentIdentityAuthenticatorOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUpdateCurrentIdentityAuthenticatorParams()
@@ -656,5 +673,6 @@ func (a *Client) UpdateCurrentIdentityAuthenticator(params *UpdateCurrentIdentit
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

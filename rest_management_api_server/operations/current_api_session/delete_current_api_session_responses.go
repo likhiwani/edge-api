@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DeleteCurrentAPISessionOK struct {
 
 // NewDeleteCurrentAPISessionOK creates DeleteCurrentAPISessionOK with default headers values
 func NewDeleteCurrentAPISessionOK() *DeleteCurrentAPISessionOK {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteCurrentAPISessionOK{}
 }
 
 // WithPayload adds the payload to the delete current Api session o k response
 func (o *DeleteCurrentAPISessionOK) WithPayload(payload *rest_model.Empty) *DeleteCurrentAPISessionOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete current Api session o k response
 func (o *DeleteCurrentAPISessionOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteCurrentAPISessionOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DeleteCurrentAPISessionUnauthorized struct {
 
 // NewDeleteCurrentAPISessionUnauthorized creates DeleteCurrentAPISessionUnauthorized with default headers values
 func NewDeleteCurrentAPISessionUnauthorized() *DeleteCurrentAPISessionUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteCurrentAPISessionUnauthorized{}
 }
 
 // WithPayload adds the payload to the delete current Api session unauthorized response
 func (o *DeleteCurrentAPISessionUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteCurrentAPISessionUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete current Api session unauthorized response
 func (o *DeleteCurrentAPISessionUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteCurrentAPISessionUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {

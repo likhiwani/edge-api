@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ListSummaryReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ListSummaryReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewListSummaryOK()
@@ -79,6 +81,7 @@ func (o *ListSummaryReader) ReadResponse(response runtime.ClientResponse, consum
 
 // NewListSummaryOK creates a ListSummaryOK with default headers values
 func NewListSummaryOK() *ListSummaryOK {
+    logtrace.LogWithFunctionName()
 	return &ListSummaryOK{}
 }
 
@@ -93,49 +96,59 @@ type ListSummaryOK struct {
 
 // IsSuccess returns true when this list summary o k response has a 2xx status code
 func (o *ListSummaryOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this list summary o k response has a 3xx status code
 func (o *ListSummaryOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list summary o k response has a 4xx status code
 func (o *ListSummaryOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list summary o k response has a 5xx status code
 func (o *ListSummaryOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list summary o k response a status code equal to that given
 func (o *ListSummaryOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the list summary o k response
 func (o *ListSummaryOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ListSummaryOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /summary][%d] listSummaryOK %s", 200, payload)
 }
 
 func (o *ListSummaryOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /summary][%d] listSummaryOK %s", 200, payload)
 }
 
 func (o *ListSummaryOK) GetPayload() *rest_model.ListSummaryCountsEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListSummaryOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListSummaryCountsEnvelope)
 
@@ -149,6 +162,7 @@ func (o *ListSummaryOK) readResponse(response runtime.ClientResponse, consumer r
 
 // NewListSummaryUnauthorized creates a ListSummaryUnauthorized with default headers values
 func NewListSummaryUnauthorized() *ListSummaryUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &ListSummaryUnauthorized{}
 }
 
@@ -163,49 +177,59 @@ type ListSummaryUnauthorized struct {
 
 // IsSuccess returns true when this list summary unauthorized response has a 2xx status code
 func (o *ListSummaryUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list summary unauthorized response has a 3xx status code
 func (o *ListSummaryUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list summary unauthorized response has a 4xx status code
 func (o *ListSummaryUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list summary unauthorized response has a 5xx status code
 func (o *ListSummaryUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list summary unauthorized response a status code equal to that given
 func (o *ListSummaryUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the list summary unauthorized response
 func (o *ListSummaryUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *ListSummaryUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /summary][%d] listSummaryUnauthorized %s", 401, payload)
 }
 
 func (o *ListSummaryUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /summary][%d] listSummaryUnauthorized %s", 401, payload)
 }
 
 func (o *ListSummaryUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListSummaryUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -219,6 +243,7 @@ func (o *ListSummaryUnauthorized) readResponse(response runtime.ClientResponse, 
 
 // NewListSummaryTooManyRequests creates a ListSummaryTooManyRequests with default headers values
 func NewListSummaryTooManyRequests() *ListSummaryTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &ListSummaryTooManyRequests{}
 }
 
@@ -233,49 +258,59 @@ type ListSummaryTooManyRequests struct {
 
 // IsSuccess returns true when this list summary too many requests response has a 2xx status code
 func (o *ListSummaryTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list summary too many requests response has a 3xx status code
 func (o *ListSummaryTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list summary too many requests response has a 4xx status code
 func (o *ListSummaryTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list summary too many requests response has a 5xx status code
 func (o *ListSummaryTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list summary too many requests response a status code equal to that given
 func (o *ListSummaryTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the list summary too many requests response
 func (o *ListSummaryTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *ListSummaryTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /summary][%d] listSummaryTooManyRequests %s", 429, payload)
 }
 
 func (o *ListSummaryTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /summary][%d] listSummaryTooManyRequests %s", 429, payload)
 }
 
 func (o *ListSummaryTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListSummaryTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -289,6 +324,7 @@ func (o *ListSummaryTooManyRequests) readResponse(response runtime.ClientRespons
 
 // NewListSummaryServiceUnavailable creates a ListSummaryServiceUnavailable with default headers values
 func NewListSummaryServiceUnavailable() *ListSummaryServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &ListSummaryServiceUnavailable{}
 }
 
@@ -303,49 +339,59 @@ type ListSummaryServiceUnavailable struct {
 
 // IsSuccess returns true when this list summary service unavailable response has a 2xx status code
 func (o *ListSummaryServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list summary service unavailable response has a 3xx status code
 func (o *ListSummaryServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list summary service unavailable response has a 4xx status code
 func (o *ListSummaryServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list summary service unavailable response has a 5xx status code
 func (o *ListSummaryServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this list summary service unavailable response a status code equal to that given
 func (o *ListSummaryServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the list summary service unavailable response
 func (o *ListSummaryServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *ListSummaryServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /summary][%d] listSummaryServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListSummaryServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /summary][%d] listSummaryServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListSummaryServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListSummaryServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

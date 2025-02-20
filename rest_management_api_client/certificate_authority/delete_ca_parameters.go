@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDeleteCaParams() *DeleteCaParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteCaParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDeleteCaParams() *DeleteCaParams {
 // NewDeleteCaParamsWithTimeout creates a new DeleteCaParams object
 // with the ability to set a timeout on a request.
 func NewDeleteCaParamsWithTimeout(timeout time.Duration) *DeleteCaParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteCaParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDeleteCaParamsWithTimeout(timeout time.Duration) *DeleteCaParams {
 // NewDeleteCaParamsWithContext creates a new DeleteCaParams object
 // with the ability to set a context for a request.
 func NewDeleteCaParamsWithContext(ctx context.Context) *DeleteCaParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteCaParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDeleteCaParamsWithContext(ctx context.Context) *DeleteCaParams {
 // NewDeleteCaParamsWithHTTPClient creates a new DeleteCaParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDeleteCaParamsWithHTTPClient(client *http.Client) *DeleteCaParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteCaParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DeleteCaParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteCaParams) WithDefaults() *DeleteCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DeleteCaParams) WithDefaults() *DeleteCaParams {
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteCaParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the delete ca params
 func (o *DeleteCaParams) WithTimeout(timeout time.Duration) *DeleteCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the delete ca params
 func (o *DeleteCaParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the delete ca params
 func (o *DeleteCaParams) WithContext(ctx context.Context) *DeleteCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the delete ca params
 func (o *DeleteCaParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the delete ca params
 func (o *DeleteCaParams) WithHTTPClient(client *http.Client) *DeleteCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the delete ca params
 func (o *DeleteCaParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the delete ca params
 func (o *DeleteCaParams) WithID(id string) *DeleteCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the delete ca params
 func (o *DeleteCaParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DeleteCaParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

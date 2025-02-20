@@ -30,6 +30,7 @@ package service_policy
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"errors"
 	"net/url"
 	golangswaggerpaths "path"
@@ -52,6 +53,7 @@ type ListServicePoliciesURL struct {
 // base path specified in the swagger spec.
 // When the value of the base path is an empty string
 func (o *ListServicePoliciesURL) WithBasePath(bp string) *ListServicePoliciesURL {
+    logtrace.LogWithFunctionName()
 	o.SetBasePath(bp)
 	return o
 }
@@ -60,11 +62,13 @@ func (o *ListServicePoliciesURL) WithBasePath(bp string) *ListServicePoliciesURL
 // base path specified in the swagger spec.
 // When the value of the base path is an empty string
 func (o *ListServicePoliciesURL) SetBasePath(bp string) {
+    logtrace.LogWithFunctionName()
 	o._basePath = bp
 }
 
 // Build a url path and query string
 func (o *ListServicePoliciesURL) Build() (*url.URL, error) {
+    logtrace.LogWithFunctionName()
 	var _result url.URL
 
 	var _path = "/service-policies"
@@ -108,6 +112,7 @@ func (o *ListServicePoliciesURL) Build() (*url.URL, error) {
 
 // Must is a helper function to panic when the url builder returns an error
 func (o *ListServicePoliciesURL) Must(u *url.URL, err error) *url.URL {
+    logtrace.LogWithFunctionName()
 	if err != nil {
 		panic(err)
 	}
@@ -119,11 +124,13 @@ func (o *ListServicePoliciesURL) Must(u *url.URL, err error) *url.URL {
 
 // String returns the string representation of the path with query string
 func (o *ListServicePoliciesURL) String() string {
+    logtrace.LogWithFunctionName()
 	return o.Must(o.Build()).String()
 }
 
 // BuildFull builds a full url with scheme, host, path and query string
 func (o *ListServicePoliciesURL) BuildFull(scheme, host string) (*url.URL, error) {
+    logtrace.LogWithFunctionName()
 	if scheme == "" {
 		return nil, errors.New("scheme is required for a full url on ListServicePoliciesURL")
 	}
@@ -143,5 +150,6 @@ func (o *ListServicePoliciesURL) BuildFull(scheme, host string) (*url.URL, error
 
 // StringFull returns the string representation of a complete url
 func (o *ListServicePoliciesURL) StringFull(scheme, host string) string {
+    logtrace.LogWithFunctionName()
 	return o.Must(o.BuildFull(scheme, host)).String()
 }

@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DetailCaOK struct {
 
 // NewDetailCaOK creates DetailCaOK with default headers values
 func NewDetailCaOK() *DetailCaOK {
+    logtrace.LogWithFunctionName()
 
 	return &DetailCaOK{}
 }
 
 // WithPayload adds the payload to the detail ca o k response
 func (o *DetailCaOK) WithPayload(payload *rest_model.DetailCaEnvelope) *DetailCaOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail ca o k response
 func (o *DetailCaOK) SetPayload(payload *rest_model.DetailCaEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailCaOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DetailCaUnauthorized struct {
 
 // NewDetailCaUnauthorized creates DetailCaUnauthorized with default headers values
 func NewDetailCaUnauthorized() *DetailCaUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DetailCaUnauthorized{}
 }
 
 // WithPayload adds the payload to the detail ca unauthorized response
 func (o *DetailCaUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailCaUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail ca unauthorized response
 func (o *DetailCaUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailCaUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DetailCaNotFound struct {
 
 // NewDetailCaNotFound creates DetailCaNotFound with default headers values
 func NewDetailCaNotFound() *DetailCaNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DetailCaNotFound{}
 }
 
 // WithPayload adds the payload to the detail ca not found response
 func (o *DetailCaNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailCaNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail ca not found response
 func (o *DetailCaNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailCaNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DetailCaTooManyRequests struct {
 
 // NewDetailCaTooManyRequests creates DetailCaTooManyRequests with default headers values
 func NewDetailCaTooManyRequests() *DetailCaTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DetailCaTooManyRequests{}
 }
 
 // WithPayload adds the payload to the detail ca too many requests response
 func (o *DetailCaTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailCaTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail ca too many requests response
 func (o *DetailCaTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailCaTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DetailCaServiceUnavailable struct {
 
 // NewDetailCaServiceUnavailable creates DetailCaServiceUnavailable with default headers values
 func NewDetailCaServiceUnavailable() *DetailCaServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DetailCaServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the detail ca service unavailable response
 func (o *DetailCaServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailCaServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail ca service unavailable response
 func (o *DetailCaServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailCaServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

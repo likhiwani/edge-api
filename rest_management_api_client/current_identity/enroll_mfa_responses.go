@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type EnrollMfaReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *EnrollMfaReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 201:
 		result := NewEnrollMfaCreated()
@@ -73,6 +75,7 @@ func (o *EnrollMfaReader) ReadResponse(response runtime.ClientResponse, consumer
 
 // NewEnrollMfaCreated creates a EnrollMfaCreated with default headers values
 func NewEnrollMfaCreated() *EnrollMfaCreated {
+    logtrace.LogWithFunctionName()
 	return &EnrollMfaCreated{}
 }
 
@@ -87,49 +90,59 @@ type EnrollMfaCreated struct {
 
 // IsSuccess returns true when this enroll mfa created response has a 2xx status code
 func (o *EnrollMfaCreated) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this enroll mfa created response has a 3xx status code
 func (o *EnrollMfaCreated) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this enroll mfa created response has a 4xx status code
 func (o *EnrollMfaCreated) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this enroll mfa created response has a 5xx status code
 func (o *EnrollMfaCreated) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this enroll mfa created response a status code equal to that given
 func (o *EnrollMfaCreated) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 201
 }
 
 // Code gets the status code for the enroll mfa created response
 func (o *EnrollMfaCreated) Code() int {
+    logtrace.LogWithFunctionName()
 	return 201
 }
 
 func (o *EnrollMfaCreated) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/mfa][%d] enrollMfaCreated %s", 201, payload)
 }
 
 func (o *EnrollMfaCreated) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/mfa][%d] enrollMfaCreated %s", 201, payload)
 }
 
 func (o *EnrollMfaCreated) GetPayload() *rest_model.CreateEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *EnrollMfaCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.CreateEnvelope)
 
@@ -143,6 +156,7 @@ func (o *EnrollMfaCreated) readResponse(response runtime.ClientResponse, consume
 
 // NewEnrollMfaUnauthorized creates a EnrollMfaUnauthorized with default headers values
 func NewEnrollMfaUnauthorized() *EnrollMfaUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &EnrollMfaUnauthorized{}
 }
 
@@ -157,49 +171,59 @@ type EnrollMfaUnauthorized struct {
 
 // IsSuccess returns true when this enroll mfa unauthorized response has a 2xx status code
 func (o *EnrollMfaUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this enroll mfa unauthorized response has a 3xx status code
 func (o *EnrollMfaUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this enroll mfa unauthorized response has a 4xx status code
 func (o *EnrollMfaUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this enroll mfa unauthorized response has a 5xx status code
 func (o *EnrollMfaUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this enroll mfa unauthorized response a status code equal to that given
 func (o *EnrollMfaUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the enroll mfa unauthorized response
 func (o *EnrollMfaUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *EnrollMfaUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/mfa][%d] enrollMfaUnauthorized %s", 401, payload)
 }
 
 func (o *EnrollMfaUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/mfa][%d] enrollMfaUnauthorized %s", 401, payload)
 }
 
 func (o *EnrollMfaUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *EnrollMfaUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -213,6 +237,7 @@ func (o *EnrollMfaUnauthorized) readResponse(response runtime.ClientResponse, co
 
 // NewEnrollMfaConflict creates a EnrollMfaConflict with default headers values
 func NewEnrollMfaConflict() *EnrollMfaConflict {
+    logtrace.LogWithFunctionName()
 	return &EnrollMfaConflict{}
 }
 
@@ -227,49 +252,59 @@ type EnrollMfaConflict struct {
 
 // IsSuccess returns true when this enroll mfa conflict response has a 2xx status code
 func (o *EnrollMfaConflict) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this enroll mfa conflict response has a 3xx status code
 func (o *EnrollMfaConflict) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this enroll mfa conflict response has a 4xx status code
 func (o *EnrollMfaConflict) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this enroll mfa conflict response has a 5xx status code
 func (o *EnrollMfaConflict) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this enroll mfa conflict response a status code equal to that given
 func (o *EnrollMfaConflict) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 409
 }
 
 // Code gets the status code for the enroll mfa conflict response
 func (o *EnrollMfaConflict) Code() int {
+    logtrace.LogWithFunctionName()
 	return 409
 }
 
 func (o *EnrollMfaConflict) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/mfa][%d] enrollMfaConflict %s", 409, payload)
 }
 
 func (o *EnrollMfaConflict) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/mfa][%d] enrollMfaConflict %s", 409, payload)
 }
 
 func (o *EnrollMfaConflict) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *EnrollMfaConflict) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

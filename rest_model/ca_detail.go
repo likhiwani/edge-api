@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -94,6 +95,7 @@ type CaDetail struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *CaDetail) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 BaseEntity
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -156,6 +158,7 @@ func (m *CaDetail) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m CaDetail) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.BaseEntity)
@@ -219,6 +222,7 @@ func (m CaDetail) MarshalJSON() ([]byte, error) {
 
 // Validate validates this ca detail
 func (m *CaDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -277,6 +281,7 @@ func (m *CaDetail) Validate(formats strfmt.Registry) error {
 }
 
 func (m *CaDetail) validateCertPem(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("certPem", "body", m.CertPem); err != nil {
 		return err
@@ -286,6 +291,7 @@ func (m *CaDetail) validateCertPem(formats strfmt.Registry) error {
 }
 
 func (m *CaDetail) validateExternalIDClaim(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.ExternalIDClaim) { // not required
 		return nil
@@ -306,6 +312,7 @@ func (m *CaDetail) validateExternalIDClaim(formats strfmt.Registry) error {
 }
 
 func (m *CaDetail) validateFingerprint(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("fingerprint", "body", m.Fingerprint); err != nil {
 		return err
@@ -315,6 +322,7 @@ func (m *CaDetail) validateFingerprint(formats strfmt.Registry) error {
 }
 
 func (m *CaDetail) validateIdentityNameFormat(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("identityNameFormat", "body", m.IdentityNameFormat); err != nil {
 		return err
@@ -324,6 +332,7 @@ func (m *CaDetail) validateIdentityNameFormat(formats strfmt.Registry) error {
 }
 
 func (m *CaDetail) validateIdentityRoles(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("identityRoles", "body", m.IdentityRoles); err != nil {
 		return err
@@ -342,6 +351,7 @@ func (m *CaDetail) validateIdentityRoles(formats strfmt.Registry) error {
 }
 
 func (m *CaDetail) validateIsAuthEnabled(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isAuthEnabled", "body", m.IsAuthEnabled); err != nil {
 		return err
@@ -351,6 +361,7 @@ func (m *CaDetail) validateIsAuthEnabled(formats strfmt.Registry) error {
 }
 
 func (m *CaDetail) validateIsAutoCaEnrollmentEnabled(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isAutoCaEnrollmentEnabled", "body", m.IsAutoCaEnrollmentEnabled); err != nil {
 		return err
@@ -360,6 +371,7 @@ func (m *CaDetail) validateIsAutoCaEnrollmentEnabled(formats strfmt.Registry) er
 }
 
 func (m *CaDetail) validateIsOttCaEnrollmentEnabled(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isOttCaEnrollmentEnabled", "body", m.IsOttCaEnrollmentEnabled); err != nil {
 		return err
@@ -369,6 +381,7 @@ func (m *CaDetail) validateIsOttCaEnrollmentEnabled(formats strfmt.Registry) err
 }
 
 func (m *CaDetail) validateIsVerified(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isVerified", "body", m.IsVerified); err != nil {
 		return err
@@ -378,6 +391,7 @@ func (m *CaDetail) validateIsVerified(formats strfmt.Registry) error {
 }
 
 func (m *CaDetail) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -387,6 +401,7 @@ func (m *CaDetail) validateName(formats strfmt.Registry) error {
 }
 
 func (m *CaDetail) validateVerificationToken(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.VerificationToken) { // not required
 		return nil
@@ -401,6 +416,7 @@ func (m *CaDetail) validateVerificationToken(formats strfmt.Registry) error {
 
 // ContextValidate validate this ca detail based on the context it is used
 func (m *CaDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -423,6 +439,7 @@ func (m *CaDetail) ContextValidate(ctx context.Context, formats strfmt.Registry)
 }
 
 func (m *CaDetail) contextValidateExternalIDClaim(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.ExternalIDClaim != nil {
 
@@ -444,6 +461,7 @@ func (m *CaDetail) contextValidateExternalIDClaim(ctx context.Context, formats s
 }
 
 func (m *CaDetail) contextValidateIdentityRoles(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.IdentityRoles.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -459,6 +477,7 @@ func (m *CaDetail) contextValidateIdentityRoles(ctx context.Context, formats str
 
 // MarshalBinary interface implementation
 func (m *CaDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -467,6 +486,7 @@ func (m *CaDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *CaDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res CaDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

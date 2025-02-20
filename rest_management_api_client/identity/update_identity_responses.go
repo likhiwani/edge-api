@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type UpdateIdentityReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *UpdateIdentityReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewUpdateIdentityOK()
@@ -91,6 +93,7 @@ func (o *UpdateIdentityReader) ReadResponse(response runtime.ClientResponse, con
 
 // NewUpdateIdentityOK creates a UpdateIdentityOK with default headers values
 func NewUpdateIdentityOK() *UpdateIdentityOK {
+    logtrace.LogWithFunctionName()
 	return &UpdateIdentityOK{}
 }
 
@@ -105,49 +108,59 @@ type UpdateIdentityOK struct {
 
 // IsSuccess returns true when this update identity o k response has a 2xx status code
 func (o *UpdateIdentityOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this update identity o k response has a 3xx status code
 func (o *UpdateIdentityOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update identity o k response has a 4xx status code
 func (o *UpdateIdentityOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this update identity o k response has a 5xx status code
 func (o *UpdateIdentityOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update identity o k response a status code equal to that given
 func (o *UpdateIdentityOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the update identity o k response
 func (o *UpdateIdentityOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *UpdateIdentityOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}][%d] updateIdentityOK %s", 200, payload)
 }
 
 func (o *UpdateIdentityOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}][%d] updateIdentityOK %s", 200, payload)
 }
 
 func (o *UpdateIdentityOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateIdentityOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -161,6 +174,7 @@ func (o *UpdateIdentityOK) readResponse(response runtime.ClientResponse, consume
 
 // NewUpdateIdentityBadRequest creates a UpdateIdentityBadRequest with default headers values
 func NewUpdateIdentityBadRequest() *UpdateIdentityBadRequest {
+    logtrace.LogWithFunctionName()
 	return &UpdateIdentityBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type UpdateIdentityBadRequest struct {
 
 // IsSuccess returns true when this update identity bad request response has a 2xx status code
 func (o *UpdateIdentityBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update identity bad request response has a 3xx status code
 func (o *UpdateIdentityBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update identity bad request response has a 4xx status code
 func (o *UpdateIdentityBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update identity bad request response has a 5xx status code
 func (o *UpdateIdentityBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update identity bad request response a status code equal to that given
 func (o *UpdateIdentityBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the update identity bad request response
 func (o *UpdateIdentityBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *UpdateIdentityBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}][%d] updateIdentityBadRequest %s", 400, payload)
 }
 
 func (o *UpdateIdentityBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}][%d] updateIdentityBadRequest %s", 400, payload)
 }
 
 func (o *UpdateIdentityBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateIdentityBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *UpdateIdentityBadRequest) readResponse(response runtime.ClientResponse,
 
 // NewUpdateIdentityUnauthorized creates a UpdateIdentityUnauthorized with default headers values
 func NewUpdateIdentityUnauthorized() *UpdateIdentityUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &UpdateIdentityUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type UpdateIdentityUnauthorized struct {
 
 // IsSuccess returns true when this update identity unauthorized response has a 2xx status code
 func (o *UpdateIdentityUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update identity unauthorized response has a 3xx status code
 func (o *UpdateIdentityUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update identity unauthorized response has a 4xx status code
 func (o *UpdateIdentityUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update identity unauthorized response has a 5xx status code
 func (o *UpdateIdentityUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update identity unauthorized response a status code equal to that given
 func (o *UpdateIdentityUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the update identity unauthorized response
 func (o *UpdateIdentityUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *UpdateIdentityUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}][%d] updateIdentityUnauthorized %s", 401, payload)
 }
 
 func (o *UpdateIdentityUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}][%d] updateIdentityUnauthorized %s", 401, payload)
 }
 
 func (o *UpdateIdentityUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateIdentityUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *UpdateIdentityUnauthorized) readResponse(response runtime.ClientRespons
 
 // NewUpdateIdentityNotFound creates a UpdateIdentityNotFound with default headers values
 func NewUpdateIdentityNotFound() *UpdateIdentityNotFound {
+    logtrace.LogWithFunctionName()
 	return &UpdateIdentityNotFound{}
 }
 
@@ -315,49 +351,59 @@ type UpdateIdentityNotFound struct {
 
 // IsSuccess returns true when this update identity not found response has a 2xx status code
 func (o *UpdateIdentityNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update identity not found response has a 3xx status code
 func (o *UpdateIdentityNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update identity not found response has a 4xx status code
 func (o *UpdateIdentityNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update identity not found response has a 5xx status code
 func (o *UpdateIdentityNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update identity not found response a status code equal to that given
 func (o *UpdateIdentityNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the update identity not found response
 func (o *UpdateIdentityNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *UpdateIdentityNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}][%d] updateIdentityNotFound %s", 404, payload)
 }
 
 func (o *UpdateIdentityNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}][%d] updateIdentityNotFound %s", 404, payload)
 }
 
 func (o *UpdateIdentityNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateIdentityNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *UpdateIdentityNotFound) readResponse(response runtime.ClientResponse, c
 
 // NewUpdateIdentityTooManyRequests creates a UpdateIdentityTooManyRequests with default headers values
 func NewUpdateIdentityTooManyRequests() *UpdateIdentityTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &UpdateIdentityTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type UpdateIdentityTooManyRequests struct {
 
 // IsSuccess returns true when this update identity too many requests response has a 2xx status code
 func (o *UpdateIdentityTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update identity too many requests response has a 3xx status code
 func (o *UpdateIdentityTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update identity too many requests response has a 4xx status code
 func (o *UpdateIdentityTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update identity too many requests response has a 5xx status code
 func (o *UpdateIdentityTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update identity too many requests response a status code equal to that given
 func (o *UpdateIdentityTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the update identity too many requests response
 func (o *UpdateIdentityTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *UpdateIdentityTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}][%d] updateIdentityTooManyRequests %s", 429, payload)
 }
 
 func (o *UpdateIdentityTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}][%d] updateIdentityTooManyRequests %s", 429, payload)
 }
 
 func (o *UpdateIdentityTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateIdentityTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *UpdateIdentityTooManyRequests) readResponse(response runtime.ClientResp
 
 // NewUpdateIdentityServiceUnavailable creates a UpdateIdentityServiceUnavailable with default headers values
 func NewUpdateIdentityServiceUnavailable() *UpdateIdentityServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &UpdateIdentityServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type UpdateIdentityServiceUnavailable struct {
 
 // IsSuccess returns true when this update identity service unavailable response has a 2xx status code
 func (o *UpdateIdentityServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update identity service unavailable response has a 3xx status code
 func (o *UpdateIdentityServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update identity service unavailable response has a 4xx status code
 func (o *UpdateIdentityServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this update identity service unavailable response has a 5xx status code
 func (o *UpdateIdentityServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this update identity service unavailable response a status code equal to that given
 func (o *UpdateIdentityServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the update identity service unavailable response
 func (o *UpdateIdentityServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *UpdateIdentityServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}][%d] updateIdentityServiceUnavailable %s", 503, payload)
 }
 
 func (o *UpdateIdentityServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}][%d] updateIdentityServiceUnavailable %s", 503, payload)
 }
 
 func (o *UpdateIdentityServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateIdentityServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

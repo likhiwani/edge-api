@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -48,6 +49,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListPostureChecksParams() *ListPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	return &ListPostureChecksParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -56,6 +58,7 @@ func NewListPostureChecksParams() *ListPostureChecksParams {
 // NewListPostureChecksParamsWithTimeout creates a new ListPostureChecksParams object
 // with the ability to set a timeout on a request.
 func NewListPostureChecksParamsWithTimeout(timeout time.Duration) *ListPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	return &ListPostureChecksParams{
 		timeout: timeout,
 	}
@@ -64,6 +67,7 @@ func NewListPostureChecksParamsWithTimeout(timeout time.Duration) *ListPostureCh
 // NewListPostureChecksParamsWithContext creates a new ListPostureChecksParams object
 // with the ability to set a context for a request.
 func NewListPostureChecksParamsWithContext(ctx context.Context) *ListPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	return &ListPostureChecksParams{
 		Context: ctx,
 	}
@@ -72,6 +76,7 @@ func NewListPostureChecksParamsWithContext(ctx context.Context) *ListPostureChec
 // NewListPostureChecksParamsWithHTTPClient creates a new ListPostureChecksParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListPostureChecksParamsWithHTTPClient(client *http.Client) *ListPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	return &ListPostureChecksParams{
 		HTTPClient: client,
 	}
@@ -110,6 +115,7 @@ type ListPostureChecksParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListPostureChecksParams) WithDefaults() *ListPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -118,99 +124,117 @@ func (o *ListPostureChecksParams) WithDefaults() *ListPostureChecksParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListPostureChecksParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list posture checks params
 func (o *ListPostureChecksParams) WithTimeout(timeout time.Duration) *ListPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list posture checks params
 func (o *ListPostureChecksParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list posture checks params
 func (o *ListPostureChecksParams) WithContext(ctx context.Context) *ListPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list posture checks params
 func (o *ListPostureChecksParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list posture checks params
 func (o *ListPostureChecksParams) WithHTTPClient(client *http.Client) *ListPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list posture checks params
 func (o *ListPostureChecksParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithFilter adds the filter to the list posture checks params
 func (o *ListPostureChecksParams) WithFilter(filter *string) *ListPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	o.SetFilter(filter)
 	return o
 }
 
 // SetFilter adds the filter to the list posture checks params
 func (o *ListPostureChecksParams) SetFilter(filter *string) {
+    logtrace.LogWithFunctionName()
 	o.Filter = filter
 }
 
 // WithLimit adds the limit to the list posture checks params
 func (o *ListPostureChecksParams) WithLimit(limit *int64) *ListPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	o.SetLimit(limit)
 	return o
 }
 
 // SetLimit adds the limit to the list posture checks params
 func (o *ListPostureChecksParams) SetLimit(limit *int64) {
+    logtrace.LogWithFunctionName()
 	o.Limit = limit
 }
 
 // WithOffset adds the offset to the list posture checks params
 func (o *ListPostureChecksParams) WithOffset(offset *int64) *ListPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	o.SetOffset(offset)
 	return o
 }
 
 // SetOffset adds the offset to the list posture checks params
 func (o *ListPostureChecksParams) SetOffset(offset *int64) {
+    logtrace.LogWithFunctionName()
 	o.Offset = offset
 }
 
 // WithRoleFilter adds the roleFilter to the list posture checks params
 func (o *ListPostureChecksParams) WithRoleFilter(roleFilter []string) *ListPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	o.SetRoleFilter(roleFilter)
 	return o
 }
 
 // SetRoleFilter adds the roleFilter to the list posture checks params
 func (o *ListPostureChecksParams) SetRoleFilter(roleFilter []string) {
+    logtrace.LogWithFunctionName()
 	o.RoleFilter = roleFilter
 }
 
 // WithRoleSemantic adds the roleSemantic to the list posture checks params
 func (o *ListPostureChecksParams) WithRoleSemantic(roleSemantic *string) *ListPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	o.SetRoleSemantic(roleSemantic)
 	return o
 }
 
 // SetRoleSemantic adds the roleSemantic to the list posture checks params
 func (o *ListPostureChecksParams) SetRoleSemantic(roleSemantic *string) {
+    logtrace.LogWithFunctionName()
 	o.RoleSemantic = roleSemantic
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListPostureChecksParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err
@@ -304,6 +328,7 @@ func (o *ListPostureChecksParams) WriteToRequest(r runtime.ClientRequest, reg st
 
 // bindParamListPostureChecks binds the parameter roleFilter
 func (o *ListPostureChecksParams) bindParamRoleFilter(formats strfmt.Registry) []string {
+    logtrace.LogWithFunctionName()
 	roleFilterIR := o.RoleFilter
 
 	var roleFilterIC []string

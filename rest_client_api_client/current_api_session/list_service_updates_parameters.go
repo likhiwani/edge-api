@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListServiceUpdatesParams() *ListServiceUpdatesParams {
+    logtrace.LogWithFunctionName()
 	return &ListServiceUpdatesParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewListServiceUpdatesParams() *ListServiceUpdatesParams {
 // NewListServiceUpdatesParamsWithTimeout creates a new ListServiceUpdatesParams object
 // with the ability to set a timeout on a request.
 func NewListServiceUpdatesParamsWithTimeout(timeout time.Duration) *ListServiceUpdatesParams {
+    logtrace.LogWithFunctionName()
 	return &ListServiceUpdatesParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewListServiceUpdatesParamsWithTimeout(timeout time.Duration) *ListServiceU
 // NewListServiceUpdatesParamsWithContext creates a new ListServiceUpdatesParams object
 // with the ability to set a context for a request.
 func NewListServiceUpdatesParamsWithContext(ctx context.Context) *ListServiceUpdatesParams {
+    logtrace.LogWithFunctionName()
 	return &ListServiceUpdatesParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewListServiceUpdatesParamsWithContext(ctx context.Context) *ListServiceUpd
 // NewListServiceUpdatesParamsWithHTTPClient creates a new ListServiceUpdatesParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListServiceUpdatesParamsWithHTTPClient(client *http.Client) *ListServiceUpdatesParams {
+    logtrace.LogWithFunctionName()
 	return &ListServiceUpdatesParams{
 		HTTPClient: client,
 	}
@@ -93,6 +98,7 @@ type ListServiceUpdatesParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListServiceUpdatesParams) WithDefaults() *ListServiceUpdatesParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -101,44 +107,52 @@ func (o *ListServiceUpdatesParams) WithDefaults() *ListServiceUpdatesParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListServiceUpdatesParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list service updates params
 func (o *ListServiceUpdatesParams) WithTimeout(timeout time.Duration) *ListServiceUpdatesParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list service updates params
 func (o *ListServiceUpdatesParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list service updates params
 func (o *ListServiceUpdatesParams) WithContext(ctx context.Context) *ListServiceUpdatesParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list service updates params
 func (o *ListServiceUpdatesParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list service updates params
 func (o *ListServiceUpdatesParams) WithHTTPClient(client *http.Client) *ListServiceUpdatesParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list service updates params
 func (o *ListServiceUpdatesParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListServiceUpdatesParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

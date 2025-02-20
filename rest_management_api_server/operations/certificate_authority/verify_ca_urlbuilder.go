@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"errors"
 	"net/url"
 	golangswaggerpaths "path"
@@ -49,6 +50,7 @@ type VerifyCaURL struct {
 // base path specified in the swagger spec.
 // When the value of the base path is an empty string
 func (o *VerifyCaURL) WithBasePath(bp string) *VerifyCaURL {
+    logtrace.LogWithFunctionName()
 	o.SetBasePath(bp)
 	return o
 }
@@ -57,11 +59,13 @@ func (o *VerifyCaURL) WithBasePath(bp string) *VerifyCaURL {
 // base path specified in the swagger spec.
 // When the value of the base path is an empty string
 func (o *VerifyCaURL) SetBasePath(bp string) {
+    logtrace.LogWithFunctionName()
 	o._basePath = bp
 }
 
 // Build a url path and query string
 func (o *VerifyCaURL) Build() (*url.URL, error) {
+    logtrace.LogWithFunctionName()
 	var _result url.URL
 
 	var _path = "/cas/{id}/verify"
@@ -84,6 +88,7 @@ func (o *VerifyCaURL) Build() (*url.URL, error) {
 
 // Must is a helper function to panic when the url builder returns an error
 func (o *VerifyCaURL) Must(u *url.URL, err error) *url.URL {
+    logtrace.LogWithFunctionName()
 	if err != nil {
 		panic(err)
 	}
@@ -95,11 +100,13 @@ func (o *VerifyCaURL) Must(u *url.URL, err error) *url.URL {
 
 // String returns the string representation of the path with query string
 func (o *VerifyCaURL) String() string {
+    logtrace.LogWithFunctionName()
 	return o.Must(o.Build()).String()
 }
 
 // BuildFull builds a full url with scheme, host, path and query string
 func (o *VerifyCaURL) BuildFull(scheme, host string) (*url.URL, error) {
+    logtrace.LogWithFunctionName()
 	if scheme == "" {
 		return nil, errors.New("scheme is required for a full url on VerifyCaURL")
 	}
@@ -119,5 +126,6 @@ func (o *VerifyCaURL) BuildFull(scheme, host string) (*url.URL, error) {
 
 // StringFull returns the string representation of a complete url
 func (o *VerifyCaURL) StringFull(scheme, host string) string {
+    logtrace.LogWithFunctionName()
 	return o.Must(o.BuildFull(scheme, host)).String()
 }

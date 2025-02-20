@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListSpecsOK struct {
 
 // NewListSpecsOK creates ListSpecsOK with default headers values
 func NewListSpecsOK() *ListSpecsOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListSpecsOK{}
 }
 
 // WithPayload adds the payload to the list specs o k response
 func (o *ListSpecsOK) WithPayload(payload *rest_model.ListSpecsEnvelope) *ListSpecsOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list specs o k response
 func (o *ListSpecsOK) SetPayload(payload *rest_model.ListSpecsEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListSpecsOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {

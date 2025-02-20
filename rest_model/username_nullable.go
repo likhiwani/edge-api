@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -44,6 +45,7 @@ type UsernameNullable string
 
 // Validate validates this username nullable
 func (m UsernameNullable) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := validate.MinLength("", "body", string(m), 4); err != nil {
@@ -62,5 +64,6 @@ func (m UsernameNullable) Validate(formats strfmt.Registry) error {
 
 // ContextValidate validates this username nullable based on context it is used
 func (m UsernameNullable) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }

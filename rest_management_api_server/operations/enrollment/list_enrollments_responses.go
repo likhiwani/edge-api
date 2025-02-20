@@ -30,6 +30,7 @@ package enrollment
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListEnrollmentsOK struct {
 
 // NewListEnrollmentsOK creates ListEnrollmentsOK with default headers values
 func NewListEnrollmentsOK() *ListEnrollmentsOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListEnrollmentsOK{}
 }
 
 // WithPayload adds the payload to the list enrollments o k response
 func (o *ListEnrollmentsOK) WithPayload(payload *rest_model.ListEnrollmentsEnvelope) *ListEnrollmentsOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list enrollments o k response
 func (o *ListEnrollmentsOK) SetPayload(payload *rest_model.ListEnrollmentsEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListEnrollmentsOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ListEnrollmentsBadRequest struct {
 
 // NewListEnrollmentsBadRequest creates ListEnrollmentsBadRequest with default headers values
 func NewListEnrollmentsBadRequest() *ListEnrollmentsBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &ListEnrollmentsBadRequest{}
 }
 
 // WithPayload adds the payload to the list enrollments bad request response
 func (o *ListEnrollmentsBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *ListEnrollmentsBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list enrollments bad request response
 func (o *ListEnrollmentsBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListEnrollmentsBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ListEnrollmentsUnauthorized struct {
 
 // NewListEnrollmentsUnauthorized creates ListEnrollmentsUnauthorized with default headers values
 func NewListEnrollmentsUnauthorized() *ListEnrollmentsUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &ListEnrollmentsUnauthorized{}
 }
 
 // WithPayload adds the payload to the list enrollments unauthorized response
 func (o *ListEnrollmentsUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *ListEnrollmentsUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list enrollments unauthorized response
 func (o *ListEnrollmentsUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListEnrollmentsUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type ListEnrollmentsTooManyRequests struct {
 
 // NewListEnrollmentsTooManyRequests creates ListEnrollmentsTooManyRequests with default headers values
 func NewListEnrollmentsTooManyRequests() *ListEnrollmentsTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ListEnrollmentsTooManyRequests{}
 }
 
 // WithPayload adds the payload to the list enrollments too many requests response
 func (o *ListEnrollmentsTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ListEnrollmentsTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list enrollments too many requests response
 func (o *ListEnrollmentsTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListEnrollmentsTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type ListEnrollmentsServiceUnavailable struct {
 
 // NewListEnrollmentsServiceUnavailable creates ListEnrollmentsServiceUnavailable with default headers values
 func NewListEnrollmentsServiceUnavailable() *ListEnrollmentsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &ListEnrollmentsServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the list enrollments service unavailable response
 func (o *ListEnrollmentsServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *ListEnrollmentsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list enrollments service unavailable response
 func (o *ListEnrollmentsServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListEnrollmentsServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -51,6 +52,7 @@ type RouterEntityRef struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *RouterEntityRef) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 EntityRef
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -73,6 +75,7 @@ func (m *RouterEntityRef) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m RouterEntityRef) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.EntityRef)
@@ -96,6 +99,7 @@ func (m RouterEntityRef) MarshalJSON() ([]byte, error) {
 
 // Validate validates this router entity ref
 func (m *RouterEntityRef) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with EntityRef
@@ -114,6 +118,7 @@ func (m *RouterEntityRef) Validate(formats strfmt.Registry) error {
 }
 
 func (m *RouterEntityRef) validateIsOnline(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isOnline", "body", m.IsOnline); err != nil {
 		return err
@@ -124,6 +129,7 @@ func (m *RouterEntityRef) validateIsOnline(formats strfmt.Registry) error {
 
 // ContextValidate validate this router entity ref based on the context it is used
 func (m *RouterEntityRef) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with EntityRef
@@ -139,6 +145,7 @@ func (m *RouterEntityRef) ContextValidate(ctx context.Context, formats strfmt.Re
 
 // MarshalBinary interface implementation
 func (m *RouterEntityRef) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -147,6 +154,7 @@ func (m *RouterEntityRef) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *RouterEntityRef) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res RouterEntityRef
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

@@ -30,6 +30,7 @@ package edge_router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCreateEdgeRouterParams() *CreateEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	return &CreateEdgeRouterParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewCreateEdgeRouterParams() *CreateEdgeRouterParams {
 // NewCreateEdgeRouterParamsWithTimeout creates a new CreateEdgeRouterParams object
 // with the ability to set a timeout on a request.
 func NewCreateEdgeRouterParamsWithTimeout(timeout time.Duration) *CreateEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	return &CreateEdgeRouterParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewCreateEdgeRouterParamsWithTimeout(timeout time.Duration) *CreateEdgeRout
 // NewCreateEdgeRouterParamsWithContext creates a new CreateEdgeRouterParams object
 // with the ability to set a context for a request.
 func NewCreateEdgeRouterParamsWithContext(ctx context.Context) *CreateEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	return &CreateEdgeRouterParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewCreateEdgeRouterParamsWithContext(ctx context.Context) *CreateEdgeRouter
 // NewCreateEdgeRouterParamsWithHTTPClient creates a new CreateEdgeRouterParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewCreateEdgeRouterParamsWithHTTPClient(client *http.Client) *CreateEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	return &CreateEdgeRouterParams{
 		HTTPClient: client,
 	}
@@ -102,6 +107,7 @@ type CreateEdgeRouterParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *CreateEdgeRouterParams) WithDefaults() *CreateEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -110,55 +116,65 @@ func (o *CreateEdgeRouterParams) WithDefaults() *CreateEdgeRouterParams {
 //
 // All values with no default are reset to their zero value.
 func (o *CreateEdgeRouterParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the create edge router params
 func (o *CreateEdgeRouterParams) WithTimeout(timeout time.Duration) *CreateEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the create edge router params
 func (o *CreateEdgeRouterParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the create edge router params
 func (o *CreateEdgeRouterParams) WithContext(ctx context.Context) *CreateEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the create edge router params
 func (o *CreateEdgeRouterParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the create edge router params
 func (o *CreateEdgeRouterParams) WithHTTPClient(client *http.Client) *CreateEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the create edge router params
 func (o *CreateEdgeRouterParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithEdgeRouter adds the edgeRouter to the create edge router params
 func (o *CreateEdgeRouterParams) WithEdgeRouter(edgeRouter *rest_model.EdgeRouterCreate) *CreateEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetEdgeRouter(edgeRouter)
 	return o
 }
 
 // SetEdgeRouter adds the edgeRouter to the create edge router params
 func (o *CreateEdgeRouterParams) SetEdgeRouter(edgeRouter *rest_model.EdgeRouterCreate) {
+    logtrace.LogWithFunctionName()
 	o.EdgeRouter = edgeRouter
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *CreateEdgeRouterParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

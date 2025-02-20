@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type CreateCurrentAPISessionCertificateReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *CreateCurrentAPISessionCertificateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 201:
 		result := NewCreateCurrentAPISessionCertificateCreated()
@@ -85,6 +87,7 @@ func (o *CreateCurrentAPISessionCertificateReader) ReadResponse(response runtime
 
 // NewCreateCurrentAPISessionCertificateCreated creates a CreateCurrentAPISessionCertificateCreated with default headers values
 func NewCreateCurrentAPISessionCertificateCreated() *CreateCurrentAPISessionCertificateCreated {
+    logtrace.LogWithFunctionName()
 	return &CreateCurrentAPISessionCertificateCreated{}
 }
 
@@ -99,49 +102,59 @@ type CreateCurrentAPISessionCertificateCreated struct {
 
 // IsSuccess returns true when this create current Api session certificate created response has a 2xx status code
 func (o *CreateCurrentAPISessionCertificateCreated) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this create current Api session certificate created response has a 3xx status code
 func (o *CreateCurrentAPISessionCertificateCreated) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create current Api session certificate created response has a 4xx status code
 func (o *CreateCurrentAPISessionCertificateCreated) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this create current Api session certificate created response has a 5xx status code
 func (o *CreateCurrentAPISessionCertificateCreated) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create current Api session certificate created response a status code equal to that given
 func (o *CreateCurrentAPISessionCertificateCreated) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 201
 }
 
 // Code gets the status code for the create current Api session certificate created response
 func (o *CreateCurrentAPISessionCertificateCreated) Code() int {
+    logtrace.LogWithFunctionName()
 	return 201
 }
 
 func (o *CreateCurrentAPISessionCertificateCreated) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateCreated %s", 201, payload)
 }
 
 func (o *CreateCurrentAPISessionCertificateCreated) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateCreated %s", 201, payload)
 }
 
 func (o *CreateCurrentAPISessionCertificateCreated) GetPayload() *rest_model.CreateCurrentAPISessionCertificateEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateCurrentAPISessionCertificateCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.CreateCurrentAPISessionCertificateEnvelope)
 
@@ -155,6 +168,7 @@ func (o *CreateCurrentAPISessionCertificateCreated) readResponse(response runtim
 
 // NewCreateCurrentAPISessionCertificateBadRequest creates a CreateCurrentAPISessionCertificateBadRequest with default headers values
 func NewCreateCurrentAPISessionCertificateBadRequest() *CreateCurrentAPISessionCertificateBadRequest {
+    logtrace.LogWithFunctionName()
 	return &CreateCurrentAPISessionCertificateBadRequest{}
 }
 
@@ -169,49 +183,59 @@ type CreateCurrentAPISessionCertificateBadRequest struct {
 
 // IsSuccess returns true when this create current Api session certificate bad request response has a 2xx status code
 func (o *CreateCurrentAPISessionCertificateBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create current Api session certificate bad request response has a 3xx status code
 func (o *CreateCurrentAPISessionCertificateBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create current Api session certificate bad request response has a 4xx status code
 func (o *CreateCurrentAPISessionCertificateBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create current Api session certificate bad request response has a 5xx status code
 func (o *CreateCurrentAPISessionCertificateBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create current Api session certificate bad request response a status code equal to that given
 func (o *CreateCurrentAPISessionCertificateBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the create current Api session certificate bad request response
 func (o *CreateCurrentAPISessionCertificateBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *CreateCurrentAPISessionCertificateBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateBadRequest %s", 400, payload)
 }
 
 func (o *CreateCurrentAPISessionCertificateBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateBadRequest %s", 400, payload)
 }
 
 func (o *CreateCurrentAPISessionCertificateBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateCurrentAPISessionCertificateBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *CreateCurrentAPISessionCertificateBadRequest) readResponse(response run
 
 // NewCreateCurrentAPISessionCertificateUnauthorized creates a CreateCurrentAPISessionCertificateUnauthorized with default headers values
 func NewCreateCurrentAPISessionCertificateUnauthorized() *CreateCurrentAPISessionCertificateUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &CreateCurrentAPISessionCertificateUnauthorized{}
 }
 
@@ -239,49 +264,59 @@ type CreateCurrentAPISessionCertificateUnauthorized struct {
 
 // IsSuccess returns true when this create current Api session certificate unauthorized response has a 2xx status code
 func (o *CreateCurrentAPISessionCertificateUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create current Api session certificate unauthorized response has a 3xx status code
 func (o *CreateCurrentAPISessionCertificateUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create current Api session certificate unauthorized response has a 4xx status code
 func (o *CreateCurrentAPISessionCertificateUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create current Api session certificate unauthorized response has a 5xx status code
 func (o *CreateCurrentAPISessionCertificateUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create current Api session certificate unauthorized response a status code equal to that given
 func (o *CreateCurrentAPISessionCertificateUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the create current Api session certificate unauthorized response
 func (o *CreateCurrentAPISessionCertificateUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *CreateCurrentAPISessionCertificateUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateUnauthorized %s", 401, payload)
 }
 
 func (o *CreateCurrentAPISessionCertificateUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateUnauthorized %s", 401, payload)
 }
 
 func (o *CreateCurrentAPISessionCertificateUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateCurrentAPISessionCertificateUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *CreateCurrentAPISessionCertificateUnauthorized) readResponse(response r
 
 // NewCreateCurrentAPISessionCertificateTooManyRequests creates a CreateCurrentAPISessionCertificateTooManyRequests with default headers values
 func NewCreateCurrentAPISessionCertificateTooManyRequests() *CreateCurrentAPISessionCertificateTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &CreateCurrentAPISessionCertificateTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type CreateCurrentAPISessionCertificateTooManyRequests struct {
 
 // IsSuccess returns true when this create current Api session certificate too many requests response has a 2xx status code
 func (o *CreateCurrentAPISessionCertificateTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create current Api session certificate too many requests response has a 3xx status code
 func (o *CreateCurrentAPISessionCertificateTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create current Api session certificate too many requests response has a 4xx status code
 func (o *CreateCurrentAPISessionCertificateTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create current Api session certificate too many requests response has a 5xx status code
 func (o *CreateCurrentAPISessionCertificateTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create current Api session certificate too many requests response a status code equal to that given
 func (o *CreateCurrentAPISessionCertificateTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the create current Api session certificate too many requests response
 func (o *CreateCurrentAPISessionCertificateTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *CreateCurrentAPISessionCertificateTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateTooManyRequests %s", 429, payload)
 }
 
 func (o *CreateCurrentAPISessionCertificateTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateTooManyRequests %s", 429, payload)
 }
 
 func (o *CreateCurrentAPISessionCertificateTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateCurrentAPISessionCertificateTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *CreateCurrentAPISessionCertificateTooManyRequests) readResponse(respons
 
 // NewCreateCurrentAPISessionCertificateServiceUnavailable creates a CreateCurrentAPISessionCertificateServiceUnavailable with default headers values
 func NewCreateCurrentAPISessionCertificateServiceUnavailable() *CreateCurrentAPISessionCertificateServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &CreateCurrentAPISessionCertificateServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type CreateCurrentAPISessionCertificateServiceUnavailable struct {
 
 // IsSuccess returns true when this create current Api session certificate service unavailable response has a 2xx status code
 func (o *CreateCurrentAPISessionCertificateServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create current Api session certificate service unavailable response has a 3xx status code
 func (o *CreateCurrentAPISessionCertificateServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create current Api session certificate service unavailable response has a 4xx status code
 func (o *CreateCurrentAPISessionCertificateServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this create current Api session certificate service unavailable response has a 5xx status code
 func (o *CreateCurrentAPISessionCertificateServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this create current Api session certificate service unavailable response a status code equal to that given
 func (o *CreateCurrentAPISessionCertificateServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the create current Api session certificate service unavailable response
 func (o *CreateCurrentAPISessionCertificateServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *CreateCurrentAPISessionCertificateServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateServiceUnavailable %s", 503, payload)
 }
 
 func (o *CreateCurrentAPISessionCertificateServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-api-session/certificates][%d] createCurrentApiSessionCertificateServiceUnavailable %s", 503, payload)
 }
 
 func (o *CreateCurrentAPISessionCertificateServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateCurrentAPISessionCertificateServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

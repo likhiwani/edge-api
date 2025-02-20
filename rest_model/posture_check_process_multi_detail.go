@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"bytes"
 	"context"
 	"encoding/json"
@@ -73,95 +74,114 @@ type PostureCheckProcessMultiDetail struct {
 
 // Links gets the links of this subtype
 func (m *PostureCheckProcessMultiDetail) Links() Links {
+    logtrace.LogWithFunctionName()
 	return m.linksField
 }
 
 // SetLinks sets the links of this subtype
 func (m *PostureCheckProcessMultiDetail) SetLinks(val Links) {
+    logtrace.LogWithFunctionName()
 	m.linksField = val
 }
 
 // CreatedAt gets the created at of this subtype
 func (m *PostureCheckProcessMultiDetail) CreatedAt() *strfmt.DateTime {
+    logtrace.LogWithFunctionName()
 	return m.createdAtField
 }
 
 // SetCreatedAt sets the created at of this subtype
 func (m *PostureCheckProcessMultiDetail) SetCreatedAt(val *strfmt.DateTime) {
+    logtrace.LogWithFunctionName()
 	m.createdAtField = val
 }
 
 // ID gets the id of this subtype
 func (m *PostureCheckProcessMultiDetail) ID() *string {
+    logtrace.LogWithFunctionName()
 	return m.idField
 }
 
 // SetID sets the id of this subtype
 func (m *PostureCheckProcessMultiDetail) SetID(val *string) {
+    logtrace.LogWithFunctionName()
 	m.idField = val
 }
 
 // Name gets the name of this subtype
 func (m *PostureCheckProcessMultiDetail) Name() *string {
+    logtrace.LogWithFunctionName()
 	return m.nameField
 }
 
 // SetName sets the name of this subtype
 func (m *PostureCheckProcessMultiDetail) SetName(val *string) {
+    logtrace.LogWithFunctionName()
 	m.nameField = val
 }
 
 // RoleAttributes gets the role attributes of this subtype
 func (m *PostureCheckProcessMultiDetail) RoleAttributes() *Attributes {
+    logtrace.LogWithFunctionName()
 	return m.roleAttributesField
 }
 
 // SetRoleAttributes sets the role attributes of this subtype
 func (m *PostureCheckProcessMultiDetail) SetRoleAttributes(val *Attributes) {
+    logtrace.LogWithFunctionName()
 	m.roleAttributesField = val
 }
 
 // Tags gets the tags of this subtype
 func (m *PostureCheckProcessMultiDetail) Tags() *Tags {
+    logtrace.LogWithFunctionName()
 	return m.tagsField
 }
 
 // SetTags sets the tags of this subtype
 func (m *PostureCheckProcessMultiDetail) SetTags(val *Tags) {
+    logtrace.LogWithFunctionName()
 	m.tagsField = val
 }
 
 // TypeID gets the type Id of this subtype
 func (m *PostureCheckProcessMultiDetail) TypeID() string {
+    logtrace.LogWithFunctionName()
 	return "PROCESS_MULTI"
 }
 
 // SetTypeID sets the type Id of this subtype
 func (m *PostureCheckProcessMultiDetail) SetTypeID(val string) {
+    logtrace.LogWithFunctionName()
 }
 
 // UpdatedAt gets the updated at of this subtype
 func (m *PostureCheckProcessMultiDetail) UpdatedAt() *strfmt.DateTime {
+    logtrace.LogWithFunctionName()
 	return m.updatedAtField
 }
 
 // SetUpdatedAt sets the updated at of this subtype
 func (m *PostureCheckProcessMultiDetail) SetUpdatedAt(val *strfmt.DateTime) {
+    logtrace.LogWithFunctionName()
 	m.updatedAtField = val
 }
 
 // Version gets the version of this subtype
 func (m *PostureCheckProcessMultiDetail) Version() *int64 {
+    logtrace.LogWithFunctionName()
 	return m.versionField
 }
 
 // SetVersion sets the version of this subtype
 func (m *PostureCheckProcessMultiDetail) SetVersion(val *int64) {
+    logtrace.LogWithFunctionName()
 	m.versionField = val
 }
 
 // UnmarshalJSON unmarshals this object with a polymorphic type from a JSON structure
 func (m *PostureCheckProcessMultiDetail) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	var data struct {
 
 		// processes
@@ -242,6 +262,7 @@ func (m *PostureCheckProcessMultiDetail) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object with a polymorphic type to a JSON structure
 func (m PostureCheckProcessMultiDetail) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	var b1, b2, b3 []byte
 	var err error
 	b1, err = json.Marshal(struct {
@@ -310,6 +331,7 @@ func (m PostureCheckProcessMultiDetail) MarshalJSON() ([]byte, error) {
 
 // Validate validates this posture check process multi detail
 func (m *PostureCheckProcessMultiDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateLinks(formats); err != nil {
@@ -359,6 +381,7 @@ func (m *PostureCheckProcessMultiDetail) Validate(formats strfmt.Registry) error
 }
 
 func (m *PostureCheckProcessMultiDetail) validateLinks(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("_links", "body", m.Links()); err != nil {
 		return err
@@ -379,6 +402,7 @@ func (m *PostureCheckProcessMultiDetail) validateLinks(formats strfmt.Registry) 
 }
 
 func (m *PostureCheckProcessMultiDetail) validateCreatedAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("createdAt", "body", m.CreatedAt()); err != nil {
 		return err
@@ -392,6 +416,7 @@ func (m *PostureCheckProcessMultiDetail) validateCreatedAt(formats strfmt.Regist
 }
 
 func (m *PostureCheckProcessMultiDetail) validateID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("id", "body", m.ID()); err != nil {
 		return err
@@ -401,6 +426,7 @@ func (m *PostureCheckProcessMultiDetail) validateID(formats strfmt.Registry) err
 }
 
 func (m *PostureCheckProcessMultiDetail) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name()); err != nil {
 		return err
@@ -410,6 +436,7 @@ func (m *PostureCheckProcessMultiDetail) validateName(formats strfmt.Registry) e
 }
 
 func (m *PostureCheckProcessMultiDetail) validateRoleAttributes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("roleAttributes", "body", m.RoleAttributes()); err != nil {
 		return err
@@ -430,6 +457,7 @@ func (m *PostureCheckProcessMultiDetail) validateRoleAttributes(formats strfmt.R
 }
 
 func (m *PostureCheckProcessMultiDetail) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("tags", "body", m.Tags()); err != nil {
 		return err
@@ -450,6 +478,7 @@ func (m *PostureCheckProcessMultiDetail) validateTags(formats strfmt.Registry) e
 }
 
 func (m *PostureCheckProcessMultiDetail) validateUpdatedAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("updatedAt", "body", m.UpdatedAt()); err != nil {
 		return err
@@ -463,6 +492,7 @@ func (m *PostureCheckProcessMultiDetail) validateUpdatedAt(formats strfmt.Regist
 }
 
 func (m *PostureCheckProcessMultiDetail) validateVersion(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("version", "body", m.Version()); err != nil {
 		return err
@@ -472,6 +502,7 @@ func (m *PostureCheckProcessMultiDetail) validateVersion(formats strfmt.Registry
 }
 
 func (m *PostureCheckProcessMultiDetail) validateProcesses(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("processes", "body", m.Processes); err != nil {
 		return err
@@ -505,6 +536,7 @@ func (m *PostureCheckProcessMultiDetail) validateProcesses(formats strfmt.Regist
 }
 
 func (m *PostureCheckProcessMultiDetail) validateSemantic(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("semantic", "body", m.Semantic); err != nil {
 		return err
@@ -530,6 +562,7 @@ func (m *PostureCheckProcessMultiDetail) validateSemantic(formats strfmt.Registr
 
 // ContextValidate validate this posture check process multi detail based on the context it is used
 func (m *PostureCheckProcessMultiDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateLinks(ctx, formats); err != nil {
@@ -559,6 +592,7 @@ func (m *PostureCheckProcessMultiDetail) ContextValidate(ctx context.Context, fo
 }
 
 func (m *PostureCheckProcessMultiDetail) contextValidateLinks(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.Links().ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -573,6 +607,7 @@ func (m *PostureCheckProcessMultiDetail) contextValidateLinks(ctx context.Contex
 }
 
 func (m *PostureCheckProcessMultiDetail) contextValidateRoleAttributes(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.RoleAttributes() != nil {
 		if err := m.RoleAttributes().ContextValidate(ctx, formats); err != nil {
@@ -589,6 +624,7 @@ func (m *PostureCheckProcessMultiDetail) contextValidateRoleAttributes(ctx conte
 }
 
 func (m *PostureCheckProcessMultiDetail) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags() != nil {
 
@@ -606,6 +642,7 @@ func (m *PostureCheckProcessMultiDetail) contextValidateTags(ctx context.Context
 }
 
 func (m *PostureCheckProcessMultiDetail) contextValidateProcesses(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	for i := 0; i < len(m.Processes); i++ {
 
@@ -631,6 +668,7 @@ func (m *PostureCheckProcessMultiDetail) contextValidateProcesses(ctx context.Co
 }
 
 func (m *PostureCheckProcessMultiDetail) contextValidateSemantic(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Semantic != nil {
 
@@ -649,6 +687,7 @@ func (m *PostureCheckProcessMultiDetail) contextValidateSemantic(ctx context.Con
 
 // MarshalBinary interface implementation
 func (m *PostureCheckProcessMultiDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -657,6 +696,7 @@ func (m *PostureCheckProcessMultiDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureCheckProcessMultiDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureCheckProcessMultiDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

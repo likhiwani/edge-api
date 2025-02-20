@@ -30,6 +30,7 @@ package session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDeleteSessionParams() *DeleteSessionParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteSessionParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDeleteSessionParams() *DeleteSessionParams {
 // NewDeleteSessionParamsWithTimeout creates a new DeleteSessionParams object
 // with the ability to set a timeout on a request.
 func NewDeleteSessionParamsWithTimeout(timeout time.Duration) *DeleteSessionParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteSessionParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDeleteSessionParamsWithTimeout(timeout time.Duration) *DeleteSessionPara
 // NewDeleteSessionParamsWithContext creates a new DeleteSessionParams object
 // with the ability to set a context for a request.
 func NewDeleteSessionParamsWithContext(ctx context.Context) *DeleteSessionParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteSessionParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDeleteSessionParamsWithContext(ctx context.Context) *DeleteSessionParams
 // NewDeleteSessionParamsWithHTTPClient creates a new DeleteSessionParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDeleteSessionParamsWithHTTPClient(client *http.Client) *DeleteSessionParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteSessionParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DeleteSessionParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteSessionParams) WithDefaults() *DeleteSessionParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DeleteSessionParams) WithDefaults() *DeleteSessionParams {
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteSessionParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the delete session params
 func (o *DeleteSessionParams) WithTimeout(timeout time.Duration) *DeleteSessionParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the delete session params
 func (o *DeleteSessionParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the delete session params
 func (o *DeleteSessionParams) WithContext(ctx context.Context) *DeleteSessionParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the delete session params
 func (o *DeleteSessionParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the delete session params
 func (o *DeleteSessionParams) WithHTTPClient(client *http.Client) *DeleteSessionParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the delete session params
 func (o *DeleteSessionParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the delete session params
 func (o *DeleteSessionParams) WithID(id string) *DeleteSessionParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the delete session params
 func (o *DeleteSessionParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DeleteSessionParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

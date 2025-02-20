@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DisableIdentityOK struct {
 
 // NewDisableIdentityOK creates DisableIdentityOK with default headers values
 func NewDisableIdentityOK() *DisableIdentityOK {
+    logtrace.LogWithFunctionName()
 
 	return &DisableIdentityOK{}
 }
 
 // WithPayload adds the payload to the disable identity o k response
 func (o *DisableIdentityOK) WithPayload(payload *rest_model.Empty) *DisableIdentityOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the disable identity o k response
 func (o *DisableIdentityOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DisableIdentityOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DisableIdentityUnauthorized struct {
 
 // NewDisableIdentityUnauthorized creates DisableIdentityUnauthorized with default headers values
 func NewDisableIdentityUnauthorized() *DisableIdentityUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DisableIdentityUnauthorized{}
 }
 
 // WithPayload adds the payload to the disable identity unauthorized response
 func (o *DisableIdentityUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DisableIdentityUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the disable identity unauthorized response
 func (o *DisableIdentityUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DisableIdentityUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DisableIdentityNotFound struct {
 
 // NewDisableIdentityNotFound creates DisableIdentityNotFound with default headers values
 func NewDisableIdentityNotFound() *DisableIdentityNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DisableIdentityNotFound{}
 }
 
 // WithPayload adds the payload to the disable identity not found response
 func (o *DisableIdentityNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DisableIdentityNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the disable identity not found response
 func (o *DisableIdentityNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DisableIdentityNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DisableIdentityTooManyRequests struct {
 
 // NewDisableIdentityTooManyRequests creates DisableIdentityTooManyRequests with default headers values
 func NewDisableIdentityTooManyRequests() *DisableIdentityTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DisableIdentityTooManyRequests{}
 }
 
 // WithPayload adds the payload to the disable identity too many requests response
 func (o *DisableIdentityTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DisableIdentityTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the disable identity too many requests response
 func (o *DisableIdentityTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DisableIdentityTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DisableIdentityServiceUnavailable struct {
 
 // NewDisableIdentityServiceUnavailable creates DisableIdentityServiceUnavailable with default headers values
 func NewDisableIdentityServiceUnavailable() *DisableIdentityServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DisableIdentityServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the disable identity service unavailable response
 func (o *DisableIdentityServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DisableIdentityServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the disable identity service unavailable response
 func (o *DisableIdentityServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DisableIdentityServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

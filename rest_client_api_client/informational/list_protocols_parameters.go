@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListProtocolsParams() *ListProtocolsParams {
+    logtrace.LogWithFunctionName()
 	return &ListProtocolsParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewListProtocolsParams() *ListProtocolsParams {
 // NewListProtocolsParamsWithTimeout creates a new ListProtocolsParams object
 // with the ability to set a timeout on a request.
 func NewListProtocolsParamsWithTimeout(timeout time.Duration) *ListProtocolsParams {
+    logtrace.LogWithFunctionName()
 	return &ListProtocolsParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewListProtocolsParamsWithTimeout(timeout time.Duration) *ListProtocolsPara
 // NewListProtocolsParamsWithContext creates a new ListProtocolsParams object
 // with the ability to set a context for a request.
 func NewListProtocolsParamsWithContext(ctx context.Context) *ListProtocolsParams {
+    logtrace.LogWithFunctionName()
 	return &ListProtocolsParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewListProtocolsParamsWithContext(ctx context.Context) *ListProtocolsParams
 // NewListProtocolsParamsWithHTTPClient creates a new ListProtocolsParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListProtocolsParamsWithHTTPClient(client *http.Client) *ListProtocolsParams {
+    logtrace.LogWithFunctionName()
 	return &ListProtocolsParams{
 		HTTPClient: client,
 	}
@@ -93,6 +98,7 @@ type ListProtocolsParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListProtocolsParams) WithDefaults() *ListProtocolsParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -101,44 +107,52 @@ func (o *ListProtocolsParams) WithDefaults() *ListProtocolsParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListProtocolsParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list protocols params
 func (o *ListProtocolsParams) WithTimeout(timeout time.Duration) *ListProtocolsParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list protocols params
 func (o *ListProtocolsParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list protocols params
 func (o *ListProtocolsParams) WithContext(ctx context.Context) *ListProtocolsParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list protocols params
 func (o *ListProtocolsParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list protocols params
 func (o *ListProtocolsParams) WithHTTPClient(client *http.Client) *ListProtocolsParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list protocols params
 func (o *ListProtocolsParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListProtocolsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

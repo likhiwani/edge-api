@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new current identity API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -87,6 +91,7 @@ type ClientOption func(*runtime.ClientOperation)
 //
 // You may use this option to set arbitrary extensions to your MIME media type.
 func WithAccept(mime string) ClientOption {
+    logtrace.LogWithFunctionName()
 	return func(r *runtime.ClientOperation) {
 		r.ProducesMediaTypes = []string{mime}
 	}
@@ -94,11 +99,13 @@ func WithAccept(mime string) ClientOption {
 
 // WithAcceptApplicationJSON sets the Accept header to "application/json".
 func WithAcceptApplicationJSON(r *runtime.ClientOperation) {
+    logtrace.LogWithFunctionName()
 	r.ProducesMediaTypes = []string{"application/json"}
 }
 
 // WithAcceptImagePng sets the Accept header to "image/png".
 func WithAcceptImagePng(r *runtime.ClientOperation) {
+    logtrace.LogWithFunctionName()
 	r.ProducesMediaTypes = []string{"image/png"}
 }
 
@@ -129,6 +136,7 @@ CreateMfaRecoveryCodes fors a completed m f a enrollment regenerate the recovery
 Allows regeneration of recovery codes of an MFA enrollment. Requires a current valid time based one time password to interact with. Available after a completed MFA enrollment. This replaces all existing recovery codes.
 */
 func (a *Client) CreateMfaRecoveryCodes(params *CreateMfaRecoveryCodesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateMfaRecoveryCodesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreateMfaRecoveryCodesParams()
@@ -170,6 +178,7 @@ DeleteMfa disables m f a for the current identity
 Disable MFA for the current identity. Requires a current valid time based one time password if MFA enrollment has been completed. If not, code should be an empty string. If one time passwords are not available and admin account can be used to remove MFA from the identity via `DELETE /identities/<id>/mfa`.
 */
 func (a *Client) DeleteMfa(params *DeleteMfaParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteMfaOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteMfaParams()
@@ -211,6 +220,7 @@ DetailMfa returns the current status of m f a enrollment
 Returns details about the current MFA enrollment. If enrollment has not been completed it will return the current MFA configuration details necessary to complete a `POST /current-identity/mfa/verify`.
 */
 func (a *Client) DetailMfa(params *DetailMfaParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailMfaOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailMfaParams()
@@ -252,6 +262,7 @@ DetailMfaQrCode shows a q r code for unverified m f a enrollments
 Shows an QR code image for unverified MFA enrollments. 404s if the MFA enrollment has been completed or not started.
 */
 func (a *Client) DetailMfaQrCode(params *DetailMfaQrCodeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailMfaQrCodeOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailMfaQrCodeParams()
@@ -293,6 +304,7 @@ DetailMfaRecoveryCodes fors a completed m f a enrollment view the current recove
 Allows the viewing of recovery codes of an MFA enrollment. Requires a current valid time based one time password to interact with. Available after a completed MFA enrollment.
 */
 func (a *Client) DetailMfaRecoveryCodes(params *DetailMfaRecoveryCodesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailMfaRecoveryCodesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailMfaRecoveryCodesParams()
@@ -334,6 +346,7 @@ EnrollMfa initiates m f a enrollment
 Allows authenticator based MFA enrollment. If enrollment has already been completed, it must be disabled before attempting to re-enroll. Subsequent enrollment request is completed via `POST /current-identity/mfa/verify`
 */
 func (a *Client) EnrollMfa(params *EnrollMfaParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*EnrollMfaCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewEnrollMfaParams()
@@ -375,6 +388,7 @@ GetCurrentIdentity returns the current identity
 Returns the identity associated with the API sessions used to issue the current request
 */
 func (a *Client) GetCurrentIdentity(params *GetCurrentIdentityParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCurrentIdentityOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetCurrentIdentityParams()
@@ -416,6 +430,7 @@ VerifyMfa completes m f a enrollment by verifying a time based one time token
 Completes MFA enrollment by accepting a time based one time password as verification. Called after MFA enrollment has been initiated via `POST /current-identity/mfa`.
 */
 func (a *Client) VerifyMfa(params *VerifyMfaParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VerifyMfaOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVerifyMfaParams()
@@ -453,5 +468,6 @@ func (a *Client) VerifyMfa(params *VerifyMfaParams, authInfo runtime.ClientAuthI
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

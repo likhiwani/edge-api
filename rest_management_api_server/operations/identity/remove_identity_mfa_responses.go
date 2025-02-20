@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type RemoveIdentityMfaOK struct {
 
 // NewRemoveIdentityMfaOK creates RemoveIdentityMfaOK with default headers values
 func NewRemoveIdentityMfaOK() *RemoveIdentityMfaOK {
+    logtrace.LogWithFunctionName()
 
 	return &RemoveIdentityMfaOK{}
 }
 
 // WithPayload adds the payload to the remove identity mfa o k response
 func (o *RemoveIdentityMfaOK) WithPayload(payload *rest_model.Empty) *RemoveIdentityMfaOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the remove identity mfa o k response
 func (o *RemoveIdentityMfaOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *RemoveIdentityMfaOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type RemoveIdentityMfaUnauthorized struct {
 
 // NewRemoveIdentityMfaUnauthorized creates RemoveIdentityMfaUnauthorized with default headers values
 func NewRemoveIdentityMfaUnauthorized() *RemoveIdentityMfaUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &RemoveIdentityMfaUnauthorized{}
 }
 
 // WithPayload adds the payload to the remove identity mfa unauthorized response
 func (o *RemoveIdentityMfaUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *RemoveIdentityMfaUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the remove identity mfa unauthorized response
 func (o *RemoveIdentityMfaUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *RemoveIdentityMfaUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type RemoveIdentityMfaNotFound struct {
 
 // NewRemoveIdentityMfaNotFound creates RemoveIdentityMfaNotFound with default headers values
 func NewRemoveIdentityMfaNotFound() *RemoveIdentityMfaNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &RemoveIdentityMfaNotFound{}
 }
 
 // WithPayload adds the payload to the remove identity mfa not found response
 func (o *RemoveIdentityMfaNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *RemoveIdentityMfaNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the remove identity mfa not found response
 func (o *RemoveIdentityMfaNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *RemoveIdentityMfaNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type RemoveIdentityMfaTooManyRequests struct {
 
 // NewRemoveIdentityMfaTooManyRequests creates RemoveIdentityMfaTooManyRequests with default headers values
 func NewRemoveIdentityMfaTooManyRequests() *RemoveIdentityMfaTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &RemoveIdentityMfaTooManyRequests{}
 }
 
 // WithPayload adds the payload to the remove identity mfa too many requests response
 func (o *RemoveIdentityMfaTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *RemoveIdentityMfaTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the remove identity mfa too many requests response
 func (o *RemoveIdentityMfaTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *RemoveIdentityMfaTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type RemoveIdentityMfaServiceUnavailable struct {
 
 // NewRemoveIdentityMfaServiceUnavailable creates RemoveIdentityMfaServiceUnavailable with default headers values
 func NewRemoveIdentityMfaServiceUnavailable() *RemoveIdentityMfaServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &RemoveIdentityMfaServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the remove identity mfa service unavailable response
 func (o *RemoveIdentityMfaServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *RemoveIdentityMfaServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the remove identity mfa service unavailable response
 func (o *RemoveIdentityMfaServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *RemoveIdentityMfaServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

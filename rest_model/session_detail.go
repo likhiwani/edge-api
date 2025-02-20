@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"strconv"
 
@@ -80,6 +81,7 @@ type SessionDetail struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *SessionDetail) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 BaseEntity
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -130,6 +132,7 @@ func (m *SessionDetail) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m SessionDetail) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.BaseEntity)
@@ -181,6 +184,7 @@ func (m SessionDetail) MarshalJSON() ([]byte, error) {
 
 // Validate validates this session detail
 func (m *SessionDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -227,6 +231,7 @@ func (m *SessionDetail) Validate(formats strfmt.Registry) error {
 }
 
 func (m *SessionDetail) validateAPISession(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("apiSession", "body", m.APISession); err != nil {
 		return err
@@ -247,6 +252,7 @@ func (m *SessionDetail) validateAPISession(formats strfmt.Registry) error {
 }
 
 func (m *SessionDetail) validateAPISessionID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("apiSessionId", "body", m.APISessionID); err != nil {
 		return err
@@ -256,6 +262,7 @@ func (m *SessionDetail) validateAPISessionID(formats strfmt.Registry) error {
 }
 
 func (m *SessionDetail) validateEdgeRouters(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("edgeRouters", "body", m.EdgeRouters); err != nil {
 		return err
@@ -283,6 +290,7 @@ func (m *SessionDetail) validateEdgeRouters(formats strfmt.Registry) error {
 }
 
 func (m *SessionDetail) validateIdentityID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("identityId", "body", m.IdentityID); err != nil {
 		return err
@@ -292,6 +300,7 @@ func (m *SessionDetail) validateIdentityID(formats strfmt.Registry) error {
 }
 
 func (m *SessionDetail) validateService(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("service", "body", m.Service); err != nil {
 		return err
@@ -312,6 +321,7 @@ func (m *SessionDetail) validateService(formats strfmt.Registry) error {
 }
 
 func (m *SessionDetail) validateServiceID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("serviceId", "body", m.ServiceID); err != nil {
 		return err
@@ -321,6 +331,7 @@ func (m *SessionDetail) validateServiceID(formats strfmt.Registry) error {
 }
 
 func (m *SessionDetail) validateToken(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("token", "body", m.Token); err != nil {
 		return err
@@ -330,6 +341,7 @@ func (m *SessionDetail) validateToken(formats strfmt.Registry) error {
 }
 
 func (m *SessionDetail) validateType(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("type", "body", m.Type); err != nil {
 		return err
@@ -355,6 +367,7 @@ func (m *SessionDetail) validateType(formats strfmt.Registry) error {
 
 // ContextValidate validate this session detail based on the context it is used
 func (m *SessionDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -385,6 +398,7 @@ func (m *SessionDetail) ContextValidate(ctx context.Context, formats strfmt.Regi
 }
 
 func (m *SessionDetail) contextValidateAPISession(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.APISession != nil {
 
@@ -402,6 +416,7 @@ func (m *SessionDetail) contextValidateAPISession(ctx context.Context, formats s
 }
 
 func (m *SessionDetail) contextValidateEdgeRouters(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	for i := 0; i < len(m.EdgeRouters); i++ {
 
@@ -427,6 +442,7 @@ func (m *SessionDetail) contextValidateEdgeRouters(ctx context.Context, formats 
 }
 
 func (m *SessionDetail) contextValidateService(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Service != nil {
 
@@ -444,6 +460,7 @@ func (m *SessionDetail) contextValidateService(ctx context.Context, formats strf
 }
 
 func (m *SessionDetail) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Type != nil {
 
@@ -462,6 +479,7 @@ func (m *SessionDetail) contextValidateType(ctx context.Context, formats strfmt.
 
 // MarshalBinary interface implementation
 func (m *SessionDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -470,6 +488,7 @@ func (m *SessionDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *SessionDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res SessionDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

@@ -30,6 +30,7 @@ package well_known
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -40,6 +41,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewListWellKnownCasParams() ListWellKnownCasParams {
+    logtrace.LogWithFunctionName()
 
 	return ListWellKnownCasParams{}
 }
@@ -59,6 +61,7 @@ type ListWellKnownCasParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewListWellKnownCasParams() beforehand.
 func (o *ListWellKnownCasParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r

@@ -30,6 +30,7 @@ package authentication
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type AuthenticateMfaHandlerFunc func(AuthenticateMfaParams, interface{}) middlew
 
 // Handle executing the request and returning a response
 func (fn AuthenticateMfaHandlerFunc) Handle(params AuthenticateMfaParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type AuthenticateMfaHandler interface {
 
 // NewAuthenticateMfa creates a new http.Handler for the authenticate mfa operation
 func NewAuthenticateMfa(ctx *middleware.Context, handler AuthenticateMfaHandler) *AuthenticateMfa {
+    logtrace.LogWithFunctionName()
 	return &AuthenticateMfa{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type AuthenticateMfa struct {
 }
 
 func (o *AuthenticateMfa) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

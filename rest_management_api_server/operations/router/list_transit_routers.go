@@ -30,6 +30,7 @@ package router
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type ListTransitRoutersHandlerFunc func(ListTransitRoutersParams, interface{}) m
 
 // Handle executing the request and returning a response
 func (fn ListTransitRoutersHandlerFunc) Handle(params ListTransitRoutersParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type ListTransitRoutersHandler interface {
 
 // NewListTransitRouters creates a new http.Handler for the list transit routers operation
 func NewListTransitRouters(ctx *middleware.Context, handler ListTransitRoutersHandler) *ListTransitRouters {
+    logtrace.LogWithFunctionName()
 	return &ListTransitRouters{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type ListTransitRouters struct {
 }
 
 func (o *ListTransitRouters) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

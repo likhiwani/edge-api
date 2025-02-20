@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ListProtocolsReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ListProtocolsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewListProtocolsOK()
@@ -73,6 +75,7 @@ func (o *ListProtocolsReader) ReadResponse(response runtime.ClientResponse, cons
 
 // NewListProtocolsOK creates a ListProtocolsOK with default headers values
 func NewListProtocolsOK() *ListProtocolsOK {
+    logtrace.LogWithFunctionName()
 	return &ListProtocolsOK{}
 }
 
@@ -87,49 +90,59 @@ type ListProtocolsOK struct {
 
 // IsSuccess returns true when this list protocols o k response has a 2xx status code
 func (o *ListProtocolsOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this list protocols o k response has a 3xx status code
 func (o *ListProtocolsOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list protocols o k response has a 4xx status code
 func (o *ListProtocolsOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list protocols o k response has a 5xx status code
 func (o *ListProtocolsOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list protocols o k response a status code equal to that given
 func (o *ListProtocolsOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the list protocols o k response
 func (o *ListProtocolsOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ListProtocolsOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /protocols][%d] listProtocolsOK %s", 200, payload)
 }
 
 func (o *ListProtocolsOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /protocols][%d] listProtocolsOK %s", 200, payload)
 }
 
 func (o *ListProtocolsOK) GetPayload() *rest_model.ListProtocolsEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListProtocolsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListProtocolsEnvelope)
 
@@ -143,6 +156,7 @@ func (o *ListProtocolsOK) readResponse(response runtime.ClientResponse, consumer
 
 // NewListProtocolsTooManyRequests creates a ListProtocolsTooManyRequests with default headers values
 func NewListProtocolsTooManyRequests() *ListProtocolsTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &ListProtocolsTooManyRequests{}
 }
 
@@ -157,49 +171,59 @@ type ListProtocolsTooManyRequests struct {
 
 // IsSuccess returns true when this list protocols too many requests response has a 2xx status code
 func (o *ListProtocolsTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list protocols too many requests response has a 3xx status code
 func (o *ListProtocolsTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list protocols too many requests response has a 4xx status code
 func (o *ListProtocolsTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list protocols too many requests response has a 5xx status code
 func (o *ListProtocolsTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list protocols too many requests response a status code equal to that given
 func (o *ListProtocolsTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the list protocols too many requests response
 func (o *ListProtocolsTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *ListProtocolsTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /protocols][%d] listProtocolsTooManyRequests %s", 429, payload)
 }
 
 func (o *ListProtocolsTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /protocols][%d] listProtocolsTooManyRequests %s", 429, payload)
 }
 
 func (o *ListProtocolsTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListProtocolsTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -213,6 +237,7 @@ func (o *ListProtocolsTooManyRequests) readResponse(response runtime.ClientRespo
 
 // NewListProtocolsServiceUnavailable creates a ListProtocolsServiceUnavailable with default headers values
 func NewListProtocolsServiceUnavailable() *ListProtocolsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &ListProtocolsServiceUnavailable{}
 }
 
@@ -227,49 +252,59 @@ type ListProtocolsServiceUnavailable struct {
 
 // IsSuccess returns true when this list protocols service unavailable response has a 2xx status code
 func (o *ListProtocolsServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list protocols service unavailable response has a 3xx status code
 func (o *ListProtocolsServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list protocols service unavailable response has a 4xx status code
 func (o *ListProtocolsServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list protocols service unavailable response has a 5xx status code
 func (o *ListProtocolsServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this list protocols service unavailable response a status code equal to that given
 func (o *ListProtocolsServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the list protocols service unavailable response
 func (o *ListProtocolsServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *ListProtocolsServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /protocols][%d] listProtocolsServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListProtocolsServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /protocols][%d] listProtocolsServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListProtocolsServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListProtocolsServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

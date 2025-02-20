@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type CreateConfigTypeCreated struct {
 
 // NewCreateConfigTypeCreated creates CreateConfigTypeCreated with default headers values
 func NewCreateConfigTypeCreated() *CreateConfigTypeCreated {
+    logtrace.LogWithFunctionName()
 
 	return &CreateConfigTypeCreated{}
 }
 
 // WithPayload adds the payload to the create config type created response
 func (o *CreateConfigTypeCreated) WithPayload(payload *rest_model.CreateEnvelope) *CreateConfigTypeCreated {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create config type created response
 func (o *CreateConfigTypeCreated) SetPayload(payload *rest_model.CreateEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateConfigTypeCreated) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(201)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type CreateConfigTypeBadRequest struct {
 
 // NewCreateConfigTypeBadRequest creates CreateConfigTypeBadRequest with default headers values
 func NewCreateConfigTypeBadRequest() *CreateConfigTypeBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &CreateConfigTypeBadRequest{}
 }
 
 // WithPayload adds the payload to the create config type bad request response
 func (o *CreateConfigTypeBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateConfigTypeBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create config type bad request response
 func (o *CreateConfigTypeBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateConfigTypeBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type CreateConfigTypeUnauthorized struct {
 
 // NewCreateConfigTypeUnauthorized creates CreateConfigTypeUnauthorized with default headers values
 func NewCreateConfigTypeUnauthorized() *CreateConfigTypeUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &CreateConfigTypeUnauthorized{}
 }
 
 // WithPayload adds the payload to the create config type unauthorized response
 func (o *CreateConfigTypeUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateConfigTypeUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create config type unauthorized response
 func (o *CreateConfigTypeUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateConfigTypeUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type CreateConfigTypeTooManyRequests struct {
 
 // NewCreateConfigTypeTooManyRequests creates CreateConfigTypeTooManyRequests with default headers values
 func NewCreateConfigTypeTooManyRequests() *CreateConfigTypeTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &CreateConfigTypeTooManyRequests{}
 }
 
 // WithPayload adds the payload to the create config type too many requests response
 func (o *CreateConfigTypeTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateConfigTypeTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create config type too many requests response
 func (o *CreateConfigTypeTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateConfigTypeTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type CreateConfigTypeServiceUnavailable struct {
 
 // NewCreateConfigTypeServiceUnavailable creates CreateConfigTypeServiceUnavailable with default headers values
 func NewCreateConfigTypeServiceUnavailable() *CreateConfigTypeServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &CreateConfigTypeServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the create config type service unavailable response
 func (o *CreateConfigTypeServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateConfigTypeServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create config type service unavailable response
 func (o *CreateConfigTypeServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateConfigTypeServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

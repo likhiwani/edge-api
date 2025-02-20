@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"encoding/json"
 
@@ -44,11 +45,13 @@ import (
 type MfaFormats string
 
 func NewMfaFormats(value MfaFormats) *MfaFormats {
+    logtrace.LogWithFunctionName()
 	return &value
 }
 
 // Pointer returns a pointer to a freshly-allocated MfaFormats.
 func (m MfaFormats) Pointer() *MfaFormats {
+    logtrace.LogWithFunctionName()
 	return &m
 }
 
@@ -68,6 +71,7 @@ const (
 var mfaFormatsEnum []interface{}
 
 func init() {
+    logtrace.LogWithFunctionName()
 	var res []MfaFormats
 	if err := json.Unmarshal([]byte(`["numeric","alpha","alphaNumeric"]`), &res); err != nil {
 		panic(err)
@@ -78,6 +82,7 @@ func init() {
 }
 
 func (m MfaFormats) validateMfaFormatsEnum(path, location string, value MfaFormats) error {
+    logtrace.LogWithFunctionName()
 	if err := validate.EnumCase(path, location, value, mfaFormatsEnum, true); err != nil {
 		return err
 	}
@@ -86,6 +91,7 @@ func (m MfaFormats) validateMfaFormatsEnum(path, location string, value MfaForma
 
 // Validate validates this mfa formats
 func (m MfaFormats) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// value enum
@@ -101,5 +107,6 @@ func (m MfaFormats) Validate(formats strfmt.Registry) error {
 
 // ContextValidate validates this mfa formats based on context it is used
 func (m MfaFormats) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }

@@ -30,6 +30,7 @@ package session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDetailSessionParams() *DetailSessionParams {
+    logtrace.LogWithFunctionName()
 	return &DetailSessionParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDetailSessionParams() *DetailSessionParams {
 // NewDetailSessionParamsWithTimeout creates a new DetailSessionParams object
 // with the ability to set a timeout on a request.
 func NewDetailSessionParamsWithTimeout(timeout time.Duration) *DetailSessionParams {
+    logtrace.LogWithFunctionName()
 	return &DetailSessionParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDetailSessionParamsWithTimeout(timeout time.Duration) *DetailSessionPara
 // NewDetailSessionParamsWithContext creates a new DetailSessionParams object
 // with the ability to set a context for a request.
 func NewDetailSessionParamsWithContext(ctx context.Context) *DetailSessionParams {
+    logtrace.LogWithFunctionName()
 	return &DetailSessionParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDetailSessionParamsWithContext(ctx context.Context) *DetailSessionParams
 // NewDetailSessionParamsWithHTTPClient creates a new DetailSessionParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDetailSessionParamsWithHTTPClient(client *http.Client) *DetailSessionParams {
+    logtrace.LogWithFunctionName()
 	return &DetailSessionParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DetailSessionParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailSessionParams) WithDefaults() *DetailSessionParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DetailSessionParams) WithDefaults() *DetailSessionParams {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailSessionParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the detail session params
 func (o *DetailSessionParams) WithTimeout(timeout time.Duration) *DetailSessionParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the detail session params
 func (o *DetailSessionParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the detail session params
 func (o *DetailSessionParams) WithContext(ctx context.Context) *DetailSessionParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the detail session params
 func (o *DetailSessionParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the detail session params
 func (o *DetailSessionParams) WithHTTPClient(client *http.Client) *DetailSessionParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the detail session params
 func (o *DetailSessionParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the detail session params
 func (o *DetailSessionParams) WithID(id string) *DetailSessionParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the detail session params
 func (o *DetailSessionParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DetailSessionParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

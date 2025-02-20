@@ -30,6 +30,7 @@ package session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type CreateSessionReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *CreateSessionReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 201:
 		result := NewCreateSessionCreated()
@@ -91,6 +93,7 @@ func (o *CreateSessionReader) ReadResponse(response runtime.ClientResponse, cons
 
 // NewCreateSessionCreated creates a CreateSessionCreated with default headers values
 func NewCreateSessionCreated() *CreateSessionCreated {
+    logtrace.LogWithFunctionName()
 	return &CreateSessionCreated{}
 }
 
@@ -105,49 +108,59 @@ type CreateSessionCreated struct {
 
 // IsSuccess returns true when this create session created response has a 2xx status code
 func (o *CreateSessionCreated) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this create session created response has a 3xx status code
 func (o *CreateSessionCreated) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create session created response has a 4xx status code
 func (o *CreateSessionCreated) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this create session created response has a 5xx status code
 func (o *CreateSessionCreated) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create session created response a status code equal to that given
 func (o *CreateSessionCreated) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 201
 }
 
 // Code gets the status code for the create session created response
 func (o *CreateSessionCreated) Code() int {
+    logtrace.LogWithFunctionName()
 	return 201
 }
 
 func (o *CreateSessionCreated) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /sessions][%d] createSessionCreated %s", 201, payload)
 }
 
 func (o *CreateSessionCreated) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /sessions][%d] createSessionCreated %s", 201, payload)
 }
 
 func (o *CreateSessionCreated) GetPayload() *rest_model.SessionCreateEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateSessionCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.SessionCreateEnvelope)
 
@@ -161,6 +174,7 @@ func (o *CreateSessionCreated) readResponse(response runtime.ClientResponse, con
 
 // NewCreateSessionBadRequest creates a CreateSessionBadRequest with default headers values
 func NewCreateSessionBadRequest() *CreateSessionBadRequest {
+    logtrace.LogWithFunctionName()
 	return &CreateSessionBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type CreateSessionBadRequest struct {
 
 // IsSuccess returns true when this create session bad request response has a 2xx status code
 func (o *CreateSessionBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create session bad request response has a 3xx status code
 func (o *CreateSessionBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create session bad request response has a 4xx status code
 func (o *CreateSessionBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create session bad request response has a 5xx status code
 func (o *CreateSessionBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create session bad request response a status code equal to that given
 func (o *CreateSessionBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the create session bad request response
 func (o *CreateSessionBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *CreateSessionBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /sessions][%d] createSessionBadRequest %s", 400, payload)
 }
 
 func (o *CreateSessionBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /sessions][%d] createSessionBadRequest %s", 400, payload)
 }
 
 func (o *CreateSessionBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateSessionBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *CreateSessionBadRequest) readResponse(response runtime.ClientResponse, 
 
 // NewCreateSessionUnauthorized creates a CreateSessionUnauthorized with default headers values
 func NewCreateSessionUnauthorized() *CreateSessionUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &CreateSessionUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type CreateSessionUnauthorized struct {
 
 // IsSuccess returns true when this create session unauthorized response has a 2xx status code
 func (o *CreateSessionUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create session unauthorized response has a 3xx status code
 func (o *CreateSessionUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create session unauthorized response has a 4xx status code
 func (o *CreateSessionUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create session unauthorized response has a 5xx status code
 func (o *CreateSessionUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create session unauthorized response a status code equal to that given
 func (o *CreateSessionUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the create session unauthorized response
 func (o *CreateSessionUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *CreateSessionUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /sessions][%d] createSessionUnauthorized %s", 401, payload)
 }
 
 func (o *CreateSessionUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /sessions][%d] createSessionUnauthorized %s", 401, payload)
 }
 
 func (o *CreateSessionUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateSessionUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *CreateSessionUnauthorized) readResponse(response runtime.ClientResponse
 
 // NewCreateSessionNotFound creates a CreateSessionNotFound with default headers values
 func NewCreateSessionNotFound() *CreateSessionNotFound {
+    logtrace.LogWithFunctionName()
 	return &CreateSessionNotFound{}
 }
 
@@ -315,49 +351,59 @@ type CreateSessionNotFound struct {
 
 // IsSuccess returns true when this create session not found response has a 2xx status code
 func (o *CreateSessionNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create session not found response has a 3xx status code
 func (o *CreateSessionNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create session not found response has a 4xx status code
 func (o *CreateSessionNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create session not found response has a 5xx status code
 func (o *CreateSessionNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create session not found response a status code equal to that given
 func (o *CreateSessionNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the create session not found response
 func (o *CreateSessionNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *CreateSessionNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /sessions][%d] createSessionNotFound %s", 404, payload)
 }
 
 func (o *CreateSessionNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /sessions][%d] createSessionNotFound %s", 404, payload)
 }
 
 func (o *CreateSessionNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateSessionNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *CreateSessionNotFound) readResponse(response runtime.ClientResponse, co
 
 // NewCreateSessionTooManyRequests creates a CreateSessionTooManyRequests with default headers values
 func NewCreateSessionTooManyRequests() *CreateSessionTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &CreateSessionTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type CreateSessionTooManyRequests struct {
 
 // IsSuccess returns true when this create session too many requests response has a 2xx status code
 func (o *CreateSessionTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create session too many requests response has a 3xx status code
 func (o *CreateSessionTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create session too many requests response has a 4xx status code
 func (o *CreateSessionTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create session too many requests response has a 5xx status code
 func (o *CreateSessionTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create session too many requests response a status code equal to that given
 func (o *CreateSessionTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the create session too many requests response
 func (o *CreateSessionTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *CreateSessionTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /sessions][%d] createSessionTooManyRequests %s", 429, payload)
 }
 
 func (o *CreateSessionTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /sessions][%d] createSessionTooManyRequests %s", 429, payload)
 }
 
 func (o *CreateSessionTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateSessionTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *CreateSessionTooManyRequests) readResponse(response runtime.ClientRespo
 
 // NewCreateSessionServiceUnavailable creates a CreateSessionServiceUnavailable with default headers values
 func NewCreateSessionServiceUnavailable() *CreateSessionServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &CreateSessionServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type CreateSessionServiceUnavailable struct {
 
 // IsSuccess returns true when this create session service unavailable response has a 2xx status code
 func (o *CreateSessionServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create session service unavailable response has a 3xx status code
 func (o *CreateSessionServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create session service unavailable response has a 4xx status code
 func (o *CreateSessionServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this create session service unavailable response has a 5xx status code
 func (o *CreateSessionServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this create session service unavailable response a status code equal to that given
 func (o *CreateSessionServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the create session service unavailable response
 func (o *CreateSessionServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *CreateSessionServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /sessions][%d] createSessionServiceUnavailable %s", 503, payload)
 }
 
 func (o *CreateSessionServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /sessions][%d] createSessionServiceUnavailable %s", 503, payload)
 }
 
 func (o *CreateSessionServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateSessionServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

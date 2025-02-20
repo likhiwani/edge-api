@@ -30,6 +30,7 @@ package auth_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DetailAuthPolicyOK struct {
 
 // NewDetailAuthPolicyOK creates DetailAuthPolicyOK with default headers values
 func NewDetailAuthPolicyOK() *DetailAuthPolicyOK {
+    logtrace.LogWithFunctionName()
 
 	return &DetailAuthPolicyOK{}
 }
 
 // WithPayload adds the payload to the detail auth policy o k response
 func (o *DetailAuthPolicyOK) WithPayload(payload *rest_model.DetailAuthPolicyEnvelope) *DetailAuthPolicyOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail auth policy o k response
 func (o *DetailAuthPolicyOK) SetPayload(payload *rest_model.DetailAuthPolicyEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailAuthPolicyOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DetailAuthPolicyUnauthorized struct {
 
 // NewDetailAuthPolicyUnauthorized creates DetailAuthPolicyUnauthorized with default headers values
 func NewDetailAuthPolicyUnauthorized() *DetailAuthPolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DetailAuthPolicyUnauthorized{}
 }
 
 // WithPayload adds the payload to the detail auth policy unauthorized response
 func (o *DetailAuthPolicyUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailAuthPolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail auth policy unauthorized response
 func (o *DetailAuthPolicyUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailAuthPolicyUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DetailAuthPolicyNotFound struct {
 
 // NewDetailAuthPolicyNotFound creates DetailAuthPolicyNotFound with default headers values
 func NewDetailAuthPolicyNotFound() *DetailAuthPolicyNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DetailAuthPolicyNotFound{}
 }
 
 // WithPayload adds the payload to the detail auth policy not found response
 func (o *DetailAuthPolicyNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailAuthPolicyNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail auth policy not found response
 func (o *DetailAuthPolicyNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailAuthPolicyNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DetailAuthPolicyTooManyRequests struct {
 
 // NewDetailAuthPolicyTooManyRequests creates DetailAuthPolicyTooManyRequests with default headers values
 func NewDetailAuthPolicyTooManyRequests() *DetailAuthPolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DetailAuthPolicyTooManyRequests{}
 }
 
 // WithPayload adds the payload to the detail auth policy too many requests response
 func (o *DetailAuthPolicyTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailAuthPolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail auth policy too many requests response
 func (o *DetailAuthPolicyTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailAuthPolicyTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DetailAuthPolicyServiceUnavailable struct {
 
 // NewDetailAuthPolicyServiceUnavailable creates DetailAuthPolicyServiceUnavailable with default headers values
 func NewDetailAuthPolicyServiceUnavailable() *DetailAuthPolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DetailAuthPolicyServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the detail auth policy service unavailable response
 func (o *DetailAuthPolicyServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailAuthPolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail auth policy service unavailable response
 func (o *DetailAuthPolicyServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailAuthPolicyServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

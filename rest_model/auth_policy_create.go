@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -61,6 +62,7 @@ type AuthPolicyCreate struct {
 
 // Validate validates this auth policy create
 func (m *AuthPolicyCreate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateName(formats); err != nil {
@@ -86,6 +88,7 @@ func (m *AuthPolicyCreate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *AuthPolicyCreate) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -95,6 +98,7 @@ func (m *AuthPolicyCreate) validateName(formats strfmt.Registry) error {
 }
 
 func (m *AuthPolicyCreate) validatePrimary(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("primary", "body", m.Primary); err != nil {
 		return err
@@ -115,6 +119,7 @@ func (m *AuthPolicyCreate) validatePrimary(formats strfmt.Registry) error {
 }
 
 func (m *AuthPolicyCreate) validateSecondary(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("secondary", "body", m.Secondary); err != nil {
 		return err
@@ -135,6 +140,7 @@ func (m *AuthPolicyCreate) validateSecondary(formats strfmt.Registry) error {
 }
 
 func (m *AuthPolicyCreate) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -155,6 +161,7 @@ func (m *AuthPolicyCreate) validateTags(formats strfmt.Registry) error {
 
 // ContextValidate validate this auth policy create based on the context it is used
 func (m *AuthPolicyCreate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidatePrimary(ctx, formats); err != nil {
@@ -176,6 +183,7 @@ func (m *AuthPolicyCreate) ContextValidate(ctx context.Context, formats strfmt.R
 }
 
 func (m *AuthPolicyCreate) contextValidatePrimary(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Primary != nil {
 
@@ -193,6 +201,7 @@ func (m *AuthPolicyCreate) contextValidatePrimary(ctx context.Context, formats s
 }
 
 func (m *AuthPolicyCreate) contextValidateSecondary(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Secondary != nil {
 
@@ -210,6 +219,7 @@ func (m *AuthPolicyCreate) contextValidateSecondary(ctx context.Context, formats
 }
 
 func (m *AuthPolicyCreate) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -232,6 +242,7 @@ func (m *AuthPolicyCreate) contextValidateTags(ctx context.Context, formats strf
 
 // MarshalBinary interface implementation
 func (m *AuthPolicyCreate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -240,6 +251,7 @@ func (m *AuthPolicyCreate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *AuthPolicyCreate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res AuthPolicyCreate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

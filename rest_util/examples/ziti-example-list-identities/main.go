@@ -21,6 +21,8 @@ import (
 	"crypto/x509"
 	"ztna-core/edge-api/rest_management_api_client/identity"
 	"ztna-core/edge-api/rest_util"
+	"ztna-core/ztna/logtrace"
+
 	log "github.com/sirupsen/logrus"
 )
 
@@ -29,6 +31,7 @@ import (
 // That step is missing from this example. The CA bundle from the well-known endpoint is verified as a sanity
 // check against the controller. However, this does not add any extra security, just sanity.
 func main() {
+	logtrace.LogWithFunctionName()
 	ctrlAddress := "https://localhost:1280"
 	caCerts, err := rest_util.GetControllerWellKnownCas(ctrlAddress)
 

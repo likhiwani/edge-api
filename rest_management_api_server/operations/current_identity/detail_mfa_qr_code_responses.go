@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -48,12 +49,14 @@ type DetailMfaQrCodeOK struct {
 
 // NewDetailMfaQrCodeOK creates DetailMfaQrCodeOK with default headers values
 func NewDetailMfaQrCodeOK() *DetailMfaQrCodeOK {
+    logtrace.LogWithFunctionName()
 
 	return &DetailMfaQrCodeOK{}
 }
 
 // WriteResponse to the client
 func (o *DetailMfaQrCodeOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
 
@@ -73,12 +76,14 @@ type DetailMfaQrCodeNotFound struct {
 
 // NewDetailMfaQrCodeNotFound creates DetailMfaQrCodeNotFound with default headers values
 func NewDetailMfaQrCodeNotFound() *DetailMfaQrCodeNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DetailMfaQrCodeNotFound{}
 }
 
 // WriteResponse to the client
 func (o *DetailMfaQrCodeNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
 

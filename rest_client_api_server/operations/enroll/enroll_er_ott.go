@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type EnrollErOttHandlerFunc func(EnrollErOttParams) middleware.Responder
 
 // Handle executing the request and returning a response
 func (fn EnrollErOttHandlerFunc) Handle(params EnrollErOttParams) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params)
 }
 
@@ -50,6 +52,7 @@ type EnrollErOttHandler interface {
 
 // NewEnrollErOtt creates a new http.Handler for the enroll er ott operation
 func NewEnrollErOtt(ctx *middleware.Context, handler EnrollErOttHandler) *EnrollErOtt {
+    logtrace.LogWithFunctionName()
 	return &EnrollErOtt{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type EnrollErOtt struct {
 }
 
 func (o *EnrollErOtt) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

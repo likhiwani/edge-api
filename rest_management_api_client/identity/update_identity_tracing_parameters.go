@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewUpdateIdentityTracingParams() *UpdateIdentityTracingParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateIdentityTracingParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewUpdateIdentityTracingParams() *UpdateIdentityTracingParams {
 // NewUpdateIdentityTracingParamsWithTimeout creates a new UpdateIdentityTracingParams object
 // with the ability to set a timeout on a request.
 func NewUpdateIdentityTracingParamsWithTimeout(timeout time.Duration) *UpdateIdentityTracingParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateIdentityTracingParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewUpdateIdentityTracingParamsWithTimeout(timeout time.Duration) *UpdateIde
 // NewUpdateIdentityTracingParamsWithContext creates a new UpdateIdentityTracingParams object
 // with the ability to set a context for a request.
 func NewUpdateIdentityTracingParamsWithContext(ctx context.Context) *UpdateIdentityTracingParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateIdentityTracingParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewUpdateIdentityTracingParamsWithContext(ctx context.Context) *UpdateIdent
 // NewUpdateIdentityTracingParamsWithHTTPClient creates a new UpdateIdentityTracingParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewUpdateIdentityTracingParamsWithHTTPClient(client *http.Client) *UpdateIdentityTracingParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateIdentityTracingParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type UpdateIdentityTracingParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *UpdateIdentityTracingParams) WithDefaults() *UpdateIdentityTracingParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *UpdateIdentityTracingParams) WithDefaults() *UpdateIdentityTracingParam
 //
 // All values with no default are reset to their zero value.
 func (o *UpdateIdentityTracingParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the update identity tracing params
 func (o *UpdateIdentityTracingParams) WithTimeout(timeout time.Duration) *UpdateIdentityTracingParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the update identity tracing params
 func (o *UpdateIdentityTracingParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the update identity tracing params
 func (o *UpdateIdentityTracingParams) WithContext(ctx context.Context) *UpdateIdentityTracingParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the update identity tracing params
 func (o *UpdateIdentityTracingParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the update identity tracing params
 func (o *UpdateIdentityTracingParams) WithHTTPClient(client *http.Client) *UpdateIdentityTracingParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the update identity tracing params
 func (o *UpdateIdentityTracingParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the update identity tracing params
 func (o *UpdateIdentityTracingParams) WithID(id string) *UpdateIdentityTracingParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the update identity tracing params
 func (o *UpdateIdentityTracingParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WithTraceSpec adds the traceSpec to the update identity tracing params
 func (o *UpdateIdentityTracingParams) WithTraceSpec(traceSpec *rest_model.TraceSpec) *UpdateIdentityTracingParams {
+    logtrace.LogWithFunctionName()
 	o.SetTraceSpec(traceSpec)
 	return o
 }
 
 // SetTraceSpec adds the traceSpec to the update identity tracing params
 func (o *UpdateIdentityTracingParams) SetTraceSpec(traceSpec *rest_model.TraceSpec) {
+    logtrace.LogWithFunctionName()
 	o.TraceSpec = traceSpec
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *UpdateIdentityTracingParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

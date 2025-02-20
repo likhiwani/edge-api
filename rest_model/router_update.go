@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -64,6 +65,7 @@ type RouterUpdate struct {
 
 // Validate validates this router update
 func (m *RouterUpdate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateCost(formats); err != nil {
@@ -85,6 +87,7 @@ func (m *RouterUpdate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *RouterUpdate) validateCost(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Cost) { // not required
 		return nil
 	}
@@ -101,6 +104,7 @@ func (m *RouterUpdate) validateCost(formats strfmt.Registry) error {
 }
 
 func (m *RouterUpdate) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -110,6 +114,7 @@ func (m *RouterUpdate) validateName(formats strfmt.Registry) error {
 }
 
 func (m *RouterUpdate) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -130,6 +135,7 @@ func (m *RouterUpdate) validateTags(formats strfmt.Registry) error {
 
 // ContextValidate validate this router update based on the context it is used
 func (m *RouterUpdate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateTags(ctx, formats); err != nil {
@@ -143,6 +149,7 @@ func (m *RouterUpdate) ContextValidate(ctx context.Context, formats strfmt.Regis
 }
 
 func (m *RouterUpdate) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -165,6 +172,7 @@ func (m *RouterUpdate) contextValidateTags(ctx context.Context, formats strfmt.R
 
 // MarshalBinary interface implementation
 func (m *RouterUpdate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -173,6 +181,7 @@ func (m *RouterUpdate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *RouterUpdate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res RouterUpdate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

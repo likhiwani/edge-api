@@ -30,6 +30,7 @@ package authentication
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -45,6 +46,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewAuthenticateParams() AuthenticateParams {
+    logtrace.LogWithFunctionName()
 
 	return AuthenticateParams{}
 }
@@ -74,6 +76,7 @@ type AuthenticateParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewAuthenticateParams() beforehand.
 func (o *AuthenticateParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r
@@ -114,6 +117,7 @@ func (o *AuthenticateParams) BindRequest(r *http.Request, route *middleware.Matc
 
 // bindMethod binds and validates parameter Method from query.
 func (o *AuthenticateParams) bindMethod(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if !hasKey {
 		return errors.Required("method", "query", rawData)
 	}
@@ -139,6 +143,7 @@ func (o *AuthenticateParams) bindMethod(rawData []string, hasKey bool, formats s
 
 // validateMethod carries on validations for parameter Method
 func (o *AuthenticateParams) validateMethod(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.EnumCase("method", "query", o.Method, []interface{}{"password", "cert", "ext-jwt"}, true); err != nil {
 		return err

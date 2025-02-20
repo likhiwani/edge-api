@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"bytes"
 	"context"
 	"encoding/json"
@@ -59,45 +60,54 @@ type PostureCheckOperatingSystemUpdate struct {
 
 // Name gets the name of this subtype
 func (m *PostureCheckOperatingSystemUpdate) Name() *string {
+    logtrace.LogWithFunctionName()
 	return m.nameField
 }
 
 // SetName sets the name of this subtype
 func (m *PostureCheckOperatingSystemUpdate) SetName(val *string) {
+    logtrace.LogWithFunctionName()
 	m.nameField = val
 }
 
 // RoleAttributes gets the role attributes of this subtype
 func (m *PostureCheckOperatingSystemUpdate) RoleAttributes() *Attributes {
+    logtrace.LogWithFunctionName()
 	return m.roleAttributesField
 }
 
 // SetRoleAttributes sets the role attributes of this subtype
 func (m *PostureCheckOperatingSystemUpdate) SetRoleAttributes(val *Attributes) {
+    logtrace.LogWithFunctionName()
 	m.roleAttributesField = val
 }
 
 // Tags gets the tags of this subtype
 func (m *PostureCheckOperatingSystemUpdate) Tags() *Tags {
+    logtrace.LogWithFunctionName()
 	return m.tagsField
 }
 
 // SetTags sets the tags of this subtype
 func (m *PostureCheckOperatingSystemUpdate) SetTags(val *Tags) {
+    logtrace.LogWithFunctionName()
 	m.tagsField = val
 }
 
 // TypeID gets the type Id of this subtype
 func (m *PostureCheckOperatingSystemUpdate) TypeID() PostureCheckType {
+    logtrace.LogWithFunctionName()
 	return "OS"
 }
 
 // SetTypeID sets the type Id of this subtype
 func (m *PostureCheckOperatingSystemUpdate) SetTypeID(val PostureCheckType) {
+    logtrace.LogWithFunctionName()
 }
 
 // UnmarshalJSON unmarshals this object with a polymorphic type from a JSON structure
 func (m *PostureCheckOperatingSystemUpdate) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	var data struct {
 
 		// operating systems
@@ -154,6 +164,7 @@ func (m *PostureCheckOperatingSystemUpdate) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object with a polymorphic type to a JSON structure
 func (m PostureCheckOperatingSystemUpdate) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	var b1, b2, b3 []byte
 	var err error
 	b1, err = json.Marshal(struct {
@@ -196,6 +207,7 @@ func (m PostureCheckOperatingSystemUpdate) MarshalJSON() ([]byte, error) {
 
 // Validate validates this posture check operating system update
 func (m *PostureCheckOperatingSystemUpdate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateName(formats); err != nil {
@@ -221,6 +233,7 @@ func (m *PostureCheckOperatingSystemUpdate) Validate(formats strfmt.Registry) er
 }
 
 func (m *PostureCheckOperatingSystemUpdate) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name()); err != nil {
 		return err
@@ -230,6 +243,7 @@ func (m *PostureCheckOperatingSystemUpdate) validateName(formats strfmt.Registry
 }
 
 func (m *PostureCheckOperatingSystemUpdate) validateRoleAttributes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.RoleAttributes()) { // not required
 		return nil
@@ -250,6 +264,7 @@ func (m *PostureCheckOperatingSystemUpdate) validateRoleAttributes(formats strfm
 }
 
 func (m *PostureCheckOperatingSystemUpdate) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.Tags()) { // not required
 		return nil
@@ -270,6 +285,7 @@ func (m *PostureCheckOperatingSystemUpdate) validateTags(formats strfmt.Registry
 }
 
 func (m *PostureCheckOperatingSystemUpdate) validateOperatingSystems(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("operatingSystems", "body", m.OperatingSystems); err != nil {
 		return err
@@ -304,6 +320,7 @@ func (m *PostureCheckOperatingSystemUpdate) validateOperatingSystems(formats str
 
 // ContextValidate validate this posture check operating system update based on the context it is used
 func (m *PostureCheckOperatingSystemUpdate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateRoleAttributes(ctx, formats); err != nil {
@@ -325,6 +342,7 @@ func (m *PostureCheckOperatingSystemUpdate) ContextValidate(ctx context.Context,
 }
 
 func (m *PostureCheckOperatingSystemUpdate) contextValidateRoleAttributes(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.RoleAttributes() != nil {
 		if err := m.RoleAttributes().ContextValidate(ctx, formats); err != nil {
@@ -341,6 +359,7 @@ func (m *PostureCheckOperatingSystemUpdate) contextValidateRoleAttributes(ctx co
 }
 
 func (m *PostureCheckOperatingSystemUpdate) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags() != nil {
 
@@ -362,6 +381,7 @@ func (m *PostureCheckOperatingSystemUpdate) contextValidateTags(ctx context.Cont
 }
 
 func (m *PostureCheckOperatingSystemUpdate) contextValidateTypeID(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.TypeID()) { // not required
 		return nil
@@ -380,6 +400,7 @@ func (m *PostureCheckOperatingSystemUpdate) contextValidateTypeID(ctx context.Co
 }
 
 func (m *PostureCheckOperatingSystemUpdate) contextValidateOperatingSystems(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	for i := 0; i < len(m.OperatingSystems); i++ {
 
@@ -406,6 +427,7 @@ func (m *PostureCheckOperatingSystemUpdate) contextValidateOperatingSystems(ctx 
 
 // MarshalBinary interface implementation
 func (m *PostureCheckOperatingSystemUpdate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -414,6 +436,7 @@ func (m *PostureCheckOperatingSystemUpdate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureCheckOperatingSystemUpdate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureCheckOperatingSystemUpdate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

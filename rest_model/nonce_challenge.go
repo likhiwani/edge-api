@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -55,6 +56,7 @@ type NonceChallenge struct {
 
 // Validate validates this nonce challenge
 func (m *NonceChallenge) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateKeyID(formats); err != nil {
@@ -72,6 +74,7 @@ func (m *NonceChallenge) Validate(formats strfmt.Registry) error {
 }
 
 func (m *NonceChallenge) validateKeyID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("keyId", "body", m.KeyID); err != nil {
 		return err
@@ -81,6 +84,7 @@ func (m *NonceChallenge) validateKeyID(formats strfmt.Registry) error {
 }
 
 func (m *NonceChallenge) validateNonce(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("nonce", "body", m.Nonce); err != nil {
 		return err
@@ -95,11 +99,13 @@ func (m *NonceChallenge) validateNonce(formats strfmt.Registry) error {
 
 // ContextValidate validates this nonce challenge based on context it is used
 func (m *NonceChallenge) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *NonceChallenge) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -108,6 +114,7 @@ func (m *NonceChallenge) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *NonceChallenge) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res NonceChallenge
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -54,6 +55,7 @@ type CurrentAPISessionCertificateCreateResponse struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *CurrentAPISessionCertificateCreateResponse) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 CreateLocation
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -80,6 +82,7 @@ func (m *CurrentAPISessionCertificateCreateResponse) UnmarshalJSON(raw []byte) e
 
 // MarshalJSON marshals this object to a JSON structure
 func (m CurrentAPISessionCertificateCreateResponse) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.CreateLocation)
@@ -107,6 +110,7 @@ func (m CurrentAPISessionCertificateCreateResponse) MarshalJSON() ([]byte, error
 
 // Validate validates this current Api session certificate create response
 func (m *CurrentAPISessionCertificateCreateResponse) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with CreateLocation
@@ -125,6 +129,7 @@ func (m *CurrentAPISessionCertificateCreateResponse) Validate(formats strfmt.Reg
 }
 
 func (m *CurrentAPISessionCertificateCreateResponse) validateCertificate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("certificate", "body", m.Certificate); err != nil {
 		return err
@@ -135,6 +140,7 @@ func (m *CurrentAPISessionCertificateCreateResponse) validateCertificate(formats
 
 // ContextValidate validate this current Api session certificate create response based on the context it is used
 func (m *CurrentAPISessionCertificateCreateResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with CreateLocation
@@ -150,6 +156,7 @@ func (m *CurrentAPISessionCertificateCreateResponse) ContextValidate(ctx context
 
 // MarshalBinary interface implementation
 func (m *CurrentAPISessionCertificateCreateResponse) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -158,6 +165,7 @@ func (m *CurrentAPISessionCertificateCreateResponse) MarshalBinary() ([]byte, er
 
 // UnmarshalBinary interface implementation
 func (m *CurrentAPISessionCertificateCreateResponse) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res CurrentAPISessionCertificateCreateResponse
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

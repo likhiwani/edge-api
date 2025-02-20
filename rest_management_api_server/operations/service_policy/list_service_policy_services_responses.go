@@ -30,6 +30,7 @@ package service_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListServicePolicyServicesOK struct {
 
 // NewListServicePolicyServicesOK creates ListServicePolicyServicesOK with default headers values
 func NewListServicePolicyServicesOK() *ListServicePolicyServicesOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListServicePolicyServicesOK{}
 }
 
 // WithPayload adds the payload to the list service policy services o k response
 func (o *ListServicePolicyServicesOK) WithPayload(payload *rest_model.ListServicesEnvelope) *ListServicePolicyServicesOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list service policy services o k response
 func (o *ListServicePolicyServicesOK) SetPayload(payload *rest_model.ListServicesEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListServicePolicyServicesOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ListServicePolicyServicesBadRequest struct {
 
 // NewListServicePolicyServicesBadRequest creates ListServicePolicyServicesBadRequest with default headers values
 func NewListServicePolicyServicesBadRequest() *ListServicePolicyServicesBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &ListServicePolicyServicesBadRequest{}
 }
 
 // WithPayload adds the payload to the list service policy services bad request response
 func (o *ListServicePolicyServicesBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *ListServicePolicyServicesBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list service policy services bad request response
 func (o *ListServicePolicyServicesBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListServicePolicyServicesBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ListServicePolicyServicesUnauthorized struct {
 
 // NewListServicePolicyServicesUnauthorized creates ListServicePolicyServicesUnauthorized with default headers values
 func NewListServicePolicyServicesUnauthorized() *ListServicePolicyServicesUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &ListServicePolicyServicesUnauthorized{}
 }
 
 // WithPayload adds the payload to the list service policy services unauthorized response
 func (o *ListServicePolicyServicesUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *ListServicePolicyServicesUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list service policy services unauthorized response
 func (o *ListServicePolicyServicesUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListServicePolicyServicesUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type ListServicePolicyServicesTooManyRequests struct {
 
 // NewListServicePolicyServicesTooManyRequests creates ListServicePolicyServicesTooManyRequests with default headers values
 func NewListServicePolicyServicesTooManyRequests() *ListServicePolicyServicesTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ListServicePolicyServicesTooManyRequests{}
 }
 
 // WithPayload adds the payload to the list service policy services too many requests response
 func (o *ListServicePolicyServicesTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ListServicePolicyServicesTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list service policy services too many requests response
 func (o *ListServicePolicyServicesTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListServicePolicyServicesTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type ListServicePolicyServicesServiceUnavailable struct {
 
 // NewListServicePolicyServicesServiceUnavailable creates ListServicePolicyServicesServiceUnavailable with default headers values
 func NewListServicePolicyServicesServiceUnavailable() *ListServicePolicyServicesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &ListServicePolicyServicesServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the list service policy services service unavailable response
 func (o *ListServicePolicyServicesServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *ListServicePolicyServicesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list service policy services service unavailable response
 func (o *ListServicePolicyServicesServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListServicePolicyServicesServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

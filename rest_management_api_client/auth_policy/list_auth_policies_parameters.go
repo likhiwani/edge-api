@@ -30,6 +30,7 @@ package auth_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -48,6 +49,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListAuthPoliciesParams() *ListAuthPoliciesParams {
+    logtrace.LogWithFunctionName()
 	return &ListAuthPoliciesParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -56,6 +58,7 @@ func NewListAuthPoliciesParams() *ListAuthPoliciesParams {
 // NewListAuthPoliciesParamsWithTimeout creates a new ListAuthPoliciesParams object
 // with the ability to set a timeout on a request.
 func NewListAuthPoliciesParamsWithTimeout(timeout time.Duration) *ListAuthPoliciesParams {
+    logtrace.LogWithFunctionName()
 	return &ListAuthPoliciesParams{
 		timeout: timeout,
 	}
@@ -64,6 +67,7 @@ func NewListAuthPoliciesParamsWithTimeout(timeout time.Duration) *ListAuthPolici
 // NewListAuthPoliciesParamsWithContext creates a new ListAuthPoliciesParams object
 // with the ability to set a context for a request.
 func NewListAuthPoliciesParamsWithContext(ctx context.Context) *ListAuthPoliciesParams {
+    logtrace.LogWithFunctionName()
 	return &ListAuthPoliciesParams{
 		Context: ctx,
 	}
@@ -72,6 +76,7 @@ func NewListAuthPoliciesParamsWithContext(ctx context.Context) *ListAuthPolicies
 // NewListAuthPoliciesParamsWithHTTPClient creates a new ListAuthPoliciesParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListAuthPoliciesParamsWithHTTPClient(client *http.Client) *ListAuthPoliciesParams {
+    logtrace.LogWithFunctionName()
 	return &ListAuthPoliciesParams{
 		HTTPClient: client,
 	}
@@ -104,6 +109,7 @@ type ListAuthPoliciesParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListAuthPoliciesParams) WithDefaults() *ListAuthPoliciesParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -112,77 +118,91 @@ func (o *ListAuthPoliciesParams) WithDefaults() *ListAuthPoliciesParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListAuthPoliciesParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list auth policies params
 func (o *ListAuthPoliciesParams) WithTimeout(timeout time.Duration) *ListAuthPoliciesParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list auth policies params
 func (o *ListAuthPoliciesParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list auth policies params
 func (o *ListAuthPoliciesParams) WithContext(ctx context.Context) *ListAuthPoliciesParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list auth policies params
 func (o *ListAuthPoliciesParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list auth policies params
 func (o *ListAuthPoliciesParams) WithHTTPClient(client *http.Client) *ListAuthPoliciesParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list auth policies params
 func (o *ListAuthPoliciesParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithFilter adds the filter to the list auth policies params
 func (o *ListAuthPoliciesParams) WithFilter(filter *string) *ListAuthPoliciesParams {
+    logtrace.LogWithFunctionName()
 	o.SetFilter(filter)
 	return o
 }
 
 // SetFilter adds the filter to the list auth policies params
 func (o *ListAuthPoliciesParams) SetFilter(filter *string) {
+    logtrace.LogWithFunctionName()
 	o.Filter = filter
 }
 
 // WithLimit adds the limit to the list auth policies params
 func (o *ListAuthPoliciesParams) WithLimit(limit *int64) *ListAuthPoliciesParams {
+    logtrace.LogWithFunctionName()
 	o.SetLimit(limit)
 	return o
 }
 
 // SetLimit adds the limit to the list auth policies params
 func (o *ListAuthPoliciesParams) SetLimit(limit *int64) {
+    logtrace.LogWithFunctionName()
 	o.Limit = limit
 }
 
 // WithOffset adds the offset to the list auth policies params
 func (o *ListAuthPoliciesParams) WithOffset(offset *int64) *ListAuthPoliciesParams {
+    logtrace.LogWithFunctionName()
 	o.SetOffset(offset)
 	return o
 }
 
 // SetOffset adds the offset to the list auth policies params
 func (o *ListAuthPoliciesParams) SetOffset(offset *int64) {
+    logtrace.LogWithFunctionName()
 	o.Offset = offset
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListAuthPoliciesParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

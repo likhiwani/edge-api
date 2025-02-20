@@ -30,6 +30,7 @@ package router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCreateTransitRouterParams() *CreateTransitRouterParams {
+    logtrace.LogWithFunctionName()
 	return &CreateTransitRouterParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewCreateTransitRouterParams() *CreateTransitRouterParams {
 // NewCreateTransitRouterParamsWithTimeout creates a new CreateTransitRouterParams object
 // with the ability to set a timeout on a request.
 func NewCreateTransitRouterParamsWithTimeout(timeout time.Duration) *CreateTransitRouterParams {
+    logtrace.LogWithFunctionName()
 	return &CreateTransitRouterParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewCreateTransitRouterParamsWithTimeout(timeout time.Duration) *CreateTrans
 // NewCreateTransitRouterParamsWithContext creates a new CreateTransitRouterParams object
 // with the ability to set a context for a request.
 func NewCreateTransitRouterParamsWithContext(ctx context.Context) *CreateTransitRouterParams {
+    logtrace.LogWithFunctionName()
 	return &CreateTransitRouterParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewCreateTransitRouterParamsWithContext(ctx context.Context) *CreateTransit
 // NewCreateTransitRouterParamsWithHTTPClient creates a new CreateTransitRouterParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewCreateTransitRouterParamsWithHTTPClient(client *http.Client) *CreateTransitRouterParams {
+    logtrace.LogWithFunctionName()
 	return &CreateTransitRouterParams{
 		HTTPClient: client,
 	}
@@ -102,6 +107,7 @@ type CreateTransitRouterParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *CreateTransitRouterParams) WithDefaults() *CreateTransitRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -110,55 +116,65 @@ func (o *CreateTransitRouterParams) WithDefaults() *CreateTransitRouterParams {
 //
 // All values with no default are reset to their zero value.
 func (o *CreateTransitRouterParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the create transit router params
 func (o *CreateTransitRouterParams) WithTimeout(timeout time.Duration) *CreateTransitRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the create transit router params
 func (o *CreateTransitRouterParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the create transit router params
 func (o *CreateTransitRouterParams) WithContext(ctx context.Context) *CreateTransitRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the create transit router params
 func (o *CreateTransitRouterParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the create transit router params
 func (o *CreateTransitRouterParams) WithHTTPClient(client *http.Client) *CreateTransitRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the create transit router params
 func (o *CreateTransitRouterParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithRouter adds the router to the create transit router params
 func (o *CreateTransitRouterParams) WithRouter(router *rest_model.RouterCreate) *CreateTransitRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetRouter(router)
 	return o
 }
 
 // SetRouter adds the router to the create transit router params
 func (o *CreateTransitRouterParams) SetRouter(router *rest_model.RouterCreate) {
+    logtrace.LogWithFunctionName()
 	o.Router = router
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *CreateTransitRouterParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

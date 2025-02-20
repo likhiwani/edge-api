@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -91,6 +92,7 @@ type EnrollmentDetail struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *EnrollmentDetail) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 BaseEntity
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -157,6 +159,7 @@ func (m *EnrollmentDetail) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m EnrollmentDetail) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.BaseEntity)
@@ -224,6 +227,7 @@ func (m EnrollmentDetail) MarshalJSON() ([]byte, error) {
 
 // Validate validates this enrollment detail
 func (m *EnrollmentDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -262,6 +266,7 @@ func (m *EnrollmentDetail) Validate(formats strfmt.Registry) error {
 }
 
 func (m *EnrollmentDetail) validateEdgeRouter(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.EdgeRouter) { // not required
 		return nil
@@ -282,6 +287,7 @@ func (m *EnrollmentDetail) validateEdgeRouter(formats strfmt.Registry) error {
 }
 
 func (m *EnrollmentDetail) validateExpiresAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("expiresAt", "body", m.ExpiresAt); err != nil {
 		return err
@@ -295,6 +301,7 @@ func (m *EnrollmentDetail) validateExpiresAt(formats strfmt.Registry) error {
 }
 
 func (m *EnrollmentDetail) validateIdentity(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.Identity) { // not required
 		return nil
@@ -315,6 +322,7 @@ func (m *EnrollmentDetail) validateIdentity(formats strfmt.Registry) error {
 }
 
 func (m *EnrollmentDetail) validateMethod(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("method", "body", m.Method); err != nil {
 		return err
@@ -324,6 +332,7 @@ func (m *EnrollmentDetail) validateMethod(formats strfmt.Registry) error {
 }
 
 func (m *EnrollmentDetail) validateToken(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("token", "body", m.Token); err != nil {
 		return err
@@ -333,6 +342,7 @@ func (m *EnrollmentDetail) validateToken(formats strfmt.Registry) error {
 }
 
 func (m *EnrollmentDetail) validateTransitRouter(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.TransitRouter) { // not required
 		return nil
@@ -354,6 +364,7 @@ func (m *EnrollmentDetail) validateTransitRouter(formats strfmt.Registry) error 
 
 // ContextValidate validate this enrollment detail based on the context it is used
 func (m *EnrollmentDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -380,6 +391,7 @@ func (m *EnrollmentDetail) ContextValidate(ctx context.Context, formats strfmt.R
 }
 
 func (m *EnrollmentDetail) contextValidateEdgeRouter(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.EdgeRouter != nil {
 
@@ -401,6 +413,7 @@ func (m *EnrollmentDetail) contextValidateEdgeRouter(ctx context.Context, format
 }
 
 func (m *EnrollmentDetail) contextValidateIdentity(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Identity != nil {
 
@@ -422,6 +435,7 @@ func (m *EnrollmentDetail) contextValidateIdentity(ctx context.Context, formats 
 }
 
 func (m *EnrollmentDetail) contextValidateTransitRouter(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.TransitRouter != nil {
 
@@ -444,6 +458,7 @@ func (m *EnrollmentDetail) contextValidateTransitRouter(ctx context.Context, for
 
 // MarshalBinary interface implementation
 func (m *EnrollmentDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -452,6 +467,7 @@ func (m *EnrollmentDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *EnrollmentDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res EnrollmentDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

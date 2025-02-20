@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewExtendRouterEnrollmentParams() *ExtendRouterEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	return &ExtendRouterEnrollmentParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewExtendRouterEnrollmentParams() *ExtendRouterEnrollmentParams {
 // NewExtendRouterEnrollmentParamsWithTimeout creates a new ExtendRouterEnrollmentParams object
 // with the ability to set a timeout on a request.
 func NewExtendRouterEnrollmentParamsWithTimeout(timeout time.Duration) *ExtendRouterEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	return &ExtendRouterEnrollmentParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewExtendRouterEnrollmentParamsWithTimeout(timeout time.Duration) *ExtendRo
 // NewExtendRouterEnrollmentParamsWithContext creates a new ExtendRouterEnrollmentParams object
 // with the ability to set a context for a request.
 func NewExtendRouterEnrollmentParamsWithContext(ctx context.Context) *ExtendRouterEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	return &ExtendRouterEnrollmentParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewExtendRouterEnrollmentParamsWithContext(ctx context.Context) *ExtendRout
 // NewExtendRouterEnrollmentParamsWithHTTPClient creates a new ExtendRouterEnrollmentParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewExtendRouterEnrollmentParamsWithHTTPClient(client *http.Client) *ExtendRouterEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	return &ExtendRouterEnrollmentParams{
 		HTTPClient: client,
 	}
@@ -99,6 +104,7 @@ type ExtendRouterEnrollmentParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ExtendRouterEnrollmentParams) WithDefaults() *ExtendRouterEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -107,55 +113,65 @@ func (o *ExtendRouterEnrollmentParams) WithDefaults() *ExtendRouterEnrollmentPar
 //
 // All values with no default are reset to their zero value.
 func (o *ExtendRouterEnrollmentParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the extend router enrollment params
 func (o *ExtendRouterEnrollmentParams) WithTimeout(timeout time.Duration) *ExtendRouterEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the extend router enrollment params
 func (o *ExtendRouterEnrollmentParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the extend router enrollment params
 func (o *ExtendRouterEnrollmentParams) WithContext(ctx context.Context) *ExtendRouterEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the extend router enrollment params
 func (o *ExtendRouterEnrollmentParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the extend router enrollment params
 func (o *ExtendRouterEnrollmentParams) WithHTTPClient(client *http.Client) *ExtendRouterEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the extend router enrollment params
 func (o *ExtendRouterEnrollmentParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithRouterExtendEnrollmentRequest adds the routerExtendEnrollmentRequest to the extend router enrollment params
 func (o *ExtendRouterEnrollmentParams) WithRouterExtendEnrollmentRequest(routerExtendEnrollmentRequest *rest_model.RouterExtendEnrollmentRequest) *ExtendRouterEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetRouterExtendEnrollmentRequest(routerExtendEnrollmentRequest)
 	return o
 }
 
 // SetRouterExtendEnrollmentRequest adds the routerExtendEnrollmentRequest to the extend router enrollment params
 func (o *ExtendRouterEnrollmentParams) SetRouterExtendEnrollmentRequest(routerExtendEnrollmentRequest *rest_model.RouterExtendEnrollmentRequest) {
+    logtrace.LogWithFunctionName()
 	o.RouterExtendEnrollmentRequest = routerExtendEnrollmentRequest
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ExtendRouterEnrollmentParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

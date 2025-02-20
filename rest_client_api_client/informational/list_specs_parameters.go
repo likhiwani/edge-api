@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListSpecsParams() *ListSpecsParams {
+    logtrace.LogWithFunctionName()
 	return &ListSpecsParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewListSpecsParams() *ListSpecsParams {
 // NewListSpecsParamsWithTimeout creates a new ListSpecsParams object
 // with the ability to set a timeout on a request.
 func NewListSpecsParamsWithTimeout(timeout time.Duration) *ListSpecsParams {
+    logtrace.LogWithFunctionName()
 	return &ListSpecsParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewListSpecsParamsWithTimeout(timeout time.Duration) *ListSpecsParams {
 // NewListSpecsParamsWithContext creates a new ListSpecsParams object
 // with the ability to set a context for a request.
 func NewListSpecsParamsWithContext(ctx context.Context) *ListSpecsParams {
+    logtrace.LogWithFunctionName()
 	return &ListSpecsParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewListSpecsParamsWithContext(ctx context.Context) *ListSpecsParams {
 // NewListSpecsParamsWithHTTPClient creates a new ListSpecsParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListSpecsParamsWithHTTPClient(client *http.Client) *ListSpecsParams {
+    logtrace.LogWithFunctionName()
 	return &ListSpecsParams{
 		HTTPClient: client,
 	}
@@ -93,6 +98,7 @@ type ListSpecsParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListSpecsParams) WithDefaults() *ListSpecsParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -101,44 +107,52 @@ func (o *ListSpecsParams) WithDefaults() *ListSpecsParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListSpecsParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list specs params
 func (o *ListSpecsParams) WithTimeout(timeout time.Duration) *ListSpecsParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list specs params
 func (o *ListSpecsParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list specs params
 func (o *ListSpecsParams) WithContext(ctx context.Context) *ListSpecsParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list specs params
 func (o *ListSpecsParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list specs params
 func (o *ListSpecsParams) WithHTTPClient(client *http.Client) *ListSpecsParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list specs params
 func (o *ListSpecsParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListSpecsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

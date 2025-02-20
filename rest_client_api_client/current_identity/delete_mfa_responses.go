@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DeleteMfaReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DeleteMfaReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDeleteMfaOK()
@@ -73,6 +75,7 @@ func (o *DeleteMfaReader) ReadResponse(response runtime.ClientResponse, consumer
 
 // NewDeleteMfaOK creates a DeleteMfaOK with default headers values
 func NewDeleteMfaOK() *DeleteMfaOK {
+    logtrace.LogWithFunctionName()
 	return &DeleteMfaOK{}
 }
 
@@ -87,49 +90,59 @@ type DeleteMfaOK struct {
 
 // IsSuccess returns true when this delete mfa o k response has a 2xx status code
 func (o *DeleteMfaOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this delete mfa o k response has a 3xx status code
 func (o *DeleteMfaOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete mfa o k response has a 4xx status code
 func (o *DeleteMfaOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete mfa o k response has a 5xx status code
 func (o *DeleteMfaOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete mfa o k response a status code equal to that given
 func (o *DeleteMfaOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the delete mfa o k response
 func (o *DeleteMfaOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DeleteMfaOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-identity/mfa][%d] deleteMfaOK %s", 200, payload)
 }
 
 func (o *DeleteMfaOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-identity/mfa][%d] deleteMfaOK %s", 200, payload)
 }
 
 func (o *DeleteMfaOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteMfaOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -143,6 +156,7 @@ func (o *DeleteMfaOK) readResponse(response runtime.ClientResponse, consumer run
 
 // NewDeleteMfaUnauthorized creates a DeleteMfaUnauthorized with default headers values
 func NewDeleteMfaUnauthorized() *DeleteMfaUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DeleteMfaUnauthorized{}
 }
 
@@ -157,49 +171,59 @@ type DeleteMfaUnauthorized struct {
 
 // IsSuccess returns true when this delete mfa unauthorized response has a 2xx status code
 func (o *DeleteMfaUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete mfa unauthorized response has a 3xx status code
 func (o *DeleteMfaUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete mfa unauthorized response has a 4xx status code
 func (o *DeleteMfaUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete mfa unauthorized response has a 5xx status code
 func (o *DeleteMfaUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete mfa unauthorized response a status code equal to that given
 func (o *DeleteMfaUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the delete mfa unauthorized response
 func (o *DeleteMfaUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DeleteMfaUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-identity/mfa][%d] deleteMfaUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteMfaUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-identity/mfa][%d] deleteMfaUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteMfaUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteMfaUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -213,6 +237,7 @@ func (o *DeleteMfaUnauthorized) readResponse(response runtime.ClientResponse, co
 
 // NewDeleteMfaNotFound creates a DeleteMfaNotFound with default headers values
 func NewDeleteMfaNotFound() *DeleteMfaNotFound {
+    logtrace.LogWithFunctionName()
 	return &DeleteMfaNotFound{}
 }
 
@@ -227,49 +252,59 @@ type DeleteMfaNotFound struct {
 
 // IsSuccess returns true when this delete mfa not found response has a 2xx status code
 func (o *DeleteMfaNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete mfa not found response has a 3xx status code
 func (o *DeleteMfaNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete mfa not found response has a 4xx status code
 func (o *DeleteMfaNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete mfa not found response has a 5xx status code
 func (o *DeleteMfaNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete mfa not found response a status code equal to that given
 func (o *DeleteMfaNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the delete mfa not found response
 func (o *DeleteMfaNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DeleteMfaNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-identity/mfa][%d] deleteMfaNotFound %s", 404, payload)
 }
 
 func (o *DeleteMfaNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-identity/mfa][%d] deleteMfaNotFound %s", 404, payload)
 }
 
 func (o *DeleteMfaNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteMfaNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

@@ -30,6 +30,7 @@ package router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type UpdateTransitRouterOK struct {
 
 // NewUpdateTransitRouterOK creates UpdateTransitRouterOK with default headers values
 func NewUpdateTransitRouterOK() *UpdateTransitRouterOK {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateTransitRouterOK{}
 }
 
 // WithPayload adds the payload to the update transit router o k response
 func (o *UpdateTransitRouterOK) WithPayload(payload *rest_model.Empty) *UpdateTransitRouterOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update transit router o k response
 func (o *UpdateTransitRouterOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateTransitRouterOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type UpdateTransitRouterBadRequest struct {
 
 // NewUpdateTransitRouterBadRequest creates UpdateTransitRouterBadRequest with default headers values
 func NewUpdateTransitRouterBadRequest() *UpdateTransitRouterBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateTransitRouterBadRequest{}
 }
 
 // WithPayload adds the payload to the update transit router bad request response
 func (o *UpdateTransitRouterBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateTransitRouterBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update transit router bad request response
 func (o *UpdateTransitRouterBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateTransitRouterBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type UpdateTransitRouterUnauthorized struct {
 
 // NewUpdateTransitRouterUnauthorized creates UpdateTransitRouterUnauthorized with default headers values
 func NewUpdateTransitRouterUnauthorized() *UpdateTransitRouterUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateTransitRouterUnauthorized{}
 }
 
 // WithPayload adds the payload to the update transit router unauthorized response
 func (o *UpdateTransitRouterUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateTransitRouterUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update transit router unauthorized response
 func (o *UpdateTransitRouterUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateTransitRouterUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type UpdateTransitRouterNotFound struct {
 
 // NewUpdateTransitRouterNotFound creates UpdateTransitRouterNotFound with default headers values
 func NewUpdateTransitRouterNotFound() *UpdateTransitRouterNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateTransitRouterNotFound{}
 }
 
 // WithPayload adds the payload to the update transit router not found response
 func (o *UpdateTransitRouterNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateTransitRouterNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update transit router not found response
 func (o *UpdateTransitRouterNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateTransitRouterNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type UpdateTransitRouterTooManyRequests struct {
 
 // NewUpdateTransitRouterTooManyRequests creates UpdateTransitRouterTooManyRequests with default headers values
 func NewUpdateTransitRouterTooManyRequests() *UpdateTransitRouterTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateTransitRouterTooManyRequests{}
 }
 
 // WithPayload adds the payload to the update transit router too many requests response
 func (o *UpdateTransitRouterTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateTransitRouterTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update transit router too many requests response
 func (o *UpdateTransitRouterTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateTransitRouterTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type UpdateTransitRouterServiceUnavailable struct {
 
 // NewUpdateTransitRouterServiceUnavailable creates UpdateTransitRouterServiceUnavailable with default headers values
 func NewUpdateTransitRouterServiceUnavailable() *UpdateTransitRouterServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateTransitRouterServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the update transit router service unavailable response
 func (o *UpdateTransitRouterServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateTransitRouterServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update transit router service unavailable response
 func (o *UpdateTransitRouterServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateTransitRouterServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

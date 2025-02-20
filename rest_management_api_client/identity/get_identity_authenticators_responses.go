@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type GetIdentityAuthenticatorsReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *GetIdentityAuthenticatorsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewGetIdentityAuthenticatorsOK()
@@ -85,6 +87,7 @@ func (o *GetIdentityAuthenticatorsReader) ReadResponse(response runtime.ClientRe
 
 // NewGetIdentityAuthenticatorsOK creates a GetIdentityAuthenticatorsOK with default headers values
 func NewGetIdentityAuthenticatorsOK() *GetIdentityAuthenticatorsOK {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityAuthenticatorsOK{}
 }
 
@@ -99,49 +102,59 @@ type GetIdentityAuthenticatorsOK struct {
 
 // IsSuccess returns true when this get identity authenticators o k response has a 2xx status code
 func (o *GetIdentityAuthenticatorsOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this get identity authenticators o k response has a 3xx status code
 func (o *GetIdentityAuthenticatorsOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get identity authenticators o k response has a 4xx status code
 func (o *GetIdentityAuthenticatorsOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this get identity authenticators o k response has a 5xx status code
 func (o *GetIdentityAuthenticatorsOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get identity authenticators o k response a status code equal to that given
 func (o *GetIdentityAuthenticatorsOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the get identity authenticators o k response
 func (o *GetIdentityAuthenticatorsOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *GetIdentityAuthenticatorsOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/authenticators][%d] getIdentityAuthenticatorsOK %s", 200, payload)
 }
 
 func (o *GetIdentityAuthenticatorsOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/authenticators][%d] getIdentityAuthenticatorsOK %s", 200, payload)
 }
 
 func (o *GetIdentityAuthenticatorsOK) GetPayload() *rest_model.ListAuthenticatorsEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetIdentityAuthenticatorsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListAuthenticatorsEnvelope)
 
@@ -155,6 +168,7 @@ func (o *GetIdentityAuthenticatorsOK) readResponse(response runtime.ClientRespon
 
 // NewGetIdentityAuthenticatorsUnauthorized creates a GetIdentityAuthenticatorsUnauthorized with default headers values
 func NewGetIdentityAuthenticatorsUnauthorized() *GetIdentityAuthenticatorsUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityAuthenticatorsUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type GetIdentityAuthenticatorsUnauthorized struct {
 
 // IsSuccess returns true when this get identity authenticators unauthorized response has a 2xx status code
 func (o *GetIdentityAuthenticatorsUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this get identity authenticators unauthorized response has a 3xx status code
 func (o *GetIdentityAuthenticatorsUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get identity authenticators unauthorized response has a 4xx status code
 func (o *GetIdentityAuthenticatorsUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this get identity authenticators unauthorized response has a 5xx status code
 func (o *GetIdentityAuthenticatorsUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get identity authenticators unauthorized response a status code equal to that given
 func (o *GetIdentityAuthenticatorsUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the get identity authenticators unauthorized response
 func (o *GetIdentityAuthenticatorsUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *GetIdentityAuthenticatorsUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/authenticators][%d] getIdentityAuthenticatorsUnauthorized %s", 401, payload)
 }
 
 func (o *GetIdentityAuthenticatorsUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/authenticators][%d] getIdentityAuthenticatorsUnauthorized %s", 401, payload)
 }
 
 func (o *GetIdentityAuthenticatorsUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetIdentityAuthenticatorsUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *GetIdentityAuthenticatorsUnauthorized) readResponse(response runtime.Cl
 
 // NewGetIdentityAuthenticatorsNotFound creates a GetIdentityAuthenticatorsNotFound with default headers values
 func NewGetIdentityAuthenticatorsNotFound() *GetIdentityAuthenticatorsNotFound {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityAuthenticatorsNotFound{}
 }
 
@@ -239,49 +264,59 @@ type GetIdentityAuthenticatorsNotFound struct {
 
 // IsSuccess returns true when this get identity authenticators not found response has a 2xx status code
 func (o *GetIdentityAuthenticatorsNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this get identity authenticators not found response has a 3xx status code
 func (o *GetIdentityAuthenticatorsNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get identity authenticators not found response has a 4xx status code
 func (o *GetIdentityAuthenticatorsNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this get identity authenticators not found response has a 5xx status code
 func (o *GetIdentityAuthenticatorsNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get identity authenticators not found response a status code equal to that given
 func (o *GetIdentityAuthenticatorsNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the get identity authenticators not found response
 func (o *GetIdentityAuthenticatorsNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *GetIdentityAuthenticatorsNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/authenticators][%d] getIdentityAuthenticatorsNotFound %s", 404, payload)
 }
 
 func (o *GetIdentityAuthenticatorsNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/authenticators][%d] getIdentityAuthenticatorsNotFound %s", 404, payload)
 }
 
 func (o *GetIdentityAuthenticatorsNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetIdentityAuthenticatorsNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *GetIdentityAuthenticatorsNotFound) readResponse(response runtime.Client
 
 // NewGetIdentityAuthenticatorsTooManyRequests creates a GetIdentityAuthenticatorsTooManyRequests with default headers values
 func NewGetIdentityAuthenticatorsTooManyRequests() *GetIdentityAuthenticatorsTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityAuthenticatorsTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type GetIdentityAuthenticatorsTooManyRequests struct {
 
 // IsSuccess returns true when this get identity authenticators too many requests response has a 2xx status code
 func (o *GetIdentityAuthenticatorsTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this get identity authenticators too many requests response has a 3xx status code
 func (o *GetIdentityAuthenticatorsTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get identity authenticators too many requests response has a 4xx status code
 func (o *GetIdentityAuthenticatorsTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this get identity authenticators too many requests response has a 5xx status code
 func (o *GetIdentityAuthenticatorsTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get identity authenticators too many requests response a status code equal to that given
 func (o *GetIdentityAuthenticatorsTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the get identity authenticators too many requests response
 func (o *GetIdentityAuthenticatorsTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *GetIdentityAuthenticatorsTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/authenticators][%d] getIdentityAuthenticatorsTooManyRequests %s", 429, payload)
 }
 
 func (o *GetIdentityAuthenticatorsTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/authenticators][%d] getIdentityAuthenticatorsTooManyRequests %s", 429, payload)
 }
 
 func (o *GetIdentityAuthenticatorsTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetIdentityAuthenticatorsTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *GetIdentityAuthenticatorsTooManyRequests) readResponse(response runtime
 
 // NewGetIdentityAuthenticatorsServiceUnavailable creates a GetIdentityAuthenticatorsServiceUnavailable with default headers values
 func NewGetIdentityAuthenticatorsServiceUnavailable() *GetIdentityAuthenticatorsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityAuthenticatorsServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type GetIdentityAuthenticatorsServiceUnavailable struct {
 
 // IsSuccess returns true when this get identity authenticators service unavailable response has a 2xx status code
 func (o *GetIdentityAuthenticatorsServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this get identity authenticators service unavailable response has a 3xx status code
 func (o *GetIdentityAuthenticatorsServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get identity authenticators service unavailable response has a 4xx status code
 func (o *GetIdentityAuthenticatorsServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this get identity authenticators service unavailable response has a 5xx status code
 func (o *GetIdentityAuthenticatorsServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this get identity authenticators service unavailable response a status code equal to that given
 func (o *GetIdentityAuthenticatorsServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the get identity authenticators service unavailable response
 func (o *GetIdentityAuthenticatorsServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *GetIdentityAuthenticatorsServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/authenticators][%d] getIdentityAuthenticatorsServiceUnavailable %s", 503, payload)
 }
 
 func (o *GetIdentityAuthenticatorsServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/authenticators][%d] getIdentityAuthenticatorsServiceUnavailable %s", 503, payload)
 }
 
 func (o *GetIdentityAuthenticatorsServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetIdentityAuthenticatorsServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

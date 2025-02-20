@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -51,6 +52,7 @@ type CurrentAPISessionServiceUpdateList struct {
 
 // Validate validates this current Api session service update list
 func (m *CurrentAPISessionServiceUpdateList) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateLastChangeAt(formats); err != nil {
@@ -64,6 +66,7 @@ func (m *CurrentAPISessionServiceUpdateList) Validate(formats strfmt.Registry) e
 }
 
 func (m *CurrentAPISessionServiceUpdateList) validateLastChangeAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("lastChangeAt", "body", m.LastChangeAt); err != nil {
 		return err
@@ -78,11 +81,13 @@ func (m *CurrentAPISessionServiceUpdateList) validateLastChangeAt(formats strfmt
 
 // ContextValidate validates this current Api session service update list based on context it is used
 func (m *CurrentAPISessionServiceUpdateList) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *CurrentAPISessionServiceUpdateList) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -91,6 +96,7 @@ func (m *CurrentAPISessionServiceUpdateList) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *CurrentAPISessionServiceUpdateList) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res CurrentAPISessionServiceUpdateList
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"bytes"
 	"context"
 	"encoding/json"
@@ -82,45 +83,54 @@ type postureCheckPatch struct {
 
 // Name gets the name of this polymorphic type
 func (m *postureCheckPatch) Name() string {
+    logtrace.LogWithFunctionName()
 	return m.nameField
 }
 
 // SetName sets the name of this polymorphic type
 func (m *postureCheckPatch) SetName(val string) {
+    logtrace.LogWithFunctionName()
 	m.nameField = val
 }
 
 // RoleAttributes gets the role attributes of this polymorphic type
 func (m *postureCheckPatch) RoleAttributes() *Attributes {
+    logtrace.LogWithFunctionName()
 	return m.roleAttributesField
 }
 
 // SetRoleAttributes sets the role attributes of this polymorphic type
 func (m *postureCheckPatch) SetRoleAttributes(val *Attributes) {
+    logtrace.LogWithFunctionName()
 	m.roleAttributesField = val
 }
 
 // Tags gets the tags of this polymorphic type
 func (m *postureCheckPatch) Tags() *Tags {
+    logtrace.LogWithFunctionName()
 	return m.tagsField
 }
 
 // SetTags sets the tags of this polymorphic type
 func (m *postureCheckPatch) SetTags(val *Tags) {
+    logtrace.LogWithFunctionName()
 	m.tagsField = val
 }
 
 // TypeID gets the type Id of this polymorphic type
 func (m *postureCheckPatch) TypeID() PostureCheckType {
+    logtrace.LogWithFunctionName()
 	return "postureCheckPatch"
 }
 
 // SetTypeID sets the type Id of this polymorphic type
 func (m *postureCheckPatch) SetTypeID(val PostureCheckType) {
+    logtrace.LogWithFunctionName()
 }
 
 // UnmarshalPostureCheckPatchSlice unmarshals polymorphic slices of PostureCheckPatch
 func UnmarshalPostureCheckPatchSlice(reader io.Reader, consumer runtime.Consumer) ([]PostureCheckPatch, error) {
+    logtrace.LogWithFunctionName()
 	var elements []json.RawMessage
 	if err := consumer.Consume(reader, &elements); err != nil {
 		return nil, err
@@ -139,6 +149,7 @@ func UnmarshalPostureCheckPatchSlice(reader io.Reader, consumer runtime.Consumer
 
 // UnmarshalPostureCheckPatch unmarshals polymorphic PostureCheckPatch
 func UnmarshalPostureCheckPatch(reader io.Reader, consumer runtime.Consumer) (PostureCheckPatch, error) {
+    logtrace.LogWithFunctionName()
 	// we need to read this twice, so first into a buffer
 	data, err := io.ReadAll(reader)
 	if err != nil {
@@ -148,6 +159,7 @@ func UnmarshalPostureCheckPatch(reader io.Reader, consumer runtime.Consumer) (Po
 }
 
 func unmarshalPostureCheckPatch(data []byte, consumer runtime.Consumer) (PostureCheckPatch, error) {
+    logtrace.LogWithFunctionName()
 	buf := bytes.NewBuffer(data)
 	buf2 := bytes.NewBuffer(data)
 
@@ -213,6 +225,7 @@ func unmarshalPostureCheckPatch(data []byte, consumer runtime.Consumer) (Posture
 
 // Validate validates this posture check patch
 func (m *postureCheckPatch) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateRoleAttributes(formats); err != nil {
@@ -230,6 +243,7 @@ func (m *postureCheckPatch) Validate(formats strfmt.Registry) error {
 }
 
 func (m *postureCheckPatch) validateRoleAttributes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.RoleAttributes()) { // not required
 		return nil
 	}
@@ -249,6 +263,7 @@ func (m *postureCheckPatch) validateRoleAttributes(formats strfmt.Registry) erro
 }
 
 func (m *postureCheckPatch) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags()) { // not required
 		return nil
 	}
@@ -269,6 +284,7 @@ func (m *postureCheckPatch) validateTags(formats strfmt.Registry) error {
 
 // ContextValidate validate this posture check patch based on the context it is used
 func (m *postureCheckPatch) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateRoleAttributes(ctx, formats); err != nil {
@@ -290,6 +306,7 @@ func (m *postureCheckPatch) ContextValidate(ctx context.Context, formats strfmt.
 }
 
 func (m *postureCheckPatch) contextValidateRoleAttributes(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.RoleAttributes() != nil {
 		if err := m.RoleAttributes().ContextValidate(ctx, formats); err != nil {
@@ -306,6 +323,7 @@ func (m *postureCheckPatch) contextValidateRoleAttributes(ctx context.Context, f
 }
 
 func (m *postureCheckPatch) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags() != nil {
 
@@ -327,6 +345,7 @@ func (m *postureCheckPatch) contextValidateTags(ctx context.Context, formats str
 }
 
 func (m *postureCheckPatch) contextValidateTypeID(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.TypeID().ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {

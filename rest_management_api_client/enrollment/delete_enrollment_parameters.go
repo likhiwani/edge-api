@@ -30,6 +30,7 @@ package enrollment
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDeleteEnrollmentParams() *DeleteEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteEnrollmentParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDeleteEnrollmentParams() *DeleteEnrollmentParams {
 // NewDeleteEnrollmentParamsWithTimeout creates a new DeleteEnrollmentParams object
 // with the ability to set a timeout on a request.
 func NewDeleteEnrollmentParamsWithTimeout(timeout time.Duration) *DeleteEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteEnrollmentParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDeleteEnrollmentParamsWithTimeout(timeout time.Duration) *DeleteEnrollme
 // NewDeleteEnrollmentParamsWithContext creates a new DeleteEnrollmentParams object
 // with the ability to set a context for a request.
 func NewDeleteEnrollmentParamsWithContext(ctx context.Context) *DeleteEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteEnrollmentParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDeleteEnrollmentParamsWithContext(ctx context.Context) *DeleteEnrollment
 // NewDeleteEnrollmentParamsWithHTTPClient creates a new DeleteEnrollmentParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDeleteEnrollmentParamsWithHTTPClient(client *http.Client) *DeleteEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteEnrollmentParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DeleteEnrollmentParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteEnrollmentParams) WithDefaults() *DeleteEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DeleteEnrollmentParams) WithDefaults() *DeleteEnrollmentParams {
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteEnrollmentParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the delete enrollment params
 func (o *DeleteEnrollmentParams) WithTimeout(timeout time.Duration) *DeleteEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the delete enrollment params
 func (o *DeleteEnrollmentParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the delete enrollment params
 func (o *DeleteEnrollmentParams) WithContext(ctx context.Context) *DeleteEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the delete enrollment params
 func (o *DeleteEnrollmentParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the delete enrollment params
 func (o *DeleteEnrollmentParams) WithHTTPClient(client *http.Client) *DeleteEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the delete enrollment params
 func (o *DeleteEnrollmentParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the delete enrollment params
 func (o *DeleteEnrollmentParams) WithID(id string) *DeleteEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the delete enrollment params
 func (o *DeleteEnrollmentParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DeleteEnrollmentParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

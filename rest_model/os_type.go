@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"encoding/json"
 
@@ -44,11 +45,13 @@ import (
 type OsType string
 
 func NewOsType(value OsType) *OsType {
+    logtrace.LogWithFunctionName()
 	return &value
 }
 
 // Pointer returns a pointer to a freshly-allocated OsType.
 func (m OsType) Pointer() *OsType {
+    logtrace.LogWithFunctionName()
 	return &m
 }
 
@@ -77,6 +80,7 @@ const (
 var osTypeEnum []interface{}
 
 func init() {
+    logtrace.LogWithFunctionName()
 	var res []OsType
 	if err := json.Unmarshal([]byte(`["Windows","WindowsServer","Android","iOS","Linux","macOS"]`), &res); err != nil {
 		panic(err)
@@ -87,6 +91,7 @@ func init() {
 }
 
 func (m OsType) validateOsTypeEnum(path, location string, value OsType) error {
+    logtrace.LogWithFunctionName()
 	if err := validate.EnumCase(path, location, value, osTypeEnum, true); err != nil {
 		return err
 	}
@@ -95,6 +100,7 @@ func (m OsType) validateOsTypeEnum(path, location string, value OsType) error {
 
 // Validate validates this os type
 func (m OsType) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// value enum
@@ -110,5 +116,6 @@ func (m OsType) Validate(formats strfmt.Registry) error {
 
 // ContextValidate validates this os type based on context it is used
 func (m OsType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }

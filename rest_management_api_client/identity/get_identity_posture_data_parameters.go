@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewGetIdentityPostureDataParams() *GetIdentityPostureDataParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityPostureDataParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewGetIdentityPostureDataParams() *GetIdentityPostureDataParams {
 // NewGetIdentityPostureDataParamsWithTimeout creates a new GetIdentityPostureDataParams object
 // with the ability to set a timeout on a request.
 func NewGetIdentityPostureDataParamsWithTimeout(timeout time.Duration) *GetIdentityPostureDataParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityPostureDataParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewGetIdentityPostureDataParamsWithTimeout(timeout time.Duration) *GetIdent
 // NewGetIdentityPostureDataParamsWithContext creates a new GetIdentityPostureDataParams object
 // with the ability to set a context for a request.
 func NewGetIdentityPostureDataParamsWithContext(ctx context.Context) *GetIdentityPostureDataParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityPostureDataParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewGetIdentityPostureDataParamsWithContext(ctx context.Context) *GetIdentit
 // NewGetIdentityPostureDataParamsWithHTTPClient creates a new GetIdentityPostureDataParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewGetIdentityPostureDataParamsWithHTTPClient(client *http.Client) *GetIdentityPostureDataParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityPostureDataParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type GetIdentityPostureDataParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *GetIdentityPostureDataParams) WithDefaults() *GetIdentityPostureDataParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *GetIdentityPostureDataParams) WithDefaults() *GetIdentityPostureDataPar
 //
 // All values with no default are reset to their zero value.
 func (o *GetIdentityPostureDataParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the get identity posture data params
 func (o *GetIdentityPostureDataParams) WithTimeout(timeout time.Duration) *GetIdentityPostureDataParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the get identity posture data params
 func (o *GetIdentityPostureDataParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the get identity posture data params
 func (o *GetIdentityPostureDataParams) WithContext(ctx context.Context) *GetIdentityPostureDataParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the get identity posture data params
 func (o *GetIdentityPostureDataParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the get identity posture data params
 func (o *GetIdentityPostureDataParams) WithHTTPClient(client *http.Client) *GetIdentityPostureDataParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the get identity posture data params
 func (o *GetIdentityPostureDataParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the get identity posture data params
 func (o *GetIdentityPostureDataParams) WithID(id string) *GetIdentityPostureDataParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the get identity posture data params
 func (o *GetIdentityPostureDataParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *GetIdentityPostureDataParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

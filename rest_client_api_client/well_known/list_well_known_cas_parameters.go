@@ -30,6 +30,7 @@ package well_known
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListWellKnownCasParams() *ListWellKnownCasParams {
+    logtrace.LogWithFunctionName()
 	return &ListWellKnownCasParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewListWellKnownCasParams() *ListWellKnownCasParams {
 // NewListWellKnownCasParamsWithTimeout creates a new ListWellKnownCasParams object
 // with the ability to set a timeout on a request.
 func NewListWellKnownCasParamsWithTimeout(timeout time.Duration) *ListWellKnownCasParams {
+    logtrace.LogWithFunctionName()
 	return &ListWellKnownCasParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewListWellKnownCasParamsWithTimeout(timeout time.Duration) *ListWellKnownC
 // NewListWellKnownCasParamsWithContext creates a new ListWellKnownCasParams object
 // with the ability to set a context for a request.
 func NewListWellKnownCasParamsWithContext(ctx context.Context) *ListWellKnownCasParams {
+    logtrace.LogWithFunctionName()
 	return &ListWellKnownCasParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewListWellKnownCasParamsWithContext(ctx context.Context) *ListWellKnownCas
 // NewListWellKnownCasParamsWithHTTPClient creates a new ListWellKnownCasParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListWellKnownCasParamsWithHTTPClient(client *http.Client) *ListWellKnownCasParams {
+    logtrace.LogWithFunctionName()
 	return &ListWellKnownCasParams{
 		HTTPClient: client,
 	}
@@ -93,6 +98,7 @@ type ListWellKnownCasParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListWellKnownCasParams) WithDefaults() *ListWellKnownCasParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -101,44 +107,52 @@ func (o *ListWellKnownCasParams) WithDefaults() *ListWellKnownCasParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListWellKnownCasParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list well known cas params
 func (o *ListWellKnownCasParams) WithTimeout(timeout time.Duration) *ListWellKnownCasParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list well known cas params
 func (o *ListWellKnownCasParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list well known cas params
 func (o *ListWellKnownCasParams) WithContext(ctx context.Context) *ListWellKnownCasParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list well known cas params
 func (o *ListWellKnownCasParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list well known cas params
 func (o *ListWellKnownCasParams) WithHTTPClient(client *http.Client) *ListWellKnownCasParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list well known cas params
 func (o *ListWellKnownCasParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListWellKnownCasParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"strconv"
 
@@ -50,6 +51,7 @@ type SessionManagementDetail struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *SessionManagementDetail) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 SessionDetail
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -72,6 +74,7 @@ func (m *SessionManagementDetail) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m SessionManagementDetail) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.SessionDetail)
@@ -95,6 +98,7 @@ func (m SessionManagementDetail) MarshalJSON() ([]byte, error) {
 
 // Validate validates this session management detail
 func (m *SessionManagementDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with SessionDetail
@@ -113,6 +117,7 @@ func (m *SessionManagementDetail) Validate(formats strfmt.Registry) error {
 }
 
 func (m *SessionManagementDetail) validateServicePolicies(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.ServicePolicies) { // not required
 		return nil
@@ -141,6 +146,7 @@ func (m *SessionManagementDetail) validateServicePolicies(formats strfmt.Registr
 
 // ContextValidate validate this session management detail based on the context it is used
 func (m *SessionManagementDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with SessionDetail
@@ -159,6 +165,7 @@ func (m *SessionManagementDetail) ContextValidate(ctx context.Context, formats s
 }
 
 func (m *SessionManagementDetail) contextValidateServicePolicies(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	for i := 0; i < len(m.ServicePolicies); i++ {
 
@@ -185,6 +192,7 @@ func (m *SessionManagementDetail) contextValidateServicePolicies(ctx context.Con
 
 // MarshalBinary interface implementation
 func (m *SessionManagementDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -193,6 +201,7 @@ func (m *SessionManagementDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *SessionManagementDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res SessionManagementDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

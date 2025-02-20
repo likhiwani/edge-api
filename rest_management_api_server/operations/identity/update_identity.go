@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type UpdateIdentityHandlerFunc func(UpdateIdentityParams, interface{}) middlewar
 
 // Handle executing the request and returning a response
 func (fn UpdateIdentityHandlerFunc) Handle(params UpdateIdentityParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type UpdateIdentityHandler interface {
 
 // NewUpdateIdentity creates a new http.Handler for the update identity operation
 func NewUpdateIdentity(ctx *middleware.Context, handler UpdateIdentityHandler) *UpdateIdentity {
+    logtrace.LogWithFunctionName()
 	return &UpdateIdentity{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type UpdateIdentity struct {
 }
 
 func (o *UpdateIdentity) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

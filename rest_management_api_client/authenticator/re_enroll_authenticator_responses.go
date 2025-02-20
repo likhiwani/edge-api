@@ -30,6 +30,7 @@ package authenticator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ReEnrollAuthenticatorReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ReEnrollAuthenticatorReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 201:
 		result := NewReEnrollAuthenticatorCreated()
@@ -85,6 +87,7 @@ func (o *ReEnrollAuthenticatorReader) ReadResponse(response runtime.ClientRespon
 
 // NewReEnrollAuthenticatorCreated creates a ReEnrollAuthenticatorCreated with default headers values
 func NewReEnrollAuthenticatorCreated() *ReEnrollAuthenticatorCreated {
+    logtrace.LogWithFunctionName()
 	return &ReEnrollAuthenticatorCreated{}
 }
 
@@ -99,49 +102,59 @@ type ReEnrollAuthenticatorCreated struct {
 
 // IsSuccess returns true when this re enroll authenticator created response has a 2xx status code
 func (o *ReEnrollAuthenticatorCreated) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this re enroll authenticator created response has a 3xx status code
 func (o *ReEnrollAuthenticatorCreated) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this re enroll authenticator created response has a 4xx status code
 func (o *ReEnrollAuthenticatorCreated) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this re enroll authenticator created response has a 5xx status code
 func (o *ReEnrollAuthenticatorCreated) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this re enroll authenticator created response a status code equal to that given
 func (o *ReEnrollAuthenticatorCreated) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 201
 }
 
 // Code gets the status code for the re enroll authenticator created response
 func (o *ReEnrollAuthenticatorCreated) Code() int {
+    logtrace.LogWithFunctionName()
 	return 201
 }
 
 func (o *ReEnrollAuthenticatorCreated) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /authenticators/{id}/re-enroll][%d] reEnrollAuthenticatorCreated %s", 201, payload)
 }
 
 func (o *ReEnrollAuthenticatorCreated) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /authenticators/{id}/re-enroll][%d] reEnrollAuthenticatorCreated %s", 201, payload)
 }
 
 func (o *ReEnrollAuthenticatorCreated) GetPayload() *rest_model.CreateEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ReEnrollAuthenticatorCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.CreateEnvelope)
 
@@ -155,6 +168,7 @@ func (o *ReEnrollAuthenticatorCreated) readResponse(response runtime.ClientRespo
 
 // NewReEnrollAuthenticatorUnauthorized creates a ReEnrollAuthenticatorUnauthorized with default headers values
 func NewReEnrollAuthenticatorUnauthorized() *ReEnrollAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &ReEnrollAuthenticatorUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type ReEnrollAuthenticatorUnauthorized struct {
 
 // IsSuccess returns true when this re enroll authenticator unauthorized response has a 2xx status code
 func (o *ReEnrollAuthenticatorUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this re enroll authenticator unauthorized response has a 3xx status code
 func (o *ReEnrollAuthenticatorUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this re enroll authenticator unauthorized response has a 4xx status code
 func (o *ReEnrollAuthenticatorUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this re enroll authenticator unauthorized response has a 5xx status code
 func (o *ReEnrollAuthenticatorUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this re enroll authenticator unauthorized response a status code equal to that given
 func (o *ReEnrollAuthenticatorUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the re enroll authenticator unauthorized response
 func (o *ReEnrollAuthenticatorUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *ReEnrollAuthenticatorUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /authenticators/{id}/re-enroll][%d] reEnrollAuthenticatorUnauthorized %s", 401, payload)
 }
 
 func (o *ReEnrollAuthenticatorUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /authenticators/{id}/re-enroll][%d] reEnrollAuthenticatorUnauthorized %s", 401, payload)
 }
 
 func (o *ReEnrollAuthenticatorUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ReEnrollAuthenticatorUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *ReEnrollAuthenticatorUnauthorized) readResponse(response runtime.Client
 
 // NewReEnrollAuthenticatorNotFound creates a ReEnrollAuthenticatorNotFound with default headers values
 func NewReEnrollAuthenticatorNotFound() *ReEnrollAuthenticatorNotFound {
+    logtrace.LogWithFunctionName()
 	return &ReEnrollAuthenticatorNotFound{}
 }
 
@@ -239,49 +264,59 @@ type ReEnrollAuthenticatorNotFound struct {
 
 // IsSuccess returns true when this re enroll authenticator not found response has a 2xx status code
 func (o *ReEnrollAuthenticatorNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this re enroll authenticator not found response has a 3xx status code
 func (o *ReEnrollAuthenticatorNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this re enroll authenticator not found response has a 4xx status code
 func (o *ReEnrollAuthenticatorNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this re enroll authenticator not found response has a 5xx status code
 func (o *ReEnrollAuthenticatorNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this re enroll authenticator not found response a status code equal to that given
 func (o *ReEnrollAuthenticatorNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the re enroll authenticator not found response
 func (o *ReEnrollAuthenticatorNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *ReEnrollAuthenticatorNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /authenticators/{id}/re-enroll][%d] reEnrollAuthenticatorNotFound %s", 404, payload)
 }
 
 func (o *ReEnrollAuthenticatorNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /authenticators/{id}/re-enroll][%d] reEnrollAuthenticatorNotFound %s", 404, payload)
 }
 
 func (o *ReEnrollAuthenticatorNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ReEnrollAuthenticatorNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *ReEnrollAuthenticatorNotFound) readResponse(response runtime.ClientResp
 
 // NewReEnrollAuthenticatorTooManyRequests creates a ReEnrollAuthenticatorTooManyRequests with default headers values
 func NewReEnrollAuthenticatorTooManyRequests() *ReEnrollAuthenticatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &ReEnrollAuthenticatorTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type ReEnrollAuthenticatorTooManyRequests struct {
 
 // IsSuccess returns true when this re enroll authenticator too many requests response has a 2xx status code
 func (o *ReEnrollAuthenticatorTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this re enroll authenticator too many requests response has a 3xx status code
 func (o *ReEnrollAuthenticatorTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this re enroll authenticator too many requests response has a 4xx status code
 func (o *ReEnrollAuthenticatorTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this re enroll authenticator too many requests response has a 5xx status code
 func (o *ReEnrollAuthenticatorTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this re enroll authenticator too many requests response a status code equal to that given
 func (o *ReEnrollAuthenticatorTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the re enroll authenticator too many requests response
 func (o *ReEnrollAuthenticatorTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *ReEnrollAuthenticatorTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /authenticators/{id}/re-enroll][%d] reEnrollAuthenticatorTooManyRequests %s", 429, payload)
 }
 
 func (o *ReEnrollAuthenticatorTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /authenticators/{id}/re-enroll][%d] reEnrollAuthenticatorTooManyRequests %s", 429, payload)
 }
 
 func (o *ReEnrollAuthenticatorTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ReEnrollAuthenticatorTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *ReEnrollAuthenticatorTooManyRequests) readResponse(response runtime.Cli
 
 // NewReEnrollAuthenticatorServiceUnavailable creates a ReEnrollAuthenticatorServiceUnavailable with default headers values
 func NewReEnrollAuthenticatorServiceUnavailable() *ReEnrollAuthenticatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &ReEnrollAuthenticatorServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type ReEnrollAuthenticatorServiceUnavailable struct {
 
 // IsSuccess returns true when this re enroll authenticator service unavailable response has a 2xx status code
 func (o *ReEnrollAuthenticatorServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this re enroll authenticator service unavailable response has a 3xx status code
 func (o *ReEnrollAuthenticatorServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this re enroll authenticator service unavailable response has a 4xx status code
 func (o *ReEnrollAuthenticatorServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this re enroll authenticator service unavailable response has a 5xx status code
 func (o *ReEnrollAuthenticatorServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this re enroll authenticator service unavailable response a status code equal to that given
 func (o *ReEnrollAuthenticatorServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the re enroll authenticator service unavailable response
 func (o *ReEnrollAuthenticatorServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *ReEnrollAuthenticatorServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /authenticators/{id}/re-enroll][%d] reEnrollAuthenticatorServiceUnavailable %s", 503, payload)
 }
 
 func (o *ReEnrollAuthenticatorServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /authenticators/{id}/re-enroll][%d] reEnrollAuthenticatorServiceUnavailable %s", 503, payload)
 }
 
 func (o *ReEnrollAuthenticatorServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ReEnrollAuthenticatorServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

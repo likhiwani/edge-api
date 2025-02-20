@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDetailMfaQrCodeParams() *DetailMfaQrCodeParams {
+    logtrace.LogWithFunctionName()
 	return &DetailMfaQrCodeParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDetailMfaQrCodeParams() *DetailMfaQrCodeParams {
 // NewDetailMfaQrCodeParamsWithTimeout creates a new DetailMfaQrCodeParams object
 // with the ability to set a timeout on a request.
 func NewDetailMfaQrCodeParamsWithTimeout(timeout time.Duration) *DetailMfaQrCodeParams {
+    logtrace.LogWithFunctionName()
 	return &DetailMfaQrCodeParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDetailMfaQrCodeParamsWithTimeout(timeout time.Duration) *DetailMfaQrCode
 // NewDetailMfaQrCodeParamsWithContext creates a new DetailMfaQrCodeParams object
 // with the ability to set a context for a request.
 func NewDetailMfaQrCodeParamsWithContext(ctx context.Context) *DetailMfaQrCodeParams {
+    logtrace.LogWithFunctionName()
 	return &DetailMfaQrCodeParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDetailMfaQrCodeParamsWithContext(ctx context.Context) *DetailMfaQrCodePa
 // NewDetailMfaQrCodeParamsWithHTTPClient creates a new DetailMfaQrCodeParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDetailMfaQrCodeParamsWithHTTPClient(client *http.Client) *DetailMfaQrCodeParams {
+    logtrace.LogWithFunctionName()
 	return &DetailMfaQrCodeParams{
 		HTTPClient: client,
 	}
@@ -93,6 +98,7 @@ type DetailMfaQrCodeParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailMfaQrCodeParams) WithDefaults() *DetailMfaQrCodeParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -101,44 +107,52 @@ func (o *DetailMfaQrCodeParams) WithDefaults() *DetailMfaQrCodeParams {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailMfaQrCodeParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the detail mfa qr code params
 func (o *DetailMfaQrCodeParams) WithTimeout(timeout time.Duration) *DetailMfaQrCodeParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the detail mfa qr code params
 func (o *DetailMfaQrCodeParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the detail mfa qr code params
 func (o *DetailMfaQrCodeParams) WithContext(ctx context.Context) *DetailMfaQrCodeParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the detail mfa qr code params
 func (o *DetailMfaQrCodeParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the detail mfa qr code params
 func (o *DetailMfaQrCodeParams) WithHTTPClient(client *http.Client) *DetailMfaQrCodeParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the detail mfa qr code params
 func (o *DetailMfaQrCodeParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DetailMfaQrCodeParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

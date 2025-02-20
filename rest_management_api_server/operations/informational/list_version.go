@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type ListVersionHandlerFunc func(ListVersionParams) middleware.Responder
 
 // Handle executing the request and returning a response
 func (fn ListVersionHandlerFunc) Handle(params ListVersionParams) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params)
 }
 
@@ -50,6 +52,7 @@ type ListVersionHandler interface {
 
 // NewListVersion creates a new http.Handler for the list version operation
 func NewListVersion(ctx *middleware.Context, handler ListVersionHandler) *ListVersion {
+    logtrace.LogWithFunctionName()
 	return &ListVersion{Context: ctx, Handler: handler}
 }
 
@@ -64,6 +67,7 @@ type ListVersion struct {
 }
 
 func (o *ListVersion) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

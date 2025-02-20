@@ -30,6 +30,7 @@ package api_session
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"errors"
 	"net/url"
 	golangswaggerpaths "path"
@@ -52,6 +53,7 @@ type ListAPISessionsURL struct {
 // base path specified in the swagger spec.
 // When the value of the base path is an empty string
 func (o *ListAPISessionsURL) WithBasePath(bp string) *ListAPISessionsURL {
+    logtrace.LogWithFunctionName()
 	o.SetBasePath(bp)
 	return o
 }
@@ -60,11 +62,13 @@ func (o *ListAPISessionsURL) WithBasePath(bp string) *ListAPISessionsURL {
 // base path specified in the swagger spec.
 // When the value of the base path is an empty string
 func (o *ListAPISessionsURL) SetBasePath(bp string) {
+    logtrace.LogWithFunctionName()
 	o._basePath = bp
 }
 
 // Build a url path and query string
 func (o *ListAPISessionsURL) Build() (*url.URL, error) {
+    logtrace.LogWithFunctionName()
 	var _result url.URL
 
 	var _path = "/api-sessions"
@@ -108,6 +112,7 @@ func (o *ListAPISessionsURL) Build() (*url.URL, error) {
 
 // Must is a helper function to panic when the url builder returns an error
 func (o *ListAPISessionsURL) Must(u *url.URL, err error) *url.URL {
+    logtrace.LogWithFunctionName()
 	if err != nil {
 		panic(err)
 	}
@@ -119,11 +124,13 @@ func (o *ListAPISessionsURL) Must(u *url.URL, err error) *url.URL {
 
 // String returns the string representation of the path with query string
 func (o *ListAPISessionsURL) String() string {
+    logtrace.LogWithFunctionName()
 	return o.Must(o.Build()).String()
 }
 
 // BuildFull builds a full url with scheme, host, path and query string
 func (o *ListAPISessionsURL) BuildFull(scheme, host string) (*url.URL, error) {
+    logtrace.LogWithFunctionName()
 	if scheme == "" {
 		return nil, errors.New("scheme is required for a full url on ListAPISessionsURL")
 	}
@@ -143,5 +150,6 @@ func (o *ListAPISessionsURL) BuildFull(scheme, host string) (*url.URL, error) {
 
 // StringFull returns the string representation of a complete url
 func (o *ListAPISessionsURL) StringFull(scheme, host string) string {
+    logtrace.LogWithFunctionName()
 	return o.Must(o.BuildFull(scheme, host)).String()
 }

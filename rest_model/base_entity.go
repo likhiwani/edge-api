@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -67,6 +68,7 @@ type BaseEntity struct {
 
 // Validate validates this base entity
 func (m *BaseEntity) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateLinks(formats); err != nil {
@@ -96,6 +98,7 @@ func (m *BaseEntity) Validate(formats strfmt.Registry) error {
 }
 
 func (m *BaseEntity) validateLinks(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("_links", "body", m.Links); err != nil {
 		return err
@@ -116,6 +119,7 @@ func (m *BaseEntity) validateLinks(formats strfmt.Registry) error {
 }
 
 func (m *BaseEntity) validateCreatedAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("createdAt", "body", m.CreatedAt); err != nil {
 		return err
@@ -129,6 +133,7 @@ func (m *BaseEntity) validateCreatedAt(formats strfmt.Registry) error {
 }
 
 func (m *BaseEntity) validateID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("id", "body", m.ID); err != nil {
 		return err
@@ -138,6 +143,7 @@ func (m *BaseEntity) validateID(formats strfmt.Registry) error {
 }
 
 func (m *BaseEntity) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -157,6 +163,7 @@ func (m *BaseEntity) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *BaseEntity) validateUpdatedAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("updatedAt", "body", m.UpdatedAt); err != nil {
 		return err
@@ -171,6 +178,7 @@ func (m *BaseEntity) validateUpdatedAt(formats strfmt.Registry) error {
 
 // ContextValidate validate this base entity based on the context it is used
 func (m *BaseEntity) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateLinks(ctx, formats); err != nil {
@@ -188,6 +196,7 @@ func (m *BaseEntity) ContextValidate(ctx context.Context, formats strfmt.Registr
 }
 
 func (m *BaseEntity) contextValidateLinks(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.Links.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -202,6 +211,7 @@ func (m *BaseEntity) contextValidateLinks(ctx context.Context, formats strfmt.Re
 }
 
 func (m *BaseEntity) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -224,6 +234,7 @@ func (m *BaseEntity) contextValidateTags(ctx context.Context, formats strfmt.Reg
 
 // MarshalBinary interface implementation
 func (m *BaseEntity) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -232,6 +243,7 @@ func (m *BaseEntity) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *BaseEntity) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res BaseEntity
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

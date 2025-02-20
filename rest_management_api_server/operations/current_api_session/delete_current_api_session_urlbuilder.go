@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"errors"
 	"net/url"
 	golangswaggerpaths "path"
@@ -44,6 +45,7 @@ type DeleteCurrentAPISessionURL struct {
 // base path specified in the swagger spec.
 // When the value of the base path is an empty string
 func (o *DeleteCurrentAPISessionURL) WithBasePath(bp string) *DeleteCurrentAPISessionURL {
+    logtrace.LogWithFunctionName()
 	o.SetBasePath(bp)
 	return o
 }
@@ -52,11 +54,13 @@ func (o *DeleteCurrentAPISessionURL) WithBasePath(bp string) *DeleteCurrentAPISe
 // base path specified in the swagger spec.
 // When the value of the base path is an empty string
 func (o *DeleteCurrentAPISessionURL) SetBasePath(bp string) {
+    logtrace.LogWithFunctionName()
 	o._basePath = bp
 }
 
 // Build a url path and query string
 func (o *DeleteCurrentAPISessionURL) Build() (*url.URL, error) {
+    logtrace.LogWithFunctionName()
 	var _result url.URL
 
 	var _path = "/current-api-session"
@@ -72,6 +76,7 @@ func (o *DeleteCurrentAPISessionURL) Build() (*url.URL, error) {
 
 // Must is a helper function to panic when the url builder returns an error
 func (o *DeleteCurrentAPISessionURL) Must(u *url.URL, err error) *url.URL {
+    logtrace.LogWithFunctionName()
 	if err != nil {
 		panic(err)
 	}
@@ -83,11 +88,13 @@ func (o *DeleteCurrentAPISessionURL) Must(u *url.URL, err error) *url.URL {
 
 // String returns the string representation of the path with query string
 func (o *DeleteCurrentAPISessionURL) String() string {
+    logtrace.LogWithFunctionName()
 	return o.Must(o.Build()).String()
 }
 
 // BuildFull builds a full url with scheme, host, path and query string
 func (o *DeleteCurrentAPISessionURL) BuildFull(scheme, host string) (*url.URL, error) {
+    logtrace.LogWithFunctionName()
 	if scheme == "" {
 		return nil, errors.New("scheme is required for a full url on DeleteCurrentAPISessionURL")
 	}
@@ -107,5 +114,6 @@ func (o *DeleteCurrentAPISessionURL) BuildFull(scheme, host string) (*url.URL, e
 
 // StringFull returns the string representation of a complete url
 func (o *DeleteCurrentAPISessionURL) StringFull(scheme, host string) string {
+    logtrace.LogWithFunctionName()
 	return o.Must(o.BuildFull(scheme, host)).String()
 }

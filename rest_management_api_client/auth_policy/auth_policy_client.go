@@ -30,6 +30,7 @@ package auth_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new auth policy API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -101,6 +105,7 @@ CreateAuthPolicy creates an auth policy
 Creates an Auth Policy. Requires admin access.
 */
 func (a *Client) CreateAuthPolicy(params *CreateAuthPolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateAuthPolicyCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreateAuthPolicyParams()
@@ -142,6 +147,7 @@ DeleteAuthPolicy deletes an auth policy
 Delete an Auth Policy by id. Requires admin access.
 */
 func (a *Client) DeleteAuthPolicy(params *DeleteAuthPolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteAuthPolicyOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteAuthPolicyParams()
@@ -183,6 +189,7 @@ DetailAuthPolicy retrieves a single auth policy
 Retrieves a single Auth Policy by id. Requires admin access.
 */
 func (a *Client) DetailAuthPolicy(params *DetailAuthPolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailAuthPolicyOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailAuthPolicyParams()
@@ -224,6 +231,7 @@ ListAuthPolicies lists auth policies
 Retrieves a list of Auth Policies
 */
 func (a *Client) ListAuthPolicies(params *ListAuthPoliciesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListAuthPoliciesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListAuthPoliciesParams()
@@ -265,6 +273,7 @@ PatchAuthPolicy updates the supplied fields on an auth policy
 Update only the supplied fields on an Auth Policy by id. Requires admin access.
 */
 func (a *Client) PatchAuthPolicy(params *PatchAuthPolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PatchAuthPolicyOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPatchAuthPolicyParams()
@@ -306,6 +315,7 @@ UpdateAuthPolicy updates all fields on an auth policy
 Update all fields on an Auth Policy by id. Requires admin access.
 */
 func (a *Client) UpdateAuthPolicy(params *UpdateAuthPolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UpdateAuthPolicyOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUpdateAuthPolicyParams()
@@ -343,5 +353,6 @@ func (a *Client) UpdateAuthPolicy(params *UpdateAuthPolicyParams, authInfo runti
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

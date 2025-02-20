@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"bytes"
 	"context"
 	"encoding/json"
@@ -68,95 +69,114 @@ type PostureCheckMacAddressDetail struct {
 
 // Links gets the links of this subtype
 func (m *PostureCheckMacAddressDetail) Links() Links {
+    logtrace.LogWithFunctionName()
 	return m.linksField
 }
 
 // SetLinks sets the links of this subtype
 func (m *PostureCheckMacAddressDetail) SetLinks(val Links) {
+    logtrace.LogWithFunctionName()
 	m.linksField = val
 }
 
 // CreatedAt gets the created at of this subtype
 func (m *PostureCheckMacAddressDetail) CreatedAt() *strfmt.DateTime {
+    logtrace.LogWithFunctionName()
 	return m.createdAtField
 }
 
 // SetCreatedAt sets the created at of this subtype
 func (m *PostureCheckMacAddressDetail) SetCreatedAt(val *strfmt.DateTime) {
+    logtrace.LogWithFunctionName()
 	m.createdAtField = val
 }
 
 // ID gets the id of this subtype
 func (m *PostureCheckMacAddressDetail) ID() *string {
+    logtrace.LogWithFunctionName()
 	return m.idField
 }
 
 // SetID sets the id of this subtype
 func (m *PostureCheckMacAddressDetail) SetID(val *string) {
+    logtrace.LogWithFunctionName()
 	m.idField = val
 }
 
 // Name gets the name of this subtype
 func (m *PostureCheckMacAddressDetail) Name() *string {
+    logtrace.LogWithFunctionName()
 	return m.nameField
 }
 
 // SetName sets the name of this subtype
 func (m *PostureCheckMacAddressDetail) SetName(val *string) {
+    logtrace.LogWithFunctionName()
 	m.nameField = val
 }
 
 // RoleAttributes gets the role attributes of this subtype
 func (m *PostureCheckMacAddressDetail) RoleAttributes() *Attributes {
+    logtrace.LogWithFunctionName()
 	return m.roleAttributesField
 }
 
 // SetRoleAttributes sets the role attributes of this subtype
 func (m *PostureCheckMacAddressDetail) SetRoleAttributes(val *Attributes) {
+    logtrace.LogWithFunctionName()
 	m.roleAttributesField = val
 }
 
 // Tags gets the tags of this subtype
 func (m *PostureCheckMacAddressDetail) Tags() *Tags {
+    logtrace.LogWithFunctionName()
 	return m.tagsField
 }
 
 // SetTags sets the tags of this subtype
 func (m *PostureCheckMacAddressDetail) SetTags(val *Tags) {
+    logtrace.LogWithFunctionName()
 	m.tagsField = val
 }
 
 // TypeID gets the type Id of this subtype
 func (m *PostureCheckMacAddressDetail) TypeID() string {
+    logtrace.LogWithFunctionName()
 	return "MAC"
 }
 
 // SetTypeID sets the type Id of this subtype
 func (m *PostureCheckMacAddressDetail) SetTypeID(val string) {
+    logtrace.LogWithFunctionName()
 }
 
 // UpdatedAt gets the updated at of this subtype
 func (m *PostureCheckMacAddressDetail) UpdatedAt() *strfmt.DateTime {
+    logtrace.LogWithFunctionName()
 	return m.updatedAtField
 }
 
 // SetUpdatedAt sets the updated at of this subtype
 func (m *PostureCheckMacAddressDetail) SetUpdatedAt(val *strfmt.DateTime) {
+    logtrace.LogWithFunctionName()
 	m.updatedAtField = val
 }
 
 // Version gets the version of this subtype
 func (m *PostureCheckMacAddressDetail) Version() *int64 {
+    logtrace.LogWithFunctionName()
 	return m.versionField
 }
 
 // SetVersion sets the version of this subtype
 func (m *PostureCheckMacAddressDetail) SetVersion(val *int64) {
+    logtrace.LogWithFunctionName()
 	m.versionField = val
 }
 
 // UnmarshalJSON unmarshals this object with a polymorphic type from a JSON structure
 func (m *PostureCheckMacAddressDetail) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	var data struct {
 
 		// mac addresses
@@ -232,6 +252,7 @@ func (m *PostureCheckMacAddressDetail) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object with a polymorphic type to a JSON structure
 func (m PostureCheckMacAddressDetail) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	var b1, b2, b3 []byte
 	var err error
 	b1, err = json.Marshal(struct {
@@ -294,6 +315,7 @@ func (m PostureCheckMacAddressDetail) MarshalJSON() ([]byte, error) {
 
 // Validate validates this posture check mac address detail
 func (m *PostureCheckMacAddressDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateLinks(formats); err != nil {
@@ -339,6 +361,7 @@ func (m *PostureCheckMacAddressDetail) Validate(formats strfmt.Registry) error {
 }
 
 func (m *PostureCheckMacAddressDetail) validateLinks(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("_links", "body", m.Links()); err != nil {
 		return err
@@ -359,6 +382,7 @@ func (m *PostureCheckMacAddressDetail) validateLinks(formats strfmt.Registry) er
 }
 
 func (m *PostureCheckMacAddressDetail) validateCreatedAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("createdAt", "body", m.CreatedAt()); err != nil {
 		return err
@@ -372,6 +396,7 @@ func (m *PostureCheckMacAddressDetail) validateCreatedAt(formats strfmt.Registry
 }
 
 func (m *PostureCheckMacAddressDetail) validateID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("id", "body", m.ID()); err != nil {
 		return err
@@ -381,6 +406,7 @@ func (m *PostureCheckMacAddressDetail) validateID(formats strfmt.Registry) error
 }
 
 func (m *PostureCheckMacAddressDetail) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name()); err != nil {
 		return err
@@ -390,6 +416,7 @@ func (m *PostureCheckMacAddressDetail) validateName(formats strfmt.Registry) err
 }
 
 func (m *PostureCheckMacAddressDetail) validateRoleAttributes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("roleAttributes", "body", m.RoleAttributes()); err != nil {
 		return err
@@ -410,6 +437,7 @@ func (m *PostureCheckMacAddressDetail) validateRoleAttributes(formats strfmt.Reg
 }
 
 func (m *PostureCheckMacAddressDetail) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("tags", "body", m.Tags()); err != nil {
 		return err
@@ -430,6 +458,7 @@ func (m *PostureCheckMacAddressDetail) validateTags(formats strfmt.Registry) err
 }
 
 func (m *PostureCheckMacAddressDetail) validateUpdatedAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("updatedAt", "body", m.UpdatedAt()); err != nil {
 		return err
@@ -443,6 +472,7 @@ func (m *PostureCheckMacAddressDetail) validateUpdatedAt(formats strfmt.Registry
 }
 
 func (m *PostureCheckMacAddressDetail) validateVersion(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("version", "body", m.Version()); err != nil {
 		return err
@@ -452,6 +482,7 @@ func (m *PostureCheckMacAddressDetail) validateVersion(formats strfmt.Registry) 
 }
 
 func (m *PostureCheckMacAddressDetail) validateMacAddresses(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("macAddresses", "body", m.MacAddresses); err != nil {
 		return err
@@ -468,6 +499,7 @@ func (m *PostureCheckMacAddressDetail) validateMacAddresses(formats strfmt.Regis
 
 // ContextValidate validate this posture check mac address detail based on the context it is used
 func (m *PostureCheckMacAddressDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateLinks(ctx, formats); err != nil {
@@ -489,6 +521,7 @@ func (m *PostureCheckMacAddressDetail) ContextValidate(ctx context.Context, form
 }
 
 func (m *PostureCheckMacAddressDetail) contextValidateLinks(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.Links().ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -503,6 +536,7 @@ func (m *PostureCheckMacAddressDetail) contextValidateLinks(ctx context.Context,
 }
 
 func (m *PostureCheckMacAddressDetail) contextValidateRoleAttributes(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.RoleAttributes() != nil {
 		if err := m.RoleAttributes().ContextValidate(ctx, formats); err != nil {
@@ -519,6 +553,7 @@ func (m *PostureCheckMacAddressDetail) contextValidateRoleAttributes(ctx context
 }
 
 func (m *PostureCheckMacAddressDetail) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags() != nil {
 
@@ -537,6 +572,7 @@ func (m *PostureCheckMacAddressDetail) contextValidateTags(ctx context.Context, 
 
 // MarshalBinary interface implementation
 func (m *PostureCheckMacAddressDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -545,6 +581,7 @@ func (m *PostureCheckMacAddressDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureCheckMacAddressDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureCheckMacAddressDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

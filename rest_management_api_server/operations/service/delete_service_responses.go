@@ -30,6 +30,7 @@ package service
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DeleteServiceOK struct {
 
 // NewDeleteServiceOK creates DeleteServiceOK with default headers values
 func NewDeleteServiceOK() *DeleteServiceOK {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteServiceOK{}
 }
 
 // WithPayload adds the payload to the delete service o k response
 func (o *DeleteServiceOK) WithPayload(payload *rest_model.Empty) *DeleteServiceOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete service o k response
 func (o *DeleteServiceOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteServiceOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DeleteServiceBadRequest struct {
 
 // NewDeleteServiceBadRequest creates DeleteServiceBadRequest with default headers values
 func NewDeleteServiceBadRequest() *DeleteServiceBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteServiceBadRequest{}
 }
 
 // WithPayload adds the payload to the delete service bad request response
 func (o *DeleteServiceBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteServiceBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete service bad request response
 func (o *DeleteServiceBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteServiceBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DeleteServiceUnauthorized struct {
 
 // NewDeleteServiceUnauthorized creates DeleteServiceUnauthorized with default headers values
 func NewDeleteServiceUnauthorized() *DeleteServiceUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteServiceUnauthorized{}
 }
 
 // WithPayload adds the payload to the delete service unauthorized response
 func (o *DeleteServiceUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteServiceUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete service unauthorized response
 func (o *DeleteServiceUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteServiceUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DeleteServiceNotFound struct {
 
 // NewDeleteServiceNotFound creates DeleteServiceNotFound with default headers values
 func NewDeleteServiceNotFound() *DeleteServiceNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteServiceNotFound{}
 }
 
 // WithPayload adds the payload to the delete service not found response
 func (o *DeleteServiceNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteServiceNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete service not found response
 func (o *DeleteServiceNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteServiceNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DeleteServiceConflict struct {
 
 // NewDeleteServiceConflict creates DeleteServiceConflict with default headers values
 func NewDeleteServiceConflict() *DeleteServiceConflict {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteServiceConflict{}
 }
 
 // WithPayload adds the payload to the delete service conflict response
 func (o *DeleteServiceConflict) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteServiceConflict {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete service conflict response
 func (o *DeleteServiceConflict) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteServiceConflict) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(409)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type DeleteServiceTooManyRequests struct {
 
 // NewDeleteServiceTooManyRequests creates DeleteServiceTooManyRequests with default headers values
 func NewDeleteServiceTooManyRequests() *DeleteServiceTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteServiceTooManyRequests{}
 }
 
 // WithPayload adds the payload to the delete service too many requests response
 func (o *DeleteServiceTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteServiceTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete service too many requests response
 func (o *DeleteServiceTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteServiceTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -325,23 +350,27 @@ type DeleteServiceServiceUnavailable struct {
 
 // NewDeleteServiceServiceUnavailable creates DeleteServiceServiceUnavailable with default headers values
 func NewDeleteServiceServiceUnavailable() *DeleteServiceServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteServiceServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the delete service service unavailable response
 func (o *DeleteServiceServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteServiceServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete service service unavailable response
 func (o *DeleteServiceServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteServiceServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

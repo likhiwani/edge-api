@@ -30,6 +30,7 @@ package role_attributes
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListPostureCheckRoleAttributesOK struct {
 
 // NewListPostureCheckRoleAttributesOK creates ListPostureCheckRoleAttributesOK with default headers values
 func NewListPostureCheckRoleAttributesOK() *ListPostureCheckRoleAttributesOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListPostureCheckRoleAttributesOK{}
 }
 
 // WithPayload adds the payload to the list posture check role attributes o k response
 func (o *ListPostureCheckRoleAttributesOK) WithPayload(payload *rest_model.ListRoleAttributesEnvelope) *ListPostureCheckRoleAttributesOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list posture check role attributes o k response
 func (o *ListPostureCheckRoleAttributesOK) SetPayload(payload *rest_model.ListRoleAttributesEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListPostureCheckRoleAttributesOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ListPostureCheckRoleAttributesBadRequest struct {
 
 // NewListPostureCheckRoleAttributesBadRequest creates ListPostureCheckRoleAttributesBadRequest with default headers values
 func NewListPostureCheckRoleAttributesBadRequest() *ListPostureCheckRoleAttributesBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &ListPostureCheckRoleAttributesBadRequest{}
 }
 
 // WithPayload adds the payload to the list posture check role attributes bad request response
 func (o *ListPostureCheckRoleAttributesBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *ListPostureCheckRoleAttributesBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list posture check role attributes bad request response
 func (o *ListPostureCheckRoleAttributesBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListPostureCheckRoleAttributesBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ListPostureCheckRoleAttributesUnauthorized struct {
 
 // NewListPostureCheckRoleAttributesUnauthorized creates ListPostureCheckRoleAttributesUnauthorized with default headers values
 func NewListPostureCheckRoleAttributesUnauthorized() *ListPostureCheckRoleAttributesUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &ListPostureCheckRoleAttributesUnauthorized{}
 }
 
 // WithPayload adds the payload to the list posture check role attributes unauthorized response
 func (o *ListPostureCheckRoleAttributesUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *ListPostureCheckRoleAttributesUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list posture check role attributes unauthorized response
 func (o *ListPostureCheckRoleAttributesUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListPostureCheckRoleAttributesUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type ListPostureCheckRoleAttributesTooManyRequests struct {
 
 // NewListPostureCheckRoleAttributesTooManyRequests creates ListPostureCheckRoleAttributesTooManyRequests with default headers values
 func NewListPostureCheckRoleAttributesTooManyRequests() *ListPostureCheckRoleAttributesTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ListPostureCheckRoleAttributesTooManyRequests{}
 }
 
 // WithPayload adds the payload to the list posture check role attributes too many requests response
 func (o *ListPostureCheckRoleAttributesTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ListPostureCheckRoleAttributesTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list posture check role attributes too many requests response
 func (o *ListPostureCheckRoleAttributesTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListPostureCheckRoleAttributesTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type ListPostureCheckRoleAttributesServiceUnavailable struct {
 
 // NewListPostureCheckRoleAttributesServiceUnavailable creates ListPostureCheckRoleAttributesServiceUnavailable with default headers values
 func NewListPostureCheckRoleAttributesServiceUnavailable() *ListPostureCheckRoleAttributesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &ListPostureCheckRoleAttributesServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the list posture check role attributes service unavailable response
 func (o *ListPostureCheckRoleAttributesServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *ListPostureCheckRoleAttributesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list posture check role attributes service unavailable response
 func (o *ListPostureCheckRoleAttributesServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListPostureCheckRoleAttributesServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

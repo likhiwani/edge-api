@@ -30,6 +30,7 @@ package service_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ListServicePolicyPostureChecksReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ListServicePolicyPostureChecksReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewListServicePolicyPostureChecksOK()
@@ -85,6 +87,7 @@ func (o *ListServicePolicyPostureChecksReader) ReadResponse(response runtime.Cli
 
 // NewListServicePolicyPostureChecksOK creates a ListServicePolicyPostureChecksOK with default headers values
 func NewListServicePolicyPostureChecksOK() *ListServicePolicyPostureChecksOK {
+    logtrace.LogWithFunctionName()
 	return &ListServicePolicyPostureChecksOK{}
 }
 
@@ -99,49 +102,59 @@ type ListServicePolicyPostureChecksOK struct {
 
 // IsSuccess returns true when this list service policy posture checks o k response has a 2xx status code
 func (o *ListServicePolicyPostureChecksOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this list service policy posture checks o k response has a 3xx status code
 func (o *ListServicePolicyPostureChecksOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list service policy posture checks o k response has a 4xx status code
 func (o *ListServicePolicyPostureChecksOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list service policy posture checks o k response has a 5xx status code
 func (o *ListServicePolicyPostureChecksOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list service policy posture checks o k response a status code equal to that given
 func (o *ListServicePolicyPostureChecksOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the list service policy posture checks o k response
 func (o *ListServicePolicyPostureChecksOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ListServicePolicyPostureChecksOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksOK %s", 200, payload)
 }
 
 func (o *ListServicePolicyPostureChecksOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksOK %s", 200, payload)
 }
 
 func (o *ListServicePolicyPostureChecksOK) GetPayload() *rest_model.ListPostureCheckEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListServicePolicyPostureChecksOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListPostureCheckEnvelope)
 
@@ -155,6 +168,7 @@ func (o *ListServicePolicyPostureChecksOK) readResponse(response runtime.ClientR
 
 // NewListServicePolicyPostureChecksBadRequest creates a ListServicePolicyPostureChecksBadRequest with default headers values
 func NewListServicePolicyPostureChecksBadRequest() *ListServicePolicyPostureChecksBadRequest {
+    logtrace.LogWithFunctionName()
 	return &ListServicePolicyPostureChecksBadRequest{}
 }
 
@@ -169,49 +183,59 @@ type ListServicePolicyPostureChecksBadRequest struct {
 
 // IsSuccess returns true when this list service policy posture checks bad request response has a 2xx status code
 func (o *ListServicePolicyPostureChecksBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list service policy posture checks bad request response has a 3xx status code
 func (o *ListServicePolicyPostureChecksBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list service policy posture checks bad request response has a 4xx status code
 func (o *ListServicePolicyPostureChecksBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list service policy posture checks bad request response has a 5xx status code
 func (o *ListServicePolicyPostureChecksBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list service policy posture checks bad request response a status code equal to that given
 func (o *ListServicePolicyPostureChecksBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the list service policy posture checks bad request response
 func (o *ListServicePolicyPostureChecksBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *ListServicePolicyPostureChecksBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksBadRequest %s", 400, payload)
 }
 
 func (o *ListServicePolicyPostureChecksBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksBadRequest %s", 400, payload)
 }
 
 func (o *ListServicePolicyPostureChecksBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListServicePolicyPostureChecksBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *ListServicePolicyPostureChecksBadRequest) readResponse(response runtime
 
 // NewListServicePolicyPostureChecksUnauthorized creates a ListServicePolicyPostureChecksUnauthorized with default headers values
 func NewListServicePolicyPostureChecksUnauthorized() *ListServicePolicyPostureChecksUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &ListServicePolicyPostureChecksUnauthorized{}
 }
 
@@ -239,49 +264,59 @@ type ListServicePolicyPostureChecksUnauthorized struct {
 
 // IsSuccess returns true when this list service policy posture checks unauthorized response has a 2xx status code
 func (o *ListServicePolicyPostureChecksUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list service policy posture checks unauthorized response has a 3xx status code
 func (o *ListServicePolicyPostureChecksUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list service policy posture checks unauthorized response has a 4xx status code
 func (o *ListServicePolicyPostureChecksUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list service policy posture checks unauthorized response has a 5xx status code
 func (o *ListServicePolicyPostureChecksUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list service policy posture checks unauthorized response a status code equal to that given
 func (o *ListServicePolicyPostureChecksUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the list service policy posture checks unauthorized response
 func (o *ListServicePolicyPostureChecksUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *ListServicePolicyPostureChecksUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksUnauthorized %s", 401, payload)
 }
 
 func (o *ListServicePolicyPostureChecksUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksUnauthorized %s", 401, payload)
 }
 
 func (o *ListServicePolicyPostureChecksUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListServicePolicyPostureChecksUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *ListServicePolicyPostureChecksUnauthorized) readResponse(response runti
 
 // NewListServicePolicyPostureChecksTooManyRequests creates a ListServicePolicyPostureChecksTooManyRequests with default headers values
 func NewListServicePolicyPostureChecksTooManyRequests() *ListServicePolicyPostureChecksTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &ListServicePolicyPostureChecksTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type ListServicePolicyPostureChecksTooManyRequests struct {
 
 // IsSuccess returns true when this list service policy posture checks too many requests response has a 2xx status code
 func (o *ListServicePolicyPostureChecksTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list service policy posture checks too many requests response has a 3xx status code
 func (o *ListServicePolicyPostureChecksTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list service policy posture checks too many requests response has a 4xx status code
 func (o *ListServicePolicyPostureChecksTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list service policy posture checks too many requests response has a 5xx status code
 func (o *ListServicePolicyPostureChecksTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list service policy posture checks too many requests response a status code equal to that given
 func (o *ListServicePolicyPostureChecksTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the list service policy posture checks too many requests response
 func (o *ListServicePolicyPostureChecksTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *ListServicePolicyPostureChecksTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksTooManyRequests %s", 429, payload)
 }
 
 func (o *ListServicePolicyPostureChecksTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksTooManyRequests %s", 429, payload)
 }
 
 func (o *ListServicePolicyPostureChecksTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListServicePolicyPostureChecksTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *ListServicePolicyPostureChecksTooManyRequests) readResponse(response ru
 
 // NewListServicePolicyPostureChecksServiceUnavailable creates a ListServicePolicyPostureChecksServiceUnavailable with default headers values
 func NewListServicePolicyPostureChecksServiceUnavailable() *ListServicePolicyPostureChecksServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &ListServicePolicyPostureChecksServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type ListServicePolicyPostureChecksServiceUnavailable struct {
 
 // IsSuccess returns true when this list service policy posture checks service unavailable response has a 2xx status code
 func (o *ListServicePolicyPostureChecksServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list service policy posture checks service unavailable response has a 3xx status code
 func (o *ListServicePolicyPostureChecksServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list service policy posture checks service unavailable response has a 4xx status code
 func (o *ListServicePolicyPostureChecksServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list service policy posture checks service unavailable response has a 5xx status code
 func (o *ListServicePolicyPostureChecksServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this list service policy posture checks service unavailable response a status code equal to that given
 func (o *ListServicePolicyPostureChecksServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the list service policy posture checks service unavailable response
 func (o *ListServicePolicyPostureChecksServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *ListServicePolicyPostureChecksServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListServicePolicyPostureChecksServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-policies/{id}/posture-checks][%d] listServicePolicyPostureChecksServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListServicePolicyPostureChecksServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListServicePolicyPostureChecksServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

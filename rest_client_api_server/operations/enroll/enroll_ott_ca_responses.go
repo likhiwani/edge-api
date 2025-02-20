@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type EnrollOttCaOK struct {
 
 // NewEnrollOttCaOK creates EnrollOttCaOK with default headers values
 func NewEnrollOttCaOK() *EnrollOttCaOK {
+    logtrace.LogWithFunctionName()
 
 	return &EnrollOttCaOK{}
 }
 
 // WithPayload adds the payload to the enroll ott ca o k response
 func (o *EnrollOttCaOK) WithPayload(payload *rest_model.Empty) *EnrollOttCaOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the enroll ott ca o k response
 func (o *EnrollOttCaOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *EnrollOttCaOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type EnrollOttCaTooManyRequests struct {
 
 // NewEnrollOttCaTooManyRequests creates EnrollOttCaTooManyRequests with default headers values
 func NewEnrollOttCaTooManyRequests() *EnrollOttCaTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &EnrollOttCaTooManyRequests{}
 }
 
 // WithPayload adds the payload to the enroll ott ca too many requests response
 func (o *EnrollOttCaTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *EnrollOttCaTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the enroll ott ca too many requests response
 func (o *EnrollOttCaTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *EnrollOttCaTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type EnrollOttCaServiceUnavailable struct {
 
 // NewEnrollOttCaServiceUnavailable creates EnrollOttCaServiceUnavailable with default headers values
 func NewEnrollOttCaServiceUnavailable() *EnrollOttCaServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &EnrollOttCaServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the enroll ott ca service unavailable response
 func (o *EnrollOttCaServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *EnrollOttCaServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the enroll ott ca service unavailable response
 func (o *EnrollOttCaServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *EnrollOttCaServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

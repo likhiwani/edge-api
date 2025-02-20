@@ -30,6 +30,7 @@ package role_attributes
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListEdgeRouterRoleAttributesOK struct {
 
 // NewListEdgeRouterRoleAttributesOK creates ListEdgeRouterRoleAttributesOK with default headers values
 func NewListEdgeRouterRoleAttributesOK() *ListEdgeRouterRoleAttributesOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListEdgeRouterRoleAttributesOK{}
 }
 
 // WithPayload adds the payload to the list edge router role attributes o k response
 func (o *ListEdgeRouterRoleAttributesOK) WithPayload(payload *rest_model.ListRoleAttributesEnvelope) *ListEdgeRouterRoleAttributesOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list edge router role attributes o k response
 func (o *ListEdgeRouterRoleAttributesOK) SetPayload(payload *rest_model.ListRoleAttributesEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListEdgeRouterRoleAttributesOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ListEdgeRouterRoleAttributesBadRequest struct {
 
 // NewListEdgeRouterRoleAttributesBadRequest creates ListEdgeRouterRoleAttributesBadRequest with default headers values
 func NewListEdgeRouterRoleAttributesBadRequest() *ListEdgeRouterRoleAttributesBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &ListEdgeRouterRoleAttributesBadRequest{}
 }
 
 // WithPayload adds the payload to the list edge router role attributes bad request response
 func (o *ListEdgeRouterRoleAttributesBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *ListEdgeRouterRoleAttributesBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list edge router role attributes bad request response
 func (o *ListEdgeRouterRoleAttributesBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListEdgeRouterRoleAttributesBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ListEdgeRouterRoleAttributesUnauthorized struct {
 
 // NewListEdgeRouterRoleAttributesUnauthorized creates ListEdgeRouterRoleAttributesUnauthorized with default headers values
 func NewListEdgeRouterRoleAttributesUnauthorized() *ListEdgeRouterRoleAttributesUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &ListEdgeRouterRoleAttributesUnauthorized{}
 }
 
 // WithPayload adds the payload to the list edge router role attributes unauthorized response
 func (o *ListEdgeRouterRoleAttributesUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *ListEdgeRouterRoleAttributesUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list edge router role attributes unauthorized response
 func (o *ListEdgeRouterRoleAttributesUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListEdgeRouterRoleAttributesUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type ListEdgeRouterRoleAttributesTooManyRequests struct {
 
 // NewListEdgeRouterRoleAttributesTooManyRequests creates ListEdgeRouterRoleAttributesTooManyRequests with default headers values
 func NewListEdgeRouterRoleAttributesTooManyRequests() *ListEdgeRouterRoleAttributesTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ListEdgeRouterRoleAttributesTooManyRequests{}
 }
 
 // WithPayload adds the payload to the list edge router role attributes too many requests response
 func (o *ListEdgeRouterRoleAttributesTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ListEdgeRouterRoleAttributesTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list edge router role attributes too many requests response
 func (o *ListEdgeRouterRoleAttributesTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListEdgeRouterRoleAttributesTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type ListEdgeRouterRoleAttributesServiceUnavailable struct {
 
 // NewListEdgeRouterRoleAttributesServiceUnavailable creates ListEdgeRouterRoleAttributesServiceUnavailable with default headers values
 func NewListEdgeRouterRoleAttributesServiceUnavailable() *ListEdgeRouterRoleAttributesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &ListEdgeRouterRoleAttributesServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the list edge router role attributes service unavailable response
 func (o *ListEdgeRouterRoleAttributesServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *ListEdgeRouterRoleAttributesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list edge router role attributes service unavailable response
 func (o *ListEdgeRouterRoleAttributesServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListEdgeRouterRoleAttributesServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

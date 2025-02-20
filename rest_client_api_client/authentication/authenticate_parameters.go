@@ -30,6 +30,7 @@ package authentication
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewAuthenticateParams() *AuthenticateParams {
+    logtrace.LogWithFunctionName()
 	return &AuthenticateParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewAuthenticateParams() *AuthenticateParams {
 // NewAuthenticateParamsWithTimeout creates a new AuthenticateParams object
 // with the ability to set a timeout on a request.
 func NewAuthenticateParamsWithTimeout(timeout time.Duration) *AuthenticateParams {
+    logtrace.LogWithFunctionName()
 	return &AuthenticateParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewAuthenticateParamsWithTimeout(timeout time.Duration) *AuthenticateParams
 // NewAuthenticateParamsWithContext creates a new AuthenticateParams object
 // with the ability to set a context for a request.
 func NewAuthenticateParamsWithContext(ctx context.Context) *AuthenticateParams {
+    logtrace.LogWithFunctionName()
 	return &AuthenticateParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewAuthenticateParamsWithContext(ctx context.Context) *AuthenticateParams {
 // NewAuthenticateParamsWithHTTPClient creates a new AuthenticateParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewAuthenticateParamsWithHTTPClient(client *http.Client) *AuthenticateParams {
+    logtrace.LogWithFunctionName()
 	return &AuthenticateParams{
 		HTTPClient: client,
 	}
@@ -102,6 +107,7 @@ type AuthenticateParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *AuthenticateParams) WithDefaults() *AuthenticateParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -110,66 +116,78 @@ func (o *AuthenticateParams) WithDefaults() *AuthenticateParams {
 //
 // All values with no default are reset to their zero value.
 func (o *AuthenticateParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the authenticate params
 func (o *AuthenticateParams) WithTimeout(timeout time.Duration) *AuthenticateParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the authenticate params
 func (o *AuthenticateParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the authenticate params
 func (o *AuthenticateParams) WithContext(ctx context.Context) *AuthenticateParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the authenticate params
 func (o *AuthenticateParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the authenticate params
 func (o *AuthenticateParams) WithHTTPClient(client *http.Client) *AuthenticateParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the authenticate params
 func (o *AuthenticateParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithAuth adds the auth to the authenticate params
 func (o *AuthenticateParams) WithAuth(auth *rest_model.Authenticate) *AuthenticateParams {
+    logtrace.LogWithFunctionName()
 	o.SetAuth(auth)
 	return o
 }
 
 // SetAuth adds the auth to the authenticate params
 func (o *AuthenticateParams) SetAuth(auth *rest_model.Authenticate) {
+    logtrace.LogWithFunctionName()
 	o.Auth = auth
 }
 
 // WithMethod adds the method to the authenticate params
 func (o *AuthenticateParams) WithMethod(method string) *AuthenticateParams {
+    logtrace.LogWithFunctionName()
 	o.SetMethod(method)
 	return o
 }
 
 // SetMethod adds the method to the authenticate params
 func (o *AuthenticateParams) SetMethod(method string) {
+    logtrace.LogWithFunctionName()
 	o.Method = method
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *AuthenticateParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

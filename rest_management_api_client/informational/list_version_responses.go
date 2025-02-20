@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ListVersionReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ListVersionReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewListVersionOK()
@@ -61,6 +63,7 @@ func (o *ListVersionReader) ReadResponse(response runtime.ClientResponse, consum
 
 // NewListVersionOK creates a ListVersionOK with default headers values
 func NewListVersionOK() *ListVersionOK {
+    logtrace.LogWithFunctionName()
 	return &ListVersionOK{}
 }
 
@@ -75,49 +78,59 @@ type ListVersionOK struct {
 
 // IsSuccess returns true when this list version o k response has a 2xx status code
 func (o *ListVersionOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this list version o k response has a 3xx status code
 func (o *ListVersionOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list version o k response has a 4xx status code
 func (o *ListVersionOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list version o k response has a 5xx status code
 func (o *ListVersionOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list version o k response a status code equal to that given
 func (o *ListVersionOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the list version o k response
 func (o *ListVersionOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ListVersionOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /version][%d] listVersionOK %s", 200, payload)
 }
 
 func (o *ListVersionOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /version][%d] listVersionOK %s", 200, payload)
 }
 
 func (o *ListVersionOK) GetPayload() *rest_model.ListVersionEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListVersionOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListVersionEnvelope)
 

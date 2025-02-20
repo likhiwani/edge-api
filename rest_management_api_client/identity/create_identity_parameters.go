@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCreateIdentityParams() *CreateIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &CreateIdentityParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewCreateIdentityParams() *CreateIdentityParams {
 // NewCreateIdentityParamsWithTimeout creates a new CreateIdentityParams object
 // with the ability to set a timeout on a request.
 func NewCreateIdentityParamsWithTimeout(timeout time.Duration) *CreateIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &CreateIdentityParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewCreateIdentityParamsWithTimeout(timeout time.Duration) *CreateIdentityPa
 // NewCreateIdentityParamsWithContext creates a new CreateIdentityParams object
 // with the ability to set a context for a request.
 func NewCreateIdentityParamsWithContext(ctx context.Context) *CreateIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &CreateIdentityParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewCreateIdentityParamsWithContext(ctx context.Context) *CreateIdentityPara
 // NewCreateIdentityParamsWithHTTPClient creates a new CreateIdentityParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewCreateIdentityParamsWithHTTPClient(client *http.Client) *CreateIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &CreateIdentityParams{
 		HTTPClient: client,
 	}
@@ -102,6 +107,7 @@ type CreateIdentityParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *CreateIdentityParams) WithDefaults() *CreateIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -110,55 +116,65 @@ func (o *CreateIdentityParams) WithDefaults() *CreateIdentityParams {
 //
 // All values with no default are reset to their zero value.
 func (o *CreateIdentityParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the create identity params
 func (o *CreateIdentityParams) WithTimeout(timeout time.Duration) *CreateIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the create identity params
 func (o *CreateIdentityParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the create identity params
 func (o *CreateIdentityParams) WithContext(ctx context.Context) *CreateIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the create identity params
 func (o *CreateIdentityParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the create identity params
 func (o *CreateIdentityParams) WithHTTPClient(client *http.Client) *CreateIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the create identity params
 func (o *CreateIdentityParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithIdentity adds the identity to the create identity params
 func (o *CreateIdentityParams) WithIdentity(identity *rest_model.IdentityCreate) *CreateIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetIdentity(identity)
 	return o
 }
 
 // SetIdentity adds the identity to the create identity params
 func (o *CreateIdentityParams) SetIdentity(identity *rest_model.IdentityCreate) {
+    logtrace.LogWithFunctionName()
 	o.Identity = identity
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *CreateIdentityParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

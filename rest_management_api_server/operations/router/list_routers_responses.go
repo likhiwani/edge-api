@@ -30,6 +30,7 @@ package router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListRoutersOK struct {
 
 // NewListRoutersOK creates ListRoutersOK with default headers values
 func NewListRoutersOK() *ListRoutersOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListRoutersOK{}
 }
 
 // WithPayload adds the payload to the list routers o k response
 func (o *ListRoutersOK) WithPayload(payload *rest_model.ListRoutersEnvelope) *ListRoutersOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list routers o k response
 func (o *ListRoutersOK) SetPayload(payload *rest_model.ListRoutersEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListRoutersOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ListRoutersBadRequest struct {
 
 // NewListRoutersBadRequest creates ListRoutersBadRequest with default headers values
 func NewListRoutersBadRequest() *ListRoutersBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &ListRoutersBadRequest{}
 }
 
 // WithPayload adds the payload to the list routers bad request response
 func (o *ListRoutersBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *ListRoutersBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list routers bad request response
 func (o *ListRoutersBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListRoutersBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ListRoutersUnauthorized struct {
 
 // NewListRoutersUnauthorized creates ListRoutersUnauthorized with default headers values
 func NewListRoutersUnauthorized() *ListRoutersUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &ListRoutersUnauthorized{}
 }
 
 // WithPayload adds the payload to the list routers unauthorized response
 func (o *ListRoutersUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *ListRoutersUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list routers unauthorized response
 func (o *ListRoutersUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListRoutersUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type ListRoutersTooManyRequests struct {
 
 // NewListRoutersTooManyRequests creates ListRoutersTooManyRequests with default headers values
 func NewListRoutersTooManyRequests() *ListRoutersTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ListRoutersTooManyRequests{}
 }
 
 // WithPayload adds the payload to the list routers too many requests response
 func (o *ListRoutersTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ListRoutersTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list routers too many requests response
 func (o *ListRoutersTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListRoutersTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type ListRoutersServiceUnavailable struct {
 
 // NewListRoutersServiceUnavailable creates ListRoutersServiceUnavailable with default headers values
 func NewListRoutersServiceUnavailable() *ListRoutersServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &ListRoutersServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the list routers service unavailable response
 func (o *ListRoutersServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *ListRoutersServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list routers service unavailable response
 func (o *ListRoutersServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListRoutersServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

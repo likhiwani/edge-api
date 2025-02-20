@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListVersionParams() *ListVersionParams {
+    logtrace.LogWithFunctionName()
 	return &ListVersionParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewListVersionParams() *ListVersionParams {
 // NewListVersionParamsWithTimeout creates a new ListVersionParams object
 // with the ability to set a timeout on a request.
 func NewListVersionParamsWithTimeout(timeout time.Duration) *ListVersionParams {
+    logtrace.LogWithFunctionName()
 	return &ListVersionParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewListVersionParamsWithTimeout(timeout time.Duration) *ListVersionParams {
 // NewListVersionParamsWithContext creates a new ListVersionParams object
 // with the ability to set a context for a request.
 func NewListVersionParamsWithContext(ctx context.Context) *ListVersionParams {
+    logtrace.LogWithFunctionName()
 	return &ListVersionParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewListVersionParamsWithContext(ctx context.Context) *ListVersionParams {
 // NewListVersionParamsWithHTTPClient creates a new ListVersionParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListVersionParamsWithHTTPClient(client *http.Client) *ListVersionParams {
+    logtrace.LogWithFunctionName()
 	return &ListVersionParams{
 		HTTPClient: client,
 	}
@@ -93,6 +98,7 @@ type ListVersionParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListVersionParams) WithDefaults() *ListVersionParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -101,44 +107,52 @@ func (o *ListVersionParams) WithDefaults() *ListVersionParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListVersionParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list version params
 func (o *ListVersionParams) WithTimeout(timeout time.Duration) *ListVersionParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list version params
 func (o *ListVersionParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list version params
 func (o *ListVersionParams) WithContext(ctx context.Context) *ListVersionParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list version params
 func (o *ListVersionParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list version params
 func (o *ListVersionParams) WithHTTPClient(client *http.Client) *ListVersionParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list version params
 func (o *ListVersionParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListVersionParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

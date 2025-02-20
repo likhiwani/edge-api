@@ -30,6 +30,7 @@ package role_attributes
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type ListEdgeRouterRoleAttributesHandlerFunc func(ListEdgeRouterRoleAttributesPa
 
 // Handle executing the request and returning a response
 func (fn ListEdgeRouterRoleAttributesHandlerFunc) Handle(params ListEdgeRouterRoleAttributesParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type ListEdgeRouterRoleAttributesHandler interface {
 
 // NewListEdgeRouterRoleAttributes creates a new http.Handler for the list edge router role attributes operation
 func NewListEdgeRouterRoleAttributes(ctx *middleware.Context, handler ListEdgeRouterRoleAttributesHandler) *ListEdgeRouterRoleAttributes {
+    logtrace.LogWithFunctionName()
 	return &ListEdgeRouterRoleAttributes{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type ListEdgeRouterRoleAttributes struct {
 }
 
 func (o *ListEdgeRouterRoleAttributes) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

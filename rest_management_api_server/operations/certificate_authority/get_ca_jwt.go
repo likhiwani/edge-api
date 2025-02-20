@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type GetCaJWTHandlerFunc func(GetCaJWTParams, interface{}) middleware.Responder
 
 // Handle executing the request and returning a response
 func (fn GetCaJWTHandlerFunc) Handle(params GetCaJWTParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type GetCaJWTHandler interface {
 
 // NewGetCaJWT creates a new http.Handler for the get ca Jwt operation
 func NewGetCaJWT(ctx *middleware.Context, handler GetCaJWTHandler) *GetCaJWT {
+    logtrace.LogWithFunctionName()
 	return &GetCaJWT{Context: ctx, Handler: handler}
 }
 
@@ -67,6 +70,7 @@ type GetCaJWT struct {
 }
 
 func (o *GetCaJWT) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

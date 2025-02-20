@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new posture checks API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -93,6 +97,7 @@ CreatePostureResponse submits a posture response to a posture query
 Submits posture responses
 */
 func (a *Client) CreatePostureResponse(params *CreatePostureResponseParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreatePostureResponseCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreatePostureResponseParams()
@@ -134,6 +139,7 @@ CreatePostureResponseBulk submits multiple posture responses
 Submits posture responses
 */
 func (a *Client) CreatePostureResponseBulk(params *CreatePostureResponseBulkParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreatePostureResponseBulkOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreatePostureResponseBulkParams()
@@ -171,5 +177,6 @@ func (a *Client) CreatePostureResponseBulk(params *CreatePostureResponseBulkPara
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

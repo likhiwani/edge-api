@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -51,6 +52,7 @@ type ListAuthenticatorsEnvelope struct {
 
 // Validate validates this list authenticators envelope
 func (m *ListAuthenticatorsEnvelope) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateData(formats); err != nil {
@@ -68,6 +70,7 @@ func (m *ListAuthenticatorsEnvelope) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ListAuthenticatorsEnvelope) validateData(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Data) { // not required
 		return nil
 	}
@@ -85,6 +88,7 @@ func (m *ListAuthenticatorsEnvelope) validateData(formats strfmt.Registry) error
 }
 
 func (m *ListAuthenticatorsEnvelope) validateMeta(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Meta) { // not required
 		return nil
 	}
@@ -105,6 +109,7 @@ func (m *ListAuthenticatorsEnvelope) validateMeta(formats strfmt.Registry) error
 
 // ContextValidate validate this list authenticators envelope based on the context it is used
 func (m *ListAuthenticatorsEnvelope) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateData(ctx, formats); err != nil {
@@ -122,6 +127,7 @@ func (m *ListAuthenticatorsEnvelope) ContextValidate(ctx context.Context, format
 }
 
 func (m *ListAuthenticatorsEnvelope) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.Data.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -136,6 +142,7 @@ func (m *ListAuthenticatorsEnvelope) contextValidateData(ctx context.Context, fo
 }
 
 func (m *ListAuthenticatorsEnvelope) contextValidateMeta(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Meta != nil {
 
@@ -158,6 +165,7 @@ func (m *ListAuthenticatorsEnvelope) contextValidateMeta(ctx context.Context, fo
 
 // MarshalBinary interface implementation
 func (m *ListAuthenticatorsEnvelope) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -166,6 +174,7 @@ func (m *ListAuthenticatorsEnvelope) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ListAuthenticatorsEnvelope) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ListAuthenticatorsEnvelope
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

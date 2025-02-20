@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type GetCurrentAPISessionHandlerFunc func(GetCurrentAPISessionParams, interface{
 
 // Handle executing the request and returning a response
 func (fn GetCurrentAPISessionHandlerFunc) Handle(params GetCurrentAPISessionParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type GetCurrentAPISessionHandler interface {
 
 // NewGetCurrentAPISession creates a new http.Handler for the get current API session operation
 func NewGetCurrentAPISession(ctx *middleware.Context, handler GetCurrentAPISessionHandler) *GetCurrentAPISession {
+    logtrace.LogWithFunctionName()
 	return &GetCurrentAPISession{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type GetCurrentAPISession struct {
 }
 
 func (o *GetCurrentAPISession) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

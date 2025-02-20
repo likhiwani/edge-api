@@ -30,6 +30,7 @@ package session
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type DetailSessionRoutePathHandlerFunc func(DetailSessionRoutePathParams, interf
 
 // Handle executing the request and returning a response
 func (fn DetailSessionRoutePathHandlerFunc) Handle(params DetailSessionRoutePathParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type DetailSessionRoutePathHandler interface {
 
 // NewDetailSessionRoutePath creates a new http.Handler for the detail session route path operation
 func NewDetailSessionRoutePath(ctx *middleware.Context, handler DetailSessionRoutePathHandler) *DetailSessionRoutePath {
+    logtrace.LogWithFunctionName()
 	return &DetailSessionRoutePath{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type DetailSessionRoutePath struct {
 }
 
 func (o *DetailSessionRoutePath) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

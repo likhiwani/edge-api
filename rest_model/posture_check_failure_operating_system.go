@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"bytes"
 	"context"
 	"encoding/json"
@@ -61,35 +62,42 @@ type PostureCheckFailureOperatingSystem struct {
 
 // PostureCheckID gets the posture check Id of this subtype
 func (m *PostureCheckFailureOperatingSystem) PostureCheckID() *string {
+    logtrace.LogWithFunctionName()
 	return m.postureCheckIdField
 }
 
 // SetPostureCheckID sets the posture check Id of this subtype
 func (m *PostureCheckFailureOperatingSystem) SetPostureCheckID(val *string) {
+    logtrace.LogWithFunctionName()
 	m.postureCheckIdField = val
 }
 
 // PostureCheckName gets the posture check name of this subtype
 func (m *PostureCheckFailureOperatingSystem) PostureCheckName() *string {
+    logtrace.LogWithFunctionName()
 	return m.postureCheckNameField
 }
 
 // SetPostureCheckName sets the posture check name of this subtype
 func (m *PostureCheckFailureOperatingSystem) SetPostureCheckName(val *string) {
+    logtrace.LogWithFunctionName()
 	m.postureCheckNameField = val
 }
 
 // PostureCheckType gets the posture check type of this subtype
 func (m *PostureCheckFailureOperatingSystem) PostureCheckType() string {
+    logtrace.LogWithFunctionName()
 	return "OS"
 }
 
 // SetPostureCheckType sets the posture check type of this subtype
 func (m *PostureCheckFailureOperatingSystem) SetPostureCheckType(val string) {
+    logtrace.LogWithFunctionName()
 }
 
 // UnmarshalJSON unmarshals this object with a polymorphic type from a JSON structure
 func (m *PostureCheckFailureOperatingSystem) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	var data struct {
 
 		// actual value
@@ -147,6 +155,7 @@ func (m *PostureCheckFailureOperatingSystem) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object with a polymorphic type to a JSON structure
 func (m PostureCheckFailureOperatingSystem) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	var b1, b2, b3 []byte
 	var err error
 	b1, err = json.Marshal(struct {
@@ -191,6 +200,7 @@ func (m PostureCheckFailureOperatingSystem) MarshalJSON() ([]byte, error) {
 
 // Validate validates this posture check failure operating system
 func (m *PostureCheckFailureOperatingSystem) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validatePostureCheckID(formats); err != nil {
@@ -216,6 +226,7 @@ func (m *PostureCheckFailureOperatingSystem) Validate(formats strfmt.Registry) e
 }
 
 func (m *PostureCheckFailureOperatingSystem) validatePostureCheckID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("postureCheckId", "body", m.PostureCheckID()); err != nil {
 		return err
@@ -225,6 +236,7 @@ func (m *PostureCheckFailureOperatingSystem) validatePostureCheckID(formats strf
 }
 
 func (m *PostureCheckFailureOperatingSystem) validatePostureCheckName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("postureCheckName", "body", m.PostureCheckName()); err != nil {
 		return err
@@ -234,6 +246,7 @@ func (m *PostureCheckFailureOperatingSystem) validatePostureCheckName(formats st
 }
 
 func (m *PostureCheckFailureOperatingSystem) validateActualValue(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("actualValue", "body", m.ActualValue); err != nil {
 		return err
@@ -254,6 +267,7 @@ func (m *PostureCheckFailureOperatingSystem) validateActualValue(formats strfmt.
 }
 
 func (m *PostureCheckFailureOperatingSystem) validateExpectedValue(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("expectedValue", "body", m.ExpectedValue); err != nil {
 		return err
@@ -288,6 +302,7 @@ func (m *PostureCheckFailureOperatingSystem) validateExpectedValue(formats strfm
 
 // ContextValidate validate this posture check failure operating system based on the context it is used
 func (m *PostureCheckFailureOperatingSystem) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateActualValue(ctx, formats); err != nil {
@@ -305,6 +320,7 @@ func (m *PostureCheckFailureOperatingSystem) ContextValidate(ctx context.Context
 }
 
 func (m *PostureCheckFailureOperatingSystem) contextValidateActualValue(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.ActualValue != nil {
 
@@ -322,6 +338,7 @@ func (m *PostureCheckFailureOperatingSystem) contextValidateActualValue(ctx cont
 }
 
 func (m *PostureCheckFailureOperatingSystem) contextValidateExpectedValue(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	for i := 0; i < len(m.ExpectedValue); i++ {
 
@@ -348,6 +365,7 @@ func (m *PostureCheckFailureOperatingSystem) contextValidateExpectedValue(ctx co
 
 // MarshalBinary interface implementation
 func (m *PostureCheckFailureOperatingSystem) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -356,6 +374,7 @@ func (m *PostureCheckFailureOperatingSystem) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureCheckFailureOperatingSystem) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureCheckFailureOperatingSystem
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

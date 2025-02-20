@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -53,6 +54,7 @@ type AuthPolicySecondary struct {
 
 // Validate validates this auth policy secondary
 func (m *AuthPolicySecondary) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateRequireTotp(formats); err != nil {
@@ -66,6 +68,7 @@ func (m *AuthPolicySecondary) Validate(formats strfmt.Registry) error {
 }
 
 func (m *AuthPolicySecondary) validateRequireTotp(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("requireTotp", "body", m.RequireTotp); err != nil {
 		return err
@@ -76,11 +79,13 @@ func (m *AuthPolicySecondary) validateRequireTotp(formats strfmt.Registry) error
 
 // ContextValidate validates this auth policy secondary based on context it is used
 func (m *AuthPolicySecondary) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *AuthPolicySecondary) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -89,6 +94,7 @@ func (m *AuthPolicySecondary) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *AuthPolicySecondary) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res AuthPolicySecondary
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

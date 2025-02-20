@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -60,6 +61,7 @@ type Process struct {
 
 // Validate validates this process
 func (m *Process) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateOsType(formats); err != nil {
@@ -77,6 +79,7 @@ func (m *Process) Validate(formats strfmt.Registry) error {
 }
 
 func (m *Process) validateOsType(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("osType", "body", m.OsType); err != nil {
 		return err
@@ -101,6 +104,7 @@ func (m *Process) validateOsType(formats strfmt.Registry) error {
 }
 
 func (m *Process) validatePath(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("path", "body", m.Path); err != nil {
 		return err
@@ -111,6 +115,7 @@ func (m *Process) validatePath(formats strfmt.Registry) error {
 
 // ContextValidate validate this process based on the context it is used
 func (m *Process) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateOsType(ctx, formats); err != nil {
@@ -124,6 +129,7 @@ func (m *Process) ContextValidate(ctx context.Context, formats strfmt.Registry) 
 }
 
 func (m *Process) contextValidateOsType(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.OsType != nil {
 
@@ -142,6 +148,7 @@ func (m *Process) contextValidateOsType(ctx context.Context, formats strfmt.Regi
 
 // MarshalBinary interface implementation
 func (m *Process) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -150,6 +157,7 @@ func (m *Process) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *Process) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res Process
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

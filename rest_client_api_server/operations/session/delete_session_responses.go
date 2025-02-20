@@ -30,6 +30,7 @@ package session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DeleteSessionOK struct {
 
 // NewDeleteSessionOK creates DeleteSessionOK with default headers values
 func NewDeleteSessionOK() *DeleteSessionOK {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteSessionOK{}
 }
 
 // WithPayload adds the payload to the delete session o k response
 func (o *DeleteSessionOK) WithPayload(payload *rest_model.Empty) *DeleteSessionOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete session o k response
 func (o *DeleteSessionOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteSessionOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DeleteSessionBadRequest struct {
 
 // NewDeleteSessionBadRequest creates DeleteSessionBadRequest with default headers values
 func NewDeleteSessionBadRequest() *DeleteSessionBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteSessionBadRequest{}
 }
 
 // WithPayload adds the payload to the delete session bad request response
 func (o *DeleteSessionBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteSessionBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete session bad request response
 func (o *DeleteSessionBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteSessionBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DeleteSessionUnauthorized struct {
 
 // NewDeleteSessionUnauthorized creates DeleteSessionUnauthorized with default headers values
 func NewDeleteSessionUnauthorized() *DeleteSessionUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteSessionUnauthorized{}
 }
 
 // WithPayload adds the payload to the delete session unauthorized response
 func (o *DeleteSessionUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteSessionUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete session unauthorized response
 func (o *DeleteSessionUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteSessionUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DeleteSessionConflict struct {
 
 // NewDeleteSessionConflict creates DeleteSessionConflict with default headers values
 func NewDeleteSessionConflict() *DeleteSessionConflict {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteSessionConflict{}
 }
 
 // WithPayload adds the payload to the delete session conflict response
 func (o *DeleteSessionConflict) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteSessionConflict {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete session conflict response
 func (o *DeleteSessionConflict) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteSessionConflict) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(409)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DeleteSessionTooManyRequests struct {
 
 // NewDeleteSessionTooManyRequests creates DeleteSessionTooManyRequests with default headers values
 func NewDeleteSessionTooManyRequests() *DeleteSessionTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteSessionTooManyRequests{}
 }
 
 // WithPayload adds the payload to the delete session too many requests response
 func (o *DeleteSessionTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteSessionTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete session too many requests response
 func (o *DeleteSessionTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteSessionTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type DeleteSessionServiceUnavailable struct {
 
 // NewDeleteSessionServiceUnavailable creates DeleteSessionServiceUnavailable with default headers values
 func NewDeleteSessionServiceUnavailable() *DeleteSessionServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteSessionServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the delete session service unavailable response
 func (o *DeleteSessionServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteSessionServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete session service unavailable response
 func (o *DeleteSessionServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteSessionServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

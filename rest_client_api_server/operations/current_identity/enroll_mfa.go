@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type EnrollMfaHandlerFunc func(EnrollMfaParams, interface{}) middleware.Responde
 
 // Handle executing the request and returning a response
 func (fn EnrollMfaHandlerFunc) Handle(params EnrollMfaParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type EnrollMfaHandler interface {
 
 // NewEnrollMfa creates a new http.Handler for the enroll mfa operation
 func NewEnrollMfa(ctx *middleware.Context, handler EnrollMfaHandler) *EnrollMfa {
+    logtrace.LogWithFunctionName()
 	return &EnrollMfa{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type EnrollMfa struct {
 }
 
 func (o *EnrollMfa) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDetailIdentityTypeParams() *DetailIdentityTypeParams {
+    logtrace.LogWithFunctionName()
 	return &DetailIdentityTypeParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDetailIdentityTypeParams() *DetailIdentityTypeParams {
 // NewDetailIdentityTypeParamsWithTimeout creates a new DetailIdentityTypeParams object
 // with the ability to set a timeout on a request.
 func NewDetailIdentityTypeParamsWithTimeout(timeout time.Duration) *DetailIdentityTypeParams {
+    logtrace.LogWithFunctionName()
 	return &DetailIdentityTypeParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDetailIdentityTypeParamsWithTimeout(timeout time.Duration) *DetailIdenti
 // NewDetailIdentityTypeParamsWithContext creates a new DetailIdentityTypeParams object
 // with the ability to set a context for a request.
 func NewDetailIdentityTypeParamsWithContext(ctx context.Context) *DetailIdentityTypeParams {
+    logtrace.LogWithFunctionName()
 	return &DetailIdentityTypeParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDetailIdentityTypeParamsWithContext(ctx context.Context) *DetailIdentity
 // NewDetailIdentityTypeParamsWithHTTPClient creates a new DetailIdentityTypeParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDetailIdentityTypeParamsWithHTTPClient(client *http.Client) *DetailIdentityTypeParams {
+    logtrace.LogWithFunctionName()
 	return &DetailIdentityTypeParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DetailIdentityTypeParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailIdentityTypeParams) WithDefaults() *DetailIdentityTypeParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DetailIdentityTypeParams) WithDefaults() *DetailIdentityTypeParams {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailIdentityTypeParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the detail identity type params
 func (o *DetailIdentityTypeParams) WithTimeout(timeout time.Duration) *DetailIdentityTypeParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the detail identity type params
 func (o *DetailIdentityTypeParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the detail identity type params
 func (o *DetailIdentityTypeParams) WithContext(ctx context.Context) *DetailIdentityTypeParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the detail identity type params
 func (o *DetailIdentityTypeParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the detail identity type params
 func (o *DetailIdentityTypeParams) WithHTTPClient(client *http.Client) *DetailIdentityTypeParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the detail identity type params
 func (o *DetailIdentityTypeParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the detail identity type params
 func (o *DetailIdentityTypeParams) WithID(id string) *DetailIdentityTypeParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the detail identity type params
 func (o *DetailIdentityTypeParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DetailIdentityTypeParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

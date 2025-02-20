@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type ExtendVerifyCurrentIdentityAuthenticatorHandlerFunc func(ExtendVerifyCurren
 
 // Handle executing the request and returning a response
 func (fn ExtendVerifyCurrentIdentityAuthenticatorHandlerFunc) Handle(params ExtendVerifyCurrentIdentityAuthenticatorParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type ExtendVerifyCurrentIdentityAuthenticatorHandler interface {
 
 // NewExtendVerifyCurrentIdentityAuthenticator creates a new http.Handler for the extend verify current identity authenticator operation
 func NewExtendVerifyCurrentIdentityAuthenticator(ctx *middleware.Context, handler ExtendVerifyCurrentIdentityAuthenticatorHandler) *ExtendVerifyCurrentIdentityAuthenticator {
+    logtrace.LogWithFunctionName()
 	return &ExtendVerifyCurrentIdentityAuthenticator{Context: ctx, Handler: handler}
 }
 
@@ -67,6 +70,7 @@ type ExtendVerifyCurrentIdentityAuthenticator struct {
 }
 
 func (o *ExtendVerifyCurrentIdentityAuthenticator) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new informational API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -87,6 +91,7 @@ type ClientOption func(*runtime.ClientOperation)
 //
 // You may use this option to set arbitrary extensions to your MIME media type.
 func WithAccept(mime string) ClientOption {
+    logtrace.LogWithFunctionName()
 	return func(r *runtime.ClientOperation) {
 		r.ProducesMediaTypes = []string{mime}
 	}
@@ -94,11 +99,13 @@ func WithAccept(mime string) ClientOption {
 
 // WithAcceptApplicationJSON sets the Accept header to "application/json".
 func WithAcceptApplicationJSON(r *runtime.ClientOperation) {
+    logtrace.LogWithFunctionName()
 	r.ProducesMediaTypes = []string{"application/json"}
 }
 
 // WithAcceptTextYaml sets the Accept header to "text/yaml".
 func WithAcceptTextYaml(r *runtime.ClientOperation) {
+    logtrace.LogWithFunctionName()
 	r.ProducesMediaTypes = []string{"text/yaml"}
 }
 
@@ -127,6 +134,7 @@ DetailSpec returns a single spec resource
 Returns single spec resource embedded within the controller for consumption/documentation/code geneartion
 */
 func (a *Client) DetailSpec(params *DetailSpecParams, opts ...ClientOption) (*DetailSpecOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailSpecParams()
@@ -167,6 +175,7 @@ DetailSpecBody returns the spec s file
 Return the body of the specification (i.e. Swagger, OpenAPI 2.0, 3.0, etc).
 */
 func (a *Client) DetailSpecBody(params *DetailSpecBodyParams, opts ...ClientOption) (*DetailSpecBodyOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailSpecBodyParams()
@@ -205,6 +214,7 @@ func (a *Client) DetailSpecBody(params *DetailSpecBodyParams, opts ...ClientOpti
 ListEnumeratedCapabilities returns all capabilities this version of the controller is aware of enabled or not
 */
 func (a *Client) ListEnumeratedCapabilities(params *ListEnumeratedCapabilitiesParams, opts ...ClientOption) (*ListEnumeratedCapabilitiesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListEnumeratedCapabilitiesParams()
@@ -243,6 +253,7 @@ func (a *Client) ListEnumeratedCapabilities(params *ListEnumeratedCapabilitiesPa
 ListRoot returns version information
 */
 func (a *Client) ListRoot(params *ListRootParams, opts ...ClientOption) (*ListRootOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListRootParams()
@@ -283,6 +294,7 @@ ListSpecs returns a list of API specs
 Returns a list of spec files embedded within the controller for consumption/documentation/code geneartion
 */
 func (a *Client) ListSpecs(params *ListSpecsParams, opts ...ClientOption) (*ListSpecsOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListSpecsParams()
@@ -323,6 +335,7 @@ ListSummary returns a list of accessible resource counts
 This endpoint is usefull for UIs that wish to display UI elements with counts.
 */
 func (a *Client) ListSummary(params *ListSummaryParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListSummaryOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListSummaryParams()
@@ -362,6 +375,7 @@ func (a *Client) ListSummary(params *ListSummaryParams, authInfo runtime.ClientA
 ListVersion returns version information
 */
 func (a *Client) ListVersion(params *ListVersionParams, opts ...ClientOption) (*ListVersionOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListVersionParams()
@@ -398,5 +412,6 @@ func (a *Client) ListVersion(params *ListVersionParams, opts ...ClientOption) (*
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

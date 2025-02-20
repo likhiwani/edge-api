@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListCasOK struct {
 
 // NewListCasOK creates ListCasOK with default headers values
 func NewListCasOK() *ListCasOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListCasOK{}
 }
 
 // WithPayload adds the payload to the list cas o k response
 func (o *ListCasOK) WithPayload(payload *rest_model.ListCasEnvelope) *ListCasOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list cas o k response
 func (o *ListCasOK) SetPayload(payload *rest_model.ListCasEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListCasOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ListCasBadRequest struct {
 
 // NewListCasBadRequest creates ListCasBadRequest with default headers values
 func NewListCasBadRequest() *ListCasBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &ListCasBadRequest{}
 }
 
 // WithPayload adds the payload to the list cas bad request response
 func (o *ListCasBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *ListCasBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list cas bad request response
 func (o *ListCasBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListCasBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ListCasUnauthorized struct {
 
 // NewListCasUnauthorized creates ListCasUnauthorized with default headers values
 func NewListCasUnauthorized() *ListCasUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &ListCasUnauthorized{}
 }
 
 // WithPayload adds the payload to the list cas unauthorized response
 func (o *ListCasUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *ListCasUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list cas unauthorized response
 func (o *ListCasUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListCasUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type ListCasTooManyRequests struct {
 
 // NewListCasTooManyRequests creates ListCasTooManyRequests with default headers values
 func NewListCasTooManyRequests() *ListCasTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ListCasTooManyRequests{}
 }
 
 // WithPayload adds the payload to the list cas too many requests response
 func (o *ListCasTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ListCasTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list cas too many requests response
 func (o *ListCasTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListCasTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type ListCasServiceUnavailable struct {
 
 // NewListCasServiceUnavailable creates ListCasServiceUnavailable with default headers values
 func NewListCasServiceUnavailable() *ListCasServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &ListCasServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the list cas service unavailable response
 func (o *ListCasServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *ListCasServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list cas service unavailable response
 func (o *ListCasServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListCasServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

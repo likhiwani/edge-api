@@ -30,6 +30,7 @@ package role_attributes
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ListPostureCheckRoleAttributesReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ListPostureCheckRoleAttributesReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewListPostureCheckRoleAttributesOK()
@@ -85,6 +87,7 @@ func (o *ListPostureCheckRoleAttributesReader) ReadResponse(response runtime.Cli
 
 // NewListPostureCheckRoleAttributesOK creates a ListPostureCheckRoleAttributesOK with default headers values
 func NewListPostureCheckRoleAttributesOK() *ListPostureCheckRoleAttributesOK {
+    logtrace.LogWithFunctionName()
 	return &ListPostureCheckRoleAttributesOK{}
 }
 
@@ -99,49 +102,59 @@ type ListPostureCheckRoleAttributesOK struct {
 
 // IsSuccess returns true when this list posture check role attributes o k response has a 2xx status code
 func (o *ListPostureCheckRoleAttributesOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this list posture check role attributes o k response has a 3xx status code
 func (o *ListPostureCheckRoleAttributesOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list posture check role attributes o k response has a 4xx status code
 func (o *ListPostureCheckRoleAttributesOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list posture check role attributes o k response has a 5xx status code
 func (o *ListPostureCheckRoleAttributesOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list posture check role attributes o k response a status code equal to that given
 func (o *ListPostureCheckRoleAttributesOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the list posture check role attributes o k response
 func (o *ListPostureCheckRoleAttributesOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ListPostureCheckRoleAttributesOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-role-attributes][%d] listPostureCheckRoleAttributesOK %s", 200, payload)
 }
 
 func (o *ListPostureCheckRoleAttributesOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-role-attributes][%d] listPostureCheckRoleAttributesOK %s", 200, payload)
 }
 
 func (o *ListPostureCheckRoleAttributesOK) GetPayload() *rest_model.ListRoleAttributesEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListPostureCheckRoleAttributesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListRoleAttributesEnvelope)
 
@@ -155,6 +168,7 @@ func (o *ListPostureCheckRoleAttributesOK) readResponse(response runtime.ClientR
 
 // NewListPostureCheckRoleAttributesBadRequest creates a ListPostureCheckRoleAttributesBadRequest with default headers values
 func NewListPostureCheckRoleAttributesBadRequest() *ListPostureCheckRoleAttributesBadRequest {
+    logtrace.LogWithFunctionName()
 	return &ListPostureCheckRoleAttributesBadRequest{}
 }
 
@@ -169,49 +183,59 @@ type ListPostureCheckRoleAttributesBadRequest struct {
 
 // IsSuccess returns true when this list posture check role attributes bad request response has a 2xx status code
 func (o *ListPostureCheckRoleAttributesBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list posture check role attributes bad request response has a 3xx status code
 func (o *ListPostureCheckRoleAttributesBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list posture check role attributes bad request response has a 4xx status code
 func (o *ListPostureCheckRoleAttributesBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list posture check role attributes bad request response has a 5xx status code
 func (o *ListPostureCheckRoleAttributesBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list posture check role attributes bad request response a status code equal to that given
 func (o *ListPostureCheckRoleAttributesBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the list posture check role attributes bad request response
 func (o *ListPostureCheckRoleAttributesBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *ListPostureCheckRoleAttributesBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-role-attributes][%d] listPostureCheckRoleAttributesBadRequest %s", 400, payload)
 }
 
 func (o *ListPostureCheckRoleAttributesBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-role-attributes][%d] listPostureCheckRoleAttributesBadRequest %s", 400, payload)
 }
 
 func (o *ListPostureCheckRoleAttributesBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListPostureCheckRoleAttributesBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *ListPostureCheckRoleAttributesBadRequest) readResponse(response runtime
 
 // NewListPostureCheckRoleAttributesUnauthorized creates a ListPostureCheckRoleAttributesUnauthorized with default headers values
 func NewListPostureCheckRoleAttributesUnauthorized() *ListPostureCheckRoleAttributesUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &ListPostureCheckRoleAttributesUnauthorized{}
 }
 
@@ -239,49 +264,59 @@ type ListPostureCheckRoleAttributesUnauthorized struct {
 
 // IsSuccess returns true when this list posture check role attributes unauthorized response has a 2xx status code
 func (o *ListPostureCheckRoleAttributesUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list posture check role attributes unauthorized response has a 3xx status code
 func (o *ListPostureCheckRoleAttributesUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list posture check role attributes unauthorized response has a 4xx status code
 func (o *ListPostureCheckRoleAttributesUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list posture check role attributes unauthorized response has a 5xx status code
 func (o *ListPostureCheckRoleAttributesUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list posture check role attributes unauthorized response a status code equal to that given
 func (o *ListPostureCheckRoleAttributesUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the list posture check role attributes unauthorized response
 func (o *ListPostureCheckRoleAttributesUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *ListPostureCheckRoleAttributesUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-role-attributes][%d] listPostureCheckRoleAttributesUnauthorized %s", 401, payload)
 }
 
 func (o *ListPostureCheckRoleAttributesUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-role-attributes][%d] listPostureCheckRoleAttributesUnauthorized %s", 401, payload)
 }
 
 func (o *ListPostureCheckRoleAttributesUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListPostureCheckRoleAttributesUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *ListPostureCheckRoleAttributesUnauthorized) readResponse(response runti
 
 // NewListPostureCheckRoleAttributesTooManyRequests creates a ListPostureCheckRoleAttributesTooManyRequests with default headers values
 func NewListPostureCheckRoleAttributesTooManyRequests() *ListPostureCheckRoleAttributesTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &ListPostureCheckRoleAttributesTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type ListPostureCheckRoleAttributesTooManyRequests struct {
 
 // IsSuccess returns true when this list posture check role attributes too many requests response has a 2xx status code
 func (o *ListPostureCheckRoleAttributesTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list posture check role attributes too many requests response has a 3xx status code
 func (o *ListPostureCheckRoleAttributesTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list posture check role attributes too many requests response has a 4xx status code
 func (o *ListPostureCheckRoleAttributesTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list posture check role attributes too many requests response has a 5xx status code
 func (o *ListPostureCheckRoleAttributesTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list posture check role attributes too many requests response a status code equal to that given
 func (o *ListPostureCheckRoleAttributesTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the list posture check role attributes too many requests response
 func (o *ListPostureCheckRoleAttributesTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *ListPostureCheckRoleAttributesTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-role-attributes][%d] listPostureCheckRoleAttributesTooManyRequests %s", 429, payload)
 }
 
 func (o *ListPostureCheckRoleAttributesTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-role-attributes][%d] listPostureCheckRoleAttributesTooManyRequests %s", 429, payload)
 }
 
 func (o *ListPostureCheckRoleAttributesTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListPostureCheckRoleAttributesTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *ListPostureCheckRoleAttributesTooManyRequests) readResponse(response ru
 
 // NewListPostureCheckRoleAttributesServiceUnavailable creates a ListPostureCheckRoleAttributesServiceUnavailable with default headers values
 func NewListPostureCheckRoleAttributesServiceUnavailable() *ListPostureCheckRoleAttributesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &ListPostureCheckRoleAttributesServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type ListPostureCheckRoleAttributesServiceUnavailable struct {
 
 // IsSuccess returns true when this list posture check role attributes service unavailable response has a 2xx status code
 func (o *ListPostureCheckRoleAttributesServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list posture check role attributes service unavailable response has a 3xx status code
 func (o *ListPostureCheckRoleAttributesServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list posture check role attributes service unavailable response has a 4xx status code
 func (o *ListPostureCheckRoleAttributesServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list posture check role attributes service unavailable response has a 5xx status code
 func (o *ListPostureCheckRoleAttributesServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this list posture check role attributes service unavailable response a status code equal to that given
 func (o *ListPostureCheckRoleAttributesServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the list posture check role attributes service unavailable response
 func (o *ListPostureCheckRoleAttributesServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *ListPostureCheckRoleAttributesServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-role-attributes][%d] listPostureCheckRoleAttributesServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListPostureCheckRoleAttributesServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-role-attributes][%d] listPostureCheckRoleAttributesServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListPostureCheckRoleAttributesServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListPostureCheckRoleAttributesServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

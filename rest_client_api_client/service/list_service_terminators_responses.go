@@ -30,6 +30,7 @@ package service
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ListServiceTerminatorsReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ListServiceTerminatorsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewListServiceTerminatorsOK()
@@ -85,6 +87,7 @@ func (o *ListServiceTerminatorsReader) ReadResponse(response runtime.ClientRespo
 
 // NewListServiceTerminatorsOK creates a ListServiceTerminatorsOK with default headers values
 func NewListServiceTerminatorsOK() *ListServiceTerminatorsOK {
+    logtrace.LogWithFunctionName()
 	return &ListServiceTerminatorsOK{}
 }
 
@@ -99,49 +102,59 @@ type ListServiceTerminatorsOK struct {
 
 // IsSuccess returns true when this list service terminators o k response has a 2xx status code
 func (o *ListServiceTerminatorsOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this list service terminators o k response has a 3xx status code
 func (o *ListServiceTerminatorsOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list service terminators o k response has a 4xx status code
 func (o *ListServiceTerminatorsOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list service terminators o k response has a 5xx status code
 func (o *ListServiceTerminatorsOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list service terminators o k response a status code equal to that given
 func (o *ListServiceTerminatorsOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the list service terminators o k response
 func (o *ListServiceTerminatorsOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ListServiceTerminatorsOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}/terminators][%d] listServiceTerminatorsOK %s", 200, payload)
 }
 
 func (o *ListServiceTerminatorsOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}/terminators][%d] listServiceTerminatorsOK %s", 200, payload)
 }
 
 func (o *ListServiceTerminatorsOK) GetPayload() *rest_model.ListClientTerminatorsEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListServiceTerminatorsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListClientTerminatorsEnvelope)
 
@@ -155,6 +168,7 @@ func (o *ListServiceTerminatorsOK) readResponse(response runtime.ClientResponse,
 
 // NewListServiceTerminatorsBadRequest creates a ListServiceTerminatorsBadRequest with default headers values
 func NewListServiceTerminatorsBadRequest() *ListServiceTerminatorsBadRequest {
+    logtrace.LogWithFunctionName()
 	return &ListServiceTerminatorsBadRequest{}
 }
 
@@ -169,49 +183,59 @@ type ListServiceTerminatorsBadRequest struct {
 
 // IsSuccess returns true when this list service terminators bad request response has a 2xx status code
 func (o *ListServiceTerminatorsBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list service terminators bad request response has a 3xx status code
 func (o *ListServiceTerminatorsBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list service terminators bad request response has a 4xx status code
 func (o *ListServiceTerminatorsBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list service terminators bad request response has a 5xx status code
 func (o *ListServiceTerminatorsBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list service terminators bad request response a status code equal to that given
 func (o *ListServiceTerminatorsBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the list service terminators bad request response
 func (o *ListServiceTerminatorsBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *ListServiceTerminatorsBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}/terminators][%d] listServiceTerminatorsBadRequest %s", 400, payload)
 }
 
 func (o *ListServiceTerminatorsBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}/terminators][%d] listServiceTerminatorsBadRequest %s", 400, payload)
 }
 
 func (o *ListServiceTerminatorsBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListServiceTerminatorsBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *ListServiceTerminatorsBadRequest) readResponse(response runtime.ClientR
 
 // NewListServiceTerminatorsUnauthorized creates a ListServiceTerminatorsUnauthorized with default headers values
 func NewListServiceTerminatorsUnauthorized() *ListServiceTerminatorsUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &ListServiceTerminatorsUnauthorized{}
 }
 
@@ -239,49 +264,59 @@ type ListServiceTerminatorsUnauthorized struct {
 
 // IsSuccess returns true when this list service terminators unauthorized response has a 2xx status code
 func (o *ListServiceTerminatorsUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list service terminators unauthorized response has a 3xx status code
 func (o *ListServiceTerminatorsUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list service terminators unauthorized response has a 4xx status code
 func (o *ListServiceTerminatorsUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list service terminators unauthorized response has a 5xx status code
 func (o *ListServiceTerminatorsUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list service terminators unauthorized response a status code equal to that given
 func (o *ListServiceTerminatorsUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the list service terminators unauthorized response
 func (o *ListServiceTerminatorsUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *ListServiceTerminatorsUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}/terminators][%d] listServiceTerminatorsUnauthorized %s", 401, payload)
 }
 
 func (o *ListServiceTerminatorsUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}/terminators][%d] listServiceTerminatorsUnauthorized %s", 401, payload)
 }
 
 func (o *ListServiceTerminatorsUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListServiceTerminatorsUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *ListServiceTerminatorsUnauthorized) readResponse(response runtime.Clien
 
 // NewListServiceTerminatorsTooManyRequests creates a ListServiceTerminatorsTooManyRequests with default headers values
 func NewListServiceTerminatorsTooManyRequests() *ListServiceTerminatorsTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &ListServiceTerminatorsTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type ListServiceTerminatorsTooManyRequests struct {
 
 // IsSuccess returns true when this list service terminators too many requests response has a 2xx status code
 func (o *ListServiceTerminatorsTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list service terminators too many requests response has a 3xx status code
 func (o *ListServiceTerminatorsTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list service terminators too many requests response has a 4xx status code
 func (o *ListServiceTerminatorsTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list service terminators too many requests response has a 5xx status code
 func (o *ListServiceTerminatorsTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list service terminators too many requests response a status code equal to that given
 func (o *ListServiceTerminatorsTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the list service terminators too many requests response
 func (o *ListServiceTerminatorsTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *ListServiceTerminatorsTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}/terminators][%d] listServiceTerminatorsTooManyRequests %s", 429, payload)
 }
 
 func (o *ListServiceTerminatorsTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}/terminators][%d] listServiceTerminatorsTooManyRequests %s", 429, payload)
 }
 
 func (o *ListServiceTerminatorsTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListServiceTerminatorsTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *ListServiceTerminatorsTooManyRequests) readResponse(response runtime.Cl
 
 // NewListServiceTerminatorsServiceUnavailable creates a ListServiceTerminatorsServiceUnavailable with default headers values
 func NewListServiceTerminatorsServiceUnavailable() *ListServiceTerminatorsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &ListServiceTerminatorsServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type ListServiceTerminatorsServiceUnavailable struct {
 
 // IsSuccess returns true when this list service terminators service unavailable response has a 2xx status code
 func (o *ListServiceTerminatorsServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list service terminators service unavailable response has a 3xx status code
 func (o *ListServiceTerminatorsServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list service terminators service unavailable response has a 4xx status code
 func (o *ListServiceTerminatorsServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list service terminators service unavailable response has a 5xx status code
 func (o *ListServiceTerminatorsServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this list service terminators service unavailable response a status code equal to that given
 func (o *ListServiceTerminatorsServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the list service terminators service unavailable response
 func (o *ListServiceTerminatorsServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *ListServiceTerminatorsServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}/terminators][%d] listServiceTerminatorsServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListServiceTerminatorsServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}/terminators][%d] listServiceTerminatorsServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListServiceTerminatorsServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListServiceTerminatorsServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCreateCaParams() *CreateCaParams {
+    logtrace.LogWithFunctionName()
 	return &CreateCaParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewCreateCaParams() *CreateCaParams {
 // NewCreateCaParamsWithTimeout creates a new CreateCaParams object
 // with the ability to set a timeout on a request.
 func NewCreateCaParamsWithTimeout(timeout time.Duration) *CreateCaParams {
+    logtrace.LogWithFunctionName()
 	return &CreateCaParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewCreateCaParamsWithTimeout(timeout time.Duration) *CreateCaParams {
 // NewCreateCaParamsWithContext creates a new CreateCaParams object
 // with the ability to set a context for a request.
 func NewCreateCaParamsWithContext(ctx context.Context) *CreateCaParams {
+    logtrace.LogWithFunctionName()
 	return &CreateCaParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewCreateCaParamsWithContext(ctx context.Context) *CreateCaParams {
 // NewCreateCaParamsWithHTTPClient creates a new CreateCaParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewCreateCaParamsWithHTTPClient(client *http.Client) *CreateCaParams {
+    logtrace.LogWithFunctionName()
 	return &CreateCaParams{
 		HTTPClient: client,
 	}
@@ -102,6 +107,7 @@ type CreateCaParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *CreateCaParams) WithDefaults() *CreateCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -110,55 +116,65 @@ func (o *CreateCaParams) WithDefaults() *CreateCaParams {
 //
 // All values with no default are reset to their zero value.
 func (o *CreateCaParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the create ca params
 func (o *CreateCaParams) WithTimeout(timeout time.Duration) *CreateCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the create ca params
 func (o *CreateCaParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the create ca params
 func (o *CreateCaParams) WithContext(ctx context.Context) *CreateCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the create ca params
 func (o *CreateCaParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the create ca params
 func (o *CreateCaParams) WithHTTPClient(client *http.Client) *CreateCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the create ca params
 func (o *CreateCaParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithCa adds the ca to the create ca params
 func (o *CreateCaParams) WithCa(ca *rest_model.CaCreate) *CreateCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetCa(ca)
 	return o
 }
 
 // SetCa adds the ca to the create ca params
 func (o *CreateCaParams) SetCa(ca *rest_model.CaCreate) {
+    logtrace.LogWithFunctionName()
 	o.Ca = ca
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *CreateCaParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

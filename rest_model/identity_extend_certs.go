@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/strfmt"
@@ -50,16 +51,19 @@ type IdentityExtendCerts struct {
 
 // Validate validates this identity extend certs
 func (m *IdentityExtendCerts) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // ContextValidate validates this identity extend certs based on context it is used
 func (m *IdentityExtendCerts) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *IdentityExtendCerts) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -68,6 +72,7 @@ func (m *IdentityExtendCerts) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *IdentityExtendCerts) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res IdentityExtendCerts
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

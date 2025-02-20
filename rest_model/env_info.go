@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -70,6 +71,7 @@ type EnvInfo struct {
 
 // Validate validates this env info
 func (m *EnvInfo) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateArch(formats); err != nil {
@@ -103,6 +105,7 @@ func (m *EnvInfo) Validate(formats strfmt.Registry) error {
 }
 
 func (m *EnvInfo) validateArch(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Arch) { // not required
 		return nil
 	}
@@ -115,6 +118,7 @@ func (m *EnvInfo) validateArch(formats strfmt.Registry) error {
 }
 
 func (m *EnvInfo) validateDomain(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Domain) { // not required
 		return nil
 	}
@@ -127,6 +131,7 @@ func (m *EnvInfo) validateDomain(formats strfmt.Registry) error {
 }
 
 func (m *EnvInfo) validateHostname(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Hostname) { // not required
 		return nil
 	}
@@ -139,6 +144,7 @@ func (m *EnvInfo) validateHostname(formats strfmt.Registry) error {
 }
 
 func (m *EnvInfo) validateOs(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Os) { // not required
 		return nil
 	}
@@ -151,6 +157,7 @@ func (m *EnvInfo) validateOs(formats strfmt.Registry) error {
 }
 
 func (m *EnvInfo) validateOsRelease(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.OsRelease) { // not required
 		return nil
 	}
@@ -163,6 +170,7 @@ func (m *EnvInfo) validateOsRelease(formats strfmt.Registry) error {
 }
 
 func (m *EnvInfo) validateOsVersion(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.OsVersion) { // not required
 		return nil
 	}
@@ -176,11 +184,13 @@ func (m *EnvInfo) validateOsVersion(formats strfmt.Registry) error {
 
 // ContextValidate validates this env info based on context it is used
 func (m *EnvInfo) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *EnvInfo) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -189,6 +199,7 @@ func (m *EnvInfo) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *EnvInfo) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res EnvInfo
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

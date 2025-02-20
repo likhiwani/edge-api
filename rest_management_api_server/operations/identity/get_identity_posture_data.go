@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type GetIdentityPostureDataHandlerFunc func(GetIdentityPostureDataParams, interf
 
 // Handle executing the request and returning a response
 func (fn GetIdentityPostureDataHandlerFunc) Handle(params GetIdentityPostureDataParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type GetIdentityPostureDataHandler interface {
 
 // NewGetIdentityPostureData creates a new http.Handler for the get identity posture data operation
 func NewGetIdentityPostureData(ctx *middleware.Context, handler GetIdentityPostureDataHandler) *GetIdentityPostureData {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityPostureData{Context: ctx, Handler: handler}
 }
 
@@ -67,6 +70,7 @@ type GetIdentityPostureData struct {
 }
 
 func (o *GetIdentityPostureData) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

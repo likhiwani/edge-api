@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DeleteIdentityOK struct {
 
 // NewDeleteIdentityOK creates DeleteIdentityOK with default headers values
 func NewDeleteIdentityOK() *DeleteIdentityOK {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteIdentityOK{}
 }
 
 // WithPayload adds the payload to the delete identity o k response
 func (o *DeleteIdentityOK) WithPayload(payload *rest_model.Empty) *DeleteIdentityOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete identity o k response
 func (o *DeleteIdentityOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteIdentityOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DeleteIdentityBadRequest struct {
 
 // NewDeleteIdentityBadRequest creates DeleteIdentityBadRequest with default headers values
 func NewDeleteIdentityBadRequest() *DeleteIdentityBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteIdentityBadRequest{}
 }
 
 // WithPayload adds the payload to the delete identity bad request response
 func (o *DeleteIdentityBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteIdentityBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete identity bad request response
 func (o *DeleteIdentityBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteIdentityBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DeleteIdentityUnauthorized struct {
 
 // NewDeleteIdentityUnauthorized creates DeleteIdentityUnauthorized with default headers values
 func NewDeleteIdentityUnauthorized() *DeleteIdentityUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteIdentityUnauthorized{}
 }
 
 // WithPayload adds the payload to the delete identity unauthorized response
 func (o *DeleteIdentityUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteIdentityUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete identity unauthorized response
 func (o *DeleteIdentityUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteIdentityUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DeleteIdentityNotFound struct {
 
 // NewDeleteIdentityNotFound creates DeleteIdentityNotFound with default headers values
 func NewDeleteIdentityNotFound() *DeleteIdentityNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteIdentityNotFound{}
 }
 
 // WithPayload adds the payload to the delete identity not found response
 func (o *DeleteIdentityNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteIdentityNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete identity not found response
 func (o *DeleteIdentityNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteIdentityNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DeleteIdentityConflict struct {
 
 // NewDeleteIdentityConflict creates DeleteIdentityConflict with default headers values
 func NewDeleteIdentityConflict() *DeleteIdentityConflict {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteIdentityConflict{}
 }
 
 // WithPayload adds the payload to the delete identity conflict response
 func (o *DeleteIdentityConflict) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteIdentityConflict {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete identity conflict response
 func (o *DeleteIdentityConflict) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteIdentityConflict) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(409)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type DeleteIdentityTooManyRequests struct {
 
 // NewDeleteIdentityTooManyRequests creates DeleteIdentityTooManyRequests with default headers values
 func NewDeleteIdentityTooManyRequests() *DeleteIdentityTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteIdentityTooManyRequests{}
 }
 
 // WithPayload adds the payload to the delete identity too many requests response
 func (o *DeleteIdentityTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteIdentityTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete identity too many requests response
 func (o *DeleteIdentityTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteIdentityTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -325,23 +350,27 @@ type DeleteIdentityServiceUnavailable struct {
 
 // NewDeleteIdentityServiceUnavailable creates DeleteIdentityServiceUnavailable with default headers values
 func NewDeleteIdentityServiceUnavailable() *DeleteIdentityServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteIdentityServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the delete identity service unavailable response
 func (o *DeleteIdentityServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteIdentityServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete identity service unavailable response
 func (o *DeleteIdentityServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteIdentityServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

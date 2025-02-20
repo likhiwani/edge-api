@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -77,6 +78,7 @@ type AuthQueryDetail struct {
 
 // Validate validates this auth query detail
 func (m *AuthQueryDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateFormat(formats); err != nil {
@@ -98,6 +100,7 @@ func (m *AuthQueryDetail) Validate(formats strfmt.Registry) error {
 }
 
 func (m *AuthQueryDetail) validateFormat(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Format) { // not required
 		return nil
 	}
@@ -115,6 +118,7 @@ func (m *AuthQueryDetail) validateFormat(formats strfmt.Registry) error {
 }
 
 func (m *AuthQueryDetail) validateProvider(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("provider", "body", m.Provider); err != nil {
 		return err
@@ -139,6 +143,7 @@ func (m *AuthQueryDetail) validateProvider(formats strfmt.Registry) error {
 }
 
 func (m *AuthQueryDetail) validateTypeID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.TypeID) { // not required
 		return nil
 	}
@@ -157,6 +162,7 @@ func (m *AuthQueryDetail) validateTypeID(formats strfmt.Registry) error {
 
 // ContextValidate validate this auth query detail based on the context it is used
 func (m *AuthQueryDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateFormat(ctx, formats); err != nil {
@@ -178,6 +184,7 @@ func (m *AuthQueryDetail) ContextValidate(ctx context.Context, formats strfmt.Re
 }
 
 func (m *AuthQueryDetail) contextValidateFormat(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.Format) { // not required
 		return nil
@@ -196,6 +203,7 @@ func (m *AuthQueryDetail) contextValidateFormat(ctx context.Context, formats str
 }
 
 func (m *AuthQueryDetail) contextValidateProvider(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Provider != nil {
 
@@ -213,6 +221,7 @@ func (m *AuthQueryDetail) contextValidateProvider(ctx context.Context, formats s
 }
 
 func (m *AuthQueryDetail) contextValidateTypeID(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.TypeID) { // not required
 		return nil
@@ -232,6 +241,7 @@ func (m *AuthQueryDetail) contextValidateTypeID(ctx context.Context, formats str
 
 // MarshalBinary interface implementation
 func (m *AuthQueryDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -240,6 +250,7 @@ func (m *AuthQueryDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *AuthQueryDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res AuthQueryDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

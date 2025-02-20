@@ -30,6 +30,7 @@ package session
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type ListSessionsHandlerFunc func(ListSessionsParams, interface{}) middleware.Re
 
 // Handle executing the request and returning a response
 func (fn ListSessionsHandlerFunc) Handle(params ListSessionsParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type ListSessionsHandler interface {
 
 // NewListSessions creates a new http.Handler for the list sessions operation
 func NewListSessions(ctx *middleware.Context, handler ListSessionsHandler) *ListSessions {
+    logtrace.LogWithFunctionName()
 	return &ListSessions{Context: ctx, Handler: handler}
 }
 
@@ -69,6 +72,7 @@ type ListSessions struct {
 }
 
 func (o *ListSessions) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

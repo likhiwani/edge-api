@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DetailIdentityTypeOK struct {
 
 // NewDetailIdentityTypeOK creates DetailIdentityTypeOK with default headers values
 func NewDetailIdentityTypeOK() *DetailIdentityTypeOK {
+    logtrace.LogWithFunctionName()
 
 	return &DetailIdentityTypeOK{}
 }
 
 // WithPayload adds the payload to the detail identity type o k response
 func (o *DetailIdentityTypeOK) WithPayload(payload *rest_model.DetailIdentityTypeEnvelope) *DetailIdentityTypeOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail identity type o k response
 func (o *DetailIdentityTypeOK) SetPayload(payload *rest_model.DetailIdentityTypeEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailIdentityTypeOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DetailIdentityTypeUnauthorized struct {
 
 // NewDetailIdentityTypeUnauthorized creates DetailIdentityTypeUnauthorized with default headers values
 func NewDetailIdentityTypeUnauthorized() *DetailIdentityTypeUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DetailIdentityTypeUnauthorized{}
 }
 
 // WithPayload adds the payload to the detail identity type unauthorized response
 func (o *DetailIdentityTypeUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailIdentityTypeUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail identity type unauthorized response
 func (o *DetailIdentityTypeUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailIdentityTypeUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DetailIdentityTypeNotFound struct {
 
 // NewDetailIdentityTypeNotFound creates DetailIdentityTypeNotFound with default headers values
 func NewDetailIdentityTypeNotFound() *DetailIdentityTypeNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DetailIdentityTypeNotFound{}
 }
 
 // WithPayload adds the payload to the detail identity type not found response
 func (o *DetailIdentityTypeNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailIdentityTypeNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail identity type not found response
 func (o *DetailIdentityTypeNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailIdentityTypeNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DetailIdentityTypeTooManyRequests struct {
 
 // NewDetailIdentityTypeTooManyRequests creates DetailIdentityTypeTooManyRequests with default headers values
 func NewDetailIdentityTypeTooManyRequests() *DetailIdentityTypeTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DetailIdentityTypeTooManyRequests{}
 }
 
 // WithPayload adds the payload to the detail identity type too many requests response
 func (o *DetailIdentityTypeTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailIdentityTypeTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail identity type too many requests response
 func (o *DetailIdentityTypeTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailIdentityTypeTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DetailIdentityTypeServiceUnavailable struct {
 
 // NewDetailIdentityTypeServiceUnavailable creates DetailIdentityTypeServiceUnavailable with default headers values
 func NewDetailIdentityTypeServiceUnavailable() *DetailIdentityTypeServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DetailIdentityTypeServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the detail identity type service unavailable response
 func (o *DetailIdentityTypeServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailIdentityTypeServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail identity type service unavailable response
 func (o *DetailIdentityTypeServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailIdentityTypeServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

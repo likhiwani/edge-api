@@ -30,6 +30,7 @@ package service
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type CreateServiceReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *CreateServiceReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 201:
 		result := NewCreateServiceCreated()
@@ -85,6 +87,7 @@ func (o *CreateServiceReader) ReadResponse(response runtime.ClientResponse, cons
 
 // NewCreateServiceCreated creates a CreateServiceCreated with default headers values
 func NewCreateServiceCreated() *CreateServiceCreated {
+    logtrace.LogWithFunctionName()
 	return &CreateServiceCreated{}
 }
 
@@ -99,49 +102,59 @@ type CreateServiceCreated struct {
 
 // IsSuccess returns true when this create service created response has a 2xx status code
 func (o *CreateServiceCreated) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this create service created response has a 3xx status code
 func (o *CreateServiceCreated) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create service created response has a 4xx status code
 func (o *CreateServiceCreated) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this create service created response has a 5xx status code
 func (o *CreateServiceCreated) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create service created response a status code equal to that given
 func (o *CreateServiceCreated) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 201
 }
 
 // Code gets the status code for the create service created response
 func (o *CreateServiceCreated) Code() int {
+    logtrace.LogWithFunctionName()
 	return 201
 }
 
 func (o *CreateServiceCreated) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /services][%d] createServiceCreated %s", 201, payload)
 }
 
 func (o *CreateServiceCreated) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /services][%d] createServiceCreated %s", 201, payload)
 }
 
 func (o *CreateServiceCreated) GetPayload() *rest_model.CreateEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateServiceCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.CreateEnvelope)
 
@@ -155,6 +168,7 @@ func (o *CreateServiceCreated) readResponse(response runtime.ClientResponse, con
 
 // NewCreateServiceBadRequest creates a CreateServiceBadRequest with default headers values
 func NewCreateServiceBadRequest() *CreateServiceBadRequest {
+    logtrace.LogWithFunctionName()
 	return &CreateServiceBadRequest{}
 }
 
@@ -169,49 +183,59 @@ type CreateServiceBadRequest struct {
 
 // IsSuccess returns true when this create service bad request response has a 2xx status code
 func (o *CreateServiceBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create service bad request response has a 3xx status code
 func (o *CreateServiceBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create service bad request response has a 4xx status code
 func (o *CreateServiceBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create service bad request response has a 5xx status code
 func (o *CreateServiceBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create service bad request response a status code equal to that given
 func (o *CreateServiceBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the create service bad request response
 func (o *CreateServiceBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *CreateServiceBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /services][%d] createServiceBadRequest %s", 400, payload)
 }
 
 func (o *CreateServiceBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /services][%d] createServiceBadRequest %s", 400, payload)
 }
 
 func (o *CreateServiceBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateServiceBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *CreateServiceBadRequest) readResponse(response runtime.ClientResponse, 
 
 // NewCreateServiceUnauthorized creates a CreateServiceUnauthorized with default headers values
 func NewCreateServiceUnauthorized() *CreateServiceUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &CreateServiceUnauthorized{}
 }
 
@@ -239,49 +264,59 @@ type CreateServiceUnauthorized struct {
 
 // IsSuccess returns true when this create service unauthorized response has a 2xx status code
 func (o *CreateServiceUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create service unauthorized response has a 3xx status code
 func (o *CreateServiceUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create service unauthorized response has a 4xx status code
 func (o *CreateServiceUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create service unauthorized response has a 5xx status code
 func (o *CreateServiceUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create service unauthorized response a status code equal to that given
 func (o *CreateServiceUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the create service unauthorized response
 func (o *CreateServiceUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *CreateServiceUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /services][%d] createServiceUnauthorized %s", 401, payload)
 }
 
 func (o *CreateServiceUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /services][%d] createServiceUnauthorized %s", 401, payload)
 }
 
 func (o *CreateServiceUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateServiceUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *CreateServiceUnauthorized) readResponse(response runtime.ClientResponse
 
 // NewCreateServiceTooManyRequests creates a CreateServiceTooManyRequests with default headers values
 func NewCreateServiceTooManyRequests() *CreateServiceTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &CreateServiceTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type CreateServiceTooManyRequests struct {
 
 // IsSuccess returns true when this create service too many requests response has a 2xx status code
 func (o *CreateServiceTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create service too many requests response has a 3xx status code
 func (o *CreateServiceTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create service too many requests response has a 4xx status code
 func (o *CreateServiceTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create service too many requests response has a 5xx status code
 func (o *CreateServiceTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create service too many requests response a status code equal to that given
 func (o *CreateServiceTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the create service too many requests response
 func (o *CreateServiceTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *CreateServiceTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /services][%d] createServiceTooManyRequests %s", 429, payload)
 }
 
 func (o *CreateServiceTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /services][%d] createServiceTooManyRequests %s", 429, payload)
 }
 
 func (o *CreateServiceTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateServiceTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *CreateServiceTooManyRequests) readResponse(response runtime.ClientRespo
 
 // NewCreateServiceServiceUnavailable creates a CreateServiceServiceUnavailable with default headers values
 func NewCreateServiceServiceUnavailable() *CreateServiceServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &CreateServiceServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type CreateServiceServiceUnavailable struct {
 
 // IsSuccess returns true when this create service service unavailable response has a 2xx status code
 func (o *CreateServiceServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create service service unavailable response has a 3xx status code
 func (o *CreateServiceServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create service service unavailable response has a 4xx status code
 func (o *CreateServiceServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this create service service unavailable response has a 5xx status code
 func (o *CreateServiceServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this create service service unavailable response a status code equal to that given
 func (o *CreateServiceServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the create service service unavailable response
 func (o *CreateServiceServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *CreateServiceServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /services][%d] createServiceServiceUnavailable %s", 503, payload)
 }
 
 func (o *CreateServiceServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /services][%d] createServiceServiceUnavailable %s", 503, payload)
 }
 
 func (o *CreateServiceServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateServiceServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

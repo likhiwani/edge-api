@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCreateConfigParams() *CreateConfigParams {
+    logtrace.LogWithFunctionName()
 	return &CreateConfigParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewCreateConfigParams() *CreateConfigParams {
 // NewCreateConfigParamsWithTimeout creates a new CreateConfigParams object
 // with the ability to set a timeout on a request.
 func NewCreateConfigParamsWithTimeout(timeout time.Duration) *CreateConfigParams {
+    logtrace.LogWithFunctionName()
 	return &CreateConfigParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewCreateConfigParamsWithTimeout(timeout time.Duration) *CreateConfigParams
 // NewCreateConfigParamsWithContext creates a new CreateConfigParams object
 // with the ability to set a context for a request.
 func NewCreateConfigParamsWithContext(ctx context.Context) *CreateConfigParams {
+    logtrace.LogWithFunctionName()
 	return &CreateConfigParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewCreateConfigParamsWithContext(ctx context.Context) *CreateConfigParams {
 // NewCreateConfigParamsWithHTTPClient creates a new CreateConfigParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewCreateConfigParamsWithHTTPClient(client *http.Client) *CreateConfigParams {
+    logtrace.LogWithFunctionName()
 	return &CreateConfigParams{
 		HTTPClient: client,
 	}
@@ -102,6 +107,7 @@ type CreateConfigParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *CreateConfigParams) WithDefaults() *CreateConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -110,55 +116,65 @@ func (o *CreateConfigParams) WithDefaults() *CreateConfigParams {
 //
 // All values with no default are reset to their zero value.
 func (o *CreateConfigParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the create config params
 func (o *CreateConfigParams) WithTimeout(timeout time.Duration) *CreateConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the create config params
 func (o *CreateConfigParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the create config params
 func (o *CreateConfigParams) WithContext(ctx context.Context) *CreateConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the create config params
 func (o *CreateConfigParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the create config params
 func (o *CreateConfigParams) WithHTTPClient(client *http.Client) *CreateConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the create config params
 func (o *CreateConfigParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithConfig adds the config to the create config params
 func (o *CreateConfigParams) WithConfig(config *rest_model.ConfigCreate) *CreateConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetConfig(config)
 	return o
 }
 
 // SetConfig adds the config to the create config params
 func (o *CreateConfigParams) SetConfig(config *rest_model.ConfigCreate) {
+    logtrace.LogWithFunctionName()
 	o.Config = config
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *CreateConfigParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

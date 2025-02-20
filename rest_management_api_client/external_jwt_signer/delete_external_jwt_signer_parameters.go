@@ -30,6 +30,7 @@ package external_jwt_signer
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDeleteExternalJWTSignerParams() *DeleteExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteExternalJWTSignerParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDeleteExternalJWTSignerParams() *DeleteExternalJWTSignerParams {
 // NewDeleteExternalJWTSignerParamsWithTimeout creates a new DeleteExternalJWTSignerParams object
 // with the ability to set a timeout on a request.
 func NewDeleteExternalJWTSignerParamsWithTimeout(timeout time.Duration) *DeleteExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteExternalJWTSignerParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDeleteExternalJWTSignerParamsWithTimeout(timeout time.Duration) *DeleteE
 // NewDeleteExternalJWTSignerParamsWithContext creates a new DeleteExternalJWTSignerParams object
 // with the ability to set a context for a request.
 func NewDeleteExternalJWTSignerParamsWithContext(ctx context.Context) *DeleteExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteExternalJWTSignerParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDeleteExternalJWTSignerParamsWithContext(ctx context.Context) *DeleteExt
 // NewDeleteExternalJWTSignerParamsWithHTTPClient creates a new DeleteExternalJWTSignerParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDeleteExternalJWTSignerParamsWithHTTPClient(client *http.Client) *DeleteExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteExternalJWTSignerParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DeleteExternalJWTSignerParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteExternalJWTSignerParams) WithDefaults() *DeleteExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DeleteExternalJWTSignerParams) WithDefaults() *DeleteExternalJWTSignerP
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteExternalJWTSignerParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the delete external Jwt signer params
 func (o *DeleteExternalJWTSignerParams) WithTimeout(timeout time.Duration) *DeleteExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the delete external Jwt signer params
 func (o *DeleteExternalJWTSignerParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the delete external Jwt signer params
 func (o *DeleteExternalJWTSignerParams) WithContext(ctx context.Context) *DeleteExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the delete external Jwt signer params
 func (o *DeleteExternalJWTSignerParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the delete external Jwt signer params
 func (o *DeleteExternalJWTSignerParams) WithHTTPClient(client *http.Client) *DeleteExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the delete external Jwt signer params
 func (o *DeleteExternalJWTSignerParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the delete external Jwt signer params
 func (o *DeleteExternalJWTSignerParams) WithID(id string) *DeleteExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the delete external Jwt signer params
 func (o *DeleteExternalJWTSignerParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DeleteExternalJWTSignerParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

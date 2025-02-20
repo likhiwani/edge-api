@@ -30,6 +30,7 @@ package well_known
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -53,23 +54,27 @@ type ListWellKnownCasOK struct {
 
 // NewListWellKnownCasOK creates ListWellKnownCasOK with default headers values
 func NewListWellKnownCasOK() *ListWellKnownCasOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListWellKnownCasOK{}
 }
 
 // WithPayload adds the payload to the list well known cas o k response
 func (o *ListWellKnownCasOK) WithPayload(payload string) *ListWellKnownCasOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list well known cas o k response
 func (o *ListWellKnownCasOK) SetPayload(payload string) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListWellKnownCasOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	payload := o.Payload

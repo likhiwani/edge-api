@@ -30,6 +30,7 @@ package edge_router
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type ReEnrollEdgeRouterHandlerFunc func(ReEnrollEdgeRouterParams, interface{}) m
 
 // Handle executing the request and returning a response
 func (fn ReEnrollEdgeRouterHandlerFunc) Handle(params ReEnrollEdgeRouterParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type ReEnrollEdgeRouterHandler interface {
 
 // NewReEnrollEdgeRouter creates a new http.Handler for the re enroll edge router operation
 func NewReEnrollEdgeRouter(ctx *middleware.Context, handler ReEnrollEdgeRouterHandler) *ReEnrollEdgeRouter {
+    logtrace.LogWithFunctionName()
 	return &ReEnrollEdgeRouter{Context: ctx, Handler: handler}
 }
 
@@ -71,6 +74,7 @@ type ReEnrollEdgeRouter struct {
 }
 
 func (o *ReEnrollEdgeRouter) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

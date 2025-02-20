@@ -30,6 +30,7 @@ package enrollment
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -48,6 +49,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListEnrollmentsParams() *ListEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	return &ListEnrollmentsParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -56,6 +58,7 @@ func NewListEnrollmentsParams() *ListEnrollmentsParams {
 // NewListEnrollmentsParamsWithTimeout creates a new ListEnrollmentsParams object
 // with the ability to set a timeout on a request.
 func NewListEnrollmentsParamsWithTimeout(timeout time.Duration) *ListEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	return &ListEnrollmentsParams{
 		timeout: timeout,
 	}
@@ -64,6 +67,7 @@ func NewListEnrollmentsParamsWithTimeout(timeout time.Duration) *ListEnrollments
 // NewListEnrollmentsParamsWithContext creates a new ListEnrollmentsParams object
 // with the ability to set a context for a request.
 func NewListEnrollmentsParamsWithContext(ctx context.Context) *ListEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	return &ListEnrollmentsParams{
 		Context: ctx,
 	}
@@ -72,6 +76,7 @@ func NewListEnrollmentsParamsWithContext(ctx context.Context) *ListEnrollmentsPa
 // NewListEnrollmentsParamsWithHTTPClient creates a new ListEnrollmentsParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListEnrollmentsParamsWithHTTPClient(client *http.Client) *ListEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	return &ListEnrollmentsParams{
 		HTTPClient: client,
 	}
@@ -104,6 +109,7 @@ type ListEnrollmentsParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListEnrollmentsParams) WithDefaults() *ListEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -112,77 +118,91 @@ func (o *ListEnrollmentsParams) WithDefaults() *ListEnrollmentsParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListEnrollmentsParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list enrollments params
 func (o *ListEnrollmentsParams) WithTimeout(timeout time.Duration) *ListEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list enrollments params
 func (o *ListEnrollmentsParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list enrollments params
 func (o *ListEnrollmentsParams) WithContext(ctx context.Context) *ListEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list enrollments params
 func (o *ListEnrollmentsParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list enrollments params
 func (o *ListEnrollmentsParams) WithHTTPClient(client *http.Client) *ListEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list enrollments params
 func (o *ListEnrollmentsParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithFilter adds the filter to the list enrollments params
 func (o *ListEnrollmentsParams) WithFilter(filter *string) *ListEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	o.SetFilter(filter)
 	return o
 }
 
 // SetFilter adds the filter to the list enrollments params
 func (o *ListEnrollmentsParams) SetFilter(filter *string) {
+    logtrace.LogWithFunctionName()
 	o.Filter = filter
 }
 
 // WithLimit adds the limit to the list enrollments params
 func (o *ListEnrollmentsParams) WithLimit(limit *int64) *ListEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	o.SetLimit(limit)
 	return o
 }
 
 // SetLimit adds the limit to the list enrollments params
 func (o *ListEnrollmentsParams) SetLimit(limit *int64) {
+    logtrace.LogWithFunctionName()
 	o.Limit = limit
 }
 
 // WithOffset adds the offset to the list enrollments params
 func (o *ListEnrollmentsParams) WithOffset(offset *int64) *ListEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	o.SetOffset(offset)
 	return o
 }
 
 // SetOffset adds the offset to the list enrollments params
 func (o *ListEnrollmentsParams) SetOffset(offset *int64) {
+    logtrace.LogWithFunctionName()
 	o.Offset = offset
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListEnrollmentsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

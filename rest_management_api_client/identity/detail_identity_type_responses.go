@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DetailIdentityTypeReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DetailIdentityTypeReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDetailIdentityTypeOK()
@@ -85,6 +87,7 @@ func (o *DetailIdentityTypeReader) ReadResponse(response runtime.ClientResponse,
 
 // NewDetailIdentityTypeOK creates a DetailIdentityTypeOK with default headers values
 func NewDetailIdentityTypeOK() *DetailIdentityTypeOK {
+    logtrace.LogWithFunctionName()
 	return &DetailIdentityTypeOK{}
 }
 
@@ -99,49 +102,59 @@ type DetailIdentityTypeOK struct {
 
 // IsSuccess returns true when this detail identity type o k response has a 2xx status code
 func (o *DetailIdentityTypeOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this detail identity type o k response has a 3xx status code
 func (o *DetailIdentityTypeOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail identity type o k response has a 4xx status code
 func (o *DetailIdentityTypeOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail identity type o k response has a 5xx status code
 func (o *DetailIdentityTypeOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail identity type o k response a status code equal to that given
 func (o *DetailIdentityTypeOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the detail identity type o k response
 func (o *DetailIdentityTypeOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DetailIdentityTypeOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identity-types/{id}][%d] detailIdentityTypeOK %s", 200, payload)
 }
 
 func (o *DetailIdentityTypeOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identity-types/{id}][%d] detailIdentityTypeOK %s", 200, payload)
 }
 
 func (o *DetailIdentityTypeOK) GetPayload() *rest_model.DetailIdentityTypeEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailIdentityTypeOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.DetailIdentityTypeEnvelope)
 
@@ -155,6 +168,7 @@ func (o *DetailIdentityTypeOK) readResponse(response runtime.ClientResponse, con
 
 // NewDetailIdentityTypeUnauthorized creates a DetailIdentityTypeUnauthorized with default headers values
 func NewDetailIdentityTypeUnauthorized() *DetailIdentityTypeUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DetailIdentityTypeUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type DetailIdentityTypeUnauthorized struct {
 
 // IsSuccess returns true when this detail identity type unauthorized response has a 2xx status code
 func (o *DetailIdentityTypeUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail identity type unauthorized response has a 3xx status code
 func (o *DetailIdentityTypeUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail identity type unauthorized response has a 4xx status code
 func (o *DetailIdentityTypeUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail identity type unauthorized response has a 5xx status code
 func (o *DetailIdentityTypeUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail identity type unauthorized response a status code equal to that given
 func (o *DetailIdentityTypeUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the detail identity type unauthorized response
 func (o *DetailIdentityTypeUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DetailIdentityTypeUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identity-types/{id}][%d] detailIdentityTypeUnauthorized %s", 401, payload)
 }
 
 func (o *DetailIdentityTypeUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identity-types/{id}][%d] detailIdentityTypeUnauthorized %s", 401, payload)
 }
 
 func (o *DetailIdentityTypeUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailIdentityTypeUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *DetailIdentityTypeUnauthorized) readResponse(response runtime.ClientRes
 
 // NewDetailIdentityTypeNotFound creates a DetailIdentityTypeNotFound with default headers values
 func NewDetailIdentityTypeNotFound() *DetailIdentityTypeNotFound {
+    logtrace.LogWithFunctionName()
 	return &DetailIdentityTypeNotFound{}
 }
 
@@ -239,49 +264,59 @@ type DetailIdentityTypeNotFound struct {
 
 // IsSuccess returns true when this detail identity type not found response has a 2xx status code
 func (o *DetailIdentityTypeNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail identity type not found response has a 3xx status code
 func (o *DetailIdentityTypeNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail identity type not found response has a 4xx status code
 func (o *DetailIdentityTypeNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail identity type not found response has a 5xx status code
 func (o *DetailIdentityTypeNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail identity type not found response a status code equal to that given
 func (o *DetailIdentityTypeNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the detail identity type not found response
 func (o *DetailIdentityTypeNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DetailIdentityTypeNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identity-types/{id}][%d] detailIdentityTypeNotFound %s", 404, payload)
 }
 
 func (o *DetailIdentityTypeNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identity-types/{id}][%d] detailIdentityTypeNotFound %s", 404, payload)
 }
 
 func (o *DetailIdentityTypeNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailIdentityTypeNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *DetailIdentityTypeNotFound) readResponse(response runtime.ClientRespons
 
 // NewDetailIdentityTypeTooManyRequests creates a DetailIdentityTypeTooManyRequests with default headers values
 func NewDetailIdentityTypeTooManyRequests() *DetailIdentityTypeTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DetailIdentityTypeTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type DetailIdentityTypeTooManyRequests struct {
 
 // IsSuccess returns true when this detail identity type too many requests response has a 2xx status code
 func (o *DetailIdentityTypeTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail identity type too many requests response has a 3xx status code
 func (o *DetailIdentityTypeTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail identity type too many requests response has a 4xx status code
 func (o *DetailIdentityTypeTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail identity type too many requests response has a 5xx status code
 func (o *DetailIdentityTypeTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail identity type too many requests response a status code equal to that given
 func (o *DetailIdentityTypeTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the detail identity type too many requests response
 func (o *DetailIdentityTypeTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DetailIdentityTypeTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identity-types/{id}][%d] detailIdentityTypeTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailIdentityTypeTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identity-types/{id}][%d] detailIdentityTypeTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailIdentityTypeTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailIdentityTypeTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *DetailIdentityTypeTooManyRequests) readResponse(response runtime.Client
 
 // NewDetailIdentityTypeServiceUnavailable creates a DetailIdentityTypeServiceUnavailable with default headers values
 func NewDetailIdentityTypeServiceUnavailable() *DetailIdentityTypeServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DetailIdentityTypeServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type DetailIdentityTypeServiceUnavailable struct {
 
 // IsSuccess returns true when this detail identity type service unavailable response has a 2xx status code
 func (o *DetailIdentityTypeServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail identity type service unavailable response has a 3xx status code
 func (o *DetailIdentityTypeServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail identity type service unavailable response has a 4xx status code
 func (o *DetailIdentityTypeServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail identity type service unavailable response has a 5xx status code
 func (o *DetailIdentityTypeServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this detail identity type service unavailable response a status code equal to that given
 func (o *DetailIdentityTypeServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the detail identity type service unavailable response
 func (o *DetailIdentityTypeServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DetailIdentityTypeServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identity-types/{id}][%d] detailIdentityTypeServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailIdentityTypeServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identity-types/{id}][%d] detailIdentityTypeServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailIdentityTypeServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailIdentityTypeServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

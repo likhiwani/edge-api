@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -46,6 +47,7 @@ type AuthPolicyUpdate struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *AuthPolicyUpdate) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 AuthPolicyCreate
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -58,6 +60,7 @@ func (m *AuthPolicyUpdate) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m AuthPolicyUpdate) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 1)
 
 	aO0, err := swag.WriteJSON(m.AuthPolicyCreate)
@@ -70,6 +73,7 @@ func (m AuthPolicyUpdate) MarshalJSON() ([]byte, error) {
 
 // Validate validates this auth policy update
 func (m *AuthPolicyUpdate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with AuthPolicyCreate
@@ -85,6 +89,7 @@ func (m *AuthPolicyUpdate) Validate(formats strfmt.Registry) error {
 
 // ContextValidate validate this auth policy update based on the context it is used
 func (m *AuthPolicyUpdate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with AuthPolicyCreate

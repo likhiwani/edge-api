@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -54,6 +55,7 @@ type DetailEnrollmentEnvelope struct {
 
 // Validate validates this detail enrollment envelope
 func (m *DetailEnrollmentEnvelope) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateData(formats); err != nil {
@@ -71,6 +73,7 @@ func (m *DetailEnrollmentEnvelope) Validate(formats strfmt.Registry) error {
 }
 
 func (m *DetailEnrollmentEnvelope) validateData(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("data", "body", m.Data); err != nil {
 		return err
@@ -91,6 +94,7 @@ func (m *DetailEnrollmentEnvelope) validateData(formats strfmt.Registry) error {
 }
 
 func (m *DetailEnrollmentEnvelope) validateMeta(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("meta", "body", m.Meta); err != nil {
 		return err
@@ -112,6 +116,7 @@ func (m *DetailEnrollmentEnvelope) validateMeta(formats strfmt.Registry) error {
 
 // ContextValidate validate this detail enrollment envelope based on the context it is used
 func (m *DetailEnrollmentEnvelope) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateData(ctx, formats); err != nil {
@@ -129,6 +134,7 @@ func (m *DetailEnrollmentEnvelope) ContextValidate(ctx context.Context, formats 
 }
 
 func (m *DetailEnrollmentEnvelope) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Data != nil {
 
@@ -146,6 +152,7 @@ func (m *DetailEnrollmentEnvelope) contextValidateData(ctx context.Context, form
 }
 
 func (m *DetailEnrollmentEnvelope) contextValidateMeta(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Meta != nil {
 
@@ -164,6 +171,7 @@ func (m *DetailEnrollmentEnvelope) contextValidateMeta(ctx context.Context, form
 
 // MarshalBinary interface implementation
 func (m *DetailEnrollmentEnvelope) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -172,6 +180,7 @@ func (m *DetailEnrollmentEnvelope) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *DetailEnrollmentEnvelope) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res DetailEnrollmentEnvelope
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

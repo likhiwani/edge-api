@@ -30,6 +30,7 @@ package enrollment
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type ListEnrollmentsHandlerFunc func(ListEnrollmentsParams, interface{}) middlew
 
 // Handle executing the request and returning a response
 func (fn ListEnrollmentsHandlerFunc) Handle(params ListEnrollmentsParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type ListEnrollmentsHandler interface {
 
 // NewListEnrollments creates a new http.Handler for the list enrollments operation
 func NewListEnrollments(ctx *middleware.Context, handler ListEnrollmentsHandler) *ListEnrollments {
+    logtrace.LogWithFunctionName()
 	return &ListEnrollments{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type ListEnrollments struct {
 }
 
 func (o *ListEnrollments) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

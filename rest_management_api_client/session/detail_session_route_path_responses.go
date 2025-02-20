@@ -30,6 +30,7 @@ package session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DetailSessionRoutePathReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DetailSessionRoutePathReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDetailSessionRoutePathOK()
@@ -85,6 +87,7 @@ func (o *DetailSessionRoutePathReader) ReadResponse(response runtime.ClientRespo
 
 // NewDetailSessionRoutePathOK creates a DetailSessionRoutePathOK with default headers values
 func NewDetailSessionRoutePathOK() *DetailSessionRoutePathOK {
+    logtrace.LogWithFunctionName()
 	return &DetailSessionRoutePathOK{}
 }
 
@@ -99,49 +102,59 @@ type DetailSessionRoutePathOK struct {
 
 // IsSuccess returns true when this detail session route path o k response has a 2xx status code
 func (o *DetailSessionRoutePathOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this detail session route path o k response has a 3xx status code
 func (o *DetailSessionRoutePathOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail session route path o k response has a 4xx status code
 func (o *DetailSessionRoutePathOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail session route path o k response has a 5xx status code
 func (o *DetailSessionRoutePathOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail session route path o k response a status code equal to that given
 func (o *DetailSessionRoutePathOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the detail session route path o k response
 func (o *DetailSessionRoutePathOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DetailSessionRoutePathOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}/route-path][%d] detailSessionRoutePathOK %s", 200, payload)
 }
 
 func (o *DetailSessionRoutePathOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}/route-path][%d] detailSessionRoutePathOK %s", 200, payload)
 }
 
 func (o *DetailSessionRoutePathOK) GetPayload() *rest_model.DetailSessionRoutePathEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailSessionRoutePathOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.DetailSessionRoutePathEnvelope)
 
@@ -155,6 +168,7 @@ func (o *DetailSessionRoutePathOK) readResponse(response runtime.ClientResponse,
 
 // NewDetailSessionRoutePathUnauthorized creates a DetailSessionRoutePathUnauthorized with default headers values
 func NewDetailSessionRoutePathUnauthorized() *DetailSessionRoutePathUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DetailSessionRoutePathUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type DetailSessionRoutePathUnauthorized struct {
 
 // IsSuccess returns true when this detail session route path unauthorized response has a 2xx status code
 func (o *DetailSessionRoutePathUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail session route path unauthorized response has a 3xx status code
 func (o *DetailSessionRoutePathUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail session route path unauthorized response has a 4xx status code
 func (o *DetailSessionRoutePathUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail session route path unauthorized response has a 5xx status code
 func (o *DetailSessionRoutePathUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail session route path unauthorized response a status code equal to that given
 func (o *DetailSessionRoutePathUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the detail session route path unauthorized response
 func (o *DetailSessionRoutePathUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DetailSessionRoutePathUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}/route-path][%d] detailSessionRoutePathUnauthorized %s", 401, payload)
 }
 
 func (o *DetailSessionRoutePathUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}/route-path][%d] detailSessionRoutePathUnauthorized %s", 401, payload)
 }
 
 func (o *DetailSessionRoutePathUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailSessionRoutePathUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *DetailSessionRoutePathUnauthorized) readResponse(response runtime.Clien
 
 // NewDetailSessionRoutePathNotFound creates a DetailSessionRoutePathNotFound with default headers values
 func NewDetailSessionRoutePathNotFound() *DetailSessionRoutePathNotFound {
+    logtrace.LogWithFunctionName()
 	return &DetailSessionRoutePathNotFound{}
 }
 
@@ -239,49 +264,59 @@ type DetailSessionRoutePathNotFound struct {
 
 // IsSuccess returns true when this detail session route path not found response has a 2xx status code
 func (o *DetailSessionRoutePathNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail session route path not found response has a 3xx status code
 func (o *DetailSessionRoutePathNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail session route path not found response has a 4xx status code
 func (o *DetailSessionRoutePathNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail session route path not found response has a 5xx status code
 func (o *DetailSessionRoutePathNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail session route path not found response a status code equal to that given
 func (o *DetailSessionRoutePathNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the detail session route path not found response
 func (o *DetailSessionRoutePathNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DetailSessionRoutePathNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}/route-path][%d] detailSessionRoutePathNotFound %s", 404, payload)
 }
 
 func (o *DetailSessionRoutePathNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}/route-path][%d] detailSessionRoutePathNotFound %s", 404, payload)
 }
 
 func (o *DetailSessionRoutePathNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailSessionRoutePathNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *DetailSessionRoutePathNotFound) readResponse(response runtime.ClientRes
 
 // NewDetailSessionRoutePathTooManyRequests creates a DetailSessionRoutePathTooManyRequests with default headers values
 func NewDetailSessionRoutePathTooManyRequests() *DetailSessionRoutePathTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DetailSessionRoutePathTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type DetailSessionRoutePathTooManyRequests struct {
 
 // IsSuccess returns true when this detail session route path too many requests response has a 2xx status code
 func (o *DetailSessionRoutePathTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail session route path too many requests response has a 3xx status code
 func (o *DetailSessionRoutePathTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail session route path too many requests response has a 4xx status code
 func (o *DetailSessionRoutePathTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail session route path too many requests response has a 5xx status code
 func (o *DetailSessionRoutePathTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail session route path too many requests response a status code equal to that given
 func (o *DetailSessionRoutePathTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the detail session route path too many requests response
 func (o *DetailSessionRoutePathTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DetailSessionRoutePathTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}/route-path][%d] detailSessionRoutePathTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailSessionRoutePathTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}/route-path][%d] detailSessionRoutePathTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailSessionRoutePathTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailSessionRoutePathTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *DetailSessionRoutePathTooManyRequests) readResponse(response runtime.Cl
 
 // NewDetailSessionRoutePathServiceUnavailable creates a DetailSessionRoutePathServiceUnavailable with default headers values
 func NewDetailSessionRoutePathServiceUnavailable() *DetailSessionRoutePathServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DetailSessionRoutePathServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type DetailSessionRoutePathServiceUnavailable struct {
 
 // IsSuccess returns true when this detail session route path service unavailable response has a 2xx status code
 func (o *DetailSessionRoutePathServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail session route path service unavailable response has a 3xx status code
 func (o *DetailSessionRoutePathServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail session route path service unavailable response has a 4xx status code
 func (o *DetailSessionRoutePathServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail session route path service unavailable response has a 5xx status code
 func (o *DetailSessionRoutePathServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this detail session route path service unavailable response a status code equal to that given
 func (o *DetailSessionRoutePathServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the detail session route path service unavailable response
 func (o *DetailSessionRoutePathServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DetailSessionRoutePathServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}/route-path][%d] detailSessionRoutePathServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailSessionRoutePathServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}/route-path][%d] detailSessionRoutePathServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailSessionRoutePathServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailSessionRoutePathServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -43,6 +44,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewEnrollParams() EnrollParams {
+    logtrace.LogWithFunctionName()
 
 	return EnrollParams{}
 }
@@ -71,6 +73,7 @@ type EnrollParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewEnrollParams() beforehand.
 func (o *EnrollParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r
@@ -94,6 +97,7 @@ func (o *EnrollParams) BindRequest(r *http.Request, route *middleware.MatchedRou
 
 // bindMethod binds and validates parameter Method from query.
 func (o *EnrollParams) bindMethod(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -112,6 +116,7 @@ func (o *EnrollParams) bindMethod(rawData []string, hasKey bool, formats strfmt.
 
 // bindToken binds and validates parameter Token from query.
 func (o *EnrollParams) bindToken(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -140,6 +145,7 @@ func (o *EnrollParams) bindToken(rawData []string, hasKey bool, formats strfmt.R
 
 // validateToken carries on validations for parameter Token
 func (o *EnrollParams) validateToken(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.FormatOf("token", "query", "uuid", o.Token.String(), formats); err != nil {
 		return err

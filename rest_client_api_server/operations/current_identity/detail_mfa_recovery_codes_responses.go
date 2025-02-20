@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DetailMfaRecoveryCodesOK struct {
 
 // NewDetailMfaRecoveryCodesOK creates DetailMfaRecoveryCodesOK with default headers values
 func NewDetailMfaRecoveryCodesOK() *DetailMfaRecoveryCodesOK {
+    logtrace.LogWithFunctionName()
 
 	return &DetailMfaRecoveryCodesOK{}
 }
 
 // WithPayload adds the payload to the detail mfa recovery codes o k response
 func (o *DetailMfaRecoveryCodesOK) WithPayload(payload *rest_model.DetailMfaRecoveryCodesEnvelope) *DetailMfaRecoveryCodesOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail mfa recovery codes o k response
 func (o *DetailMfaRecoveryCodesOK) SetPayload(payload *rest_model.DetailMfaRecoveryCodesEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailMfaRecoveryCodesOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DetailMfaRecoveryCodesUnauthorized struct {
 
 // NewDetailMfaRecoveryCodesUnauthorized creates DetailMfaRecoveryCodesUnauthorized with default headers values
 func NewDetailMfaRecoveryCodesUnauthorized() *DetailMfaRecoveryCodesUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DetailMfaRecoveryCodesUnauthorized{}
 }
 
 // WithPayload adds the payload to the detail mfa recovery codes unauthorized response
 func (o *DetailMfaRecoveryCodesUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailMfaRecoveryCodesUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail mfa recovery codes unauthorized response
 func (o *DetailMfaRecoveryCodesUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailMfaRecoveryCodesUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DetailMfaRecoveryCodesNotFound struct {
 
 // NewDetailMfaRecoveryCodesNotFound creates DetailMfaRecoveryCodesNotFound with default headers values
 func NewDetailMfaRecoveryCodesNotFound() *DetailMfaRecoveryCodesNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DetailMfaRecoveryCodesNotFound{}
 }
 
 // WithPayload adds the payload to the detail mfa recovery codes not found response
 func (o *DetailMfaRecoveryCodesNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailMfaRecoveryCodesNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail mfa recovery codes not found response
 func (o *DetailMfaRecoveryCodesNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailMfaRecoveryCodesNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {

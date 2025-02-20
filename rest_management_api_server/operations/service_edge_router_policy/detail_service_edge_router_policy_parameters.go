@@ -30,6 +30,7 @@ package service_edge_router_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -41,6 +42,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewDetailServiceEdgeRouterPolicyParams() DetailServiceEdgeRouterPolicyParams {
+    logtrace.LogWithFunctionName()
 
 	return DetailServiceEdgeRouterPolicyParams{}
 }
@@ -66,6 +68,7 @@ type DetailServiceEdgeRouterPolicyParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewDetailServiceEdgeRouterPolicyParams() beforehand.
 func (o *DetailServiceEdgeRouterPolicyParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r
@@ -82,6 +85,7 @@ func (o *DetailServiceEdgeRouterPolicyParams) BindRequest(r *http.Request, route
 
 // bindID binds and validates parameter ID from path.
 func (o *DetailServiceEdgeRouterPolicyParams) bindID(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]

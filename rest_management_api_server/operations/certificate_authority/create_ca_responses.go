@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type CreateCaCreated struct {
 
 // NewCreateCaCreated creates CreateCaCreated with default headers values
 func NewCreateCaCreated() *CreateCaCreated {
+    logtrace.LogWithFunctionName()
 
 	return &CreateCaCreated{}
 }
 
 // WithPayload adds the payload to the create ca created response
 func (o *CreateCaCreated) WithPayload(payload *rest_model.CreateEnvelope) *CreateCaCreated {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create ca created response
 func (o *CreateCaCreated) SetPayload(payload *rest_model.CreateEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateCaCreated) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(201)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type CreateCaBadRequest struct {
 
 // NewCreateCaBadRequest creates CreateCaBadRequest with default headers values
 func NewCreateCaBadRequest() *CreateCaBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &CreateCaBadRequest{}
 }
 
 // WithPayload adds the payload to the create ca bad request response
 func (o *CreateCaBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateCaBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create ca bad request response
 func (o *CreateCaBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateCaBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type CreateCaUnauthorized struct {
 
 // NewCreateCaUnauthorized creates CreateCaUnauthorized with default headers values
 func NewCreateCaUnauthorized() *CreateCaUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &CreateCaUnauthorized{}
 }
 
 // WithPayload adds the payload to the create ca unauthorized response
 func (o *CreateCaUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateCaUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create ca unauthorized response
 func (o *CreateCaUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateCaUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type CreateCaTooManyRequests struct {
 
 // NewCreateCaTooManyRequests creates CreateCaTooManyRequests with default headers values
 func NewCreateCaTooManyRequests() *CreateCaTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &CreateCaTooManyRequests{}
 }
 
 // WithPayload adds the payload to the create ca too many requests response
 func (o *CreateCaTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateCaTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create ca too many requests response
 func (o *CreateCaTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateCaTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type CreateCaServiceUnavailable struct {
 
 // NewCreateCaServiceUnavailable creates CreateCaServiceUnavailable with default headers values
 func NewCreateCaServiceUnavailable() *CreateCaServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &CreateCaServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the create ca service unavailable response
 func (o *CreateCaServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateCaServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create ca service unavailable response
 func (o *CreateCaServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateCaServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

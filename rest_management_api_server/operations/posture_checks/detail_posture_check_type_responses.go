@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DetailPostureCheckTypeOK struct {
 
 // NewDetailPostureCheckTypeOK creates DetailPostureCheckTypeOK with default headers values
 func NewDetailPostureCheckTypeOK() *DetailPostureCheckTypeOK {
+    logtrace.LogWithFunctionName()
 
 	return &DetailPostureCheckTypeOK{}
 }
 
 // WithPayload adds the payload to the detail posture check type o k response
 func (o *DetailPostureCheckTypeOK) WithPayload(payload *rest_model.DetailPostureCheckTypeEnvelope) *DetailPostureCheckTypeOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail posture check type o k response
 func (o *DetailPostureCheckTypeOK) SetPayload(payload *rest_model.DetailPostureCheckTypeEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailPostureCheckTypeOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DetailPostureCheckTypeUnauthorized struct {
 
 // NewDetailPostureCheckTypeUnauthorized creates DetailPostureCheckTypeUnauthorized with default headers values
 func NewDetailPostureCheckTypeUnauthorized() *DetailPostureCheckTypeUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DetailPostureCheckTypeUnauthorized{}
 }
 
 // WithPayload adds the payload to the detail posture check type unauthorized response
 func (o *DetailPostureCheckTypeUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailPostureCheckTypeUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail posture check type unauthorized response
 func (o *DetailPostureCheckTypeUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailPostureCheckTypeUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DetailPostureCheckTypeNotFound struct {
 
 // NewDetailPostureCheckTypeNotFound creates DetailPostureCheckTypeNotFound with default headers values
 func NewDetailPostureCheckTypeNotFound() *DetailPostureCheckTypeNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DetailPostureCheckTypeNotFound{}
 }
 
 // WithPayload adds the payload to the detail posture check type not found response
 func (o *DetailPostureCheckTypeNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailPostureCheckTypeNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail posture check type not found response
 func (o *DetailPostureCheckTypeNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailPostureCheckTypeNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DetailPostureCheckTypeTooManyRequests struct {
 
 // NewDetailPostureCheckTypeTooManyRequests creates DetailPostureCheckTypeTooManyRequests with default headers values
 func NewDetailPostureCheckTypeTooManyRequests() *DetailPostureCheckTypeTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DetailPostureCheckTypeTooManyRequests{}
 }
 
 // WithPayload adds the payload to the detail posture check type too many requests response
 func (o *DetailPostureCheckTypeTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailPostureCheckTypeTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail posture check type too many requests response
 func (o *DetailPostureCheckTypeTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailPostureCheckTypeTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DetailPostureCheckTypeServiceUnavailable struct {
 
 // NewDetailPostureCheckTypeServiceUnavailable creates DetailPostureCheckTypeServiceUnavailable with default headers values
 func NewDetailPostureCheckTypeServiceUnavailable() *DetailPostureCheckTypeServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DetailPostureCheckTypeServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the detail posture check type service unavailable response
 func (o *DetailPostureCheckTypeServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailPostureCheckTypeServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail posture check type service unavailable response
 func (o *DetailPostureCheckTypeServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailPostureCheckTypeServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

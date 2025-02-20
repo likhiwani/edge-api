@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -48,6 +49,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListConfigServicesParams() *ListConfigServicesParams {
+    logtrace.LogWithFunctionName()
 	return &ListConfigServicesParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -56,6 +58,7 @@ func NewListConfigServicesParams() *ListConfigServicesParams {
 // NewListConfigServicesParamsWithTimeout creates a new ListConfigServicesParams object
 // with the ability to set a timeout on a request.
 func NewListConfigServicesParamsWithTimeout(timeout time.Duration) *ListConfigServicesParams {
+    logtrace.LogWithFunctionName()
 	return &ListConfigServicesParams{
 		timeout: timeout,
 	}
@@ -64,6 +67,7 @@ func NewListConfigServicesParamsWithTimeout(timeout time.Duration) *ListConfigSe
 // NewListConfigServicesParamsWithContext creates a new ListConfigServicesParams object
 // with the ability to set a context for a request.
 func NewListConfigServicesParamsWithContext(ctx context.Context) *ListConfigServicesParams {
+    logtrace.LogWithFunctionName()
 	return &ListConfigServicesParams{
 		Context: ctx,
 	}
@@ -72,6 +76,7 @@ func NewListConfigServicesParamsWithContext(ctx context.Context) *ListConfigServ
 // NewListConfigServicesParamsWithHTTPClient creates a new ListConfigServicesParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListConfigServicesParamsWithHTTPClient(client *http.Client) *ListConfigServicesParams {
+    logtrace.LogWithFunctionName()
 	return &ListConfigServicesParams{
 		HTTPClient: client,
 	}
@@ -110,6 +115,7 @@ type ListConfigServicesParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListConfigServicesParams) WithDefaults() *ListConfigServicesParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -118,88 +124,104 @@ func (o *ListConfigServicesParams) WithDefaults() *ListConfigServicesParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListConfigServicesParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list config services params
 func (o *ListConfigServicesParams) WithTimeout(timeout time.Duration) *ListConfigServicesParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list config services params
 func (o *ListConfigServicesParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list config services params
 func (o *ListConfigServicesParams) WithContext(ctx context.Context) *ListConfigServicesParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list config services params
 func (o *ListConfigServicesParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list config services params
 func (o *ListConfigServicesParams) WithHTTPClient(client *http.Client) *ListConfigServicesParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list config services params
 func (o *ListConfigServicesParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithFilter adds the filter to the list config services params
 func (o *ListConfigServicesParams) WithFilter(filter *string) *ListConfigServicesParams {
+    logtrace.LogWithFunctionName()
 	o.SetFilter(filter)
 	return o
 }
 
 // SetFilter adds the filter to the list config services params
 func (o *ListConfigServicesParams) SetFilter(filter *string) {
+    logtrace.LogWithFunctionName()
 	o.Filter = filter
 }
 
 // WithID adds the id to the list config services params
 func (o *ListConfigServicesParams) WithID(id string) *ListConfigServicesParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the list config services params
 func (o *ListConfigServicesParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WithLimit adds the limit to the list config services params
 func (o *ListConfigServicesParams) WithLimit(limit *int64) *ListConfigServicesParams {
+    logtrace.LogWithFunctionName()
 	o.SetLimit(limit)
 	return o
 }
 
 // SetLimit adds the limit to the list config services params
 func (o *ListConfigServicesParams) SetLimit(limit *int64) {
+    logtrace.LogWithFunctionName()
 	o.Limit = limit
 }
 
 // WithOffset adds the offset to the list config services params
 func (o *ListConfigServicesParams) WithOffset(offset *int64) *ListConfigServicesParams {
+    logtrace.LogWithFunctionName()
 	o.SetOffset(offset)
 	return o
 }
 
 // SetOffset adds the offset to the list config services params
 func (o *ListConfigServicesParams) SetOffset(offset *int64) {
+    logtrace.LogWithFunctionName()
 	o.Offset = offset
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListConfigServicesParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type CreateMfaRecoveryCodesOK struct {
 
 // NewCreateMfaRecoveryCodesOK creates CreateMfaRecoveryCodesOK with default headers values
 func NewCreateMfaRecoveryCodesOK() *CreateMfaRecoveryCodesOK {
+    logtrace.LogWithFunctionName()
 
 	return &CreateMfaRecoveryCodesOK{}
 }
 
 // WithPayload adds the payload to the create mfa recovery codes o k response
 func (o *CreateMfaRecoveryCodesOK) WithPayload(payload *rest_model.Empty) *CreateMfaRecoveryCodesOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create mfa recovery codes o k response
 func (o *CreateMfaRecoveryCodesOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateMfaRecoveryCodesOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type CreateMfaRecoveryCodesUnauthorized struct {
 
 // NewCreateMfaRecoveryCodesUnauthorized creates CreateMfaRecoveryCodesUnauthorized with default headers values
 func NewCreateMfaRecoveryCodesUnauthorized() *CreateMfaRecoveryCodesUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &CreateMfaRecoveryCodesUnauthorized{}
 }
 
 // WithPayload adds the payload to the create mfa recovery codes unauthorized response
 func (o *CreateMfaRecoveryCodesUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateMfaRecoveryCodesUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create mfa recovery codes unauthorized response
 func (o *CreateMfaRecoveryCodesUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateMfaRecoveryCodesUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type CreateMfaRecoveryCodesNotFound struct {
 
 // NewCreateMfaRecoveryCodesNotFound creates CreateMfaRecoveryCodesNotFound with default headers values
 func NewCreateMfaRecoveryCodesNotFound() *CreateMfaRecoveryCodesNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &CreateMfaRecoveryCodesNotFound{}
 }
 
 // WithPayload adds the payload to the create mfa recovery codes not found response
 func (o *CreateMfaRecoveryCodesNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateMfaRecoveryCodesNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create mfa recovery codes not found response
 func (o *CreateMfaRecoveryCodesNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateMfaRecoveryCodesNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {

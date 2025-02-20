@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewGetIdentityAuthenticatorsParams() *GetIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityAuthenticatorsParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewGetIdentityAuthenticatorsParams() *GetIdentityAuthenticatorsParams {
 // NewGetIdentityAuthenticatorsParamsWithTimeout creates a new GetIdentityAuthenticatorsParams object
 // with the ability to set a timeout on a request.
 func NewGetIdentityAuthenticatorsParamsWithTimeout(timeout time.Duration) *GetIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityAuthenticatorsParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewGetIdentityAuthenticatorsParamsWithTimeout(timeout time.Duration) *GetId
 // NewGetIdentityAuthenticatorsParamsWithContext creates a new GetIdentityAuthenticatorsParams object
 // with the ability to set a context for a request.
 func NewGetIdentityAuthenticatorsParamsWithContext(ctx context.Context) *GetIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityAuthenticatorsParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewGetIdentityAuthenticatorsParamsWithContext(ctx context.Context) *GetIden
 // NewGetIdentityAuthenticatorsParamsWithHTTPClient creates a new GetIdentityAuthenticatorsParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewGetIdentityAuthenticatorsParamsWithHTTPClient(client *http.Client) *GetIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityAuthenticatorsParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type GetIdentityAuthenticatorsParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *GetIdentityAuthenticatorsParams) WithDefaults() *GetIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *GetIdentityAuthenticatorsParams) WithDefaults() *GetIdentityAuthenticat
 //
 // All values with no default are reset to their zero value.
 func (o *GetIdentityAuthenticatorsParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the get identity authenticators params
 func (o *GetIdentityAuthenticatorsParams) WithTimeout(timeout time.Duration) *GetIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the get identity authenticators params
 func (o *GetIdentityAuthenticatorsParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the get identity authenticators params
 func (o *GetIdentityAuthenticatorsParams) WithContext(ctx context.Context) *GetIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the get identity authenticators params
 func (o *GetIdentityAuthenticatorsParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the get identity authenticators params
 func (o *GetIdentityAuthenticatorsParams) WithHTTPClient(client *http.Client) *GetIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the get identity authenticators params
 func (o *GetIdentityAuthenticatorsParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the get identity authenticators params
 func (o *GetIdentityAuthenticatorsParams) WithID(id string) *GetIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the get identity authenticators params
 func (o *GetIdentityAuthenticatorsParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *GetIdentityAuthenticatorsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type GetIdentityEnrollmentsReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *GetIdentityEnrollmentsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewGetIdentityEnrollmentsOK()
@@ -85,6 +87,7 @@ func (o *GetIdentityEnrollmentsReader) ReadResponse(response runtime.ClientRespo
 
 // NewGetIdentityEnrollmentsOK creates a GetIdentityEnrollmentsOK with default headers values
 func NewGetIdentityEnrollmentsOK() *GetIdentityEnrollmentsOK {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityEnrollmentsOK{}
 }
 
@@ -99,49 +102,59 @@ type GetIdentityEnrollmentsOK struct {
 
 // IsSuccess returns true when this get identity enrollments o k response has a 2xx status code
 func (o *GetIdentityEnrollmentsOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this get identity enrollments o k response has a 3xx status code
 func (o *GetIdentityEnrollmentsOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get identity enrollments o k response has a 4xx status code
 func (o *GetIdentityEnrollmentsOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this get identity enrollments o k response has a 5xx status code
 func (o *GetIdentityEnrollmentsOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get identity enrollments o k response a status code equal to that given
 func (o *GetIdentityEnrollmentsOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the get identity enrollments o k response
 func (o *GetIdentityEnrollmentsOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *GetIdentityEnrollmentsOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/enrollments][%d] getIdentityEnrollmentsOK %s", 200, payload)
 }
 
 func (o *GetIdentityEnrollmentsOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/enrollments][%d] getIdentityEnrollmentsOK %s", 200, payload)
 }
 
 func (o *GetIdentityEnrollmentsOK) GetPayload() *rest_model.ListEnrollmentsEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetIdentityEnrollmentsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListEnrollmentsEnvelope)
 
@@ -155,6 +168,7 @@ func (o *GetIdentityEnrollmentsOK) readResponse(response runtime.ClientResponse,
 
 // NewGetIdentityEnrollmentsUnauthorized creates a GetIdentityEnrollmentsUnauthorized with default headers values
 func NewGetIdentityEnrollmentsUnauthorized() *GetIdentityEnrollmentsUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityEnrollmentsUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type GetIdentityEnrollmentsUnauthorized struct {
 
 // IsSuccess returns true when this get identity enrollments unauthorized response has a 2xx status code
 func (o *GetIdentityEnrollmentsUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this get identity enrollments unauthorized response has a 3xx status code
 func (o *GetIdentityEnrollmentsUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get identity enrollments unauthorized response has a 4xx status code
 func (o *GetIdentityEnrollmentsUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this get identity enrollments unauthorized response has a 5xx status code
 func (o *GetIdentityEnrollmentsUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get identity enrollments unauthorized response a status code equal to that given
 func (o *GetIdentityEnrollmentsUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the get identity enrollments unauthorized response
 func (o *GetIdentityEnrollmentsUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *GetIdentityEnrollmentsUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/enrollments][%d] getIdentityEnrollmentsUnauthorized %s", 401, payload)
 }
 
 func (o *GetIdentityEnrollmentsUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/enrollments][%d] getIdentityEnrollmentsUnauthorized %s", 401, payload)
 }
 
 func (o *GetIdentityEnrollmentsUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetIdentityEnrollmentsUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *GetIdentityEnrollmentsUnauthorized) readResponse(response runtime.Clien
 
 // NewGetIdentityEnrollmentsNotFound creates a GetIdentityEnrollmentsNotFound with default headers values
 func NewGetIdentityEnrollmentsNotFound() *GetIdentityEnrollmentsNotFound {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityEnrollmentsNotFound{}
 }
 
@@ -239,49 +264,59 @@ type GetIdentityEnrollmentsNotFound struct {
 
 // IsSuccess returns true when this get identity enrollments not found response has a 2xx status code
 func (o *GetIdentityEnrollmentsNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this get identity enrollments not found response has a 3xx status code
 func (o *GetIdentityEnrollmentsNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get identity enrollments not found response has a 4xx status code
 func (o *GetIdentityEnrollmentsNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this get identity enrollments not found response has a 5xx status code
 func (o *GetIdentityEnrollmentsNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get identity enrollments not found response a status code equal to that given
 func (o *GetIdentityEnrollmentsNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the get identity enrollments not found response
 func (o *GetIdentityEnrollmentsNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *GetIdentityEnrollmentsNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/enrollments][%d] getIdentityEnrollmentsNotFound %s", 404, payload)
 }
 
 func (o *GetIdentityEnrollmentsNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/enrollments][%d] getIdentityEnrollmentsNotFound %s", 404, payload)
 }
 
 func (o *GetIdentityEnrollmentsNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetIdentityEnrollmentsNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *GetIdentityEnrollmentsNotFound) readResponse(response runtime.ClientRes
 
 // NewGetIdentityEnrollmentsTooManyRequests creates a GetIdentityEnrollmentsTooManyRequests with default headers values
 func NewGetIdentityEnrollmentsTooManyRequests() *GetIdentityEnrollmentsTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityEnrollmentsTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type GetIdentityEnrollmentsTooManyRequests struct {
 
 // IsSuccess returns true when this get identity enrollments too many requests response has a 2xx status code
 func (o *GetIdentityEnrollmentsTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this get identity enrollments too many requests response has a 3xx status code
 func (o *GetIdentityEnrollmentsTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get identity enrollments too many requests response has a 4xx status code
 func (o *GetIdentityEnrollmentsTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this get identity enrollments too many requests response has a 5xx status code
 func (o *GetIdentityEnrollmentsTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get identity enrollments too many requests response a status code equal to that given
 func (o *GetIdentityEnrollmentsTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the get identity enrollments too many requests response
 func (o *GetIdentityEnrollmentsTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *GetIdentityEnrollmentsTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/enrollments][%d] getIdentityEnrollmentsTooManyRequests %s", 429, payload)
 }
 
 func (o *GetIdentityEnrollmentsTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/enrollments][%d] getIdentityEnrollmentsTooManyRequests %s", 429, payload)
 }
 
 func (o *GetIdentityEnrollmentsTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetIdentityEnrollmentsTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *GetIdentityEnrollmentsTooManyRequests) readResponse(response runtime.Cl
 
 // NewGetIdentityEnrollmentsServiceUnavailable creates a GetIdentityEnrollmentsServiceUnavailable with default headers values
 func NewGetIdentityEnrollmentsServiceUnavailable() *GetIdentityEnrollmentsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityEnrollmentsServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type GetIdentityEnrollmentsServiceUnavailable struct {
 
 // IsSuccess returns true when this get identity enrollments service unavailable response has a 2xx status code
 func (o *GetIdentityEnrollmentsServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this get identity enrollments service unavailable response has a 3xx status code
 func (o *GetIdentityEnrollmentsServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get identity enrollments service unavailable response has a 4xx status code
 func (o *GetIdentityEnrollmentsServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this get identity enrollments service unavailable response has a 5xx status code
 func (o *GetIdentityEnrollmentsServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this get identity enrollments service unavailable response a status code equal to that given
 func (o *GetIdentityEnrollmentsServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the get identity enrollments service unavailable response
 func (o *GetIdentityEnrollmentsServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *GetIdentityEnrollmentsServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/enrollments][%d] getIdentityEnrollmentsServiceUnavailable %s", 503, payload)
 }
 
 func (o *GetIdentityEnrollmentsServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/enrollments][%d] getIdentityEnrollmentsServiceUnavailable %s", 503, payload)
 }
 
 func (o *GetIdentityEnrollmentsServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetIdentityEnrollmentsServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"encoding/json"
 
@@ -44,11 +45,13 @@ import (
 type DialBind string
 
 func NewDialBind(value DialBind) *DialBind {
+    logtrace.LogWithFunctionName()
 	return &value
 }
 
 // Pointer returns a pointer to a freshly-allocated DialBind.
 func (m DialBind) Pointer() *DialBind {
+    logtrace.LogWithFunctionName()
 	return &m
 }
 
@@ -68,6 +71,7 @@ const (
 var dialBindEnum []interface{}
 
 func init() {
+    logtrace.LogWithFunctionName()
 	var res []DialBind
 	if err := json.Unmarshal([]byte(`["Dial","Bind","Invalid"]`), &res); err != nil {
 		panic(err)
@@ -78,6 +82,7 @@ func init() {
 }
 
 func (m DialBind) validateDialBindEnum(path, location string, value DialBind) error {
+    logtrace.LogWithFunctionName()
 	if err := validate.EnumCase(path, location, value, dialBindEnum, true); err != nil {
 		return err
 	}
@@ -86,6 +91,7 @@ func (m DialBind) validateDialBindEnum(path, location string, value DialBind) er
 
 // Validate validates this dial bind
 func (m DialBind) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// value enum
@@ -101,5 +107,6 @@ func (m DialBind) Validate(formats strfmt.Registry) error {
 
 // ContextValidate validates this dial bind based on context it is used
 func (m DialBind) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }

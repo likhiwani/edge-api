@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"encoding/json"
 
@@ -44,11 +45,13 @@ import (
 type IdentityType string
 
 func NewIdentityType(value IdentityType) *IdentityType {
+    logtrace.LogWithFunctionName()
 	return &value
 }
 
 // Pointer returns a pointer to a freshly-allocated IdentityType.
 func (m IdentityType) Pointer() *IdentityType {
+    logtrace.LogWithFunctionName()
 	return &m
 }
 
@@ -74,6 +77,7 @@ const (
 var identityTypeEnum []interface{}
 
 func init() {
+    logtrace.LogWithFunctionName()
 	var res []IdentityType
 	if err := json.Unmarshal([]byte(`["User","Device","Service","Router","Default"]`), &res); err != nil {
 		panic(err)
@@ -84,6 +88,7 @@ func init() {
 }
 
 func (m IdentityType) validateIdentityTypeEnum(path, location string, value IdentityType) error {
+    logtrace.LogWithFunctionName()
 	if err := validate.EnumCase(path, location, value, identityTypeEnum, true); err != nil {
 		return err
 	}
@@ -92,6 +97,7 @@ func (m IdentityType) validateIdentityTypeEnum(path, location string, value Iden
 
 // Validate validates this identity type
 func (m IdentityType) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// value enum
@@ -107,5 +113,6 @@ func (m IdentityType) Validate(formats strfmt.Registry) error {
 
 // ContextValidate validates this identity type based on context it is used
 func (m IdentityType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }

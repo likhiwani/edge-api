@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListEnumeratedCapabilitiesOK struct {
 
 // NewListEnumeratedCapabilitiesOK creates ListEnumeratedCapabilitiesOK with default headers values
 func NewListEnumeratedCapabilitiesOK() *ListEnumeratedCapabilitiesOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListEnumeratedCapabilitiesOK{}
 }
 
 // WithPayload adds the payload to the list enumerated capabilities o k response
 func (o *ListEnumeratedCapabilitiesOK) WithPayload(payload *rest_model.ListEnumeratedCapabilitiesEnvelope) *ListEnumeratedCapabilitiesOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list enumerated capabilities o k response
 func (o *ListEnumeratedCapabilitiesOK) SetPayload(payload *rest_model.ListEnumeratedCapabilitiesEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListEnumeratedCapabilitiesOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {

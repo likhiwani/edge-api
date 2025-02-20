@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new identity API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -137,6 +141,7 @@ AssociateIdentitysServiceConfigs associates service configs for a specific ident
 Associate service configs to a specific identity
 */
 func (a *Client) AssociateIdentitysServiceConfigs(params *AssociateIdentitysServiceConfigsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AssociateIdentitysServiceConfigsOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAssociateIdentitysServiceConfigsParams()
@@ -178,6 +183,7 @@ CreateIdentity creates an identity resource
 Create an identity resource. Requires admin access.
 */
 func (a *Client) CreateIdentity(params *CreateIdentityParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateIdentityCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreateIdentityParams()
@@ -219,6 +225,7 @@ DeleteIdentity deletes an identity
 Delete an identity by id. Requires admin access.
 */
 func (a *Client) DeleteIdentity(params *DeleteIdentityParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteIdentityOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteIdentityParams()
@@ -260,6 +267,7 @@ DetailIdentity retrieves a single identity
 Retrieves a single identity by id. Requires admin access.
 */
 func (a *Client) DetailIdentity(params *DetailIdentityParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailIdentityOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailIdentityParams()
@@ -301,6 +309,7 @@ DetailIdentityType retrieves a identity type
 Retrieves a single identity type by id. Requires admin access.
 */
 func (a *Client) DetailIdentityType(params *DetailIdentityTypeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailIdentityTypeOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailIdentityTypeParams()
@@ -342,6 +351,7 @@ DisableIdentity sets an identity as disabled
 Reject an identity's API session requests for N minutes or indefinitely if 0.
 */
 func (a *Client) DisableIdentity(params *DisableIdentityParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DisableIdentityOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDisableIdentityParams()
@@ -383,6 +393,7 @@ DisassociateIdentitysServiceConfigs removes associated service configs from a sp
 Remove service configs from a specific identity
 */
 func (a *Client) DisassociateIdentitysServiceConfigs(params *DisassociateIdentitysServiceConfigsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DisassociateIdentitysServiceConfigsOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDisassociateIdentitysServiceConfigsParams()
@@ -424,6 +435,7 @@ EnableIdentity clears all disabled state from an identity
 Allows an admin to remove disabled statuses from an identity.
 */
 func (a *Client) EnableIdentity(params *EnableIdentityParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*EnableIdentityOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewEnableIdentityParams()
@@ -465,6 +477,7 @@ GetIdentityAuthenticators retrieves the current authenticators of a specific ide
 Returns a list of authenticators associated to the identity specified
 */
 func (a *Client) GetIdentityAuthenticators(params *GetIdentityAuthenticatorsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetIdentityAuthenticatorsOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIdentityAuthenticatorsParams()
@@ -506,6 +519,7 @@ GetIdentityEnrollments retrieves the current enrollments of a specific identity
 Returns a list of enrollments associated to the identity specified
 */
 func (a *Client) GetIdentityEnrollments(params *GetIdentityEnrollmentsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetIdentityEnrollmentsOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIdentityEnrollmentsParams()
@@ -550,6 +564,7 @@ every policy that was verified against and every failed check in each policy. Ea
 the historical posture data and posture check configuration.
 */
 func (a *Client) GetIdentityFailedServiceRequests(params *GetIdentityFailedServiceRequestsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetIdentityFailedServiceRequestsOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIdentityFailedServiceRequestsParams()
@@ -595,6 +610,7 @@ to check if the identity and service have access to common edge routers so that 
 Will also check if at least one edge router is on-line. Requires admin access.
 */
 func (a *Client) GetIdentityPolicyAdvice(params *GetIdentityPolicyAdviceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetIdentityPolicyAdviceOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIdentityPolicyAdviceParams()
@@ -638,6 +654,7 @@ func (a *Client) GetIdentityPolicyAdvice(params *GetIdentityPolicyAdviceParams, 
 This data should be considered volatile.
 */
 func (a *Client) GetIdentityPostureData(params *GetIdentityPostureDataParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetIdentityPostureDataOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetIdentityPostureDataParams()
@@ -679,6 +696,7 @@ ListIdentities lists identities
 Retrieves a list of identity resources; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListIdentities(params *ListIdentitiesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListIdentitiesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListIdentitiesParams()
@@ -720,6 +738,7 @@ ListIdentityEdgeRouters lists accessible edge routers
 Retrieves a list of edge-routers that the given identity may use to access services. Supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListIdentityEdgeRouters(params *ListIdentityEdgeRoutersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListIdentityEdgeRoutersOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListIdentityEdgeRoutersParams()
@@ -761,6 +780,7 @@ ListIdentityServicePolicies lists the service policies that affect an identity
 Retrieves a list of service policies that apply to the specified identity.
 */
 func (a *Client) ListIdentityServicePolicies(params *ListIdentityServicePoliciesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListIdentityServicePoliciesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListIdentityServicePoliciesParams()
@@ -802,6 +822,7 @@ ListIdentityServices lists accessible services
 Retrieves a list of services that the given identity has access to. Supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListIdentityServices(params *ListIdentityServicesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListIdentityServicesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListIdentityServicesParams()
@@ -843,6 +864,7 @@ ListIdentityTypes lists available identity types
 Retrieves a list of identity types; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListIdentityTypes(params *ListIdentityTypesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListIdentityTypesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListIdentityTypesParams()
@@ -884,6 +906,7 @@ ListIdentitysEdgeRouterPolicies lists the edge router policies that affect an id
 Retrieves a list of edge router policies that apply to the specified identity.
 */
 func (a *Client) ListIdentitysEdgeRouterPolicies(params *ListIdentitysEdgeRouterPoliciesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListIdentitysEdgeRouterPoliciesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListIdentitysEdgeRouterPoliciesParams()
@@ -925,6 +948,7 @@ ListIdentitysServiceConfigs lists the service configs associated a specific iden
 Retrieves a list of service configs associated to a specific identity
 */
 func (a *Client) ListIdentitysServiceConfigs(params *ListIdentitysServiceConfigsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListIdentitysServiceConfigsOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListIdentitysServiceConfigsParams()
@@ -966,6 +990,7 @@ PatchIdentity updates the supplied fields on an identity
 Update the supplied fields on an identity. Requires admin access.
 */
 func (a *Client) PatchIdentity(params *PatchIdentityParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PatchIdentityOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPatchIdentityParams()
@@ -1007,6 +1032,7 @@ RemoveIdentityMfa removes m f a from an identitity
 Allows an admin to remove MFA enrollment from a specific identity. Requires admin.
 */
 func (a *Client) RemoveIdentityMfa(params *RemoveIdentityMfaParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*RemoveIdentityMfaOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewRemoveIdentityMfaParams()
@@ -1048,6 +1074,7 @@ UpdateIdentity updates all fields on an identity
 Update all fields on an identity by id. Requires admin access.
 */
 func (a *Client) UpdateIdentity(params *UpdateIdentityParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UpdateIdentityOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUpdateIdentityParams()
@@ -1089,6 +1116,7 @@ UpdateIdentityTracing enables disable data flow tracing for an identity
 Allows an admin to enable/disable data flow tracing for an identity
 */
 func (a *Client) UpdateIdentityTracing(params *UpdateIdentityTracingParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UpdateIdentityTracingOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUpdateIdentityTracingParams()
@@ -1126,5 +1154,6 @@ func (a *Client) UpdateIdentityTracing(params *UpdateIdentityTracingParams, auth
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

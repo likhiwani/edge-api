@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewEnrollOttParams() *EnrollOttParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollOttParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewEnrollOttParams() *EnrollOttParams {
 // NewEnrollOttParamsWithTimeout creates a new EnrollOttParams object
 // with the ability to set a timeout on a request.
 func NewEnrollOttParamsWithTimeout(timeout time.Duration) *EnrollOttParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollOttParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewEnrollOttParamsWithTimeout(timeout time.Duration) *EnrollOttParams {
 // NewEnrollOttParamsWithContext creates a new EnrollOttParams object
 // with the ability to set a context for a request.
 func NewEnrollOttParamsWithContext(ctx context.Context) *EnrollOttParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollOttParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewEnrollOttParamsWithContext(ctx context.Context) *EnrollOttParams {
 // NewEnrollOttParamsWithHTTPClient creates a new EnrollOttParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewEnrollOttParamsWithHTTPClient(client *http.Client) *EnrollOttParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollOttParams{
 		HTTPClient: client,
 	}
@@ -102,6 +107,7 @@ type EnrollOttParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *EnrollOttParams) WithDefaults() *EnrollOttParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -110,55 +116,65 @@ func (o *EnrollOttParams) WithDefaults() *EnrollOttParams {
 //
 // All values with no default are reset to their zero value.
 func (o *EnrollOttParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the enroll ott params
 func (o *EnrollOttParams) WithTimeout(timeout time.Duration) *EnrollOttParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the enroll ott params
 func (o *EnrollOttParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the enroll ott params
 func (o *EnrollOttParams) WithContext(ctx context.Context) *EnrollOttParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the enroll ott params
 func (o *EnrollOttParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the enroll ott params
 func (o *EnrollOttParams) WithHTTPClient(client *http.Client) *EnrollOttParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the enroll ott params
 func (o *EnrollOttParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithOttEnrollmentRequest adds the ottEnrollmentRequest to the enroll ott params
 func (o *EnrollOttParams) WithOttEnrollmentRequest(ottEnrollmentRequest *rest_model.OttEnrollmentRequest) *EnrollOttParams {
+    logtrace.LogWithFunctionName()
 	o.SetOttEnrollmentRequest(ottEnrollmentRequest)
 	return o
 }
 
 // SetOttEnrollmentRequest adds the ottEnrollmentRequest to the enroll ott params
 func (o *EnrollOttParams) SetOttEnrollmentRequest(ottEnrollmentRequest *rest_model.OttEnrollmentRequest) {
+    logtrace.LogWithFunctionName()
 	o.OttEnrollmentRequest = ottEnrollmentRequest
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *EnrollOttParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

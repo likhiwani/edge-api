@@ -30,6 +30,7 @@ package controllers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -43,6 +44,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewListControllersParams() ListControllersParams {
+    logtrace.LogWithFunctionName()
 
 	return ListControllersParams{}
 }
@@ -75,6 +77,7 @@ type ListControllersParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewListControllersParams() beforehand.
 func (o *ListControllersParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r
@@ -103,6 +106,7 @@ func (o *ListControllersParams) BindRequest(r *http.Request, route *middleware.M
 
 // bindFilter binds and validates parameter Filter from query.
 func (o *ListControllersParams) bindFilter(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -121,6 +125,7 @@ func (o *ListControllersParams) bindFilter(rawData []string, hasKey bool, format
 
 // bindLimit binds and validates parameter Limit from query.
 func (o *ListControllersParams) bindLimit(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -144,6 +149,7 @@ func (o *ListControllersParams) bindLimit(rawData []string, hasKey bool, formats
 
 // bindOffset binds and validates parameter Offset from query.
 func (o *ListControllersParams) bindOffset(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]

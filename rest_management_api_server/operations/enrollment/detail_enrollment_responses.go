@@ -30,6 +30,7 @@ package enrollment
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DetailEnrollmentOK struct {
 
 // NewDetailEnrollmentOK creates DetailEnrollmentOK with default headers values
 func NewDetailEnrollmentOK() *DetailEnrollmentOK {
+    logtrace.LogWithFunctionName()
 
 	return &DetailEnrollmentOK{}
 }
 
 // WithPayload adds the payload to the detail enrollment o k response
 func (o *DetailEnrollmentOK) WithPayload(payload *rest_model.DetailEnrollmentEnvelope) *DetailEnrollmentOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail enrollment o k response
 func (o *DetailEnrollmentOK) SetPayload(payload *rest_model.DetailEnrollmentEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailEnrollmentOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DetailEnrollmentUnauthorized struct {
 
 // NewDetailEnrollmentUnauthorized creates DetailEnrollmentUnauthorized with default headers values
 func NewDetailEnrollmentUnauthorized() *DetailEnrollmentUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DetailEnrollmentUnauthorized{}
 }
 
 // WithPayload adds the payload to the detail enrollment unauthorized response
 func (o *DetailEnrollmentUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailEnrollmentUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail enrollment unauthorized response
 func (o *DetailEnrollmentUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailEnrollmentUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DetailEnrollmentNotFound struct {
 
 // NewDetailEnrollmentNotFound creates DetailEnrollmentNotFound with default headers values
 func NewDetailEnrollmentNotFound() *DetailEnrollmentNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DetailEnrollmentNotFound{}
 }
 
 // WithPayload adds the payload to the detail enrollment not found response
 func (o *DetailEnrollmentNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailEnrollmentNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail enrollment not found response
 func (o *DetailEnrollmentNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailEnrollmentNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DetailEnrollmentTooManyRequests struct {
 
 // NewDetailEnrollmentTooManyRequests creates DetailEnrollmentTooManyRequests with default headers values
 func NewDetailEnrollmentTooManyRequests() *DetailEnrollmentTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DetailEnrollmentTooManyRequests{}
 }
 
 // WithPayload adds the payload to the detail enrollment too many requests response
 func (o *DetailEnrollmentTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailEnrollmentTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail enrollment too many requests response
 func (o *DetailEnrollmentTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailEnrollmentTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DetailEnrollmentServiceUnavailable struct {
 
 // NewDetailEnrollmentServiceUnavailable creates DetailEnrollmentServiceUnavailable with default headers values
 func NewDetailEnrollmentServiceUnavailable() *DetailEnrollmentServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DetailEnrollmentServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the detail enrollment service unavailable response
 func (o *DetailEnrollmentServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailEnrollmentServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail enrollment service unavailable response
 func (o *DetailEnrollmentServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailEnrollmentServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

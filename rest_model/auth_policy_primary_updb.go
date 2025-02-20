@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -74,6 +75,7 @@ type AuthPolicyPrimaryUpdb struct {
 
 // Validate validates this auth policy primary updb
 func (m *AuthPolicyPrimaryUpdb) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateAllowed(formats); err != nil {
@@ -111,6 +113,7 @@ func (m *AuthPolicyPrimaryUpdb) Validate(formats strfmt.Registry) error {
 }
 
 func (m *AuthPolicyPrimaryUpdb) validateAllowed(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("allowed", "body", m.Allowed); err != nil {
 		return err
@@ -120,6 +123,7 @@ func (m *AuthPolicyPrimaryUpdb) validateAllowed(formats strfmt.Registry) error {
 }
 
 func (m *AuthPolicyPrimaryUpdb) validateLockoutDurationMinutes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("lockoutDurationMinutes", "body", m.LockoutDurationMinutes); err != nil {
 		return err
@@ -129,6 +133,7 @@ func (m *AuthPolicyPrimaryUpdb) validateLockoutDurationMinutes(formats strfmt.Re
 }
 
 func (m *AuthPolicyPrimaryUpdb) validateMaxAttempts(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("maxAttempts", "body", m.MaxAttempts); err != nil {
 		return err
@@ -138,6 +143,7 @@ func (m *AuthPolicyPrimaryUpdb) validateMaxAttempts(formats strfmt.Registry) err
 }
 
 func (m *AuthPolicyPrimaryUpdb) validateMinPasswordLength(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("minPasswordLength", "body", m.MinPasswordLength); err != nil {
 		return err
@@ -147,6 +153,7 @@ func (m *AuthPolicyPrimaryUpdb) validateMinPasswordLength(formats strfmt.Registr
 }
 
 func (m *AuthPolicyPrimaryUpdb) validateRequireMixedCase(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("requireMixedCase", "body", m.RequireMixedCase); err != nil {
 		return err
@@ -156,6 +163,7 @@ func (m *AuthPolicyPrimaryUpdb) validateRequireMixedCase(formats strfmt.Registry
 }
 
 func (m *AuthPolicyPrimaryUpdb) validateRequireNumberChar(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("requireNumberChar", "body", m.RequireNumberChar); err != nil {
 		return err
@@ -165,6 +173,7 @@ func (m *AuthPolicyPrimaryUpdb) validateRequireNumberChar(formats strfmt.Registr
 }
 
 func (m *AuthPolicyPrimaryUpdb) validateRequireSpecialChar(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("requireSpecialChar", "body", m.RequireSpecialChar); err != nil {
 		return err
@@ -175,11 +184,13 @@ func (m *AuthPolicyPrimaryUpdb) validateRequireSpecialChar(formats strfmt.Regist
 
 // ContextValidate validates this auth policy primary updb based on context it is used
 func (m *AuthPolicyPrimaryUpdb) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *AuthPolicyPrimaryUpdb) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -188,6 +199,7 @@ func (m *AuthPolicyPrimaryUpdb) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *AuthPolicyPrimaryUpdb) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res AuthPolicyPrimaryUpdb
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListEnumeratedCapabilitiesParams() *ListEnumeratedCapabilitiesParams {
+    logtrace.LogWithFunctionName()
 	return &ListEnumeratedCapabilitiesParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewListEnumeratedCapabilitiesParams() *ListEnumeratedCapabilitiesParams {
 // NewListEnumeratedCapabilitiesParamsWithTimeout creates a new ListEnumeratedCapabilitiesParams object
 // with the ability to set a timeout on a request.
 func NewListEnumeratedCapabilitiesParamsWithTimeout(timeout time.Duration) *ListEnumeratedCapabilitiesParams {
+    logtrace.LogWithFunctionName()
 	return &ListEnumeratedCapabilitiesParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewListEnumeratedCapabilitiesParamsWithTimeout(timeout time.Duration) *List
 // NewListEnumeratedCapabilitiesParamsWithContext creates a new ListEnumeratedCapabilitiesParams object
 // with the ability to set a context for a request.
 func NewListEnumeratedCapabilitiesParamsWithContext(ctx context.Context) *ListEnumeratedCapabilitiesParams {
+    logtrace.LogWithFunctionName()
 	return &ListEnumeratedCapabilitiesParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewListEnumeratedCapabilitiesParamsWithContext(ctx context.Context) *ListEn
 // NewListEnumeratedCapabilitiesParamsWithHTTPClient creates a new ListEnumeratedCapabilitiesParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListEnumeratedCapabilitiesParamsWithHTTPClient(client *http.Client) *ListEnumeratedCapabilitiesParams {
+    logtrace.LogWithFunctionName()
 	return &ListEnumeratedCapabilitiesParams{
 		HTTPClient: client,
 	}
@@ -93,6 +98,7 @@ type ListEnumeratedCapabilitiesParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListEnumeratedCapabilitiesParams) WithDefaults() *ListEnumeratedCapabilitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -101,44 +107,52 @@ func (o *ListEnumeratedCapabilitiesParams) WithDefaults() *ListEnumeratedCapabil
 //
 // All values with no default are reset to their zero value.
 func (o *ListEnumeratedCapabilitiesParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list enumerated capabilities params
 func (o *ListEnumeratedCapabilitiesParams) WithTimeout(timeout time.Duration) *ListEnumeratedCapabilitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list enumerated capabilities params
 func (o *ListEnumeratedCapabilitiesParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list enumerated capabilities params
 func (o *ListEnumeratedCapabilitiesParams) WithContext(ctx context.Context) *ListEnumeratedCapabilitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list enumerated capabilities params
 func (o *ListEnumeratedCapabilitiesParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list enumerated capabilities params
 func (o *ListEnumeratedCapabilitiesParams) WithHTTPClient(client *http.Client) *ListEnumeratedCapabilitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list enumerated capabilities params
 func (o *ListEnumeratedCapabilitiesParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListEnumeratedCapabilitiesParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

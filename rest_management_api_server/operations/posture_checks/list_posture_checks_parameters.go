@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -43,6 +44,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewListPostureChecksParams() ListPostureChecksParams {
+    logtrace.LogWithFunctionName()
 
 	return ListPostureChecksParams{}
 }
@@ -84,6 +86,7 @@ type ListPostureChecksParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewListPostureChecksParams() beforehand.
 func (o *ListPostureChecksParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r
@@ -122,6 +125,7 @@ func (o *ListPostureChecksParams) BindRequest(r *http.Request, route *middleware
 
 // bindFilter binds and validates parameter Filter from query.
 func (o *ListPostureChecksParams) bindFilter(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -140,6 +144,7 @@ func (o *ListPostureChecksParams) bindFilter(rawData []string, hasKey bool, form
 
 // bindLimit binds and validates parameter Limit from query.
 func (o *ListPostureChecksParams) bindLimit(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -163,6 +168,7 @@ func (o *ListPostureChecksParams) bindLimit(rawData []string, hasKey bool, forma
 
 // bindOffset binds and validates parameter Offset from query.
 func (o *ListPostureChecksParams) bindOffset(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -188,6 +194,7 @@ func (o *ListPostureChecksParams) bindOffset(rawData []string, hasKey bool, form
 //
 // Arrays are parsed according to CollectionFormat: "multi" (defaults to "csv" when empty).
 func (o *ListPostureChecksParams) bindRoleFilter(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	// CollectionFormat: multi
 	roleFilterIC := rawData
 	if len(roleFilterIC) == 0 {
@@ -208,6 +215,7 @@ func (o *ListPostureChecksParams) bindRoleFilter(rawData []string, hasKey bool, 
 
 // bindRoleSemantic binds and validates parameter RoleSemantic from query.
 func (o *ListPostureChecksParams) bindRoleSemantic(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]

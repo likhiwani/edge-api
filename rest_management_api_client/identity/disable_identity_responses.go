@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DisableIdentityReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DisableIdentityReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDisableIdentityOK()
@@ -85,6 +87,7 @@ func (o *DisableIdentityReader) ReadResponse(response runtime.ClientResponse, co
 
 // NewDisableIdentityOK creates a DisableIdentityOK with default headers values
 func NewDisableIdentityOK() *DisableIdentityOK {
+    logtrace.LogWithFunctionName()
 	return &DisableIdentityOK{}
 }
 
@@ -99,49 +102,59 @@ type DisableIdentityOK struct {
 
 // IsSuccess returns true when this disable identity o k response has a 2xx status code
 func (o *DisableIdentityOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this disable identity o k response has a 3xx status code
 func (o *DisableIdentityOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this disable identity o k response has a 4xx status code
 func (o *DisableIdentityOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this disable identity o k response has a 5xx status code
 func (o *DisableIdentityOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this disable identity o k response a status code equal to that given
 func (o *DisableIdentityOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the disable identity o k response
 func (o *DisableIdentityOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DisableIdentityOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityOK %s", 200, payload)
 }
 
 func (o *DisableIdentityOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityOK %s", 200, payload)
 }
 
 func (o *DisableIdentityOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DisableIdentityOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -155,6 +168,7 @@ func (o *DisableIdentityOK) readResponse(response runtime.ClientResponse, consum
 
 // NewDisableIdentityUnauthorized creates a DisableIdentityUnauthorized with default headers values
 func NewDisableIdentityUnauthorized() *DisableIdentityUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DisableIdentityUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type DisableIdentityUnauthorized struct {
 
 // IsSuccess returns true when this disable identity unauthorized response has a 2xx status code
 func (o *DisableIdentityUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this disable identity unauthorized response has a 3xx status code
 func (o *DisableIdentityUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this disable identity unauthorized response has a 4xx status code
 func (o *DisableIdentityUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this disable identity unauthorized response has a 5xx status code
 func (o *DisableIdentityUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this disable identity unauthorized response a status code equal to that given
 func (o *DisableIdentityUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the disable identity unauthorized response
 func (o *DisableIdentityUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DisableIdentityUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityUnauthorized %s", 401, payload)
 }
 
 func (o *DisableIdentityUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityUnauthorized %s", 401, payload)
 }
 
 func (o *DisableIdentityUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DisableIdentityUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *DisableIdentityUnauthorized) readResponse(response runtime.ClientRespon
 
 // NewDisableIdentityNotFound creates a DisableIdentityNotFound with default headers values
 func NewDisableIdentityNotFound() *DisableIdentityNotFound {
+    logtrace.LogWithFunctionName()
 	return &DisableIdentityNotFound{}
 }
 
@@ -239,49 +264,59 @@ type DisableIdentityNotFound struct {
 
 // IsSuccess returns true when this disable identity not found response has a 2xx status code
 func (o *DisableIdentityNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this disable identity not found response has a 3xx status code
 func (o *DisableIdentityNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this disable identity not found response has a 4xx status code
 func (o *DisableIdentityNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this disable identity not found response has a 5xx status code
 func (o *DisableIdentityNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this disable identity not found response a status code equal to that given
 func (o *DisableIdentityNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the disable identity not found response
 func (o *DisableIdentityNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DisableIdentityNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityNotFound %s", 404, payload)
 }
 
 func (o *DisableIdentityNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityNotFound %s", 404, payload)
 }
 
 func (o *DisableIdentityNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DisableIdentityNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *DisableIdentityNotFound) readResponse(response runtime.ClientResponse, 
 
 // NewDisableIdentityTooManyRequests creates a DisableIdentityTooManyRequests with default headers values
 func NewDisableIdentityTooManyRequests() *DisableIdentityTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DisableIdentityTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type DisableIdentityTooManyRequests struct {
 
 // IsSuccess returns true when this disable identity too many requests response has a 2xx status code
 func (o *DisableIdentityTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this disable identity too many requests response has a 3xx status code
 func (o *DisableIdentityTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this disable identity too many requests response has a 4xx status code
 func (o *DisableIdentityTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this disable identity too many requests response has a 5xx status code
 func (o *DisableIdentityTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this disable identity too many requests response a status code equal to that given
 func (o *DisableIdentityTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the disable identity too many requests response
 func (o *DisableIdentityTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DisableIdentityTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityTooManyRequests %s", 429, payload)
 }
 
 func (o *DisableIdentityTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityTooManyRequests %s", 429, payload)
 }
 
 func (o *DisableIdentityTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DisableIdentityTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *DisableIdentityTooManyRequests) readResponse(response runtime.ClientRes
 
 // NewDisableIdentityServiceUnavailable creates a DisableIdentityServiceUnavailable with default headers values
 func NewDisableIdentityServiceUnavailable() *DisableIdentityServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DisableIdentityServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type DisableIdentityServiceUnavailable struct {
 
 // IsSuccess returns true when this disable identity service unavailable response has a 2xx status code
 func (o *DisableIdentityServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this disable identity service unavailable response has a 3xx status code
 func (o *DisableIdentityServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this disable identity service unavailable response has a 4xx status code
 func (o *DisableIdentityServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this disable identity service unavailable response has a 5xx status code
 func (o *DisableIdentityServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this disable identity service unavailable response a status code equal to that given
 func (o *DisableIdentityServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the disable identity service unavailable response
 func (o *DisableIdentityServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DisableIdentityServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityServiceUnavailable %s", 503, payload)
 }
 
 func (o *DisableIdentityServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/disable][%d] disableIdentityServiceUnavailable %s", 503, payload)
 }
 
 func (o *DisableIdentityServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DisableIdentityServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

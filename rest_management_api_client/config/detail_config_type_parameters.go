@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDetailConfigTypeParams() *DetailConfigTypeParams {
+    logtrace.LogWithFunctionName()
 	return &DetailConfigTypeParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDetailConfigTypeParams() *DetailConfigTypeParams {
 // NewDetailConfigTypeParamsWithTimeout creates a new DetailConfigTypeParams object
 // with the ability to set a timeout on a request.
 func NewDetailConfigTypeParamsWithTimeout(timeout time.Duration) *DetailConfigTypeParams {
+    logtrace.LogWithFunctionName()
 	return &DetailConfigTypeParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDetailConfigTypeParamsWithTimeout(timeout time.Duration) *DetailConfigTy
 // NewDetailConfigTypeParamsWithContext creates a new DetailConfigTypeParams object
 // with the ability to set a context for a request.
 func NewDetailConfigTypeParamsWithContext(ctx context.Context) *DetailConfigTypeParams {
+    logtrace.LogWithFunctionName()
 	return &DetailConfigTypeParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDetailConfigTypeParamsWithContext(ctx context.Context) *DetailConfigType
 // NewDetailConfigTypeParamsWithHTTPClient creates a new DetailConfigTypeParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDetailConfigTypeParamsWithHTTPClient(client *http.Client) *DetailConfigTypeParams {
+    logtrace.LogWithFunctionName()
 	return &DetailConfigTypeParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DetailConfigTypeParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailConfigTypeParams) WithDefaults() *DetailConfigTypeParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DetailConfigTypeParams) WithDefaults() *DetailConfigTypeParams {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailConfigTypeParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the detail config type params
 func (o *DetailConfigTypeParams) WithTimeout(timeout time.Duration) *DetailConfigTypeParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the detail config type params
 func (o *DetailConfigTypeParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the detail config type params
 func (o *DetailConfigTypeParams) WithContext(ctx context.Context) *DetailConfigTypeParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the detail config type params
 func (o *DetailConfigTypeParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the detail config type params
 func (o *DetailConfigTypeParams) WithHTTPClient(client *http.Client) *DetailConfigTypeParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the detail config type params
 func (o *DetailConfigTypeParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the detail config type params
 func (o *DetailConfigTypeParams) WithID(id string) *DetailConfigTypeParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the detail config type params
 func (o *DetailConfigTypeParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DetailConfigTypeParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

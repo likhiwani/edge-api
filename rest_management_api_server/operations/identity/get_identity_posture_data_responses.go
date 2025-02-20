@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type GetIdentityPostureDataOK struct {
 
 // NewGetIdentityPostureDataOK creates GetIdentityPostureDataOK with default headers values
 func NewGetIdentityPostureDataOK() *GetIdentityPostureDataOK {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityPostureDataOK{}
 }
 
 // WithPayload adds the payload to the get identity posture data o k response
 func (o *GetIdentityPostureDataOK) WithPayload(payload *rest_model.PostureDataEnvelope) *GetIdentityPostureDataOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity posture data o k response
 func (o *GetIdentityPostureDataOK) SetPayload(payload *rest_model.PostureDataEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityPostureDataOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type GetIdentityPostureDataUnauthorized struct {
 
 // NewGetIdentityPostureDataUnauthorized creates GetIdentityPostureDataUnauthorized with default headers values
 func NewGetIdentityPostureDataUnauthorized() *GetIdentityPostureDataUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityPostureDataUnauthorized{}
 }
 
 // WithPayload adds the payload to the get identity posture data unauthorized response
 func (o *GetIdentityPostureDataUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityPostureDataUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity posture data unauthorized response
 func (o *GetIdentityPostureDataUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityPostureDataUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type GetIdentityPostureDataNotFound struct {
 
 // NewGetIdentityPostureDataNotFound creates GetIdentityPostureDataNotFound with default headers values
 func NewGetIdentityPostureDataNotFound() *GetIdentityPostureDataNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityPostureDataNotFound{}
 }
 
 // WithPayload adds the payload to the get identity posture data not found response
 func (o *GetIdentityPostureDataNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityPostureDataNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity posture data not found response
 func (o *GetIdentityPostureDataNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityPostureDataNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type GetIdentityPostureDataTooManyRequests struct {
 
 // NewGetIdentityPostureDataTooManyRequests creates GetIdentityPostureDataTooManyRequests with default headers values
 func NewGetIdentityPostureDataTooManyRequests() *GetIdentityPostureDataTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityPostureDataTooManyRequests{}
 }
 
 // WithPayload adds the payload to the get identity posture data too many requests response
 func (o *GetIdentityPostureDataTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityPostureDataTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity posture data too many requests response
 func (o *GetIdentityPostureDataTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityPostureDataTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type GetIdentityPostureDataServiceUnavailable struct {
 
 // NewGetIdentityPostureDataServiceUnavailable creates GetIdentityPostureDataServiceUnavailable with default headers values
 func NewGetIdentityPostureDataServiceUnavailable() *GetIdentityPostureDataServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityPostureDataServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the get identity posture data service unavailable response
 func (o *GetIdentityPostureDataServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityPostureDataServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity posture data service unavailable response
 func (o *GetIdentityPostureDataServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityPostureDataServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

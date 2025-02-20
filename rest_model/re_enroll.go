@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -51,6 +52,7 @@ type ReEnroll struct {
 
 // Validate validates this re enroll
 func (m *ReEnroll) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateExpiresAt(formats); err != nil {
@@ -64,6 +66,7 @@ func (m *ReEnroll) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ReEnroll) validateExpiresAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("expiresAt", "body", m.ExpiresAt); err != nil {
 		return err
@@ -78,11 +81,13 @@ func (m *ReEnroll) validateExpiresAt(formats strfmt.Registry) error {
 
 // ContextValidate validates this re enroll based on context it is used
 func (m *ReEnroll) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *ReEnroll) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -91,6 +96,7 @@ func (m *ReEnroll) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ReEnroll) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ReEnroll
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type RemoveIdentityMfaReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *RemoveIdentityMfaReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewRemoveIdentityMfaOK()
@@ -85,6 +87,7 @@ func (o *RemoveIdentityMfaReader) ReadResponse(response runtime.ClientResponse, 
 
 // NewRemoveIdentityMfaOK creates a RemoveIdentityMfaOK with default headers values
 func NewRemoveIdentityMfaOK() *RemoveIdentityMfaOK {
+    logtrace.LogWithFunctionName()
 	return &RemoveIdentityMfaOK{}
 }
 
@@ -99,49 +102,59 @@ type RemoveIdentityMfaOK struct {
 
 // IsSuccess returns true when this remove identity mfa o k response has a 2xx status code
 func (o *RemoveIdentityMfaOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this remove identity mfa o k response has a 3xx status code
 func (o *RemoveIdentityMfaOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this remove identity mfa o k response has a 4xx status code
 func (o *RemoveIdentityMfaOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this remove identity mfa o k response has a 5xx status code
 func (o *RemoveIdentityMfaOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this remove identity mfa o k response a status code equal to that given
 func (o *RemoveIdentityMfaOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the remove identity mfa o k response
 func (o *RemoveIdentityMfaOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *RemoveIdentityMfaOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/mfa][%d] removeIdentityMfaOK %s", 200, payload)
 }
 
 func (o *RemoveIdentityMfaOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/mfa][%d] removeIdentityMfaOK %s", 200, payload)
 }
 
 func (o *RemoveIdentityMfaOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *RemoveIdentityMfaOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -155,6 +168,7 @@ func (o *RemoveIdentityMfaOK) readResponse(response runtime.ClientResponse, cons
 
 // NewRemoveIdentityMfaUnauthorized creates a RemoveIdentityMfaUnauthorized with default headers values
 func NewRemoveIdentityMfaUnauthorized() *RemoveIdentityMfaUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &RemoveIdentityMfaUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type RemoveIdentityMfaUnauthorized struct {
 
 // IsSuccess returns true when this remove identity mfa unauthorized response has a 2xx status code
 func (o *RemoveIdentityMfaUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this remove identity mfa unauthorized response has a 3xx status code
 func (o *RemoveIdentityMfaUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this remove identity mfa unauthorized response has a 4xx status code
 func (o *RemoveIdentityMfaUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this remove identity mfa unauthorized response has a 5xx status code
 func (o *RemoveIdentityMfaUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this remove identity mfa unauthorized response a status code equal to that given
 func (o *RemoveIdentityMfaUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the remove identity mfa unauthorized response
 func (o *RemoveIdentityMfaUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *RemoveIdentityMfaUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/mfa][%d] removeIdentityMfaUnauthorized %s", 401, payload)
 }
 
 func (o *RemoveIdentityMfaUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/mfa][%d] removeIdentityMfaUnauthorized %s", 401, payload)
 }
 
 func (o *RemoveIdentityMfaUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *RemoveIdentityMfaUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *RemoveIdentityMfaUnauthorized) readResponse(response runtime.ClientResp
 
 // NewRemoveIdentityMfaNotFound creates a RemoveIdentityMfaNotFound with default headers values
 func NewRemoveIdentityMfaNotFound() *RemoveIdentityMfaNotFound {
+    logtrace.LogWithFunctionName()
 	return &RemoveIdentityMfaNotFound{}
 }
 
@@ -239,49 +264,59 @@ type RemoveIdentityMfaNotFound struct {
 
 // IsSuccess returns true when this remove identity mfa not found response has a 2xx status code
 func (o *RemoveIdentityMfaNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this remove identity mfa not found response has a 3xx status code
 func (o *RemoveIdentityMfaNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this remove identity mfa not found response has a 4xx status code
 func (o *RemoveIdentityMfaNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this remove identity mfa not found response has a 5xx status code
 func (o *RemoveIdentityMfaNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this remove identity mfa not found response a status code equal to that given
 func (o *RemoveIdentityMfaNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the remove identity mfa not found response
 func (o *RemoveIdentityMfaNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *RemoveIdentityMfaNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/mfa][%d] removeIdentityMfaNotFound %s", 404, payload)
 }
 
 func (o *RemoveIdentityMfaNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/mfa][%d] removeIdentityMfaNotFound %s", 404, payload)
 }
 
 func (o *RemoveIdentityMfaNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *RemoveIdentityMfaNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *RemoveIdentityMfaNotFound) readResponse(response runtime.ClientResponse
 
 // NewRemoveIdentityMfaTooManyRequests creates a RemoveIdentityMfaTooManyRequests with default headers values
 func NewRemoveIdentityMfaTooManyRequests() *RemoveIdentityMfaTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &RemoveIdentityMfaTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type RemoveIdentityMfaTooManyRequests struct {
 
 // IsSuccess returns true when this remove identity mfa too many requests response has a 2xx status code
 func (o *RemoveIdentityMfaTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this remove identity mfa too many requests response has a 3xx status code
 func (o *RemoveIdentityMfaTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this remove identity mfa too many requests response has a 4xx status code
 func (o *RemoveIdentityMfaTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this remove identity mfa too many requests response has a 5xx status code
 func (o *RemoveIdentityMfaTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this remove identity mfa too many requests response a status code equal to that given
 func (o *RemoveIdentityMfaTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the remove identity mfa too many requests response
 func (o *RemoveIdentityMfaTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *RemoveIdentityMfaTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/mfa][%d] removeIdentityMfaTooManyRequests %s", 429, payload)
 }
 
 func (o *RemoveIdentityMfaTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/mfa][%d] removeIdentityMfaTooManyRequests %s", 429, payload)
 }
 
 func (o *RemoveIdentityMfaTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *RemoveIdentityMfaTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *RemoveIdentityMfaTooManyRequests) readResponse(response runtime.ClientR
 
 // NewRemoveIdentityMfaServiceUnavailable creates a RemoveIdentityMfaServiceUnavailable with default headers values
 func NewRemoveIdentityMfaServiceUnavailable() *RemoveIdentityMfaServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &RemoveIdentityMfaServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type RemoveIdentityMfaServiceUnavailable struct {
 
 // IsSuccess returns true when this remove identity mfa service unavailable response has a 2xx status code
 func (o *RemoveIdentityMfaServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this remove identity mfa service unavailable response has a 3xx status code
 func (o *RemoveIdentityMfaServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this remove identity mfa service unavailable response has a 4xx status code
 func (o *RemoveIdentityMfaServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this remove identity mfa service unavailable response has a 5xx status code
 func (o *RemoveIdentityMfaServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this remove identity mfa service unavailable response a status code equal to that given
 func (o *RemoveIdentityMfaServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the remove identity mfa service unavailable response
 func (o *RemoveIdentityMfaServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *RemoveIdentityMfaServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/mfa][%d] removeIdentityMfaServiceUnavailable %s", 503, payload)
 }
 
 func (o *RemoveIdentityMfaServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/mfa][%d] removeIdentityMfaServiceUnavailable %s", 503, payload)
 }
 
 func (o *RemoveIdentityMfaServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *RemoveIdentityMfaServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

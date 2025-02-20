@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListIdentitiesOK struct {
 
 // NewListIdentitiesOK creates ListIdentitiesOK with default headers values
 func NewListIdentitiesOK() *ListIdentitiesOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListIdentitiesOK{}
 }
 
 // WithPayload adds the payload to the list identities o k response
 func (o *ListIdentitiesOK) WithPayload(payload *rest_model.ListIdentitiesEnvelope) *ListIdentitiesOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list identities o k response
 func (o *ListIdentitiesOK) SetPayload(payload *rest_model.ListIdentitiesEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListIdentitiesOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ListIdentitiesBadRequest struct {
 
 // NewListIdentitiesBadRequest creates ListIdentitiesBadRequest with default headers values
 func NewListIdentitiesBadRequest() *ListIdentitiesBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &ListIdentitiesBadRequest{}
 }
 
 // WithPayload adds the payload to the list identities bad request response
 func (o *ListIdentitiesBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *ListIdentitiesBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list identities bad request response
 func (o *ListIdentitiesBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListIdentitiesBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ListIdentitiesUnauthorized struct {
 
 // NewListIdentitiesUnauthorized creates ListIdentitiesUnauthorized with default headers values
 func NewListIdentitiesUnauthorized() *ListIdentitiesUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &ListIdentitiesUnauthorized{}
 }
 
 // WithPayload adds the payload to the list identities unauthorized response
 func (o *ListIdentitiesUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *ListIdentitiesUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list identities unauthorized response
 func (o *ListIdentitiesUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListIdentitiesUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type ListIdentitiesTooManyRequests struct {
 
 // NewListIdentitiesTooManyRequests creates ListIdentitiesTooManyRequests with default headers values
 func NewListIdentitiesTooManyRequests() *ListIdentitiesTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ListIdentitiesTooManyRequests{}
 }
 
 // WithPayload adds the payload to the list identities too many requests response
 func (o *ListIdentitiesTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ListIdentitiesTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list identities too many requests response
 func (o *ListIdentitiesTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListIdentitiesTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type ListIdentitiesServiceUnavailable struct {
 
 // NewListIdentitiesServiceUnavailable creates ListIdentitiesServiceUnavailable with default headers values
 func NewListIdentitiesServiceUnavailable() *ListIdentitiesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &ListIdentitiesServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the list identities service unavailable response
 func (o *ListIdentitiesServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *ListIdentitiesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list identities service unavailable response
 func (o *ListIdentitiesServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListIdentitiesServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

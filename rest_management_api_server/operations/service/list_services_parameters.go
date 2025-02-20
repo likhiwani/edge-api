@@ -30,6 +30,7 @@ package service
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -43,6 +44,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewListServicesParams() ListServicesParams {
+    logtrace.LogWithFunctionName()
 
 	return ListServicesParams{}
 }
@@ -89,6 +91,7 @@ type ListServicesParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewListServicesParams() beforehand.
 func (o *ListServicesParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r
@@ -134,6 +137,7 @@ func (o *ListServicesParams) BindRequest(r *http.Request, route *middleware.Matc
 //
 // Arrays are parsed according to CollectionFormat: "multi" (defaults to "csv" when empty).
 func (o *ListServicesParams) bindConfigTypes(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	// CollectionFormat: multi
 	configTypesIC := rawData
 	if len(configTypesIC) == 0 {
@@ -154,6 +158,7 @@ func (o *ListServicesParams) bindConfigTypes(rawData []string, hasKey bool, form
 
 // bindFilter binds and validates parameter Filter from query.
 func (o *ListServicesParams) bindFilter(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -172,6 +177,7 @@ func (o *ListServicesParams) bindFilter(rawData []string, hasKey bool, formats s
 
 // bindLimit binds and validates parameter Limit from query.
 func (o *ListServicesParams) bindLimit(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -195,6 +201,7 @@ func (o *ListServicesParams) bindLimit(rawData []string, hasKey bool, formats st
 
 // bindOffset binds and validates parameter Offset from query.
 func (o *ListServicesParams) bindOffset(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -220,6 +227,7 @@ func (o *ListServicesParams) bindOffset(rawData []string, hasKey bool, formats s
 //
 // Arrays are parsed according to CollectionFormat: "multi" (defaults to "csv" when empty).
 func (o *ListServicesParams) bindRoleFilter(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	// CollectionFormat: multi
 	roleFilterIC := rawData
 	if len(roleFilterIC) == 0 {
@@ -240,6 +248,7 @@ func (o *ListServicesParams) bindRoleFilter(rawData []string, hasKey bool, forma
 
 // bindRoleSemantic binds and validates parameter RoleSemantic from query.
 func (o *ListServicesParams) bindRoleSemantic(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]

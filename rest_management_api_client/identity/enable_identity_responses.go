@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type EnableIdentityReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *EnableIdentityReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewEnableIdentityOK()
@@ -85,6 +87,7 @@ func (o *EnableIdentityReader) ReadResponse(response runtime.ClientResponse, con
 
 // NewEnableIdentityOK creates a EnableIdentityOK with default headers values
 func NewEnableIdentityOK() *EnableIdentityOK {
+    logtrace.LogWithFunctionName()
 	return &EnableIdentityOK{}
 }
 
@@ -99,49 +102,59 @@ type EnableIdentityOK struct {
 
 // IsSuccess returns true when this enable identity o k response has a 2xx status code
 func (o *EnableIdentityOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this enable identity o k response has a 3xx status code
 func (o *EnableIdentityOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this enable identity o k response has a 4xx status code
 func (o *EnableIdentityOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this enable identity o k response has a 5xx status code
 func (o *EnableIdentityOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this enable identity o k response a status code equal to that given
 func (o *EnableIdentityOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the enable identity o k response
 func (o *EnableIdentityOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *EnableIdentityOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityOK %s", 200, payload)
 }
 
 func (o *EnableIdentityOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityOK %s", 200, payload)
 }
 
 func (o *EnableIdentityOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *EnableIdentityOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -155,6 +168,7 @@ func (o *EnableIdentityOK) readResponse(response runtime.ClientResponse, consume
 
 // NewEnableIdentityUnauthorized creates a EnableIdentityUnauthorized with default headers values
 func NewEnableIdentityUnauthorized() *EnableIdentityUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &EnableIdentityUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type EnableIdentityUnauthorized struct {
 
 // IsSuccess returns true when this enable identity unauthorized response has a 2xx status code
 func (o *EnableIdentityUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this enable identity unauthorized response has a 3xx status code
 func (o *EnableIdentityUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this enable identity unauthorized response has a 4xx status code
 func (o *EnableIdentityUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this enable identity unauthorized response has a 5xx status code
 func (o *EnableIdentityUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this enable identity unauthorized response a status code equal to that given
 func (o *EnableIdentityUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the enable identity unauthorized response
 func (o *EnableIdentityUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *EnableIdentityUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityUnauthorized %s", 401, payload)
 }
 
 func (o *EnableIdentityUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityUnauthorized %s", 401, payload)
 }
 
 func (o *EnableIdentityUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *EnableIdentityUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *EnableIdentityUnauthorized) readResponse(response runtime.ClientRespons
 
 // NewEnableIdentityNotFound creates a EnableIdentityNotFound with default headers values
 func NewEnableIdentityNotFound() *EnableIdentityNotFound {
+    logtrace.LogWithFunctionName()
 	return &EnableIdentityNotFound{}
 }
 
@@ -239,49 +264,59 @@ type EnableIdentityNotFound struct {
 
 // IsSuccess returns true when this enable identity not found response has a 2xx status code
 func (o *EnableIdentityNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this enable identity not found response has a 3xx status code
 func (o *EnableIdentityNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this enable identity not found response has a 4xx status code
 func (o *EnableIdentityNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this enable identity not found response has a 5xx status code
 func (o *EnableIdentityNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this enable identity not found response a status code equal to that given
 func (o *EnableIdentityNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the enable identity not found response
 func (o *EnableIdentityNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *EnableIdentityNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityNotFound %s", 404, payload)
 }
 
 func (o *EnableIdentityNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityNotFound %s", 404, payload)
 }
 
 func (o *EnableIdentityNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *EnableIdentityNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *EnableIdentityNotFound) readResponse(response runtime.ClientResponse, c
 
 // NewEnableIdentityTooManyRequests creates a EnableIdentityTooManyRequests with default headers values
 func NewEnableIdentityTooManyRequests() *EnableIdentityTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &EnableIdentityTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type EnableIdentityTooManyRequests struct {
 
 // IsSuccess returns true when this enable identity too many requests response has a 2xx status code
 func (o *EnableIdentityTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this enable identity too many requests response has a 3xx status code
 func (o *EnableIdentityTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this enable identity too many requests response has a 4xx status code
 func (o *EnableIdentityTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this enable identity too many requests response has a 5xx status code
 func (o *EnableIdentityTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this enable identity too many requests response a status code equal to that given
 func (o *EnableIdentityTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the enable identity too many requests response
 func (o *EnableIdentityTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *EnableIdentityTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityTooManyRequests %s", 429, payload)
 }
 
 func (o *EnableIdentityTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityTooManyRequests %s", 429, payload)
 }
 
 func (o *EnableIdentityTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *EnableIdentityTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *EnableIdentityTooManyRequests) readResponse(response runtime.ClientResp
 
 // NewEnableIdentityServiceUnavailable creates a EnableIdentityServiceUnavailable with default headers values
 func NewEnableIdentityServiceUnavailable() *EnableIdentityServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &EnableIdentityServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type EnableIdentityServiceUnavailable struct {
 
 // IsSuccess returns true when this enable identity service unavailable response has a 2xx status code
 func (o *EnableIdentityServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this enable identity service unavailable response has a 3xx status code
 func (o *EnableIdentityServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this enable identity service unavailable response has a 4xx status code
 func (o *EnableIdentityServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this enable identity service unavailable response has a 5xx status code
 func (o *EnableIdentityServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this enable identity service unavailable response a status code equal to that given
 func (o *EnableIdentityServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the enable identity service unavailable response
 func (o *EnableIdentityServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *EnableIdentityServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityServiceUnavailable %s", 503, payload)
 }
 
 func (o *EnableIdentityServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/enable][%d] enableIdentityServiceUnavailable %s", 503, payload)
 }
 
 func (o *EnableIdentityServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *EnableIdentityServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

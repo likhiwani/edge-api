@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -74,6 +75,7 @@ type ControllerDetail struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *ControllerDetail) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 BaseEntity
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -120,6 +122,7 @@ func (m *ControllerDetail) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m ControllerDetail) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.BaseEntity)
@@ -167,6 +170,7 @@ func (m ControllerDetail) MarshalJSON() ([]byte, error) {
 
 // Validate validates this controller detail
 func (m *ControllerDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -205,6 +209,7 @@ func (m *ControllerDetail) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ControllerDetail) validateAPIAddresses(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.APIAddresses) { // not required
 		return nil
@@ -225,6 +230,7 @@ func (m *ControllerDetail) validateAPIAddresses(formats strfmt.Registry) error {
 }
 
 func (m *ControllerDetail) validateCertPem(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("certPem", "body", m.CertPem); err != nil {
 		return err
@@ -234,6 +240,7 @@ func (m *ControllerDetail) validateCertPem(formats strfmt.Registry) error {
 }
 
 func (m *ControllerDetail) validateFingerprint(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("fingerprint", "body", m.Fingerprint); err != nil {
 		return err
@@ -243,6 +250,7 @@ func (m *ControllerDetail) validateFingerprint(formats strfmt.Registry) error {
 }
 
 func (m *ControllerDetail) validateIsOnline(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isOnline", "body", m.IsOnline); err != nil {
 		return err
@@ -252,6 +260,7 @@ func (m *ControllerDetail) validateIsOnline(formats strfmt.Registry) error {
 }
 
 func (m *ControllerDetail) validateLastJoinedAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("lastJoinedAt", "body", m.LastJoinedAt); err != nil {
 		return err
@@ -265,6 +274,7 @@ func (m *ControllerDetail) validateLastJoinedAt(formats strfmt.Registry) error {
 }
 
 func (m *ControllerDetail) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -275,6 +285,7 @@ func (m *ControllerDetail) validateName(formats strfmt.Registry) error {
 
 // ContextValidate validate this controller detail based on the context it is used
 func (m *ControllerDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -293,6 +304,7 @@ func (m *ControllerDetail) ContextValidate(ctx context.Context, formats strfmt.R
 }
 
 func (m *ControllerDetail) contextValidateAPIAddresses(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.APIAddresses) { // not required
 		return nil
@@ -312,6 +324,7 @@ func (m *ControllerDetail) contextValidateAPIAddresses(ctx context.Context, form
 
 // MarshalBinary interface implementation
 func (m *ControllerDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -320,6 +333,7 @@ func (m *ControllerDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ControllerDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ControllerDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

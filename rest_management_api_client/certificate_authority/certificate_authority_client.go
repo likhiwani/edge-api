@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new certificate authority API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -87,6 +91,7 @@ type ClientOption func(*runtime.ClientOperation)
 //
 // You may use this option to set arbitrary extensions to your MIME media type.
 func WithContentType(mime string) ClientOption {
+    logtrace.LogWithFunctionName()
 	return func(r *runtime.ClientOperation) {
 		r.ConsumesMediaTypes = []string{mime}
 	}
@@ -94,11 +99,13 @@ func WithContentType(mime string) ClientOption {
 
 // WithContentTypeApplicationJSON sets the Content-Type header to "application/json".
 func WithContentTypeApplicationJSON(r *runtime.ClientOperation) {
+    logtrace.LogWithFunctionName()
 	r.ConsumesMediaTypes = []string{"application/json"}
 }
 
 // WithContentTypeTextPlain sets the Content-Type header to "text/plain".
 func WithContentTypeTextPlain(r *runtime.ClientOperation) {
+    logtrace.LogWithFunctionName()
 	r.ConsumesMediaTypes = []string{"text/plain"}
 }
 
@@ -107,6 +114,7 @@ func WithContentTypeTextPlain(r *runtime.ClientOperation) {
 //
 // You may use this option to set arbitrary extensions to your MIME media type.
 func WithAccept(mime string) ClientOption {
+    logtrace.LogWithFunctionName()
 	return func(r *runtime.ClientOperation) {
 		r.ProducesMediaTypes = []string{mime}
 	}
@@ -114,11 +122,13 @@ func WithAccept(mime string) ClientOption {
 
 // WithAcceptApplicationJSON sets the Accept header to "application/json".
 func WithAcceptApplicationJSON(r *runtime.ClientOperation) {
+    logtrace.LogWithFunctionName()
 	r.ProducesMediaTypes = []string{"application/json"}
 }
 
 // WithAcceptApplicationJWT sets the Accept header to "application/jwt".
 func WithAcceptApplicationJWT(r *runtime.ClientOperation) {
+    logtrace.LogWithFunctionName()
 	r.ProducesMediaTypes = []string{"application/jwt"}
 }
 
@@ -149,6 +159,7 @@ CreateCa creates a c a
 Creates a CA in an unverified state. Requires admin access.
 */
 func (a *Client) CreateCa(params *CreateCaParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateCaCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreateCaParams()
@@ -192,6 +203,7 @@ func (a *Client) CreateCa(params *CreateCaParams, authInfo runtime.ClientAuthInf
 impossible for identities to authenticate if they no longer have any valid authenticators. Requires admin access.
 */
 func (a *Client) DeleteCa(params *DeleteCaParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCaOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteCaParams()
@@ -233,6 +245,7 @@ DetailCa retrieves a single c a
 Retrieves a single CA by id. Requires admin access.
 */
 func (a *Client) DetailCa(params *DetailCaParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailCaOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailCaParams()
@@ -276,6 +289,7 @@ func (a *Client) DetailCa(params *DetailCaParams, authInfo runtime.ClientAuthInf
 the jwt as a text response.
 */
 func (a *Client) GetCaJWT(params *GetCaJWTParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GetCaJWTOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetCaJWTParams()
@@ -317,6 +331,7 @@ ListCas lists c as
 Retrieves a list of CA resources; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListCas(params *ListCasParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListCasOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListCasParams()
@@ -358,6 +373,7 @@ PatchCa updates the supplied fields on a c a
 Update only the supplied fields on a CA by id. Requires admin access.
 */
 func (a *Client) PatchCa(params *PatchCaParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PatchCaOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPatchCaParams()
@@ -399,6 +415,7 @@ UpdateCa updates all fields on a c a
 Update all fields on a CA by id. Requires admin access.
 */
 func (a *Client) UpdateCa(params *UpdateCaParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UpdateCaOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUpdateCaParams()
@@ -443,6 +460,7 @@ The common name on the certificate must match the verificationToken property of 
 be used for enrollment/authentication. Requires admin access.
 */
 func (a *Client) VerifyCa(params *VerifyCaParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*VerifyCaOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewVerifyCaParams()
@@ -480,5 +498,6 @@ func (a *Client) VerifyCa(params *VerifyCaParams, authInfo runtime.ClientAuthInf
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

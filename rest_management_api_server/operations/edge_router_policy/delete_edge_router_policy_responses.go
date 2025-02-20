@@ -30,6 +30,7 @@ package edge_router_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DeleteEdgeRouterPolicyOK struct {
 
 // NewDeleteEdgeRouterPolicyOK creates DeleteEdgeRouterPolicyOK with default headers values
 func NewDeleteEdgeRouterPolicyOK() *DeleteEdgeRouterPolicyOK {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteEdgeRouterPolicyOK{}
 }
 
 // WithPayload adds the payload to the delete edge router policy o k response
 func (o *DeleteEdgeRouterPolicyOK) WithPayload(payload *rest_model.Empty) *DeleteEdgeRouterPolicyOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete edge router policy o k response
 func (o *DeleteEdgeRouterPolicyOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteEdgeRouterPolicyOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DeleteEdgeRouterPolicyBadRequest struct {
 
 // NewDeleteEdgeRouterPolicyBadRequest creates DeleteEdgeRouterPolicyBadRequest with default headers values
 func NewDeleteEdgeRouterPolicyBadRequest() *DeleteEdgeRouterPolicyBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteEdgeRouterPolicyBadRequest{}
 }
 
 // WithPayload adds the payload to the delete edge router policy bad request response
 func (o *DeleteEdgeRouterPolicyBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteEdgeRouterPolicyBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete edge router policy bad request response
 func (o *DeleteEdgeRouterPolicyBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteEdgeRouterPolicyBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DeleteEdgeRouterPolicyUnauthorized struct {
 
 // NewDeleteEdgeRouterPolicyUnauthorized creates DeleteEdgeRouterPolicyUnauthorized with default headers values
 func NewDeleteEdgeRouterPolicyUnauthorized() *DeleteEdgeRouterPolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteEdgeRouterPolicyUnauthorized{}
 }
 
 // WithPayload adds the payload to the delete edge router policy unauthorized response
 func (o *DeleteEdgeRouterPolicyUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteEdgeRouterPolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete edge router policy unauthorized response
 func (o *DeleteEdgeRouterPolicyUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteEdgeRouterPolicyUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DeleteEdgeRouterPolicyNotFound struct {
 
 // NewDeleteEdgeRouterPolicyNotFound creates DeleteEdgeRouterPolicyNotFound with default headers values
 func NewDeleteEdgeRouterPolicyNotFound() *DeleteEdgeRouterPolicyNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteEdgeRouterPolicyNotFound{}
 }
 
 // WithPayload adds the payload to the delete edge router policy not found response
 func (o *DeleteEdgeRouterPolicyNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteEdgeRouterPolicyNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete edge router policy not found response
 func (o *DeleteEdgeRouterPolicyNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteEdgeRouterPolicyNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DeleteEdgeRouterPolicyConflict struct {
 
 // NewDeleteEdgeRouterPolicyConflict creates DeleteEdgeRouterPolicyConflict with default headers values
 func NewDeleteEdgeRouterPolicyConflict() *DeleteEdgeRouterPolicyConflict {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteEdgeRouterPolicyConflict{}
 }
 
 // WithPayload adds the payload to the delete edge router policy conflict response
 func (o *DeleteEdgeRouterPolicyConflict) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteEdgeRouterPolicyConflict {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete edge router policy conflict response
 func (o *DeleteEdgeRouterPolicyConflict) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteEdgeRouterPolicyConflict) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(409)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type DeleteEdgeRouterPolicyTooManyRequests struct {
 
 // NewDeleteEdgeRouterPolicyTooManyRequests creates DeleteEdgeRouterPolicyTooManyRequests with default headers values
 func NewDeleteEdgeRouterPolicyTooManyRequests() *DeleteEdgeRouterPolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteEdgeRouterPolicyTooManyRequests{}
 }
 
 // WithPayload adds the payload to the delete edge router policy too many requests response
 func (o *DeleteEdgeRouterPolicyTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteEdgeRouterPolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete edge router policy too many requests response
 func (o *DeleteEdgeRouterPolicyTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteEdgeRouterPolicyTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -325,23 +350,27 @@ type DeleteEdgeRouterPolicyServiceUnavailable struct {
 
 // NewDeleteEdgeRouterPolicyServiceUnavailable creates DeleteEdgeRouterPolicyServiceUnavailable with default headers values
 func NewDeleteEdgeRouterPolicyServiceUnavailable() *DeleteEdgeRouterPolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteEdgeRouterPolicyServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the delete edge router policy service unavailable response
 func (o *DeleteEdgeRouterPolicyServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteEdgeRouterPolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete edge router policy service unavailable response
 func (o *DeleteEdgeRouterPolicyServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteEdgeRouterPolicyServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

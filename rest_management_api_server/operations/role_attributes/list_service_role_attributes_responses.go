@@ -30,6 +30,7 @@ package role_attributes
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListServiceRoleAttributesOK struct {
 
 // NewListServiceRoleAttributesOK creates ListServiceRoleAttributesOK with default headers values
 func NewListServiceRoleAttributesOK() *ListServiceRoleAttributesOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListServiceRoleAttributesOK{}
 }
 
 // WithPayload adds the payload to the list service role attributes o k response
 func (o *ListServiceRoleAttributesOK) WithPayload(payload *rest_model.ListRoleAttributesEnvelope) *ListServiceRoleAttributesOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list service role attributes o k response
 func (o *ListServiceRoleAttributesOK) SetPayload(payload *rest_model.ListRoleAttributesEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListServiceRoleAttributesOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ListServiceRoleAttributesBadRequest struct {
 
 // NewListServiceRoleAttributesBadRequest creates ListServiceRoleAttributesBadRequest with default headers values
 func NewListServiceRoleAttributesBadRequest() *ListServiceRoleAttributesBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &ListServiceRoleAttributesBadRequest{}
 }
 
 // WithPayload adds the payload to the list service role attributes bad request response
 func (o *ListServiceRoleAttributesBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *ListServiceRoleAttributesBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list service role attributes bad request response
 func (o *ListServiceRoleAttributesBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListServiceRoleAttributesBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ListServiceRoleAttributesUnauthorized struct {
 
 // NewListServiceRoleAttributesUnauthorized creates ListServiceRoleAttributesUnauthorized with default headers values
 func NewListServiceRoleAttributesUnauthorized() *ListServiceRoleAttributesUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &ListServiceRoleAttributesUnauthorized{}
 }
 
 // WithPayload adds the payload to the list service role attributes unauthorized response
 func (o *ListServiceRoleAttributesUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *ListServiceRoleAttributesUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list service role attributes unauthorized response
 func (o *ListServiceRoleAttributesUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListServiceRoleAttributesUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type ListServiceRoleAttributesTooManyRequests struct {
 
 // NewListServiceRoleAttributesTooManyRequests creates ListServiceRoleAttributesTooManyRequests with default headers values
 func NewListServiceRoleAttributesTooManyRequests() *ListServiceRoleAttributesTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ListServiceRoleAttributesTooManyRequests{}
 }
 
 // WithPayload adds the payload to the list service role attributes too many requests response
 func (o *ListServiceRoleAttributesTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ListServiceRoleAttributesTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list service role attributes too many requests response
 func (o *ListServiceRoleAttributesTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListServiceRoleAttributesTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type ListServiceRoleAttributesServiceUnavailable struct {
 
 // NewListServiceRoleAttributesServiceUnavailable creates ListServiceRoleAttributesServiceUnavailable with default headers values
 func NewListServiceRoleAttributesServiceUnavailable() *ListServiceRoleAttributesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &ListServiceRoleAttributesServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the list service role attributes service unavailable response
 func (o *ListServiceRoleAttributesServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *ListServiceRoleAttributesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list service role attributes service unavailable response
 func (o *ListServiceRoleAttributesServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListServiceRoleAttributesServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

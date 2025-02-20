@@ -30,6 +30,7 @@ package authenticator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type UpdateAuthenticatorOK struct {
 
 // NewUpdateAuthenticatorOK creates UpdateAuthenticatorOK with default headers values
 func NewUpdateAuthenticatorOK() *UpdateAuthenticatorOK {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateAuthenticatorOK{}
 }
 
 // WithPayload adds the payload to the update authenticator o k response
 func (o *UpdateAuthenticatorOK) WithPayload(payload *rest_model.Empty) *UpdateAuthenticatorOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update authenticator o k response
 func (o *UpdateAuthenticatorOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateAuthenticatorOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type UpdateAuthenticatorBadRequest struct {
 
 // NewUpdateAuthenticatorBadRequest creates UpdateAuthenticatorBadRequest with default headers values
 func NewUpdateAuthenticatorBadRequest() *UpdateAuthenticatorBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateAuthenticatorBadRequest{}
 }
 
 // WithPayload adds the payload to the update authenticator bad request response
 func (o *UpdateAuthenticatorBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateAuthenticatorBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update authenticator bad request response
 func (o *UpdateAuthenticatorBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateAuthenticatorBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type UpdateAuthenticatorUnauthorized struct {
 
 // NewUpdateAuthenticatorUnauthorized creates UpdateAuthenticatorUnauthorized with default headers values
 func NewUpdateAuthenticatorUnauthorized() *UpdateAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateAuthenticatorUnauthorized{}
 }
 
 // WithPayload adds the payload to the update authenticator unauthorized response
 func (o *UpdateAuthenticatorUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update authenticator unauthorized response
 func (o *UpdateAuthenticatorUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateAuthenticatorUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type UpdateAuthenticatorNotFound struct {
 
 // NewUpdateAuthenticatorNotFound creates UpdateAuthenticatorNotFound with default headers values
 func NewUpdateAuthenticatorNotFound() *UpdateAuthenticatorNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateAuthenticatorNotFound{}
 }
 
 // WithPayload adds the payload to the update authenticator not found response
 func (o *UpdateAuthenticatorNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateAuthenticatorNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update authenticator not found response
 func (o *UpdateAuthenticatorNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateAuthenticatorNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type UpdateAuthenticatorTooManyRequests struct {
 
 // NewUpdateAuthenticatorTooManyRequests creates UpdateAuthenticatorTooManyRequests with default headers values
 func NewUpdateAuthenticatorTooManyRequests() *UpdateAuthenticatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateAuthenticatorTooManyRequests{}
 }
 
 // WithPayload adds the payload to the update authenticator too many requests response
 func (o *UpdateAuthenticatorTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateAuthenticatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update authenticator too many requests response
 func (o *UpdateAuthenticatorTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateAuthenticatorTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type UpdateAuthenticatorServiceUnavailable struct {
 
 // NewUpdateAuthenticatorServiceUnavailable creates UpdateAuthenticatorServiceUnavailable with default headers values
 func NewUpdateAuthenticatorServiceUnavailable() *UpdateAuthenticatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateAuthenticatorServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the update authenticator service unavailable response
 func (o *UpdateAuthenticatorServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateAuthenticatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update authenticator service unavailable response
 func (o *UpdateAuthenticatorServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateAuthenticatorServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type GetCurrentIdentityOK struct {
 
 // NewGetCurrentIdentityOK creates GetCurrentIdentityOK with default headers values
 func NewGetCurrentIdentityOK() *GetCurrentIdentityOK {
+    logtrace.LogWithFunctionName()
 
 	return &GetCurrentIdentityOK{}
 }
 
 // WithPayload adds the payload to the get current identity o k response
 func (o *GetCurrentIdentityOK) WithPayload(payload *rest_model.CurrentIdentityDetailEnvelope) *GetCurrentIdentityOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get current identity o k response
 func (o *GetCurrentIdentityOK) SetPayload(payload *rest_model.CurrentIdentityDetailEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetCurrentIdentityOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type GetCurrentIdentityUnauthorized struct {
 
 // NewGetCurrentIdentityUnauthorized creates GetCurrentIdentityUnauthorized with default headers values
 func NewGetCurrentIdentityUnauthorized() *GetCurrentIdentityUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &GetCurrentIdentityUnauthorized{}
 }
 
 // WithPayload adds the payload to the get current identity unauthorized response
 func (o *GetCurrentIdentityUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *GetCurrentIdentityUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get current identity unauthorized response
 func (o *GetCurrentIdentityUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetCurrentIdentityUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {

@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"strconv"
 
@@ -49,6 +50,7 @@ type Jwks struct {
 
 // Validate validates this jwks
 func (m *Jwks) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateKeys(formats); err != nil {
@@ -62,6 +64,7 @@ func (m *Jwks) Validate(formats strfmt.Registry) error {
 }
 
 func (m *Jwks) validateKeys(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Keys) { // not required
 		return nil
 	}
@@ -89,6 +92,7 @@ func (m *Jwks) validateKeys(formats strfmt.Registry) error {
 
 // ContextValidate validate this jwks based on the context it is used
 func (m *Jwks) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateKeys(ctx, formats); err != nil {
@@ -102,6 +106,7 @@ func (m *Jwks) ContextValidate(ctx context.Context, formats strfmt.Registry) err
 }
 
 func (m *Jwks) contextValidateKeys(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	for i := 0; i < len(m.Keys); i++ {
 
@@ -128,6 +133,7 @@ func (m *Jwks) contextValidateKeys(ctx context.Context, formats strfmt.Registry)
 
 // MarshalBinary interface implementation
 func (m *Jwks) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -136,6 +142,7 @@ func (m *Jwks) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *Jwks) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res Jwks
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

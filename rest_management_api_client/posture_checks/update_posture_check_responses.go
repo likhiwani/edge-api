@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type UpdatePostureCheckReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *UpdatePostureCheckReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewUpdatePostureCheckOK()
@@ -91,6 +93,7 @@ func (o *UpdatePostureCheckReader) ReadResponse(response runtime.ClientResponse,
 
 // NewUpdatePostureCheckOK creates a UpdatePostureCheckOK with default headers values
 func NewUpdatePostureCheckOK() *UpdatePostureCheckOK {
+    logtrace.LogWithFunctionName()
 	return &UpdatePostureCheckOK{}
 }
 
@@ -105,49 +108,59 @@ type UpdatePostureCheckOK struct {
 
 // IsSuccess returns true when this update posture check o k response has a 2xx status code
 func (o *UpdatePostureCheckOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this update posture check o k response has a 3xx status code
 func (o *UpdatePostureCheckOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update posture check o k response has a 4xx status code
 func (o *UpdatePostureCheckOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this update posture check o k response has a 5xx status code
 func (o *UpdatePostureCheckOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update posture check o k response a status code equal to that given
 func (o *UpdatePostureCheckOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the update posture check o k response
 func (o *UpdatePostureCheckOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *UpdatePostureCheckOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /posture-checks/{id}][%d] updatePostureCheckOK %s", 200, payload)
 }
 
 func (o *UpdatePostureCheckOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /posture-checks/{id}][%d] updatePostureCheckOK %s", 200, payload)
 }
 
 func (o *UpdatePostureCheckOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdatePostureCheckOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -161,6 +174,7 @@ func (o *UpdatePostureCheckOK) readResponse(response runtime.ClientResponse, con
 
 // NewUpdatePostureCheckBadRequest creates a UpdatePostureCheckBadRequest with default headers values
 func NewUpdatePostureCheckBadRequest() *UpdatePostureCheckBadRequest {
+    logtrace.LogWithFunctionName()
 	return &UpdatePostureCheckBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type UpdatePostureCheckBadRequest struct {
 
 // IsSuccess returns true when this update posture check bad request response has a 2xx status code
 func (o *UpdatePostureCheckBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update posture check bad request response has a 3xx status code
 func (o *UpdatePostureCheckBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update posture check bad request response has a 4xx status code
 func (o *UpdatePostureCheckBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update posture check bad request response has a 5xx status code
 func (o *UpdatePostureCheckBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update posture check bad request response a status code equal to that given
 func (o *UpdatePostureCheckBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the update posture check bad request response
 func (o *UpdatePostureCheckBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *UpdatePostureCheckBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /posture-checks/{id}][%d] updatePostureCheckBadRequest %s", 400, payload)
 }
 
 func (o *UpdatePostureCheckBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /posture-checks/{id}][%d] updatePostureCheckBadRequest %s", 400, payload)
 }
 
 func (o *UpdatePostureCheckBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdatePostureCheckBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *UpdatePostureCheckBadRequest) readResponse(response runtime.ClientRespo
 
 // NewUpdatePostureCheckUnauthorized creates a UpdatePostureCheckUnauthorized with default headers values
 func NewUpdatePostureCheckUnauthorized() *UpdatePostureCheckUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &UpdatePostureCheckUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type UpdatePostureCheckUnauthorized struct {
 
 // IsSuccess returns true when this update posture check unauthorized response has a 2xx status code
 func (o *UpdatePostureCheckUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update posture check unauthorized response has a 3xx status code
 func (o *UpdatePostureCheckUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update posture check unauthorized response has a 4xx status code
 func (o *UpdatePostureCheckUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update posture check unauthorized response has a 5xx status code
 func (o *UpdatePostureCheckUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update posture check unauthorized response a status code equal to that given
 func (o *UpdatePostureCheckUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the update posture check unauthorized response
 func (o *UpdatePostureCheckUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *UpdatePostureCheckUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /posture-checks/{id}][%d] updatePostureCheckUnauthorized %s", 401, payload)
 }
 
 func (o *UpdatePostureCheckUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /posture-checks/{id}][%d] updatePostureCheckUnauthorized %s", 401, payload)
 }
 
 func (o *UpdatePostureCheckUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdatePostureCheckUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *UpdatePostureCheckUnauthorized) readResponse(response runtime.ClientRes
 
 // NewUpdatePostureCheckNotFound creates a UpdatePostureCheckNotFound with default headers values
 func NewUpdatePostureCheckNotFound() *UpdatePostureCheckNotFound {
+    logtrace.LogWithFunctionName()
 	return &UpdatePostureCheckNotFound{}
 }
 
@@ -315,49 +351,59 @@ type UpdatePostureCheckNotFound struct {
 
 // IsSuccess returns true when this update posture check not found response has a 2xx status code
 func (o *UpdatePostureCheckNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update posture check not found response has a 3xx status code
 func (o *UpdatePostureCheckNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update posture check not found response has a 4xx status code
 func (o *UpdatePostureCheckNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update posture check not found response has a 5xx status code
 func (o *UpdatePostureCheckNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update posture check not found response a status code equal to that given
 func (o *UpdatePostureCheckNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the update posture check not found response
 func (o *UpdatePostureCheckNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *UpdatePostureCheckNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /posture-checks/{id}][%d] updatePostureCheckNotFound %s", 404, payload)
 }
 
 func (o *UpdatePostureCheckNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /posture-checks/{id}][%d] updatePostureCheckNotFound %s", 404, payload)
 }
 
 func (o *UpdatePostureCheckNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdatePostureCheckNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *UpdatePostureCheckNotFound) readResponse(response runtime.ClientRespons
 
 // NewUpdatePostureCheckTooManyRequests creates a UpdatePostureCheckTooManyRequests with default headers values
 func NewUpdatePostureCheckTooManyRequests() *UpdatePostureCheckTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &UpdatePostureCheckTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type UpdatePostureCheckTooManyRequests struct {
 
 // IsSuccess returns true when this update posture check too many requests response has a 2xx status code
 func (o *UpdatePostureCheckTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update posture check too many requests response has a 3xx status code
 func (o *UpdatePostureCheckTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update posture check too many requests response has a 4xx status code
 func (o *UpdatePostureCheckTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update posture check too many requests response has a 5xx status code
 func (o *UpdatePostureCheckTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update posture check too many requests response a status code equal to that given
 func (o *UpdatePostureCheckTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the update posture check too many requests response
 func (o *UpdatePostureCheckTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *UpdatePostureCheckTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /posture-checks/{id}][%d] updatePostureCheckTooManyRequests %s", 429, payload)
 }
 
 func (o *UpdatePostureCheckTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /posture-checks/{id}][%d] updatePostureCheckTooManyRequests %s", 429, payload)
 }
 
 func (o *UpdatePostureCheckTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdatePostureCheckTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *UpdatePostureCheckTooManyRequests) readResponse(response runtime.Client
 
 // NewUpdatePostureCheckServiceUnavailable creates a UpdatePostureCheckServiceUnavailable with default headers values
 func NewUpdatePostureCheckServiceUnavailable() *UpdatePostureCheckServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &UpdatePostureCheckServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type UpdatePostureCheckServiceUnavailable struct {
 
 // IsSuccess returns true when this update posture check service unavailable response has a 2xx status code
 func (o *UpdatePostureCheckServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update posture check service unavailable response has a 3xx status code
 func (o *UpdatePostureCheckServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update posture check service unavailable response has a 4xx status code
 func (o *UpdatePostureCheckServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this update posture check service unavailable response has a 5xx status code
 func (o *UpdatePostureCheckServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this update posture check service unavailable response a status code equal to that given
 func (o *UpdatePostureCheckServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the update posture check service unavailable response
 func (o *UpdatePostureCheckServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *UpdatePostureCheckServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /posture-checks/{id}][%d] updatePostureCheckServiceUnavailable %s", 503, payload)
 }
 
 func (o *UpdatePostureCheckServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /posture-checks/{id}][%d] updatePostureCheckServiceUnavailable %s", 503, payload)
 }
 
 func (o *UpdatePostureCheckServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdatePostureCheckServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewPatchConfigTypeParams() *PatchConfigTypeParams {
+    logtrace.LogWithFunctionName()
 	return &PatchConfigTypeParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewPatchConfigTypeParams() *PatchConfigTypeParams {
 // NewPatchConfigTypeParamsWithTimeout creates a new PatchConfigTypeParams object
 // with the ability to set a timeout on a request.
 func NewPatchConfigTypeParamsWithTimeout(timeout time.Duration) *PatchConfigTypeParams {
+    logtrace.LogWithFunctionName()
 	return &PatchConfigTypeParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewPatchConfigTypeParamsWithTimeout(timeout time.Duration) *PatchConfigType
 // NewPatchConfigTypeParamsWithContext creates a new PatchConfigTypeParams object
 // with the ability to set a context for a request.
 func NewPatchConfigTypeParamsWithContext(ctx context.Context) *PatchConfigTypeParams {
+    logtrace.LogWithFunctionName()
 	return &PatchConfigTypeParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewPatchConfigTypeParamsWithContext(ctx context.Context) *PatchConfigTypePa
 // NewPatchConfigTypeParamsWithHTTPClient creates a new PatchConfigTypeParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewPatchConfigTypeParamsWithHTTPClient(client *http.Client) *PatchConfigTypeParams {
+    logtrace.LogWithFunctionName()
 	return &PatchConfigTypeParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type PatchConfigTypeParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchConfigTypeParams) WithDefaults() *PatchConfigTypeParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *PatchConfigTypeParams) WithDefaults() *PatchConfigTypeParams {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchConfigTypeParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the patch config type params
 func (o *PatchConfigTypeParams) WithTimeout(timeout time.Duration) *PatchConfigTypeParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the patch config type params
 func (o *PatchConfigTypeParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the patch config type params
 func (o *PatchConfigTypeParams) WithContext(ctx context.Context) *PatchConfigTypeParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the patch config type params
 func (o *PatchConfigTypeParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the patch config type params
 func (o *PatchConfigTypeParams) WithHTTPClient(client *http.Client) *PatchConfigTypeParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the patch config type params
 func (o *PatchConfigTypeParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithConfigType adds the configType to the patch config type params
 func (o *PatchConfigTypeParams) WithConfigType(configType *rest_model.ConfigTypePatch) *PatchConfigTypeParams {
+    logtrace.LogWithFunctionName()
 	o.SetConfigType(configType)
 	return o
 }
 
 // SetConfigType adds the configType to the patch config type params
 func (o *PatchConfigTypeParams) SetConfigType(configType *rest_model.ConfigTypePatch) {
+    logtrace.LogWithFunctionName()
 	o.ConfigType = configType
 }
 
 // WithID adds the id to the patch config type params
 func (o *PatchConfigTypeParams) WithID(id string) *PatchConfigTypeParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the patch config type params
 func (o *PatchConfigTypeParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *PatchConfigTypeParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

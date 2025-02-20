@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -84,6 +85,7 @@ type CaCreate struct {
 
 // Validate validates this ca create
 func (m *CaCreate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateCertPem(formats); err != nil {
@@ -125,6 +127,7 @@ func (m *CaCreate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *CaCreate) validateCertPem(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("certPem", "body", m.CertPem); err != nil {
 		return err
@@ -134,6 +137,7 @@ func (m *CaCreate) validateCertPem(formats strfmt.Registry) error {
 }
 
 func (m *CaCreate) validateExternalIDClaim(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.ExternalIDClaim) { // not required
 		return nil
 	}
@@ -153,6 +157,7 @@ func (m *CaCreate) validateExternalIDClaim(formats strfmt.Registry) error {
 }
 
 func (m *CaCreate) validateIdentityRoles(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("identityRoles", "body", m.IdentityRoles); err != nil {
 		return err
@@ -171,6 +176,7 @@ func (m *CaCreate) validateIdentityRoles(formats strfmt.Registry) error {
 }
 
 func (m *CaCreate) validateIsAuthEnabled(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isAuthEnabled", "body", m.IsAuthEnabled); err != nil {
 		return err
@@ -180,6 +186,7 @@ func (m *CaCreate) validateIsAuthEnabled(formats strfmt.Registry) error {
 }
 
 func (m *CaCreate) validateIsAutoCaEnrollmentEnabled(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isAutoCaEnrollmentEnabled", "body", m.IsAutoCaEnrollmentEnabled); err != nil {
 		return err
@@ -189,6 +196,7 @@ func (m *CaCreate) validateIsAutoCaEnrollmentEnabled(formats strfmt.Registry) er
 }
 
 func (m *CaCreate) validateIsOttCaEnrollmentEnabled(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isOttCaEnrollmentEnabled", "body", m.IsOttCaEnrollmentEnabled); err != nil {
 		return err
@@ -198,6 +206,7 @@ func (m *CaCreate) validateIsOttCaEnrollmentEnabled(formats strfmt.Registry) err
 }
 
 func (m *CaCreate) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -207,6 +216,7 @@ func (m *CaCreate) validateName(formats strfmt.Registry) error {
 }
 
 func (m *CaCreate) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -227,6 +237,7 @@ func (m *CaCreate) validateTags(formats strfmt.Registry) error {
 
 // ContextValidate validate this ca create based on the context it is used
 func (m *CaCreate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateExternalIDClaim(ctx, formats); err != nil {
@@ -248,6 +259,7 @@ func (m *CaCreate) ContextValidate(ctx context.Context, formats strfmt.Registry)
 }
 
 func (m *CaCreate) contextValidateExternalIDClaim(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.ExternalIDClaim != nil {
 
@@ -269,6 +281,7 @@ func (m *CaCreate) contextValidateExternalIDClaim(ctx context.Context, formats s
 }
 
 func (m *CaCreate) contextValidateIdentityRoles(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.IdentityRoles.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -283,6 +296,7 @@ func (m *CaCreate) contextValidateIdentityRoles(ctx context.Context, formats str
 }
 
 func (m *CaCreate) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -305,6 +319,7 @@ func (m *CaCreate) contextValidateTags(ctx context.Context, formats strfmt.Regis
 
 // MarshalBinary interface implementation
 func (m *CaCreate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -313,6 +328,7 @@ func (m *CaCreate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *CaCreate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res CaCreate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

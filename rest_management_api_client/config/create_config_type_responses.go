@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type CreateConfigTypeReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *CreateConfigTypeReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 201:
 		result := NewCreateConfigTypeCreated()
@@ -85,6 +87,7 @@ func (o *CreateConfigTypeReader) ReadResponse(response runtime.ClientResponse, c
 
 // NewCreateConfigTypeCreated creates a CreateConfigTypeCreated with default headers values
 func NewCreateConfigTypeCreated() *CreateConfigTypeCreated {
+    logtrace.LogWithFunctionName()
 	return &CreateConfigTypeCreated{}
 }
 
@@ -99,49 +102,59 @@ type CreateConfigTypeCreated struct {
 
 // IsSuccess returns true when this create config type created response has a 2xx status code
 func (o *CreateConfigTypeCreated) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this create config type created response has a 3xx status code
 func (o *CreateConfigTypeCreated) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create config type created response has a 4xx status code
 func (o *CreateConfigTypeCreated) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this create config type created response has a 5xx status code
 func (o *CreateConfigTypeCreated) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create config type created response a status code equal to that given
 func (o *CreateConfigTypeCreated) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 201
 }
 
 // Code gets the status code for the create config type created response
 func (o *CreateConfigTypeCreated) Code() int {
+    logtrace.LogWithFunctionName()
 	return 201
 }
 
 func (o *CreateConfigTypeCreated) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /config-types][%d] createConfigTypeCreated %s", 201, payload)
 }
 
 func (o *CreateConfigTypeCreated) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /config-types][%d] createConfigTypeCreated %s", 201, payload)
 }
 
 func (o *CreateConfigTypeCreated) GetPayload() *rest_model.CreateEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateConfigTypeCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.CreateEnvelope)
 
@@ -155,6 +168,7 @@ func (o *CreateConfigTypeCreated) readResponse(response runtime.ClientResponse, 
 
 // NewCreateConfigTypeBadRequest creates a CreateConfigTypeBadRequest with default headers values
 func NewCreateConfigTypeBadRequest() *CreateConfigTypeBadRequest {
+    logtrace.LogWithFunctionName()
 	return &CreateConfigTypeBadRequest{}
 }
 
@@ -169,49 +183,59 @@ type CreateConfigTypeBadRequest struct {
 
 // IsSuccess returns true when this create config type bad request response has a 2xx status code
 func (o *CreateConfigTypeBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create config type bad request response has a 3xx status code
 func (o *CreateConfigTypeBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create config type bad request response has a 4xx status code
 func (o *CreateConfigTypeBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create config type bad request response has a 5xx status code
 func (o *CreateConfigTypeBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create config type bad request response a status code equal to that given
 func (o *CreateConfigTypeBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the create config type bad request response
 func (o *CreateConfigTypeBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *CreateConfigTypeBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /config-types][%d] createConfigTypeBadRequest %s", 400, payload)
 }
 
 func (o *CreateConfigTypeBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /config-types][%d] createConfigTypeBadRequest %s", 400, payload)
 }
 
 func (o *CreateConfigTypeBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateConfigTypeBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *CreateConfigTypeBadRequest) readResponse(response runtime.ClientRespons
 
 // NewCreateConfigTypeUnauthorized creates a CreateConfigTypeUnauthorized with default headers values
 func NewCreateConfigTypeUnauthorized() *CreateConfigTypeUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &CreateConfigTypeUnauthorized{}
 }
 
@@ -239,49 +264,59 @@ type CreateConfigTypeUnauthorized struct {
 
 // IsSuccess returns true when this create config type unauthorized response has a 2xx status code
 func (o *CreateConfigTypeUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create config type unauthorized response has a 3xx status code
 func (o *CreateConfigTypeUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create config type unauthorized response has a 4xx status code
 func (o *CreateConfigTypeUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create config type unauthorized response has a 5xx status code
 func (o *CreateConfigTypeUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create config type unauthorized response a status code equal to that given
 func (o *CreateConfigTypeUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the create config type unauthorized response
 func (o *CreateConfigTypeUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *CreateConfigTypeUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /config-types][%d] createConfigTypeUnauthorized %s", 401, payload)
 }
 
 func (o *CreateConfigTypeUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /config-types][%d] createConfigTypeUnauthorized %s", 401, payload)
 }
 
 func (o *CreateConfigTypeUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateConfigTypeUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *CreateConfigTypeUnauthorized) readResponse(response runtime.ClientRespo
 
 // NewCreateConfigTypeTooManyRequests creates a CreateConfigTypeTooManyRequests with default headers values
 func NewCreateConfigTypeTooManyRequests() *CreateConfigTypeTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &CreateConfigTypeTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type CreateConfigTypeTooManyRequests struct {
 
 // IsSuccess returns true when this create config type too many requests response has a 2xx status code
 func (o *CreateConfigTypeTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create config type too many requests response has a 3xx status code
 func (o *CreateConfigTypeTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create config type too many requests response has a 4xx status code
 func (o *CreateConfigTypeTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create config type too many requests response has a 5xx status code
 func (o *CreateConfigTypeTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create config type too many requests response a status code equal to that given
 func (o *CreateConfigTypeTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the create config type too many requests response
 func (o *CreateConfigTypeTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *CreateConfigTypeTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /config-types][%d] createConfigTypeTooManyRequests %s", 429, payload)
 }
 
 func (o *CreateConfigTypeTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /config-types][%d] createConfigTypeTooManyRequests %s", 429, payload)
 }
 
 func (o *CreateConfigTypeTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateConfigTypeTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *CreateConfigTypeTooManyRequests) readResponse(response runtime.ClientRe
 
 // NewCreateConfigTypeServiceUnavailable creates a CreateConfigTypeServiceUnavailable with default headers values
 func NewCreateConfigTypeServiceUnavailable() *CreateConfigTypeServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &CreateConfigTypeServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type CreateConfigTypeServiceUnavailable struct {
 
 // IsSuccess returns true when this create config type service unavailable response has a 2xx status code
 func (o *CreateConfigTypeServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create config type service unavailable response has a 3xx status code
 func (o *CreateConfigTypeServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create config type service unavailable response has a 4xx status code
 func (o *CreateConfigTypeServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this create config type service unavailable response has a 5xx status code
 func (o *CreateConfigTypeServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this create config type service unavailable response a status code equal to that given
 func (o *CreateConfigTypeServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the create config type service unavailable response
 func (o *CreateConfigTypeServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *CreateConfigTypeServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /config-types][%d] createConfigTypeServiceUnavailable %s", 503, payload)
 }
 
 func (o *CreateConfigTypeServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /config-types][%d] createConfigTypeServiceUnavailable %s", 503, payload)
 }
 
 func (o *CreateConfigTypeServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateConfigTypeServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

@@ -30,6 +30,7 @@ package terminator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type UpdateTerminatorReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *UpdateTerminatorReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewUpdateTerminatorOK()
@@ -91,6 +93,7 @@ func (o *UpdateTerminatorReader) ReadResponse(response runtime.ClientResponse, c
 
 // NewUpdateTerminatorOK creates a UpdateTerminatorOK with default headers values
 func NewUpdateTerminatorOK() *UpdateTerminatorOK {
+    logtrace.LogWithFunctionName()
 	return &UpdateTerminatorOK{}
 }
 
@@ -105,49 +108,59 @@ type UpdateTerminatorOK struct {
 
 // IsSuccess returns true when this update terminator o k response has a 2xx status code
 func (o *UpdateTerminatorOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this update terminator o k response has a 3xx status code
 func (o *UpdateTerminatorOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update terminator o k response has a 4xx status code
 func (o *UpdateTerminatorOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this update terminator o k response has a 5xx status code
 func (o *UpdateTerminatorOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update terminator o k response a status code equal to that given
 func (o *UpdateTerminatorOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the update terminator o k response
 func (o *UpdateTerminatorOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *UpdateTerminatorOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /terminators/{id}][%d] updateTerminatorOK %s", 200, payload)
 }
 
 func (o *UpdateTerminatorOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /terminators/{id}][%d] updateTerminatorOK %s", 200, payload)
 }
 
 func (o *UpdateTerminatorOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateTerminatorOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -161,6 +174,7 @@ func (o *UpdateTerminatorOK) readResponse(response runtime.ClientResponse, consu
 
 // NewUpdateTerminatorBadRequest creates a UpdateTerminatorBadRequest with default headers values
 func NewUpdateTerminatorBadRequest() *UpdateTerminatorBadRequest {
+    logtrace.LogWithFunctionName()
 	return &UpdateTerminatorBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type UpdateTerminatorBadRequest struct {
 
 // IsSuccess returns true when this update terminator bad request response has a 2xx status code
 func (o *UpdateTerminatorBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update terminator bad request response has a 3xx status code
 func (o *UpdateTerminatorBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update terminator bad request response has a 4xx status code
 func (o *UpdateTerminatorBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update terminator bad request response has a 5xx status code
 func (o *UpdateTerminatorBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update terminator bad request response a status code equal to that given
 func (o *UpdateTerminatorBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the update terminator bad request response
 func (o *UpdateTerminatorBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *UpdateTerminatorBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /terminators/{id}][%d] updateTerminatorBadRequest %s", 400, payload)
 }
 
 func (o *UpdateTerminatorBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /terminators/{id}][%d] updateTerminatorBadRequest %s", 400, payload)
 }
 
 func (o *UpdateTerminatorBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateTerminatorBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *UpdateTerminatorBadRequest) readResponse(response runtime.ClientRespons
 
 // NewUpdateTerminatorUnauthorized creates a UpdateTerminatorUnauthorized with default headers values
 func NewUpdateTerminatorUnauthorized() *UpdateTerminatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &UpdateTerminatorUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type UpdateTerminatorUnauthorized struct {
 
 // IsSuccess returns true when this update terminator unauthorized response has a 2xx status code
 func (o *UpdateTerminatorUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update terminator unauthorized response has a 3xx status code
 func (o *UpdateTerminatorUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update terminator unauthorized response has a 4xx status code
 func (o *UpdateTerminatorUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update terminator unauthorized response has a 5xx status code
 func (o *UpdateTerminatorUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update terminator unauthorized response a status code equal to that given
 func (o *UpdateTerminatorUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the update terminator unauthorized response
 func (o *UpdateTerminatorUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *UpdateTerminatorUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /terminators/{id}][%d] updateTerminatorUnauthorized %s", 401, payload)
 }
 
 func (o *UpdateTerminatorUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /terminators/{id}][%d] updateTerminatorUnauthorized %s", 401, payload)
 }
 
 func (o *UpdateTerminatorUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateTerminatorUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *UpdateTerminatorUnauthorized) readResponse(response runtime.ClientRespo
 
 // NewUpdateTerminatorNotFound creates a UpdateTerminatorNotFound with default headers values
 func NewUpdateTerminatorNotFound() *UpdateTerminatorNotFound {
+    logtrace.LogWithFunctionName()
 	return &UpdateTerminatorNotFound{}
 }
 
@@ -315,49 +351,59 @@ type UpdateTerminatorNotFound struct {
 
 // IsSuccess returns true when this update terminator not found response has a 2xx status code
 func (o *UpdateTerminatorNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update terminator not found response has a 3xx status code
 func (o *UpdateTerminatorNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update terminator not found response has a 4xx status code
 func (o *UpdateTerminatorNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update terminator not found response has a 5xx status code
 func (o *UpdateTerminatorNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update terminator not found response a status code equal to that given
 func (o *UpdateTerminatorNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the update terminator not found response
 func (o *UpdateTerminatorNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *UpdateTerminatorNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /terminators/{id}][%d] updateTerminatorNotFound %s", 404, payload)
 }
 
 func (o *UpdateTerminatorNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /terminators/{id}][%d] updateTerminatorNotFound %s", 404, payload)
 }
 
 func (o *UpdateTerminatorNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateTerminatorNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *UpdateTerminatorNotFound) readResponse(response runtime.ClientResponse,
 
 // NewUpdateTerminatorTooManyRequests creates a UpdateTerminatorTooManyRequests with default headers values
 func NewUpdateTerminatorTooManyRequests() *UpdateTerminatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &UpdateTerminatorTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type UpdateTerminatorTooManyRequests struct {
 
 // IsSuccess returns true when this update terminator too many requests response has a 2xx status code
 func (o *UpdateTerminatorTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update terminator too many requests response has a 3xx status code
 func (o *UpdateTerminatorTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update terminator too many requests response has a 4xx status code
 func (o *UpdateTerminatorTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update terminator too many requests response has a 5xx status code
 func (o *UpdateTerminatorTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update terminator too many requests response a status code equal to that given
 func (o *UpdateTerminatorTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the update terminator too many requests response
 func (o *UpdateTerminatorTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *UpdateTerminatorTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /terminators/{id}][%d] updateTerminatorTooManyRequests %s", 429, payload)
 }
 
 func (o *UpdateTerminatorTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /terminators/{id}][%d] updateTerminatorTooManyRequests %s", 429, payload)
 }
 
 func (o *UpdateTerminatorTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateTerminatorTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *UpdateTerminatorTooManyRequests) readResponse(response runtime.ClientRe
 
 // NewUpdateTerminatorServiceUnavailable creates a UpdateTerminatorServiceUnavailable with default headers values
 func NewUpdateTerminatorServiceUnavailable() *UpdateTerminatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &UpdateTerminatorServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type UpdateTerminatorServiceUnavailable struct {
 
 // IsSuccess returns true when this update terminator service unavailable response has a 2xx status code
 func (o *UpdateTerminatorServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update terminator service unavailable response has a 3xx status code
 func (o *UpdateTerminatorServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update terminator service unavailable response has a 4xx status code
 func (o *UpdateTerminatorServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this update terminator service unavailable response has a 5xx status code
 func (o *UpdateTerminatorServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this update terminator service unavailable response a status code equal to that given
 func (o *UpdateTerminatorServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the update terminator service unavailable response
 func (o *UpdateTerminatorServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *UpdateTerminatorServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /terminators/{id}][%d] updateTerminatorServiceUnavailable %s", 503, payload)
 }
 
 func (o *UpdateTerminatorServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /terminators/{id}][%d] updateTerminatorServiceUnavailable %s", 503, payload)
 }
 
 func (o *UpdateTerminatorServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateTerminatorServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

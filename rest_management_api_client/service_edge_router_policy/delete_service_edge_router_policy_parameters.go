@@ -30,6 +30,7 @@ package service_edge_router_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDeleteServiceEdgeRouterPolicyParams() *DeleteServiceEdgeRouterPolicyParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteServiceEdgeRouterPolicyParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDeleteServiceEdgeRouterPolicyParams() *DeleteServiceEdgeRouterPolicyPara
 // NewDeleteServiceEdgeRouterPolicyParamsWithTimeout creates a new DeleteServiceEdgeRouterPolicyParams object
 // with the ability to set a timeout on a request.
 func NewDeleteServiceEdgeRouterPolicyParamsWithTimeout(timeout time.Duration) *DeleteServiceEdgeRouterPolicyParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteServiceEdgeRouterPolicyParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDeleteServiceEdgeRouterPolicyParamsWithTimeout(timeout time.Duration) *D
 // NewDeleteServiceEdgeRouterPolicyParamsWithContext creates a new DeleteServiceEdgeRouterPolicyParams object
 // with the ability to set a context for a request.
 func NewDeleteServiceEdgeRouterPolicyParamsWithContext(ctx context.Context) *DeleteServiceEdgeRouterPolicyParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteServiceEdgeRouterPolicyParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDeleteServiceEdgeRouterPolicyParamsWithContext(ctx context.Context) *Del
 // NewDeleteServiceEdgeRouterPolicyParamsWithHTTPClient creates a new DeleteServiceEdgeRouterPolicyParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDeleteServiceEdgeRouterPolicyParamsWithHTTPClient(client *http.Client) *DeleteServiceEdgeRouterPolicyParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteServiceEdgeRouterPolicyParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DeleteServiceEdgeRouterPolicyParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteServiceEdgeRouterPolicyParams) WithDefaults() *DeleteServiceEdgeRouterPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DeleteServiceEdgeRouterPolicyParams) WithDefaults() *DeleteServiceEdgeR
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteServiceEdgeRouterPolicyParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the delete service edge router policy params
 func (o *DeleteServiceEdgeRouterPolicyParams) WithTimeout(timeout time.Duration) *DeleteServiceEdgeRouterPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the delete service edge router policy params
 func (o *DeleteServiceEdgeRouterPolicyParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the delete service edge router policy params
 func (o *DeleteServiceEdgeRouterPolicyParams) WithContext(ctx context.Context) *DeleteServiceEdgeRouterPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the delete service edge router policy params
 func (o *DeleteServiceEdgeRouterPolicyParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the delete service edge router policy params
 func (o *DeleteServiceEdgeRouterPolicyParams) WithHTTPClient(client *http.Client) *DeleteServiceEdgeRouterPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the delete service edge router policy params
 func (o *DeleteServiceEdgeRouterPolicyParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the delete service edge router policy params
 func (o *DeleteServiceEdgeRouterPolicyParams) WithID(id string) *DeleteServiceEdgeRouterPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the delete service edge router policy params
 func (o *DeleteServiceEdgeRouterPolicyParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DeleteServiceEdgeRouterPolicyParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

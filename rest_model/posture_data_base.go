@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -59,6 +60,7 @@ type PostureDataBase struct {
 
 // Validate validates this posture data base
 func (m *PostureDataBase) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateLastUpdatedAt(formats); err != nil {
@@ -80,6 +82,7 @@ func (m *PostureDataBase) Validate(formats strfmt.Registry) error {
 }
 
 func (m *PostureDataBase) validateLastUpdatedAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("lastUpdatedAt", "body", m.LastUpdatedAt); err != nil {
 		return err
@@ -93,6 +96,7 @@ func (m *PostureDataBase) validateLastUpdatedAt(formats strfmt.Registry) error {
 }
 
 func (m *PostureDataBase) validatePostureCheckID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("postureCheckId", "body", m.PostureCheckID); err != nil {
 		return err
@@ -102,6 +106,7 @@ func (m *PostureDataBase) validatePostureCheckID(formats strfmt.Registry) error 
 }
 
 func (m *PostureDataBase) validateTimedOut(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("timedOut", "body", m.TimedOut); err != nil {
 		return err
@@ -112,11 +117,13 @@ func (m *PostureDataBase) validateTimedOut(formats strfmt.Registry) error {
 
 // ContextValidate validates this posture data base based on context it is used
 func (m *PostureDataBase) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *PostureDataBase) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -125,6 +132,7 @@ func (m *PostureDataBase) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureDataBase) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureDataBase
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

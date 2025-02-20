@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type UpdateCaOK struct {
 
 // NewUpdateCaOK creates UpdateCaOK with default headers values
 func NewUpdateCaOK() *UpdateCaOK {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateCaOK{}
 }
 
 // WithPayload adds the payload to the update ca o k response
 func (o *UpdateCaOK) WithPayload(payload *rest_model.Empty) *UpdateCaOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update ca o k response
 func (o *UpdateCaOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateCaOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type UpdateCaBadRequest struct {
 
 // NewUpdateCaBadRequest creates UpdateCaBadRequest with default headers values
 func NewUpdateCaBadRequest() *UpdateCaBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateCaBadRequest{}
 }
 
 // WithPayload adds the payload to the update ca bad request response
 func (o *UpdateCaBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateCaBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update ca bad request response
 func (o *UpdateCaBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateCaBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type UpdateCaUnauthorized struct {
 
 // NewUpdateCaUnauthorized creates UpdateCaUnauthorized with default headers values
 func NewUpdateCaUnauthorized() *UpdateCaUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateCaUnauthorized{}
 }
 
 // WithPayload adds the payload to the update ca unauthorized response
 func (o *UpdateCaUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateCaUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update ca unauthorized response
 func (o *UpdateCaUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateCaUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type UpdateCaNotFound struct {
 
 // NewUpdateCaNotFound creates UpdateCaNotFound with default headers values
 func NewUpdateCaNotFound() *UpdateCaNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateCaNotFound{}
 }
 
 // WithPayload adds the payload to the update ca not found response
 func (o *UpdateCaNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateCaNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update ca not found response
 func (o *UpdateCaNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateCaNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type UpdateCaTooManyRequests struct {
 
 // NewUpdateCaTooManyRequests creates UpdateCaTooManyRequests with default headers values
 func NewUpdateCaTooManyRequests() *UpdateCaTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateCaTooManyRequests{}
 }
 
 // WithPayload adds the payload to the update ca too many requests response
 func (o *UpdateCaTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateCaTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update ca too many requests response
 func (o *UpdateCaTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateCaTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type UpdateCaServiceUnavailable struct {
 
 // NewUpdateCaServiceUnavailable creates UpdateCaServiceUnavailable with default headers values
 func NewUpdateCaServiceUnavailable() *UpdateCaServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateCaServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the update ca service unavailable response
 func (o *UpdateCaServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateCaServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update ca service unavailable response
 func (o *UpdateCaServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateCaServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

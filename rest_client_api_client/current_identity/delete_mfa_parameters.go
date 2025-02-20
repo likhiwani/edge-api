@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDeleteMfaParams() *DeleteMfaParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteMfaParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDeleteMfaParams() *DeleteMfaParams {
 // NewDeleteMfaParamsWithTimeout creates a new DeleteMfaParams object
 // with the ability to set a timeout on a request.
 func NewDeleteMfaParamsWithTimeout(timeout time.Duration) *DeleteMfaParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteMfaParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDeleteMfaParamsWithTimeout(timeout time.Duration) *DeleteMfaParams {
 // NewDeleteMfaParamsWithContext creates a new DeleteMfaParams object
 // with the ability to set a context for a request.
 func NewDeleteMfaParamsWithContext(ctx context.Context) *DeleteMfaParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteMfaParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDeleteMfaParamsWithContext(ctx context.Context) *DeleteMfaParams {
 // NewDeleteMfaParamsWithHTTPClient creates a new DeleteMfaParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDeleteMfaParamsWithHTTPClient(client *http.Client) *DeleteMfaParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteMfaParams{
 		HTTPClient: client,
 	}
@@ -97,6 +102,7 @@ type DeleteMfaParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteMfaParams) WithDefaults() *DeleteMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -105,55 +111,65 @@ func (o *DeleteMfaParams) WithDefaults() *DeleteMfaParams {
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteMfaParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the delete mfa params
 func (o *DeleteMfaParams) WithTimeout(timeout time.Duration) *DeleteMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the delete mfa params
 func (o *DeleteMfaParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the delete mfa params
 func (o *DeleteMfaParams) WithContext(ctx context.Context) *DeleteMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the delete mfa params
 func (o *DeleteMfaParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the delete mfa params
 func (o *DeleteMfaParams) WithHTTPClient(client *http.Client) *DeleteMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the delete mfa params
 func (o *DeleteMfaParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithMfaValidationCode adds the mfaValidationCode to the delete mfa params
 func (o *DeleteMfaParams) WithMfaValidationCode(mfaValidationCode *string) *DeleteMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetMfaValidationCode(mfaValidationCode)
 	return o
 }
 
 // SetMfaValidationCode adds the mfaValidationCode to the delete mfa params
 func (o *DeleteMfaParams) SetMfaValidationCode(mfaValidationCode *string) {
+    logtrace.LogWithFunctionName()
 	o.MfaValidationCode = mfaValidationCode
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DeleteMfaParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

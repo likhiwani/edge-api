@@ -30,6 +30,7 @@ package auth_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type CreateAuthPolicyReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *CreateAuthPolicyReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 201:
 		result := NewCreateAuthPolicyCreated()
@@ -85,6 +87,7 @@ func (o *CreateAuthPolicyReader) ReadResponse(response runtime.ClientResponse, c
 
 // NewCreateAuthPolicyCreated creates a CreateAuthPolicyCreated with default headers values
 func NewCreateAuthPolicyCreated() *CreateAuthPolicyCreated {
+    logtrace.LogWithFunctionName()
 	return &CreateAuthPolicyCreated{}
 }
 
@@ -99,49 +102,59 @@ type CreateAuthPolicyCreated struct {
 
 // IsSuccess returns true when this create auth policy created response has a 2xx status code
 func (o *CreateAuthPolicyCreated) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this create auth policy created response has a 3xx status code
 func (o *CreateAuthPolicyCreated) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create auth policy created response has a 4xx status code
 func (o *CreateAuthPolicyCreated) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this create auth policy created response has a 5xx status code
 func (o *CreateAuthPolicyCreated) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create auth policy created response a status code equal to that given
 func (o *CreateAuthPolicyCreated) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 201
 }
 
 // Code gets the status code for the create auth policy created response
 func (o *CreateAuthPolicyCreated) Code() int {
+    logtrace.LogWithFunctionName()
 	return 201
 }
 
 func (o *CreateAuthPolicyCreated) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /auth-policies][%d] createAuthPolicyCreated %s", 201, payload)
 }
 
 func (o *CreateAuthPolicyCreated) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /auth-policies][%d] createAuthPolicyCreated %s", 201, payload)
 }
 
 func (o *CreateAuthPolicyCreated) GetPayload() *rest_model.CreateEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateAuthPolicyCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.CreateEnvelope)
 
@@ -155,6 +168,7 @@ func (o *CreateAuthPolicyCreated) readResponse(response runtime.ClientResponse, 
 
 // NewCreateAuthPolicyBadRequest creates a CreateAuthPolicyBadRequest with default headers values
 func NewCreateAuthPolicyBadRequest() *CreateAuthPolicyBadRequest {
+    logtrace.LogWithFunctionName()
 	return &CreateAuthPolicyBadRequest{}
 }
 
@@ -169,49 +183,59 @@ type CreateAuthPolicyBadRequest struct {
 
 // IsSuccess returns true when this create auth policy bad request response has a 2xx status code
 func (o *CreateAuthPolicyBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create auth policy bad request response has a 3xx status code
 func (o *CreateAuthPolicyBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create auth policy bad request response has a 4xx status code
 func (o *CreateAuthPolicyBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create auth policy bad request response has a 5xx status code
 func (o *CreateAuthPolicyBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create auth policy bad request response a status code equal to that given
 func (o *CreateAuthPolicyBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the create auth policy bad request response
 func (o *CreateAuthPolicyBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *CreateAuthPolicyBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /auth-policies][%d] createAuthPolicyBadRequest %s", 400, payload)
 }
 
 func (o *CreateAuthPolicyBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /auth-policies][%d] createAuthPolicyBadRequest %s", 400, payload)
 }
 
 func (o *CreateAuthPolicyBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateAuthPolicyBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *CreateAuthPolicyBadRequest) readResponse(response runtime.ClientRespons
 
 // NewCreateAuthPolicyUnauthorized creates a CreateAuthPolicyUnauthorized with default headers values
 func NewCreateAuthPolicyUnauthorized() *CreateAuthPolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &CreateAuthPolicyUnauthorized{}
 }
 
@@ -239,49 +264,59 @@ type CreateAuthPolicyUnauthorized struct {
 
 // IsSuccess returns true when this create auth policy unauthorized response has a 2xx status code
 func (o *CreateAuthPolicyUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create auth policy unauthorized response has a 3xx status code
 func (o *CreateAuthPolicyUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create auth policy unauthorized response has a 4xx status code
 func (o *CreateAuthPolicyUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create auth policy unauthorized response has a 5xx status code
 func (o *CreateAuthPolicyUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create auth policy unauthorized response a status code equal to that given
 func (o *CreateAuthPolicyUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the create auth policy unauthorized response
 func (o *CreateAuthPolicyUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *CreateAuthPolicyUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /auth-policies][%d] createAuthPolicyUnauthorized %s", 401, payload)
 }
 
 func (o *CreateAuthPolicyUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /auth-policies][%d] createAuthPolicyUnauthorized %s", 401, payload)
 }
 
 func (o *CreateAuthPolicyUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateAuthPolicyUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *CreateAuthPolicyUnauthorized) readResponse(response runtime.ClientRespo
 
 // NewCreateAuthPolicyTooManyRequests creates a CreateAuthPolicyTooManyRequests with default headers values
 func NewCreateAuthPolicyTooManyRequests() *CreateAuthPolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &CreateAuthPolicyTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type CreateAuthPolicyTooManyRequests struct {
 
 // IsSuccess returns true when this create auth policy too many requests response has a 2xx status code
 func (o *CreateAuthPolicyTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create auth policy too many requests response has a 3xx status code
 func (o *CreateAuthPolicyTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create auth policy too many requests response has a 4xx status code
 func (o *CreateAuthPolicyTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create auth policy too many requests response has a 5xx status code
 func (o *CreateAuthPolicyTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create auth policy too many requests response a status code equal to that given
 func (o *CreateAuthPolicyTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the create auth policy too many requests response
 func (o *CreateAuthPolicyTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *CreateAuthPolicyTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /auth-policies][%d] createAuthPolicyTooManyRequests %s", 429, payload)
 }
 
 func (o *CreateAuthPolicyTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /auth-policies][%d] createAuthPolicyTooManyRequests %s", 429, payload)
 }
 
 func (o *CreateAuthPolicyTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateAuthPolicyTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *CreateAuthPolicyTooManyRequests) readResponse(response runtime.ClientRe
 
 // NewCreateAuthPolicyServiceUnavailable creates a CreateAuthPolicyServiceUnavailable with default headers values
 func NewCreateAuthPolicyServiceUnavailable() *CreateAuthPolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &CreateAuthPolicyServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type CreateAuthPolicyServiceUnavailable struct {
 
 // IsSuccess returns true when this create auth policy service unavailable response has a 2xx status code
 func (o *CreateAuthPolicyServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create auth policy service unavailable response has a 3xx status code
 func (o *CreateAuthPolicyServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create auth policy service unavailable response has a 4xx status code
 func (o *CreateAuthPolicyServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this create auth policy service unavailable response has a 5xx status code
 func (o *CreateAuthPolicyServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this create auth policy service unavailable response a status code equal to that given
 func (o *CreateAuthPolicyServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the create auth policy service unavailable response
 func (o *CreateAuthPolicyServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *CreateAuthPolicyServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /auth-policies][%d] createAuthPolicyServiceUnavailable %s", 503, payload)
 }
 
 func (o *CreateAuthPolicyServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /auth-policies][%d] createAuthPolicyServiceUnavailable %s", 503, payload)
 }
 
 func (o *CreateAuthPolicyServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateAuthPolicyServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

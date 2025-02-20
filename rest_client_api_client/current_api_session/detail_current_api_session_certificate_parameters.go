@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDetailCurrentAPISessionCertificateParams() *DetailCurrentAPISessionCertificateParams {
+    logtrace.LogWithFunctionName()
 	return &DetailCurrentAPISessionCertificateParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDetailCurrentAPISessionCertificateParams() *DetailCurrentAPISessionCerti
 // NewDetailCurrentAPISessionCertificateParamsWithTimeout creates a new DetailCurrentAPISessionCertificateParams object
 // with the ability to set a timeout on a request.
 func NewDetailCurrentAPISessionCertificateParamsWithTimeout(timeout time.Duration) *DetailCurrentAPISessionCertificateParams {
+    logtrace.LogWithFunctionName()
 	return &DetailCurrentAPISessionCertificateParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDetailCurrentAPISessionCertificateParamsWithTimeout(timeout time.Duratio
 // NewDetailCurrentAPISessionCertificateParamsWithContext creates a new DetailCurrentAPISessionCertificateParams object
 // with the ability to set a context for a request.
 func NewDetailCurrentAPISessionCertificateParamsWithContext(ctx context.Context) *DetailCurrentAPISessionCertificateParams {
+    logtrace.LogWithFunctionName()
 	return &DetailCurrentAPISessionCertificateParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDetailCurrentAPISessionCertificateParamsWithContext(ctx context.Context)
 // NewDetailCurrentAPISessionCertificateParamsWithHTTPClient creates a new DetailCurrentAPISessionCertificateParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDetailCurrentAPISessionCertificateParamsWithHTTPClient(client *http.Client) *DetailCurrentAPISessionCertificateParams {
+    logtrace.LogWithFunctionName()
 	return &DetailCurrentAPISessionCertificateParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DetailCurrentAPISessionCertificateParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailCurrentAPISessionCertificateParams) WithDefaults() *DetailCurrentAPISessionCertificateParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DetailCurrentAPISessionCertificateParams) WithDefaults() *DetailCurrent
 //
 // All values with no default are reset to their zero value.
 func (o *DetailCurrentAPISessionCertificateParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the detail current Api session certificate params
 func (o *DetailCurrentAPISessionCertificateParams) WithTimeout(timeout time.Duration) *DetailCurrentAPISessionCertificateParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the detail current Api session certificate params
 func (o *DetailCurrentAPISessionCertificateParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the detail current Api session certificate params
 func (o *DetailCurrentAPISessionCertificateParams) WithContext(ctx context.Context) *DetailCurrentAPISessionCertificateParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the detail current Api session certificate params
 func (o *DetailCurrentAPISessionCertificateParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the detail current Api session certificate params
 func (o *DetailCurrentAPISessionCertificateParams) WithHTTPClient(client *http.Client) *DetailCurrentAPISessionCertificateParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the detail current Api session certificate params
 func (o *DetailCurrentAPISessionCertificateParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the detail current Api session certificate params
 func (o *DetailCurrentAPISessionCertificateParams) WithID(id string) *DetailCurrentAPISessionCertificateParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the detail current Api session certificate params
 func (o *DetailCurrentAPISessionCertificateParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DetailCurrentAPISessionCertificateParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

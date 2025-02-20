@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListSummaryOK struct {
 
 // NewListSummaryOK creates ListSummaryOK with default headers values
 func NewListSummaryOK() *ListSummaryOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListSummaryOK{}
 }
 
 // WithPayload adds the payload to the list summary o k response
 func (o *ListSummaryOK) WithPayload(payload *rest_model.ListSummaryCountsEnvelope) *ListSummaryOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list summary o k response
 func (o *ListSummaryOK) SetPayload(payload *rest_model.ListSummaryCountsEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListSummaryOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ListSummaryUnauthorized struct {
 
 // NewListSummaryUnauthorized creates ListSummaryUnauthorized with default headers values
 func NewListSummaryUnauthorized() *ListSummaryUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &ListSummaryUnauthorized{}
 }
 
 // WithPayload adds the payload to the list summary unauthorized response
 func (o *ListSummaryUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *ListSummaryUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list summary unauthorized response
 func (o *ListSummaryUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListSummaryUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ListSummaryTooManyRequests struct {
 
 // NewListSummaryTooManyRequests creates ListSummaryTooManyRequests with default headers values
 func NewListSummaryTooManyRequests() *ListSummaryTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ListSummaryTooManyRequests{}
 }
 
 // WithPayload adds the payload to the list summary too many requests response
 func (o *ListSummaryTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ListSummaryTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list summary too many requests response
 func (o *ListSummaryTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListSummaryTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type ListSummaryServiceUnavailable struct {
 
 // NewListSummaryServiceUnavailable creates ListSummaryServiceUnavailable with default headers values
 func NewListSummaryServiceUnavailable() *ListSummaryServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &ListSummaryServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the list summary service unavailable response
 func (o *ListSummaryServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *ListSummaryServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list summary service unavailable response
 func (o *ListSummaryServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListSummaryServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

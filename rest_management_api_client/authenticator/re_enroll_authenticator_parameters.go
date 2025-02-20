@@ -30,6 +30,7 @@ package authenticator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewReEnrollAuthenticatorParams() *ReEnrollAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &ReEnrollAuthenticatorParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewReEnrollAuthenticatorParams() *ReEnrollAuthenticatorParams {
 // NewReEnrollAuthenticatorParamsWithTimeout creates a new ReEnrollAuthenticatorParams object
 // with the ability to set a timeout on a request.
 func NewReEnrollAuthenticatorParamsWithTimeout(timeout time.Duration) *ReEnrollAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &ReEnrollAuthenticatorParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewReEnrollAuthenticatorParamsWithTimeout(timeout time.Duration) *ReEnrollA
 // NewReEnrollAuthenticatorParamsWithContext creates a new ReEnrollAuthenticatorParams object
 // with the ability to set a context for a request.
 func NewReEnrollAuthenticatorParamsWithContext(ctx context.Context) *ReEnrollAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &ReEnrollAuthenticatorParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewReEnrollAuthenticatorParamsWithContext(ctx context.Context) *ReEnrollAut
 // NewReEnrollAuthenticatorParamsWithHTTPClient creates a new ReEnrollAuthenticatorParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewReEnrollAuthenticatorParamsWithHTTPClient(client *http.Client) *ReEnrollAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &ReEnrollAuthenticatorParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type ReEnrollAuthenticatorParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ReEnrollAuthenticatorParams) WithDefaults() *ReEnrollAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *ReEnrollAuthenticatorParams) WithDefaults() *ReEnrollAuthenticatorParam
 //
 // All values with no default are reset to their zero value.
 func (o *ReEnrollAuthenticatorParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the re enroll authenticator params
 func (o *ReEnrollAuthenticatorParams) WithTimeout(timeout time.Duration) *ReEnrollAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the re enroll authenticator params
 func (o *ReEnrollAuthenticatorParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the re enroll authenticator params
 func (o *ReEnrollAuthenticatorParams) WithContext(ctx context.Context) *ReEnrollAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the re enroll authenticator params
 func (o *ReEnrollAuthenticatorParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the re enroll authenticator params
 func (o *ReEnrollAuthenticatorParams) WithHTTPClient(client *http.Client) *ReEnrollAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the re enroll authenticator params
 func (o *ReEnrollAuthenticatorParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the re enroll authenticator params
 func (o *ReEnrollAuthenticatorParams) WithID(id string) *ReEnrollAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the re enroll authenticator params
 func (o *ReEnrollAuthenticatorParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WithReEnroll adds the reEnroll to the re enroll authenticator params
 func (o *ReEnrollAuthenticatorParams) WithReEnroll(reEnroll *rest_model.ReEnroll) *ReEnrollAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetReEnroll(reEnroll)
 	return o
 }
 
 // SetReEnroll adds the reEnroll to the re enroll authenticator params
 func (o *ReEnrollAuthenticatorParams) SetReEnroll(reEnroll *rest_model.ReEnroll) {
+    logtrace.LogWithFunctionName()
 	o.ReEnroll = reEnroll
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ReEnrollAuthenticatorParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

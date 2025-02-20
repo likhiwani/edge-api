@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type UpdateConfigTypeOK struct {
 
 // NewUpdateConfigTypeOK creates UpdateConfigTypeOK with default headers values
 func NewUpdateConfigTypeOK() *UpdateConfigTypeOK {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateConfigTypeOK{}
 }
 
 // WithPayload adds the payload to the update config type o k response
 func (o *UpdateConfigTypeOK) WithPayload(payload *rest_model.Empty) *UpdateConfigTypeOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update config type o k response
 func (o *UpdateConfigTypeOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateConfigTypeOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type UpdateConfigTypeBadRequest struct {
 
 // NewUpdateConfigTypeBadRequest creates UpdateConfigTypeBadRequest with default headers values
 func NewUpdateConfigTypeBadRequest() *UpdateConfigTypeBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateConfigTypeBadRequest{}
 }
 
 // WithPayload adds the payload to the update config type bad request response
 func (o *UpdateConfigTypeBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateConfigTypeBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update config type bad request response
 func (o *UpdateConfigTypeBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateConfigTypeBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type UpdateConfigTypeUnauthorized struct {
 
 // NewUpdateConfigTypeUnauthorized creates UpdateConfigTypeUnauthorized with default headers values
 func NewUpdateConfigTypeUnauthorized() *UpdateConfigTypeUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateConfigTypeUnauthorized{}
 }
 
 // WithPayload adds the payload to the update config type unauthorized response
 func (o *UpdateConfigTypeUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateConfigTypeUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update config type unauthorized response
 func (o *UpdateConfigTypeUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateConfigTypeUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type UpdateConfigTypeNotFound struct {
 
 // NewUpdateConfigTypeNotFound creates UpdateConfigTypeNotFound with default headers values
 func NewUpdateConfigTypeNotFound() *UpdateConfigTypeNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateConfigTypeNotFound{}
 }
 
 // WithPayload adds the payload to the update config type not found response
 func (o *UpdateConfigTypeNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateConfigTypeNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update config type not found response
 func (o *UpdateConfigTypeNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateConfigTypeNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type UpdateConfigTypeTooManyRequests struct {
 
 // NewUpdateConfigTypeTooManyRequests creates UpdateConfigTypeTooManyRequests with default headers values
 func NewUpdateConfigTypeTooManyRequests() *UpdateConfigTypeTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateConfigTypeTooManyRequests{}
 }
 
 // WithPayload adds the payload to the update config type too many requests response
 func (o *UpdateConfigTypeTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateConfigTypeTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update config type too many requests response
 func (o *UpdateConfigTypeTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateConfigTypeTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type UpdateConfigTypeServiceUnavailable struct {
 
 // NewUpdateConfigTypeServiceUnavailable creates UpdateConfigTypeServiceUnavailable with default headers values
 func NewUpdateConfigTypeServiceUnavailable() *UpdateConfigTypeServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateConfigTypeServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the update config type service unavailable response
 func (o *UpdateConfigTypeServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateConfigTypeServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update config type service unavailable response
 func (o *UpdateConfigTypeServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateConfigTypeServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

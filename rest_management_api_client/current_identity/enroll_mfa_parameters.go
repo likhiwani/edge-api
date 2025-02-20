@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewEnrollMfaParams() *EnrollMfaParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollMfaParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewEnrollMfaParams() *EnrollMfaParams {
 // NewEnrollMfaParamsWithTimeout creates a new EnrollMfaParams object
 // with the ability to set a timeout on a request.
 func NewEnrollMfaParamsWithTimeout(timeout time.Duration) *EnrollMfaParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollMfaParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewEnrollMfaParamsWithTimeout(timeout time.Duration) *EnrollMfaParams {
 // NewEnrollMfaParamsWithContext creates a new EnrollMfaParams object
 // with the ability to set a context for a request.
 func NewEnrollMfaParamsWithContext(ctx context.Context) *EnrollMfaParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollMfaParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewEnrollMfaParamsWithContext(ctx context.Context) *EnrollMfaParams {
 // NewEnrollMfaParamsWithHTTPClient creates a new EnrollMfaParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewEnrollMfaParamsWithHTTPClient(client *http.Client) *EnrollMfaParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollMfaParams{
 		HTTPClient: client,
 	}
@@ -93,6 +98,7 @@ type EnrollMfaParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *EnrollMfaParams) WithDefaults() *EnrollMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -101,44 +107,52 @@ func (o *EnrollMfaParams) WithDefaults() *EnrollMfaParams {
 //
 // All values with no default are reset to their zero value.
 func (o *EnrollMfaParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the enroll mfa params
 func (o *EnrollMfaParams) WithTimeout(timeout time.Duration) *EnrollMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the enroll mfa params
 func (o *EnrollMfaParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the enroll mfa params
 func (o *EnrollMfaParams) WithContext(ctx context.Context) *EnrollMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the enroll mfa params
 func (o *EnrollMfaParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the enroll mfa params
 func (o *EnrollMfaParams) WithHTTPClient(client *http.Client) *EnrollMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the enroll mfa params
 func (o *EnrollMfaParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *EnrollMfaParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

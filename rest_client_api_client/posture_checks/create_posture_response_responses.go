@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type CreatePostureResponseReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *CreatePostureResponseReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 201:
 		result := NewCreatePostureResponseCreated()
@@ -85,6 +87,7 @@ func (o *CreatePostureResponseReader) ReadResponse(response runtime.ClientRespon
 
 // NewCreatePostureResponseCreated creates a CreatePostureResponseCreated with default headers values
 func NewCreatePostureResponseCreated() *CreatePostureResponseCreated {
+    logtrace.LogWithFunctionName()
 	return &CreatePostureResponseCreated{}
 }
 
@@ -99,49 +102,59 @@ type CreatePostureResponseCreated struct {
 
 // IsSuccess returns true when this create posture response created response has a 2xx status code
 func (o *CreatePostureResponseCreated) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this create posture response created response has a 3xx status code
 func (o *CreatePostureResponseCreated) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create posture response created response has a 4xx status code
 func (o *CreatePostureResponseCreated) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this create posture response created response has a 5xx status code
 func (o *CreatePostureResponseCreated) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create posture response created response a status code equal to that given
 func (o *CreatePostureResponseCreated) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 201
 }
 
 // Code gets the status code for the create posture response created response
 func (o *CreatePostureResponseCreated) Code() int {
+    logtrace.LogWithFunctionName()
 	return 201
 }
 
 func (o *CreatePostureResponseCreated) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /posture-response][%d] createPostureResponseCreated %s", 201, payload)
 }
 
 func (o *CreatePostureResponseCreated) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /posture-response][%d] createPostureResponseCreated %s", 201, payload)
 }
 
 func (o *CreatePostureResponseCreated) GetPayload() *rest_model.PostureResponseEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreatePostureResponseCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.PostureResponseEnvelope)
 
@@ -155,6 +168,7 @@ func (o *CreatePostureResponseCreated) readResponse(response runtime.ClientRespo
 
 // NewCreatePostureResponseBadRequest creates a CreatePostureResponseBadRequest with default headers values
 func NewCreatePostureResponseBadRequest() *CreatePostureResponseBadRequest {
+    logtrace.LogWithFunctionName()
 	return &CreatePostureResponseBadRequest{}
 }
 
@@ -169,49 +183,59 @@ type CreatePostureResponseBadRequest struct {
 
 // IsSuccess returns true when this create posture response bad request response has a 2xx status code
 func (o *CreatePostureResponseBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create posture response bad request response has a 3xx status code
 func (o *CreatePostureResponseBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create posture response bad request response has a 4xx status code
 func (o *CreatePostureResponseBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create posture response bad request response has a 5xx status code
 func (o *CreatePostureResponseBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create posture response bad request response a status code equal to that given
 func (o *CreatePostureResponseBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the create posture response bad request response
 func (o *CreatePostureResponseBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *CreatePostureResponseBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /posture-response][%d] createPostureResponseBadRequest %s", 400, payload)
 }
 
 func (o *CreatePostureResponseBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /posture-response][%d] createPostureResponseBadRequest %s", 400, payload)
 }
 
 func (o *CreatePostureResponseBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreatePostureResponseBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *CreatePostureResponseBadRequest) readResponse(response runtime.ClientRe
 
 // NewCreatePostureResponseUnauthorized creates a CreatePostureResponseUnauthorized with default headers values
 func NewCreatePostureResponseUnauthorized() *CreatePostureResponseUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &CreatePostureResponseUnauthorized{}
 }
 
@@ -239,49 +264,59 @@ type CreatePostureResponseUnauthorized struct {
 
 // IsSuccess returns true when this create posture response unauthorized response has a 2xx status code
 func (o *CreatePostureResponseUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create posture response unauthorized response has a 3xx status code
 func (o *CreatePostureResponseUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create posture response unauthorized response has a 4xx status code
 func (o *CreatePostureResponseUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create posture response unauthorized response has a 5xx status code
 func (o *CreatePostureResponseUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create posture response unauthorized response a status code equal to that given
 func (o *CreatePostureResponseUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the create posture response unauthorized response
 func (o *CreatePostureResponseUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *CreatePostureResponseUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /posture-response][%d] createPostureResponseUnauthorized %s", 401, payload)
 }
 
 func (o *CreatePostureResponseUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /posture-response][%d] createPostureResponseUnauthorized %s", 401, payload)
 }
 
 func (o *CreatePostureResponseUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreatePostureResponseUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *CreatePostureResponseUnauthorized) readResponse(response runtime.Client
 
 // NewCreatePostureResponseTooManyRequests creates a CreatePostureResponseTooManyRequests with default headers values
 func NewCreatePostureResponseTooManyRequests() *CreatePostureResponseTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &CreatePostureResponseTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type CreatePostureResponseTooManyRequests struct {
 
 // IsSuccess returns true when this create posture response too many requests response has a 2xx status code
 func (o *CreatePostureResponseTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create posture response too many requests response has a 3xx status code
 func (o *CreatePostureResponseTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create posture response too many requests response has a 4xx status code
 func (o *CreatePostureResponseTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create posture response too many requests response has a 5xx status code
 func (o *CreatePostureResponseTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create posture response too many requests response a status code equal to that given
 func (o *CreatePostureResponseTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the create posture response too many requests response
 func (o *CreatePostureResponseTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *CreatePostureResponseTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /posture-response][%d] createPostureResponseTooManyRequests %s", 429, payload)
 }
 
 func (o *CreatePostureResponseTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /posture-response][%d] createPostureResponseTooManyRequests %s", 429, payload)
 }
 
 func (o *CreatePostureResponseTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreatePostureResponseTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *CreatePostureResponseTooManyRequests) readResponse(response runtime.Cli
 
 // NewCreatePostureResponseServiceUnavailable creates a CreatePostureResponseServiceUnavailable with default headers values
 func NewCreatePostureResponseServiceUnavailable() *CreatePostureResponseServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &CreatePostureResponseServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type CreatePostureResponseServiceUnavailable struct {
 
 // IsSuccess returns true when this create posture response service unavailable response has a 2xx status code
 func (o *CreatePostureResponseServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create posture response service unavailable response has a 3xx status code
 func (o *CreatePostureResponseServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create posture response service unavailable response has a 4xx status code
 func (o *CreatePostureResponseServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this create posture response service unavailable response has a 5xx status code
 func (o *CreatePostureResponseServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this create posture response service unavailable response a status code equal to that given
 func (o *CreatePostureResponseServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the create posture response service unavailable response
 func (o *CreatePostureResponseServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *CreatePostureResponseServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /posture-response][%d] createPostureResponseServiceUnavailable %s", 503, payload)
 }
 
 func (o *CreatePostureResponseServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /posture-response][%d] createPostureResponseServiceUnavailable %s", 503, payload)
 }
 
 func (o *CreatePostureResponseServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreatePostureResponseServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

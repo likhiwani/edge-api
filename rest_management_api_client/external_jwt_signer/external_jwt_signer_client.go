@@ -30,6 +30,7 @@ package external_jwt_signer
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new external jwt signer API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -101,6 +105,7 @@ CreateExternalJWTSigner creates an external JWT signer
 Creates an External JWT Signer. Requires admin access.
 */
 func (a *Client) CreateExternalJWTSigner(params *CreateExternalJWTSignerParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateExternalJWTSignerCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreateExternalJWTSignerParams()
@@ -142,6 +147,7 @@ DeleteExternalJWTSigner deletes an external JWT signer
 Delete an External JWT Signer by id. Requires admin access.
 */
 func (a *Client) DeleteExternalJWTSigner(params *DeleteExternalJWTSignerParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteExternalJWTSignerOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteExternalJWTSignerParams()
@@ -183,6 +189,7 @@ DetailExternalJWTSigner retrieves a single external JWT signer
 Retrieves a single External JWT Signer by id. Requires admin access.
 */
 func (a *Client) DetailExternalJWTSigner(params *DetailExternalJWTSignerParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailExternalJWTSignerOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailExternalJWTSignerParams()
@@ -224,6 +231,7 @@ ListExternalJWTSigners lists external JWT signers
 Retrieves a list of external JWT signers for authentication
 */
 func (a *Client) ListExternalJWTSigners(params *ListExternalJWTSignersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListExternalJWTSignersOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListExternalJWTSignersParams()
@@ -265,6 +273,7 @@ PatchExternalJWTSigner updates the supplied fields on an external JWT signer
 Update only the supplied fields on an External JWT Signer by id. Requires admin access.
 */
 func (a *Client) PatchExternalJWTSigner(params *PatchExternalJWTSignerParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PatchExternalJWTSignerOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPatchExternalJWTSignerParams()
@@ -306,6 +315,7 @@ UpdateExternalJWTSigner updates all fields on an external JWT signer
 Update all fields on an External JWT Signer by id. Requires admin access.
 */
 func (a *Client) UpdateExternalJWTSigner(params *UpdateExternalJWTSignerParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UpdateExternalJWTSignerOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUpdateExternalJWTSignerParams()
@@ -343,5 +353,6 @@ func (a *Client) UpdateExternalJWTSigner(params *UpdateExternalJWTSignerParams, 
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

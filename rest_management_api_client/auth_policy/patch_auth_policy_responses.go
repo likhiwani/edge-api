@@ -30,6 +30,7 @@ package auth_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type PatchAuthPolicyReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *PatchAuthPolicyReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewPatchAuthPolicyOK()
@@ -91,6 +93,7 @@ func (o *PatchAuthPolicyReader) ReadResponse(response runtime.ClientResponse, co
 
 // NewPatchAuthPolicyOK creates a PatchAuthPolicyOK with default headers values
 func NewPatchAuthPolicyOK() *PatchAuthPolicyOK {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthPolicyOK{}
 }
 
@@ -105,49 +108,59 @@ type PatchAuthPolicyOK struct {
 
 // IsSuccess returns true when this patch auth policy o k response has a 2xx status code
 func (o *PatchAuthPolicyOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this patch auth policy o k response has a 3xx status code
 func (o *PatchAuthPolicyOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch auth policy o k response has a 4xx status code
 func (o *PatchAuthPolicyOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this patch auth policy o k response has a 5xx status code
 func (o *PatchAuthPolicyOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch auth policy o k response a status code equal to that given
 func (o *PatchAuthPolicyOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the patch auth policy o k response
 func (o *PatchAuthPolicyOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *PatchAuthPolicyOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /auth-policies/{id}][%d] patchAuthPolicyOK %s", 200, payload)
 }
 
 func (o *PatchAuthPolicyOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /auth-policies/{id}][%d] patchAuthPolicyOK %s", 200, payload)
 }
 
 func (o *PatchAuthPolicyOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchAuthPolicyOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -161,6 +174,7 @@ func (o *PatchAuthPolicyOK) readResponse(response runtime.ClientResponse, consum
 
 // NewPatchAuthPolicyBadRequest creates a PatchAuthPolicyBadRequest with default headers values
 func NewPatchAuthPolicyBadRequest() *PatchAuthPolicyBadRequest {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthPolicyBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type PatchAuthPolicyBadRequest struct {
 
 // IsSuccess returns true when this patch auth policy bad request response has a 2xx status code
 func (o *PatchAuthPolicyBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch auth policy bad request response has a 3xx status code
 func (o *PatchAuthPolicyBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch auth policy bad request response has a 4xx status code
 func (o *PatchAuthPolicyBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch auth policy bad request response has a 5xx status code
 func (o *PatchAuthPolicyBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch auth policy bad request response a status code equal to that given
 func (o *PatchAuthPolicyBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the patch auth policy bad request response
 func (o *PatchAuthPolicyBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *PatchAuthPolicyBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /auth-policies/{id}][%d] patchAuthPolicyBadRequest %s", 400, payload)
 }
 
 func (o *PatchAuthPolicyBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /auth-policies/{id}][%d] patchAuthPolicyBadRequest %s", 400, payload)
 }
 
 func (o *PatchAuthPolicyBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchAuthPolicyBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *PatchAuthPolicyBadRequest) readResponse(response runtime.ClientResponse
 
 // NewPatchAuthPolicyUnauthorized creates a PatchAuthPolicyUnauthorized with default headers values
 func NewPatchAuthPolicyUnauthorized() *PatchAuthPolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthPolicyUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type PatchAuthPolicyUnauthorized struct {
 
 // IsSuccess returns true when this patch auth policy unauthorized response has a 2xx status code
 func (o *PatchAuthPolicyUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch auth policy unauthorized response has a 3xx status code
 func (o *PatchAuthPolicyUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch auth policy unauthorized response has a 4xx status code
 func (o *PatchAuthPolicyUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch auth policy unauthorized response has a 5xx status code
 func (o *PatchAuthPolicyUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch auth policy unauthorized response a status code equal to that given
 func (o *PatchAuthPolicyUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the patch auth policy unauthorized response
 func (o *PatchAuthPolicyUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *PatchAuthPolicyUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /auth-policies/{id}][%d] patchAuthPolicyUnauthorized %s", 401, payload)
 }
 
 func (o *PatchAuthPolicyUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /auth-policies/{id}][%d] patchAuthPolicyUnauthorized %s", 401, payload)
 }
 
 func (o *PatchAuthPolicyUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchAuthPolicyUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *PatchAuthPolicyUnauthorized) readResponse(response runtime.ClientRespon
 
 // NewPatchAuthPolicyNotFound creates a PatchAuthPolicyNotFound with default headers values
 func NewPatchAuthPolicyNotFound() *PatchAuthPolicyNotFound {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthPolicyNotFound{}
 }
 
@@ -315,49 +351,59 @@ type PatchAuthPolicyNotFound struct {
 
 // IsSuccess returns true when this patch auth policy not found response has a 2xx status code
 func (o *PatchAuthPolicyNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch auth policy not found response has a 3xx status code
 func (o *PatchAuthPolicyNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch auth policy not found response has a 4xx status code
 func (o *PatchAuthPolicyNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch auth policy not found response has a 5xx status code
 func (o *PatchAuthPolicyNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch auth policy not found response a status code equal to that given
 func (o *PatchAuthPolicyNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the patch auth policy not found response
 func (o *PatchAuthPolicyNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *PatchAuthPolicyNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /auth-policies/{id}][%d] patchAuthPolicyNotFound %s", 404, payload)
 }
 
 func (o *PatchAuthPolicyNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /auth-policies/{id}][%d] patchAuthPolicyNotFound %s", 404, payload)
 }
 
 func (o *PatchAuthPolicyNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchAuthPolicyNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *PatchAuthPolicyNotFound) readResponse(response runtime.ClientResponse, 
 
 // NewPatchAuthPolicyTooManyRequests creates a PatchAuthPolicyTooManyRequests with default headers values
 func NewPatchAuthPolicyTooManyRequests() *PatchAuthPolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthPolicyTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type PatchAuthPolicyTooManyRequests struct {
 
 // IsSuccess returns true when this patch auth policy too many requests response has a 2xx status code
 func (o *PatchAuthPolicyTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch auth policy too many requests response has a 3xx status code
 func (o *PatchAuthPolicyTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch auth policy too many requests response has a 4xx status code
 func (o *PatchAuthPolicyTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch auth policy too many requests response has a 5xx status code
 func (o *PatchAuthPolicyTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch auth policy too many requests response a status code equal to that given
 func (o *PatchAuthPolicyTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the patch auth policy too many requests response
 func (o *PatchAuthPolicyTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *PatchAuthPolicyTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /auth-policies/{id}][%d] patchAuthPolicyTooManyRequests %s", 429, payload)
 }
 
 func (o *PatchAuthPolicyTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /auth-policies/{id}][%d] patchAuthPolicyTooManyRequests %s", 429, payload)
 }
 
 func (o *PatchAuthPolicyTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchAuthPolicyTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *PatchAuthPolicyTooManyRequests) readResponse(response runtime.ClientRes
 
 // NewPatchAuthPolicyServiceUnavailable creates a PatchAuthPolicyServiceUnavailable with default headers values
 func NewPatchAuthPolicyServiceUnavailable() *PatchAuthPolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthPolicyServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type PatchAuthPolicyServiceUnavailable struct {
 
 // IsSuccess returns true when this patch auth policy service unavailable response has a 2xx status code
 func (o *PatchAuthPolicyServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch auth policy service unavailable response has a 3xx status code
 func (o *PatchAuthPolicyServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch auth policy service unavailable response has a 4xx status code
 func (o *PatchAuthPolicyServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this patch auth policy service unavailable response has a 5xx status code
 func (o *PatchAuthPolicyServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this patch auth policy service unavailable response a status code equal to that given
 func (o *PatchAuthPolicyServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the patch auth policy service unavailable response
 func (o *PatchAuthPolicyServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *PatchAuthPolicyServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /auth-policies/{id}][%d] patchAuthPolicyServiceUnavailable %s", 503, payload)
 }
 
 func (o *PatchAuthPolicyServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /auth-policies/{id}][%d] patchAuthPolicyServiceUnavailable %s", 503, payload)
 }
 
 func (o *PatchAuthPolicyServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchAuthPolicyServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

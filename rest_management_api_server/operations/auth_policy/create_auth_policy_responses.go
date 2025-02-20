@@ -30,6 +30,7 @@ package auth_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type CreateAuthPolicyCreated struct {
 
 // NewCreateAuthPolicyCreated creates CreateAuthPolicyCreated with default headers values
 func NewCreateAuthPolicyCreated() *CreateAuthPolicyCreated {
+    logtrace.LogWithFunctionName()
 
 	return &CreateAuthPolicyCreated{}
 }
 
 // WithPayload adds the payload to the create auth policy created response
 func (o *CreateAuthPolicyCreated) WithPayload(payload *rest_model.CreateEnvelope) *CreateAuthPolicyCreated {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create auth policy created response
 func (o *CreateAuthPolicyCreated) SetPayload(payload *rest_model.CreateEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateAuthPolicyCreated) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(201)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type CreateAuthPolicyBadRequest struct {
 
 // NewCreateAuthPolicyBadRequest creates CreateAuthPolicyBadRequest with default headers values
 func NewCreateAuthPolicyBadRequest() *CreateAuthPolicyBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &CreateAuthPolicyBadRequest{}
 }
 
 // WithPayload adds the payload to the create auth policy bad request response
 func (o *CreateAuthPolicyBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateAuthPolicyBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create auth policy bad request response
 func (o *CreateAuthPolicyBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateAuthPolicyBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type CreateAuthPolicyUnauthorized struct {
 
 // NewCreateAuthPolicyUnauthorized creates CreateAuthPolicyUnauthorized with default headers values
 func NewCreateAuthPolicyUnauthorized() *CreateAuthPolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &CreateAuthPolicyUnauthorized{}
 }
 
 // WithPayload adds the payload to the create auth policy unauthorized response
 func (o *CreateAuthPolicyUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateAuthPolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create auth policy unauthorized response
 func (o *CreateAuthPolicyUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateAuthPolicyUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type CreateAuthPolicyTooManyRequests struct {
 
 // NewCreateAuthPolicyTooManyRequests creates CreateAuthPolicyTooManyRequests with default headers values
 func NewCreateAuthPolicyTooManyRequests() *CreateAuthPolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &CreateAuthPolicyTooManyRequests{}
 }
 
 // WithPayload adds the payload to the create auth policy too many requests response
 func (o *CreateAuthPolicyTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateAuthPolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create auth policy too many requests response
 func (o *CreateAuthPolicyTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateAuthPolicyTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type CreateAuthPolicyServiceUnavailable struct {
 
 // NewCreateAuthPolicyServiceUnavailable creates CreateAuthPolicyServiceUnavailable with default headers values
 func NewCreateAuthPolicyServiceUnavailable() *CreateAuthPolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &CreateAuthPolicyServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the create auth policy service unavailable response
 func (o *CreateAuthPolicyServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateAuthPolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create auth policy service unavailable response
 func (o *CreateAuthPolicyServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateAuthPolicyServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

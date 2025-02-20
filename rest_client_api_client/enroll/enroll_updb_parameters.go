@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewEnrollUpdbParams() *EnrollUpdbParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollUpdbParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewEnrollUpdbParams() *EnrollUpdbParams {
 // NewEnrollUpdbParamsWithTimeout creates a new EnrollUpdbParams object
 // with the ability to set a timeout on a request.
 func NewEnrollUpdbParamsWithTimeout(timeout time.Duration) *EnrollUpdbParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollUpdbParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewEnrollUpdbParamsWithTimeout(timeout time.Duration) *EnrollUpdbParams {
 // NewEnrollUpdbParamsWithContext creates a new EnrollUpdbParams object
 // with the ability to set a context for a request.
 func NewEnrollUpdbParamsWithContext(ctx context.Context) *EnrollUpdbParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollUpdbParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewEnrollUpdbParamsWithContext(ctx context.Context) *EnrollUpdbParams {
 // NewEnrollUpdbParamsWithHTTPClient creates a new EnrollUpdbParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewEnrollUpdbParamsWithHTTPClient(client *http.Client) *EnrollUpdbParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollUpdbParams{
 		HTTPClient: client,
 	}
@@ -102,6 +107,7 @@ type EnrollUpdbParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *EnrollUpdbParams) WithDefaults() *EnrollUpdbParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -110,66 +116,78 @@ func (o *EnrollUpdbParams) WithDefaults() *EnrollUpdbParams {
 //
 // All values with no default are reset to their zero value.
 func (o *EnrollUpdbParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the enroll updb params
 func (o *EnrollUpdbParams) WithTimeout(timeout time.Duration) *EnrollUpdbParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the enroll updb params
 func (o *EnrollUpdbParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the enroll updb params
 func (o *EnrollUpdbParams) WithContext(ctx context.Context) *EnrollUpdbParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the enroll updb params
 func (o *EnrollUpdbParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the enroll updb params
 func (o *EnrollUpdbParams) WithHTTPClient(client *http.Client) *EnrollUpdbParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the enroll updb params
 func (o *EnrollUpdbParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithToken adds the token to the enroll updb params
 func (o *EnrollUpdbParams) WithToken(token strfmt.UUID) *EnrollUpdbParams {
+    logtrace.LogWithFunctionName()
 	o.SetToken(token)
 	return o
 }
 
 // SetToken adds the token to the enroll updb params
 func (o *EnrollUpdbParams) SetToken(token strfmt.UUID) {
+    logtrace.LogWithFunctionName()
 	o.Token = token
 }
 
 // WithUpdbCredentials adds the updbCredentials to the enroll updb params
 func (o *EnrollUpdbParams) WithUpdbCredentials(updbCredentials EnrollUpdbBody) *EnrollUpdbParams {
+    logtrace.LogWithFunctionName()
 	o.SetUpdbCredentials(updbCredentials)
 	return o
 }
 
 // SetUpdbCredentials adds the updbCredentials to the enroll updb params
 func (o *EnrollUpdbParams) SetUpdbCredentials(updbCredentials EnrollUpdbBody) {
+    logtrace.LogWithFunctionName()
 	o.UpdbCredentials = updbCredentials
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *EnrollUpdbParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ExtendCurrentIdentityAuthenticatorOK struct {
 
 // NewExtendCurrentIdentityAuthenticatorOK creates ExtendCurrentIdentityAuthenticatorOK with default headers values
 func NewExtendCurrentIdentityAuthenticatorOK() *ExtendCurrentIdentityAuthenticatorOK {
+    logtrace.LogWithFunctionName()
 
 	return &ExtendCurrentIdentityAuthenticatorOK{}
 }
 
 // WithPayload adds the payload to the extend current identity authenticator o k response
 func (o *ExtendCurrentIdentityAuthenticatorOK) WithPayload(payload *rest_model.IdentityExtendEnrollmentEnvelope) *ExtendCurrentIdentityAuthenticatorOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the extend current identity authenticator o k response
 func (o *ExtendCurrentIdentityAuthenticatorOK) SetPayload(payload *rest_model.IdentityExtendEnrollmentEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ExtendCurrentIdentityAuthenticatorOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ExtendCurrentIdentityAuthenticatorUnauthorized struct {
 
 // NewExtendCurrentIdentityAuthenticatorUnauthorized creates ExtendCurrentIdentityAuthenticatorUnauthorized with default headers values
 func NewExtendCurrentIdentityAuthenticatorUnauthorized() *ExtendCurrentIdentityAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &ExtendCurrentIdentityAuthenticatorUnauthorized{}
 }
 
 // WithPayload adds the payload to the extend current identity authenticator unauthorized response
 func (o *ExtendCurrentIdentityAuthenticatorUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *ExtendCurrentIdentityAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the extend current identity authenticator unauthorized response
 func (o *ExtendCurrentIdentityAuthenticatorUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ExtendCurrentIdentityAuthenticatorUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {

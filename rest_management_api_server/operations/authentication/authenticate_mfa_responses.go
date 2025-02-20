@@ -30,6 +30,7 @@ package authentication
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type AuthenticateMfaOK struct {
 
 // NewAuthenticateMfaOK creates AuthenticateMfaOK with default headers values
 func NewAuthenticateMfaOK() *AuthenticateMfaOK {
+    logtrace.LogWithFunctionName()
 
 	return &AuthenticateMfaOK{}
 }
 
 // WithPayload adds the payload to the authenticate mfa o k response
 func (o *AuthenticateMfaOK) WithPayload(payload *rest_model.Empty) *AuthenticateMfaOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the authenticate mfa o k response
 func (o *AuthenticateMfaOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *AuthenticateMfaOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type AuthenticateMfaUnauthorized struct {
 
 // NewAuthenticateMfaUnauthorized creates AuthenticateMfaUnauthorized with default headers values
 func NewAuthenticateMfaUnauthorized() *AuthenticateMfaUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &AuthenticateMfaUnauthorized{}
 }
 
 // WithPayload adds the payload to the authenticate mfa unauthorized response
 func (o *AuthenticateMfaUnauthorized) WithPayload(payload *rest_model.Empty) *AuthenticateMfaUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the authenticate mfa unauthorized response
 func (o *AuthenticateMfaUnauthorized) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *AuthenticateMfaUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type AuthenticateMfaTooManyRequests struct {
 
 // NewAuthenticateMfaTooManyRequests creates AuthenticateMfaTooManyRequests with default headers values
 func NewAuthenticateMfaTooManyRequests() *AuthenticateMfaTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &AuthenticateMfaTooManyRequests{}
 }
 
 // WithPayload adds the payload to the authenticate mfa too many requests response
 func (o *AuthenticateMfaTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *AuthenticateMfaTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the authenticate mfa too many requests response
 func (o *AuthenticateMfaTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *AuthenticateMfaTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {

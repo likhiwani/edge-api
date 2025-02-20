@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -119,6 +120,7 @@ type ExternalJWTSignerDetail struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *ExternalJWTSignerDetail) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 BaseEntity
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -205,6 +207,7 @@ func (m *ExternalJWTSignerDetail) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m ExternalJWTSignerDetail) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.BaseEntity)
@@ -292,6 +295,7 @@ func (m ExternalJWTSignerDetail) MarshalJSON() ([]byte, error) {
 
 // Validate validates this external Jwt signer detail
 func (m *ExternalJWTSignerDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -374,6 +378,7 @@ func (m *ExternalJWTSignerDetail) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ExternalJWTSignerDetail) validateAudience(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("audience", "body", m.Audience); err != nil {
 		return err
@@ -383,6 +388,7 @@ func (m *ExternalJWTSignerDetail) validateAudience(formats strfmt.Registry) erro
 }
 
 func (m *ExternalJWTSignerDetail) validateCertPem(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("certPem", "body", m.CertPem); err != nil {
 		return err
@@ -392,6 +398,7 @@ func (m *ExternalJWTSignerDetail) validateCertPem(formats strfmt.Registry) error
 }
 
 func (m *ExternalJWTSignerDetail) validateClaimsProperty(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("claimsProperty", "body", m.ClaimsProperty); err != nil {
 		return err
@@ -401,6 +408,7 @@ func (m *ExternalJWTSignerDetail) validateClaimsProperty(formats strfmt.Registry
 }
 
 func (m *ExternalJWTSignerDetail) validateClientID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("clientId", "body", m.ClientID); err != nil {
 		return err
@@ -410,6 +418,7 @@ func (m *ExternalJWTSignerDetail) validateClientID(formats strfmt.Registry) erro
 }
 
 func (m *ExternalJWTSignerDetail) validateCommonName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("commonName", "body", m.CommonName); err != nil {
 		return err
@@ -419,6 +428,7 @@ func (m *ExternalJWTSignerDetail) validateCommonName(formats strfmt.Registry) er
 }
 
 func (m *ExternalJWTSignerDetail) validateEnabled(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("enabled", "body", m.Enabled); err != nil {
 		return err
@@ -428,6 +438,7 @@ func (m *ExternalJWTSignerDetail) validateEnabled(formats strfmt.Registry) error
 }
 
 func (m *ExternalJWTSignerDetail) validateExternalAuthURL(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("externalAuthUrl", "body", m.ExternalAuthURL); err != nil {
 		return err
@@ -437,6 +448,7 @@ func (m *ExternalJWTSignerDetail) validateExternalAuthURL(formats strfmt.Registr
 }
 
 func (m *ExternalJWTSignerDetail) validateFingerprint(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("fingerprint", "body", m.Fingerprint); err != nil {
 		return err
@@ -446,6 +458,7 @@ func (m *ExternalJWTSignerDetail) validateFingerprint(formats strfmt.Registry) e
 }
 
 func (m *ExternalJWTSignerDetail) validateIssuer(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("issuer", "body", m.Issuer); err != nil {
 		return err
@@ -455,6 +468,7 @@ func (m *ExternalJWTSignerDetail) validateIssuer(formats strfmt.Registry) error 
 }
 
 func (m *ExternalJWTSignerDetail) validateJwksEndpoint(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("jwksEndpoint", "body", m.JwksEndpoint); err != nil {
 		return err
@@ -468,6 +482,7 @@ func (m *ExternalJWTSignerDetail) validateJwksEndpoint(formats strfmt.Registry) 
 }
 
 func (m *ExternalJWTSignerDetail) validateKid(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("kid", "body", m.Kid); err != nil {
 		return err
@@ -477,6 +492,7 @@ func (m *ExternalJWTSignerDetail) validateKid(formats strfmt.Registry) error {
 }
 
 func (m *ExternalJWTSignerDetail) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -486,6 +502,7 @@ func (m *ExternalJWTSignerDetail) validateName(formats strfmt.Registry) error {
 }
 
 func (m *ExternalJWTSignerDetail) validateNotAfter(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("notAfter", "body", m.NotAfter); err != nil {
 		return err
@@ -499,6 +516,7 @@ func (m *ExternalJWTSignerDetail) validateNotAfter(formats strfmt.Registry) erro
 }
 
 func (m *ExternalJWTSignerDetail) validateNotBefore(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("notBefore", "body", m.NotBefore); err != nil {
 		return err
@@ -512,6 +530,7 @@ func (m *ExternalJWTSignerDetail) validateNotBefore(formats strfmt.Registry) err
 }
 
 func (m *ExternalJWTSignerDetail) validateScopes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("scopes", "body", m.Scopes); err != nil {
 		return err
@@ -521,6 +540,7 @@ func (m *ExternalJWTSignerDetail) validateScopes(formats strfmt.Registry) error 
 }
 
 func (m *ExternalJWTSignerDetail) validateTargetToken(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("targetToken", "body", m.TargetToken); err != nil {
 		return err
@@ -545,6 +565,7 @@ func (m *ExternalJWTSignerDetail) validateTargetToken(formats strfmt.Registry) e
 }
 
 func (m *ExternalJWTSignerDetail) validateUseExternalID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("useExternalId", "body", m.UseExternalID); err != nil {
 		return err
@@ -555,6 +576,7 @@ func (m *ExternalJWTSignerDetail) validateUseExternalID(formats strfmt.Registry)
 
 // ContextValidate validate this external Jwt signer detail based on the context it is used
 func (m *ExternalJWTSignerDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -573,6 +595,7 @@ func (m *ExternalJWTSignerDetail) ContextValidate(ctx context.Context, formats s
 }
 
 func (m *ExternalJWTSignerDetail) contextValidateTargetToken(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.TargetToken != nil {
 
@@ -591,6 +614,7 @@ func (m *ExternalJWTSignerDetail) contextValidateTargetToken(ctx context.Context
 
 // MarshalBinary interface implementation
 func (m *ExternalJWTSignerDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -599,6 +623,7 @@ func (m *ExternalJWTSignerDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ExternalJWTSignerDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ExternalJWTSignerDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

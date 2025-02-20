@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewEnrollmentChallengeParams() *EnrollmentChallengeParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollmentChallengeParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewEnrollmentChallengeParams() *EnrollmentChallengeParams {
 // NewEnrollmentChallengeParamsWithTimeout creates a new EnrollmentChallengeParams object
 // with the ability to set a timeout on a request.
 func NewEnrollmentChallengeParamsWithTimeout(timeout time.Duration) *EnrollmentChallengeParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollmentChallengeParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewEnrollmentChallengeParamsWithTimeout(timeout time.Duration) *EnrollmentC
 // NewEnrollmentChallengeParamsWithContext creates a new EnrollmentChallengeParams object
 // with the ability to set a context for a request.
 func NewEnrollmentChallengeParamsWithContext(ctx context.Context) *EnrollmentChallengeParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollmentChallengeParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewEnrollmentChallengeParamsWithContext(ctx context.Context) *EnrollmentCha
 // NewEnrollmentChallengeParamsWithHTTPClient creates a new EnrollmentChallengeParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewEnrollmentChallengeParamsWithHTTPClient(client *http.Client) *EnrollmentChallengeParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollmentChallengeParams{
 		HTTPClient: client,
 	}
@@ -99,6 +104,7 @@ type EnrollmentChallengeParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *EnrollmentChallengeParams) WithDefaults() *EnrollmentChallengeParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -107,55 +113,65 @@ func (o *EnrollmentChallengeParams) WithDefaults() *EnrollmentChallengeParams {
 //
 // All values with no default are reset to their zero value.
 func (o *EnrollmentChallengeParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the enrollment challenge params
 func (o *EnrollmentChallengeParams) WithTimeout(timeout time.Duration) *EnrollmentChallengeParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the enrollment challenge params
 func (o *EnrollmentChallengeParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the enrollment challenge params
 func (o *EnrollmentChallengeParams) WithContext(ctx context.Context) *EnrollmentChallengeParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the enrollment challenge params
 func (o *EnrollmentChallengeParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the enrollment challenge params
 func (o *EnrollmentChallengeParams) WithHTTPClient(client *http.Client) *EnrollmentChallengeParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the enrollment challenge params
 func (o *EnrollmentChallengeParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithNonce adds the nonce to the enrollment challenge params
 func (o *EnrollmentChallengeParams) WithNonce(nonce *rest_model.NonceChallenge) *EnrollmentChallengeParams {
+    logtrace.LogWithFunctionName()
 	o.SetNonce(nonce)
 	return o
 }
 
 // SetNonce adds the nonce to the enrollment challenge params
 func (o *EnrollmentChallengeParams) SetNonce(nonce *rest_model.NonceChallenge) {
+    logtrace.LogWithFunctionName()
 	o.Nonce = nonce
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *EnrollmentChallengeParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

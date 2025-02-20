@@ -30,6 +30,7 @@ package service_edge_router_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new service edge router policy API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -105,6 +109,7 @@ CreateServiceEdgeRouterPolicy creates a service edge router policy resource
 Create a service edge router policy resource. Requires admin access.
 */
 func (a *Client) CreateServiceEdgeRouterPolicy(params *CreateServiceEdgeRouterPolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateServiceEdgeRouterPolicyCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreateServiceEdgeRouterPolicyParams()
@@ -146,6 +151,7 @@ DeleteServiceEdgeRouterPolicy deletes a service edge policy
 Delete a service edge policy by id. Requires admin access.
 */
 func (a *Client) DeleteServiceEdgeRouterPolicy(params *DeleteServiceEdgeRouterPolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteServiceEdgeRouterPolicyOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteServiceEdgeRouterPolicyParams()
@@ -187,6 +193,7 @@ DetailServiceEdgeRouterPolicy retrieves a single service edge policy
 Retrieves a single service edge policy by id. Requires admin access.
 */
 func (a *Client) DetailServiceEdgeRouterPolicy(params *DetailServiceEdgeRouterPolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailServiceEdgeRouterPolicyOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailServiceEdgeRouterPolicyParams()
@@ -228,6 +235,7 @@ ListServiceEdgeRouterPolicies lists service edge router policies
 Retrieves a list of service edge router policy resources; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListServiceEdgeRouterPolicies(params *ListServiceEdgeRouterPoliciesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListServiceEdgeRouterPoliciesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListServiceEdgeRouterPoliciesParams()
@@ -269,6 +277,7 @@ ListServiceEdgeRouterPolicyEdgeRouters lists the edge routers that a service edg
 List the edge routers that a service edge router policy applies to
 */
 func (a *Client) ListServiceEdgeRouterPolicyEdgeRouters(params *ListServiceEdgeRouterPolicyEdgeRoutersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListServiceEdgeRouterPolicyEdgeRoutersOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListServiceEdgeRouterPolicyEdgeRoutersParams()
@@ -310,6 +319,7 @@ ListServiceEdgeRouterPolicyServices lists the services that a service edge route
 List the services that a service edge router policy applies to
 */
 func (a *Client) ListServiceEdgeRouterPolicyServices(params *ListServiceEdgeRouterPolicyServicesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListServiceEdgeRouterPolicyServicesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListServiceEdgeRouterPolicyServicesParams()
@@ -351,6 +361,7 @@ PatchServiceEdgeRouterPolicy updates the supplied fields on a service edge polic
 Update the supplied fields on a service edge policy. Requires admin access.
 */
 func (a *Client) PatchServiceEdgeRouterPolicy(params *PatchServiceEdgeRouterPolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PatchServiceEdgeRouterPolicyOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPatchServiceEdgeRouterPolicyParams()
@@ -392,6 +403,7 @@ UpdateServiceEdgeRouterPolicy updates all fields on a service edge policy
 Update all fields on a service edge policy by id. Requires admin access.
 */
 func (a *Client) UpdateServiceEdgeRouterPolicy(params *UpdateServiceEdgeRouterPolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UpdateServiceEdgeRouterPolicyOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUpdateServiceEdgeRouterPolicyParams()
@@ -429,5 +441,6 @@ func (a *Client) UpdateServiceEdgeRouterPolicy(params *UpdateServiceEdgeRouterPo
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

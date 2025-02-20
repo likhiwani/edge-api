@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -91,6 +92,7 @@ type EdgeRouterDetail struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *EdgeRouterDetail) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 BaseEntity
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -164,6 +166,7 @@ func (m *EdgeRouterDetail) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m EdgeRouterDetail) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 3)
 
 	aO0, err := swag.WriteJSON(m.BaseEntity)
@@ -237,6 +240,7 @@ func (m EdgeRouterDetail) MarshalJSON() ([]byte, error) {
 
 // Validate validates this edge router detail
 func (m *EdgeRouterDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -279,6 +283,7 @@ func (m *EdgeRouterDetail) Validate(formats strfmt.Registry) error {
 }
 
 func (m *EdgeRouterDetail) validateEnrollmentCreatedAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.EnrollmentCreatedAt) { // not required
 		return nil
@@ -292,6 +297,7 @@ func (m *EdgeRouterDetail) validateEnrollmentCreatedAt(formats strfmt.Registry) 
 }
 
 func (m *EdgeRouterDetail) validateEnrollmentExpiresAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.EnrollmentExpiresAt) { // not required
 		return nil
@@ -305,6 +311,7 @@ func (m *EdgeRouterDetail) validateEnrollmentExpiresAt(formats strfmt.Registry) 
 }
 
 func (m *EdgeRouterDetail) validateIsTunnelerEnabled(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isTunnelerEnabled", "body", m.IsTunnelerEnabled); err != nil {
 		return err
@@ -314,6 +321,7 @@ func (m *EdgeRouterDetail) validateIsTunnelerEnabled(formats strfmt.Registry) er
 }
 
 func (m *EdgeRouterDetail) validateIsVerified(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isVerified", "body", m.IsVerified); err != nil {
 		return err
@@ -323,6 +331,7 @@ func (m *EdgeRouterDetail) validateIsVerified(formats strfmt.Registry) error {
 }
 
 func (m *EdgeRouterDetail) validateRoleAttributes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("roleAttributes", "body", m.RoleAttributes); err != nil {
 		return err
@@ -343,6 +352,7 @@ func (m *EdgeRouterDetail) validateRoleAttributes(formats strfmt.Registry) error
 }
 
 func (m *EdgeRouterDetail) validateVersionInfo(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.VersionInfo) { // not required
 		return nil
@@ -364,6 +374,7 @@ func (m *EdgeRouterDetail) validateVersionInfo(formats strfmt.Registry) error {
 
 // ContextValidate validate this edge router detail based on the context it is used
 func (m *EdgeRouterDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -390,6 +401,7 @@ func (m *EdgeRouterDetail) ContextValidate(ctx context.Context, formats strfmt.R
 }
 
 func (m *EdgeRouterDetail) contextValidateRoleAttributes(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.RoleAttributes != nil {
 		if err := m.RoleAttributes.ContextValidate(ctx, formats); err != nil {
@@ -406,6 +418,7 @@ func (m *EdgeRouterDetail) contextValidateRoleAttributes(ctx context.Context, fo
 }
 
 func (m *EdgeRouterDetail) contextValidateVersionInfo(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.VersionInfo != nil {
 
@@ -428,6 +441,7 @@ func (m *EdgeRouterDetail) contextValidateVersionInfo(ctx context.Context, forma
 
 // MarshalBinary interface implementation
 func (m *EdgeRouterDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -436,6 +450,7 @@ func (m *EdgeRouterDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *EdgeRouterDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res EdgeRouterDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type PatchCurrentIdentityAuthenticatorHandlerFunc func(PatchCurrentIdentityAuthe
 
 // Handle executing the request and returning a response
 func (fn PatchCurrentIdentityAuthenticatorHandlerFunc) Handle(params PatchCurrentIdentityAuthenticatorParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type PatchCurrentIdentityAuthenticatorHandler interface {
 
 // NewPatchCurrentIdentityAuthenticator creates a new http.Handler for the patch current identity authenticator operation
 func NewPatchCurrentIdentityAuthenticator(ctx *middleware.Context, handler PatchCurrentIdentityAuthenticatorHandler) *PatchCurrentIdentityAuthenticator {
+    logtrace.LogWithFunctionName()
 	return &PatchCurrentIdentityAuthenticator{Context: ctx, Handler: handler}
 }
 
@@ -67,6 +70,7 @@ type PatchCurrentIdentityAuthenticator struct {
 }
 
 func (o *PatchCurrentIdentityAuthenticator) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

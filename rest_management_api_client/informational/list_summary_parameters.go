@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListSummaryParams() *ListSummaryParams {
+    logtrace.LogWithFunctionName()
 	return &ListSummaryParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewListSummaryParams() *ListSummaryParams {
 // NewListSummaryParamsWithTimeout creates a new ListSummaryParams object
 // with the ability to set a timeout on a request.
 func NewListSummaryParamsWithTimeout(timeout time.Duration) *ListSummaryParams {
+    logtrace.LogWithFunctionName()
 	return &ListSummaryParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewListSummaryParamsWithTimeout(timeout time.Duration) *ListSummaryParams {
 // NewListSummaryParamsWithContext creates a new ListSummaryParams object
 // with the ability to set a context for a request.
 func NewListSummaryParamsWithContext(ctx context.Context) *ListSummaryParams {
+    logtrace.LogWithFunctionName()
 	return &ListSummaryParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewListSummaryParamsWithContext(ctx context.Context) *ListSummaryParams {
 // NewListSummaryParamsWithHTTPClient creates a new ListSummaryParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListSummaryParamsWithHTTPClient(client *http.Client) *ListSummaryParams {
+    logtrace.LogWithFunctionName()
 	return &ListSummaryParams{
 		HTTPClient: client,
 	}
@@ -93,6 +98,7 @@ type ListSummaryParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListSummaryParams) WithDefaults() *ListSummaryParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -101,44 +107,52 @@ func (o *ListSummaryParams) WithDefaults() *ListSummaryParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListSummaryParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list summary params
 func (o *ListSummaryParams) WithTimeout(timeout time.Duration) *ListSummaryParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list summary params
 func (o *ListSummaryParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list summary params
 func (o *ListSummaryParams) WithContext(ctx context.Context) *ListSummaryParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list summary params
 func (o *ListSummaryParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list summary params
 func (o *ListSummaryParams) WithHTTPClient(client *http.Client) *ListSummaryParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list summary params
 func (o *ListSummaryParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListSummaryParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

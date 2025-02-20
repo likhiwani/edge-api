@@ -30,6 +30,7 @@ package terminator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DeleteTerminatorOK struct {
 
 // NewDeleteTerminatorOK creates DeleteTerminatorOK with default headers values
 func NewDeleteTerminatorOK() *DeleteTerminatorOK {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteTerminatorOK{}
 }
 
 // WithPayload adds the payload to the delete terminator o k response
 func (o *DeleteTerminatorOK) WithPayload(payload *rest_model.Empty) *DeleteTerminatorOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete terminator o k response
 func (o *DeleteTerminatorOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteTerminatorOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DeleteTerminatorBadRequest struct {
 
 // NewDeleteTerminatorBadRequest creates DeleteTerminatorBadRequest with default headers values
 func NewDeleteTerminatorBadRequest() *DeleteTerminatorBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteTerminatorBadRequest{}
 }
 
 // WithPayload adds the payload to the delete terminator bad request response
 func (o *DeleteTerminatorBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteTerminatorBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete terminator bad request response
 func (o *DeleteTerminatorBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteTerminatorBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DeleteTerminatorUnauthorized struct {
 
 // NewDeleteTerminatorUnauthorized creates DeleteTerminatorUnauthorized with default headers values
 func NewDeleteTerminatorUnauthorized() *DeleteTerminatorUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteTerminatorUnauthorized{}
 }
 
 // WithPayload adds the payload to the delete terminator unauthorized response
 func (o *DeleteTerminatorUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteTerminatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete terminator unauthorized response
 func (o *DeleteTerminatorUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteTerminatorUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DeleteTerminatorNotFound struct {
 
 // NewDeleteTerminatorNotFound creates DeleteTerminatorNotFound with default headers values
 func NewDeleteTerminatorNotFound() *DeleteTerminatorNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteTerminatorNotFound{}
 }
 
 // WithPayload adds the payload to the delete terminator not found response
 func (o *DeleteTerminatorNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteTerminatorNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete terminator not found response
 func (o *DeleteTerminatorNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteTerminatorNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DeleteTerminatorConflict struct {
 
 // NewDeleteTerminatorConflict creates DeleteTerminatorConflict with default headers values
 func NewDeleteTerminatorConflict() *DeleteTerminatorConflict {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteTerminatorConflict{}
 }
 
 // WithPayload adds the payload to the delete terminator conflict response
 func (o *DeleteTerminatorConflict) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteTerminatorConflict {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete terminator conflict response
 func (o *DeleteTerminatorConflict) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteTerminatorConflict) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(409)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type DeleteTerminatorTooManyRequests struct {
 
 // NewDeleteTerminatorTooManyRequests creates DeleteTerminatorTooManyRequests with default headers values
 func NewDeleteTerminatorTooManyRequests() *DeleteTerminatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteTerminatorTooManyRequests{}
 }
 
 // WithPayload adds the payload to the delete terminator too many requests response
 func (o *DeleteTerminatorTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteTerminatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete terminator too many requests response
 func (o *DeleteTerminatorTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteTerminatorTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -325,23 +350,27 @@ type DeleteTerminatorServiceUnavailable struct {
 
 // NewDeleteTerminatorServiceUnavailable creates DeleteTerminatorServiceUnavailable with default headers values
 func NewDeleteTerminatorServiceUnavailable() *DeleteTerminatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteTerminatorServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the delete terminator service unavailable response
 func (o *DeleteTerminatorServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteTerminatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete terminator service unavailable response
 func (o *DeleteTerminatorServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteTerminatorServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

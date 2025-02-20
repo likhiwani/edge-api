@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDisableIdentityParams() *DisableIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &DisableIdentityParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewDisableIdentityParams() *DisableIdentityParams {
 // NewDisableIdentityParamsWithTimeout creates a new DisableIdentityParams object
 // with the ability to set a timeout on a request.
 func NewDisableIdentityParamsWithTimeout(timeout time.Duration) *DisableIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &DisableIdentityParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewDisableIdentityParamsWithTimeout(timeout time.Duration) *DisableIdentity
 // NewDisableIdentityParamsWithContext creates a new DisableIdentityParams object
 // with the ability to set a context for a request.
 func NewDisableIdentityParamsWithContext(ctx context.Context) *DisableIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &DisableIdentityParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewDisableIdentityParamsWithContext(ctx context.Context) *DisableIdentityPa
 // NewDisableIdentityParamsWithHTTPClient creates a new DisableIdentityParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDisableIdentityParamsWithHTTPClient(client *http.Client) *DisableIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &DisableIdentityParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type DisableIdentityParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DisableIdentityParams) WithDefaults() *DisableIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *DisableIdentityParams) WithDefaults() *DisableIdentityParams {
 //
 // All values with no default are reset to their zero value.
 func (o *DisableIdentityParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the disable identity params
 func (o *DisableIdentityParams) WithTimeout(timeout time.Duration) *DisableIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the disable identity params
 func (o *DisableIdentityParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the disable identity params
 func (o *DisableIdentityParams) WithContext(ctx context.Context) *DisableIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the disable identity params
 func (o *DisableIdentityParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the disable identity params
 func (o *DisableIdentityParams) WithHTTPClient(client *http.Client) *DisableIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the disable identity params
 func (o *DisableIdentityParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithDisable adds the disable to the disable identity params
 func (o *DisableIdentityParams) WithDisable(disable *rest_model.DisableParams) *DisableIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetDisable(disable)
 	return o
 }
 
 // SetDisable adds the disable to the disable identity params
 func (o *DisableIdentityParams) SetDisable(disable *rest_model.DisableParams) {
+    logtrace.LogWithFunctionName()
 	o.Disable = disable
 }
 
 // WithID adds the id to the disable identity params
 func (o *DisableIdentityParams) WithID(id string) *DisableIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the disable identity params
 func (o *DisableIdentityParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DisableIdentityParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type CreateIdentityReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *CreateIdentityReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 201:
 		result := NewCreateIdentityCreated()
@@ -85,6 +87,7 @@ func (o *CreateIdentityReader) ReadResponse(response runtime.ClientResponse, con
 
 // NewCreateIdentityCreated creates a CreateIdentityCreated with default headers values
 func NewCreateIdentityCreated() *CreateIdentityCreated {
+    logtrace.LogWithFunctionName()
 	return &CreateIdentityCreated{}
 }
 
@@ -99,49 +102,59 @@ type CreateIdentityCreated struct {
 
 // IsSuccess returns true when this create identity created response has a 2xx status code
 func (o *CreateIdentityCreated) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this create identity created response has a 3xx status code
 func (o *CreateIdentityCreated) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create identity created response has a 4xx status code
 func (o *CreateIdentityCreated) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this create identity created response has a 5xx status code
 func (o *CreateIdentityCreated) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create identity created response a status code equal to that given
 func (o *CreateIdentityCreated) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 201
 }
 
 // Code gets the status code for the create identity created response
 func (o *CreateIdentityCreated) Code() int {
+    logtrace.LogWithFunctionName()
 	return 201
 }
 
 func (o *CreateIdentityCreated) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities][%d] createIdentityCreated %s", 201, payload)
 }
 
 func (o *CreateIdentityCreated) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities][%d] createIdentityCreated %s", 201, payload)
 }
 
 func (o *CreateIdentityCreated) GetPayload() *rest_model.CreateEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateIdentityCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.CreateEnvelope)
 
@@ -155,6 +168,7 @@ func (o *CreateIdentityCreated) readResponse(response runtime.ClientResponse, co
 
 // NewCreateIdentityBadRequest creates a CreateIdentityBadRequest with default headers values
 func NewCreateIdentityBadRequest() *CreateIdentityBadRequest {
+    logtrace.LogWithFunctionName()
 	return &CreateIdentityBadRequest{}
 }
 
@@ -169,49 +183,59 @@ type CreateIdentityBadRequest struct {
 
 // IsSuccess returns true when this create identity bad request response has a 2xx status code
 func (o *CreateIdentityBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create identity bad request response has a 3xx status code
 func (o *CreateIdentityBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create identity bad request response has a 4xx status code
 func (o *CreateIdentityBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create identity bad request response has a 5xx status code
 func (o *CreateIdentityBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create identity bad request response a status code equal to that given
 func (o *CreateIdentityBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the create identity bad request response
 func (o *CreateIdentityBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *CreateIdentityBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities][%d] createIdentityBadRequest %s", 400, payload)
 }
 
 func (o *CreateIdentityBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities][%d] createIdentityBadRequest %s", 400, payload)
 }
 
 func (o *CreateIdentityBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateIdentityBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *CreateIdentityBadRequest) readResponse(response runtime.ClientResponse,
 
 // NewCreateIdentityUnauthorized creates a CreateIdentityUnauthorized with default headers values
 func NewCreateIdentityUnauthorized() *CreateIdentityUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &CreateIdentityUnauthorized{}
 }
 
@@ -239,49 +264,59 @@ type CreateIdentityUnauthorized struct {
 
 // IsSuccess returns true when this create identity unauthorized response has a 2xx status code
 func (o *CreateIdentityUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create identity unauthorized response has a 3xx status code
 func (o *CreateIdentityUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create identity unauthorized response has a 4xx status code
 func (o *CreateIdentityUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create identity unauthorized response has a 5xx status code
 func (o *CreateIdentityUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create identity unauthorized response a status code equal to that given
 func (o *CreateIdentityUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the create identity unauthorized response
 func (o *CreateIdentityUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *CreateIdentityUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities][%d] createIdentityUnauthorized %s", 401, payload)
 }
 
 func (o *CreateIdentityUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities][%d] createIdentityUnauthorized %s", 401, payload)
 }
 
 func (o *CreateIdentityUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateIdentityUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *CreateIdentityUnauthorized) readResponse(response runtime.ClientRespons
 
 // NewCreateIdentityTooManyRequests creates a CreateIdentityTooManyRequests with default headers values
 func NewCreateIdentityTooManyRequests() *CreateIdentityTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &CreateIdentityTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type CreateIdentityTooManyRequests struct {
 
 // IsSuccess returns true when this create identity too many requests response has a 2xx status code
 func (o *CreateIdentityTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create identity too many requests response has a 3xx status code
 func (o *CreateIdentityTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create identity too many requests response has a 4xx status code
 func (o *CreateIdentityTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create identity too many requests response has a 5xx status code
 func (o *CreateIdentityTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create identity too many requests response a status code equal to that given
 func (o *CreateIdentityTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the create identity too many requests response
 func (o *CreateIdentityTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *CreateIdentityTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities][%d] createIdentityTooManyRequests %s", 429, payload)
 }
 
 func (o *CreateIdentityTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities][%d] createIdentityTooManyRequests %s", 429, payload)
 }
 
 func (o *CreateIdentityTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateIdentityTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *CreateIdentityTooManyRequests) readResponse(response runtime.ClientResp
 
 // NewCreateIdentityServiceUnavailable creates a CreateIdentityServiceUnavailable with default headers values
 func NewCreateIdentityServiceUnavailable() *CreateIdentityServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &CreateIdentityServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type CreateIdentityServiceUnavailable struct {
 
 // IsSuccess returns true when this create identity service unavailable response has a 2xx status code
 func (o *CreateIdentityServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create identity service unavailable response has a 3xx status code
 func (o *CreateIdentityServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create identity service unavailable response has a 4xx status code
 func (o *CreateIdentityServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this create identity service unavailable response has a 5xx status code
 func (o *CreateIdentityServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this create identity service unavailable response a status code equal to that given
 func (o *CreateIdentityServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the create identity service unavailable response
 func (o *CreateIdentityServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *CreateIdentityServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities][%d] createIdentityServiceUnavailable %s", 503, payload)
 }
 
 func (o *CreateIdentityServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities][%d] createIdentityServiceUnavailable %s", 503, payload)
 }
 
 func (o *CreateIdentityServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateIdentityServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

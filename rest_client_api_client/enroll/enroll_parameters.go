@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewEnrollParams() *EnrollParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewEnrollParams() *EnrollParams {
 // NewEnrollParamsWithTimeout creates a new EnrollParams object
 // with the ability to set a timeout on a request.
 func NewEnrollParamsWithTimeout(timeout time.Duration) *EnrollParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewEnrollParamsWithTimeout(timeout time.Duration) *EnrollParams {
 // NewEnrollParamsWithContext creates a new EnrollParams object
 // with the ability to set a context for a request.
 func NewEnrollParamsWithContext(ctx context.Context) *EnrollParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewEnrollParamsWithContext(ctx context.Context) *EnrollParams {
 // NewEnrollParamsWithHTTPClient creates a new EnrollParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewEnrollParamsWithHTTPClient(client *http.Client) *EnrollParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollParams{
 		HTTPClient: client,
 	}
@@ -102,6 +107,7 @@ type EnrollParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *EnrollParams) WithDefaults() *EnrollParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -110,66 +116,78 @@ func (o *EnrollParams) WithDefaults() *EnrollParams {
 //
 // All values with no default are reset to their zero value.
 func (o *EnrollParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the enroll params
 func (o *EnrollParams) WithTimeout(timeout time.Duration) *EnrollParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the enroll params
 func (o *EnrollParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the enroll params
 func (o *EnrollParams) WithContext(ctx context.Context) *EnrollParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the enroll params
 func (o *EnrollParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the enroll params
 func (o *EnrollParams) WithHTTPClient(client *http.Client) *EnrollParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the enroll params
 func (o *EnrollParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithMethod adds the method to the enroll params
 func (o *EnrollParams) WithMethod(method *string) *EnrollParams {
+    logtrace.LogWithFunctionName()
 	o.SetMethod(method)
 	return o
 }
 
 // SetMethod adds the method to the enroll params
 func (o *EnrollParams) SetMethod(method *string) {
+    logtrace.LogWithFunctionName()
 	o.Method = method
 }
 
 // WithToken adds the token to the enroll params
 func (o *EnrollParams) WithToken(token *strfmt.UUID) *EnrollParams {
+    logtrace.LogWithFunctionName()
 	o.SetToken(token)
 	return o
 }
 
 // SetToken adds the token to the enroll params
 func (o *EnrollParams) SetToken(token *strfmt.UUID) {
+    logtrace.LogWithFunctionName()
 	o.Token = token
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *EnrollParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

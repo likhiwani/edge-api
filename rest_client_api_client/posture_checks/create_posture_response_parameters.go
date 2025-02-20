@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCreatePostureResponseParams() *CreatePostureResponseParams {
+    logtrace.LogWithFunctionName()
 	return &CreatePostureResponseParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewCreatePostureResponseParams() *CreatePostureResponseParams {
 // NewCreatePostureResponseParamsWithTimeout creates a new CreatePostureResponseParams object
 // with the ability to set a timeout on a request.
 func NewCreatePostureResponseParamsWithTimeout(timeout time.Duration) *CreatePostureResponseParams {
+    logtrace.LogWithFunctionName()
 	return &CreatePostureResponseParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewCreatePostureResponseParamsWithTimeout(timeout time.Duration) *CreatePos
 // NewCreatePostureResponseParamsWithContext creates a new CreatePostureResponseParams object
 // with the ability to set a context for a request.
 func NewCreatePostureResponseParamsWithContext(ctx context.Context) *CreatePostureResponseParams {
+    logtrace.LogWithFunctionName()
 	return &CreatePostureResponseParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewCreatePostureResponseParamsWithContext(ctx context.Context) *CreatePostu
 // NewCreatePostureResponseParamsWithHTTPClient creates a new CreatePostureResponseParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewCreatePostureResponseParamsWithHTTPClient(client *http.Client) *CreatePostureResponseParams {
+    logtrace.LogWithFunctionName()
 	return &CreatePostureResponseParams{
 		HTTPClient: client,
 	}
@@ -102,6 +107,7 @@ type CreatePostureResponseParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *CreatePostureResponseParams) WithDefaults() *CreatePostureResponseParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -110,55 +116,65 @@ func (o *CreatePostureResponseParams) WithDefaults() *CreatePostureResponseParam
 //
 // All values with no default are reset to their zero value.
 func (o *CreatePostureResponseParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the create posture response params
 func (o *CreatePostureResponseParams) WithTimeout(timeout time.Duration) *CreatePostureResponseParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the create posture response params
 func (o *CreatePostureResponseParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the create posture response params
 func (o *CreatePostureResponseParams) WithContext(ctx context.Context) *CreatePostureResponseParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the create posture response params
 func (o *CreatePostureResponseParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the create posture response params
 func (o *CreatePostureResponseParams) WithHTTPClient(client *http.Client) *CreatePostureResponseParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the create posture response params
 func (o *CreatePostureResponseParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithPostureResponse adds the postureResponse to the create posture response params
 func (o *CreatePostureResponseParams) WithPostureResponse(postureResponse rest_model.PostureResponseCreate) *CreatePostureResponseParams {
+    logtrace.LogWithFunctionName()
 	o.SetPostureResponse(postureResponse)
 	return o
 }
 
 // SetPostureResponse adds the postureResponse to the create posture response params
 func (o *CreatePostureResponseParams) SetPostureResponse(postureResponse rest_model.PostureResponseCreate) {
+    logtrace.LogWithFunctionName()
 	o.PostureResponse = postureResponse
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *CreatePostureResponseParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

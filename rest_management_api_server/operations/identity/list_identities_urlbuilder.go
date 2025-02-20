@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"errors"
 	"net/url"
 	golangswaggerpaths "path"
@@ -54,6 +55,7 @@ type ListIdentitiesURL struct {
 // base path specified in the swagger spec.
 // When the value of the base path is an empty string
 func (o *ListIdentitiesURL) WithBasePath(bp string) *ListIdentitiesURL {
+    logtrace.LogWithFunctionName()
 	o.SetBasePath(bp)
 	return o
 }
@@ -62,11 +64,13 @@ func (o *ListIdentitiesURL) WithBasePath(bp string) *ListIdentitiesURL {
 // base path specified in the swagger spec.
 // When the value of the base path is an empty string
 func (o *ListIdentitiesURL) SetBasePath(bp string) {
+    logtrace.LogWithFunctionName()
 	o._basePath = bp
 }
 
 // Build a url path and query string
 func (o *ListIdentitiesURL) Build() (*url.URL, error) {
+    logtrace.LogWithFunctionName()
 	var _result url.URL
 
 	var _path = "/identities"
@@ -132,6 +136,7 @@ func (o *ListIdentitiesURL) Build() (*url.URL, error) {
 
 // Must is a helper function to panic when the url builder returns an error
 func (o *ListIdentitiesURL) Must(u *url.URL, err error) *url.URL {
+    logtrace.LogWithFunctionName()
 	if err != nil {
 		panic(err)
 	}
@@ -143,11 +148,13 @@ func (o *ListIdentitiesURL) Must(u *url.URL, err error) *url.URL {
 
 // String returns the string representation of the path with query string
 func (o *ListIdentitiesURL) String() string {
+    logtrace.LogWithFunctionName()
 	return o.Must(o.Build()).String()
 }
 
 // BuildFull builds a full url with scheme, host, path and query string
 func (o *ListIdentitiesURL) BuildFull(scheme, host string) (*url.URL, error) {
+    logtrace.LogWithFunctionName()
 	if scheme == "" {
 		return nil, errors.New("scheme is required for a full url on ListIdentitiesURL")
 	}
@@ -167,5 +174,6 @@ func (o *ListIdentitiesURL) BuildFull(scheme, host string) (*url.URL, error) {
 
 // StringFull returns the string representation of a complete url
 func (o *ListIdentitiesURL) StringFull(scheme, host string) string {
+    logtrace.LogWithFunctionName()
 	return o.Must(o.BuildFull(scheme, host)).String()
 }

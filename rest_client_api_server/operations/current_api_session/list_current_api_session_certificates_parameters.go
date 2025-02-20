@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -43,6 +44,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewListCurrentAPISessionCertificatesParams() ListCurrentAPISessionCertificatesParams {
+    logtrace.LogWithFunctionName()
 
 	return ListCurrentAPISessionCertificatesParams{}
 }
@@ -75,6 +77,7 @@ type ListCurrentAPISessionCertificatesParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewListCurrentAPISessionCertificatesParams() beforehand.
 func (o *ListCurrentAPISessionCertificatesParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r
@@ -103,6 +106,7 @@ func (o *ListCurrentAPISessionCertificatesParams) BindRequest(r *http.Request, r
 
 // bindFilter binds and validates parameter Filter from query.
 func (o *ListCurrentAPISessionCertificatesParams) bindFilter(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -121,6 +125,7 @@ func (o *ListCurrentAPISessionCertificatesParams) bindFilter(rawData []string, h
 
 // bindLimit binds and validates parameter Limit from query.
 func (o *ListCurrentAPISessionCertificatesParams) bindLimit(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -144,6 +149,7 @@ func (o *ListCurrentAPISessionCertificatesParams) bindLimit(rawData []string, ha
 
 // bindOffset binds and validates parameter Offset from query.
 func (o *ListCurrentAPISessionCertificatesParams) bindOffset(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]

@@ -30,6 +30,7 @@ package authentication
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,8 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewAuthenticateMfaParams() *AuthenticateMfaParams {
+    logtrace.LogWithFunctionName()
+    logtrace.LogWithFunctionName()
 	return &AuthenticateMfaParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +60,7 @@ func NewAuthenticateMfaParams() *AuthenticateMfaParams {
 // NewAuthenticateMfaParamsWithTimeout creates a new AuthenticateMfaParams object
 // with the ability to set a timeout on a request.
 func NewAuthenticateMfaParamsWithTimeout(timeout time.Duration) *AuthenticateMfaParams {
+    logtrace.LogWithFunctionName()
 	return &AuthenticateMfaParams{
 		timeout: timeout,
 	}
@@ -65,6 +69,7 @@ func NewAuthenticateMfaParamsWithTimeout(timeout time.Duration) *AuthenticateMfa
 // NewAuthenticateMfaParamsWithContext creates a new AuthenticateMfaParams object
 // with the ability to set a context for a request.
 func NewAuthenticateMfaParamsWithContext(ctx context.Context) *AuthenticateMfaParams {
+    logtrace.LogWithFunctionName()
 	return &AuthenticateMfaParams{
 		Context: ctx,
 	}
@@ -73,6 +78,7 @@ func NewAuthenticateMfaParamsWithContext(ctx context.Context) *AuthenticateMfaPa
 // NewAuthenticateMfaParamsWithHTTPClient creates a new AuthenticateMfaParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewAuthenticateMfaParamsWithHTTPClient(client *http.Client) *AuthenticateMfaParams {
+    logtrace.LogWithFunctionName()
 	return &AuthenticateMfaParams{
 		HTTPClient: client,
 	}
@@ -102,6 +108,7 @@ type AuthenticateMfaParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *AuthenticateMfaParams) WithDefaults() *AuthenticateMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -110,55 +117,65 @@ func (o *AuthenticateMfaParams) WithDefaults() *AuthenticateMfaParams {
 //
 // All values with no default are reset to their zero value.
 func (o *AuthenticateMfaParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the authenticate mfa params
 func (o *AuthenticateMfaParams) WithTimeout(timeout time.Duration) *AuthenticateMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the authenticate mfa params
 func (o *AuthenticateMfaParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the authenticate mfa params
 func (o *AuthenticateMfaParams) WithContext(ctx context.Context) *AuthenticateMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the authenticate mfa params
 func (o *AuthenticateMfaParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the authenticate mfa params
 func (o *AuthenticateMfaParams) WithHTTPClient(client *http.Client) *AuthenticateMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the authenticate mfa params
 func (o *AuthenticateMfaParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithMfaAuth adds the mfaAuth to the authenticate mfa params
 func (o *AuthenticateMfaParams) WithMfaAuth(mfaAuth *rest_model.MfaCode) *AuthenticateMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetMfaAuth(mfaAuth)
 	return o
 }
 
 // SetMfaAuth adds the mfaAuth to the authenticate mfa params
 func (o *AuthenticateMfaParams) SetMfaAuth(mfaAuth *rest_model.MfaCode) {
+    logtrace.LogWithFunctionName()
 	o.MfaAuth = mfaAuth
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *AuthenticateMfaParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

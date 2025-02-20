@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -51,6 +52,7 @@ type PostureDataDomain struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *PostureDataDomain) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 PostureDataBase
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -73,6 +75,7 @@ func (m *PostureDataDomain) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m PostureDataDomain) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.PostureDataBase)
@@ -96,6 +99,7 @@ func (m PostureDataDomain) MarshalJSON() ([]byte, error) {
 
 // Validate validates this posture data domain
 func (m *PostureDataDomain) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with PostureDataBase
@@ -114,6 +118,7 @@ func (m *PostureDataDomain) Validate(formats strfmt.Registry) error {
 }
 
 func (m *PostureDataDomain) validateDomain(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("domain", "body", m.Domain); err != nil {
 		return err
@@ -124,6 +129,7 @@ func (m *PostureDataDomain) validateDomain(formats strfmt.Registry) error {
 
 // ContextValidate validate this posture data domain based on the context it is used
 func (m *PostureDataDomain) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with PostureDataBase
@@ -139,6 +145,7 @@ func (m *PostureDataDomain) ContextValidate(ctx context.Context, formats strfmt.
 
 // MarshalBinary interface implementation
 func (m *PostureDataDomain) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -147,6 +154,7 @@ func (m *PostureDataDomain) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureDataDomain) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureDataDomain
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

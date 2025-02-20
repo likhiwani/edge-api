@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -66,6 +67,7 @@ type AuthenticatorCreate struct {
 
 // Validate validates this authenticator create
 func (m *AuthenticatorCreate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateIdentityID(formats); err != nil {
@@ -87,6 +89,7 @@ func (m *AuthenticatorCreate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *AuthenticatorCreate) validateIdentityID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("identityId", "body", m.IdentityID); err != nil {
 		return err
@@ -96,6 +99,7 @@ func (m *AuthenticatorCreate) validateIdentityID(formats strfmt.Registry) error 
 }
 
 func (m *AuthenticatorCreate) validateMethod(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("method", "body", m.Method); err != nil {
 		return err
@@ -105,6 +109,7 @@ func (m *AuthenticatorCreate) validateMethod(formats strfmt.Registry) error {
 }
 
 func (m *AuthenticatorCreate) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -125,6 +130,7 @@ func (m *AuthenticatorCreate) validateTags(formats strfmt.Registry) error {
 
 // ContextValidate validate this authenticator create based on the context it is used
 func (m *AuthenticatorCreate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateTags(ctx, formats); err != nil {
@@ -138,6 +144,7 @@ func (m *AuthenticatorCreate) ContextValidate(ctx context.Context, formats strfm
 }
 
 func (m *AuthenticatorCreate) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -160,6 +167,7 @@ func (m *AuthenticatorCreate) contextValidateTags(ctx context.Context, formats s
 
 // MarshalBinary interface implementation
 func (m *AuthenticatorCreate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -168,6 +176,7 @@ func (m *AuthenticatorCreate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *AuthenticatorCreate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res AuthenticatorCreate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

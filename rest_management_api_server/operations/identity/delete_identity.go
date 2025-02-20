@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type DeleteIdentityHandlerFunc func(DeleteIdentityParams, interface{}) middlewar
 
 // Handle executing the request and returning a response
 func (fn DeleteIdentityHandlerFunc) Handle(params DeleteIdentityParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type DeleteIdentityHandler interface {
 
 // NewDeleteIdentity creates a new http.Handler for the delete identity operation
 func NewDeleteIdentity(ctx *middleware.Context, handler DeleteIdentityHandler) *DeleteIdentity {
+    logtrace.LogWithFunctionName()
 	return &DeleteIdentity{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type DeleteIdentity struct {
 }
 
 func (o *DeleteIdentity) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

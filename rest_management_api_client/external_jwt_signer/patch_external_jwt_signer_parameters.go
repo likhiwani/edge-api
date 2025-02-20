@@ -30,6 +30,7 @@ package external_jwt_signer
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewPatchExternalJWTSignerParams() *PatchExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 	return &PatchExternalJWTSignerParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewPatchExternalJWTSignerParams() *PatchExternalJWTSignerParams {
 // NewPatchExternalJWTSignerParamsWithTimeout creates a new PatchExternalJWTSignerParams object
 // with the ability to set a timeout on a request.
 func NewPatchExternalJWTSignerParamsWithTimeout(timeout time.Duration) *PatchExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 	return &PatchExternalJWTSignerParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewPatchExternalJWTSignerParamsWithTimeout(timeout time.Duration) *PatchExt
 // NewPatchExternalJWTSignerParamsWithContext creates a new PatchExternalJWTSignerParams object
 // with the ability to set a context for a request.
 func NewPatchExternalJWTSignerParamsWithContext(ctx context.Context) *PatchExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 	return &PatchExternalJWTSignerParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewPatchExternalJWTSignerParamsWithContext(ctx context.Context) *PatchExter
 // NewPatchExternalJWTSignerParamsWithHTTPClient creates a new PatchExternalJWTSignerParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewPatchExternalJWTSignerParamsWithHTTPClient(client *http.Client) *PatchExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 	return &PatchExternalJWTSignerParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type PatchExternalJWTSignerParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchExternalJWTSignerParams) WithDefaults() *PatchExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *PatchExternalJWTSignerParams) WithDefaults() *PatchExternalJWTSignerPar
 //
 // All values with no default are reset to their zero value.
 func (o *PatchExternalJWTSignerParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the patch external Jwt signer params
 func (o *PatchExternalJWTSignerParams) WithTimeout(timeout time.Duration) *PatchExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the patch external Jwt signer params
 func (o *PatchExternalJWTSignerParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the patch external Jwt signer params
 func (o *PatchExternalJWTSignerParams) WithContext(ctx context.Context) *PatchExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the patch external Jwt signer params
 func (o *PatchExternalJWTSignerParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the patch external Jwt signer params
 func (o *PatchExternalJWTSignerParams) WithHTTPClient(client *http.Client) *PatchExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the patch external Jwt signer params
 func (o *PatchExternalJWTSignerParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithExternalJWTSigner adds the externalJWTSigner to the patch external Jwt signer params
 func (o *PatchExternalJWTSignerParams) WithExternalJWTSigner(externalJWTSigner *rest_model.ExternalJWTSignerPatch) *PatchExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 	o.SetExternalJWTSigner(externalJWTSigner)
 	return o
 }
 
 // SetExternalJWTSigner adds the externalJwtSigner to the patch external Jwt signer params
 func (o *PatchExternalJWTSignerParams) SetExternalJWTSigner(externalJWTSigner *rest_model.ExternalJWTSignerPatch) {
+    logtrace.LogWithFunctionName()
 	o.ExternalJWTSigner = externalJWTSigner
 }
 
 // WithID adds the id to the patch external Jwt signer params
 func (o *PatchExternalJWTSignerParams) WithID(id string) *PatchExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the patch external Jwt signer params
 func (o *PatchExternalJWTSignerParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *PatchExternalJWTSignerParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

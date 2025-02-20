@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"bytes"
 	"context"
 	"encoding/json"
@@ -60,25 +61,30 @@ type PostureResponseOperatingSystemCreate struct {
 
 // ID gets the id of this subtype
 func (m *PostureResponseOperatingSystemCreate) ID() *string {
+    logtrace.LogWithFunctionName()
 	return m.idField
 }
 
 // SetID sets the id of this subtype
 func (m *PostureResponseOperatingSystemCreate) SetID(val *string) {
+    logtrace.LogWithFunctionName()
 	m.idField = val
 }
 
 // TypeID gets the type Id of this subtype
 func (m *PostureResponseOperatingSystemCreate) TypeID() PostureCheckType {
+    logtrace.LogWithFunctionName()
 	return "OS"
 }
 
 // SetTypeID sets the type Id of this subtype
 func (m *PostureResponseOperatingSystemCreate) SetTypeID(val PostureCheckType) {
+    logtrace.LogWithFunctionName()
 }
 
 // UnmarshalJSON unmarshals this object with a polymorphic type from a JSON structure
 func (m *PostureResponseOperatingSystemCreate) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	var data struct {
 
 		// build
@@ -135,6 +141,7 @@ func (m *PostureResponseOperatingSystemCreate) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object with a polymorphic type to a JSON structure
 func (m PostureResponseOperatingSystemCreate) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	var b1, b2, b3 []byte
 	var err error
 	b1, err = json.Marshal(struct {
@@ -179,6 +186,7 @@ func (m PostureResponseOperatingSystemCreate) MarshalJSON() ([]byte, error) {
 
 // Validate validates this posture response operating system create
 func (m *PostureResponseOperatingSystemCreate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateID(formats); err != nil {
@@ -200,6 +208,7 @@ func (m *PostureResponseOperatingSystemCreate) Validate(formats strfmt.Registry)
 }
 
 func (m *PostureResponseOperatingSystemCreate) validateID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("id", "body", m.ID()); err != nil {
 		return err
@@ -209,6 +218,7 @@ func (m *PostureResponseOperatingSystemCreate) validateID(formats strfmt.Registr
 }
 
 func (m *PostureResponseOperatingSystemCreate) validateType(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("type", "body", m.Type); err != nil {
 		return err
@@ -218,6 +228,7 @@ func (m *PostureResponseOperatingSystemCreate) validateType(formats strfmt.Regis
 }
 
 func (m *PostureResponseOperatingSystemCreate) validateVersion(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("version", "body", m.Version); err != nil {
 		return err
@@ -228,6 +239,7 @@ func (m *PostureResponseOperatingSystemCreate) validateVersion(formats strfmt.Re
 
 // ContextValidate validate this posture response operating system create based on the context it is used
 func (m *PostureResponseOperatingSystemCreate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if len(res) > 0 {
@@ -237,6 +249,7 @@ func (m *PostureResponseOperatingSystemCreate) ContextValidate(ctx context.Conte
 }
 
 func (m *PostureResponseOperatingSystemCreate) contextValidateTypeID(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.TypeID().ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -252,6 +265,7 @@ func (m *PostureResponseOperatingSystemCreate) contextValidateTypeID(ctx context
 
 // MarshalBinary interface implementation
 func (m *PostureResponseOperatingSystemCreate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -260,6 +274,7 @@ func (m *PostureResponseOperatingSystemCreate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureResponseOperatingSystemCreate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureResponseOperatingSystemCreate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

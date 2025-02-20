@@ -30,6 +30,7 @@ package service
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new service API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -113,6 +117,7 @@ CreateService creates a services resource
 Create a services resource. Requires admin access.
 */
 func (a *Client) CreateService(params *CreateServiceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateServiceCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreateServiceParams()
@@ -154,6 +159,7 @@ DeleteService deletes a service
 Delete a service by id. Requires admin access.
 */
 func (a *Client) DeleteService(params *DeleteServiceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteServiceOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteServiceParams()
@@ -195,6 +201,7 @@ DetailService retrieves a single service
 Retrieves a single service by id. Requires admin access.
 */
 func (a *Client) DetailService(params *DetailServiceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailServiceOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailServiceParams()
@@ -236,6 +243,7 @@ ListServiceConfig lists configs associated to a specific service
 Retrieves a list of config resources associated to a specific service; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListServiceConfig(params *ListServiceConfigParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListServiceConfigOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListServiceConfigParams()
@@ -277,6 +285,7 @@ ListServiceEdgeRouters lists accessible edge routers
 Retrieves a list of edge-routers that may be used to access the given service. Supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListServiceEdgeRouters(params *ListServiceEdgeRoutersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListServiceEdgeRoutersOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListServiceEdgeRoutersParams()
@@ -318,6 +327,7 @@ ListServiceIdentities lists identities with access
 Retrieves a list of identities that have access to this service. Supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListServiceIdentities(params *ListServiceIdentitiesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListServiceIdentitiesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListServiceIdentitiesParams()
@@ -359,6 +369,7 @@ ListServiceServiceEdgeRouterPolicies lists service edge router policies that aff
 Retrieves a list of service edge router policy resources that affect a specific service; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListServiceServiceEdgeRouterPolicies(params *ListServiceServiceEdgeRouterPoliciesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListServiceServiceEdgeRouterPoliciesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListServiceServiceEdgeRouterPoliciesParams()
@@ -400,6 +411,7 @@ ListServiceServicePolicies lists service policies that affect a specific service
 Retrieves a list of service policy resources that affect specific service; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListServiceServicePolicies(params *ListServiceServicePoliciesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListServiceServicePoliciesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListServiceServicePoliciesParams()
@@ -441,6 +453,7 @@ ListServiceTerminators lists of terminators assigned to a service
 Retrieves a list of terminator resources that are assigned specific service; supports filtering, sorting, and pagination.
 */
 func (a *Client) ListServiceTerminators(params *ListServiceTerminatorsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListServiceTerminatorsOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListServiceTerminatorsParams()
@@ -482,6 +495,7 @@ ListServices lists services
 Retrieves a list of config resources; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListServices(params *ListServicesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListServicesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListServicesParams()
@@ -523,6 +537,7 @@ PatchService updates the supplied fields on a service
 Update the supplied fields on a service. Requires admin access.
 */
 func (a *Client) PatchService(params *PatchServiceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PatchServiceOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPatchServiceParams()
@@ -564,6 +579,7 @@ UpdateService updates all fields on a service
 Update all fields on a service by id. Requires admin access.
 */
 func (a *Client) UpdateService(params *UpdateServiceParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UpdateServiceOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUpdateServiceParams()
@@ -601,5 +617,6 @@ func (a *Client) UpdateService(params *UpdateServiceParams, authInfo runtime.Cli
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

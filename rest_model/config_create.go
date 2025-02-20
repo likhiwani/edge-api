@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -63,6 +64,7 @@ type ConfigCreate struct {
 
 // Validate validates this config create
 func (m *ConfigCreate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateConfigTypeID(formats); err != nil {
@@ -88,6 +90,7 @@ func (m *ConfigCreate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ConfigCreate) validateConfigTypeID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("configTypeId", "body", m.ConfigTypeID); err != nil {
 		return err
@@ -97,6 +100,7 @@ func (m *ConfigCreate) validateConfigTypeID(formats strfmt.Registry) error {
 }
 
 func (m *ConfigCreate) validateData(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Data == nil {
 		return errors.Required("data", "body", nil)
@@ -106,6 +110,7 @@ func (m *ConfigCreate) validateData(formats strfmt.Registry) error {
 }
 
 func (m *ConfigCreate) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -115,6 +120,7 @@ func (m *ConfigCreate) validateName(formats strfmt.Registry) error {
 }
 
 func (m *ConfigCreate) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -135,6 +141,7 @@ func (m *ConfigCreate) validateTags(formats strfmt.Registry) error {
 
 // ContextValidate validate this config create based on the context it is used
 func (m *ConfigCreate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateTags(ctx, formats); err != nil {
@@ -148,6 +155,7 @@ func (m *ConfigCreate) ContextValidate(ctx context.Context, formats strfmt.Regis
 }
 
 func (m *ConfigCreate) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -170,6 +178,7 @@ func (m *ConfigCreate) contextValidateTags(ctx context.Context, formats strfmt.R
 
 // MarshalBinary interface implementation
 func (m *ConfigCreate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -178,6 +187,7 @@ func (m *ConfigCreate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ConfigCreate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ConfigCreate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

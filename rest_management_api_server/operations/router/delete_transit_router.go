@@ -30,6 +30,7 @@ package router
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type DeleteTransitRouterHandlerFunc func(DeleteTransitRouterParams, interface{})
 
 // Handle executing the request and returning a response
 func (fn DeleteTransitRouterHandlerFunc) Handle(params DeleteTransitRouterParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type DeleteTransitRouterHandler interface {
 
 // NewDeleteTransitRouter creates a new http.Handler for the delete transit router operation
 func NewDeleteTransitRouter(ctx *middleware.Context, handler DeleteTransitRouterHandler) *DeleteTransitRouter {
+    logtrace.LogWithFunctionName()
 	return &DeleteTransitRouter{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type DeleteTransitRouter struct {
 }
 
 func (o *DeleteTransitRouter) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

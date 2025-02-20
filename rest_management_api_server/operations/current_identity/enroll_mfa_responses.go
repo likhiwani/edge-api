@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type EnrollMfaCreated struct {
 
 // NewEnrollMfaCreated creates EnrollMfaCreated with default headers values
 func NewEnrollMfaCreated() *EnrollMfaCreated {
+    logtrace.LogWithFunctionName()
 
 	return &EnrollMfaCreated{}
 }
 
 // WithPayload adds the payload to the enroll mfa created response
 func (o *EnrollMfaCreated) WithPayload(payload *rest_model.CreateEnvelope) *EnrollMfaCreated {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the enroll mfa created response
 func (o *EnrollMfaCreated) SetPayload(payload *rest_model.CreateEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *EnrollMfaCreated) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(201)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type EnrollMfaUnauthorized struct {
 
 // NewEnrollMfaUnauthorized creates EnrollMfaUnauthorized with default headers values
 func NewEnrollMfaUnauthorized() *EnrollMfaUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &EnrollMfaUnauthorized{}
 }
 
 // WithPayload adds the payload to the enroll mfa unauthorized response
 func (o *EnrollMfaUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *EnrollMfaUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the enroll mfa unauthorized response
 func (o *EnrollMfaUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *EnrollMfaUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type EnrollMfaConflict struct {
 
 // NewEnrollMfaConflict creates EnrollMfaConflict with default headers values
 func NewEnrollMfaConflict() *EnrollMfaConflict {
+    logtrace.LogWithFunctionName()
 
 	return &EnrollMfaConflict{}
 }
 
 // WithPayload adds the payload to the enroll mfa conflict response
 func (o *EnrollMfaConflict) WithPayload(payload *rest_model.APIErrorEnvelope) *EnrollMfaConflict {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the enroll mfa conflict response
 func (o *EnrollMfaConflict) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *EnrollMfaConflict) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(409)
 	if o.Payload != nil {

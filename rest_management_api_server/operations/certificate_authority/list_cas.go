@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type ListCasHandlerFunc func(ListCasParams, interface{}) middleware.Responder
 
 // Handle executing the request and returning a response
 func (fn ListCasHandlerFunc) Handle(params ListCasParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type ListCasHandler interface {
 
 // NewListCas creates a new http.Handler for the list cas operation
 func NewListCas(ctx *middleware.Context, handler ListCasHandler) *ListCas {
+    logtrace.LogWithFunctionName()
 	return &ListCas{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type ListCas struct {
 }
 
 func (o *ListCas) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

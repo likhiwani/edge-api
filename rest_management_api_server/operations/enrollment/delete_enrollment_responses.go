@@ -30,6 +30,7 @@ package enrollment
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DeleteEnrollmentOK struct {
 
 // NewDeleteEnrollmentOK creates DeleteEnrollmentOK with default headers values
 func NewDeleteEnrollmentOK() *DeleteEnrollmentOK {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteEnrollmentOK{}
 }
 
 // WithPayload adds the payload to the delete enrollment o k response
 func (o *DeleteEnrollmentOK) WithPayload(payload *rest_model.Empty) *DeleteEnrollmentOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete enrollment o k response
 func (o *DeleteEnrollmentOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteEnrollmentOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DeleteEnrollmentBadRequest struct {
 
 // NewDeleteEnrollmentBadRequest creates DeleteEnrollmentBadRequest with default headers values
 func NewDeleteEnrollmentBadRequest() *DeleteEnrollmentBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteEnrollmentBadRequest{}
 }
 
 // WithPayload adds the payload to the delete enrollment bad request response
 func (o *DeleteEnrollmentBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteEnrollmentBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete enrollment bad request response
 func (o *DeleteEnrollmentBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteEnrollmentBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DeleteEnrollmentUnauthorized struct {
 
 // NewDeleteEnrollmentUnauthorized creates DeleteEnrollmentUnauthorized with default headers values
 func NewDeleteEnrollmentUnauthorized() *DeleteEnrollmentUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteEnrollmentUnauthorized{}
 }
 
 // WithPayload adds the payload to the delete enrollment unauthorized response
 func (o *DeleteEnrollmentUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteEnrollmentUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete enrollment unauthorized response
 func (o *DeleteEnrollmentUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteEnrollmentUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DeleteEnrollmentNotFound struct {
 
 // NewDeleteEnrollmentNotFound creates DeleteEnrollmentNotFound with default headers values
 func NewDeleteEnrollmentNotFound() *DeleteEnrollmentNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteEnrollmentNotFound{}
 }
 
 // WithPayload adds the payload to the delete enrollment not found response
 func (o *DeleteEnrollmentNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteEnrollmentNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete enrollment not found response
 func (o *DeleteEnrollmentNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteEnrollmentNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DeleteEnrollmentTooManyRequests struct {
 
 // NewDeleteEnrollmentTooManyRequests creates DeleteEnrollmentTooManyRequests with default headers values
 func NewDeleteEnrollmentTooManyRequests() *DeleteEnrollmentTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteEnrollmentTooManyRequests{}
 }
 
 // WithPayload adds the payload to the delete enrollment too many requests response
 func (o *DeleteEnrollmentTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteEnrollmentTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete enrollment too many requests response
 func (o *DeleteEnrollmentTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteEnrollmentTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type DeleteEnrollmentServiceUnavailable struct {
 
 // NewDeleteEnrollmentServiceUnavailable creates DeleteEnrollmentServiceUnavailable with default headers values
 func NewDeleteEnrollmentServiceUnavailable() *DeleteEnrollmentServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteEnrollmentServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the delete enrollment service unavailable response
 func (o *DeleteEnrollmentServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteEnrollmentServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete enrollment service unavailable response
 func (o *DeleteEnrollmentServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteEnrollmentServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

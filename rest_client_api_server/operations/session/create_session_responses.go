@@ -30,6 +30,7 @@ package session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type CreateSessionCreated struct {
 
 // NewCreateSessionCreated creates CreateSessionCreated with default headers values
 func NewCreateSessionCreated() *CreateSessionCreated {
+    logtrace.LogWithFunctionName()
 
 	return &CreateSessionCreated{}
 }
 
 // WithPayload adds the payload to the create session created response
 func (o *CreateSessionCreated) WithPayload(payload *rest_model.SessionCreateEnvelope) *CreateSessionCreated {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create session created response
 func (o *CreateSessionCreated) SetPayload(payload *rest_model.SessionCreateEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateSessionCreated) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(201)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type CreateSessionBadRequest struct {
 
 // NewCreateSessionBadRequest creates CreateSessionBadRequest with default headers values
 func NewCreateSessionBadRequest() *CreateSessionBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &CreateSessionBadRequest{}
 }
 
 // WithPayload adds the payload to the create session bad request response
 func (o *CreateSessionBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateSessionBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create session bad request response
 func (o *CreateSessionBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateSessionBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type CreateSessionUnauthorized struct {
 
 // NewCreateSessionUnauthorized creates CreateSessionUnauthorized with default headers values
 func NewCreateSessionUnauthorized() *CreateSessionUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &CreateSessionUnauthorized{}
 }
 
 // WithPayload adds the payload to the create session unauthorized response
 func (o *CreateSessionUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateSessionUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create session unauthorized response
 func (o *CreateSessionUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateSessionUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type CreateSessionNotFound struct {
 
 // NewCreateSessionNotFound creates CreateSessionNotFound with default headers values
 func NewCreateSessionNotFound() *CreateSessionNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &CreateSessionNotFound{}
 }
 
 // WithPayload adds the payload to the create session not found response
 func (o *CreateSessionNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateSessionNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create session not found response
 func (o *CreateSessionNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateSessionNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type CreateSessionTooManyRequests struct {
 
 // NewCreateSessionTooManyRequests creates CreateSessionTooManyRequests with default headers values
 func NewCreateSessionTooManyRequests() *CreateSessionTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &CreateSessionTooManyRequests{}
 }
 
 // WithPayload adds the payload to the create session too many requests response
 func (o *CreateSessionTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateSessionTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create session too many requests response
 func (o *CreateSessionTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateSessionTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type CreateSessionServiceUnavailable struct {
 
 // NewCreateSessionServiceUnavailable creates CreateSessionServiceUnavailable with default headers values
 func NewCreateSessionServiceUnavailable() *CreateSessionServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &CreateSessionServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the create session service unavailable response
 func (o *CreateSessionServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateSessionServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create session service unavailable response
 func (o *CreateSessionServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateSessionServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListIdentitysServiceConfigsParams() *ListIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	return &ListIdentitysServiceConfigsParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewListIdentitysServiceConfigsParams() *ListIdentitysServiceConfigsParams {
 // NewListIdentitysServiceConfigsParamsWithTimeout creates a new ListIdentitysServiceConfigsParams object
 // with the ability to set a timeout on a request.
 func NewListIdentitysServiceConfigsParamsWithTimeout(timeout time.Duration) *ListIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	return &ListIdentitysServiceConfigsParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewListIdentitysServiceConfigsParamsWithTimeout(timeout time.Duration) *Lis
 // NewListIdentitysServiceConfigsParamsWithContext creates a new ListIdentitysServiceConfigsParams object
 // with the ability to set a context for a request.
 func NewListIdentitysServiceConfigsParamsWithContext(ctx context.Context) *ListIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	return &ListIdentitysServiceConfigsParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewListIdentitysServiceConfigsParamsWithContext(ctx context.Context) *ListI
 // NewListIdentitysServiceConfigsParamsWithHTTPClient creates a new ListIdentitysServiceConfigsParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListIdentitysServiceConfigsParamsWithHTTPClient(client *http.Client) *ListIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	return &ListIdentitysServiceConfigsParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type ListIdentitysServiceConfigsParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListIdentitysServiceConfigsParams) WithDefaults() *ListIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *ListIdentitysServiceConfigsParams) WithDefaults() *ListIdentitysService
 //
 // All values with no default are reset to their zero value.
 func (o *ListIdentitysServiceConfigsParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list identitys service configs params
 func (o *ListIdentitysServiceConfigsParams) WithTimeout(timeout time.Duration) *ListIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list identitys service configs params
 func (o *ListIdentitysServiceConfigsParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list identitys service configs params
 func (o *ListIdentitysServiceConfigsParams) WithContext(ctx context.Context) *ListIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list identitys service configs params
 func (o *ListIdentitysServiceConfigsParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list identitys service configs params
 func (o *ListIdentitysServiceConfigsParams) WithHTTPClient(client *http.Client) *ListIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list identitys service configs params
 func (o *ListIdentitysServiceConfigsParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the list identitys service configs params
 func (o *ListIdentitysServiceConfigsParams) WithID(id string) *ListIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the list identitys service configs params
 func (o *ListIdentitysServiceConfigsParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListIdentitysServiceConfigsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

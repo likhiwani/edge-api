@@ -30,6 +30,7 @@ package authenticator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewUpdateAuthenticatorParams() *UpdateAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateAuthenticatorParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewUpdateAuthenticatorParams() *UpdateAuthenticatorParams {
 // NewUpdateAuthenticatorParamsWithTimeout creates a new UpdateAuthenticatorParams object
 // with the ability to set a timeout on a request.
 func NewUpdateAuthenticatorParamsWithTimeout(timeout time.Duration) *UpdateAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateAuthenticatorParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewUpdateAuthenticatorParamsWithTimeout(timeout time.Duration) *UpdateAuthe
 // NewUpdateAuthenticatorParamsWithContext creates a new UpdateAuthenticatorParams object
 // with the ability to set a context for a request.
 func NewUpdateAuthenticatorParamsWithContext(ctx context.Context) *UpdateAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateAuthenticatorParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewUpdateAuthenticatorParamsWithContext(ctx context.Context) *UpdateAuthent
 // NewUpdateAuthenticatorParamsWithHTTPClient creates a new UpdateAuthenticatorParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewUpdateAuthenticatorParamsWithHTTPClient(client *http.Client) *UpdateAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateAuthenticatorParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type UpdateAuthenticatorParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *UpdateAuthenticatorParams) WithDefaults() *UpdateAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *UpdateAuthenticatorParams) WithDefaults() *UpdateAuthenticatorParams {
 //
 // All values with no default are reset to their zero value.
 func (o *UpdateAuthenticatorParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the update authenticator params
 func (o *UpdateAuthenticatorParams) WithTimeout(timeout time.Duration) *UpdateAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the update authenticator params
 func (o *UpdateAuthenticatorParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the update authenticator params
 func (o *UpdateAuthenticatorParams) WithContext(ctx context.Context) *UpdateAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the update authenticator params
 func (o *UpdateAuthenticatorParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the update authenticator params
 func (o *UpdateAuthenticatorParams) WithHTTPClient(client *http.Client) *UpdateAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the update authenticator params
 func (o *UpdateAuthenticatorParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithAuthenticator adds the authenticator to the update authenticator params
 func (o *UpdateAuthenticatorParams) WithAuthenticator(authenticator *rest_model.AuthenticatorUpdate) *UpdateAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetAuthenticator(authenticator)
 	return o
 }
 
 // SetAuthenticator adds the authenticator to the update authenticator params
 func (o *UpdateAuthenticatorParams) SetAuthenticator(authenticator *rest_model.AuthenticatorUpdate) {
+    logtrace.LogWithFunctionName()
 	o.Authenticator = authenticator
 }
 
 // WithID adds the id to the update authenticator params
 func (o *UpdateAuthenticatorParams) WithID(id string) *UpdateAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the update authenticator params
 func (o *UpdateAuthenticatorParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *UpdateAuthenticatorParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

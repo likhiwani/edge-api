@@ -30,6 +30,7 @@ package enrollment
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"errors"
 	"net/url"
 	golangswaggerpaths "path"
@@ -44,6 +45,7 @@ type CreateEnrollmentURL struct {
 // base path specified in the swagger spec.
 // When the value of the base path is an empty string
 func (o *CreateEnrollmentURL) WithBasePath(bp string) *CreateEnrollmentURL {
+    logtrace.LogWithFunctionName()
 	o.SetBasePath(bp)
 	return o
 }
@@ -52,11 +54,13 @@ func (o *CreateEnrollmentURL) WithBasePath(bp string) *CreateEnrollmentURL {
 // base path specified in the swagger spec.
 // When the value of the base path is an empty string
 func (o *CreateEnrollmentURL) SetBasePath(bp string) {
+    logtrace.LogWithFunctionName()
 	o._basePath = bp
 }
 
 // Build a url path and query string
 func (o *CreateEnrollmentURL) Build() (*url.URL, error) {
+    logtrace.LogWithFunctionName()
 	var _result url.URL
 
 	var _path = "/enrollments"
@@ -72,6 +76,7 @@ func (o *CreateEnrollmentURL) Build() (*url.URL, error) {
 
 // Must is a helper function to panic when the url builder returns an error
 func (o *CreateEnrollmentURL) Must(u *url.URL, err error) *url.URL {
+    logtrace.LogWithFunctionName()
 	if err != nil {
 		panic(err)
 	}
@@ -83,11 +88,13 @@ func (o *CreateEnrollmentURL) Must(u *url.URL, err error) *url.URL {
 
 // String returns the string representation of the path with query string
 func (o *CreateEnrollmentURL) String() string {
+    logtrace.LogWithFunctionName()
 	return o.Must(o.Build()).String()
 }
 
 // BuildFull builds a full url with scheme, host, path and query string
 func (o *CreateEnrollmentURL) BuildFull(scheme, host string) (*url.URL, error) {
+    logtrace.LogWithFunctionName()
 	if scheme == "" {
 		return nil, errors.New("scheme is required for a full url on CreateEnrollmentURL")
 	}
@@ -107,5 +114,6 @@ func (o *CreateEnrollmentURL) BuildFull(scheme, host string) (*url.URL, error) {
 
 // StringFull returns the string representation of a complete url
 func (o *CreateEnrollmentURL) StringFull(scheme, host string) string {
+    logtrace.LogWithFunctionName()
 	return o.Must(o.BuildFull(scheme, host)).String()
 }

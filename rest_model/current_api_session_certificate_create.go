@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -50,6 +51,7 @@ type CurrentAPISessionCertificateCreate struct {
 
 // Validate validates this current Api session certificate create
 func (m *CurrentAPISessionCertificateCreate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateCsr(formats); err != nil {
@@ -63,6 +65,7 @@ func (m *CurrentAPISessionCertificateCreate) Validate(formats strfmt.Registry) e
 }
 
 func (m *CurrentAPISessionCertificateCreate) validateCsr(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("csr", "body", m.Csr); err != nil {
 		return err
@@ -73,11 +76,13 @@ func (m *CurrentAPISessionCertificateCreate) validateCsr(formats strfmt.Registry
 
 // ContextValidate validates this current Api session certificate create based on context it is used
 func (m *CurrentAPISessionCertificateCreate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *CurrentAPISessionCertificateCreate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -86,6 +91,7 @@ func (m *CurrentAPISessionCertificateCreate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *CurrentAPISessionCertificateCreate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res CurrentAPISessionCertificateCreate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

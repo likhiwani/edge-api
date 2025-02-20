@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type PatchConfigTypeOK struct {
 
 // NewPatchConfigTypeOK creates PatchConfigTypeOK with default headers values
 func NewPatchConfigTypeOK() *PatchConfigTypeOK {
+    logtrace.LogWithFunctionName()
 
 	return &PatchConfigTypeOK{}
 }
 
 // WithPayload adds the payload to the patch config type o k response
 func (o *PatchConfigTypeOK) WithPayload(payload *rest_model.Empty) *PatchConfigTypeOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch config type o k response
 func (o *PatchConfigTypeOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchConfigTypeOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type PatchConfigTypeBadRequest struct {
 
 // NewPatchConfigTypeBadRequest creates PatchConfigTypeBadRequest with default headers values
 func NewPatchConfigTypeBadRequest() *PatchConfigTypeBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &PatchConfigTypeBadRequest{}
 }
 
 // WithPayload adds the payload to the patch config type bad request response
 func (o *PatchConfigTypeBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchConfigTypeBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch config type bad request response
 func (o *PatchConfigTypeBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchConfigTypeBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type PatchConfigTypeUnauthorized struct {
 
 // NewPatchConfigTypeUnauthorized creates PatchConfigTypeUnauthorized with default headers values
 func NewPatchConfigTypeUnauthorized() *PatchConfigTypeUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &PatchConfigTypeUnauthorized{}
 }
 
 // WithPayload adds the payload to the patch config type unauthorized response
 func (o *PatchConfigTypeUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchConfigTypeUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch config type unauthorized response
 func (o *PatchConfigTypeUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchConfigTypeUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type PatchConfigTypeNotFound struct {
 
 // NewPatchConfigTypeNotFound creates PatchConfigTypeNotFound with default headers values
 func NewPatchConfigTypeNotFound() *PatchConfigTypeNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &PatchConfigTypeNotFound{}
 }
 
 // WithPayload adds the payload to the patch config type not found response
 func (o *PatchConfigTypeNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchConfigTypeNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch config type not found response
 func (o *PatchConfigTypeNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchConfigTypeNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type PatchConfigTypeTooManyRequests struct {
 
 // NewPatchConfigTypeTooManyRequests creates PatchConfigTypeTooManyRequests with default headers values
 func NewPatchConfigTypeTooManyRequests() *PatchConfigTypeTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &PatchConfigTypeTooManyRequests{}
 }
 
 // WithPayload adds the payload to the patch config type too many requests response
 func (o *PatchConfigTypeTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchConfigTypeTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch config type too many requests response
 func (o *PatchConfigTypeTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchConfigTypeTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type PatchConfigTypeServiceUnavailable struct {
 
 // NewPatchConfigTypeServiceUnavailable creates PatchConfigTypeServiceUnavailable with default headers values
 func NewPatchConfigTypeServiceUnavailable() *PatchConfigTypeServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &PatchConfigTypeServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the patch config type service unavailable response
 func (o *PatchConfigTypeServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchConfigTypeServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch config type service unavailable response
 func (o *PatchConfigTypeServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchConfigTypeServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

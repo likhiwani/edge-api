@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type GetCurrentAPISessionOK struct {
 
 // NewGetCurrentAPISessionOK creates GetCurrentAPISessionOK with default headers values
 func NewGetCurrentAPISessionOK() *GetCurrentAPISessionOK {
+    logtrace.LogWithFunctionName()
 
 	return &GetCurrentAPISessionOK{}
 }
 
 // WithPayload adds the payload to the get current Api session o k response
 func (o *GetCurrentAPISessionOK) WithPayload(payload *rest_model.CurrentAPISessionDetailEnvelope) *GetCurrentAPISessionOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get current Api session o k response
 func (o *GetCurrentAPISessionOK) SetPayload(payload *rest_model.CurrentAPISessionDetailEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetCurrentAPISessionOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type GetCurrentAPISessionUnauthorized struct {
 
 // NewGetCurrentAPISessionUnauthorized creates GetCurrentAPISessionUnauthorized with default headers values
 func NewGetCurrentAPISessionUnauthorized() *GetCurrentAPISessionUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &GetCurrentAPISessionUnauthorized{}
 }
 
 // WithPayload adds the payload to the get current Api session unauthorized response
 func (o *GetCurrentAPISessionUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *GetCurrentAPISessionUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get current Api session unauthorized response
 func (o *GetCurrentAPISessionUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetCurrentAPISessionUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {

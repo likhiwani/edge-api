@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DetailPostureCheckTypeReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DetailPostureCheckTypeReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDetailPostureCheckTypeOK()
@@ -85,6 +87,7 @@ func (o *DetailPostureCheckTypeReader) ReadResponse(response runtime.ClientRespo
 
 // NewDetailPostureCheckTypeOK creates a DetailPostureCheckTypeOK with default headers values
 func NewDetailPostureCheckTypeOK() *DetailPostureCheckTypeOK {
+    logtrace.LogWithFunctionName()
 	return &DetailPostureCheckTypeOK{}
 }
 
@@ -99,49 +102,59 @@ type DetailPostureCheckTypeOK struct {
 
 // IsSuccess returns true when this detail posture check type o k response has a 2xx status code
 func (o *DetailPostureCheckTypeOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this detail posture check type o k response has a 3xx status code
 func (o *DetailPostureCheckTypeOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail posture check type o k response has a 4xx status code
 func (o *DetailPostureCheckTypeOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail posture check type o k response has a 5xx status code
 func (o *DetailPostureCheckTypeOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail posture check type o k response a status code equal to that given
 func (o *DetailPostureCheckTypeOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the detail posture check type o k response
 func (o *DetailPostureCheckTypeOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DetailPostureCheckTypeOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeOK %s", 200, payload)
 }
 
 func (o *DetailPostureCheckTypeOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeOK %s", 200, payload)
 }
 
 func (o *DetailPostureCheckTypeOK) GetPayload() *rest_model.DetailPostureCheckTypeEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailPostureCheckTypeOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.DetailPostureCheckTypeEnvelope)
 
@@ -155,6 +168,7 @@ func (o *DetailPostureCheckTypeOK) readResponse(response runtime.ClientResponse,
 
 // NewDetailPostureCheckTypeUnauthorized creates a DetailPostureCheckTypeUnauthorized with default headers values
 func NewDetailPostureCheckTypeUnauthorized() *DetailPostureCheckTypeUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DetailPostureCheckTypeUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type DetailPostureCheckTypeUnauthorized struct {
 
 // IsSuccess returns true when this detail posture check type unauthorized response has a 2xx status code
 func (o *DetailPostureCheckTypeUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail posture check type unauthorized response has a 3xx status code
 func (o *DetailPostureCheckTypeUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail posture check type unauthorized response has a 4xx status code
 func (o *DetailPostureCheckTypeUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail posture check type unauthorized response has a 5xx status code
 func (o *DetailPostureCheckTypeUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail posture check type unauthorized response a status code equal to that given
 func (o *DetailPostureCheckTypeUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the detail posture check type unauthorized response
 func (o *DetailPostureCheckTypeUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DetailPostureCheckTypeUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeUnauthorized %s", 401, payload)
 }
 
 func (o *DetailPostureCheckTypeUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeUnauthorized %s", 401, payload)
 }
 
 func (o *DetailPostureCheckTypeUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailPostureCheckTypeUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *DetailPostureCheckTypeUnauthorized) readResponse(response runtime.Clien
 
 // NewDetailPostureCheckTypeNotFound creates a DetailPostureCheckTypeNotFound with default headers values
 func NewDetailPostureCheckTypeNotFound() *DetailPostureCheckTypeNotFound {
+    logtrace.LogWithFunctionName()
 	return &DetailPostureCheckTypeNotFound{}
 }
 
@@ -239,49 +264,59 @@ type DetailPostureCheckTypeNotFound struct {
 
 // IsSuccess returns true when this detail posture check type not found response has a 2xx status code
 func (o *DetailPostureCheckTypeNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail posture check type not found response has a 3xx status code
 func (o *DetailPostureCheckTypeNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail posture check type not found response has a 4xx status code
 func (o *DetailPostureCheckTypeNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail posture check type not found response has a 5xx status code
 func (o *DetailPostureCheckTypeNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail posture check type not found response a status code equal to that given
 func (o *DetailPostureCheckTypeNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the detail posture check type not found response
 func (o *DetailPostureCheckTypeNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DetailPostureCheckTypeNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeNotFound %s", 404, payload)
 }
 
 func (o *DetailPostureCheckTypeNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeNotFound %s", 404, payload)
 }
 
 func (o *DetailPostureCheckTypeNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailPostureCheckTypeNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *DetailPostureCheckTypeNotFound) readResponse(response runtime.ClientRes
 
 // NewDetailPostureCheckTypeTooManyRequests creates a DetailPostureCheckTypeTooManyRequests with default headers values
 func NewDetailPostureCheckTypeTooManyRequests() *DetailPostureCheckTypeTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DetailPostureCheckTypeTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type DetailPostureCheckTypeTooManyRequests struct {
 
 // IsSuccess returns true when this detail posture check type too many requests response has a 2xx status code
 func (o *DetailPostureCheckTypeTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail posture check type too many requests response has a 3xx status code
 func (o *DetailPostureCheckTypeTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail posture check type too many requests response has a 4xx status code
 func (o *DetailPostureCheckTypeTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail posture check type too many requests response has a 5xx status code
 func (o *DetailPostureCheckTypeTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail posture check type too many requests response a status code equal to that given
 func (o *DetailPostureCheckTypeTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the detail posture check type too many requests response
 func (o *DetailPostureCheckTypeTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DetailPostureCheckTypeTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailPostureCheckTypeTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailPostureCheckTypeTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailPostureCheckTypeTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *DetailPostureCheckTypeTooManyRequests) readResponse(response runtime.Cl
 
 // NewDetailPostureCheckTypeServiceUnavailable creates a DetailPostureCheckTypeServiceUnavailable with default headers values
 func NewDetailPostureCheckTypeServiceUnavailable() *DetailPostureCheckTypeServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DetailPostureCheckTypeServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type DetailPostureCheckTypeServiceUnavailable struct {
 
 // IsSuccess returns true when this detail posture check type service unavailable response has a 2xx status code
 func (o *DetailPostureCheckTypeServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail posture check type service unavailable response has a 3xx status code
 func (o *DetailPostureCheckTypeServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail posture check type service unavailable response has a 4xx status code
 func (o *DetailPostureCheckTypeServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail posture check type service unavailable response has a 5xx status code
 func (o *DetailPostureCheckTypeServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this detail posture check type service unavailable response a status code equal to that given
 func (o *DetailPostureCheckTypeServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the detail posture check type service unavailable response
 func (o *DetailPostureCheckTypeServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DetailPostureCheckTypeServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailPostureCheckTypeServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /posture-check-types/{id}][%d] detailPostureCheckTypeServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailPostureCheckTypeServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailPostureCheckTypeServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

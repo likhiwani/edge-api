@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -51,6 +52,7 @@ type SessionEdgeRouter struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *SessionEdgeRouter) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 CommonEdgeRouterProperties
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -73,6 +75,7 @@ func (m *SessionEdgeRouter) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m SessionEdgeRouter) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.CommonEdgeRouterProperties)
@@ -96,6 +99,7 @@ func (m SessionEdgeRouter) MarshalJSON() ([]byte, error) {
 
 // Validate validates this session edge router
 func (m *SessionEdgeRouter) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with CommonEdgeRouterProperties
@@ -114,6 +118,7 @@ func (m *SessionEdgeRouter) Validate(formats strfmt.Registry) error {
 }
 
 func (m *SessionEdgeRouter) validateUrls(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("urls", "body", m.Urls); err != nil {
 		return err
@@ -124,6 +129,7 @@ func (m *SessionEdgeRouter) validateUrls(formats strfmt.Registry) error {
 
 // ContextValidate validate this session edge router based on the context it is used
 func (m *SessionEdgeRouter) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with CommonEdgeRouterProperties
@@ -139,6 +145,7 @@ func (m *SessionEdgeRouter) ContextValidate(ctx context.Context, formats strfmt.
 
 // MarshalBinary interface implementation
 func (m *SessionEdgeRouter) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -147,6 +154,7 @@ func (m *SessionEdgeRouter) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *SessionEdgeRouter) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res SessionEdgeRouter
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

@@ -18,11 +18,13 @@ package rest_util
 
 import (
 	"crypto/tls"
-	openApiRuntime "github.com/go-openapi/runtime"
-	"github.com/go-openapi/strfmt"
-	"ztna-core/edge-api/rest_model"
 	"net/http"
 	"time"
+	"ztna-core/edge-api/rest_model"
+	"ztna-core/ztna/logtrace"
+
+	openApiRuntime "github.com/go-openapi/runtime"
+	"github.com/go-openapi/strfmt"
 )
 
 type HeaderAuth struct {
@@ -35,6 +37,7 @@ type ApiErrorPayload interface {
 }
 
 func (e *HeaderAuth) AuthenticateRequest(request openApiRuntime.ClientRequest, _ strfmt.Registry) error {
+	logtrace.LogWithFunctionName()
 	return request.SetHeaderParam(e.HeaderName, e.HeaderValue)
 }
 
@@ -46,11 +49,13 @@ type ZitiTokenAuth struct {
 
 // AuthenticateRequest injects the API Session token into outgoing requests.
 func (e *ZitiTokenAuth) AuthenticateRequest(request openApiRuntime.ClientRequest, _ strfmt.Registry) error {
+	logtrace.LogWithFunctionName()
 	return request.SetHeaderParam("zt-session", e.Token)
 }
 
 // NewHttpClientWithTlsConfig provides a default HTTP client with generous default timeouts.
 func NewHttpClientWithTlsConfig(tlsClientConfig *tls.Config) (*http.Client, error) {
+	logtrace.LogWithFunctionName()
 	httpClientTransport := &http.Transport{
 		Proxy:                 http.ProxyFromEnvironment,
 		ForceAttemptHTTP2:     true,
@@ -71,6 +76,7 @@ func NewHttpClientWithTlsConfig(tlsClientConfig *tls.Config) (*http.Client, erro
 
 // NewTlsConfig creates a tls.Config with default min/max TSL versions.
 func NewTlsConfig() (*tls.Config, error) {
+	logtrace.LogWithFunctionName()
 	return &tls.Config{
 		MinVersion: tls.VersionTLS12,
 		MaxVersion: tls.VersionTLS13,

@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DetailSpecReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DetailSpecReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDetailSpecOK()
@@ -61,6 +63,7 @@ func (o *DetailSpecReader) ReadResponse(response runtime.ClientResponse, consume
 
 // NewDetailSpecOK creates a DetailSpecOK with default headers values
 func NewDetailSpecOK() *DetailSpecOK {
+    logtrace.LogWithFunctionName()
 	return &DetailSpecOK{}
 }
 
@@ -75,49 +78,59 @@ type DetailSpecOK struct {
 
 // IsSuccess returns true when this detail spec o k response has a 2xx status code
 func (o *DetailSpecOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this detail spec o k response has a 3xx status code
 func (o *DetailSpecOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail spec o k response has a 4xx status code
 func (o *DetailSpecOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail spec o k response has a 5xx status code
 func (o *DetailSpecOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail spec o k response a status code equal to that given
 func (o *DetailSpecOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the detail spec o k response
 func (o *DetailSpecOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DetailSpecOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /specs/{id}][%d] detailSpecOK %s", 200, payload)
 }
 
 func (o *DetailSpecOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /specs/{id}][%d] detailSpecOK %s", 200, payload)
 }
 
 func (o *DetailSpecOK) GetPayload() *rest_model.DetailSpecEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailSpecOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.DetailSpecEnvelope)
 

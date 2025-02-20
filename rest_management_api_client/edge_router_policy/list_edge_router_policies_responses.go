@@ -30,6 +30,7 @@ package edge_router_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ListEdgeRouterPoliciesReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ListEdgeRouterPoliciesReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewListEdgeRouterPoliciesOK()
@@ -85,6 +87,7 @@ func (o *ListEdgeRouterPoliciesReader) ReadResponse(response runtime.ClientRespo
 
 // NewListEdgeRouterPoliciesOK creates a ListEdgeRouterPoliciesOK with default headers values
 func NewListEdgeRouterPoliciesOK() *ListEdgeRouterPoliciesOK {
+    logtrace.LogWithFunctionName()
 	return &ListEdgeRouterPoliciesOK{}
 }
 
@@ -99,49 +102,59 @@ type ListEdgeRouterPoliciesOK struct {
 
 // IsSuccess returns true when this list edge router policies o k response has a 2xx status code
 func (o *ListEdgeRouterPoliciesOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this list edge router policies o k response has a 3xx status code
 func (o *ListEdgeRouterPoliciesOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list edge router policies o k response has a 4xx status code
 func (o *ListEdgeRouterPoliciesOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list edge router policies o k response has a 5xx status code
 func (o *ListEdgeRouterPoliciesOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list edge router policies o k response a status code equal to that given
 func (o *ListEdgeRouterPoliciesOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the list edge router policies o k response
 func (o *ListEdgeRouterPoliciesOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ListEdgeRouterPoliciesOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-policies][%d] listEdgeRouterPoliciesOK %s", 200, payload)
 }
 
 func (o *ListEdgeRouterPoliciesOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-policies][%d] listEdgeRouterPoliciesOK %s", 200, payload)
 }
 
 func (o *ListEdgeRouterPoliciesOK) GetPayload() *rest_model.ListEdgeRouterPoliciesEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListEdgeRouterPoliciesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListEdgeRouterPoliciesEnvelope)
 
@@ -155,6 +168,7 @@ func (o *ListEdgeRouterPoliciesOK) readResponse(response runtime.ClientResponse,
 
 // NewListEdgeRouterPoliciesBadRequest creates a ListEdgeRouterPoliciesBadRequest with default headers values
 func NewListEdgeRouterPoliciesBadRequest() *ListEdgeRouterPoliciesBadRequest {
+    logtrace.LogWithFunctionName()
 	return &ListEdgeRouterPoliciesBadRequest{}
 }
 
@@ -169,49 +183,59 @@ type ListEdgeRouterPoliciesBadRequest struct {
 
 // IsSuccess returns true when this list edge router policies bad request response has a 2xx status code
 func (o *ListEdgeRouterPoliciesBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list edge router policies bad request response has a 3xx status code
 func (o *ListEdgeRouterPoliciesBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list edge router policies bad request response has a 4xx status code
 func (o *ListEdgeRouterPoliciesBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list edge router policies bad request response has a 5xx status code
 func (o *ListEdgeRouterPoliciesBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list edge router policies bad request response a status code equal to that given
 func (o *ListEdgeRouterPoliciesBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the list edge router policies bad request response
 func (o *ListEdgeRouterPoliciesBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *ListEdgeRouterPoliciesBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-policies][%d] listEdgeRouterPoliciesBadRequest %s", 400, payload)
 }
 
 func (o *ListEdgeRouterPoliciesBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-policies][%d] listEdgeRouterPoliciesBadRequest %s", 400, payload)
 }
 
 func (o *ListEdgeRouterPoliciesBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListEdgeRouterPoliciesBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *ListEdgeRouterPoliciesBadRequest) readResponse(response runtime.ClientR
 
 // NewListEdgeRouterPoliciesUnauthorized creates a ListEdgeRouterPoliciesUnauthorized with default headers values
 func NewListEdgeRouterPoliciesUnauthorized() *ListEdgeRouterPoliciesUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &ListEdgeRouterPoliciesUnauthorized{}
 }
 
@@ -239,49 +264,59 @@ type ListEdgeRouterPoliciesUnauthorized struct {
 
 // IsSuccess returns true when this list edge router policies unauthorized response has a 2xx status code
 func (o *ListEdgeRouterPoliciesUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list edge router policies unauthorized response has a 3xx status code
 func (o *ListEdgeRouterPoliciesUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list edge router policies unauthorized response has a 4xx status code
 func (o *ListEdgeRouterPoliciesUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list edge router policies unauthorized response has a 5xx status code
 func (o *ListEdgeRouterPoliciesUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list edge router policies unauthorized response a status code equal to that given
 func (o *ListEdgeRouterPoliciesUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the list edge router policies unauthorized response
 func (o *ListEdgeRouterPoliciesUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *ListEdgeRouterPoliciesUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-policies][%d] listEdgeRouterPoliciesUnauthorized %s", 401, payload)
 }
 
 func (o *ListEdgeRouterPoliciesUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-policies][%d] listEdgeRouterPoliciesUnauthorized %s", 401, payload)
 }
 
 func (o *ListEdgeRouterPoliciesUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListEdgeRouterPoliciesUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *ListEdgeRouterPoliciesUnauthorized) readResponse(response runtime.Clien
 
 // NewListEdgeRouterPoliciesTooManyRequests creates a ListEdgeRouterPoliciesTooManyRequests with default headers values
 func NewListEdgeRouterPoliciesTooManyRequests() *ListEdgeRouterPoliciesTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &ListEdgeRouterPoliciesTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type ListEdgeRouterPoliciesTooManyRequests struct {
 
 // IsSuccess returns true when this list edge router policies too many requests response has a 2xx status code
 func (o *ListEdgeRouterPoliciesTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list edge router policies too many requests response has a 3xx status code
 func (o *ListEdgeRouterPoliciesTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list edge router policies too many requests response has a 4xx status code
 func (o *ListEdgeRouterPoliciesTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list edge router policies too many requests response has a 5xx status code
 func (o *ListEdgeRouterPoliciesTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list edge router policies too many requests response a status code equal to that given
 func (o *ListEdgeRouterPoliciesTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the list edge router policies too many requests response
 func (o *ListEdgeRouterPoliciesTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *ListEdgeRouterPoliciesTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-policies][%d] listEdgeRouterPoliciesTooManyRequests %s", 429, payload)
 }
 
 func (o *ListEdgeRouterPoliciesTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-policies][%d] listEdgeRouterPoliciesTooManyRequests %s", 429, payload)
 }
 
 func (o *ListEdgeRouterPoliciesTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListEdgeRouterPoliciesTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *ListEdgeRouterPoliciesTooManyRequests) readResponse(response runtime.Cl
 
 // NewListEdgeRouterPoliciesServiceUnavailable creates a ListEdgeRouterPoliciesServiceUnavailable with default headers values
 func NewListEdgeRouterPoliciesServiceUnavailable() *ListEdgeRouterPoliciesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &ListEdgeRouterPoliciesServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type ListEdgeRouterPoliciesServiceUnavailable struct {
 
 // IsSuccess returns true when this list edge router policies service unavailable response has a 2xx status code
 func (o *ListEdgeRouterPoliciesServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list edge router policies service unavailable response has a 3xx status code
 func (o *ListEdgeRouterPoliciesServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list edge router policies service unavailable response has a 4xx status code
 func (o *ListEdgeRouterPoliciesServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list edge router policies service unavailable response has a 5xx status code
 func (o *ListEdgeRouterPoliciesServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this list edge router policies service unavailable response a status code equal to that given
 func (o *ListEdgeRouterPoliciesServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the list edge router policies service unavailable response
 func (o *ListEdgeRouterPoliciesServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *ListEdgeRouterPoliciesServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-policies][%d] listEdgeRouterPoliciesServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListEdgeRouterPoliciesServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-policies][%d] listEdgeRouterPoliciesServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListEdgeRouterPoliciesServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListEdgeRouterPoliciesServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

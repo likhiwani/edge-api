@@ -30,6 +30,7 @@ package auth_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DeleteAuthPolicyOK struct {
 
 // NewDeleteAuthPolicyOK creates DeleteAuthPolicyOK with default headers values
 func NewDeleteAuthPolicyOK() *DeleteAuthPolicyOK {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteAuthPolicyOK{}
 }
 
 // WithPayload adds the payload to the delete auth policy o k response
 func (o *DeleteAuthPolicyOK) WithPayload(payload *rest_model.Empty) *DeleteAuthPolicyOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete auth policy o k response
 func (o *DeleteAuthPolicyOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteAuthPolicyOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DeleteAuthPolicyBadRequest struct {
 
 // NewDeleteAuthPolicyBadRequest creates DeleteAuthPolicyBadRequest with default headers values
 func NewDeleteAuthPolicyBadRequest() *DeleteAuthPolicyBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteAuthPolicyBadRequest{}
 }
 
 // WithPayload adds the payload to the delete auth policy bad request response
 func (o *DeleteAuthPolicyBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteAuthPolicyBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete auth policy bad request response
 func (o *DeleteAuthPolicyBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteAuthPolicyBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DeleteAuthPolicyUnauthorized struct {
 
 // NewDeleteAuthPolicyUnauthorized creates DeleteAuthPolicyUnauthorized with default headers values
 func NewDeleteAuthPolicyUnauthorized() *DeleteAuthPolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteAuthPolicyUnauthorized{}
 }
 
 // WithPayload adds the payload to the delete auth policy unauthorized response
 func (o *DeleteAuthPolicyUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteAuthPolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete auth policy unauthorized response
 func (o *DeleteAuthPolicyUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteAuthPolicyUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DeleteAuthPolicyNotFound struct {
 
 // NewDeleteAuthPolicyNotFound creates DeleteAuthPolicyNotFound with default headers values
 func NewDeleteAuthPolicyNotFound() *DeleteAuthPolicyNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteAuthPolicyNotFound{}
 }
 
 // WithPayload adds the payload to the delete auth policy not found response
 func (o *DeleteAuthPolicyNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteAuthPolicyNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete auth policy not found response
 func (o *DeleteAuthPolicyNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteAuthPolicyNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DeleteAuthPolicyTooManyRequests struct {
 
 // NewDeleteAuthPolicyTooManyRequests creates DeleteAuthPolicyTooManyRequests with default headers values
 func NewDeleteAuthPolicyTooManyRequests() *DeleteAuthPolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteAuthPolicyTooManyRequests{}
 }
 
 // WithPayload adds the payload to the delete auth policy too many requests response
 func (o *DeleteAuthPolicyTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteAuthPolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete auth policy too many requests response
 func (o *DeleteAuthPolicyTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteAuthPolicyTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type DeleteAuthPolicyServiceUnavailable struct {
 
 // NewDeleteAuthPolicyServiceUnavailable creates DeleteAuthPolicyServiceUnavailable with default headers values
 func NewDeleteAuthPolicyServiceUnavailable() *DeleteAuthPolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteAuthPolicyServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the delete auth policy service unavailable response
 func (o *DeleteAuthPolicyServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteAuthPolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete auth policy service unavailable response
 func (o *DeleteAuthPolicyServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteAuthPolicyServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

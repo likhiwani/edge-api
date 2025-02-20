@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type GetCurrentIdentityEdgeRoutersHandlerFunc func(GetCurrentIdentityEdgeRouters
 
 // Handle executing the request and returning a response
 func (fn GetCurrentIdentityEdgeRoutersHandlerFunc) Handle(params GetCurrentIdentityEdgeRoutersParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type GetCurrentIdentityEdgeRoutersHandler interface {
 
 // NewGetCurrentIdentityEdgeRouters creates a new http.Handler for the get current identity edge routers operation
 func NewGetCurrentIdentityEdgeRouters(ctx *middleware.Context, handler GetCurrentIdentityEdgeRoutersHandler) *GetCurrentIdentityEdgeRouters {
+    logtrace.LogWithFunctionName()
 	return &GetCurrentIdentityEdgeRouters{Context: ctx, Handler: handler}
 }
 
@@ -67,6 +70,7 @@ type GetCurrentIdentityEdgeRouters struct {
 }
 
 func (o *GetCurrentIdentityEdgeRouters) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

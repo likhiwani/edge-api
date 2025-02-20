@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDetailSpecParams() *DetailSpecParams {
+    logtrace.LogWithFunctionName()
 	return &DetailSpecParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDetailSpecParams() *DetailSpecParams {
 // NewDetailSpecParamsWithTimeout creates a new DetailSpecParams object
 // with the ability to set a timeout on a request.
 func NewDetailSpecParamsWithTimeout(timeout time.Duration) *DetailSpecParams {
+    logtrace.LogWithFunctionName()
 	return &DetailSpecParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDetailSpecParamsWithTimeout(timeout time.Duration) *DetailSpecParams {
 // NewDetailSpecParamsWithContext creates a new DetailSpecParams object
 // with the ability to set a context for a request.
 func NewDetailSpecParamsWithContext(ctx context.Context) *DetailSpecParams {
+    logtrace.LogWithFunctionName()
 	return &DetailSpecParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDetailSpecParamsWithContext(ctx context.Context) *DetailSpecParams {
 // NewDetailSpecParamsWithHTTPClient creates a new DetailSpecParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDetailSpecParamsWithHTTPClient(client *http.Client) *DetailSpecParams {
+    logtrace.LogWithFunctionName()
 	return &DetailSpecParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DetailSpecParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailSpecParams) WithDefaults() *DetailSpecParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DetailSpecParams) WithDefaults() *DetailSpecParams {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailSpecParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the detail spec params
 func (o *DetailSpecParams) WithTimeout(timeout time.Duration) *DetailSpecParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the detail spec params
 func (o *DetailSpecParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the detail spec params
 func (o *DetailSpecParams) WithContext(ctx context.Context) *DetailSpecParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the detail spec params
 func (o *DetailSpecParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the detail spec params
 func (o *DetailSpecParams) WithHTTPClient(client *http.Client) *DetailSpecParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the detail spec params
 func (o *DetailSpecParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the detail spec params
 func (o *DetailSpecParams) WithID(id string) *DetailSpecParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the detail spec params
 func (o *DetailSpecParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DetailSpecParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

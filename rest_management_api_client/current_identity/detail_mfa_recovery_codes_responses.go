@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DetailMfaRecoveryCodesReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DetailMfaRecoveryCodesReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDetailMfaRecoveryCodesOK()
@@ -73,6 +75,7 @@ func (o *DetailMfaRecoveryCodesReader) ReadResponse(response runtime.ClientRespo
 
 // NewDetailMfaRecoveryCodesOK creates a DetailMfaRecoveryCodesOK with default headers values
 func NewDetailMfaRecoveryCodesOK() *DetailMfaRecoveryCodesOK {
+    logtrace.LogWithFunctionName()
 	return &DetailMfaRecoveryCodesOK{}
 }
 
@@ -87,49 +90,59 @@ type DetailMfaRecoveryCodesOK struct {
 
 // IsSuccess returns true when this detail mfa recovery codes o k response has a 2xx status code
 func (o *DetailMfaRecoveryCodesOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this detail mfa recovery codes o k response has a 3xx status code
 func (o *DetailMfaRecoveryCodesOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail mfa recovery codes o k response has a 4xx status code
 func (o *DetailMfaRecoveryCodesOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail mfa recovery codes o k response has a 5xx status code
 func (o *DetailMfaRecoveryCodesOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail mfa recovery codes o k response a status code equal to that given
 func (o *DetailMfaRecoveryCodesOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the detail mfa recovery codes o k response
 func (o *DetailMfaRecoveryCodesOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DetailMfaRecoveryCodesOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-identity/mfa/recovery-codes][%d] detailMfaRecoveryCodesOK %s", 200, payload)
 }
 
 func (o *DetailMfaRecoveryCodesOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-identity/mfa/recovery-codes][%d] detailMfaRecoveryCodesOK %s", 200, payload)
 }
 
 func (o *DetailMfaRecoveryCodesOK) GetPayload() *rest_model.DetailMfaRecoveryCodesEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailMfaRecoveryCodesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.DetailMfaRecoveryCodesEnvelope)
 
@@ -143,6 +156,7 @@ func (o *DetailMfaRecoveryCodesOK) readResponse(response runtime.ClientResponse,
 
 // NewDetailMfaRecoveryCodesUnauthorized creates a DetailMfaRecoveryCodesUnauthorized with default headers values
 func NewDetailMfaRecoveryCodesUnauthorized() *DetailMfaRecoveryCodesUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DetailMfaRecoveryCodesUnauthorized{}
 }
 
@@ -157,49 +171,59 @@ type DetailMfaRecoveryCodesUnauthorized struct {
 
 // IsSuccess returns true when this detail mfa recovery codes unauthorized response has a 2xx status code
 func (o *DetailMfaRecoveryCodesUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail mfa recovery codes unauthorized response has a 3xx status code
 func (o *DetailMfaRecoveryCodesUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail mfa recovery codes unauthorized response has a 4xx status code
 func (o *DetailMfaRecoveryCodesUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail mfa recovery codes unauthorized response has a 5xx status code
 func (o *DetailMfaRecoveryCodesUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail mfa recovery codes unauthorized response a status code equal to that given
 func (o *DetailMfaRecoveryCodesUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the detail mfa recovery codes unauthorized response
 func (o *DetailMfaRecoveryCodesUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DetailMfaRecoveryCodesUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-identity/mfa/recovery-codes][%d] detailMfaRecoveryCodesUnauthorized %s", 401, payload)
 }
 
 func (o *DetailMfaRecoveryCodesUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-identity/mfa/recovery-codes][%d] detailMfaRecoveryCodesUnauthorized %s", 401, payload)
 }
 
 func (o *DetailMfaRecoveryCodesUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailMfaRecoveryCodesUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -213,6 +237,7 @@ func (o *DetailMfaRecoveryCodesUnauthorized) readResponse(response runtime.Clien
 
 // NewDetailMfaRecoveryCodesNotFound creates a DetailMfaRecoveryCodesNotFound with default headers values
 func NewDetailMfaRecoveryCodesNotFound() *DetailMfaRecoveryCodesNotFound {
+    logtrace.LogWithFunctionName()
 	return &DetailMfaRecoveryCodesNotFound{}
 }
 
@@ -227,49 +252,59 @@ type DetailMfaRecoveryCodesNotFound struct {
 
 // IsSuccess returns true when this detail mfa recovery codes not found response has a 2xx status code
 func (o *DetailMfaRecoveryCodesNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail mfa recovery codes not found response has a 3xx status code
 func (o *DetailMfaRecoveryCodesNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail mfa recovery codes not found response has a 4xx status code
 func (o *DetailMfaRecoveryCodesNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail mfa recovery codes not found response has a 5xx status code
 func (o *DetailMfaRecoveryCodesNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail mfa recovery codes not found response a status code equal to that given
 func (o *DetailMfaRecoveryCodesNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the detail mfa recovery codes not found response
 func (o *DetailMfaRecoveryCodesNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DetailMfaRecoveryCodesNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-identity/mfa/recovery-codes][%d] detailMfaRecoveryCodesNotFound %s", 404, payload)
 }
 
 func (o *DetailMfaRecoveryCodesNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-identity/mfa/recovery-codes][%d] detailMfaRecoveryCodesNotFound %s", 404, payload)
 }
 
 func (o *DetailMfaRecoveryCodesNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailMfaRecoveryCodesNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

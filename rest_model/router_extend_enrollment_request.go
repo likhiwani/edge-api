@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -54,6 +55,7 @@ type RouterExtendEnrollmentRequest struct {
 
 // Validate validates this router extend enrollment request
 func (m *RouterExtendEnrollmentRequest) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateCertCsr(formats); err != nil {
@@ -71,6 +73,7 @@ func (m *RouterExtendEnrollmentRequest) Validate(formats strfmt.Registry) error 
 }
 
 func (m *RouterExtendEnrollmentRequest) validateCertCsr(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("certCsr", "body", m.CertCsr); err != nil {
 		return err
@@ -80,6 +83,7 @@ func (m *RouterExtendEnrollmentRequest) validateCertCsr(formats strfmt.Registry)
 }
 
 func (m *RouterExtendEnrollmentRequest) validateServerCertCsr(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("serverCertCsr", "body", m.ServerCertCsr); err != nil {
 		return err
@@ -90,11 +94,13 @@ func (m *RouterExtendEnrollmentRequest) validateServerCertCsr(formats strfmt.Reg
 
 // ContextValidate validates this router extend enrollment request based on context it is used
 func (m *RouterExtendEnrollmentRequest) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *RouterExtendEnrollmentRequest) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -103,6 +109,7 @@ func (m *RouterExtendEnrollmentRequest) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *RouterExtendEnrollmentRequest) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res RouterExtendEnrollmentRequest
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

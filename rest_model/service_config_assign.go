@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -54,6 +55,7 @@ type ServiceConfigAssign struct {
 
 // Validate validates this service config assign
 func (m *ServiceConfigAssign) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateConfigID(formats); err != nil {
@@ -71,6 +73,7 @@ func (m *ServiceConfigAssign) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ServiceConfigAssign) validateConfigID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("configId", "body", m.ConfigID); err != nil {
 		return err
@@ -80,6 +83,7 @@ func (m *ServiceConfigAssign) validateConfigID(formats strfmt.Registry) error {
 }
 
 func (m *ServiceConfigAssign) validateServiceID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("serviceId", "body", m.ServiceID); err != nil {
 		return err
@@ -90,11 +94,13 @@ func (m *ServiceConfigAssign) validateServiceID(formats strfmt.Registry) error {
 
 // ContextValidate validates this service config assign based on context it is used
 func (m *ServiceConfigAssign) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *ServiceConfigAssign) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -103,6 +109,7 @@ func (m *ServiceConfigAssign) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ServiceConfigAssign) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ServiceConfigAssign
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -51,6 +52,7 @@ type IdentityAuthenticators struct {
 
 // Validate validates this identity authenticators
 func (m *IdentityAuthenticators) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateCert(formats); err != nil {
@@ -68,6 +70,7 @@ func (m *IdentityAuthenticators) Validate(formats strfmt.Registry) error {
 }
 
 func (m *IdentityAuthenticators) validateCert(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Cert) { // not required
 		return nil
 	}
@@ -87,6 +90,7 @@ func (m *IdentityAuthenticators) validateCert(formats strfmt.Registry) error {
 }
 
 func (m *IdentityAuthenticators) validateUpdb(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Updb) { // not required
 		return nil
 	}
@@ -107,6 +111,7 @@ func (m *IdentityAuthenticators) validateUpdb(formats strfmt.Registry) error {
 
 // ContextValidate validate this identity authenticators based on the context it is used
 func (m *IdentityAuthenticators) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateCert(ctx, formats); err != nil {
@@ -124,6 +129,7 @@ func (m *IdentityAuthenticators) ContextValidate(ctx context.Context, formats st
 }
 
 func (m *IdentityAuthenticators) contextValidateCert(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Cert != nil {
 
@@ -145,6 +151,7 @@ func (m *IdentityAuthenticators) contextValidateCert(ctx context.Context, format
 }
 
 func (m *IdentityAuthenticators) contextValidateUpdb(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Updb != nil {
 
@@ -167,6 +174,7 @@ func (m *IdentityAuthenticators) contextValidateUpdb(ctx context.Context, format
 
 // MarshalBinary interface implementation
 func (m *IdentityAuthenticators) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -175,6 +183,7 @@ func (m *IdentityAuthenticators) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *IdentityAuthenticators) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res IdentityAuthenticators
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
@@ -197,16 +206,19 @@ type IdentityAuthenticatorsCert struct {
 
 // Validate validates this identity authenticators cert
 func (m *IdentityAuthenticatorsCert) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // ContextValidate validates this identity authenticators cert based on context it is used
 func (m *IdentityAuthenticatorsCert) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *IdentityAuthenticatorsCert) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -215,6 +227,7 @@ func (m *IdentityAuthenticatorsCert) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *IdentityAuthenticatorsCert) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res IdentityAuthenticatorsCert
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
@@ -237,16 +250,19 @@ type IdentityAuthenticatorsUpdb struct {
 
 // Validate validates this identity authenticators updb
 func (m *IdentityAuthenticatorsUpdb) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // ContextValidate validates this identity authenticators updb based on context it is used
 func (m *IdentityAuthenticatorsUpdb) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *IdentityAuthenticatorsUpdb) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -255,6 +271,7 @@ func (m *IdentityAuthenticatorsUpdb) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *IdentityAuthenticatorsUpdb) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res IdentityAuthenticatorsUpdb
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

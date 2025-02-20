@@ -30,6 +30,7 @@ package controllers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ListControllersReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ListControllersReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewListControllersOK()
@@ -79,6 +81,7 @@ func (o *ListControllersReader) ReadResponse(response runtime.ClientResponse, co
 
 // NewListControllersOK creates a ListControllersOK with default headers values
 func NewListControllersOK() *ListControllersOK {
+    logtrace.LogWithFunctionName()
 	return &ListControllersOK{}
 }
 
@@ -93,49 +96,59 @@ type ListControllersOK struct {
 
 // IsSuccess returns true when this list controllers o k response has a 2xx status code
 func (o *ListControllersOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this list controllers o k response has a 3xx status code
 func (o *ListControllersOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list controllers o k response has a 4xx status code
 func (o *ListControllersOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list controllers o k response has a 5xx status code
 func (o *ListControllersOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list controllers o k response a status code equal to that given
 func (o *ListControllersOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the list controllers o k response
 func (o *ListControllersOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ListControllersOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /controllers][%d] listControllersOK %s", 200, payload)
 }
 
 func (o *ListControllersOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /controllers][%d] listControllersOK %s", 200, payload)
 }
 
 func (o *ListControllersOK) GetPayload() *rest_model.ListControllersEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListControllersOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListControllersEnvelope)
 
@@ -149,6 +162,7 @@ func (o *ListControllersOK) readResponse(response runtime.ClientResponse, consum
 
 // NewListControllersBadRequest creates a ListControllersBadRequest with default headers values
 func NewListControllersBadRequest() *ListControllersBadRequest {
+    logtrace.LogWithFunctionName()
 	return &ListControllersBadRequest{}
 }
 
@@ -163,49 +177,59 @@ type ListControllersBadRequest struct {
 
 // IsSuccess returns true when this list controllers bad request response has a 2xx status code
 func (o *ListControllersBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list controllers bad request response has a 3xx status code
 func (o *ListControllersBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list controllers bad request response has a 4xx status code
 func (o *ListControllersBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list controllers bad request response has a 5xx status code
 func (o *ListControllersBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list controllers bad request response a status code equal to that given
 func (o *ListControllersBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the list controllers bad request response
 func (o *ListControllersBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *ListControllersBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /controllers][%d] listControllersBadRequest %s", 400, payload)
 }
 
 func (o *ListControllersBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /controllers][%d] listControllersBadRequest %s", 400, payload)
 }
 
 func (o *ListControllersBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListControllersBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -219,6 +243,7 @@ func (o *ListControllersBadRequest) readResponse(response runtime.ClientResponse
 
 // NewListControllersUnauthorized creates a ListControllersUnauthorized with default headers values
 func NewListControllersUnauthorized() *ListControllersUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &ListControllersUnauthorized{}
 }
 
@@ -233,49 +258,59 @@ type ListControllersUnauthorized struct {
 
 // IsSuccess returns true when this list controllers unauthorized response has a 2xx status code
 func (o *ListControllersUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list controllers unauthorized response has a 3xx status code
 func (o *ListControllersUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list controllers unauthorized response has a 4xx status code
 func (o *ListControllersUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list controllers unauthorized response has a 5xx status code
 func (o *ListControllersUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list controllers unauthorized response a status code equal to that given
 func (o *ListControllersUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the list controllers unauthorized response
 func (o *ListControllersUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *ListControllersUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /controllers][%d] listControllersUnauthorized %s", 401, payload)
 }
 
 func (o *ListControllersUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /controllers][%d] listControllersUnauthorized %s", 401, payload)
 }
 
 func (o *ListControllersUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListControllersUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -289,6 +324,7 @@ func (o *ListControllersUnauthorized) readResponse(response runtime.ClientRespon
 
 // NewListControllersTooManyRequests creates a ListControllersTooManyRequests with default headers values
 func NewListControllersTooManyRequests() *ListControllersTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &ListControllersTooManyRequests{}
 }
 
@@ -303,49 +339,59 @@ type ListControllersTooManyRequests struct {
 
 // IsSuccess returns true when this list controllers too many requests response has a 2xx status code
 func (o *ListControllersTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list controllers too many requests response has a 3xx status code
 func (o *ListControllersTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list controllers too many requests response has a 4xx status code
 func (o *ListControllersTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list controllers too many requests response has a 5xx status code
 func (o *ListControllersTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list controllers too many requests response a status code equal to that given
 func (o *ListControllersTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the list controllers too many requests response
 func (o *ListControllersTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *ListControllersTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /controllers][%d] listControllersTooManyRequests %s", 429, payload)
 }
 
 func (o *ListControllersTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /controllers][%d] listControllersTooManyRequests %s", 429, payload)
 }
 
 func (o *ListControllersTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListControllersTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

@@ -30,6 +30,7 @@ package authentication
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type AuthenticateReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *AuthenticateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewAuthenticateOK()
@@ -79,6 +81,7 @@ func (o *AuthenticateReader) ReadResponse(response runtime.ClientResponse, consu
 
 // NewAuthenticateOK creates a AuthenticateOK with default headers values
 func NewAuthenticateOK() *AuthenticateOK {
+    logtrace.LogWithFunctionName()
 	return &AuthenticateOK{}
 }
 
@@ -93,49 +96,59 @@ type AuthenticateOK struct {
 
 // IsSuccess returns true when this authenticate o k response has a 2xx status code
 func (o *AuthenticateOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this authenticate o k response has a 3xx status code
 func (o *AuthenticateOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this authenticate o k response has a 4xx status code
 func (o *AuthenticateOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this authenticate o k response has a 5xx status code
 func (o *AuthenticateOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this authenticate o k response a status code equal to that given
 func (o *AuthenticateOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the authenticate o k response
 func (o *AuthenticateOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *AuthenticateOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /authenticate][%d] authenticateOK %s", 200, payload)
 }
 
 func (o *AuthenticateOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /authenticate][%d] authenticateOK %s", 200, payload)
 }
 
 func (o *AuthenticateOK) GetPayload() *rest_model.CurrentAPISessionDetailEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *AuthenticateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.CurrentAPISessionDetailEnvelope)
 
@@ -149,6 +162,7 @@ func (o *AuthenticateOK) readResponse(response runtime.ClientResponse, consumer 
 
 // NewAuthenticateBadRequest creates a AuthenticateBadRequest with default headers values
 func NewAuthenticateBadRequest() *AuthenticateBadRequest {
+    logtrace.LogWithFunctionName()
 	return &AuthenticateBadRequest{}
 }
 
@@ -163,49 +177,59 @@ type AuthenticateBadRequest struct {
 
 // IsSuccess returns true when this authenticate bad request response has a 2xx status code
 func (o *AuthenticateBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this authenticate bad request response has a 3xx status code
 func (o *AuthenticateBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this authenticate bad request response has a 4xx status code
 func (o *AuthenticateBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this authenticate bad request response has a 5xx status code
 func (o *AuthenticateBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this authenticate bad request response a status code equal to that given
 func (o *AuthenticateBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the authenticate bad request response
 func (o *AuthenticateBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *AuthenticateBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /authenticate][%d] authenticateBadRequest %s", 400, payload)
 }
 
 func (o *AuthenticateBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /authenticate][%d] authenticateBadRequest %s", 400, payload)
 }
 
 func (o *AuthenticateBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *AuthenticateBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -219,6 +243,7 @@ func (o *AuthenticateBadRequest) readResponse(response runtime.ClientResponse, c
 
 // NewAuthenticateUnauthorized creates a AuthenticateUnauthorized with default headers values
 func NewAuthenticateUnauthorized() *AuthenticateUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &AuthenticateUnauthorized{}
 }
 
@@ -233,49 +258,59 @@ type AuthenticateUnauthorized struct {
 
 // IsSuccess returns true when this authenticate unauthorized response has a 2xx status code
 func (o *AuthenticateUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this authenticate unauthorized response has a 3xx status code
 func (o *AuthenticateUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this authenticate unauthorized response has a 4xx status code
 func (o *AuthenticateUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this authenticate unauthorized response has a 5xx status code
 func (o *AuthenticateUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this authenticate unauthorized response a status code equal to that given
 func (o *AuthenticateUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the authenticate unauthorized response
 func (o *AuthenticateUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *AuthenticateUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /authenticate][%d] authenticateUnauthorized %s", 401, payload)
 }
 
 func (o *AuthenticateUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /authenticate][%d] authenticateUnauthorized %s", 401, payload)
 }
 
 func (o *AuthenticateUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *AuthenticateUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -289,6 +324,7 @@ func (o *AuthenticateUnauthorized) readResponse(response runtime.ClientResponse,
 
 // NewAuthenticateTooManyRequests creates a AuthenticateTooManyRequests with default headers values
 func NewAuthenticateTooManyRequests() *AuthenticateTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &AuthenticateTooManyRequests{}
 }
 
@@ -303,49 +339,59 @@ type AuthenticateTooManyRequests struct {
 
 // IsSuccess returns true when this authenticate too many requests response has a 2xx status code
 func (o *AuthenticateTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this authenticate too many requests response has a 3xx status code
 func (o *AuthenticateTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this authenticate too many requests response has a 4xx status code
 func (o *AuthenticateTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this authenticate too many requests response has a 5xx status code
 func (o *AuthenticateTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this authenticate too many requests response a status code equal to that given
 func (o *AuthenticateTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the authenticate too many requests response
 func (o *AuthenticateTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *AuthenticateTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /authenticate][%d] authenticateTooManyRequests %s", 429, payload)
 }
 
 func (o *AuthenticateTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /authenticate][%d] authenticateTooManyRequests %s", 429, payload)
 }
 
 func (o *AuthenticateTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *AuthenticateTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

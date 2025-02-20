@@ -30,6 +30,7 @@ package service
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -48,6 +49,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListServiceEdgeRoutersParams() *ListServiceEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	return &ListServiceEdgeRoutersParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -56,6 +58,7 @@ func NewListServiceEdgeRoutersParams() *ListServiceEdgeRoutersParams {
 // NewListServiceEdgeRoutersParamsWithTimeout creates a new ListServiceEdgeRoutersParams object
 // with the ability to set a timeout on a request.
 func NewListServiceEdgeRoutersParamsWithTimeout(timeout time.Duration) *ListServiceEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	return &ListServiceEdgeRoutersParams{
 		timeout: timeout,
 	}
@@ -64,6 +67,7 @@ func NewListServiceEdgeRoutersParamsWithTimeout(timeout time.Duration) *ListServ
 // NewListServiceEdgeRoutersParamsWithContext creates a new ListServiceEdgeRoutersParams object
 // with the ability to set a context for a request.
 func NewListServiceEdgeRoutersParamsWithContext(ctx context.Context) *ListServiceEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	return &ListServiceEdgeRoutersParams{
 		Context: ctx,
 	}
@@ -72,6 +76,7 @@ func NewListServiceEdgeRoutersParamsWithContext(ctx context.Context) *ListServic
 // NewListServiceEdgeRoutersParamsWithHTTPClient creates a new ListServiceEdgeRoutersParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListServiceEdgeRoutersParamsWithHTTPClient(client *http.Client) *ListServiceEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	return &ListServiceEdgeRoutersParams{
 		HTTPClient: client,
 	}
@@ -110,6 +115,7 @@ type ListServiceEdgeRoutersParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListServiceEdgeRoutersParams) WithDefaults() *ListServiceEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -118,88 +124,104 @@ func (o *ListServiceEdgeRoutersParams) WithDefaults() *ListServiceEdgeRoutersPar
 //
 // All values with no default are reset to their zero value.
 func (o *ListServiceEdgeRoutersParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list service edge routers params
 func (o *ListServiceEdgeRoutersParams) WithTimeout(timeout time.Duration) *ListServiceEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list service edge routers params
 func (o *ListServiceEdgeRoutersParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list service edge routers params
 func (o *ListServiceEdgeRoutersParams) WithContext(ctx context.Context) *ListServiceEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list service edge routers params
 func (o *ListServiceEdgeRoutersParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list service edge routers params
 func (o *ListServiceEdgeRoutersParams) WithHTTPClient(client *http.Client) *ListServiceEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list service edge routers params
 func (o *ListServiceEdgeRoutersParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithFilter adds the filter to the list service edge routers params
 func (o *ListServiceEdgeRoutersParams) WithFilter(filter *string) *ListServiceEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetFilter(filter)
 	return o
 }
 
 // SetFilter adds the filter to the list service edge routers params
 func (o *ListServiceEdgeRoutersParams) SetFilter(filter *string) {
+    logtrace.LogWithFunctionName()
 	o.Filter = filter
 }
 
 // WithID adds the id to the list service edge routers params
 func (o *ListServiceEdgeRoutersParams) WithID(id string) *ListServiceEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the list service edge routers params
 func (o *ListServiceEdgeRoutersParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WithLimit adds the limit to the list service edge routers params
 func (o *ListServiceEdgeRoutersParams) WithLimit(limit *int64) *ListServiceEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetLimit(limit)
 	return o
 }
 
 // SetLimit adds the limit to the list service edge routers params
 func (o *ListServiceEdgeRoutersParams) SetLimit(limit *int64) {
+    logtrace.LogWithFunctionName()
 	o.Limit = limit
 }
 
 // WithOffset adds the offset to the list service edge routers params
 func (o *ListServiceEdgeRoutersParams) WithOffset(offset *int64) *ListServiceEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetOffset(offset)
 	return o
 }
 
 // SetOffset adds the offset to the list service edge routers params
 func (o *ListServiceEdgeRoutersParams) SetOffset(offset *int64) {
+    logtrace.LogWithFunctionName()
 	o.Offset = offset
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListServiceEdgeRoutersParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

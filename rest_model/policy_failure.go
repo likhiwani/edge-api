@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"bytes"
 	"context"
 	"encoding/json"
@@ -57,16 +58,19 @@ type PolicyFailure struct {
 
 // Checks gets the checks of this base type
 func (m *PolicyFailure) Checks() []PostureCheckFailure {
+    logtrace.LogWithFunctionName()
 	return m.checksField
 }
 
 // SetChecks sets the checks of this base type
 func (m *PolicyFailure) SetChecks(val []PostureCheckFailure) {
+    logtrace.LogWithFunctionName()
 	m.checksField = val
 }
 
 // UnmarshalJSON unmarshals this object with a polymorphic type from a JSON structure
 func (m *PolicyFailure) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	var data struct {
 		Checks json.RawMessage `json:"checks"`
 
@@ -109,6 +113,7 @@ func (m *PolicyFailure) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object with a polymorphic type to a JSON structure
 func (m PolicyFailure) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	var b1, b2, b3 []byte
 	var err error
 	b1, err = json.Marshal(struct {
@@ -139,6 +144,7 @@ func (m PolicyFailure) MarshalJSON() ([]byte, error) {
 
 // Validate validates this policy failure
 func (m *PolicyFailure) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateChecks(formats); err != nil {
@@ -152,6 +158,7 @@ func (m *PolicyFailure) Validate(formats strfmt.Registry) error {
 }
 
 func (m *PolicyFailure) validateChecks(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Checks()) { // not required
 		return nil
 	}
@@ -174,6 +181,7 @@ func (m *PolicyFailure) validateChecks(formats strfmt.Registry) error {
 
 // ContextValidate validate this policy failure based on the context it is used
 func (m *PolicyFailure) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateChecks(ctx, formats); err != nil {
@@ -187,6 +195,7 @@ func (m *PolicyFailure) ContextValidate(ctx context.Context, formats strfmt.Regi
 }
 
 func (m *PolicyFailure) contextValidateChecks(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	for i := 0; i < len(m.Checks()); i++ {
 
@@ -210,6 +219,7 @@ func (m *PolicyFailure) contextValidateChecks(ctx context.Context, formats strfm
 
 // MarshalBinary interface implementation
 func (m *PolicyFailure) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -218,6 +228,7 @@ func (m *PolicyFailure) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PolicyFailure) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PolicyFailure
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

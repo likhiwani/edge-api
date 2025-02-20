@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type VerifyCaReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *VerifyCaReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewVerifyCaOK()
@@ -91,6 +93,7 @@ func (o *VerifyCaReader) ReadResponse(response runtime.ClientResponse, consumer 
 
 // NewVerifyCaOK creates a VerifyCaOK with default headers values
 func NewVerifyCaOK() *VerifyCaOK {
+    logtrace.LogWithFunctionName()
 	return &VerifyCaOK{}
 }
 
@@ -105,49 +108,59 @@ type VerifyCaOK struct {
 
 // IsSuccess returns true when this verify ca o k response has a 2xx status code
 func (o *VerifyCaOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this verify ca o k response has a 3xx status code
 func (o *VerifyCaOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this verify ca o k response has a 4xx status code
 func (o *VerifyCaOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this verify ca o k response has a 5xx status code
 func (o *VerifyCaOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this verify ca o k response a status code equal to that given
 func (o *VerifyCaOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the verify ca o k response
 func (o *VerifyCaOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *VerifyCaOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas/{id}/verify][%d] verifyCaOK %s", 200, payload)
 }
 
 func (o *VerifyCaOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas/{id}/verify][%d] verifyCaOK %s", 200, payload)
 }
 
 func (o *VerifyCaOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *VerifyCaOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -161,6 +174,7 @@ func (o *VerifyCaOK) readResponse(response runtime.ClientResponse, consumer runt
 
 // NewVerifyCaBadRequest creates a VerifyCaBadRequest with default headers values
 func NewVerifyCaBadRequest() *VerifyCaBadRequest {
+    logtrace.LogWithFunctionName()
 	return &VerifyCaBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type VerifyCaBadRequest struct {
 
 // IsSuccess returns true when this verify ca bad request response has a 2xx status code
 func (o *VerifyCaBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this verify ca bad request response has a 3xx status code
 func (o *VerifyCaBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this verify ca bad request response has a 4xx status code
 func (o *VerifyCaBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this verify ca bad request response has a 5xx status code
 func (o *VerifyCaBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this verify ca bad request response a status code equal to that given
 func (o *VerifyCaBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the verify ca bad request response
 func (o *VerifyCaBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *VerifyCaBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas/{id}/verify][%d] verifyCaBadRequest %s", 400, payload)
 }
 
 func (o *VerifyCaBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas/{id}/verify][%d] verifyCaBadRequest %s", 400, payload)
 }
 
 func (o *VerifyCaBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *VerifyCaBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *VerifyCaBadRequest) readResponse(response runtime.ClientResponse, consu
 
 // NewVerifyCaUnauthorized creates a VerifyCaUnauthorized with default headers values
 func NewVerifyCaUnauthorized() *VerifyCaUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &VerifyCaUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type VerifyCaUnauthorized struct {
 
 // IsSuccess returns true when this verify ca unauthorized response has a 2xx status code
 func (o *VerifyCaUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this verify ca unauthorized response has a 3xx status code
 func (o *VerifyCaUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this verify ca unauthorized response has a 4xx status code
 func (o *VerifyCaUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this verify ca unauthorized response has a 5xx status code
 func (o *VerifyCaUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this verify ca unauthorized response a status code equal to that given
 func (o *VerifyCaUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the verify ca unauthorized response
 func (o *VerifyCaUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *VerifyCaUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas/{id}/verify][%d] verifyCaUnauthorized %s", 401, payload)
 }
 
 func (o *VerifyCaUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas/{id}/verify][%d] verifyCaUnauthorized %s", 401, payload)
 }
 
 func (o *VerifyCaUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *VerifyCaUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *VerifyCaUnauthorized) readResponse(response runtime.ClientResponse, con
 
 // NewVerifyCaNotFound creates a VerifyCaNotFound with default headers values
 func NewVerifyCaNotFound() *VerifyCaNotFound {
+    logtrace.LogWithFunctionName()
 	return &VerifyCaNotFound{}
 }
 
@@ -315,49 +351,59 @@ type VerifyCaNotFound struct {
 
 // IsSuccess returns true when this verify ca not found response has a 2xx status code
 func (o *VerifyCaNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this verify ca not found response has a 3xx status code
 func (o *VerifyCaNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this verify ca not found response has a 4xx status code
 func (o *VerifyCaNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this verify ca not found response has a 5xx status code
 func (o *VerifyCaNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this verify ca not found response a status code equal to that given
 func (o *VerifyCaNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the verify ca not found response
 func (o *VerifyCaNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *VerifyCaNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas/{id}/verify][%d] verifyCaNotFound %s", 404, payload)
 }
 
 func (o *VerifyCaNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas/{id}/verify][%d] verifyCaNotFound %s", 404, payload)
 }
 
 func (o *VerifyCaNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *VerifyCaNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *VerifyCaNotFound) readResponse(response runtime.ClientResponse, consume
 
 // NewVerifyCaTooManyRequests creates a VerifyCaTooManyRequests with default headers values
 func NewVerifyCaTooManyRequests() *VerifyCaTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &VerifyCaTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type VerifyCaTooManyRequests struct {
 
 // IsSuccess returns true when this verify ca too many requests response has a 2xx status code
 func (o *VerifyCaTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this verify ca too many requests response has a 3xx status code
 func (o *VerifyCaTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this verify ca too many requests response has a 4xx status code
 func (o *VerifyCaTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this verify ca too many requests response has a 5xx status code
 func (o *VerifyCaTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this verify ca too many requests response a status code equal to that given
 func (o *VerifyCaTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the verify ca too many requests response
 func (o *VerifyCaTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *VerifyCaTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas/{id}/verify][%d] verifyCaTooManyRequests %s", 429, payload)
 }
 
 func (o *VerifyCaTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas/{id}/verify][%d] verifyCaTooManyRequests %s", 429, payload)
 }
 
 func (o *VerifyCaTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *VerifyCaTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *VerifyCaTooManyRequests) readResponse(response runtime.ClientResponse, 
 
 // NewVerifyCaServiceUnavailable creates a VerifyCaServiceUnavailable with default headers values
 func NewVerifyCaServiceUnavailable() *VerifyCaServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &VerifyCaServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type VerifyCaServiceUnavailable struct {
 
 // IsSuccess returns true when this verify ca service unavailable response has a 2xx status code
 func (o *VerifyCaServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this verify ca service unavailable response has a 3xx status code
 func (o *VerifyCaServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this verify ca service unavailable response has a 4xx status code
 func (o *VerifyCaServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this verify ca service unavailable response has a 5xx status code
 func (o *VerifyCaServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this verify ca service unavailable response a status code equal to that given
 func (o *VerifyCaServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the verify ca service unavailable response
 func (o *VerifyCaServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *VerifyCaServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas/{id}/verify][%d] verifyCaServiceUnavailable %s", 503, payload)
 }
 
 func (o *VerifyCaServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas/{id}/verify][%d] verifyCaServiceUnavailable %s", 503, payload)
 }
 
 func (o *VerifyCaServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *VerifyCaServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

@@ -30,6 +30,7 @@ package api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDeleteAPISessionsParams() *DeleteAPISessionsParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteAPISessionsParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDeleteAPISessionsParams() *DeleteAPISessionsParams {
 // NewDeleteAPISessionsParamsWithTimeout creates a new DeleteAPISessionsParams object
 // with the ability to set a timeout on a request.
 func NewDeleteAPISessionsParamsWithTimeout(timeout time.Duration) *DeleteAPISessionsParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteAPISessionsParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDeleteAPISessionsParamsWithTimeout(timeout time.Duration) *DeleteAPISess
 // NewDeleteAPISessionsParamsWithContext creates a new DeleteAPISessionsParams object
 // with the ability to set a context for a request.
 func NewDeleteAPISessionsParamsWithContext(ctx context.Context) *DeleteAPISessionsParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteAPISessionsParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDeleteAPISessionsParamsWithContext(ctx context.Context) *DeleteAPISessio
 // NewDeleteAPISessionsParamsWithHTTPClient creates a new DeleteAPISessionsParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDeleteAPISessionsParamsWithHTTPClient(client *http.Client) *DeleteAPISessionsParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteAPISessionsParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DeleteAPISessionsParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteAPISessionsParams) WithDefaults() *DeleteAPISessionsParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DeleteAPISessionsParams) WithDefaults() *DeleteAPISessionsParams {
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteAPISessionsParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the delete API sessions params
 func (o *DeleteAPISessionsParams) WithTimeout(timeout time.Duration) *DeleteAPISessionsParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the delete API sessions params
 func (o *DeleteAPISessionsParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the delete API sessions params
 func (o *DeleteAPISessionsParams) WithContext(ctx context.Context) *DeleteAPISessionsParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the delete API sessions params
 func (o *DeleteAPISessionsParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the delete API sessions params
 func (o *DeleteAPISessionsParams) WithHTTPClient(client *http.Client) *DeleteAPISessionsParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the delete API sessions params
 func (o *DeleteAPISessionsParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the delete API sessions params
 func (o *DeleteAPISessionsParams) WithID(id string) *DeleteAPISessionsParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the delete API sessions params
 func (o *DeleteAPISessionsParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DeleteAPISessionsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

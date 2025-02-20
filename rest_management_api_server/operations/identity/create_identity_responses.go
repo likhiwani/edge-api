@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type CreateIdentityCreated struct {
 
 // NewCreateIdentityCreated creates CreateIdentityCreated with default headers values
 func NewCreateIdentityCreated() *CreateIdentityCreated {
+    logtrace.LogWithFunctionName()
 
 	return &CreateIdentityCreated{}
 }
 
 // WithPayload adds the payload to the create identity created response
 func (o *CreateIdentityCreated) WithPayload(payload *rest_model.CreateEnvelope) *CreateIdentityCreated {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create identity created response
 func (o *CreateIdentityCreated) SetPayload(payload *rest_model.CreateEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateIdentityCreated) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(201)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type CreateIdentityBadRequest struct {
 
 // NewCreateIdentityBadRequest creates CreateIdentityBadRequest with default headers values
 func NewCreateIdentityBadRequest() *CreateIdentityBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &CreateIdentityBadRequest{}
 }
 
 // WithPayload adds the payload to the create identity bad request response
 func (o *CreateIdentityBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateIdentityBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create identity bad request response
 func (o *CreateIdentityBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateIdentityBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type CreateIdentityUnauthorized struct {
 
 // NewCreateIdentityUnauthorized creates CreateIdentityUnauthorized with default headers values
 func NewCreateIdentityUnauthorized() *CreateIdentityUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &CreateIdentityUnauthorized{}
 }
 
 // WithPayload adds the payload to the create identity unauthorized response
 func (o *CreateIdentityUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateIdentityUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create identity unauthorized response
 func (o *CreateIdentityUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateIdentityUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type CreateIdentityTooManyRequests struct {
 
 // NewCreateIdentityTooManyRequests creates CreateIdentityTooManyRequests with default headers values
 func NewCreateIdentityTooManyRequests() *CreateIdentityTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &CreateIdentityTooManyRequests{}
 }
 
 // WithPayload adds the payload to the create identity too many requests response
 func (o *CreateIdentityTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateIdentityTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create identity too many requests response
 func (o *CreateIdentityTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateIdentityTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type CreateIdentityServiceUnavailable struct {
 
 // NewCreateIdentityServiceUnavailable creates CreateIdentityServiceUnavailable with default headers values
 func NewCreateIdentityServiceUnavailable() *CreateIdentityServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &CreateIdentityServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the create identity service unavailable response
 func (o *CreateIdentityServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateIdentityServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create identity service unavailable response
 func (o *CreateIdentityServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateIdentityServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

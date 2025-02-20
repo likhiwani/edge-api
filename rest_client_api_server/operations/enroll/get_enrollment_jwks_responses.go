@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type GetEnrollmentJwksOK struct {
 
 // NewGetEnrollmentJwksOK creates GetEnrollmentJwksOK with default headers values
 func NewGetEnrollmentJwksOK() *GetEnrollmentJwksOK {
+    logtrace.LogWithFunctionName()
 
 	return &GetEnrollmentJwksOK{}
 }
 
 // WithPayload adds the payload to the get enrollment jwks o k response
 func (o *GetEnrollmentJwksOK) WithPayload(payload *rest_model.Jwks) *GetEnrollmentJwksOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get enrollment jwks o k response
 func (o *GetEnrollmentJwksOK) SetPayload(payload *rest_model.Jwks) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetEnrollmentJwksOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {

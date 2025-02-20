@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"strconv"
 
@@ -73,6 +74,7 @@ type PolicyAdvice struct {
 
 // Validate validates this policy advice
 func (m *PolicyAdvice) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateCommonRouters(formats); err != nil {
@@ -94,6 +96,7 @@ func (m *PolicyAdvice) Validate(formats strfmt.Registry) error {
 }
 
 func (m *PolicyAdvice) validateCommonRouters(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.CommonRouters) { // not required
 		return nil
 	}
@@ -120,6 +123,7 @@ func (m *PolicyAdvice) validateCommonRouters(formats strfmt.Registry) error {
 }
 
 func (m *PolicyAdvice) validateIdentity(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Identity) { // not required
 		return nil
 	}
@@ -139,6 +143,7 @@ func (m *PolicyAdvice) validateIdentity(formats strfmt.Registry) error {
 }
 
 func (m *PolicyAdvice) validateService(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Service) { // not required
 		return nil
 	}
@@ -159,6 +164,7 @@ func (m *PolicyAdvice) validateService(formats strfmt.Registry) error {
 
 // ContextValidate validate this policy advice based on the context it is used
 func (m *PolicyAdvice) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateCommonRouters(ctx, formats); err != nil {
@@ -180,6 +186,7 @@ func (m *PolicyAdvice) ContextValidate(ctx context.Context, formats strfmt.Regis
 }
 
 func (m *PolicyAdvice) contextValidateCommonRouters(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	for i := 0; i < len(m.CommonRouters); i++ {
 
@@ -205,6 +212,7 @@ func (m *PolicyAdvice) contextValidateCommonRouters(ctx context.Context, formats
 }
 
 func (m *PolicyAdvice) contextValidateIdentity(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Identity != nil {
 
@@ -226,6 +234,7 @@ func (m *PolicyAdvice) contextValidateIdentity(ctx context.Context, formats strf
 }
 
 func (m *PolicyAdvice) contextValidateService(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Service != nil {
 
@@ -248,6 +257,7 @@ func (m *PolicyAdvice) contextValidateService(ctx context.Context, formats strfm
 
 // MarshalBinary interface implementation
 func (m *PolicyAdvice) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -256,6 +266,7 @@ func (m *PolicyAdvice) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PolicyAdvice) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PolicyAdvice
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

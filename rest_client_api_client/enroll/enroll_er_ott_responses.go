@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type EnrollErOttReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *EnrollErOttReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewEnrollErOttOK()
@@ -73,6 +75,7 @@ func (o *EnrollErOttReader) ReadResponse(response runtime.ClientResponse, consum
 
 // NewEnrollErOttOK creates a EnrollErOttOK with default headers values
 func NewEnrollErOttOK() *EnrollErOttOK {
+    logtrace.LogWithFunctionName()
 	return &EnrollErOttOK{}
 }
 
@@ -87,49 +90,59 @@ type EnrollErOttOK struct {
 
 // IsSuccess returns true when this enroll er ott o k response has a 2xx status code
 func (o *EnrollErOttOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this enroll er ott o k response has a 3xx status code
 func (o *EnrollErOttOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this enroll er ott o k response has a 4xx status code
 func (o *EnrollErOttOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this enroll er ott o k response has a 5xx status code
 func (o *EnrollErOttOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this enroll er ott o k response a status code equal to that given
 func (o *EnrollErOttOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the enroll er ott o k response
 func (o *EnrollErOttOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *EnrollErOttOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/erott][%d] enrollErOttOK %s", 200, payload)
 }
 
 func (o *EnrollErOttOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/erott][%d] enrollErOttOK %s", 200, payload)
 }
 
 func (o *EnrollErOttOK) GetPayload() *rest_model.EnrollmentCertsEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *EnrollErOttOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.EnrollmentCertsEnvelope)
 
@@ -143,6 +156,7 @@ func (o *EnrollErOttOK) readResponse(response runtime.ClientResponse, consumer r
 
 // NewEnrollErOttTooManyRequests creates a EnrollErOttTooManyRequests with default headers values
 func NewEnrollErOttTooManyRequests() *EnrollErOttTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &EnrollErOttTooManyRequests{}
 }
 
@@ -157,49 +171,59 @@ type EnrollErOttTooManyRequests struct {
 
 // IsSuccess returns true when this enroll er ott too many requests response has a 2xx status code
 func (o *EnrollErOttTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this enroll er ott too many requests response has a 3xx status code
 func (o *EnrollErOttTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this enroll er ott too many requests response has a 4xx status code
 func (o *EnrollErOttTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this enroll er ott too many requests response has a 5xx status code
 func (o *EnrollErOttTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this enroll er ott too many requests response a status code equal to that given
 func (o *EnrollErOttTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the enroll er ott too many requests response
 func (o *EnrollErOttTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *EnrollErOttTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/erott][%d] enrollErOttTooManyRequests %s", 429, payload)
 }
 
 func (o *EnrollErOttTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/erott][%d] enrollErOttTooManyRequests %s", 429, payload)
 }
 
 func (o *EnrollErOttTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *EnrollErOttTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -213,6 +237,7 @@ func (o *EnrollErOttTooManyRequests) readResponse(response runtime.ClientRespons
 
 // NewEnrollErOttServiceUnavailable creates a EnrollErOttServiceUnavailable with default headers values
 func NewEnrollErOttServiceUnavailable() *EnrollErOttServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &EnrollErOttServiceUnavailable{}
 }
 
@@ -227,49 +252,59 @@ type EnrollErOttServiceUnavailable struct {
 
 // IsSuccess returns true when this enroll er ott service unavailable response has a 2xx status code
 func (o *EnrollErOttServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this enroll er ott service unavailable response has a 3xx status code
 func (o *EnrollErOttServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this enroll er ott service unavailable response has a 4xx status code
 func (o *EnrollErOttServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this enroll er ott service unavailable response has a 5xx status code
 func (o *EnrollErOttServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this enroll er ott service unavailable response a status code equal to that given
 func (o *EnrollErOttServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the enroll er ott service unavailable response
 func (o *EnrollErOttServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *EnrollErOttServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/erott][%d] enrollErOttServiceUnavailable %s", 503, payload)
 }
 
 func (o *EnrollErOttServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/erott][%d] enrollErOttServiceUnavailable %s", 503, payload)
 }
 
 func (o *EnrollErOttServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *EnrollErOttServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

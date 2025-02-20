@@ -30,6 +30,7 @@ package enrollment
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new enrollment API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -101,6 +105,7 @@ CreateEnrollment creates an outstanding enrollment for an identity
 Creates a new OTT, OTTCA, or UPDB enrollment for a specific identity. If an enrollment of the same type is already outstanding the request will fail with a 409 conflict. If desired, an existing enrollment can be refreshed by `enrollments/:id/refresh` or deleted.
 */
 func (a *Client) CreateEnrollment(params *CreateEnrollmentParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateEnrollmentCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreateEnrollmentParams()
@@ -142,6 +147,7 @@ DeleteEnrollment deletes an outstanding enrollment
 Delete an outstanding enrollment by id. Requires admin access.
 */
 func (a *Client) DeleteEnrollment(params *DeleteEnrollmentParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteEnrollmentOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteEnrollmentParams()
@@ -183,6 +189,7 @@ DetailEnrollment retrieves an outstanding enrollment
 Retrieves a single outstanding enrollment by id. Requires admin access.
 */
 func (a *Client) DetailEnrollment(params *DetailEnrollmentParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailEnrollmentOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailEnrollmentParams()
@@ -224,6 +231,7 @@ ListEnrollments lists outstanding enrollments
 Retrieves a list of outstanding enrollments; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListEnrollments(params *ListEnrollmentsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListEnrollmentsOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListEnrollmentsParams()
@@ -265,6 +273,7 @@ ListNetworkJWTs returns a list of j w ts suitable for bootstrapping network trus
 Returns a list of JWTs for trusting a network
 */
 func (a *Client) ListNetworkJWTs(params *ListNetworkJWTsParams, opts ...ClientOption) (*ListNetworkJWTsOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListNetworkJWTsParams()
@@ -305,6 +314,7 @@ RefreshEnrollment refreshes an enrollment record s expiration window
 For expired or unexpired enrollments, reset the expiration window. A new JWT will be generated and must be used for the enrollment.
 */
 func (a *Client) RefreshEnrollment(params *RefreshEnrollmentParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*RefreshEnrollmentOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewRefreshEnrollmentParams()
@@ -342,5 +352,6 @@ func (a *Client) RefreshEnrollment(params *RefreshEnrollmentParams, authInfo run
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

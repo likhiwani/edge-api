@@ -30,6 +30,7 @@ package enrollment
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DetailEnrollmentReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DetailEnrollmentReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDetailEnrollmentOK()
@@ -85,6 +87,7 @@ func (o *DetailEnrollmentReader) ReadResponse(response runtime.ClientResponse, c
 
 // NewDetailEnrollmentOK creates a DetailEnrollmentOK with default headers values
 func NewDetailEnrollmentOK() *DetailEnrollmentOK {
+    logtrace.LogWithFunctionName()
 	return &DetailEnrollmentOK{}
 }
 
@@ -99,49 +102,59 @@ type DetailEnrollmentOK struct {
 
 // IsSuccess returns true when this detail enrollment o k response has a 2xx status code
 func (o *DetailEnrollmentOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this detail enrollment o k response has a 3xx status code
 func (o *DetailEnrollmentOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail enrollment o k response has a 4xx status code
 func (o *DetailEnrollmentOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail enrollment o k response has a 5xx status code
 func (o *DetailEnrollmentOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail enrollment o k response a status code equal to that given
 func (o *DetailEnrollmentOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the detail enrollment o k response
 func (o *DetailEnrollmentOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DetailEnrollmentOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentOK %s", 200, payload)
 }
 
 func (o *DetailEnrollmentOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentOK %s", 200, payload)
 }
 
 func (o *DetailEnrollmentOK) GetPayload() *rest_model.DetailEnrollmentEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailEnrollmentOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.DetailEnrollmentEnvelope)
 
@@ -155,6 +168,7 @@ func (o *DetailEnrollmentOK) readResponse(response runtime.ClientResponse, consu
 
 // NewDetailEnrollmentUnauthorized creates a DetailEnrollmentUnauthorized with default headers values
 func NewDetailEnrollmentUnauthorized() *DetailEnrollmentUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DetailEnrollmentUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type DetailEnrollmentUnauthorized struct {
 
 // IsSuccess returns true when this detail enrollment unauthorized response has a 2xx status code
 func (o *DetailEnrollmentUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail enrollment unauthorized response has a 3xx status code
 func (o *DetailEnrollmentUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail enrollment unauthorized response has a 4xx status code
 func (o *DetailEnrollmentUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail enrollment unauthorized response has a 5xx status code
 func (o *DetailEnrollmentUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail enrollment unauthorized response a status code equal to that given
 func (o *DetailEnrollmentUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the detail enrollment unauthorized response
 func (o *DetailEnrollmentUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DetailEnrollmentUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentUnauthorized %s", 401, payload)
 }
 
 func (o *DetailEnrollmentUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentUnauthorized %s", 401, payload)
 }
 
 func (o *DetailEnrollmentUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailEnrollmentUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *DetailEnrollmentUnauthorized) readResponse(response runtime.ClientRespo
 
 // NewDetailEnrollmentNotFound creates a DetailEnrollmentNotFound with default headers values
 func NewDetailEnrollmentNotFound() *DetailEnrollmentNotFound {
+    logtrace.LogWithFunctionName()
 	return &DetailEnrollmentNotFound{}
 }
 
@@ -239,49 +264,59 @@ type DetailEnrollmentNotFound struct {
 
 // IsSuccess returns true when this detail enrollment not found response has a 2xx status code
 func (o *DetailEnrollmentNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail enrollment not found response has a 3xx status code
 func (o *DetailEnrollmentNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail enrollment not found response has a 4xx status code
 func (o *DetailEnrollmentNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail enrollment not found response has a 5xx status code
 func (o *DetailEnrollmentNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail enrollment not found response a status code equal to that given
 func (o *DetailEnrollmentNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the detail enrollment not found response
 func (o *DetailEnrollmentNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DetailEnrollmentNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentNotFound %s", 404, payload)
 }
 
 func (o *DetailEnrollmentNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentNotFound %s", 404, payload)
 }
 
 func (o *DetailEnrollmentNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailEnrollmentNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *DetailEnrollmentNotFound) readResponse(response runtime.ClientResponse,
 
 // NewDetailEnrollmentTooManyRequests creates a DetailEnrollmentTooManyRequests with default headers values
 func NewDetailEnrollmentTooManyRequests() *DetailEnrollmentTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DetailEnrollmentTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type DetailEnrollmentTooManyRequests struct {
 
 // IsSuccess returns true when this detail enrollment too many requests response has a 2xx status code
 func (o *DetailEnrollmentTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail enrollment too many requests response has a 3xx status code
 func (o *DetailEnrollmentTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail enrollment too many requests response has a 4xx status code
 func (o *DetailEnrollmentTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail enrollment too many requests response has a 5xx status code
 func (o *DetailEnrollmentTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail enrollment too many requests response a status code equal to that given
 func (o *DetailEnrollmentTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the detail enrollment too many requests response
 func (o *DetailEnrollmentTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DetailEnrollmentTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailEnrollmentTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailEnrollmentTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailEnrollmentTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *DetailEnrollmentTooManyRequests) readResponse(response runtime.ClientRe
 
 // NewDetailEnrollmentServiceUnavailable creates a DetailEnrollmentServiceUnavailable with default headers values
 func NewDetailEnrollmentServiceUnavailable() *DetailEnrollmentServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DetailEnrollmentServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type DetailEnrollmentServiceUnavailable struct {
 
 // IsSuccess returns true when this detail enrollment service unavailable response has a 2xx status code
 func (o *DetailEnrollmentServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail enrollment service unavailable response has a 3xx status code
 func (o *DetailEnrollmentServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail enrollment service unavailable response has a 4xx status code
 func (o *DetailEnrollmentServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail enrollment service unavailable response has a 5xx status code
 func (o *DetailEnrollmentServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this detail enrollment service unavailable response a status code equal to that given
 func (o *DetailEnrollmentServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the detail enrollment service unavailable response
 func (o *DetailEnrollmentServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DetailEnrollmentServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailEnrollmentServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /enrollments/{id}][%d] detailEnrollmentServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailEnrollmentServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailEnrollmentServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

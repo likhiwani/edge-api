@@ -30,6 +30,7 @@ package session
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type DetailSessionHandlerFunc func(DetailSessionParams, interface{}) middleware.
 
 // Handle executing the request and returning a response
 func (fn DetailSessionHandlerFunc) Handle(params DetailSessionParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type DetailSessionHandler interface {
 
 // NewDetailSession creates a new http.Handler for the detail session operation
 func NewDetailSession(ctx *middleware.Context, handler DetailSessionHandler) *DetailSession {
+    logtrace.LogWithFunctionName()
 	return &DetailSession{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type DetailSession struct {
 }
 
 func (o *DetailSession) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

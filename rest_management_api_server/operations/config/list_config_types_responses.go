@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListConfigTypesOK struct {
 
 // NewListConfigTypesOK creates ListConfigTypesOK with default headers values
 func NewListConfigTypesOK() *ListConfigTypesOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListConfigTypesOK{}
 }
 
 // WithPayload adds the payload to the list config types o k response
 func (o *ListConfigTypesOK) WithPayload(payload *rest_model.ListConfigTypesEnvelope) *ListConfigTypesOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list config types o k response
 func (o *ListConfigTypesOK) SetPayload(payload *rest_model.ListConfigTypesEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListConfigTypesOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ListConfigTypesBadRequest struct {
 
 // NewListConfigTypesBadRequest creates ListConfigTypesBadRequest with default headers values
 func NewListConfigTypesBadRequest() *ListConfigTypesBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &ListConfigTypesBadRequest{}
 }
 
 // WithPayload adds the payload to the list config types bad request response
 func (o *ListConfigTypesBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *ListConfigTypesBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list config types bad request response
 func (o *ListConfigTypesBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListConfigTypesBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ListConfigTypesUnauthorized struct {
 
 // NewListConfigTypesUnauthorized creates ListConfigTypesUnauthorized with default headers values
 func NewListConfigTypesUnauthorized() *ListConfigTypesUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &ListConfigTypesUnauthorized{}
 }
 
 // WithPayload adds the payload to the list config types unauthorized response
 func (o *ListConfigTypesUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *ListConfigTypesUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list config types unauthorized response
 func (o *ListConfigTypesUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListConfigTypesUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type ListConfigTypesTooManyRequests struct {
 
 // NewListConfigTypesTooManyRequests creates ListConfigTypesTooManyRequests with default headers values
 func NewListConfigTypesTooManyRequests() *ListConfigTypesTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ListConfigTypesTooManyRequests{}
 }
 
 // WithPayload adds the payload to the list config types too many requests response
 func (o *ListConfigTypesTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ListConfigTypesTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list config types too many requests response
 func (o *ListConfigTypesTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListConfigTypesTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type ListConfigTypesServiceUnavailable struct {
 
 // NewListConfigTypesServiceUnavailable creates ListConfigTypesServiceUnavailable with default headers values
 func NewListConfigTypesServiceUnavailable() *ListConfigTypesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &ListConfigTypesServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the list config types service unavailable response
 func (o *ListConfigTypesServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *ListConfigTypesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list config types service unavailable response
 func (o *ListConfigTypesServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListConfigTypesServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

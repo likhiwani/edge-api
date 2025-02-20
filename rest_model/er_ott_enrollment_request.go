@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/strfmt"
@@ -53,16 +54,19 @@ type ErOttEnrollmentRequest struct {
 
 // Validate validates this er ott enrollment request
 func (m *ErOttEnrollmentRequest) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // ContextValidate validates this er ott enrollment request based on context it is used
 func (m *ErOttEnrollmentRequest) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *ErOttEnrollmentRequest) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -71,6 +75,7 @@ func (m *ErOttEnrollmentRequest) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ErOttEnrollmentRequest) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ErOttEnrollmentRequest
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

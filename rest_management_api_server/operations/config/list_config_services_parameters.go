@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -43,6 +44,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewListConfigServicesParams() ListConfigServicesParams {
+    logtrace.LogWithFunctionName()
 
 	return ListConfigServicesParams{}
 }
@@ -80,6 +82,7 @@ type ListConfigServicesParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewListConfigServicesParams() beforehand.
 func (o *ListConfigServicesParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r
@@ -113,6 +116,7 @@ func (o *ListConfigServicesParams) BindRequest(r *http.Request, route *middlewar
 
 // bindFilter binds and validates parameter Filter from query.
 func (o *ListConfigServicesParams) bindFilter(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -131,6 +135,7 @@ func (o *ListConfigServicesParams) bindFilter(rawData []string, hasKey bool, for
 
 // bindID binds and validates parameter ID from path.
 func (o *ListConfigServicesParams) bindID(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -145,6 +150,7 @@ func (o *ListConfigServicesParams) bindID(rawData []string, hasKey bool, formats
 
 // bindLimit binds and validates parameter Limit from query.
 func (o *ListConfigServicesParams) bindLimit(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -168,6 +174,7 @@ func (o *ListConfigServicesParams) bindLimit(rawData []string, hasKey bool, form
 
 // bindOffset binds and validates parameter Offset from query.
 func (o *ListConfigServicesParams) bindOffset(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]

@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type GetEnrollmentJwksReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *GetEnrollmentJwksReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewGetEnrollmentJwksOK()
@@ -61,6 +63,7 @@ func (o *GetEnrollmentJwksReader) ReadResponse(response runtime.ClientResponse, 
 
 // NewGetEnrollmentJwksOK creates a GetEnrollmentJwksOK with default headers values
 func NewGetEnrollmentJwksOK() *GetEnrollmentJwksOK {
+    logtrace.LogWithFunctionName()
 	return &GetEnrollmentJwksOK{}
 }
 
@@ -75,49 +78,59 @@ type GetEnrollmentJwksOK struct {
 
 // IsSuccess returns true when this get enrollment jwks o k response has a 2xx status code
 func (o *GetEnrollmentJwksOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this get enrollment jwks o k response has a 3xx status code
 func (o *GetEnrollmentJwksOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get enrollment jwks o k response has a 4xx status code
 func (o *GetEnrollmentJwksOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this get enrollment jwks o k response has a 5xx status code
 func (o *GetEnrollmentJwksOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get enrollment jwks o k response a status code equal to that given
 func (o *GetEnrollmentJwksOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the get enrollment jwks o k response
 func (o *GetEnrollmentJwksOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *GetEnrollmentJwksOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /enroll/jwks][%d] getEnrollmentJwksOK %s", 200, payload)
 }
 
 func (o *GetEnrollmentJwksOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /enroll/jwks][%d] getEnrollmentJwksOK %s", 200, payload)
 }
 
 func (o *GetEnrollmentJwksOK) GetPayload() *rest_model.Jwks {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetEnrollmentJwksOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Jwks)
 

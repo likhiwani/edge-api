@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -56,6 +57,7 @@ type APISessionPostureData struct {
 
 // Validate validates this api session posture data
 func (m *APISessionPostureData) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateEndpointState(formats); err != nil {
@@ -77,6 +79,7 @@ func (m *APISessionPostureData) Validate(formats strfmt.Registry) error {
 }
 
 func (m *APISessionPostureData) validateEndpointState(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.EndpointState) { // not required
 		return nil
 	}
@@ -96,6 +99,7 @@ func (m *APISessionPostureData) validateEndpointState(formats strfmt.Registry) e
 }
 
 func (m *APISessionPostureData) validateMfa(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("mfa", "body", m.Mfa); err != nil {
 		return err
@@ -116,6 +120,7 @@ func (m *APISessionPostureData) validateMfa(formats strfmt.Registry) error {
 }
 
 func (m *APISessionPostureData) validateSdkInfo(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.SdkInfo) { // not required
 		return nil
 	}
@@ -136,6 +141,7 @@ func (m *APISessionPostureData) validateSdkInfo(formats strfmt.Registry) error {
 
 // ContextValidate validate this api session posture data based on the context it is used
 func (m *APISessionPostureData) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateEndpointState(ctx, formats); err != nil {
@@ -157,6 +163,7 @@ func (m *APISessionPostureData) ContextValidate(ctx context.Context, formats str
 }
 
 func (m *APISessionPostureData) contextValidateEndpointState(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.EndpointState != nil {
 
@@ -178,6 +185,7 @@ func (m *APISessionPostureData) contextValidateEndpointState(ctx context.Context
 }
 
 func (m *APISessionPostureData) contextValidateMfa(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Mfa != nil {
 
@@ -195,6 +203,7 @@ func (m *APISessionPostureData) contextValidateMfa(ctx context.Context, formats 
 }
 
 func (m *APISessionPostureData) contextValidateSdkInfo(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.SdkInfo != nil {
 
@@ -217,6 +226,7 @@ func (m *APISessionPostureData) contextValidateSdkInfo(ctx context.Context, form
 
 // MarshalBinary interface implementation
 func (m *APISessionPostureData) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -225,6 +235,7 @@ func (m *APISessionPostureData) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *APISessionPostureData) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res APISessionPostureData
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

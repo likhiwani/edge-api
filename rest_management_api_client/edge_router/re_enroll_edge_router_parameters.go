@@ -30,6 +30,7 @@ package edge_router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewReEnrollEdgeRouterParams() *ReEnrollEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	return &ReEnrollEdgeRouterParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewReEnrollEdgeRouterParams() *ReEnrollEdgeRouterParams {
 // NewReEnrollEdgeRouterParamsWithTimeout creates a new ReEnrollEdgeRouterParams object
 // with the ability to set a timeout on a request.
 func NewReEnrollEdgeRouterParamsWithTimeout(timeout time.Duration) *ReEnrollEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	return &ReEnrollEdgeRouterParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewReEnrollEdgeRouterParamsWithTimeout(timeout time.Duration) *ReEnrollEdge
 // NewReEnrollEdgeRouterParamsWithContext creates a new ReEnrollEdgeRouterParams object
 // with the ability to set a context for a request.
 func NewReEnrollEdgeRouterParamsWithContext(ctx context.Context) *ReEnrollEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	return &ReEnrollEdgeRouterParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewReEnrollEdgeRouterParamsWithContext(ctx context.Context) *ReEnrollEdgeRo
 // NewReEnrollEdgeRouterParamsWithHTTPClient creates a new ReEnrollEdgeRouterParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewReEnrollEdgeRouterParamsWithHTTPClient(client *http.Client) *ReEnrollEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	return &ReEnrollEdgeRouterParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type ReEnrollEdgeRouterParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ReEnrollEdgeRouterParams) WithDefaults() *ReEnrollEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *ReEnrollEdgeRouterParams) WithDefaults() *ReEnrollEdgeRouterParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ReEnrollEdgeRouterParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the re enroll edge router params
 func (o *ReEnrollEdgeRouterParams) WithTimeout(timeout time.Duration) *ReEnrollEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the re enroll edge router params
 func (o *ReEnrollEdgeRouterParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the re enroll edge router params
 func (o *ReEnrollEdgeRouterParams) WithContext(ctx context.Context) *ReEnrollEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the re enroll edge router params
 func (o *ReEnrollEdgeRouterParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the re enroll edge router params
 func (o *ReEnrollEdgeRouterParams) WithHTTPClient(client *http.Client) *ReEnrollEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the re enroll edge router params
 func (o *ReEnrollEdgeRouterParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the re enroll edge router params
 func (o *ReEnrollEdgeRouterParams) WithID(id string) *ReEnrollEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the re enroll edge router params
 func (o *ReEnrollEdgeRouterParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ReEnrollEdgeRouterParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type ExtendRouterEnrollmentHandlerFunc func(ExtendRouterEnrollmentParams) middle
 
 // Handle executing the request and returning a response
 func (fn ExtendRouterEnrollmentHandlerFunc) Handle(params ExtendRouterEnrollmentParams) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params)
 }
 
@@ -50,6 +52,7 @@ type ExtendRouterEnrollmentHandler interface {
 
 // NewExtendRouterEnrollment creates a new http.Handler for the extend router enrollment operation
 func NewExtendRouterEnrollment(ctx *middleware.Context, handler ExtendRouterEnrollmentHandler) *ExtendRouterEnrollment {
+    logtrace.LogWithFunctionName()
 	return &ExtendRouterEnrollment{Context: ctx, Handler: handler}
 }
 
@@ -74,6 +77,7 @@ type ExtendRouterEnrollment struct {
 }
 
 func (o *ExtendRouterEnrollment) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

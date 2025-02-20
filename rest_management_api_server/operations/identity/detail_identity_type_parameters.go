@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -41,6 +42,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewDetailIdentityTypeParams() DetailIdentityTypeParams {
+    logtrace.LogWithFunctionName()
 
 	return DetailIdentityTypeParams{}
 }
@@ -66,6 +68,7 @@ type DetailIdentityTypeParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewDetailIdentityTypeParams() beforehand.
 func (o *DetailIdentityTypeParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r
@@ -82,6 +85,7 @@ func (o *DetailIdentityTypeParams) BindRequest(r *http.Request, route *middlewar
 
 // bindID binds and validates parameter ID from path.
 func (o *DetailIdentityTypeParams) bindID(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]

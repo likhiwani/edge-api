@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/strfmt"
@@ -50,16 +51,19 @@ type AuthPolicyPrimaryCertPatch struct {
 
 // Validate validates this auth policy primary cert patch
 func (m *AuthPolicyPrimaryCertPatch) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // ContextValidate validates this auth policy primary cert patch based on context it is used
 func (m *AuthPolicyPrimaryCertPatch) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *AuthPolicyPrimaryCertPatch) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -68,6 +72,7 @@ func (m *AuthPolicyPrimaryCertPatch) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *AuthPolicyPrimaryCertPatch) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res AuthPolicyPrimaryCertPatch
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

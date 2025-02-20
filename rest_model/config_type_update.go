@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -57,6 +58,7 @@ type ConfigTypeUpdate struct {
 
 // Validate validates this config type update
 func (m *ConfigTypeUpdate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateName(formats); err != nil {
@@ -74,6 +76,7 @@ func (m *ConfigTypeUpdate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ConfigTypeUpdate) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -83,6 +86,7 @@ func (m *ConfigTypeUpdate) validateName(formats strfmt.Registry) error {
 }
 
 func (m *ConfigTypeUpdate) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -103,6 +107,7 @@ func (m *ConfigTypeUpdate) validateTags(formats strfmt.Registry) error {
 
 // ContextValidate validate this config type update based on the context it is used
 func (m *ConfigTypeUpdate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateTags(ctx, formats); err != nil {
@@ -116,6 +121,7 @@ func (m *ConfigTypeUpdate) ContextValidate(ctx context.Context, formats strfmt.R
 }
 
 func (m *ConfigTypeUpdate) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -138,6 +144,7 @@ func (m *ConfigTypeUpdate) contextValidateTags(ctx context.Context, formats strf
 
 // MarshalBinary interface implementation
 func (m *ConfigTypeUpdate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -146,6 +153,7 @@ func (m *ConfigTypeUpdate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ConfigTypeUpdate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ConfigTypeUpdate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

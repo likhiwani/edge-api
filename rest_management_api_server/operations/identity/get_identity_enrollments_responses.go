@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type GetIdentityEnrollmentsOK struct {
 
 // NewGetIdentityEnrollmentsOK creates GetIdentityEnrollmentsOK with default headers values
 func NewGetIdentityEnrollmentsOK() *GetIdentityEnrollmentsOK {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityEnrollmentsOK{}
 }
 
 // WithPayload adds the payload to the get identity enrollments o k response
 func (o *GetIdentityEnrollmentsOK) WithPayload(payload *rest_model.ListEnrollmentsEnvelope) *GetIdentityEnrollmentsOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity enrollments o k response
 func (o *GetIdentityEnrollmentsOK) SetPayload(payload *rest_model.ListEnrollmentsEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityEnrollmentsOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type GetIdentityEnrollmentsUnauthorized struct {
 
 // NewGetIdentityEnrollmentsUnauthorized creates GetIdentityEnrollmentsUnauthorized with default headers values
 func NewGetIdentityEnrollmentsUnauthorized() *GetIdentityEnrollmentsUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityEnrollmentsUnauthorized{}
 }
 
 // WithPayload adds the payload to the get identity enrollments unauthorized response
 func (o *GetIdentityEnrollmentsUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityEnrollmentsUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity enrollments unauthorized response
 func (o *GetIdentityEnrollmentsUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityEnrollmentsUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type GetIdentityEnrollmentsNotFound struct {
 
 // NewGetIdentityEnrollmentsNotFound creates GetIdentityEnrollmentsNotFound with default headers values
 func NewGetIdentityEnrollmentsNotFound() *GetIdentityEnrollmentsNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityEnrollmentsNotFound{}
 }
 
 // WithPayload adds the payload to the get identity enrollments not found response
 func (o *GetIdentityEnrollmentsNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityEnrollmentsNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity enrollments not found response
 func (o *GetIdentityEnrollmentsNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityEnrollmentsNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type GetIdentityEnrollmentsTooManyRequests struct {
 
 // NewGetIdentityEnrollmentsTooManyRequests creates GetIdentityEnrollmentsTooManyRequests with default headers values
 func NewGetIdentityEnrollmentsTooManyRequests() *GetIdentityEnrollmentsTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityEnrollmentsTooManyRequests{}
 }
 
 // WithPayload adds the payload to the get identity enrollments too many requests response
 func (o *GetIdentityEnrollmentsTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityEnrollmentsTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity enrollments too many requests response
 func (o *GetIdentityEnrollmentsTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityEnrollmentsTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type GetIdentityEnrollmentsServiceUnavailable struct {
 
 // NewGetIdentityEnrollmentsServiceUnavailable creates GetIdentityEnrollmentsServiceUnavailable with default headers values
 func NewGetIdentityEnrollmentsServiceUnavailable() *GetIdentityEnrollmentsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityEnrollmentsServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the get identity enrollments service unavailable response
 func (o *GetIdentityEnrollmentsServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityEnrollmentsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity enrollments service unavailable response
 func (o *GetIdentityEnrollmentsServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityEnrollmentsServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -48,6 +49,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListCurrentIdentityAuthenticatorsParams() *ListCurrentIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	return &ListCurrentIdentityAuthenticatorsParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -56,6 +58,7 @@ func NewListCurrentIdentityAuthenticatorsParams() *ListCurrentIdentityAuthentica
 // NewListCurrentIdentityAuthenticatorsParamsWithTimeout creates a new ListCurrentIdentityAuthenticatorsParams object
 // with the ability to set a timeout on a request.
 func NewListCurrentIdentityAuthenticatorsParamsWithTimeout(timeout time.Duration) *ListCurrentIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	return &ListCurrentIdentityAuthenticatorsParams{
 		timeout: timeout,
 	}
@@ -64,6 +67,7 @@ func NewListCurrentIdentityAuthenticatorsParamsWithTimeout(timeout time.Duration
 // NewListCurrentIdentityAuthenticatorsParamsWithContext creates a new ListCurrentIdentityAuthenticatorsParams object
 // with the ability to set a context for a request.
 func NewListCurrentIdentityAuthenticatorsParamsWithContext(ctx context.Context) *ListCurrentIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	return &ListCurrentIdentityAuthenticatorsParams{
 		Context: ctx,
 	}
@@ -72,6 +76,7 @@ func NewListCurrentIdentityAuthenticatorsParamsWithContext(ctx context.Context) 
 // NewListCurrentIdentityAuthenticatorsParamsWithHTTPClient creates a new ListCurrentIdentityAuthenticatorsParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListCurrentIdentityAuthenticatorsParamsWithHTTPClient(client *http.Client) *ListCurrentIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	return &ListCurrentIdentityAuthenticatorsParams{
 		HTTPClient: client,
 	}
@@ -104,6 +109,7 @@ type ListCurrentIdentityAuthenticatorsParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListCurrentIdentityAuthenticatorsParams) WithDefaults() *ListCurrentIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -112,77 +118,91 @@ func (o *ListCurrentIdentityAuthenticatorsParams) WithDefaults() *ListCurrentIde
 //
 // All values with no default are reset to their zero value.
 func (o *ListCurrentIdentityAuthenticatorsParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list current identity authenticators params
 func (o *ListCurrentIdentityAuthenticatorsParams) WithTimeout(timeout time.Duration) *ListCurrentIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list current identity authenticators params
 func (o *ListCurrentIdentityAuthenticatorsParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list current identity authenticators params
 func (o *ListCurrentIdentityAuthenticatorsParams) WithContext(ctx context.Context) *ListCurrentIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list current identity authenticators params
 func (o *ListCurrentIdentityAuthenticatorsParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list current identity authenticators params
 func (o *ListCurrentIdentityAuthenticatorsParams) WithHTTPClient(client *http.Client) *ListCurrentIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list current identity authenticators params
 func (o *ListCurrentIdentityAuthenticatorsParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithFilter adds the filter to the list current identity authenticators params
 func (o *ListCurrentIdentityAuthenticatorsParams) WithFilter(filter *string) *ListCurrentIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	o.SetFilter(filter)
 	return o
 }
 
 // SetFilter adds the filter to the list current identity authenticators params
 func (o *ListCurrentIdentityAuthenticatorsParams) SetFilter(filter *string) {
+    logtrace.LogWithFunctionName()
 	o.Filter = filter
 }
 
 // WithLimit adds the limit to the list current identity authenticators params
 func (o *ListCurrentIdentityAuthenticatorsParams) WithLimit(limit *int64) *ListCurrentIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	o.SetLimit(limit)
 	return o
 }
 
 // SetLimit adds the limit to the list current identity authenticators params
 func (o *ListCurrentIdentityAuthenticatorsParams) SetLimit(limit *int64) {
+    logtrace.LogWithFunctionName()
 	o.Limit = limit
 }
 
 // WithOffset adds the offset to the list current identity authenticators params
 func (o *ListCurrentIdentityAuthenticatorsParams) WithOffset(offset *int64) *ListCurrentIdentityAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	o.SetOffset(offset)
 	return o
 }
 
 // SetOffset adds the offset to the list current identity authenticators params
 func (o *ListCurrentIdentityAuthenticatorsParams) SetOffset(offset *int64) {
+    logtrace.LogWithFunctionName()
 	o.Offset = offset
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListCurrentIdentityAuthenticatorsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

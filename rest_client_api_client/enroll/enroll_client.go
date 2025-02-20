@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new enroll API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -87,6 +91,7 @@ type ClientOption func(*runtime.ClientOperation)
 //
 // You may use this option to set arbitrary extensions to your MIME media type.
 func WithContentType(mime string) ClientOption {
+    logtrace.LogWithFunctionName()
 	return func(r *runtime.ClientOperation) {
 		r.ConsumesMediaTypes = []string{mime}
 	}
@@ -94,21 +99,25 @@ func WithContentType(mime string) ClientOption {
 
 // WithContentTypeApplicationJSON sets the Content-Type header to "application/json".
 func WithContentTypeApplicationJSON(r *runtime.ClientOperation) {
+    logtrace.LogWithFunctionName()
 	r.ConsumesMediaTypes = []string{"application/json"}
 }
 
 // WithContentTypeApplicationPkcs10 sets the Content-Type header to "application/pkcs10".
 func WithContentTypeApplicationPkcs10(r *runtime.ClientOperation) {
+    logtrace.LogWithFunctionName()
 	r.ConsumesMediaTypes = []string{"application/pkcs10"}
 }
 
 // WithContentTypeApplicationxPemFile sets the Content-Type header to "application/x-pem-file".
 func WithContentTypeApplicationxPemFile(r *runtime.ClientOperation) {
+    logtrace.LogWithFunctionName()
 	r.ConsumesMediaTypes = []string{"application/x-pem-file"}
 }
 
 // WithContentTypeTextPlain sets the Content-Type header to "text/plain".
 func WithContentTypeTextPlain(r *runtime.ClientOperation) {
+    logtrace.LogWithFunctionName()
 	r.ConsumesMediaTypes = []string{"text/plain"}
 }
 
@@ -117,6 +126,7 @@ func WithContentTypeTextPlain(r *runtime.ClientOperation) {
 //
 // You may use this option to set arbitrary extensions to your MIME media type.
 func WithAccept(mime string) ClientOption {
+    logtrace.LogWithFunctionName()
 	return func(r *runtime.ClientOperation) {
 		r.ProducesMediaTypes = []string{mime}
 	}
@@ -124,11 +134,13 @@ func WithAccept(mime string) ClientOption {
 
 // WithAcceptApplicationJSON sets the Accept header to "application/json".
 func WithAcceptApplicationJSON(r *runtime.ClientOperation) {
+    logtrace.LogWithFunctionName()
 	r.ProducesMediaTypes = []string{"application/json"}
 }
 
 // WithAcceptApplicationxPemFile sets the Accept header to "application/x-pem-file".
 func WithAcceptApplicationxPemFile(r *runtime.ClientOperation) {
+    logtrace.LogWithFunctionName()
 	r.ProducesMediaTypes = []string{"application/x-pem-file"}
 }
 
@@ -161,6 +173,7 @@ Enroll enrolls an identity via one time token
 present a OTT and CSR to receive a long-lived client certificate
 */
 func (a *Client) Enroll(params *EnrollParams, opts ...ClientOption) (*EnrollOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewEnrollParams()
@@ -206,6 +219,7 @@ Certificate Authority that has been added and verified (See POST /cas and POST /
 During this process no CSRs are requires as the client should already be in possession of a valid certificate.
 */
 func (a *Client) EnrollCa(params *EnrollCaParams, opts ...ClientOption) (*EnrollCaOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewEnrollCaParams()
@@ -246,6 +260,7 @@ EnrollErOtt enrolls an edge router
 Enrolls an edge-router via a one-time-token to establish a certificate based identity.
 */
 func (a *Client) EnrollErOtt(params *EnrollErOttParams, opts ...ClientOption) (*EnrollErOttOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewEnrollErOttParams()
@@ -289,6 +304,7 @@ expects a PEM encoded CSRs to be provided for fulfillment. It is up to the enrol
 private key backing the CSR request.
 */
 func (a *Client) EnrollOtt(params *EnrollOttParams, opts ...ClientOption) (*EnrollOttOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewEnrollOttParams()
@@ -335,6 +351,7 @@ CA auto enrollment except that is required the identity to be pre-created.
 As the client certificate has been pre-exchanged there is no CSR input to this enrollment method.
 */
 func (a *Client) EnrollOttCa(params *EnrollOttCaParams, opts ...ClientOption) (*EnrollOttCaOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewEnrollOttCaParams()
@@ -375,6 +392,7 @@ EnrollUpdb enrolls an identity via one time token
 Enrolls an identity via a one-time-token to establish an initial username and password combination
 */
 func (a *Client) EnrollUpdb(params *EnrollUpdbParams, opts ...ClientOption) (*EnrollUpdbOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewEnrollUpdbParams()
@@ -418,6 +436,7 @@ be used to sign the nonce. The resulting signature may be validated with the ass
 to verify a networks identity during enrollment. The nonce must be a valid formatted UUID.
 */
 func (a *Client) EnrollmentChallenge(params *EnrollmentChallengeParams, opts ...ClientOption) (*EnrollmentChallengeOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewEnrollmentChallengeParams()
@@ -467,6 +486,7 @@ has not expired.
 This request must be made using the existing, valid, client certificate.
 */
 func (a *Client) ExtendRouterEnrollment(params *ExtendRouterEnrollmentParams, opts ...ClientOption) (*ExtendRouterEnrollmentOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewExtendRouterEnrollmentParams()
@@ -510,6 +530,7 @@ to sign and co-sign enrollment JWTs. They can be verified through a challenge en
 from this endpoint to verify the target machine has possession of the related private key.
 */
 func (a *Client) GetEnrollmentJwks(params *GetEnrollmentJwksParams, opts ...ClientOption) (*GetEnrollmentJwksOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetEnrollmentJwksParams()
@@ -546,5 +567,6 @@ func (a *Client) GetEnrollmentJwks(params *GetEnrollmentJwksParams, opts ...Clie
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

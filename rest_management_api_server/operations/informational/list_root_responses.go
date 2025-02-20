@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListRootOK struct {
 
 // NewListRootOK creates ListRootOK with default headers values
 func NewListRootOK() *ListRootOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListRootOK{}
 }
 
 // WithPayload adds the payload to the list root o k response
 func (o *ListRootOK) WithPayload(payload *rest_model.ListVersionEnvelope) *ListRootOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list root o k response
 func (o *ListRootOK) SetPayload(payload *rest_model.ListVersionEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListRootOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {

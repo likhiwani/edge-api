@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"strconv"
 
@@ -66,6 +67,7 @@ type FailedServiceRequest struct {
 
 // Validate validates this failed service request
 func (m *FailedServiceRequest) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validatePolicyFailures(formats); err != nil {
@@ -87,6 +89,7 @@ func (m *FailedServiceRequest) Validate(formats strfmt.Registry) error {
 }
 
 func (m *FailedServiceRequest) validatePolicyFailures(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.PolicyFailures) { // not required
 		return nil
 	}
@@ -113,6 +116,7 @@ func (m *FailedServiceRequest) validatePolicyFailures(formats strfmt.Registry) e
 }
 
 func (m *FailedServiceRequest) validateSessionType(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.SessionType) { // not required
 		return nil
 	}
@@ -130,6 +134,7 @@ func (m *FailedServiceRequest) validateSessionType(formats strfmt.Registry) erro
 }
 
 func (m *FailedServiceRequest) validateWhen(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.When) { // not required
 		return nil
 	}
@@ -143,6 +148,7 @@ func (m *FailedServiceRequest) validateWhen(formats strfmt.Registry) error {
 
 // ContextValidate validate this failed service request based on the context it is used
 func (m *FailedServiceRequest) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidatePolicyFailures(ctx, formats); err != nil {
@@ -160,6 +166,7 @@ func (m *FailedServiceRequest) ContextValidate(ctx context.Context, formats strf
 }
 
 func (m *FailedServiceRequest) contextValidatePolicyFailures(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	for i := 0; i < len(m.PolicyFailures); i++ {
 
@@ -185,6 +192,7 @@ func (m *FailedServiceRequest) contextValidatePolicyFailures(ctx context.Context
 }
 
 func (m *FailedServiceRequest) contextValidateSessionType(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.SessionType) { // not required
 		return nil
@@ -204,6 +212,7 @@ func (m *FailedServiceRequest) contextValidateSessionType(ctx context.Context, f
 
 // MarshalBinary interface implementation
 func (m *FailedServiceRequest) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -212,6 +221,7 @@ func (m *FailedServiceRequest) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *FailedServiceRequest) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res FailedServiceRequest
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

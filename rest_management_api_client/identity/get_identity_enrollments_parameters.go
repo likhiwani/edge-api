@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewGetIdentityEnrollmentsParams() *GetIdentityEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityEnrollmentsParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewGetIdentityEnrollmentsParams() *GetIdentityEnrollmentsParams {
 // NewGetIdentityEnrollmentsParamsWithTimeout creates a new GetIdentityEnrollmentsParams object
 // with the ability to set a timeout on a request.
 func NewGetIdentityEnrollmentsParamsWithTimeout(timeout time.Duration) *GetIdentityEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityEnrollmentsParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewGetIdentityEnrollmentsParamsWithTimeout(timeout time.Duration) *GetIdent
 // NewGetIdentityEnrollmentsParamsWithContext creates a new GetIdentityEnrollmentsParams object
 // with the ability to set a context for a request.
 func NewGetIdentityEnrollmentsParamsWithContext(ctx context.Context) *GetIdentityEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityEnrollmentsParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewGetIdentityEnrollmentsParamsWithContext(ctx context.Context) *GetIdentit
 // NewGetIdentityEnrollmentsParamsWithHTTPClient creates a new GetIdentityEnrollmentsParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewGetIdentityEnrollmentsParamsWithHTTPClient(client *http.Client) *GetIdentityEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityEnrollmentsParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type GetIdentityEnrollmentsParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *GetIdentityEnrollmentsParams) WithDefaults() *GetIdentityEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *GetIdentityEnrollmentsParams) WithDefaults() *GetIdentityEnrollmentsPar
 //
 // All values with no default are reset to their zero value.
 func (o *GetIdentityEnrollmentsParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the get identity enrollments params
 func (o *GetIdentityEnrollmentsParams) WithTimeout(timeout time.Duration) *GetIdentityEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the get identity enrollments params
 func (o *GetIdentityEnrollmentsParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the get identity enrollments params
 func (o *GetIdentityEnrollmentsParams) WithContext(ctx context.Context) *GetIdentityEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the get identity enrollments params
 func (o *GetIdentityEnrollmentsParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the get identity enrollments params
 func (o *GetIdentityEnrollmentsParams) WithHTTPClient(client *http.Client) *GetIdentityEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the get identity enrollments params
 func (o *GetIdentityEnrollmentsParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the get identity enrollments params
 func (o *GetIdentityEnrollmentsParams) WithID(id string) *GetIdentityEnrollmentsParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the get identity enrollments params
 func (o *GetIdentityEnrollmentsParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *GetIdentityEnrollmentsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

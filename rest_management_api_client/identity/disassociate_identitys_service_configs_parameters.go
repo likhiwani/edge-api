@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDisassociateIdentitysServiceConfigsParams() *DisassociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	return &DisassociateIdentitysServiceConfigsParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewDisassociateIdentitysServiceConfigsParams() *DisassociateIdentitysServic
 // NewDisassociateIdentitysServiceConfigsParamsWithTimeout creates a new DisassociateIdentitysServiceConfigsParams object
 // with the ability to set a timeout on a request.
 func NewDisassociateIdentitysServiceConfigsParamsWithTimeout(timeout time.Duration) *DisassociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	return &DisassociateIdentitysServiceConfigsParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewDisassociateIdentitysServiceConfigsParamsWithTimeout(timeout time.Durati
 // NewDisassociateIdentitysServiceConfigsParamsWithContext creates a new DisassociateIdentitysServiceConfigsParams object
 // with the ability to set a context for a request.
 func NewDisassociateIdentitysServiceConfigsParamsWithContext(ctx context.Context) *DisassociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	return &DisassociateIdentitysServiceConfigsParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewDisassociateIdentitysServiceConfigsParamsWithContext(ctx context.Context
 // NewDisassociateIdentitysServiceConfigsParamsWithHTTPClient creates a new DisassociateIdentitysServiceConfigsParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDisassociateIdentitysServiceConfigsParamsWithHTTPClient(client *http.Client) *DisassociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	return &DisassociateIdentitysServiceConfigsParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type DisassociateIdentitysServiceConfigsParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DisassociateIdentitysServiceConfigsParams) WithDefaults() *DisassociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *DisassociateIdentitysServiceConfigsParams) WithDefaults() *Disassociate
 //
 // All values with no default are reset to their zero value.
 func (o *DisassociateIdentitysServiceConfigsParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the disassociate identitys service configs params
 func (o *DisassociateIdentitysServiceConfigsParams) WithTimeout(timeout time.Duration) *DisassociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the disassociate identitys service configs params
 func (o *DisassociateIdentitysServiceConfigsParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the disassociate identitys service configs params
 func (o *DisassociateIdentitysServiceConfigsParams) WithContext(ctx context.Context) *DisassociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the disassociate identitys service configs params
 func (o *DisassociateIdentitysServiceConfigsParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the disassociate identitys service configs params
 func (o *DisassociateIdentitysServiceConfigsParams) WithHTTPClient(client *http.Client) *DisassociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the disassociate identitys service configs params
 func (o *DisassociateIdentitysServiceConfigsParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the disassociate identitys service configs params
 func (o *DisassociateIdentitysServiceConfigsParams) WithID(id string) *DisassociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the disassociate identitys service configs params
 func (o *DisassociateIdentitysServiceConfigsParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WithServiceConfigIDPairs adds the serviceConfigIDPairs to the disassociate identitys service configs params
 func (o *DisassociateIdentitysServiceConfigsParams) WithServiceConfigIDPairs(serviceConfigIDPairs rest_model.ServiceConfigsAssignList) *DisassociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetServiceConfigIDPairs(serviceConfigIDPairs)
 	return o
 }
 
 // SetServiceConfigIDPairs adds the serviceConfigIdPairs to the disassociate identitys service configs params
 func (o *DisassociateIdentitysServiceConfigsParams) SetServiceConfigIDPairs(serviceConfigIDPairs rest_model.ServiceConfigsAssignList) {
+    logtrace.LogWithFunctionName()
 	o.ServiceConfigIDPairs = serviceConfigIDPairs
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DisassociateIdentitysServiceConfigsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

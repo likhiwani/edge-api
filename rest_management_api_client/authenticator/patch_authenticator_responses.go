@@ -30,6 +30,7 @@ package authenticator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type PatchAuthenticatorReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *PatchAuthenticatorReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewPatchAuthenticatorOK()
@@ -91,6 +93,7 @@ func (o *PatchAuthenticatorReader) ReadResponse(response runtime.ClientResponse,
 
 // NewPatchAuthenticatorOK creates a PatchAuthenticatorOK with default headers values
 func NewPatchAuthenticatorOK() *PatchAuthenticatorOK {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthenticatorOK{}
 }
 
@@ -105,49 +108,59 @@ type PatchAuthenticatorOK struct {
 
 // IsSuccess returns true when this patch authenticator o k response has a 2xx status code
 func (o *PatchAuthenticatorOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this patch authenticator o k response has a 3xx status code
 func (o *PatchAuthenticatorOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch authenticator o k response has a 4xx status code
 func (o *PatchAuthenticatorOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this patch authenticator o k response has a 5xx status code
 func (o *PatchAuthenticatorOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch authenticator o k response a status code equal to that given
 func (o *PatchAuthenticatorOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the patch authenticator o k response
 func (o *PatchAuthenticatorOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *PatchAuthenticatorOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /authenticators/{id}][%d] patchAuthenticatorOK %s", 200, payload)
 }
 
 func (o *PatchAuthenticatorOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /authenticators/{id}][%d] patchAuthenticatorOK %s", 200, payload)
 }
 
 func (o *PatchAuthenticatorOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchAuthenticatorOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -161,6 +174,7 @@ func (o *PatchAuthenticatorOK) readResponse(response runtime.ClientResponse, con
 
 // NewPatchAuthenticatorBadRequest creates a PatchAuthenticatorBadRequest with default headers values
 func NewPatchAuthenticatorBadRequest() *PatchAuthenticatorBadRequest {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthenticatorBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type PatchAuthenticatorBadRequest struct {
 
 // IsSuccess returns true when this patch authenticator bad request response has a 2xx status code
 func (o *PatchAuthenticatorBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch authenticator bad request response has a 3xx status code
 func (o *PatchAuthenticatorBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch authenticator bad request response has a 4xx status code
 func (o *PatchAuthenticatorBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch authenticator bad request response has a 5xx status code
 func (o *PatchAuthenticatorBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch authenticator bad request response a status code equal to that given
 func (o *PatchAuthenticatorBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the patch authenticator bad request response
 func (o *PatchAuthenticatorBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *PatchAuthenticatorBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /authenticators/{id}][%d] patchAuthenticatorBadRequest %s", 400, payload)
 }
 
 func (o *PatchAuthenticatorBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /authenticators/{id}][%d] patchAuthenticatorBadRequest %s", 400, payload)
 }
 
 func (o *PatchAuthenticatorBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchAuthenticatorBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *PatchAuthenticatorBadRequest) readResponse(response runtime.ClientRespo
 
 // NewPatchAuthenticatorUnauthorized creates a PatchAuthenticatorUnauthorized with default headers values
 func NewPatchAuthenticatorUnauthorized() *PatchAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthenticatorUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type PatchAuthenticatorUnauthorized struct {
 
 // IsSuccess returns true when this patch authenticator unauthorized response has a 2xx status code
 func (o *PatchAuthenticatorUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch authenticator unauthorized response has a 3xx status code
 func (o *PatchAuthenticatorUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch authenticator unauthorized response has a 4xx status code
 func (o *PatchAuthenticatorUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch authenticator unauthorized response has a 5xx status code
 func (o *PatchAuthenticatorUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch authenticator unauthorized response a status code equal to that given
 func (o *PatchAuthenticatorUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the patch authenticator unauthorized response
 func (o *PatchAuthenticatorUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *PatchAuthenticatorUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /authenticators/{id}][%d] patchAuthenticatorUnauthorized %s", 401, payload)
 }
 
 func (o *PatchAuthenticatorUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /authenticators/{id}][%d] patchAuthenticatorUnauthorized %s", 401, payload)
 }
 
 func (o *PatchAuthenticatorUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchAuthenticatorUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *PatchAuthenticatorUnauthorized) readResponse(response runtime.ClientRes
 
 // NewPatchAuthenticatorNotFound creates a PatchAuthenticatorNotFound with default headers values
 func NewPatchAuthenticatorNotFound() *PatchAuthenticatorNotFound {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthenticatorNotFound{}
 }
 
@@ -315,49 +351,59 @@ type PatchAuthenticatorNotFound struct {
 
 // IsSuccess returns true when this patch authenticator not found response has a 2xx status code
 func (o *PatchAuthenticatorNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch authenticator not found response has a 3xx status code
 func (o *PatchAuthenticatorNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch authenticator not found response has a 4xx status code
 func (o *PatchAuthenticatorNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch authenticator not found response has a 5xx status code
 func (o *PatchAuthenticatorNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch authenticator not found response a status code equal to that given
 func (o *PatchAuthenticatorNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the patch authenticator not found response
 func (o *PatchAuthenticatorNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *PatchAuthenticatorNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /authenticators/{id}][%d] patchAuthenticatorNotFound %s", 404, payload)
 }
 
 func (o *PatchAuthenticatorNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /authenticators/{id}][%d] patchAuthenticatorNotFound %s", 404, payload)
 }
 
 func (o *PatchAuthenticatorNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchAuthenticatorNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *PatchAuthenticatorNotFound) readResponse(response runtime.ClientRespons
 
 // NewPatchAuthenticatorTooManyRequests creates a PatchAuthenticatorTooManyRequests with default headers values
 func NewPatchAuthenticatorTooManyRequests() *PatchAuthenticatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthenticatorTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type PatchAuthenticatorTooManyRequests struct {
 
 // IsSuccess returns true when this patch authenticator too many requests response has a 2xx status code
 func (o *PatchAuthenticatorTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch authenticator too many requests response has a 3xx status code
 func (o *PatchAuthenticatorTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch authenticator too many requests response has a 4xx status code
 func (o *PatchAuthenticatorTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch authenticator too many requests response has a 5xx status code
 func (o *PatchAuthenticatorTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch authenticator too many requests response a status code equal to that given
 func (o *PatchAuthenticatorTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the patch authenticator too many requests response
 func (o *PatchAuthenticatorTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *PatchAuthenticatorTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /authenticators/{id}][%d] patchAuthenticatorTooManyRequests %s", 429, payload)
 }
 
 func (o *PatchAuthenticatorTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /authenticators/{id}][%d] patchAuthenticatorTooManyRequests %s", 429, payload)
 }
 
 func (o *PatchAuthenticatorTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchAuthenticatorTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *PatchAuthenticatorTooManyRequests) readResponse(response runtime.Client
 
 // NewPatchAuthenticatorServiceUnavailable creates a PatchAuthenticatorServiceUnavailable with default headers values
 func NewPatchAuthenticatorServiceUnavailable() *PatchAuthenticatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthenticatorServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type PatchAuthenticatorServiceUnavailable struct {
 
 // IsSuccess returns true when this patch authenticator service unavailable response has a 2xx status code
 func (o *PatchAuthenticatorServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch authenticator service unavailable response has a 3xx status code
 func (o *PatchAuthenticatorServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch authenticator service unavailable response has a 4xx status code
 func (o *PatchAuthenticatorServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this patch authenticator service unavailable response has a 5xx status code
 func (o *PatchAuthenticatorServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this patch authenticator service unavailable response a status code equal to that given
 func (o *PatchAuthenticatorServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the patch authenticator service unavailable response
 func (o *PatchAuthenticatorServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *PatchAuthenticatorServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /authenticators/{id}][%d] patchAuthenticatorServiceUnavailable %s", 503, payload)
 }
 
 func (o *PatchAuthenticatorServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /authenticators/{id}][%d] patchAuthenticatorServiceUnavailable %s", 503, payload)
 }
 
 func (o *PatchAuthenticatorServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchAuthenticatorServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

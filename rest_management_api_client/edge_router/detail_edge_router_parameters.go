@@ -30,6 +30,7 @@ package edge_router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDetailEdgeRouterParams() *DetailEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	return &DetailEdgeRouterParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDetailEdgeRouterParams() *DetailEdgeRouterParams {
 // NewDetailEdgeRouterParamsWithTimeout creates a new DetailEdgeRouterParams object
 // with the ability to set a timeout on a request.
 func NewDetailEdgeRouterParamsWithTimeout(timeout time.Duration) *DetailEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	return &DetailEdgeRouterParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDetailEdgeRouterParamsWithTimeout(timeout time.Duration) *DetailEdgeRout
 // NewDetailEdgeRouterParamsWithContext creates a new DetailEdgeRouterParams object
 // with the ability to set a context for a request.
 func NewDetailEdgeRouterParamsWithContext(ctx context.Context) *DetailEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	return &DetailEdgeRouterParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDetailEdgeRouterParamsWithContext(ctx context.Context) *DetailEdgeRouter
 // NewDetailEdgeRouterParamsWithHTTPClient creates a new DetailEdgeRouterParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDetailEdgeRouterParamsWithHTTPClient(client *http.Client) *DetailEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	return &DetailEdgeRouterParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DetailEdgeRouterParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailEdgeRouterParams) WithDefaults() *DetailEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DetailEdgeRouterParams) WithDefaults() *DetailEdgeRouterParams {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailEdgeRouterParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the detail edge router params
 func (o *DetailEdgeRouterParams) WithTimeout(timeout time.Duration) *DetailEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the detail edge router params
 func (o *DetailEdgeRouterParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the detail edge router params
 func (o *DetailEdgeRouterParams) WithContext(ctx context.Context) *DetailEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the detail edge router params
 func (o *DetailEdgeRouterParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the detail edge router params
 func (o *DetailEdgeRouterParams) WithHTTPClient(client *http.Client) *DetailEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the detail edge router params
 func (o *DetailEdgeRouterParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the detail edge router params
 func (o *DetailEdgeRouterParams) WithID(id string) *DetailEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the detail edge router params
 func (o *DetailEdgeRouterParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DetailEdgeRouterParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

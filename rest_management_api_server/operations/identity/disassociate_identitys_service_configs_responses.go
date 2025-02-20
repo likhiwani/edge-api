@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DisassociateIdentitysServiceConfigsOK struct {
 
 // NewDisassociateIdentitysServiceConfigsOK creates DisassociateIdentitysServiceConfigsOK with default headers values
 func NewDisassociateIdentitysServiceConfigsOK() *DisassociateIdentitysServiceConfigsOK {
+    logtrace.LogWithFunctionName()
 
 	return &DisassociateIdentitysServiceConfigsOK{}
 }
 
 // WithPayload adds the payload to the disassociate identitys service configs o k response
 func (o *DisassociateIdentitysServiceConfigsOK) WithPayload(payload *rest_model.Empty) *DisassociateIdentitysServiceConfigsOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the disassociate identitys service configs o k response
 func (o *DisassociateIdentitysServiceConfigsOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DisassociateIdentitysServiceConfigsOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DisassociateIdentitysServiceConfigsBadRequest struct {
 
 // NewDisassociateIdentitysServiceConfigsBadRequest creates DisassociateIdentitysServiceConfigsBadRequest with default headers values
 func NewDisassociateIdentitysServiceConfigsBadRequest() *DisassociateIdentitysServiceConfigsBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &DisassociateIdentitysServiceConfigsBadRequest{}
 }
 
 // WithPayload adds the payload to the disassociate identitys service configs bad request response
 func (o *DisassociateIdentitysServiceConfigsBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *DisassociateIdentitysServiceConfigsBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the disassociate identitys service configs bad request response
 func (o *DisassociateIdentitysServiceConfigsBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DisassociateIdentitysServiceConfigsBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DisassociateIdentitysServiceConfigsUnauthorized struct {
 
 // NewDisassociateIdentitysServiceConfigsUnauthorized creates DisassociateIdentitysServiceConfigsUnauthorized with default headers values
 func NewDisassociateIdentitysServiceConfigsUnauthorized() *DisassociateIdentitysServiceConfigsUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DisassociateIdentitysServiceConfigsUnauthorized{}
 }
 
 // WithPayload adds the payload to the disassociate identitys service configs unauthorized response
 func (o *DisassociateIdentitysServiceConfigsUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DisassociateIdentitysServiceConfigsUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the disassociate identitys service configs unauthorized response
 func (o *DisassociateIdentitysServiceConfigsUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DisassociateIdentitysServiceConfigsUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DisassociateIdentitysServiceConfigsNotFound struct {
 
 // NewDisassociateIdentitysServiceConfigsNotFound creates DisassociateIdentitysServiceConfigsNotFound with default headers values
 func NewDisassociateIdentitysServiceConfigsNotFound() *DisassociateIdentitysServiceConfigsNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DisassociateIdentitysServiceConfigsNotFound{}
 }
 
 // WithPayload adds the payload to the disassociate identitys service configs not found response
 func (o *DisassociateIdentitysServiceConfigsNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DisassociateIdentitysServiceConfigsNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the disassociate identitys service configs not found response
 func (o *DisassociateIdentitysServiceConfigsNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DisassociateIdentitysServiceConfigsNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DisassociateIdentitysServiceConfigsTooManyRequests struct {
 
 // NewDisassociateIdentitysServiceConfigsTooManyRequests creates DisassociateIdentitysServiceConfigsTooManyRequests with default headers values
 func NewDisassociateIdentitysServiceConfigsTooManyRequests() *DisassociateIdentitysServiceConfigsTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DisassociateIdentitysServiceConfigsTooManyRequests{}
 }
 
 // WithPayload adds the payload to the disassociate identitys service configs too many requests response
 func (o *DisassociateIdentitysServiceConfigsTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DisassociateIdentitysServiceConfigsTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the disassociate identitys service configs too many requests response
 func (o *DisassociateIdentitysServiceConfigsTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DisassociateIdentitysServiceConfigsTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type DisassociateIdentitysServiceConfigsServiceUnavailable struct {
 
 // NewDisassociateIdentitysServiceConfigsServiceUnavailable creates DisassociateIdentitysServiceConfigsServiceUnavailable with default headers values
 func NewDisassociateIdentitysServiceConfigsServiceUnavailable() *DisassociateIdentitysServiceConfigsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DisassociateIdentitysServiceConfigsServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the disassociate identitys service configs service unavailable response
 func (o *DisassociateIdentitysServiceConfigsServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DisassociateIdentitysServiceConfigsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the disassociate identitys service configs service unavailable response
 func (o *DisassociateIdentitysServiceConfigsServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DisassociateIdentitysServiceConfigsServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

@@ -30,6 +30,7 @@ package enrollment
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListNetworkJWTsOK struct {
 
 // NewListNetworkJWTsOK creates ListNetworkJWTsOK with default headers values
 func NewListNetworkJWTsOK() *ListNetworkJWTsOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListNetworkJWTsOK{}
 }
 
 // WithPayload adds the payload to the list network j w ts o k response
 func (o *ListNetworkJWTsOK) WithPayload(payload *rest_model.ListNetworkJWTsEnvelope) *ListNetworkJWTsOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list network j w ts o k response
 func (o *ListNetworkJWTsOK) SetPayload(payload *rest_model.ListNetworkJWTsEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListNetworkJWTsOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ListNetworkJWTsBadRequest struct {
 
 // NewListNetworkJWTsBadRequest creates ListNetworkJWTsBadRequest with default headers values
 func NewListNetworkJWTsBadRequest() *ListNetworkJWTsBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &ListNetworkJWTsBadRequest{}
 }
 
 // WithPayload adds the payload to the list network j w ts bad request response
 func (o *ListNetworkJWTsBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *ListNetworkJWTsBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list network j w ts bad request response
 func (o *ListNetworkJWTsBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListNetworkJWTsBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ListNetworkJWTsTooManyRequests struct {
 
 // NewListNetworkJWTsTooManyRequests creates ListNetworkJWTsTooManyRequests with default headers values
 func NewListNetworkJWTsTooManyRequests() *ListNetworkJWTsTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ListNetworkJWTsTooManyRequests{}
 }
 
 // WithPayload adds the payload to the list network j w ts too many requests response
 func (o *ListNetworkJWTsTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ListNetworkJWTsTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list network j w ts too many requests response
 func (o *ListNetworkJWTsTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListNetworkJWTsTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {

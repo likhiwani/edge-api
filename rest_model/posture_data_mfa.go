@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -67,6 +68,7 @@ type PostureDataMfa struct {
 
 // Validate validates this posture data mfa
 func (m *PostureDataMfa) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateAPISessionID(formats); err != nil {
@@ -96,6 +98,7 @@ func (m *PostureDataMfa) Validate(formats strfmt.Registry) error {
 }
 
 func (m *PostureDataMfa) validateAPISessionID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("apiSessionId", "body", m.APISessionID); err != nil {
 		return err
@@ -105,6 +108,7 @@ func (m *PostureDataMfa) validateAPISessionID(formats strfmt.Registry) error {
 }
 
 func (m *PostureDataMfa) validatePassedAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("passedAt", "body", m.PassedAt); err != nil {
 		return err
@@ -118,6 +122,7 @@ func (m *PostureDataMfa) validatePassedAt(formats strfmt.Registry) error {
 }
 
 func (m *PostureDataMfa) validatePassedMfa(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("passedMfa", "body", m.PassedMfa); err != nil {
 		return err
@@ -127,6 +132,7 @@ func (m *PostureDataMfa) validatePassedMfa(formats strfmt.Registry) error {
 }
 
 func (m *PostureDataMfa) validatePassedOnUnlock(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("passedOnUnlock", "body", m.PassedOnUnlock); err != nil {
 		return err
@@ -136,6 +142,7 @@ func (m *PostureDataMfa) validatePassedOnUnlock(formats strfmt.Registry) error {
 }
 
 func (m *PostureDataMfa) validatePassedOnWake(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("passedOnWake", "body", m.PassedOnWake); err != nil {
 		return err
@@ -146,11 +153,13 @@ func (m *PostureDataMfa) validatePassedOnWake(formats strfmt.Registry) error {
 
 // ContextValidate validates this posture data mfa based on context it is used
 func (m *PostureDataMfa) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *PostureDataMfa) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -159,6 +168,7 @@ func (m *PostureDataMfa) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureDataMfa) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureDataMfa
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

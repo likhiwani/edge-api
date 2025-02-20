@@ -30,6 +30,7 @@ package service_policy
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type DeleteServicePolicyHandlerFunc func(DeleteServicePolicyParams, interface{})
 
 // Handle executing the request and returning a response
 func (fn DeleteServicePolicyHandlerFunc) Handle(params DeleteServicePolicyParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type DeleteServicePolicyHandler interface {
 
 // NewDeleteServicePolicy creates a new http.Handler for the delete service policy operation
 func NewDeleteServicePolicy(ctx *middleware.Context, handler DeleteServicePolicyHandler) *DeleteServicePolicy {
+    logtrace.LogWithFunctionName()
 	return &DeleteServicePolicy{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type DeleteServicePolicy struct {
 }
 
 func (o *DeleteServicePolicy) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

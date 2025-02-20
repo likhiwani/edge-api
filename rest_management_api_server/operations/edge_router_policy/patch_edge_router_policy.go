@@ -30,6 +30,7 @@ package edge_router_policy
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type PatchEdgeRouterPolicyHandlerFunc func(PatchEdgeRouterPolicyParams, interfac
 
 // Handle executing the request and returning a response
 func (fn PatchEdgeRouterPolicyHandlerFunc) Handle(params PatchEdgeRouterPolicyParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type PatchEdgeRouterPolicyHandler interface {
 
 // NewPatchEdgeRouterPolicy creates a new http.Handler for the patch edge router policy operation
 func NewPatchEdgeRouterPolicy(ctx *middleware.Context, handler PatchEdgeRouterPolicyHandler) *PatchEdgeRouterPolicy {
+    logtrace.LogWithFunctionName()
 	return &PatchEdgeRouterPolicy{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type PatchEdgeRouterPolicy struct {
 }
 
 func (o *PatchEdgeRouterPolicy) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

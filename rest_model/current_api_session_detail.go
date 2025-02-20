@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -56,6 +57,7 @@ type CurrentAPISessionDetail struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *CurrentAPISessionDetail) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 APISessionDetail
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -82,6 +84,7 @@ func (m *CurrentAPISessionDetail) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m CurrentAPISessionDetail) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.APISessionDetail)
@@ -109,6 +112,7 @@ func (m CurrentAPISessionDetail) MarshalJSON() ([]byte, error) {
 
 // Validate validates this current Api session detail
 func (m *CurrentAPISessionDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with APISessionDetail
@@ -131,6 +135,7 @@ func (m *CurrentAPISessionDetail) Validate(formats strfmt.Registry) error {
 }
 
 func (m *CurrentAPISessionDetail) validateExpirationSeconds(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("expirationSeconds", "body", m.ExpirationSeconds); err != nil {
 		return err
@@ -140,6 +145,7 @@ func (m *CurrentAPISessionDetail) validateExpirationSeconds(formats strfmt.Regis
 }
 
 func (m *CurrentAPISessionDetail) validateExpiresAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("expiresAt", "body", m.ExpiresAt); err != nil {
 		return err
@@ -154,6 +160,7 @@ func (m *CurrentAPISessionDetail) validateExpiresAt(formats strfmt.Registry) err
 
 // ContextValidate validate this current Api session detail based on the context it is used
 func (m *CurrentAPISessionDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with APISessionDetail
@@ -169,6 +176,7 @@ func (m *CurrentAPISessionDetail) ContextValidate(ctx context.Context, formats s
 
 // MarshalBinary interface implementation
 func (m *CurrentAPISessionDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -177,6 +185,7 @@ func (m *CurrentAPISessionDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *CurrentAPISessionDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res CurrentAPISessionDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

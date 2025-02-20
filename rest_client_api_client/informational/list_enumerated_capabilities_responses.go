@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ListEnumeratedCapabilitiesReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ListEnumeratedCapabilitiesReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewListEnumeratedCapabilitiesOK()
@@ -61,6 +63,7 @@ func (o *ListEnumeratedCapabilitiesReader) ReadResponse(response runtime.ClientR
 
 // NewListEnumeratedCapabilitiesOK creates a ListEnumeratedCapabilitiesOK with default headers values
 func NewListEnumeratedCapabilitiesOK() *ListEnumeratedCapabilitiesOK {
+    logtrace.LogWithFunctionName()
 	return &ListEnumeratedCapabilitiesOK{}
 }
 
@@ -75,49 +78,59 @@ type ListEnumeratedCapabilitiesOK struct {
 
 // IsSuccess returns true when this list enumerated capabilities o k response has a 2xx status code
 func (o *ListEnumeratedCapabilitiesOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this list enumerated capabilities o k response has a 3xx status code
 func (o *ListEnumeratedCapabilitiesOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list enumerated capabilities o k response has a 4xx status code
 func (o *ListEnumeratedCapabilitiesOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list enumerated capabilities o k response has a 5xx status code
 func (o *ListEnumeratedCapabilitiesOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list enumerated capabilities o k response a status code equal to that given
 func (o *ListEnumeratedCapabilitiesOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the list enumerated capabilities o k response
 func (o *ListEnumeratedCapabilitiesOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ListEnumeratedCapabilitiesOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /enumerated-capabilities][%d] listEnumeratedCapabilitiesOK %s", 200, payload)
 }
 
 func (o *ListEnumeratedCapabilitiesOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /enumerated-capabilities][%d] listEnumeratedCapabilitiesOK %s", 200, payload)
 }
 
 func (o *ListEnumeratedCapabilitiesOK) GetPayload() *rest_model.ListEnumeratedCapabilitiesEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListEnumeratedCapabilitiesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListEnumeratedCapabilitiesEnvelope)
 

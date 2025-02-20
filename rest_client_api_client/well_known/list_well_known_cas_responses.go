@@ -30,6 +30,7 @@ package well_known
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -45,6 +46,7 @@ type ListWellKnownCasReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ListWellKnownCasReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewListWellKnownCasOK()
@@ -59,6 +61,7 @@ func (o *ListWellKnownCasReader) ReadResponse(response runtime.ClientResponse, c
 
 // NewListWellKnownCasOK creates a ListWellKnownCasOK with default headers values
 func NewListWellKnownCasOK() *ListWellKnownCasOK {
+    logtrace.LogWithFunctionName()
 	return &ListWellKnownCasOK{}
 }
 
@@ -73,49 +76,59 @@ type ListWellKnownCasOK struct {
 
 // IsSuccess returns true when this list well known cas o k response has a 2xx status code
 func (o *ListWellKnownCasOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this list well known cas o k response has a 3xx status code
 func (o *ListWellKnownCasOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list well known cas o k response has a 4xx status code
 func (o *ListWellKnownCasOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list well known cas o k response has a 5xx status code
 func (o *ListWellKnownCasOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list well known cas o k response a status code equal to that given
 func (o *ListWellKnownCasOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the list well known cas o k response
 func (o *ListWellKnownCasOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ListWellKnownCasOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /.well-known/est/cacerts][%d] listWellKnownCasOK %s", 200, payload)
 }
 
 func (o *ListWellKnownCasOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /.well-known/est/cacerts][%d] listWellKnownCasOK %s", 200, payload)
 }
 
 func (o *ListWellKnownCasOK) GetPayload() string {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListWellKnownCasOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {

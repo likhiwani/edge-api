@@ -30,6 +30,7 @@ package terminator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DetailTerminatorReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DetailTerminatorReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDetailTerminatorOK()
@@ -85,6 +87,7 @@ func (o *DetailTerminatorReader) ReadResponse(response runtime.ClientResponse, c
 
 // NewDetailTerminatorOK creates a DetailTerminatorOK with default headers values
 func NewDetailTerminatorOK() *DetailTerminatorOK {
+    logtrace.LogWithFunctionName()
 	return &DetailTerminatorOK{}
 }
 
@@ -99,49 +102,59 @@ type DetailTerminatorOK struct {
 
 // IsSuccess returns true when this detail terminator o k response has a 2xx status code
 func (o *DetailTerminatorOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this detail terminator o k response has a 3xx status code
 func (o *DetailTerminatorOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail terminator o k response has a 4xx status code
 func (o *DetailTerminatorOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail terminator o k response has a 5xx status code
 func (o *DetailTerminatorOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail terminator o k response a status code equal to that given
 func (o *DetailTerminatorOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the detail terminator o k response
 func (o *DetailTerminatorOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DetailTerminatorOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /terminators/{id}][%d] detailTerminatorOK %s", 200, payload)
 }
 
 func (o *DetailTerminatorOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /terminators/{id}][%d] detailTerminatorOK %s", 200, payload)
 }
 
 func (o *DetailTerminatorOK) GetPayload() *rest_model.DetailTerminatorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailTerminatorOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.DetailTerminatorEnvelope)
 
@@ -155,6 +168,7 @@ func (o *DetailTerminatorOK) readResponse(response runtime.ClientResponse, consu
 
 // NewDetailTerminatorUnauthorized creates a DetailTerminatorUnauthorized with default headers values
 func NewDetailTerminatorUnauthorized() *DetailTerminatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DetailTerminatorUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type DetailTerminatorUnauthorized struct {
 
 // IsSuccess returns true when this detail terminator unauthorized response has a 2xx status code
 func (o *DetailTerminatorUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail terminator unauthorized response has a 3xx status code
 func (o *DetailTerminatorUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail terminator unauthorized response has a 4xx status code
 func (o *DetailTerminatorUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail terminator unauthorized response has a 5xx status code
 func (o *DetailTerminatorUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail terminator unauthorized response a status code equal to that given
 func (o *DetailTerminatorUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the detail terminator unauthorized response
 func (o *DetailTerminatorUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DetailTerminatorUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /terminators/{id}][%d] detailTerminatorUnauthorized %s", 401, payload)
 }
 
 func (o *DetailTerminatorUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /terminators/{id}][%d] detailTerminatorUnauthorized %s", 401, payload)
 }
 
 func (o *DetailTerminatorUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailTerminatorUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *DetailTerminatorUnauthorized) readResponse(response runtime.ClientRespo
 
 // NewDetailTerminatorNotFound creates a DetailTerminatorNotFound with default headers values
 func NewDetailTerminatorNotFound() *DetailTerminatorNotFound {
+    logtrace.LogWithFunctionName()
 	return &DetailTerminatorNotFound{}
 }
 
@@ -239,49 +264,59 @@ type DetailTerminatorNotFound struct {
 
 // IsSuccess returns true when this detail terminator not found response has a 2xx status code
 func (o *DetailTerminatorNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail terminator not found response has a 3xx status code
 func (o *DetailTerminatorNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail terminator not found response has a 4xx status code
 func (o *DetailTerminatorNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail terminator not found response has a 5xx status code
 func (o *DetailTerminatorNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail terminator not found response a status code equal to that given
 func (o *DetailTerminatorNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the detail terminator not found response
 func (o *DetailTerminatorNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DetailTerminatorNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /terminators/{id}][%d] detailTerminatorNotFound %s", 404, payload)
 }
 
 func (o *DetailTerminatorNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /terminators/{id}][%d] detailTerminatorNotFound %s", 404, payload)
 }
 
 func (o *DetailTerminatorNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailTerminatorNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *DetailTerminatorNotFound) readResponse(response runtime.ClientResponse,
 
 // NewDetailTerminatorTooManyRequests creates a DetailTerminatorTooManyRequests with default headers values
 func NewDetailTerminatorTooManyRequests() *DetailTerminatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DetailTerminatorTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type DetailTerminatorTooManyRequests struct {
 
 // IsSuccess returns true when this detail terminator too many requests response has a 2xx status code
 func (o *DetailTerminatorTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail terminator too many requests response has a 3xx status code
 func (o *DetailTerminatorTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail terminator too many requests response has a 4xx status code
 func (o *DetailTerminatorTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail terminator too many requests response has a 5xx status code
 func (o *DetailTerminatorTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail terminator too many requests response a status code equal to that given
 func (o *DetailTerminatorTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the detail terminator too many requests response
 func (o *DetailTerminatorTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DetailTerminatorTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /terminators/{id}][%d] detailTerminatorTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailTerminatorTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /terminators/{id}][%d] detailTerminatorTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailTerminatorTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailTerminatorTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *DetailTerminatorTooManyRequests) readResponse(response runtime.ClientRe
 
 // NewDetailTerminatorServiceUnavailable creates a DetailTerminatorServiceUnavailable with default headers values
 func NewDetailTerminatorServiceUnavailable() *DetailTerminatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DetailTerminatorServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type DetailTerminatorServiceUnavailable struct {
 
 // IsSuccess returns true when this detail terminator service unavailable response has a 2xx status code
 func (o *DetailTerminatorServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail terminator service unavailable response has a 3xx status code
 func (o *DetailTerminatorServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail terminator service unavailable response has a 4xx status code
 func (o *DetailTerminatorServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail terminator service unavailable response has a 5xx status code
 func (o *DetailTerminatorServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this detail terminator service unavailable response a status code equal to that given
 func (o *DetailTerminatorServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the detail terminator service unavailable response
 func (o *DetailTerminatorServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DetailTerminatorServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /terminators/{id}][%d] detailTerminatorServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailTerminatorServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /terminators/{id}][%d] detailTerminatorServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailTerminatorServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailTerminatorServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

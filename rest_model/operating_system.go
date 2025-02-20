@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -54,6 +55,7 @@ type OperatingSystem struct {
 
 // Validate validates this operating system
 func (m *OperatingSystem) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateType(formats); err != nil {
@@ -71,6 +73,7 @@ func (m *OperatingSystem) Validate(formats strfmt.Registry) error {
 }
 
 func (m *OperatingSystem) validateType(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("type", "body", m.Type); err != nil {
 		return err
@@ -95,6 +98,7 @@ func (m *OperatingSystem) validateType(formats strfmt.Registry) error {
 }
 
 func (m *OperatingSystem) validateVersions(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("versions", "body", m.Versions); err != nil {
 		return err
@@ -105,6 +109,7 @@ func (m *OperatingSystem) validateVersions(formats strfmt.Registry) error {
 
 // ContextValidate validate this operating system based on the context it is used
 func (m *OperatingSystem) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateType(ctx, formats); err != nil {
@@ -118,6 +123,7 @@ func (m *OperatingSystem) ContextValidate(ctx context.Context, formats strfmt.Re
 }
 
 func (m *OperatingSystem) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Type != nil {
 
@@ -136,6 +142,7 @@ func (m *OperatingSystem) contextValidateType(ctx context.Context, formats strfm
 
 // MarshalBinary interface implementation
 func (m *OperatingSystem) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -144,6 +151,7 @@ func (m *OperatingSystem) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *OperatingSystem) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res OperatingSystem
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

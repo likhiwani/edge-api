@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DeleteCurrentAPISessionCertificateOK struct {
 
 // NewDeleteCurrentAPISessionCertificateOK creates DeleteCurrentAPISessionCertificateOK with default headers values
 func NewDeleteCurrentAPISessionCertificateOK() *DeleteCurrentAPISessionCertificateOK {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteCurrentAPISessionCertificateOK{}
 }
 
 // WithPayload adds the payload to the delete current Api session certificate o k response
 func (o *DeleteCurrentAPISessionCertificateOK) WithPayload(payload *rest_model.Empty) *DeleteCurrentAPISessionCertificateOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete current Api session certificate o k response
 func (o *DeleteCurrentAPISessionCertificateOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteCurrentAPISessionCertificateOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DeleteCurrentAPISessionCertificateBadRequest struct {
 
 // NewDeleteCurrentAPISessionCertificateBadRequest creates DeleteCurrentAPISessionCertificateBadRequest with default headers values
 func NewDeleteCurrentAPISessionCertificateBadRequest() *DeleteCurrentAPISessionCertificateBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteCurrentAPISessionCertificateBadRequest{}
 }
 
 // WithPayload adds the payload to the delete current Api session certificate bad request response
 func (o *DeleteCurrentAPISessionCertificateBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteCurrentAPISessionCertificateBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete current Api session certificate bad request response
 func (o *DeleteCurrentAPISessionCertificateBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteCurrentAPISessionCertificateBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DeleteCurrentAPISessionCertificateUnauthorized struct {
 
 // NewDeleteCurrentAPISessionCertificateUnauthorized creates DeleteCurrentAPISessionCertificateUnauthorized with default headers values
 func NewDeleteCurrentAPISessionCertificateUnauthorized() *DeleteCurrentAPISessionCertificateUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteCurrentAPISessionCertificateUnauthorized{}
 }
 
 // WithPayload adds the payload to the delete current Api session certificate unauthorized response
 func (o *DeleteCurrentAPISessionCertificateUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteCurrentAPISessionCertificateUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete current Api session certificate unauthorized response
 func (o *DeleteCurrentAPISessionCertificateUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteCurrentAPISessionCertificateUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DeleteCurrentAPISessionCertificateTooManyRequests struct {
 
 // NewDeleteCurrentAPISessionCertificateTooManyRequests creates DeleteCurrentAPISessionCertificateTooManyRequests with default headers values
 func NewDeleteCurrentAPISessionCertificateTooManyRequests() *DeleteCurrentAPISessionCertificateTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteCurrentAPISessionCertificateTooManyRequests{}
 }
 
 // WithPayload adds the payload to the delete current Api session certificate too many requests response
 func (o *DeleteCurrentAPISessionCertificateTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteCurrentAPISessionCertificateTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete current Api session certificate too many requests response
 func (o *DeleteCurrentAPISessionCertificateTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteCurrentAPISessionCertificateTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DeleteCurrentAPISessionCertificateServiceUnavailable struct {
 
 // NewDeleteCurrentAPISessionCertificateServiceUnavailable creates DeleteCurrentAPISessionCertificateServiceUnavailable with default headers values
 func NewDeleteCurrentAPISessionCertificateServiceUnavailable() *DeleteCurrentAPISessionCertificateServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteCurrentAPISessionCertificateServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the delete current Api session certificate service unavailable response
 func (o *DeleteCurrentAPISessionCertificateServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteCurrentAPISessionCertificateServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete current Api session certificate service unavailable response
 func (o *DeleteCurrentAPISessionCertificateServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteCurrentAPISessionCertificateServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

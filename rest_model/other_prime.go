@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/strfmt"
@@ -53,16 +54,19 @@ type OtherPrime struct {
 
 // Validate validates this other prime
 func (m *OtherPrime) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // ContextValidate validates this other prime based on context it is used
 func (m *OtherPrime) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *OtherPrime) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -71,6 +75,7 @@ func (m *OtherPrime) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *OtherPrime) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res OtherPrime
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

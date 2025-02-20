@@ -30,6 +30,7 @@ package edge_router_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -43,6 +44,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewListEdgeRouterPoliciesParams() ListEdgeRouterPoliciesParams {
+    logtrace.LogWithFunctionName()
 
 	return ListEdgeRouterPoliciesParams{}
 }
@@ -75,6 +77,7 @@ type ListEdgeRouterPoliciesParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewListEdgeRouterPoliciesParams() beforehand.
 func (o *ListEdgeRouterPoliciesParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r
@@ -103,6 +106,7 @@ func (o *ListEdgeRouterPoliciesParams) BindRequest(r *http.Request, route *middl
 
 // bindFilter binds and validates parameter Filter from query.
 func (o *ListEdgeRouterPoliciesParams) bindFilter(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -121,6 +125,7 @@ func (o *ListEdgeRouterPoliciesParams) bindFilter(rawData []string, hasKey bool,
 
 // bindLimit binds and validates parameter Limit from query.
 func (o *ListEdgeRouterPoliciesParams) bindLimit(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -144,6 +149,7 @@ func (o *ListEdgeRouterPoliciesParams) bindLimit(rawData []string, hasKey bool, 
 
 // bindOffset binds and validates parameter Offset from query.
 func (o *ListEdgeRouterPoliciesParams) bindOffset(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]

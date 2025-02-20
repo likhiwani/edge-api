@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewVerifyCaParams() *VerifyCaParams {
+    logtrace.LogWithFunctionName()
 	return &VerifyCaParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewVerifyCaParams() *VerifyCaParams {
 // NewVerifyCaParamsWithTimeout creates a new VerifyCaParams object
 // with the ability to set a timeout on a request.
 func NewVerifyCaParamsWithTimeout(timeout time.Duration) *VerifyCaParams {
+    logtrace.LogWithFunctionName()
 	return &VerifyCaParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewVerifyCaParamsWithTimeout(timeout time.Duration) *VerifyCaParams {
 // NewVerifyCaParamsWithContext creates a new VerifyCaParams object
 // with the ability to set a context for a request.
 func NewVerifyCaParamsWithContext(ctx context.Context) *VerifyCaParams {
+    logtrace.LogWithFunctionName()
 	return &VerifyCaParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewVerifyCaParamsWithContext(ctx context.Context) *VerifyCaParams {
 // NewVerifyCaParamsWithHTTPClient creates a new VerifyCaParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewVerifyCaParamsWithHTTPClient(client *http.Client) *VerifyCaParams {
+    logtrace.LogWithFunctionName()
 	return &VerifyCaParams{
 		HTTPClient: client,
 	}
@@ -106,6 +111,7 @@ type VerifyCaParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *VerifyCaParams) WithDefaults() *VerifyCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -114,66 +120,78 @@ func (o *VerifyCaParams) WithDefaults() *VerifyCaParams {
 //
 // All values with no default are reset to their zero value.
 func (o *VerifyCaParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the verify ca params
 func (o *VerifyCaParams) WithTimeout(timeout time.Duration) *VerifyCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the verify ca params
 func (o *VerifyCaParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the verify ca params
 func (o *VerifyCaParams) WithContext(ctx context.Context) *VerifyCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the verify ca params
 func (o *VerifyCaParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the verify ca params
 func (o *VerifyCaParams) WithHTTPClient(client *http.Client) *VerifyCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the verify ca params
 func (o *VerifyCaParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithCertificate adds the certificate to the verify ca params
 func (o *VerifyCaParams) WithCertificate(certificate string) *VerifyCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetCertificate(certificate)
 	return o
 }
 
 // SetCertificate adds the certificate to the verify ca params
 func (o *VerifyCaParams) SetCertificate(certificate string) {
+    logtrace.LogWithFunctionName()
 	o.Certificate = certificate
 }
 
 // WithID adds the id to the verify ca params
 func (o *VerifyCaParams) WithID(id string) *VerifyCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the verify ca params
 func (o *VerifyCaParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *VerifyCaParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

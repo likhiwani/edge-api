@@ -30,6 +30,7 @@ package auth_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DeleteAuthPolicyReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DeleteAuthPolicyReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDeleteAuthPolicyOK()
@@ -91,6 +93,7 @@ func (o *DeleteAuthPolicyReader) ReadResponse(response runtime.ClientResponse, c
 
 // NewDeleteAuthPolicyOK creates a DeleteAuthPolicyOK with default headers values
 func NewDeleteAuthPolicyOK() *DeleteAuthPolicyOK {
+    logtrace.LogWithFunctionName()
 	return &DeleteAuthPolicyOK{}
 }
 
@@ -105,49 +108,59 @@ type DeleteAuthPolicyOK struct {
 
 // IsSuccess returns true when this delete auth policy o k response has a 2xx status code
 func (o *DeleteAuthPolicyOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this delete auth policy o k response has a 3xx status code
 func (o *DeleteAuthPolicyOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete auth policy o k response has a 4xx status code
 func (o *DeleteAuthPolicyOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete auth policy o k response has a 5xx status code
 func (o *DeleteAuthPolicyOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete auth policy o k response a status code equal to that given
 func (o *DeleteAuthPolicyOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the delete auth policy o k response
 func (o *DeleteAuthPolicyOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DeleteAuthPolicyOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /auth-policies/{id}][%d] deleteAuthPolicyOK %s", 200, payload)
 }
 
 func (o *DeleteAuthPolicyOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /auth-policies/{id}][%d] deleteAuthPolicyOK %s", 200, payload)
 }
 
 func (o *DeleteAuthPolicyOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteAuthPolicyOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -161,6 +174,7 @@ func (o *DeleteAuthPolicyOK) readResponse(response runtime.ClientResponse, consu
 
 // NewDeleteAuthPolicyBadRequest creates a DeleteAuthPolicyBadRequest with default headers values
 func NewDeleteAuthPolicyBadRequest() *DeleteAuthPolicyBadRequest {
+    logtrace.LogWithFunctionName()
 	return &DeleteAuthPolicyBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type DeleteAuthPolicyBadRequest struct {
 
 // IsSuccess returns true when this delete auth policy bad request response has a 2xx status code
 func (o *DeleteAuthPolicyBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete auth policy bad request response has a 3xx status code
 func (o *DeleteAuthPolicyBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete auth policy bad request response has a 4xx status code
 func (o *DeleteAuthPolicyBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete auth policy bad request response has a 5xx status code
 func (o *DeleteAuthPolicyBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete auth policy bad request response a status code equal to that given
 func (o *DeleteAuthPolicyBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the delete auth policy bad request response
 func (o *DeleteAuthPolicyBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *DeleteAuthPolicyBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /auth-policies/{id}][%d] deleteAuthPolicyBadRequest %s", 400, payload)
 }
 
 func (o *DeleteAuthPolicyBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /auth-policies/{id}][%d] deleteAuthPolicyBadRequest %s", 400, payload)
 }
 
 func (o *DeleteAuthPolicyBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteAuthPolicyBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *DeleteAuthPolicyBadRequest) readResponse(response runtime.ClientRespons
 
 // NewDeleteAuthPolicyUnauthorized creates a DeleteAuthPolicyUnauthorized with default headers values
 func NewDeleteAuthPolicyUnauthorized() *DeleteAuthPolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DeleteAuthPolicyUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type DeleteAuthPolicyUnauthorized struct {
 
 // IsSuccess returns true when this delete auth policy unauthorized response has a 2xx status code
 func (o *DeleteAuthPolicyUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete auth policy unauthorized response has a 3xx status code
 func (o *DeleteAuthPolicyUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete auth policy unauthorized response has a 4xx status code
 func (o *DeleteAuthPolicyUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete auth policy unauthorized response has a 5xx status code
 func (o *DeleteAuthPolicyUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete auth policy unauthorized response a status code equal to that given
 func (o *DeleteAuthPolicyUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the delete auth policy unauthorized response
 func (o *DeleteAuthPolicyUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DeleteAuthPolicyUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /auth-policies/{id}][%d] deleteAuthPolicyUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteAuthPolicyUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /auth-policies/{id}][%d] deleteAuthPolicyUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteAuthPolicyUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteAuthPolicyUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *DeleteAuthPolicyUnauthorized) readResponse(response runtime.ClientRespo
 
 // NewDeleteAuthPolicyNotFound creates a DeleteAuthPolicyNotFound with default headers values
 func NewDeleteAuthPolicyNotFound() *DeleteAuthPolicyNotFound {
+    logtrace.LogWithFunctionName()
 	return &DeleteAuthPolicyNotFound{}
 }
 
@@ -315,49 +351,59 @@ type DeleteAuthPolicyNotFound struct {
 
 // IsSuccess returns true when this delete auth policy not found response has a 2xx status code
 func (o *DeleteAuthPolicyNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete auth policy not found response has a 3xx status code
 func (o *DeleteAuthPolicyNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete auth policy not found response has a 4xx status code
 func (o *DeleteAuthPolicyNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete auth policy not found response has a 5xx status code
 func (o *DeleteAuthPolicyNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete auth policy not found response a status code equal to that given
 func (o *DeleteAuthPolicyNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the delete auth policy not found response
 func (o *DeleteAuthPolicyNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DeleteAuthPolicyNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /auth-policies/{id}][%d] deleteAuthPolicyNotFound %s", 404, payload)
 }
 
 func (o *DeleteAuthPolicyNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /auth-policies/{id}][%d] deleteAuthPolicyNotFound %s", 404, payload)
 }
 
 func (o *DeleteAuthPolicyNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteAuthPolicyNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *DeleteAuthPolicyNotFound) readResponse(response runtime.ClientResponse,
 
 // NewDeleteAuthPolicyTooManyRequests creates a DeleteAuthPolicyTooManyRequests with default headers values
 func NewDeleteAuthPolicyTooManyRequests() *DeleteAuthPolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DeleteAuthPolicyTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type DeleteAuthPolicyTooManyRequests struct {
 
 // IsSuccess returns true when this delete auth policy too many requests response has a 2xx status code
 func (o *DeleteAuthPolicyTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete auth policy too many requests response has a 3xx status code
 func (o *DeleteAuthPolicyTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete auth policy too many requests response has a 4xx status code
 func (o *DeleteAuthPolicyTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete auth policy too many requests response has a 5xx status code
 func (o *DeleteAuthPolicyTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete auth policy too many requests response a status code equal to that given
 func (o *DeleteAuthPolicyTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the delete auth policy too many requests response
 func (o *DeleteAuthPolicyTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DeleteAuthPolicyTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /auth-policies/{id}][%d] deleteAuthPolicyTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteAuthPolicyTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /auth-policies/{id}][%d] deleteAuthPolicyTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteAuthPolicyTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteAuthPolicyTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *DeleteAuthPolicyTooManyRequests) readResponse(response runtime.ClientRe
 
 // NewDeleteAuthPolicyServiceUnavailable creates a DeleteAuthPolicyServiceUnavailable with default headers values
 func NewDeleteAuthPolicyServiceUnavailable() *DeleteAuthPolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DeleteAuthPolicyServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type DeleteAuthPolicyServiceUnavailable struct {
 
 // IsSuccess returns true when this delete auth policy service unavailable response has a 2xx status code
 func (o *DeleteAuthPolicyServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete auth policy service unavailable response has a 3xx status code
 func (o *DeleteAuthPolicyServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete auth policy service unavailable response has a 4xx status code
 func (o *DeleteAuthPolicyServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete auth policy service unavailable response has a 5xx status code
 func (o *DeleteAuthPolicyServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this delete auth policy service unavailable response a status code equal to that given
 func (o *DeleteAuthPolicyServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the delete auth policy service unavailable response
 func (o *DeleteAuthPolicyServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DeleteAuthPolicyServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /auth-policies/{id}][%d] deleteAuthPolicyServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteAuthPolicyServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /auth-policies/{id}][%d] deleteAuthPolicyServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteAuthPolicyServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteAuthPolicyServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

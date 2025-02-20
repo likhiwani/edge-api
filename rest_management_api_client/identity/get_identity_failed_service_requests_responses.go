@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type GetIdentityFailedServiceRequestsReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *GetIdentityFailedServiceRequestsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewGetIdentityFailedServiceRequestsOK()
@@ -85,6 +87,7 @@ func (o *GetIdentityFailedServiceRequestsReader) ReadResponse(response runtime.C
 
 // NewGetIdentityFailedServiceRequestsOK creates a GetIdentityFailedServiceRequestsOK with default headers values
 func NewGetIdentityFailedServiceRequestsOK() *GetIdentityFailedServiceRequestsOK {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityFailedServiceRequestsOK{}
 }
 
@@ -99,49 +102,59 @@ type GetIdentityFailedServiceRequestsOK struct {
 
 // IsSuccess returns true when this get identity failed service requests o k response has a 2xx status code
 func (o *GetIdentityFailedServiceRequestsOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this get identity failed service requests o k response has a 3xx status code
 func (o *GetIdentityFailedServiceRequestsOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get identity failed service requests o k response has a 4xx status code
 func (o *GetIdentityFailedServiceRequestsOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this get identity failed service requests o k response has a 5xx status code
 func (o *GetIdentityFailedServiceRequestsOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get identity failed service requests o k response a status code equal to that given
 func (o *GetIdentityFailedServiceRequestsOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the get identity failed service requests o k response
 func (o *GetIdentityFailedServiceRequestsOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *GetIdentityFailedServiceRequestsOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsOK %s", 200, payload)
 }
 
 func (o *GetIdentityFailedServiceRequestsOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsOK %s", 200, payload)
 }
 
 func (o *GetIdentityFailedServiceRequestsOK) GetPayload() *rest_model.FailedServiceRequestEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetIdentityFailedServiceRequestsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.FailedServiceRequestEnvelope)
 
@@ -155,6 +168,7 @@ func (o *GetIdentityFailedServiceRequestsOK) readResponse(response runtime.Clien
 
 // NewGetIdentityFailedServiceRequestsUnauthorized creates a GetIdentityFailedServiceRequestsUnauthorized with default headers values
 func NewGetIdentityFailedServiceRequestsUnauthorized() *GetIdentityFailedServiceRequestsUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityFailedServiceRequestsUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type GetIdentityFailedServiceRequestsUnauthorized struct {
 
 // IsSuccess returns true when this get identity failed service requests unauthorized response has a 2xx status code
 func (o *GetIdentityFailedServiceRequestsUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this get identity failed service requests unauthorized response has a 3xx status code
 func (o *GetIdentityFailedServiceRequestsUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get identity failed service requests unauthorized response has a 4xx status code
 func (o *GetIdentityFailedServiceRequestsUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this get identity failed service requests unauthorized response has a 5xx status code
 func (o *GetIdentityFailedServiceRequestsUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get identity failed service requests unauthorized response a status code equal to that given
 func (o *GetIdentityFailedServiceRequestsUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the get identity failed service requests unauthorized response
 func (o *GetIdentityFailedServiceRequestsUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *GetIdentityFailedServiceRequestsUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsUnauthorized %s", 401, payload)
 }
 
 func (o *GetIdentityFailedServiceRequestsUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsUnauthorized %s", 401, payload)
 }
 
 func (o *GetIdentityFailedServiceRequestsUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetIdentityFailedServiceRequestsUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *GetIdentityFailedServiceRequestsUnauthorized) readResponse(response run
 
 // NewGetIdentityFailedServiceRequestsNotFound creates a GetIdentityFailedServiceRequestsNotFound with default headers values
 func NewGetIdentityFailedServiceRequestsNotFound() *GetIdentityFailedServiceRequestsNotFound {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityFailedServiceRequestsNotFound{}
 }
 
@@ -239,49 +264,59 @@ type GetIdentityFailedServiceRequestsNotFound struct {
 
 // IsSuccess returns true when this get identity failed service requests not found response has a 2xx status code
 func (o *GetIdentityFailedServiceRequestsNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this get identity failed service requests not found response has a 3xx status code
 func (o *GetIdentityFailedServiceRequestsNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get identity failed service requests not found response has a 4xx status code
 func (o *GetIdentityFailedServiceRequestsNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this get identity failed service requests not found response has a 5xx status code
 func (o *GetIdentityFailedServiceRequestsNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get identity failed service requests not found response a status code equal to that given
 func (o *GetIdentityFailedServiceRequestsNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the get identity failed service requests not found response
 func (o *GetIdentityFailedServiceRequestsNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *GetIdentityFailedServiceRequestsNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsNotFound %s", 404, payload)
 }
 
 func (o *GetIdentityFailedServiceRequestsNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsNotFound %s", 404, payload)
 }
 
 func (o *GetIdentityFailedServiceRequestsNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetIdentityFailedServiceRequestsNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *GetIdentityFailedServiceRequestsNotFound) readResponse(response runtime
 
 // NewGetIdentityFailedServiceRequestsTooManyRequests creates a GetIdentityFailedServiceRequestsTooManyRequests with default headers values
 func NewGetIdentityFailedServiceRequestsTooManyRequests() *GetIdentityFailedServiceRequestsTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityFailedServiceRequestsTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type GetIdentityFailedServiceRequestsTooManyRequests struct {
 
 // IsSuccess returns true when this get identity failed service requests too many requests response has a 2xx status code
 func (o *GetIdentityFailedServiceRequestsTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this get identity failed service requests too many requests response has a 3xx status code
 func (o *GetIdentityFailedServiceRequestsTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get identity failed service requests too many requests response has a 4xx status code
 func (o *GetIdentityFailedServiceRequestsTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this get identity failed service requests too many requests response has a 5xx status code
 func (o *GetIdentityFailedServiceRequestsTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get identity failed service requests too many requests response a status code equal to that given
 func (o *GetIdentityFailedServiceRequestsTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the get identity failed service requests too many requests response
 func (o *GetIdentityFailedServiceRequestsTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *GetIdentityFailedServiceRequestsTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsTooManyRequests %s", 429, payload)
 }
 
 func (o *GetIdentityFailedServiceRequestsTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsTooManyRequests %s", 429, payload)
 }
 
 func (o *GetIdentityFailedServiceRequestsTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetIdentityFailedServiceRequestsTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *GetIdentityFailedServiceRequestsTooManyRequests) readResponse(response 
 
 // NewGetIdentityFailedServiceRequestsServiceUnavailable creates a GetIdentityFailedServiceRequestsServiceUnavailable with default headers values
 func NewGetIdentityFailedServiceRequestsServiceUnavailable() *GetIdentityFailedServiceRequestsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityFailedServiceRequestsServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type GetIdentityFailedServiceRequestsServiceUnavailable struct {
 
 // IsSuccess returns true when this get identity failed service requests service unavailable response has a 2xx status code
 func (o *GetIdentityFailedServiceRequestsServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this get identity failed service requests service unavailable response has a 3xx status code
 func (o *GetIdentityFailedServiceRequestsServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get identity failed service requests service unavailable response has a 4xx status code
 func (o *GetIdentityFailedServiceRequestsServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this get identity failed service requests service unavailable response has a 5xx status code
 func (o *GetIdentityFailedServiceRequestsServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this get identity failed service requests service unavailable response a status code equal to that given
 func (o *GetIdentityFailedServiceRequestsServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the get identity failed service requests service unavailable response
 func (o *GetIdentityFailedServiceRequestsServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *GetIdentityFailedServiceRequestsServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsServiceUnavailable %s", 503, payload)
 }
 
 func (o *GetIdentityFailedServiceRequestsServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/failed-service-requests][%d] getIdentityFailedServiceRequestsServiceUnavailable %s", 503, payload)
 }
 
 func (o *GetIdentityFailedServiceRequestsServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetIdentityFailedServiceRequestsServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

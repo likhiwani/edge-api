@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type GetIdentityAuthenticatorsOK struct {
 
 // NewGetIdentityAuthenticatorsOK creates GetIdentityAuthenticatorsOK with default headers values
 func NewGetIdentityAuthenticatorsOK() *GetIdentityAuthenticatorsOK {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityAuthenticatorsOK{}
 }
 
 // WithPayload adds the payload to the get identity authenticators o k response
 func (o *GetIdentityAuthenticatorsOK) WithPayload(payload *rest_model.ListAuthenticatorsEnvelope) *GetIdentityAuthenticatorsOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity authenticators o k response
 func (o *GetIdentityAuthenticatorsOK) SetPayload(payload *rest_model.ListAuthenticatorsEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityAuthenticatorsOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type GetIdentityAuthenticatorsUnauthorized struct {
 
 // NewGetIdentityAuthenticatorsUnauthorized creates GetIdentityAuthenticatorsUnauthorized with default headers values
 func NewGetIdentityAuthenticatorsUnauthorized() *GetIdentityAuthenticatorsUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityAuthenticatorsUnauthorized{}
 }
 
 // WithPayload adds the payload to the get identity authenticators unauthorized response
 func (o *GetIdentityAuthenticatorsUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityAuthenticatorsUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity authenticators unauthorized response
 func (o *GetIdentityAuthenticatorsUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityAuthenticatorsUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type GetIdentityAuthenticatorsNotFound struct {
 
 // NewGetIdentityAuthenticatorsNotFound creates GetIdentityAuthenticatorsNotFound with default headers values
 func NewGetIdentityAuthenticatorsNotFound() *GetIdentityAuthenticatorsNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityAuthenticatorsNotFound{}
 }
 
 // WithPayload adds the payload to the get identity authenticators not found response
 func (o *GetIdentityAuthenticatorsNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityAuthenticatorsNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity authenticators not found response
 func (o *GetIdentityAuthenticatorsNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityAuthenticatorsNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type GetIdentityAuthenticatorsTooManyRequests struct {
 
 // NewGetIdentityAuthenticatorsTooManyRequests creates GetIdentityAuthenticatorsTooManyRequests with default headers values
 func NewGetIdentityAuthenticatorsTooManyRequests() *GetIdentityAuthenticatorsTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityAuthenticatorsTooManyRequests{}
 }
 
 // WithPayload adds the payload to the get identity authenticators too many requests response
 func (o *GetIdentityAuthenticatorsTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityAuthenticatorsTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity authenticators too many requests response
 func (o *GetIdentityAuthenticatorsTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityAuthenticatorsTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type GetIdentityAuthenticatorsServiceUnavailable struct {
 
 // NewGetIdentityAuthenticatorsServiceUnavailable creates GetIdentityAuthenticatorsServiceUnavailable with default headers values
 func NewGetIdentityAuthenticatorsServiceUnavailable() *GetIdentityAuthenticatorsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityAuthenticatorsServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the get identity authenticators service unavailable response
 func (o *GetIdentityAuthenticatorsServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityAuthenticatorsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity authenticators service unavailable response
 func (o *GetIdentityAuthenticatorsServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityAuthenticatorsServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

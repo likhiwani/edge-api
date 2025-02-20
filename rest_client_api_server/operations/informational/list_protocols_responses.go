@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListProtocolsOK struct {
 
 // NewListProtocolsOK creates ListProtocolsOK with default headers values
 func NewListProtocolsOK() *ListProtocolsOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListProtocolsOK{}
 }
 
 // WithPayload adds the payload to the list protocols o k response
 func (o *ListProtocolsOK) WithPayload(payload *rest_model.ListProtocolsEnvelope) *ListProtocolsOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list protocols o k response
 func (o *ListProtocolsOK) SetPayload(payload *rest_model.ListProtocolsEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListProtocolsOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ListProtocolsTooManyRequests struct {
 
 // NewListProtocolsTooManyRequests creates ListProtocolsTooManyRequests with default headers values
 func NewListProtocolsTooManyRequests() *ListProtocolsTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ListProtocolsTooManyRequests{}
 }
 
 // WithPayload adds the payload to the list protocols too many requests response
 func (o *ListProtocolsTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ListProtocolsTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list protocols too many requests response
 func (o *ListProtocolsTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListProtocolsTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ListProtocolsServiceUnavailable struct {
 
 // NewListProtocolsServiceUnavailable creates ListProtocolsServiceUnavailable with default headers values
 func NewListProtocolsServiceUnavailable() *ListProtocolsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &ListProtocolsServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the list protocols service unavailable response
 func (o *ListProtocolsServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *ListProtocolsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list protocols service unavailable response
 func (o *ListProtocolsServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListProtocolsServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"encoding/json"
 
@@ -44,11 +45,13 @@ import (
 type Capabilities string
 
 func NewCapabilities(value Capabilities) *Capabilities {
+    logtrace.LogWithFunctionName()
 	return &value
 }
 
 // Pointer returns a pointer to a freshly-allocated Capabilities.
 func (m Capabilities) Pointer() *Capabilities {
+    logtrace.LogWithFunctionName()
 	return &m
 }
 
@@ -65,6 +68,7 @@ const (
 var capabilitiesEnum []interface{}
 
 func init() {
+    logtrace.LogWithFunctionName()
 	var res []Capabilities
 	if err := json.Unmarshal([]byte(`["OIDC_AUTH","HA_CONTROLLER"]`), &res); err != nil {
 		panic(err)
@@ -75,6 +79,7 @@ func init() {
 }
 
 func (m Capabilities) validateCapabilitiesEnum(path, location string, value Capabilities) error {
+    logtrace.LogWithFunctionName()
 	if err := validate.EnumCase(path, location, value, capabilitiesEnum, true); err != nil {
 		return err
 	}
@@ -83,6 +88,7 @@ func (m Capabilities) validateCapabilitiesEnum(path, location string, value Capa
 
 // Validate validates this capabilities
 func (m Capabilities) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// value enum
@@ -98,5 +104,6 @@ func (m Capabilities) Validate(formats strfmt.Registry) error {
 
 // ContextValidate validates this capabilities based on context it is used
 func (m Capabilities) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }

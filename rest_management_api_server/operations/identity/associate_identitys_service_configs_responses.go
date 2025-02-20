@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type AssociateIdentitysServiceConfigsOK struct {
 
 // NewAssociateIdentitysServiceConfigsOK creates AssociateIdentitysServiceConfigsOK with default headers values
 func NewAssociateIdentitysServiceConfigsOK() *AssociateIdentitysServiceConfigsOK {
+    logtrace.LogWithFunctionName()
 
 	return &AssociateIdentitysServiceConfigsOK{}
 }
 
 // WithPayload adds the payload to the associate identitys service configs o k response
 func (o *AssociateIdentitysServiceConfigsOK) WithPayload(payload *rest_model.Empty) *AssociateIdentitysServiceConfigsOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the associate identitys service configs o k response
 func (o *AssociateIdentitysServiceConfigsOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *AssociateIdentitysServiceConfigsOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type AssociateIdentitysServiceConfigsBadRequest struct {
 
 // NewAssociateIdentitysServiceConfigsBadRequest creates AssociateIdentitysServiceConfigsBadRequest with default headers values
 func NewAssociateIdentitysServiceConfigsBadRequest() *AssociateIdentitysServiceConfigsBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &AssociateIdentitysServiceConfigsBadRequest{}
 }
 
 // WithPayload adds the payload to the associate identitys service configs bad request response
 func (o *AssociateIdentitysServiceConfigsBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *AssociateIdentitysServiceConfigsBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the associate identitys service configs bad request response
 func (o *AssociateIdentitysServiceConfigsBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *AssociateIdentitysServiceConfigsBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type AssociateIdentitysServiceConfigsUnauthorized struct {
 
 // NewAssociateIdentitysServiceConfigsUnauthorized creates AssociateIdentitysServiceConfigsUnauthorized with default headers values
 func NewAssociateIdentitysServiceConfigsUnauthorized() *AssociateIdentitysServiceConfigsUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &AssociateIdentitysServiceConfigsUnauthorized{}
 }
 
 // WithPayload adds the payload to the associate identitys service configs unauthorized response
 func (o *AssociateIdentitysServiceConfigsUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *AssociateIdentitysServiceConfigsUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the associate identitys service configs unauthorized response
 func (o *AssociateIdentitysServiceConfigsUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *AssociateIdentitysServiceConfigsUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type AssociateIdentitysServiceConfigsNotFound struct {
 
 // NewAssociateIdentitysServiceConfigsNotFound creates AssociateIdentitysServiceConfigsNotFound with default headers values
 func NewAssociateIdentitysServiceConfigsNotFound() *AssociateIdentitysServiceConfigsNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &AssociateIdentitysServiceConfigsNotFound{}
 }
 
 // WithPayload adds the payload to the associate identitys service configs not found response
 func (o *AssociateIdentitysServiceConfigsNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *AssociateIdentitysServiceConfigsNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the associate identitys service configs not found response
 func (o *AssociateIdentitysServiceConfigsNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *AssociateIdentitysServiceConfigsNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type AssociateIdentitysServiceConfigsTooManyRequests struct {
 
 // NewAssociateIdentitysServiceConfigsTooManyRequests creates AssociateIdentitysServiceConfigsTooManyRequests with default headers values
 func NewAssociateIdentitysServiceConfigsTooManyRequests() *AssociateIdentitysServiceConfigsTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &AssociateIdentitysServiceConfigsTooManyRequests{}
 }
 
 // WithPayload adds the payload to the associate identitys service configs too many requests response
 func (o *AssociateIdentitysServiceConfigsTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *AssociateIdentitysServiceConfigsTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the associate identitys service configs too many requests response
 func (o *AssociateIdentitysServiceConfigsTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *AssociateIdentitysServiceConfigsTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type AssociateIdentitysServiceConfigsServiceUnavailable struct {
 
 // NewAssociateIdentitysServiceConfigsServiceUnavailable creates AssociateIdentitysServiceConfigsServiceUnavailable with default headers values
 func NewAssociateIdentitysServiceConfigsServiceUnavailable() *AssociateIdentitysServiceConfigsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &AssociateIdentitysServiceConfigsServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the associate identitys service configs service unavailable response
 func (o *AssociateIdentitysServiceConfigsServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *AssociateIdentitysServiceConfigsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the associate identitys service configs service unavailable response
 func (o *AssociateIdentitysServiceConfigsServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *AssociateIdentitysServiceConfigsServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type VerifyCaHandlerFunc func(VerifyCaParams, interface{}) middleware.Responder
 
 // Handle executing the request and returning a response
 func (fn VerifyCaHandlerFunc) Handle(params VerifyCaParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type VerifyCaHandler interface {
 
 // NewVerifyCa creates a new http.Handler for the verify ca operation
 func NewVerifyCa(ctx *middleware.Context, handler VerifyCaHandler) *VerifyCa {
+    logtrace.LogWithFunctionName()
 	return &VerifyCa{Context: ctx, Handler: handler}
 }
 
@@ -68,6 +71,7 @@ type VerifyCa struct {
 }
 
 func (o *VerifyCa) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

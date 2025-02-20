@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"bytes"
 	"context"
 	"encoding/json"
@@ -55,16 +56,19 @@ type DetailPostureCheckEnvelope struct {
 
 // Data gets the data of this base type
 func (m *DetailPostureCheckEnvelope) Data() PostureCheckDetail {
+    logtrace.LogWithFunctionName()
 	return m.dataField
 }
 
 // SetData sets the data of this base type
 func (m *DetailPostureCheckEnvelope) SetData(val PostureCheckDetail) {
+    logtrace.LogWithFunctionName()
 	m.dataField = val
 }
 
 // UnmarshalJSON unmarshals this object with a polymorphic type from a JSON structure
 func (m *DetailPostureCheckEnvelope) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	var data struct {
 		Data json.RawMessage `json:"data"`
 
@@ -98,6 +102,7 @@ func (m *DetailPostureCheckEnvelope) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object with a polymorphic type to a JSON structure
 func (m DetailPostureCheckEnvelope) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	var b1, b2, b3 []byte
 	var err error
 	b1, err = json.Marshal(struct {
@@ -124,6 +129,7 @@ func (m DetailPostureCheckEnvelope) MarshalJSON() ([]byte, error) {
 
 // Validate validates this detail posture check envelope
 func (m *DetailPostureCheckEnvelope) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateData(formats); err != nil {
@@ -141,6 +147,7 @@ func (m *DetailPostureCheckEnvelope) Validate(formats strfmt.Registry) error {
 }
 
 func (m *DetailPostureCheckEnvelope) validateData(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("data", "body", m.Data()); err != nil {
 		return err
@@ -159,6 +166,7 @@ func (m *DetailPostureCheckEnvelope) validateData(formats strfmt.Registry) error
 }
 
 func (m *DetailPostureCheckEnvelope) validateMeta(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("meta", "body", m.Meta); err != nil {
 		return err
@@ -180,6 +188,7 @@ func (m *DetailPostureCheckEnvelope) validateMeta(formats strfmt.Registry) error
 
 // ContextValidate validate this detail posture check envelope based on the context it is used
 func (m *DetailPostureCheckEnvelope) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateData(ctx, formats); err != nil {
@@ -197,6 +206,7 @@ func (m *DetailPostureCheckEnvelope) ContextValidate(ctx context.Context, format
 }
 
 func (m *DetailPostureCheckEnvelope) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.Data().ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -211,6 +221,7 @@ func (m *DetailPostureCheckEnvelope) contextValidateData(ctx context.Context, fo
 }
 
 func (m *DetailPostureCheckEnvelope) contextValidateMeta(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Meta != nil {
 
@@ -229,6 +240,7 @@ func (m *DetailPostureCheckEnvelope) contextValidateMeta(ctx context.Context, fo
 
 // MarshalBinary interface implementation
 func (m *DetailPostureCheckEnvelope) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -237,6 +249,7 @@ func (m *DetailPostureCheckEnvelope) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *DetailPostureCheckEnvelope) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res DetailPostureCheckEnvelope
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

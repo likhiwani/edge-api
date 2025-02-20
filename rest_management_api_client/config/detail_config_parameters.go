@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDetailConfigParams() *DetailConfigParams {
+    logtrace.LogWithFunctionName()
 	return &DetailConfigParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDetailConfigParams() *DetailConfigParams {
 // NewDetailConfigParamsWithTimeout creates a new DetailConfigParams object
 // with the ability to set a timeout on a request.
 func NewDetailConfigParamsWithTimeout(timeout time.Duration) *DetailConfigParams {
+    logtrace.LogWithFunctionName()
 	return &DetailConfigParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDetailConfigParamsWithTimeout(timeout time.Duration) *DetailConfigParams
 // NewDetailConfigParamsWithContext creates a new DetailConfigParams object
 // with the ability to set a context for a request.
 func NewDetailConfigParamsWithContext(ctx context.Context) *DetailConfigParams {
+    logtrace.LogWithFunctionName()
 	return &DetailConfigParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDetailConfigParamsWithContext(ctx context.Context) *DetailConfigParams {
 // NewDetailConfigParamsWithHTTPClient creates a new DetailConfigParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDetailConfigParamsWithHTTPClient(client *http.Client) *DetailConfigParams {
+    logtrace.LogWithFunctionName()
 	return &DetailConfigParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DetailConfigParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailConfigParams) WithDefaults() *DetailConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DetailConfigParams) WithDefaults() *DetailConfigParams {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailConfigParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the detail config params
 func (o *DetailConfigParams) WithTimeout(timeout time.Duration) *DetailConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the detail config params
 func (o *DetailConfigParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the detail config params
 func (o *DetailConfigParams) WithContext(ctx context.Context) *DetailConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the detail config params
 func (o *DetailConfigParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the detail config params
 func (o *DetailConfigParams) WithHTTPClient(client *http.Client) *DetailConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the detail config params
 func (o *DetailConfigParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the detail config params
 func (o *DetailConfigParams) WithID(id string) *DetailConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the detail config params
 func (o *DetailConfigParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DetailConfigParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

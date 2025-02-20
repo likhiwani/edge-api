@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type DetailSpecBodyHandlerFunc func(DetailSpecBodyParams) middleware.Responder
 
 // Handle executing the request and returning a response
 func (fn DetailSpecBodyHandlerFunc) Handle(params DetailSpecBodyParams) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params)
 }
 
@@ -50,6 +52,7 @@ type DetailSpecBodyHandler interface {
 
 // NewDetailSpecBody creates a new http.Handler for the detail spec body operation
 func NewDetailSpecBody(ctx *middleware.Context, handler DetailSpecBodyHandler) *DetailSpecBody {
+    logtrace.LogWithFunctionName()
 	return &DetailSpecBody{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type DetailSpecBody struct {
 }
 
 func (o *DetailSpecBody) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

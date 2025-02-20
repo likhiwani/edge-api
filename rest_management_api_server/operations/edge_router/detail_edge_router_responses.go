@@ -30,6 +30,7 @@ package edge_router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DetailEdgeRouterOK struct {
 
 // NewDetailEdgeRouterOK creates DetailEdgeRouterOK with default headers values
 func NewDetailEdgeRouterOK() *DetailEdgeRouterOK {
+    logtrace.LogWithFunctionName()
 
 	return &DetailEdgeRouterOK{}
 }
 
 // WithPayload adds the payload to the detail edge router o k response
 func (o *DetailEdgeRouterOK) WithPayload(payload *rest_model.DetailedEdgeRouterEnvelope) *DetailEdgeRouterOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail edge router o k response
 func (o *DetailEdgeRouterOK) SetPayload(payload *rest_model.DetailedEdgeRouterEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailEdgeRouterOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DetailEdgeRouterUnauthorized struct {
 
 // NewDetailEdgeRouterUnauthorized creates DetailEdgeRouterUnauthorized with default headers values
 func NewDetailEdgeRouterUnauthorized() *DetailEdgeRouterUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DetailEdgeRouterUnauthorized{}
 }
 
 // WithPayload adds the payload to the detail edge router unauthorized response
 func (o *DetailEdgeRouterUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailEdgeRouterUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail edge router unauthorized response
 func (o *DetailEdgeRouterUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailEdgeRouterUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DetailEdgeRouterNotFound struct {
 
 // NewDetailEdgeRouterNotFound creates DetailEdgeRouterNotFound with default headers values
 func NewDetailEdgeRouterNotFound() *DetailEdgeRouterNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DetailEdgeRouterNotFound{}
 }
 
 // WithPayload adds the payload to the detail edge router not found response
 func (o *DetailEdgeRouterNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailEdgeRouterNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail edge router not found response
 func (o *DetailEdgeRouterNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailEdgeRouterNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DetailEdgeRouterTooManyRequests struct {
 
 // NewDetailEdgeRouterTooManyRequests creates DetailEdgeRouterTooManyRequests with default headers values
 func NewDetailEdgeRouterTooManyRequests() *DetailEdgeRouterTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DetailEdgeRouterTooManyRequests{}
 }
 
 // WithPayload adds the payload to the detail edge router too many requests response
 func (o *DetailEdgeRouterTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailEdgeRouterTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail edge router too many requests response
 func (o *DetailEdgeRouterTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailEdgeRouterTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DetailEdgeRouterServiceUnavailable struct {
 
 // NewDetailEdgeRouterServiceUnavailable creates DetailEdgeRouterServiceUnavailable with default headers values
 func NewDetailEdgeRouterServiceUnavailable() *DetailEdgeRouterServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DetailEdgeRouterServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the detail edge router service unavailable response
 func (o *DetailEdgeRouterServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailEdgeRouterServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail edge router service unavailable response
 func (o *DetailEdgeRouterServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailEdgeRouterServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

@@ -30,6 +30,7 @@ package well_known
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type ListWellKnownCasHandlerFunc func(ListWellKnownCasParams) middleware.Respond
 
 // Handle executing the request and returning a response
 func (fn ListWellKnownCasHandlerFunc) Handle(params ListWellKnownCasParams) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params)
 }
 
@@ -50,6 +52,7 @@ type ListWellKnownCasHandler interface {
 
 // NewListWellKnownCas creates a new http.Handler for the list well known cas operation
 func NewListWellKnownCas(ctx *middleware.Context, handler ListWellKnownCasHandler) *ListWellKnownCas {
+    logtrace.LogWithFunctionName()
 	return &ListWellKnownCas{Context: ctx, Handler: handler}
 }
 
@@ -68,6 +71,7 @@ type ListWellKnownCas struct {
 }
 
 func (o *ListWellKnownCas) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

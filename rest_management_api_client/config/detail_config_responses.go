@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DetailConfigReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DetailConfigReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDetailConfigOK()
@@ -85,6 +87,7 @@ func (o *DetailConfigReader) ReadResponse(response runtime.ClientResponse, consu
 
 // NewDetailConfigOK creates a DetailConfigOK with default headers values
 func NewDetailConfigOK() *DetailConfigOK {
+    logtrace.LogWithFunctionName()
 	return &DetailConfigOK{}
 }
 
@@ -99,49 +102,59 @@ type DetailConfigOK struct {
 
 // IsSuccess returns true when this detail config o k response has a 2xx status code
 func (o *DetailConfigOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this detail config o k response has a 3xx status code
 func (o *DetailConfigOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail config o k response has a 4xx status code
 func (o *DetailConfigOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail config o k response has a 5xx status code
 func (o *DetailConfigOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail config o k response a status code equal to that given
 func (o *DetailConfigOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the detail config o k response
 func (o *DetailConfigOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DetailConfigOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}][%d] detailConfigOK %s", 200, payload)
 }
 
 func (o *DetailConfigOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}][%d] detailConfigOK %s", 200, payload)
 }
 
 func (o *DetailConfigOK) GetPayload() *rest_model.DetailConfigEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailConfigOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.DetailConfigEnvelope)
 
@@ -155,6 +168,7 @@ func (o *DetailConfigOK) readResponse(response runtime.ClientResponse, consumer 
 
 // NewDetailConfigUnauthorized creates a DetailConfigUnauthorized with default headers values
 func NewDetailConfigUnauthorized() *DetailConfigUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DetailConfigUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type DetailConfigUnauthorized struct {
 
 // IsSuccess returns true when this detail config unauthorized response has a 2xx status code
 func (o *DetailConfigUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail config unauthorized response has a 3xx status code
 func (o *DetailConfigUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail config unauthorized response has a 4xx status code
 func (o *DetailConfigUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail config unauthorized response has a 5xx status code
 func (o *DetailConfigUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail config unauthorized response a status code equal to that given
 func (o *DetailConfigUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the detail config unauthorized response
 func (o *DetailConfigUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DetailConfigUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}][%d] detailConfigUnauthorized %s", 401, payload)
 }
 
 func (o *DetailConfigUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}][%d] detailConfigUnauthorized %s", 401, payload)
 }
 
 func (o *DetailConfigUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailConfigUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *DetailConfigUnauthorized) readResponse(response runtime.ClientResponse,
 
 // NewDetailConfigNotFound creates a DetailConfigNotFound with default headers values
 func NewDetailConfigNotFound() *DetailConfigNotFound {
+    logtrace.LogWithFunctionName()
 	return &DetailConfigNotFound{}
 }
 
@@ -239,49 +264,59 @@ type DetailConfigNotFound struct {
 
 // IsSuccess returns true when this detail config not found response has a 2xx status code
 func (o *DetailConfigNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail config not found response has a 3xx status code
 func (o *DetailConfigNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail config not found response has a 4xx status code
 func (o *DetailConfigNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail config not found response has a 5xx status code
 func (o *DetailConfigNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail config not found response a status code equal to that given
 func (o *DetailConfigNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the detail config not found response
 func (o *DetailConfigNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DetailConfigNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}][%d] detailConfigNotFound %s", 404, payload)
 }
 
 func (o *DetailConfigNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}][%d] detailConfigNotFound %s", 404, payload)
 }
 
 func (o *DetailConfigNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailConfigNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *DetailConfigNotFound) readResponse(response runtime.ClientResponse, con
 
 // NewDetailConfigTooManyRequests creates a DetailConfigTooManyRequests with default headers values
 func NewDetailConfigTooManyRequests() *DetailConfigTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DetailConfigTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type DetailConfigTooManyRequests struct {
 
 // IsSuccess returns true when this detail config too many requests response has a 2xx status code
 func (o *DetailConfigTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail config too many requests response has a 3xx status code
 func (o *DetailConfigTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail config too many requests response has a 4xx status code
 func (o *DetailConfigTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail config too many requests response has a 5xx status code
 func (o *DetailConfigTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail config too many requests response a status code equal to that given
 func (o *DetailConfigTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the detail config too many requests response
 func (o *DetailConfigTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DetailConfigTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}][%d] detailConfigTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailConfigTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}][%d] detailConfigTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailConfigTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailConfigTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *DetailConfigTooManyRequests) readResponse(response runtime.ClientRespon
 
 // NewDetailConfigServiceUnavailable creates a DetailConfigServiceUnavailable with default headers values
 func NewDetailConfigServiceUnavailable() *DetailConfigServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DetailConfigServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type DetailConfigServiceUnavailable struct {
 
 // IsSuccess returns true when this detail config service unavailable response has a 2xx status code
 func (o *DetailConfigServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail config service unavailable response has a 3xx status code
 func (o *DetailConfigServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail config service unavailable response has a 4xx status code
 func (o *DetailConfigServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail config service unavailable response has a 5xx status code
 func (o *DetailConfigServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this detail config service unavailable response a status code equal to that given
 func (o *DetailConfigServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the detail config service unavailable response
 func (o *DetailConfigServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DetailConfigServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}][%d] detailConfigServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailConfigServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}][%d] detailConfigServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailConfigServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailConfigServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

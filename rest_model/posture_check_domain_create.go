@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"bytes"
 	"context"
 	"encoding/json"
@@ -58,45 +59,54 @@ type PostureCheckDomainCreate struct {
 
 // Name gets the name of this subtype
 func (m *PostureCheckDomainCreate) Name() *string {
+    logtrace.LogWithFunctionName()
 	return m.nameField
 }
 
 // SetName sets the name of this subtype
 func (m *PostureCheckDomainCreate) SetName(val *string) {
+    logtrace.LogWithFunctionName()
 	m.nameField = val
 }
 
 // RoleAttributes gets the role attributes of this subtype
 func (m *PostureCheckDomainCreate) RoleAttributes() *Attributes {
+    logtrace.LogWithFunctionName()
 	return m.roleAttributesField
 }
 
 // SetRoleAttributes sets the role attributes of this subtype
 func (m *PostureCheckDomainCreate) SetRoleAttributes(val *Attributes) {
+    logtrace.LogWithFunctionName()
 	m.roleAttributesField = val
 }
 
 // Tags gets the tags of this subtype
 func (m *PostureCheckDomainCreate) Tags() *Tags {
+    logtrace.LogWithFunctionName()
 	return m.tagsField
 }
 
 // SetTags sets the tags of this subtype
 func (m *PostureCheckDomainCreate) SetTags(val *Tags) {
+    logtrace.LogWithFunctionName()
 	m.tagsField = val
 }
 
 // TypeID gets the type Id of this subtype
 func (m *PostureCheckDomainCreate) TypeID() PostureCheckType {
+    logtrace.LogWithFunctionName()
 	return "DOMAIN"
 }
 
 // SetTypeID sets the type Id of this subtype
 func (m *PostureCheckDomainCreate) SetTypeID(val PostureCheckType) {
+    logtrace.LogWithFunctionName()
 }
 
 // UnmarshalJSON unmarshals this object with a polymorphic type from a JSON structure
 func (m *PostureCheckDomainCreate) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	var data struct {
 
 		// domains
@@ -153,6 +163,7 @@ func (m *PostureCheckDomainCreate) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object with a polymorphic type to a JSON structure
 func (m PostureCheckDomainCreate) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	var b1, b2, b3 []byte
 	var err error
 	b1, err = json.Marshal(struct {
@@ -195,6 +206,7 @@ func (m PostureCheckDomainCreate) MarshalJSON() ([]byte, error) {
 
 // Validate validates this posture check domain create
 func (m *PostureCheckDomainCreate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateName(formats); err != nil {
@@ -220,6 +232,7 @@ func (m *PostureCheckDomainCreate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *PostureCheckDomainCreate) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name()); err != nil {
 		return err
@@ -229,6 +242,7 @@ func (m *PostureCheckDomainCreate) validateName(formats strfmt.Registry) error {
 }
 
 func (m *PostureCheckDomainCreate) validateRoleAttributes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.RoleAttributes()) { // not required
 		return nil
@@ -249,6 +263,7 @@ func (m *PostureCheckDomainCreate) validateRoleAttributes(formats strfmt.Registr
 }
 
 func (m *PostureCheckDomainCreate) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.Tags()) { // not required
 		return nil
@@ -269,6 +284,7 @@ func (m *PostureCheckDomainCreate) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *PostureCheckDomainCreate) validateDomains(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("domains", "body", m.Domains); err != nil {
 		return err
@@ -285,6 +301,7 @@ func (m *PostureCheckDomainCreate) validateDomains(formats strfmt.Registry) erro
 
 // ContextValidate validate this posture check domain create based on the context it is used
 func (m *PostureCheckDomainCreate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateRoleAttributes(ctx, formats); err != nil {
@@ -302,6 +319,7 @@ func (m *PostureCheckDomainCreate) ContextValidate(ctx context.Context, formats 
 }
 
 func (m *PostureCheckDomainCreate) contextValidateRoleAttributes(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.RoleAttributes() != nil {
 		if err := m.RoleAttributes().ContextValidate(ctx, formats); err != nil {
@@ -318,6 +336,7 @@ func (m *PostureCheckDomainCreate) contextValidateRoleAttributes(ctx context.Con
 }
 
 func (m *PostureCheckDomainCreate) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags() != nil {
 
@@ -339,6 +358,7 @@ func (m *PostureCheckDomainCreate) contextValidateTags(ctx context.Context, form
 }
 
 func (m *PostureCheckDomainCreate) contextValidateTypeID(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.TypeID().ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -354,6 +374,7 @@ func (m *PostureCheckDomainCreate) contextValidateTypeID(ctx context.Context, fo
 
 // MarshalBinary interface implementation
 func (m *PostureCheckDomainCreate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -362,6 +383,7 @@ func (m *PostureCheckDomainCreate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureCheckDomainCreate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureCheckDomainCreate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

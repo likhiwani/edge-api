@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type VerifyCaOK struct {
 
 // NewVerifyCaOK creates VerifyCaOK with default headers values
 func NewVerifyCaOK() *VerifyCaOK {
+    logtrace.LogWithFunctionName()
 
 	return &VerifyCaOK{}
 }
 
 // WithPayload adds the payload to the verify ca o k response
 func (o *VerifyCaOK) WithPayload(payload *rest_model.Empty) *VerifyCaOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the verify ca o k response
 func (o *VerifyCaOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *VerifyCaOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type VerifyCaBadRequest struct {
 
 // NewVerifyCaBadRequest creates VerifyCaBadRequest with default headers values
 func NewVerifyCaBadRequest() *VerifyCaBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &VerifyCaBadRequest{}
 }
 
 // WithPayload adds the payload to the verify ca bad request response
 func (o *VerifyCaBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *VerifyCaBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the verify ca bad request response
 func (o *VerifyCaBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *VerifyCaBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type VerifyCaUnauthorized struct {
 
 // NewVerifyCaUnauthorized creates VerifyCaUnauthorized with default headers values
 func NewVerifyCaUnauthorized() *VerifyCaUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &VerifyCaUnauthorized{}
 }
 
 // WithPayload adds the payload to the verify ca unauthorized response
 func (o *VerifyCaUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *VerifyCaUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the verify ca unauthorized response
 func (o *VerifyCaUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *VerifyCaUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type VerifyCaNotFound struct {
 
 // NewVerifyCaNotFound creates VerifyCaNotFound with default headers values
 func NewVerifyCaNotFound() *VerifyCaNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &VerifyCaNotFound{}
 }
 
 // WithPayload adds the payload to the verify ca not found response
 func (o *VerifyCaNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *VerifyCaNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the verify ca not found response
 func (o *VerifyCaNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *VerifyCaNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type VerifyCaTooManyRequests struct {
 
 // NewVerifyCaTooManyRequests creates VerifyCaTooManyRequests with default headers values
 func NewVerifyCaTooManyRequests() *VerifyCaTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &VerifyCaTooManyRequests{}
 }
 
 // WithPayload adds the payload to the verify ca too many requests response
 func (o *VerifyCaTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *VerifyCaTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the verify ca too many requests response
 func (o *VerifyCaTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *VerifyCaTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type VerifyCaServiceUnavailable struct {
 
 // NewVerifyCaServiceUnavailable creates VerifyCaServiceUnavailable with default headers values
 func NewVerifyCaServiceUnavailable() *VerifyCaServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &VerifyCaServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the verify ca service unavailable response
 func (o *VerifyCaServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *VerifyCaServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the verify ca service unavailable response
 func (o *VerifyCaServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *VerifyCaServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

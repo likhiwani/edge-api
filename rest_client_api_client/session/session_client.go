@@ -30,6 +30,7 @@ package session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new session API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -97,6 +101,7 @@ CreateSession creates a session resource
 Create a session resource.
 */
 func (a *Client) CreateSession(params *CreateSessionParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateSessionCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreateSessionParams()
@@ -138,6 +143,7 @@ DeleteSession deletes a session
 Delete a session by id.
 */
 func (a *Client) DeleteSession(params *DeleteSessionParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteSessionOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteSessionParams()
@@ -179,6 +185,7 @@ DetailSession retrieves a single session
 Retrieves a single session by id.
 */
 func (a *Client) DetailSession(params *DetailSessionParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailSessionOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailSessionParams()
@@ -223,6 +230,7 @@ Sessions are tied to an API session and are moved when an API session times out 
 (i.e. Ziti SDK connected to an edge router) will keep the session and API session marked as active.
 */
 func (a *Client) ListSessions(params *ListSessionsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListSessionsOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListSessionsParams()
@@ -260,5 +268,6 @@ func (a *Client) ListSessions(params *ListSessionsParams, authInfo runtime.Clien
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

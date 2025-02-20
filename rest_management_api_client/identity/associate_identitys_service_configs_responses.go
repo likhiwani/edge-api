@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type AssociateIdentitysServiceConfigsReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *AssociateIdentitysServiceConfigsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewAssociateIdentitysServiceConfigsOK()
@@ -91,6 +93,7 @@ func (o *AssociateIdentitysServiceConfigsReader) ReadResponse(response runtime.C
 
 // NewAssociateIdentitysServiceConfigsOK creates a AssociateIdentitysServiceConfigsOK with default headers values
 func NewAssociateIdentitysServiceConfigsOK() *AssociateIdentitysServiceConfigsOK {
+    logtrace.LogWithFunctionName()
 	return &AssociateIdentitysServiceConfigsOK{}
 }
 
@@ -105,49 +108,59 @@ type AssociateIdentitysServiceConfigsOK struct {
 
 // IsSuccess returns true when this associate identitys service configs o k response has a 2xx status code
 func (o *AssociateIdentitysServiceConfigsOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this associate identitys service configs o k response has a 3xx status code
 func (o *AssociateIdentitysServiceConfigsOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this associate identitys service configs o k response has a 4xx status code
 func (o *AssociateIdentitysServiceConfigsOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this associate identitys service configs o k response has a 5xx status code
 func (o *AssociateIdentitysServiceConfigsOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this associate identitys service configs o k response a status code equal to that given
 func (o *AssociateIdentitysServiceConfigsOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the associate identitys service configs o k response
 func (o *AssociateIdentitysServiceConfigsOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *AssociateIdentitysServiceConfigsOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsOK %s", 200, payload)
 }
 
 func (o *AssociateIdentitysServiceConfigsOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsOK %s", 200, payload)
 }
 
 func (o *AssociateIdentitysServiceConfigsOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *AssociateIdentitysServiceConfigsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -161,6 +174,7 @@ func (o *AssociateIdentitysServiceConfigsOK) readResponse(response runtime.Clien
 
 // NewAssociateIdentitysServiceConfigsBadRequest creates a AssociateIdentitysServiceConfigsBadRequest with default headers values
 func NewAssociateIdentitysServiceConfigsBadRequest() *AssociateIdentitysServiceConfigsBadRequest {
+    logtrace.LogWithFunctionName()
 	return &AssociateIdentitysServiceConfigsBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type AssociateIdentitysServiceConfigsBadRequest struct {
 
 // IsSuccess returns true when this associate identitys service configs bad request response has a 2xx status code
 func (o *AssociateIdentitysServiceConfigsBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this associate identitys service configs bad request response has a 3xx status code
 func (o *AssociateIdentitysServiceConfigsBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this associate identitys service configs bad request response has a 4xx status code
 func (o *AssociateIdentitysServiceConfigsBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this associate identitys service configs bad request response has a 5xx status code
 func (o *AssociateIdentitysServiceConfigsBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this associate identitys service configs bad request response a status code equal to that given
 func (o *AssociateIdentitysServiceConfigsBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the associate identitys service configs bad request response
 func (o *AssociateIdentitysServiceConfigsBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *AssociateIdentitysServiceConfigsBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsBadRequest %s", 400, payload)
 }
 
 func (o *AssociateIdentitysServiceConfigsBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsBadRequest %s", 400, payload)
 }
 
 func (o *AssociateIdentitysServiceConfigsBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *AssociateIdentitysServiceConfigsBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *AssociateIdentitysServiceConfigsBadRequest) readResponse(response runti
 
 // NewAssociateIdentitysServiceConfigsUnauthorized creates a AssociateIdentitysServiceConfigsUnauthorized with default headers values
 func NewAssociateIdentitysServiceConfigsUnauthorized() *AssociateIdentitysServiceConfigsUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &AssociateIdentitysServiceConfigsUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type AssociateIdentitysServiceConfigsUnauthorized struct {
 
 // IsSuccess returns true when this associate identitys service configs unauthorized response has a 2xx status code
 func (o *AssociateIdentitysServiceConfigsUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this associate identitys service configs unauthorized response has a 3xx status code
 func (o *AssociateIdentitysServiceConfigsUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this associate identitys service configs unauthorized response has a 4xx status code
 func (o *AssociateIdentitysServiceConfigsUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this associate identitys service configs unauthorized response has a 5xx status code
 func (o *AssociateIdentitysServiceConfigsUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this associate identitys service configs unauthorized response a status code equal to that given
 func (o *AssociateIdentitysServiceConfigsUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the associate identitys service configs unauthorized response
 func (o *AssociateIdentitysServiceConfigsUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *AssociateIdentitysServiceConfigsUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsUnauthorized %s", 401, payload)
 }
 
 func (o *AssociateIdentitysServiceConfigsUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsUnauthorized %s", 401, payload)
 }
 
 func (o *AssociateIdentitysServiceConfigsUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *AssociateIdentitysServiceConfigsUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *AssociateIdentitysServiceConfigsUnauthorized) readResponse(response run
 
 // NewAssociateIdentitysServiceConfigsNotFound creates a AssociateIdentitysServiceConfigsNotFound with default headers values
 func NewAssociateIdentitysServiceConfigsNotFound() *AssociateIdentitysServiceConfigsNotFound {
+    logtrace.LogWithFunctionName()
 	return &AssociateIdentitysServiceConfigsNotFound{}
 }
 
@@ -315,49 +351,59 @@ type AssociateIdentitysServiceConfigsNotFound struct {
 
 // IsSuccess returns true when this associate identitys service configs not found response has a 2xx status code
 func (o *AssociateIdentitysServiceConfigsNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this associate identitys service configs not found response has a 3xx status code
 func (o *AssociateIdentitysServiceConfigsNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this associate identitys service configs not found response has a 4xx status code
 func (o *AssociateIdentitysServiceConfigsNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this associate identitys service configs not found response has a 5xx status code
 func (o *AssociateIdentitysServiceConfigsNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this associate identitys service configs not found response a status code equal to that given
 func (o *AssociateIdentitysServiceConfigsNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the associate identitys service configs not found response
 func (o *AssociateIdentitysServiceConfigsNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *AssociateIdentitysServiceConfigsNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsNotFound %s", 404, payload)
 }
 
 func (o *AssociateIdentitysServiceConfigsNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsNotFound %s", 404, payload)
 }
 
 func (o *AssociateIdentitysServiceConfigsNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *AssociateIdentitysServiceConfigsNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *AssociateIdentitysServiceConfigsNotFound) readResponse(response runtime
 
 // NewAssociateIdentitysServiceConfigsTooManyRequests creates a AssociateIdentitysServiceConfigsTooManyRequests with default headers values
 func NewAssociateIdentitysServiceConfigsTooManyRequests() *AssociateIdentitysServiceConfigsTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &AssociateIdentitysServiceConfigsTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type AssociateIdentitysServiceConfigsTooManyRequests struct {
 
 // IsSuccess returns true when this associate identitys service configs too many requests response has a 2xx status code
 func (o *AssociateIdentitysServiceConfigsTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this associate identitys service configs too many requests response has a 3xx status code
 func (o *AssociateIdentitysServiceConfigsTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this associate identitys service configs too many requests response has a 4xx status code
 func (o *AssociateIdentitysServiceConfigsTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this associate identitys service configs too many requests response has a 5xx status code
 func (o *AssociateIdentitysServiceConfigsTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this associate identitys service configs too many requests response a status code equal to that given
 func (o *AssociateIdentitysServiceConfigsTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the associate identitys service configs too many requests response
 func (o *AssociateIdentitysServiceConfigsTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *AssociateIdentitysServiceConfigsTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsTooManyRequests %s", 429, payload)
 }
 
 func (o *AssociateIdentitysServiceConfigsTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsTooManyRequests %s", 429, payload)
 }
 
 func (o *AssociateIdentitysServiceConfigsTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *AssociateIdentitysServiceConfigsTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *AssociateIdentitysServiceConfigsTooManyRequests) readResponse(response 
 
 // NewAssociateIdentitysServiceConfigsServiceUnavailable creates a AssociateIdentitysServiceConfigsServiceUnavailable with default headers values
 func NewAssociateIdentitysServiceConfigsServiceUnavailable() *AssociateIdentitysServiceConfigsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &AssociateIdentitysServiceConfigsServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type AssociateIdentitysServiceConfigsServiceUnavailable struct {
 
 // IsSuccess returns true when this associate identitys service configs service unavailable response has a 2xx status code
 func (o *AssociateIdentitysServiceConfigsServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this associate identitys service configs service unavailable response has a 3xx status code
 func (o *AssociateIdentitysServiceConfigsServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this associate identitys service configs service unavailable response has a 4xx status code
 func (o *AssociateIdentitysServiceConfigsServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this associate identitys service configs service unavailable response has a 5xx status code
 func (o *AssociateIdentitysServiceConfigsServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this associate identitys service configs service unavailable response a status code equal to that given
 func (o *AssociateIdentitysServiceConfigsServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the associate identitys service configs service unavailable response
 func (o *AssociateIdentitysServiceConfigsServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *AssociateIdentitysServiceConfigsServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsServiceUnavailable %s", 503, payload)
 }
 
 func (o *AssociateIdentitysServiceConfigsServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /identities/{id}/service-configs][%d] associateIdentitysServiceConfigsServiceUnavailable %s", 503, payload)
 }
 
 func (o *AssociateIdentitysServiceConfigsServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *AssociateIdentitysServiceConfigsServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

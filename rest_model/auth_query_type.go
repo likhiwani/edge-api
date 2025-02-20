@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"encoding/json"
 
@@ -44,11 +45,13 @@ import (
 type AuthQueryType string
 
 func NewAuthQueryType(value AuthQueryType) *AuthQueryType {
+    logtrace.LogWithFunctionName()
 	return &value
 }
 
 // Pointer returns a pointer to a freshly-allocated AuthQueryType.
 func (m AuthQueryType) Pointer() *AuthQueryType {
+    logtrace.LogWithFunctionName()
 	return &m
 }
 
@@ -68,6 +71,7 @@ const (
 var authQueryTypeEnum []interface{}
 
 func init() {
+    logtrace.LogWithFunctionName()
 	var res []AuthQueryType
 	if err := json.Unmarshal([]byte(`["MFA","TOTP","EXT-JWT"]`), &res); err != nil {
 		panic(err)
@@ -78,6 +82,7 @@ func init() {
 }
 
 func (m AuthQueryType) validateAuthQueryTypeEnum(path, location string, value AuthQueryType) error {
+    logtrace.LogWithFunctionName()
 	if err := validate.EnumCase(path, location, value, authQueryTypeEnum, true); err != nil {
 		return err
 	}
@@ -86,6 +91,7 @@ func (m AuthQueryType) validateAuthQueryTypeEnum(path, location string, value Au
 
 // Validate validates this auth query type
 func (m AuthQueryType) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// value enum
@@ -101,5 +107,6 @@ func (m AuthQueryType) Validate(formats strfmt.Registry) error {
 
 // ContextValidate validates this auth query type based on context it is used
 func (m AuthQueryType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }

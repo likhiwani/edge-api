@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ExtendCurrentIdentityAuthenticatorReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ExtendCurrentIdentityAuthenticatorReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewExtendCurrentIdentityAuthenticatorOK()
@@ -67,6 +69,7 @@ func (o *ExtendCurrentIdentityAuthenticatorReader) ReadResponse(response runtime
 
 // NewExtendCurrentIdentityAuthenticatorOK creates a ExtendCurrentIdentityAuthenticatorOK with default headers values
 func NewExtendCurrentIdentityAuthenticatorOK() *ExtendCurrentIdentityAuthenticatorOK {
+    logtrace.LogWithFunctionName()
 	return &ExtendCurrentIdentityAuthenticatorOK{}
 }
 
@@ -81,49 +84,59 @@ type ExtendCurrentIdentityAuthenticatorOK struct {
 
 // IsSuccess returns true when this extend current identity authenticator o k response has a 2xx status code
 func (o *ExtendCurrentIdentityAuthenticatorOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this extend current identity authenticator o k response has a 3xx status code
 func (o *ExtendCurrentIdentityAuthenticatorOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this extend current identity authenticator o k response has a 4xx status code
 func (o *ExtendCurrentIdentityAuthenticatorOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this extend current identity authenticator o k response has a 5xx status code
 func (o *ExtendCurrentIdentityAuthenticatorOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this extend current identity authenticator o k response a status code equal to that given
 func (o *ExtendCurrentIdentityAuthenticatorOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the extend current identity authenticator o k response
 func (o *ExtendCurrentIdentityAuthenticatorOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ExtendCurrentIdentityAuthenticatorOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/authenticators/{id}/extend][%d] extendCurrentIdentityAuthenticatorOK %s", 200, payload)
 }
 
 func (o *ExtendCurrentIdentityAuthenticatorOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/authenticators/{id}/extend][%d] extendCurrentIdentityAuthenticatorOK %s", 200, payload)
 }
 
 func (o *ExtendCurrentIdentityAuthenticatorOK) GetPayload() *rest_model.IdentityExtendEnrollmentEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ExtendCurrentIdentityAuthenticatorOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.IdentityExtendEnrollmentEnvelope)
 
@@ -137,6 +150,7 @@ func (o *ExtendCurrentIdentityAuthenticatorOK) readResponse(response runtime.Cli
 
 // NewExtendCurrentIdentityAuthenticatorUnauthorized creates a ExtendCurrentIdentityAuthenticatorUnauthorized with default headers values
 func NewExtendCurrentIdentityAuthenticatorUnauthorized() *ExtendCurrentIdentityAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &ExtendCurrentIdentityAuthenticatorUnauthorized{}
 }
 
@@ -151,49 +165,59 @@ type ExtendCurrentIdentityAuthenticatorUnauthorized struct {
 
 // IsSuccess returns true when this extend current identity authenticator unauthorized response has a 2xx status code
 func (o *ExtendCurrentIdentityAuthenticatorUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this extend current identity authenticator unauthorized response has a 3xx status code
 func (o *ExtendCurrentIdentityAuthenticatorUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this extend current identity authenticator unauthorized response has a 4xx status code
 func (o *ExtendCurrentIdentityAuthenticatorUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this extend current identity authenticator unauthorized response has a 5xx status code
 func (o *ExtendCurrentIdentityAuthenticatorUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this extend current identity authenticator unauthorized response a status code equal to that given
 func (o *ExtendCurrentIdentityAuthenticatorUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the extend current identity authenticator unauthorized response
 func (o *ExtendCurrentIdentityAuthenticatorUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *ExtendCurrentIdentityAuthenticatorUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/authenticators/{id}/extend][%d] extendCurrentIdentityAuthenticatorUnauthorized %s", 401, payload)
 }
 
 func (o *ExtendCurrentIdentityAuthenticatorUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/authenticators/{id}/extend][%d] extendCurrentIdentityAuthenticatorUnauthorized %s", 401, payload)
 }
 
 func (o *ExtendCurrentIdentityAuthenticatorUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ExtendCurrentIdentityAuthenticatorUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

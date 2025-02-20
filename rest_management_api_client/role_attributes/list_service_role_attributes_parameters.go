@@ -30,6 +30,7 @@ package role_attributes
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -48,6 +49,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListServiceRoleAttributesParams() *ListServiceRoleAttributesParams {
+    logtrace.LogWithFunctionName()
 	return &ListServiceRoleAttributesParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -56,6 +58,7 @@ func NewListServiceRoleAttributesParams() *ListServiceRoleAttributesParams {
 // NewListServiceRoleAttributesParamsWithTimeout creates a new ListServiceRoleAttributesParams object
 // with the ability to set a timeout on a request.
 func NewListServiceRoleAttributesParamsWithTimeout(timeout time.Duration) *ListServiceRoleAttributesParams {
+    logtrace.LogWithFunctionName()
 	return &ListServiceRoleAttributesParams{
 		timeout: timeout,
 	}
@@ -64,6 +67,7 @@ func NewListServiceRoleAttributesParamsWithTimeout(timeout time.Duration) *ListS
 // NewListServiceRoleAttributesParamsWithContext creates a new ListServiceRoleAttributesParams object
 // with the ability to set a context for a request.
 func NewListServiceRoleAttributesParamsWithContext(ctx context.Context) *ListServiceRoleAttributesParams {
+    logtrace.LogWithFunctionName()
 	return &ListServiceRoleAttributesParams{
 		Context: ctx,
 	}
@@ -72,6 +76,7 @@ func NewListServiceRoleAttributesParamsWithContext(ctx context.Context) *ListSer
 // NewListServiceRoleAttributesParamsWithHTTPClient creates a new ListServiceRoleAttributesParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListServiceRoleAttributesParamsWithHTTPClient(client *http.Client) *ListServiceRoleAttributesParams {
+    logtrace.LogWithFunctionName()
 	return &ListServiceRoleAttributesParams{
 		HTTPClient: client,
 	}
@@ -104,6 +109,7 @@ type ListServiceRoleAttributesParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListServiceRoleAttributesParams) WithDefaults() *ListServiceRoleAttributesParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -112,77 +118,91 @@ func (o *ListServiceRoleAttributesParams) WithDefaults() *ListServiceRoleAttribu
 //
 // All values with no default are reset to their zero value.
 func (o *ListServiceRoleAttributesParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list service role attributes params
 func (o *ListServiceRoleAttributesParams) WithTimeout(timeout time.Duration) *ListServiceRoleAttributesParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list service role attributes params
 func (o *ListServiceRoleAttributesParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list service role attributes params
 func (o *ListServiceRoleAttributesParams) WithContext(ctx context.Context) *ListServiceRoleAttributesParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list service role attributes params
 func (o *ListServiceRoleAttributesParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list service role attributes params
 func (o *ListServiceRoleAttributesParams) WithHTTPClient(client *http.Client) *ListServiceRoleAttributesParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list service role attributes params
 func (o *ListServiceRoleAttributesParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithFilter adds the filter to the list service role attributes params
 func (o *ListServiceRoleAttributesParams) WithFilter(filter *string) *ListServiceRoleAttributesParams {
+    logtrace.LogWithFunctionName()
 	o.SetFilter(filter)
 	return o
 }
 
 // SetFilter adds the filter to the list service role attributes params
 func (o *ListServiceRoleAttributesParams) SetFilter(filter *string) {
+    logtrace.LogWithFunctionName()
 	o.Filter = filter
 }
 
 // WithLimit adds the limit to the list service role attributes params
 func (o *ListServiceRoleAttributesParams) WithLimit(limit *int64) *ListServiceRoleAttributesParams {
+    logtrace.LogWithFunctionName()
 	o.SetLimit(limit)
 	return o
 }
 
 // SetLimit adds the limit to the list service role attributes params
 func (o *ListServiceRoleAttributesParams) SetLimit(limit *int64) {
+    logtrace.LogWithFunctionName()
 	o.Limit = limit
 }
 
 // WithOffset adds the offset to the list service role attributes params
 func (o *ListServiceRoleAttributesParams) WithOffset(offset *int64) *ListServiceRoleAttributesParams {
+    logtrace.LogWithFunctionName()
 	o.SetOffset(offset)
 	return o
 }
 
 // SetOffset adds the offset to the list service role attributes params
 func (o *ListServiceRoleAttributesParams) SetOffset(offset *int64) {
+    logtrace.LogWithFunctionName()
 	o.Offset = offset
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListServiceRoleAttributesParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

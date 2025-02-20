@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ListConfigServicesReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ListConfigServicesReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewListConfigServicesOK()
@@ -85,6 +87,7 @@ func (o *ListConfigServicesReader) ReadResponse(response runtime.ClientResponse,
 
 // NewListConfigServicesOK creates a ListConfigServicesOK with default headers values
 func NewListConfigServicesOK() *ListConfigServicesOK {
+    logtrace.LogWithFunctionName()
 	return &ListConfigServicesOK{}
 }
 
@@ -99,49 +102,59 @@ type ListConfigServicesOK struct {
 
 // IsSuccess returns true when this list config services o k response has a 2xx status code
 func (o *ListConfigServicesOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this list config services o k response has a 3xx status code
 func (o *ListConfigServicesOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list config services o k response has a 4xx status code
 func (o *ListConfigServicesOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list config services o k response has a 5xx status code
 func (o *ListConfigServicesOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list config services o k response a status code equal to that given
 func (o *ListConfigServicesOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the list config services o k response
 func (o *ListConfigServicesOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ListConfigServicesOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}/services][%d] listConfigServicesOK %s", 200, payload)
 }
 
 func (o *ListConfigServicesOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}/services][%d] listConfigServicesOK %s", 200, payload)
 }
 
 func (o *ListConfigServicesOK) GetPayload() *rest_model.ListServicesEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListConfigServicesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListServicesEnvelope)
 
@@ -155,6 +168,7 @@ func (o *ListConfigServicesOK) readResponse(response runtime.ClientResponse, con
 
 // NewListConfigServicesBadRequest creates a ListConfigServicesBadRequest with default headers values
 func NewListConfigServicesBadRequest() *ListConfigServicesBadRequest {
+    logtrace.LogWithFunctionName()
 	return &ListConfigServicesBadRequest{}
 }
 
@@ -169,49 +183,59 @@ type ListConfigServicesBadRequest struct {
 
 // IsSuccess returns true when this list config services bad request response has a 2xx status code
 func (o *ListConfigServicesBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list config services bad request response has a 3xx status code
 func (o *ListConfigServicesBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list config services bad request response has a 4xx status code
 func (o *ListConfigServicesBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list config services bad request response has a 5xx status code
 func (o *ListConfigServicesBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list config services bad request response a status code equal to that given
 func (o *ListConfigServicesBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the list config services bad request response
 func (o *ListConfigServicesBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *ListConfigServicesBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}/services][%d] listConfigServicesBadRequest %s", 400, payload)
 }
 
 func (o *ListConfigServicesBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}/services][%d] listConfigServicesBadRequest %s", 400, payload)
 }
 
 func (o *ListConfigServicesBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListConfigServicesBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *ListConfigServicesBadRequest) readResponse(response runtime.ClientRespo
 
 // NewListConfigServicesUnauthorized creates a ListConfigServicesUnauthorized with default headers values
 func NewListConfigServicesUnauthorized() *ListConfigServicesUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &ListConfigServicesUnauthorized{}
 }
 
@@ -239,49 +264,59 @@ type ListConfigServicesUnauthorized struct {
 
 // IsSuccess returns true when this list config services unauthorized response has a 2xx status code
 func (o *ListConfigServicesUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list config services unauthorized response has a 3xx status code
 func (o *ListConfigServicesUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list config services unauthorized response has a 4xx status code
 func (o *ListConfigServicesUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list config services unauthorized response has a 5xx status code
 func (o *ListConfigServicesUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list config services unauthorized response a status code equal to that given
 func (o *ListConfigServicesUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the list config services unauthorized response
 func (o *ListConfigServicesUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *ListConfigServicesUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}/services][%d] listConfigServicesUnauthorized %s", 401, payload)
 }
 
 func (o *ListConfigServicesUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}/services][%d] listConfigServicesUnauthorized %s", 401, payload)
 }
 
 func (o *ListConfigServicesUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListConfigServicesUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *ListConfigServicesUnauthorized) readResponse(response runtime.ClientRes
 
 // NewListConfigServicesTooManyRequests creates a ListConfigServicesTooManyRequests with default headers values
 func NewListConfigServicesTooManyRequests() *ListConfigServicesTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &ListConfigServicesTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type ListConfigServicesTooManyRequests struct {
 
 // IsSuccess returns true when this list config services too many requests response has a 2xx status code
 func (o *ListConfigServicesTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list config services too many requests response has a 3xx status code
 func (o *ListConfigServicesTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list config services too many requests response has a 4xx status code
 func (o *ListConfigServicesTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list config services too many requests response has a 5xx status code
 func (o *ListConfigServicesTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list config services too many requests response a status code equal to that given
 func (o *ListConfigServicesTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the list config services too many requests response
 func (o *ListConfigServicesTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *ListConfigServicesTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}/services][%d] listConfigServicesTooManyRequests %s", 429, payload)
 }
 
 func (o *ListConfigServicesTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}/services][%d] listConfigServicesTooManyRequests %s", 429, payload)
 }
 
 func (o *ListConfigServicesTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListConfigServicesTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *ListConfigServicesTooManyRequests) readResponse(response runtime.Client
 
 // NewListConfigServicesServiceUnavailable creates a ListConfigServicesServiceUnavailable with default headers values
 func NewListConfigServicesServiceUnavailable() *ListConfigServicesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &ListConfigServicesServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type ListConfigServicesServiceUnavailable struct {
 
 // IsSuccess returns true when this list config services service unavailable response has a 2xx status code
 func (o *ListConfigServicesServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list config services service unavailable response has a 3xx status code
 func (o *ListConfigServicesServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list config services service unavailable response has a 4xx status code
 func (o *ListConfigServicesServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list config services service unavailable response has a 5xx status code
 func (o *ListConfigServicesServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this list config services service unavailable response a status code equal to that given
 func (o *ListConfigServicesServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the list config services service unavailable response
 func (o *ListConfigServicesServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *ListConfigServicesServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}/services][%d] listConfigServicesServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListConfigServicesServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /configs/{id}/services][%d] listConfigServicesServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListConfigServicesServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListConfigServicesServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

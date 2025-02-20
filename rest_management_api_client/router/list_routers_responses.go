@@ -30,6 +30,7 @@ package router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ListRoutersReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ListRoutersReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewListRoutersOK()
@@ -85,6 +87,7 @@ func (o *ListRoutersReader) ReadResponse(response runtime.ClientResponse, consum
 
 // NewListRoutersOK creates a ListRoutersOK with default headers values
 func NewListRoutersOK() *ListRoutersOK {
+    logtrace.LogWithFunctionName()
 	return &ListRoutersOK{}
 }
 
@@ -99,49 +102,59 @@ type ListRoutersOK struct {
 
 // IsSuccess returns true when this list routers o k response has a 2xx status code
 func (o *ListRoutersOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this list routers o k response has a 3xx status code
 func (o *ListRoutersOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list routers o k response has a 4xx status code
 func (o *ListRoutersOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list routers o k response has a 5xx status code
 func (o *ListRoutersOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list routers o k response a status code equal to that given
 func (o *ListRoutersOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the list routers o k response
 func (o *ListRoutersOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ListRoutersOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /routers][%d] listRoutersOK %s", 200, payload)
 }
 
 func (o *ListRoutersOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /routers][%d] listRoutersOK %s", 200, payload)
 }
 
 func (o *ListRoutersOK) GetPayload() *rest_model.ListRoutersEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListRoutersOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListRoutersEnvelope)
 
@@ -155,6 +168,7 @@ func (o *ListRoutersOK) readResponse(response runtime.ClientResponse, consumer r
 
 // NewListRoutersBadRequest creates a ListRoutersBadRequest with default headers values
 func NewListRoutersBadRequest() *ListRoutersBadRequest {
+    logtrace.LogWithFunctionName()
 	return &ListRoutersBadRequest{}
 }
 
@@ -169,49 +183,59 @@ type ListRoutersBadRequest struct {
 
 // IsSuccess returns true when this list routers bad request response has a 2xx status code
 func (o *ListRoutersBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list routers bad request response has a 3xx status code
 func (o *ListRoutersBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list routers bad request response has a 4xx status code
 func (o *ListRoutersBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list routers bad request response has a 5xx status code
 func (o *ListRoutersBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list routers bad request response a status code equal to that given
 func (o *ListRoutersBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the list routers bad request response
 func (o *ListRoutersBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *ListRoutersBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /routers][%d] listRoutersBadRequest %s", 400, payload)
 }
 
 func (o *ListRoutersBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /routers][%d] listRoutersBadRequest %s", 400, payload)
 }
 
 func (o *ListRoutersBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListRoutersBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *ListRoutersBadRequest) readResponse(response runtime.ClientResponse, co
 
 // NewListRoutersUnauthorized creates a ListRoutersUnauthorized with default headers values
 func NewListRoutersUnauthorized() *ListRoutersUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &ListRoutersUnauthorized{}
 }
 
@@ -239,49 +264,59 @@ type ListRoutersUnauthorized struct {
 
 // IsSuccess returns true when this list routers unauthorized response has a 2xx status code
 func (o *ListRoutersUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list routers unauthorized response has a 3xx status code
 func (o *ListRoutersUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list routers unauthorized response has a 4xx status code
 func (o *ListRoutersUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list routers unauthorized response has a 5xx status code
 func (o *ListRoutersUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list routers unauthorized response a status code equal to that given
 func (o *ListRoutersUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the list routers unauthorized response
 func (o *ListRoutersUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *ListRoutersUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /routers][%d] listRoutersUnauthorized %s", 401, payload)
 }
 
 func (o *ListRoutersUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /routers][%d] listRoutersUnauthorized %s", 401, payload)
 }
 
 func (o *ListRoutersUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListRoutersUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *ListRoutersUnauthorized) readResponse(response runtime.ClientResponse, 
 
 // NewListRoutersTooManyRequests creates a ListRoutersTooManyRequests with default headers values
 func NewListRoutersTooManyRequests() *ListRoutersTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &ListRoutersTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type ListRoutersTooManyRequests struct {
 
 // IsSuccess returns true when this list routers too many requests response has a 2xx status code
 func (o *ListRoutersTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list routers too many requests response has a 3xx status code
 func (o *ListRoutersTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list routers too many requests response has a 4xx status code
 func (o *ListRoutersTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list routers too many requests response has a 5xx status code
 func (o *ListRoutersTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list routers too many requests response a status code equal to that given
 func (o *ListRoutersTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the list routers too many requests response
 func (o *ListRoutersTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *ListRoutersTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /routers][%d] listRoutersTooManyRequests %s", 429, payload)
 }
 
 func (o *ListRoutersTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /routers][%d] listRoutersTooManyRequests %s", 429, payload)
 }
 
 func (o *ListRoutersTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListRoutersTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *ListRoutersTooManyRequests) readResponse(response runtime.ClientRespons
 
 // NewListRoutersServiceUnavailable creates a ListRoutersServiceUnavailable with default headers values
 func NewListRoutersServiceUnavailable() *ListRoutersServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &ListRoutersServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type ListRoutersServiceUnavailable struct {
 
 // IsSuccess returns true when this list routers service unavailable response has a 2xx status code
 func (o *ListRoutersServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list routers service unavailable response has a 3xx status code
 func (o *ListRoutersServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list routers service unavailable response has a 4xx status code
 func (o *ListRoutersServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list routers service unavailable response has a 5xx status code
 func (o *ListRoutersServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this list routers service unavailable response a status code equal to that given
 func (o *ListRoutersServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the list routers service unavailable response
 func (o *ListRoutersServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *ListRoutersServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /routers][%d] listRoutersServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListRoutersServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /routers][%d] listRoutersServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListRoutersServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListRoutersServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"strconv"
 
@@ -49,6 +50,7 @@ type ServiceEdgeRouters struct {
 
 // Validate validates this service edge routers
 func (m *ServiceEdgeRouters) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateEdgeRouters(formats); err != nil {
@@ -62,6 +64,7 @@ func (m *ServiceEdgeRouters) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ServiceEdgeRouters) validateEdgeRouters(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.EdgeRouters) { // not required
 		return nil
 	}
@@ -89,6 +92,7 @@ func (m *ServiceEdgeRouters) validateEdgeRouters(formats strfmt.Registry) error 
 
 // ContextValidate validate this service edge routers based on the context it is used
 func (m *ServiceEdgeRouters) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateEdgeRouters(ctx, formats); err != nil {
@@ -102,6 +106,7 @@ func (m *ServiceEdgeRouters) ContextValidate(ctx context.Context, formats strfmt
 }
 
 func (m *ServiceEdgeRouters) contextValidateEdgeRouters(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	for i := 0; i < len(m.EdgeRouters); i++ {
 
@@ -128,6 +133,7 @@ func (m *ServiceEdgeRouters) contextValidateEdgeRouters(ctx context.Context, for
 
 // MarshalBinary interface implementation
 func (m *ServiceEdgeRouters) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -136,6 +142,7 @@ func (m *ServiceEdgeRouters) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ServiceEdgeRouters) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ServiceEdgeRouters
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

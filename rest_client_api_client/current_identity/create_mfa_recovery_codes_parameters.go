@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCreateMfaRecoveryCodesParams() *CreateMfaRecoveryCodesParams {
+    logtrace.LogWithFunctionName()
 	return &CreateMfaRecoveryCodesParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewCreateMfaRecoveryCodesParams() *CreateMfaRecoveryCodesParams {
 // NewCreateMfaRecoveryCodesParamsWithTimeout creates a new CreateMfaRecoveryCodesParams object
 // with the ability to set a timeout on a request.
 func NewCreateMfaRecoveryCodesParamsWithTimeout(timeout time.Duration) *CreateMfaRecoveryCodesParams {
+    logtrace.LogWithFunctionName()
 	return &CreateMfaRecoveryCodesParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewCreateMfaRecoveryCodesParamsWithTimeout(timeout time.Duration) *CreateMf
 // NewCreateMfaRecoveryCodesParamsWithContext creates a new CreateMfaRecoveryCodesParams object
 // with the ability to set a context for a request.
 func NewCreateMfaRecoveryCodesParamsWithContext(ctx context.Context) *CreateMfaRecoveryCodesParams {
+    logtrace.LogWithFunctionName()
 	return &CreateMfaRecoveryCodesParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewCreateMfaRecoveryCodesParamsWithContext(ctx context.Context) *CreateMfaR
 // NewCreateMfaRecoveryCodesParamsWithHTTPClient creates a new CreateMfaRecoveryCodesParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewCreateMfaRecoveryCodesParamsWithHTTPClient(client *http.Client) *CreateMfaRecoveryCodesParams {
+    logtrace.LogWithFunctionName()
 	return &CreateMfaRecoveryCodesParams{
 		HTTPClient: client,
 	}
@@ -102,6 +107,7 @@ type CreateMfaRecoveryCodesParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *CreateMfaRecoveryCodesParams) WithDefaults() *CreateMfaRecoveryCodesParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -110,55 +116,65 @@ func (o *CreateMfaRecoveryCodesParams) WithDefaults() *CreateMfaRecoveryCodesPar
 //
 // All values with no default are reset to their zero value.
 func (o *CreateMfaRecoveryCodesParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the create mfa recovery codes params
 func (o *CreateMfaRecoveryCodesParams) WithTimeout(timeout time.Duration) *CreateMfaRecoveryCodesParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the create mfa recovery codes params
 func (o *CreateMfaRecoveryCodesParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the create mfa recovery codes params
 func (o *CreateMfaRecoveryCodesParams) WithContext(ctx context.Context) *CreateMfaRecoveryCodesParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the create mfa recovery codes params
 func (o *CreateMfaRecoveryCodesParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the create mfa recovery codes params
 func (o *CreateMfaRecoveryCodesParams) WithHTTPClient(client *http.Client) *CreateMfaRecoveryCodesParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the create mfa recovery codes params
 func (o *CreateMfaRecoveryCodesParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithMfaValidation adds the mfaValidation to the create mfa recovery codes params
 func (o *CreateMfaRecoveryCodesParams) WithMfaValidation(mfaValidation *rest_model.MfaCode) *CreateMfaRecoveryCodesParams {
+    logtrace.LogWithFunctionName()
 	o.SetMfaValidation(mfaValidation)
 	return o
 }
 
 // SetMfaValidation adds the mfaValidation to the create mfa recovery codes params
 func (o *CreateMfaRecoveryCodesParams) SetMfaValidation(mfaValidation *rest_model.MfaCode) {
+    logtrace.LogWithFunctionName()
 	o.MfaValidation = mfaValidation
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *CreateMfaRecoveryCodesParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

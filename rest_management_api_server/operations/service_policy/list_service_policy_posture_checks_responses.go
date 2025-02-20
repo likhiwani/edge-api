@@ -30,6 +30,7 @@ package service_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListServicePolicyPostureChecksOK struct {
 
 // NewListServicePolicyPostureChecksOK creates ListServicePolicyPostureChecksOK with default headers values
 func NewListServicePolicyPostureChecksOK() *ListServicePolicyPostureChecksOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListServicePolicyPostureChecksOK{}
 }
 
 // WithPayload adds the payload to the list service policy posture checks o k response
 func (o *ListServicePolicyPostureChecksOK) WithPayload(payload *rest_model.ListPostureCheckEnvelope) *ListServicePolicyPostureChecksOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list service policy posture checks o k response
 func (o *ListServicePolicyPostureChecksOK) SetPayload(payload *rest_model.ListPostureCheckEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListServicePolicyPostureChecksOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ListServicePolicyPostureChecksBadRequest struct {
 
 // NewListServicePolicyPostureChecksBadRequest creates ListServicePolicyPostureChecksBadRequest with default headers values
 func NewListServicePolicyPostureChecksBadRequest() *ListServicePolicyPostureChecksBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &ListServicePolicyPostureChecksBadRequest{}
 }
 
 // WithPayload adds the payload to the list service policy posture checks bad request response
 func (o *ListServicePolicyPostureChecksBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *ListServicePolicyPostureChecksBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list service policy posture checks bad request response
 func (o *ListServicePolicyPostureChecksBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListServicePolicyPostureChecksBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ListServicePolicyPostureChecksUnauthorized struct {
 
 // NewListServicePolicyPostureChecksUnauthorized creates ListServicePolicyPostureChecksUnauthorized with default headers values
 func NewListServicePolicyPostureChecksUnauthorized() *ListServicePolicyPostureChecksUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &ListServicePolicyPostureChecksUnauthorized{}
 }
 
 // WithPayload adds the payload to the list service policy posture checks unauthorized response
 func (o *ListServicePolicyPostureChecksUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *ListServicePolicyPostureChecksUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list service policy posture checks unauthorized response
 func (o *ListServicePolicyPostureChecksUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListServicePolicyPostureChecksUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type ListServicePolicyPostureChecksTooManyRequests struct {
 
 // NewListServicePolicyPostureChecksTooManyRequests creates ListServicePolicyPostureChecksTooManyRequests with default headers values
 func NewListServicePolicyPostureChecksTooManyRequests() *ListServicePolicyPostureChecksTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ListServicePolicyPostureChecksTooManyRequests{}
 }
 
 // WithPayload adds the payload to the list service policy posture checks too many requests response
 func (o *ListServicePolicyPostureChecksTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ListServicePolicyPostureChecksTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list service policy posture checks too many requests response
 func (o *ListServicePolicyPostureChecksTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListServicePolicyPostureChecksTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type ListServicePolicyPostureChecksServiceUnavailable struct {
 
 // NewListServicePolicyPostureChecksServiceUnavailable creates ListServicePolicyPostureChecksServiceUnavailable with default headers values
 func NewListServicePolicyPostureChecksServiceUnavailable() *ListServicePolicyPostureChecksServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &ListServicePolicyPostureChecksServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the list service policy posture checks service unavailable response
 func (o *ListServicePolicyPostureChecksServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *ListServicePolicyPostureChecksServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list service policy posture checks service unavailable response
 func (o *ListServicePolicyPostureChecksServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListServicePolicyPostureChecksServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

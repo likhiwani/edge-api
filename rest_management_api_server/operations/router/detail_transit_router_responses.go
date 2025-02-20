@@ -30,6 +30,7 @@ package router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DetailTransitRouterOK struct {
 
 // NewDetailTransitRouterOK creates DetailTransitRouterOK with default headers values
 func NewDetailTransitRouterOK() *DetailTransitRouterOK {
+    logtrace.LogWithFunctionName()
 
 	return &DetailTransitRouterOK{}
 }
 
 // WithPayload adds the payload to the detail transit router o k response
 func (o *DetailTransitRouterOK) WithPayload(payload *rest_model.DetailRouterEnvelope) *DetailTransitRouterOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail transit router o k response
 func (o *DetailTransitRouterOK) SetPayload(payload *rest_model.DetailRouterEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailTransitRouterOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DetailTransitRouterUnauthorized struct {
 
 // NewDetailTransitRouterUnauthorized creates DetailTransitRouterUnauthorized with default headers values
 func NewDetailTransitRouterUnauthorized() *DetailTransitRouterUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DetailTransitRouterUnauthorized{}
 }
 
 // WithPayload adds the payload to the detail transit router unauthorized response
 func (o *DetailTransitRouterUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailTransitRouterUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail transit router unauthorized response
 func (o *DetailTransitRouterUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailTransitRouterUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DetailTransitRouterNotFound struct {
 
 // NewDetailTransitRouterNotFound creates DetailTransitRouterNotFound with default headers values
 func NewDetailTransitRouterNotFound() *DetailTransitRouterNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DetailTransitRouterNotFound{}
 }
 
 // WithPayload adds the payload to the detail transit router not found response
 func (o *DetailTransitRouterNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailTransitRouterNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail transit router not found response
 func (o *DetailTransitRouterNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailTransitRouterNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DetailTransitRouterTooManyRequests struct {
 
 // NewDetailTransitRouterTooManyRequests creates DetailTransitRouterTooManyRequests with default headers values
 func NewDetailTransitRouterTooManyRequests() *DetailTransitRouterTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DetailTransitRouterTooManyRequests{}
 }
 
 // WithPayload adds the payload to the detail transit router too many requests response
 func (o *DetailTransitRouterTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailTransitRouterTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail transit router too many requests response
 func (o *DetailTransitRouterTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailTransitRouterTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DetailTransitRouterServiceUnavailable struct {
 
 // NewDetailTransitRouterServiceUnavailable creates DetailTransitRouterServiceUnavailable with default headers values
 func NewDetailTransitRouterServiceUnavailable() *DetailTransitRouterServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DetailTransitRouterServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the detail transit router service unavailable response
 func (o *DetailTransitRouterServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailTransitRouterServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail transit router service unavailable response
 func (o *DetailTransitRouterServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailTransitRouterServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

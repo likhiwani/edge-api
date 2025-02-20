@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewVerifyMfaParams() *VerifyMfaParams {
+    logtrace.LogWithFunctionName()
 	return &VerifyMfaParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewVerifyMfaParams() *VerifyMfaParams {
 // NewVerifyMfaParamsWithTimeout creates a new VerifyMfaParams object
 // with the ability to set a timeout on a request.
 func NewVerifyMfaParamsWithTimeout(timeout time.Duration) *VerifyMfaParams {
+    logtrace.LogWithFunctionName()
 	return &VerifyMfaParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewVerifyMfaParamsWithTimeout(timeout time.Duration) *VerifyMfaParams {
 // NewVerifyMfaParamsWithContext creates a new VerifyMfaParams object
 // with the ability to set a context for a request.
 func NewVerifyMfaParamsWithContext(ctx context.Context) *VerifyMfaParams {
+    logtrace.LogWithFunctionName()
 	return &VerifyMfaParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewVerifyMfaParamsWithContext(ctx context.Context) *VerifyMfaParams {
 // NewVerifyMfaParamsWithHTTPClient creates a new VerifyMfaParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewVerifyMfaParamsWithHTTPClient(client *http.Client) *VerifyMfaParams {
+    logtrace.LogWithFunctionName()
 	return &VerifyMfaParams{
 		HTTPClient: client,
 	}
@@ -102,6 +107,7 @@ type VerifyMfaParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *VerifyMfaParams) WithDefaults() *VerifyMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -110,55 +116,65 @@ func (o *VerifyMfaParams) WithDefaults() *VerifyMfaParams {
 //
 // All values with no default are reset to their zero value.
 func (o *VerifyMfaParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the verify mfa params
 func (o *VerifyMfaParams) WithTimeout(timeout time.Duration) *VerifyMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the verify mfa params
 func (o *VerifyMfaParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the verify mfa params
 func (o *VerifyMfaParams) WithContext(ctx context.Context) *VerifyMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the verify mfa params
 func (o *VerifyMfaParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the verify mfa params
 func (o *VerifyMfaParams) WithHTTPClient(client *http.Client) *VerifyMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the verify mfa params
 func (o *VerifyMfaParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithMfaValidation adds the mfaValidation to the verify mfa params
 func (o *VerifyMfaParams) WithMfaValidation(mfaValidation *rest_model.MfaCode) *VerifyMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetMfaValidation(mfaValidation)
 	return o
 }
 
 // SetMfaValidation adds the mfaValidation to the verify mfa params
 func (o *VerifyMfaParams) SetMfaValidation(mfaValidation *rest_model.MfaCode) {
+    logtrace.LogWithFunctionName()
 	o.MfaValidation = mfaValidation
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *VerifyMfaParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

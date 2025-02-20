@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type DetailIdentityHandlerFunc func(DetailIdentityParams, interface{}) middlewar
 
 // Handle executing the request and returning a response
 func (fn DetailIdentityHandlerFunc) Handle(params DetailIdentityParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type DetailIdentityHandler interface {
 
 // NewDetailIdentity creates a new http.Handler for the detail identity operation
 func NewDetailIdentity(ctx *middleware.Context, handler DetailIdentityHandler) *DetailIdentity {
+    logtrace.LogWithFunctionName()
 	return &DetailIdentity{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type DetailIdentity struct {
 }
 
 func (o *DetailIdentity) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

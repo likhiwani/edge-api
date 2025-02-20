@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -54,6 +55,7 @@ type ListCurrentAPISessionServiceUpdatesEnvelope struct {
 
 // Validate validates this list current Api session service updates envelope
 func (m *ListCurrentAPISessionServiceUpdatesEnvelope) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateData(formats); err != nil {
@@ -71,6 +73,7 @@ func (m *ListCurrentAPISessionServiceUpdatesEnvelope) Validate(formats strfmt.Re
 }
 
 func (m *ListCurrentAPISessionServiceUpdatesEnvelope) validateData(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("data", "body", m.Data); err != nil {
 		return err
@@ -91,6 +94,7 @@ func (m *ListCurrentAPISessionServiceUpdatesEnvelope) validateData(formats strfm
 }
 
 func (m *ListCurrentAPISessionServiceUpdatesEnvelope) validateMeta(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("meta", "body", m.Meta); err != nil {
 		return err
@@ -112,6 +116,7 @@ func (m *ListCurrentAPISessionServiceUpdatesEnvelope) validateMeta(formats strfm
 
 // ContextValidate validate this list current Api session service updates envelope based on the context it is used
 func (m *ListCurrentAPISessionServiceUpdatesEnvelope) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateData(ctx, formats); err != nil {
@@ -129,6 +134,7 @@ func (m *ListCurrentAPISessionServiceUpdatesEnvelope) ContextValidate(ctx contex
 }
 
 func (m *ListCurrentAPISessionServiceUpdatesEnvelope) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Data != nil {
 
@@ -146,6 +152,7 @@ func (m *ListCurrentAPISessionServiceUpdatesEnvelope) contextValidateData(ctx co
 }
 
 func (m *ListCurrentAPISessionServiceUpdatesEnvelope) contextValidateMeta(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Meta != nil {
 
@@ -164,6 +171,7 @@ func (m *ListCurrentAPISessionServiceUpdatesEnvelope) contextValidateMeta(ctx co
 
 // MarshalBinary interface implementation
 func (m *ListCurrentAPISessionServiceUpdatesEnvelope) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -172,6 +180,7 @@ func (m *ListCurrentAPISessionServiceUpdatesEnvelope) MarshalBinary() ([]byte, e
 
 // UnmarshalBinary interface implementation
 func (m *ListCurrentAPISessionServiceUpdatesEnvelope) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ListCurrentAPISessionServiceUpdatesEnvelope
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

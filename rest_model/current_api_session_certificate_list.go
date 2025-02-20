@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"strconv"
 
@@ -45,6 +46,7 @@ type CurrentAPISessionCertificateList []*CurrentAPISessionCertificateDetail
 
 // Validate validates this current Api session certificate list
 func (m CurrentAPISessionCertificateList) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	for i := 0; i < len(m); i++ {
@@ -73,6 +75,7 @@ func (m CurrentAPISessionCertificateList) Validate(formats strfmt.Registry) erro
 
 // ContextValidate validate this current Api session certificate list based on the context it is used
 func (m CurrentAPISessionCertificateList) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	for i := 0; i < len(m); i++ {

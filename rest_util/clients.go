@@ -36,17 +36,20 @@ package rest_util
 import (
 	"crypto"
 	"crypto/x509"
-	httptransport "github.com/go-openapi/runtime/client"
-	"ztna-core/edge-api/rest_client_api_client"
-	"ztna-core/edge-api/rest_management_api_client"
-	"github.com/pkg/errors"
 	"net/http"
 	"net/url"
+	"ztna-core/edge-api/rest_client_api_client"
+	"ztna-core/edge-api/rest_management_api_client"
+	"ztna-core/ztna/logtrace"
+
+	httptransport "github.com/go-openapi/runtime/client"
+	"github.com/pkg/errors"
 )
 
 // NewEdgeManagementClientWithToken will generate a new rest_management_api_client.ZitiEdgeManagement client based
 // upon a provided http.Client, controller address, and an API Session token that has been previously obtained.
 func NewEdgeManagementClientWithToken(httpClient *http.Client, apiAddress string, apiSessionToken string) (*rest_management_api_client.ZitiEdgeManagement, error) {
+	logtrace.LogWithFunctionName()
 	ctrlUrl, err := url.Parse(apiAddress)
 
 	if err != nil {
@@ -66,6 +69,7 @@ func NewEdgeManagementClientWithToken(httpClient *http.Client, apiAddress string
 // upon a provided http.Client, controller address, and will authenticate via username/password database (updb)
 // to obtain an API Session token.
 func NewEdgeManagementClientWithUpdb(username, password string, apiAddress string, rootCas *x509.CertPool) (*rest_management_api_client.ZitiEdgeManagement, error) {
+	logtrace.LogWithFunctionName()
 	auth := NewAuthenticatorUpdb(username, password)
 	auth.RootCas = rootCas
 	return NewEdgeManagementClientWithAuthenticator(auth, apiAddress)
@@ -75,6 +79,7 @@ func NewEdgeManagementClientWithUpdb(username, password string, apiAddress strin
 // upon a provided http.Client, controller address, and will authenticate via client certificate to obtain
 // an API Session token.
 func NewEdgeManagementClientWithCert(cert *x509.Certificate, privateKey crypto.PrivateKey, apiAddress string, rootCas *x509.CertPool) (*rest_management_api_client.ZitiEdgeManagement, error) {
+	logtrace.LogWithFunctionName()
 	auth := NewAuthenticatorCert(cert, privateKey)
 	auth.RootCas = rootCas
 	return NewEdgeManagementClientWithAuthenticator(auth, apiAddress)
@@ -84,6 +89,7 @@ func NewEdgeManagementClientWithCert(cert *x509.Certificate, privateKey crypto.P
 // upon a provided http.Client, controller address, and will authenticate with the provided Authenticator to obtain
 // an API Session token.
 func NewEdgeManagementClientWithAuthenticator(authenticator Authenticator, apiAddress string) (*rest_management_api_client.ZitiEdgeManagement, error) {
+	logtrace.LogWithFunctionName()
 	ctrlUrl, err := url.Parse(apiAddress)
 
 	if err != nil {
@@ -111,6 +117,7 @@ func NewEdgeManagementClientWithAuthenticator(authenticator Authenticator, apiAd
 // NewEdgeClientClientWithToken will generate a new rest_client_api_client.ZitiEdgeClient client based
 // upon a provided http.Client, controller address, and an API Session token that has been previously obtained.
 func NewEdgeClientClientWithToken(httpClient *http.Client, apiAddress string, apiSessionToken string) (*rest_client_api_client.ZitiEdgeClient, error) {
+	logtrace.LogWithFunctionName()
 	ctrlUrl, err := url.Parse(apiAddress)
 
 	if err != nil {
@@ -132,6 +139,7 @@ func NewEdgeClientClientWithToken(httpClient *http.Client, apiAddress string, ap
 // upon a provided http.Client, controller address, and will authenticate via username/password database (updb)
 // to obtain an API Session token.
 func NewEdgeClientClientWithUpdb(username, password string, apiAddress string, rootCas *x509.CertPool) (*rest_client_api_client.ZitiEdgeClient, error) {
+	logtrace.LogWithFunctionName()
 	auth := NewAuthenticatorUpdb(username, password)
 	auth.RootCas = rootCas
 	return NewEdgeClientClientWithAuthenticator(auth, apiAddress)
@@ -141,6 +149,7 @@ func NewEdgeClientClientWithUpdb(username, password string, apiAddress string, r
 // upon a provided http.Client, controller address, and will authenticate via client certificate to obtain
 // an API Session token.
 func NewEdgeClientClientWithCert(cert *x509.Certificate, privateKey crypto.PrivateKey, apiAddress string, rootCas *x509.CertPool) (*rest_client_api_client.ZitiEdgeClient, error) {
+	logtrace.LogWithFunctionName()
 	auth := NewAuthenticatorCert(cert, privateKey)
 	auth.RootCas = rootCas
 	return NewEdgeClientClientWithAuthenticator(auth, apiAddress)
@@ -150,6 +159,7 @@ func NewEdgeClientClientWithCert(cert *x509.Certificate, privateKey crypto.Priva
 // upon a provided http.Client, controller address, and will authenticate with the provided Authenticator to obtain
 // an API Session token.
 func NewEdgeClientClientWithAuthenticator(authenticator Authenticator, apiAddress string) (*rest_client_api_client.ZitiEdgeClient, error) {
+	logtrace.LogWithFunctionName()
 	ctrlUrl, err := url.Parse(apiAddress)
 
 	if err != nil {

@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type CreateCurrentAPISessionCertificateHandlerFunc func(CreateCurrentAPISessionC
 
 // Handle executing the request and returning a response
 func (fn CreateCurrentAPISessionCertificateHandlerFunc) Handle(params CreateCurrentAPISessionCertificateParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type CreateCurrentAPISessionCertificateHandler interface {
 
 // NewCreateCurrentAPISessionCertificate creates a new http.Handler for the create current Api session certificate operation
 func NewCreateCurrentAPISessionCertificate(ctx *middleware.Context, handler CreateCurrentAPISessionCertificateHandler) *CreateCurrentAPISessionCertificate {
+    logtrace.LogWithFunctionName()
 	return &CreateCurrentAPISessionCertificate{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type CreateCurrentAPISessionCertificate struct {
 }
 
 func (o *CreateCurrentAPISessionCertificate) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

@@ -30,6 +30,7 @@ package terminator
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type ListTerminatorsHandlerFunc func(ListTerminatorsParams, interface{}) middlew
 
 // Handle executing the request and returning a response
 func (fn ListTerminatorsHandlerFunc) Handle(params ListTerminatorsParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type ListTerminatorsHandler interface {
 
 // NewListTerminators creates a new http.Handler for the list terminators operation
 func NewListTerminators(ctx *middleware.Context, handler ListTerminatorsHandler) *ListTerminators {
+    logtrace.LogWithFunctionName()
 	return &ListTerminators{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type ListTerminators struct {
 }
 
 func (o *ListTerminators) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

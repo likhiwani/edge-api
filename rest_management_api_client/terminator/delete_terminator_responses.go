@@ -30,6 +30,7 @@ package terminator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DeleteTerminatorReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DeleteTerminatorReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDeleteTerminatorOK()
@@ -97,6 +99,7 @@ func (o *DeleteTerminatorReader) ReadResponse(response runtime.ClientResponse, c
 
 // NewDeleteTerminatorOK creates a DeleteTerminatorOK with default headers values
 func NewDeleteTerminatorOK() *DeleteTerminatorOK {
+    logtrace.LogWithFunctionName()
 	return &DeleteTerminatorOK{}
 }
 
@@ -111,49 +114,59 @@ type DeleteTerminatorOK struct {
 
 // IsSuccess returns true when this delete terminator o k response has a 2xx status code
 func (o *DeleteTerminatorOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this delete terminator o k response has a 3xx status code
 func (o *DeleteTerminatorOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete terminator o k response has a 4xx status code
 func (o *DeleteTerminatorOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete terminator o k response has a 5xx status code
 func (o *DeleteTerminatorOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete terminator o k response a status code equal to that given
 func (o *DeleteTerminatorOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the delete terminator o k response
 func (o *DeleteTerminatorOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DeleteTerminatorOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /terminators/{id}][%d] deleteTerminatorOK %s", 200, payload)
 }
 
 func (o *DeleteTerminatorOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /terminators/{id}][%d] deleteTerminatorOK %s", 200, payload)
 }
 
 func (o *DeleteTerminatorOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteTerminatorOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -167,6 +180,7 @@ func (o *DeleteTerminatorOK) readResponse(response runtime.ClientResponse, consu
 
 // NewDeleteTerminatorBadRequest creates a DeleteTerminatorBadRequest with default headers values
 func NewDeleteTerminatorBadRequest() *DeleteTerminatorBadRequest {
+    logtrace.LogWithFunctionName()
 	return &DeleteTerminatorBadRequest{}
 }
 
@@ -181,49 +195,59 @@ type DeleteTerminatorBadRequest struct {
 
 // IsSuccess returns true when this delete terminator bad request response has a 2xx status code
 func (o *DeleteTerminatorBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete terminator bad request response has a 3xx status code
 func (o *DeleteTerminatorBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete terminator bad request response has a 4xx status code
 func (o *DeleteTerminatorBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete terminator bad request response has a 5xx status code
 func (o *DeleteTerminatorBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete terminator bad request response a status code equal to that given
 func (o *DeleteTerminatorBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the delete terminator bad request response
 func (o *DeleteTerminatorBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *DeleteTerminatorBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /terminators/{id}][%d] deleteTerminatorBadRequest %s", 400, payload)
 }
 
 func (o *DeleteTerminatorBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /terminators/{id}][%d] deleteTerminatorBadRequest %s", 400, payload)
 }
 
 func (o *DeleteTerminatorBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteTerminatorBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -237,6 +261,7 @@ func (o *DeleteTerminatorBadRequest) readResponse(response runtime.ClientRespons
 
 // NewDeleteTerminatorUnauthorized creates a DeleteTerminatorUnauthorized with default headers values
 func NewDeleteTerminatorUnauthorized() *DeleteTerminatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DeleteTerminatorUnauthorized{}
 }
 
@@ -251,49 +276,59 @@ type DeleteTerminatorUnauthorized struct {
 
 // IsSuccess returns true when this delete terminator unauthorized response has a 2xx status code
 func (o *DeleteTerminatorUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete terminator unauthorized response has a 3xx status code
 func (o *DeleteTerminatorUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete terminator unauthorized response has a 4xx status code
 func (o *DeleteTerminatorUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete terminator unauthorized response has a 5xx status code
 func (o *DeleteTerminatorUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete terminator unauthorized response a status code equal to that given
 func (o *DeleteTerminatorUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the delete terminator unauthorized response
 func (o *DeleteTerminatorUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DeleteTerminatorUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /terminators/{id}][%d] deleteTerminatorUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteTerminatorUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /terminators/{id}][%d] deleteTerminatorUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteTerminatorUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteTerminatorUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -307,6 +342,7 @@ func (o *DeleteTerminatorUnauthorized) readResponse(response runtime.ClientRespo
 
 // NewDeleteTerminatorNotFound creates a DeleteTerminatorNotFound with default headers values
 func NewDeleteTerminatorNotFound() *DeleteTerminatorNotFound {
+    logtrace.LogWithFunctionName()
 	return &DeleteTerminatorNotFound{}
 }
 
@@ -321,49 +357,59 @@ type DeleteTerminatorNotFound struct {
 
 // IsSuccess returns true when this delete terminator not found response has a 2xx status code
 func (o *DeleteTerminatorNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete terminator not found response has a 3xx status code
 func (o *DeleteTerminatorNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete terminator not found response has a 4xx status code
 func (o *DeleteTerminatorNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete terminator not found response has a 5xx status code
 func (o *DeleteTerminatorNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete terminator not found response a status code equal to that given
 func (o *DeleteTerminatorNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the delete terminator not found response
 func (o *DeleteTerminatorNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DeleteTerminatorNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /terminators/{id}][%d] deleteTerminatorNotFound %s", 404, payload)
 }
 
 func (o *DeleteTerminatorNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /terminators/{id}][%d] deleteTerminatorNotFound %s", 404, payload)
 }
 
 func (o *DeleteTerminatorNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteTerminatorNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -377,6 +423,7 @@ func (o *DeleteTerminatorNotFound) readResponse(response runtime.ClientResponse,
 
 // NewDeleteTerminatorConflict creates a DeleteTerminatorConflict with default headers values
 func NewDeleteTerminatorConflict() *DeleteTerminatorConflict {
+    logtrace.LogWithFunctionName()
 	return &DeleteTerminatorConflict{}
 }
 
@@ -391,49 +438,59 @@ type DeleteTerminatorConflict struct {
 
 // IsSuccess returns true when this delete terminator conflict response has a 2xx status code
 func (o *DeleteTerminatorConflict) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete terminator conflict response has a 3xx status code
 func (o *DeleteTerminatorConflict) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete terminator conflict response has a 4xx status code
 func (o *DeleteTerminatorConflict) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete terminator conflict response has a 5xx status code
 func (o *DeleteTerminatorConflict) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete terminator conflict response a status code equal to that given
 func (o *DeleteTerminatorConflict) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 409
 }
 
 // Code gets the status code for the delete terminator conflict response
 func (o *DeleteTerminatorConflict) Code() int {
+    logtrace.LogWithFunctionName()
 	return 409
 }
 
 func (o *DeleteTerminatorConflict) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /terminators/{id}][%d] deleteTerminatorConflict %s", 409, payload)
 }
 
 func (o *DeleteTerminatorConflict) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /terminators/{id}][%d] deleteTerminatorConflict %s", 409, payload)
 }
 
 func (o *DeleteTerminatorConflict) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteTerminatorConflict) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -447,6 +504,7 @@ func (o *DeleteTerminatorConflict) readResponse(response runtime.ClientResponse,
 
 // NewDeleteTerminatorTooManyRequests creates a DeleteTerminatorTooManyRequests with default headers values
 func NewDeleteTerminatorTooManyRequests() *DeleteTerminatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DeleteTerminatorTooManyRequests{}
 }
 
@@ -461,49 +519,59 @@ type DeleteTerminatorTooManyRequests struct {
 
 // IsSuccess returns true when this delete terminator too many requests response has a 2xx status code
 func (o *DeleteTerminatorTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete terminator too many requests response has a 3xx status code
 func (o *DeleteTerminatorTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete terminator too many requests response has a 4xx status code
 func (o *DeleteTerminatorTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete terminator too many requests response has a 5xx status code
 func (o *DeleteTerminatorTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete terminator too many requests response a status code equal to that given
 func (o *DeleteTerminatorTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the delete terminator too many requests response
 func (o *DeleteTerminatorTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DeleteTerminatorTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /terminators/{id}][%d] deleteTerminatorTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteTerminatorTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /terminators/{id}][%d] deleteTerminatorTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteTerminatorTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteTerminatorTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -517,6 +585,7 @@ func (o *DeleteTerminatorTooManyRequests) readResponse(response runtime.ClientRe
 
 // NewDeleteTerminatorServiceUnavailable creates a DeleteTerminatorServiceUnavailable with default headers values
 func NewDeleteTerminatorServiceUnavailable() *DeleteTerminatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DeleteTerminatorServiceUnavailable{}
 }
 
@@ -531,49 +600,59 @@ type DeleteTerminatorServiceUnavailable struct {
 
 // IsSuccess returns true when this delete terminator service unavailable response has a 2xx status code
 func (o *DeleteTerminatorServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete terminator service unavailable response has a 3xx status code
 func (o *DeleteTerminatorServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete terminator service unavailable response has a 4xx status code
 func (o *DeleteTerminatorServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete terminator service unavailable response has a 5xx status code
 func (o *DeleteTerminatorServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this delete terminator service unavailable response a status code equal to that given
 func (o *DeleteTerminatorServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the delete terminator service unavailable response
 func (o *DeleteTerminatorServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DeleteTerminatorServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /terminators/{id}][%d] deleteTerminatorServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteTerminatorServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /terminators/{id}][%d] deleteTerminatorServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteTerminatorServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteTerminatorServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

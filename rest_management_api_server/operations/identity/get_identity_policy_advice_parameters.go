@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -41,6 +42,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewGetIdentityPolicyAdviceParams() GetIdentityPolicyAdviceParams {
+    logtrace.LogWithFunctionName()
 
 	return GetIdentityPolicyAdviceParams{}
 }
@@ -71,6 +73,7 @@ type GetIdentityPolicyAdviceParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewGetIdentityPolicyAdviceParams() beforehand.
 func (o *GetIdentityPolicyAdviceParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r
@@ -92,6 +95,7 @@ func (o *GetIdentityPolicyAdviceParams) BindRequest(r *http.Request, route *midd
 
 // bindID binds and validates parameter ID from path.
 func (o *GetIdentityPolicyAdviceParams) bindID(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -106,6 +110,7 @@ func (o *GetIdentityPolicyAdviceParams) bindID(rawData []string, hasKey bool, fo
 
 // bindServiceID binds and validates parameter ServiceID from path.
 func (o *GetIdentityPolicyAdviceParams) bindServiceID(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]

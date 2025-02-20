@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -63,6 +64,7 @@ type ServiceConfigDetail struct {
 
 // Validate validates this service config detail
 func (m *ServiceConfigDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateConfig(formats); err != nil {
@@ -88,6 +90,7 @@ func (m *ServiceConfigDetail) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ServiceConfigDetail) validateConfig(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("config", "body", m.Config); err != nil {
 		return err
@@ -108,6 +111,7 @@ func (m *ServiceConfigDetail) validateConfig(formats strfmt.Registry) error {
 }
 
 func (m *ServiceConfigDetail) validateConfigID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("configId", "body", m.ConfigID); err != nil {
 		return err
@@ -117,6 +121,7 @@ func (m *ServiceConfigDetail) validateConfigID(formats strfmt.Registry) error {
 }
 
 func (m *ServiceConfigDetail) validateService(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("service", "body", m.Service); err != nil {
 		return err
@@ -137,6 +142,7 @@ func (m *ServiceConfigDetail) validateService(formats strfmt.Registry) error {
 }
 
 func (m *ServiceConfigDetail) validateServiceID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("serviceId", "body", m.ServiceID); err != nil {
 		return err
@@ -147,6 +153,7 @@ func (m *ServiceConfigDetail) validateServiceID(formats strfmt.Registry) error {
 
 // ContextValidate validate this service config detail based on the context it is used
 func (m *ServiceConfigDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateConfig(ctx, formats); err != nil {
@@ -164,6 +171,7 @@ func (m *ServiceConfigDetail) ContextValidate(ctx context.Context, formats strfm
 }
 
 func (m *ServiceConfigDetail) contextValidateConfig(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Config != nil {
 
@@ -181,6 +189,7 @@ func (m *ServiceConfigDetail) contextValidateConfig(ctx context.Context, formats
 }
 
 func (m *ServiceConfigDetail) contextValidateService(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Service != nil {
 
@@ -199,6 +208,7 @@ func (m *ServiceConfigDetail) contextValidateService(ctx context.Context, format
 
 // MarshalBinary interface implementation
 func (m *ServiceConfigDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -207,6 +217,7 @@ func (m *ServiceConfigDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ServiceConfigDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ServiceConfigDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

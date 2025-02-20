@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"errors"
 	"net/url"
 	golangswaggerpaths "path"
@@ -49,6 +50,7 @@ type AssociateIdentitysServiceConfigsURL struct {
 // base path specified in the swagger spec.
 // When the value of the base path is an empty string
 func (o *AssociateIdentitysServiceConfigsURL) WithBasePath(bp string) *AssociateIdentitysServiceConfigsURL {
+    logtrace.LogWithFunctionName()
 	o.SetBasePath(bp)
 	return o
 }
@@ -57,11 +59,13 @@ func (o *AssociateIdentitysServiceConfigsURL) WithBasePath(bp string) *Associate
 // base path specified in the swagger spec.
 // When the value of the base path is an empty string
 func (o *AssociateIdentitysServiceConfigsURL) SetBasePath(bp string) {
+    logtrace.LogWithFunctionName()
 	o._basePath = bp
 }
 
 // Build a url path and query string
 func (o *AssociateIdentitysServiceConfigsURL) Build() (*url.URL, error) {
+    logtrace.LogWithFunctionName()
 	var _result url.URL
 
 	var _path = "/identities/{id}/service-configs"
@@ -84,6 +88,7 @@ func (o *AssociateIdentitysServiceConfigsURL) Build() (*url.URL, error) {
 
 // Must is a helper function to panic when the url builder returns an error
 func (o *AssociateIdentitysServiceConfigsURL) Must(u *url.URL, err error) *url.URL {
+    logtrace.LogWithFunctionName()
 	if err != nil {
 		panic(err)
 	}
@@ -95,11 +100,13 @@ func (o *AssociateIdentitysServiceConfigsURL) Must(u *url.URL, err error) *url.U
 
 // String returns the string representation of the path with query string
 func (o *AssociateIdentitysServiceConfigsURL) String() string {
+    logtrace.LogWithFunctionName()
 	return o.Must(o.Build()).String()
 }
 
 // BuildFull builds a full url with scheme, host, path and query string
 func (o *AssociateIdentitysServiceConfigsURL) BuildFull(scheme, host string) (*url.URL, error) {
+    logtrace.LogWithFunctionName()
 	if scheme == "" {
 		return nil, errors.New("scheme is required for a full url on AssociateIdentitysServiceConfigsURL")
 	}
@@ -119,5 +126,6 @@ func (o *AssociateIdentitysServiceConfigsURL) BuildFull(scheme, host string) (*u
 
 // StringFull returns the string representation of a complete url
 func (o *AssociateIdentitysServiceConfigsURL) StringFull(scheme, host string) string {
+    logtrace.LogWithFunctionName()
 	return o.Must(o.BuildFull(scheme, host)).String()
 }

@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -48,6 +49,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListIdentitiesParams() *ListIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	return &ListIdentitiesParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -56,6 +58,7 @@ func NewListIdentitiesParams() *ListIdentitiesParams {
 // NewListIdentitiesParamsWithTimeout creates a new ListIdentitiesParams object
 // with the ability to set a timeout on a request.
 func NewListIdentitiesParamsWithTimeout(timeout time.Duration) *ListIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	return &ListIdentitiesParams{
 		timeout: timeout,
 	}
@@ -64,6 +67,7 @@ func NewListIdentitiesParamsWithTimeout(timeout time.Duration) *ListIdentitiesPa
 // NewListIdentitiesParamsWithContext creates a new ListIdentitiesParams object
 // with the ability to set a context for a request.
 func NewListIdentitiesParamsWithContext(ctx context.Context) *ListIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	return &ListIdentitiesParams{
 		Context: ctx,
 	}
@@ -72,6 +76,7 @@ func NewListIdentitiesParamsWithContext(ctx context.Context) *ListIdentitiesPara
 // NewListIdentitiesParamsWithHTTPClient creates a new ListIdentitiesParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListIdentitiesParamsWithHTTPClient(client *http.Client) *ListIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	return &ListIdentitiesParams{
 		HTTPClient: client,
 	}
@@ -110,6 +115,7 @@ type ListIdentitiesParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListIdentitiesParams) WithDefaults() *ListIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -118,99 +124,117 @@ func (o *ListIdentitiesParams) WithDefaults() *ListIdentitiesParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListIdentitiesParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list identities params
 func (o *ListIdentitiesParams) WithTimeout(timeout time.Duration) *ListIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list identities params
 func (o *ListIdentitiesParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list identities params
 func (o *ListIdentitiesParams) WithContext(ctx context.Context) *ListIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list identities params
 func (o *ListIdentitiesParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list identities params
 func (o *ListIdentitiesParams) WithHTTPClient(client *http.Client) *ListIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list identities params
 func (o *ListIdentitiesParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithFilter adds the filter to the list identities params
 func (o *ListIdentitiesParams) WithFilter(filter *string) *ListIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetFilter(filter)
 	return o
 }
 
 // SetFilter adds the filter to the list identities params
 func (o *ListIdentitiesParams) SetFilter(filter *string) {
+    logtrace.LogWithFunctionName()
 	o.Filter = filter
 }
 
 // WithLimit adds the limit to the list identities params
 func (o *ListIdentitiesParams) WithLimit(limit *int64) *ListIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetLimit(limit)
 	return o
 }
 
 // SetLimit adds the limit to the list identities params
 func (o *ListIdentitiesParams) SetLimit(limit *int64) {
+    logtrace.LogWithFunctionName()
 	o.Limit = limit
 }
 
 // WithOffset adds the offset to the list identities params
 func (o *ListIdentitiesParams) WithOffset(offset *int64) *ListIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetOffset(offset)
 	return o
 }
 
 // SetOffset adds the offset to the list identities params
 func (o *ListIdentitiesParams) SetOffset(offset *int64) {
+    logtrace.LogWithFunctionName()
 	o.Offset = offset
 }
 
 // WithRoleFilter adds the roleFilter to the list identities params
 func (o *ListIdentitiesParams) WithRoleFilter(roleFilter []string) *ListIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetRoleFilter(roleFilter)
 	return o
 }
 
 // SetRoleFilter adds the roleFilter to the list identities params
 func (o *ListIdentitiesParams) SetRoleFilter(roleFilter []string) {
+    logtrace.LogWithFunctionName()
 	o.RoleFilter = roleFilter
 }
 
 // WithRoleSemantic adds the roleSemantic to the list identities params
 func (o *ListIdentitiesParams) WithRoleSemantic(roleSemantic *string) *ListIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetRoleSemantic(roleSemantic)
 	return o
 }
 
 // SetRoleSemantic adds the roleSemantic to the list identities params
 func (o *ListIdentitiesParams) SetRoleSemantic(roleSemantic *string) {
+    logtrace.LogWithFunctionName()
 	o.RoleSemantic = roleSemantic
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListIdentitiesParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err
@@ -304,6 +328,7 @@ func (o *ListIdentitiesParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 
 // bindParamListIdentities binds the parameter roleFilter
 func (o *ListIdentitiesParams) bindParamRoleFilter(formats strfmt.Registry) []string {
+    logtrace.LogWithFunctionName()
 	roleFilterIR := o.RoleFilter
 
 	var roleFilterIC []string

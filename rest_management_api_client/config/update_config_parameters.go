@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewUpdateConfigParams() *UpdateConfigParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateConfigParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewUpdateConfigParams() *UpdateConfigParams {
 // NewUpdateConfigParamsWithTimeout creates a new UpdateConfigParams object
 // with the ability to set a timeout on a request.
 func NewUpdateConfigParamsWithTimeout(timeout time.Duration) *UpdateConfigParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateConfigParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewUpdateConfigParamsWithTimeout(timeout time.Duration) *UpdateConfigParams
 // NewUpdateConfigParamsWithContext creates a new UpdateConfigParams object
 // with the ability to set a context for a request.
 func NewUpdateConfigParamsWithContext(ctx context.Context) *UpdateConfigParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateConfigParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewUpdateConfigParamsWithContext(ctx context.Context) *UpdateConfigParams {
 // NewUpdateConfigParamsWithHTTPClient creates a new UpdateConfigParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewUpdateConfigParamsWithHTTPClient(client *http.Client) *UpdateConfigParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateConfigParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type UpdateConfigParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *UpdateConfigParams) WithDefaults() *UpdateConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *UpdateConfigParams) WithDefaults() *UpdateConfigParams {
 //
 // All values with no default are reset to their zero value.
 func (o *UpdateConfigParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the update config params
 func (o *UpdateConfigParams) WithTimeout(timeout time.Duration) *UpdateConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the update config params
 func (o *UpdateConfigParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the update config params
 func (o *UpdateConfigParams) WithContext(ctx context.Context) *UpdateConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the update config params
 func (o *UpdateConfigParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the update config params
 func (o *UpdateConfigParams) WithHTTPClient(client *http.Client) *UpdateConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the update config params
 func (o *UpdateConfigParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithConfig adds the config to the update config params
 func (o *UpdateConfigParams) WithConfig(config *rest_model.ConfigUpdate) *UpdateConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetConfig(config)
 	return o
 }
 
 // SetConfig adds the config to the update config params
 func (o *UpdateConfigParams) SetConfig(config *rest_model.ConfigUpdate) {
+    logtrace.LogWithFunctionName()
 	o.Config = config
 }
 
 // WithID adds the id to the update config params
 func (o *UpdateConfigParams) WithID(id string) *UpdateConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the update config params
 func (o *UpdateConfigParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *UpdateConfigParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

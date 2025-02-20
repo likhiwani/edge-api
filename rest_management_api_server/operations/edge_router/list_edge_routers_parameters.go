@@ -30,6 +30,7 @@ package edge_router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -43,6 +44,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewListEdgeRoutersParams() ListEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 
 	return ListEdgeRoutersParams{}
 }
@@ -84,6 +86,7 @@ type ListEdgeRoutersParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewListEdgeRoutersParams() beforehand.
 func (o *ListEdgeRoutersParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r
@@ -122,6 +125,7 @@ func (o *ListEdgeRoutersParams) BindRequest(r *http.Request, route *middleware.M
 
 // bindFilter binds and validates parameter Filter from query.
 func (o *ListEdgeRoutersParams) bindFilter(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -140,6 +144,7 @@ func (o *ListEdgeRoutersParams) bindFilter(rawData []string, hasKey bool, format
 
 // bindLimit binds and validates parameter Limit from query.
 func (o *ListEdgeRoutersParams) bindLimit(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -163,6 +168,7 @@ func (o *ListEdgeRoutersParams) bindLimit(rawData []string, hasKey bool, formats
 
 // bindOffset binds and validates parameter Offset from query.
 func (o *ListEdgeRoutersParams) bindOffset(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -188,6 +194,7 @@ func (o *ListEdgeRoutersParams) bindOffset(rawData []string, hasKey bool, format
 //
 // Arrays are parsed according to CollectionFormat: "multi" (defaults to "csv" when empty).
 func (o *ListEdgeRoutersParams) bindRoleFilter(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	// CollectionFormat: multi
 	roleFilterIC := rawData
 	if len(roleFilterIC) == 0 {
@@ -208,6 +215,7 @@ func (o *ListEdgeRoutersParams) bindRoleFilter(rawData []string, hasKey bool, fo
 
 // bindRoleSemantic binds and validates parameter RoleSemantic from query.
 func (o *ListEdgeRoutersParams) bindRoleSemantic(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]

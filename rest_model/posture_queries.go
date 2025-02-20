@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"strconv"
 
@@ -62,6 +63,7 @@ type PostureQueries struct {
 
 // Validate validates this posture queries
 func (m *PostureQueries) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateIsPassing(formats); err != nil {
@@ -87,6 +89,7 @@ func (m *PostureQueries) Validate(formats strfmt.Registry) error {
 }
 
 func (m *PostureQueries) validateIsPassing(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isPassing", "body", m.IsPassing); err != nil {
 		return err
@@ -96,6 +99,7 @@ func (m *PostureQueries) validateIsPassing(formats strfmt.Registry) error {
 }
 
 func (m *PostureQueries) validatePolicyID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("policyId", "body", m.PolicyID); err != nil {
 		return err
@@ -105,6 +109,7 @@ func (m *PostureQueries) validatePolicyID(formats strfmt.Registry) error {
 }
 
 func (m *PostureQueries) validatePolicyType(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.PolicyType) { // not required
 		return nil
 	}
@@ -122,6 +127,7 @@ func (m *PostureQueries) validatePolicyType(formats strfmt.Registry) error {
 }
 
 func (m *PostureQueries) validatePostureQueries(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("postureQueries", "body", m.PostureQueries); err != nil {
 		return err
@@ -150,6 +156,7 @@ func (m *PostureQueries) validatePostureQueries(formats strfmt.Registry) error {
 
 // ContextValidate validate this posture queries based on the context it is used
 func (m *PostureQueries) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidatePolicyType(ctx, formats); err != nil {
@@ -167,6 +174,7 @@ func (m *PostureQueries) ContextValidate(ctx context.Context, formats strfmt.Reg
 }
 
 func (m *PostureQueries) contextValidatePolicyType(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.PolicyType) { // not required
 		return nil
@@ -185,6 +193,7 @@ func (m *PostureQueries) contextValidatePolicyType(ctx context.Context, formats 
 }
 
 func (m *PostureQueries) contextValidatePostureQueries(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	for i := 0; i < len(m.PostureQueries); i++ {
 
@@ -211,6 +220,7 @@ func (m *PostureQueries) contextValidatePostureQueries(ctx context.Context, form
 
 // MarshalBinary interface implementation
 func (m *PostureQueries) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -219,6 +229,7 @@ func (m *PostureQueries) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureQueries) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureQueries
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"encoding/json"
 
@@ -44,11 +45,13 @@ import (
 type PostureCheckType string
 
 func NewPostureCheckType(value PostureCheckType) *PostureCheckType {
+    logtrace.LogWithFunctionName()
 	return &value
 }
 
 // Pointer returns a pointer to a freshly-allocated PostureCheckType.
 func (m PostureCheckType) Pointer() *PostureCheckType {
+    logtrace.LogWithFunctionName()
 	return &m
 }
 
@@ -77,6 +80,7 @@ const (
 var postureCheckTypeEnum []interface{}
 
 func init() {
+    logtrace.LogWithFunctionName()
 	var res []PostureCheckType
 	if err := json.Unmarshal([]byte(`["OS","PROCESS","DOMAIN","MAC","MFA","PROCESS_MULTI"]`), &res); err != nil {
 		panic(err)
@@ -87,6 +91,7 @@ func init() {
 }
 
 func (m PostureCheckType) validatePostureCheckTypeEnum(path, location string, value PostureCheckType) error {
+    logtrace.LogWithFunctionName()
 	if err := validate.EnumCase(path, location, value, postureCheckTypeEnum, true); err != nil {
 		return err
 	}
@@ -95,6 +100,7 @@ func (m PostureCheckType) validatePostureCheckTypeEnum(path, location string, va
 
 // Validate validates this posture check type
 func (m PostureCheckType) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// value enum
@@ -110,5 +116,6 @@ func (m PostureCheckType) Validate(formats strfmt.Registry) error {
 
 // ContextValidate validates this posture check type based on context it is used
 func (m PostureCheckType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }

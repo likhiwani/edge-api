@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -50,6 +51,7 @@ type DisableParams struct {
 
 // Validate validates this disable params
 func (m *DisableParams) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateDurationMinutes(formats); err != nil {
@@ -63,6 +65,7 @@ func (m *DisableParams) Validate(formats strfmt.Registry) error {
 }
 
 func (m *DisableParams) validateDurationMinutes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("durationMinutes", "body", m.DurationMinutes); err != nil {
 		return err
@@ -73,11 +76,13 @@ func (m *DisableParams) validateDurationMinutes(formats strfmt.Registry) error {
 
 // ContextValidate validates this disable params based on context it is used
 func (m *DisableParams) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *DisableParams) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -86,6 +91,7 @@ func (m *DisableParams) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *DisableParams) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res DisableParams
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

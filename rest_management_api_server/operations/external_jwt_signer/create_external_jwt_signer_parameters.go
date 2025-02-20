@@ -30,6 +30,7 @@ package external_jwt_signer
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"io"
 	"net/http"
 
@@ -45,6 +46,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewCreateExternalJWTSignerParams() CreateExternalJWTSignerParams {
+    logtrace.LogWithFunctionName()
 
 	return CreateExternalJWTSignerParams{}
 }
@@ -70,6 +72,7 @@ type CreateExternalJWTSignerParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewCreateExternalJWTSignerParams() beforehand.
 func (o *CreateExternalJWTSignerParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r

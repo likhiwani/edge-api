@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DeleteMfaOK struct {
 
 // NewDeleteMfaOK creates DeleteMfaOK with default headers values
 func NewDeleteMfaOK() *DeleteMfaOK {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteMfaOK{}
 }
 
 // WithPayload adds the payload to the delete mfa o k response
 func (o *DeleteMfaOK) WithPayload(payload *rest_model.Empty) *DeleteMfaOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete mfa o k response
 func (o *DeleteMfaOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteMfaOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DeleteMfaUnauthorized struct {
 
 // NewDeleteMfaUnauthorized creates DeleteMfaUnauthorized with default headers values
 func NewDeleteMfaUnauthorized() *DeleteMfaUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteMfaUnauthorized{}
 }
 
 // WithPayload adds the payload to the delete mfa unauthorized response
 func (o *DeleteMfaUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteMfaUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete mfa unauthorized response
 func (o *DeleteMfaUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteMfaUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DeleteMfaNotFound struct {
 
 // NewDeleteMfaNotFound creates DeleteMfaNotFound with default headers values
 func NewDeleteMfaNotFound() *DeleteMfaNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteMfaNotFound{}
 }
 
 // WithPayload adds the payload to the delete mfa not found response
 func (o *DeleteMfaNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteMfaNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete mfa not found response
 func (o *DeleteMfaNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteMfaNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {

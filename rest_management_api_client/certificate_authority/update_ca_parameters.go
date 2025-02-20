@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewUpdateCaParams() *UpdateCaParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateCaParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewUpdateCaParams() *UpdateCaParams {
 // NewUpdateCaParamsWithTimeout creates a new UpdateCaParams object
 // with the ability to set a timeout on a request.
 func NewUpdateCaParamsWithTimeout(timeout time.Duration) *UpdateCaParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateCaParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewUpdateCaParamsWithTimeout(timeout time.Duration) *UpdateCaParams {
 // NewUpdateCaParamsWithContext creates a new UpdateCaParams object
 // with the ability to set a context for a request.
 func NewUpdateCaParamsWithContext(ctx context.Context) *UpdateCaParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateCaParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewUpdateCaParamsWithContext(ctx context.Context) *UpdateCaParams {
 // NewUpdateCaParamsWithHTTPClient creates a new UpdateCaParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewUpdateCaParamsWithHTTPClient(client *http.Client) *UpdateCaParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateCaParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type UpdateCaParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *UpdateCaParams) WithDefaults() *UpdateCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *UpdateCaParams) WithDefaults() *UpdateCaParams {
 //
 // All values with no default are reset to their zero value.
 func (o *UpdateCaParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the update ca params
 func (o *UpdateCaParams) WithTimeout(timeout time.Duration) *UpdateCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the update ca params
 func (o *UpdateCaParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the update ca params
 func (o *UpdateCaParams) WithContext(ctx context.Context) *UpdateCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the update ca params
 func (o *UpdateCaParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the update ca params
 func (o *UpdateCaParams) WithHTTPClient(client *http.Client) *UpdateCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the update ca params
 func (o *UpdateCaParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithCa adds the ca to the update ca params
 func (o *UpdateCaParams) WithCa(ca *rest_model.CaUpdate) *UpdateCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetCa(ca)
 	return o
 }
 
 // SetCa adds the ca to the update ca params
 func (o *UpdateCaParams) SetCa(ca *rest_model.CaUpdate) {
+    logtrace.LogWithFunctionName()
 	o.Ca = ca
 }
 
 // WithID adds the id to the update ca params
 func (o *UpdateCaParams) WithID(id string) *UpdateCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the update ca params
 func (o *UpdateCaParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *UpdateCaParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

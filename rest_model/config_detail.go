@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -63,6 +64,7 @@ type ConfigDetail struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *ConfigDetail) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 BaseEntity
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -97,6 +99,7 @@ func (m *ConfigDetail) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m ConfigDetail) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.BaseEntity)
@@ -132,6 +135,7 @@ func (m ConfigDetail) MarshalJSON() ([]byte, error) {
 
 // Validate validates this config detail
 func (m *ConfigDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -162,6 +166,7 @@ func (m *ConfigDetail) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ConfigDetail) validateConfigType(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("configType", "body", m.ConfigType); err != nil {
 		return err
@@ -182,6 +187,7 @@ func (m *ConfigDetail) validateConfigType(formats strfmt.Registry) error {
 }
 
 func (m *ConfigDetail) validateConfigTypeID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("configTypeId", "body", m.ConfigTypeID); err != nil {
 		return err
@@ -191,6 +197,7 @@ func (m *ConfigDetail) validateConfigTypeID(formats strfmt.Registry) error {
 }
 
 func (m *ConfigDetail) validateData(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Data == nil {
 		return errors.Required("data", "body", nil)
@@ -200,6 +207,7 @@ func (m *ConfigDetail) validateData(formats strfmt.Registry) error {
 }
 
 func (m *ConfigDetail) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -210,6 +218,7 @@ func (m *ConfigDetail) validateName(formats strfmt.Registry) error {
 
 // ContextValidate validate this config detail based on the context it is used
 func (m *ConfigDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -228,6 +237,7 @@ func (m *ConfigDetail) ContextValidate(ctx context.Context, formats strfmt.Regis
 }
 
 func (m *ConfigDetail) contextValidateConfigType(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.ConfigType != nil {
 
@@ -246,6 +256,7 @@ func (m *ConfigDetail) contextValidateConfigType(ctx context.Context, formats st
 
 // MarshalBinary interface implementation
 func (m *ConfigDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -254,6 +265,7 @@ func (m *ConfigDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ConfigDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ConfigDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

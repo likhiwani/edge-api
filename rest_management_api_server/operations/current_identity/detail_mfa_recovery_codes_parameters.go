@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -45,6 +46,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewDetailMfaRecoveryCodesParams() DetailMfaRecoveryCodesParams {
+    logtrace.LogWithFunctionName()
 
 	return DetailMfaRecoveryCodesParams{}
 }
@@ -73,6 +75,7 @@ type DetailMfaRecoveryCodesParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewDetailMfaRecoveryCodesParams() beforehand.
 func (o *DetailMfaRecoveryCodesParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r
@@ -110,6 +113,7 @@ func (o *DetailMfaRecoveryCodesParams) BindRequest(r *http.Request, route *middl
 
 // bindMfaValidationCode binds and validates parameter MfaValidationCode from header.
 func (o *DetailMfaRecoveryCodesParams) bindMfaValidationCode(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]

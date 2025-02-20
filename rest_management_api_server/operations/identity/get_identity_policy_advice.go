@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type GetIdentityPolicyAdviceHandlerFunc func(GetIdentityPolicyAdviceParams, inte
 
 // Handle executing the request and returning a response
 func (fn GetIdentityPolicyAdviceHandlerFunc) Handle(params GetIdentityPolicyAdviceParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type GetIdentityPolicyAdviceHandler interface {
 
 // NewGetIdentityPolicyAdvice creates a new http.Handler for the get identity policy advice operation
 func NewGetIdentityPolicyAdvice(ctx *middleware.Context, handler GetIdentityPolicyAdviceHandler) *GetIdentityPolicyAdvice {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityPolicyAdvice{Context: ctx, Handler: handler}
 }
 
@@ -69,6 +72,7 @@ type GetIdentityPolicyAdvice struct {
 }
 
 func (o *GetIdentityPolicyAdvice) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

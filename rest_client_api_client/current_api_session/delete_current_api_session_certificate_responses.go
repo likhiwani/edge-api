@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DeleteCurrentAPISessionCertificateReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DeleteCurrentAPISessionCertificateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDeleteCurrentAPISessionCertificateOK()
@@ -85,6 +87,7 @@ func (o *DeleteCurrentAPISessionCertificateReader) ReadResponse(response runtime
 
 // NewDeleteCurrentAPISessionCertificateOK creates a DeleteCurrentAPISessionCertificateOK with default headers values
 func NewDeleteCurrentAPISessionCertificateOK() *DeleteCurrentAPISessionCertificateOK {
+    logtrace.LogWithFunctionName()
 	return &DeleteCurrentAPISessionCertificateOK{}
 }
 
@@ -99,49 +102,59 @@ type DeleteCurrentAPISessionCertificateOK struct {
 
 // IsSuccess returns true when this delete current Api session certificate o k response has a 2xx status code
 func (o *DeleteCurrentAPISessionCertificateOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this delete current Api session certificate o k response has a 3xx status code
 func (o *DeleteCurrentAPISessionCertificateOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete current Api session certificate o k response has a 4xx status code
 func (o *DeleteCurrentAPISessionCertificateOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete current Api session certificate o k response has a 5xx status code
 func (o *DeleteCurrentAPISessionCertificateOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete current Api session certificate o k response a status code equal to that given
 func (o *DeleteCurrentAPISessionCertificateOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the delete current Api session certificate o k response
 func (o *DeleteCurrentAPISessionCertificateOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DeleteCurrentAPISessionCertificateOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-api-session/certificates/{id}][%d] deleteCurrentApiSessionCertificateOK %s", 200, payload)
 }
 
 func (o *DeleteCurrentAPISessionCertificateOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-api-session/certificates/{id}][%d] deleteCurrentApiSessionCertificateOK %s", 200, payload)
 }
 
 func (o *DeleteCurrentAPISessionCertificateOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteCurrentAPISessionCertificateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -155,6 +168,7 @@ func (o *DeleteCurrentAPISessionCertificateOK) readResponse(response runtime.Cli
 
 // NewDeleteCurrentAPISessionCertificateBadRequest creates a DeleteCurrentAPISessionCertificateBadRequest with default headers values
 func NewDeleteCurrentAPISessionCertificateBadRequest() *DeleteCurrentAPISessionCertificateBadRequest {
+    logtrace.LogWithFunctionName()
 	return &DeleteCurrentAPISessionCertificateBadRequest{}
 }
 
@@ -169,49 +183,59 @@ type DeleteCurrentAPISessionCertificateBadRequest struct {
 
 // IsSuccess returns true when this delete current Api session certificate bad request response has a 2xx status code
 func (o *DeleteCurrentAPISessionCertificateBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete current Api session certificate bad request response has a 3xx status code
 func (o *DeleteCurrentAPISessionCertificateBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete current Api session certificate bad request response has a 4xx status code
 func (o *DeleteCurrentAPISessionCertificateBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete current Api session certificate bad request response has a 5xx status code
 func (o *DeleteCurrentAPISessionCertificateBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete current Api session certificate bad request response a status code equal to that given
 func (o *DeleteCurrentAPISessionCertificateBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the delete current Api session certificate bad request response
 func (o *DeleteCurrentAPISessionCertificateBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *DeleteCurrentAPISessionCertificateBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-api-session/certificates/{id}][%d] deleteCurrentApiSessionCertificateBadRequest %s", 400, payload)
 }
 
 func (o *DeleteCurrentAPISessionCertificateBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-api-session/certificates/{id}][%d] deleteCurrentApiSessionCertificateBadRequest %s", 400, payload)
 }
 
 func (o *DeleteCurrentAPISessionCertificateBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteCurrentAPISessionCertificateBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *DeleteCurrentAPISessionCertificateBadRequest) readResponse(response run
 
 // NewDeleteCurrentAPISessionCertificateUnauthorized creates a DeleteCurrentAPISessionCertificateUnauthorized with default headers values
 func NewDeleteCurrentAPISessionCertificateUnauthorized() *DeleteCurrentAPISessionCertificateUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DeleteCurrentAPISessionCertificateUnauthorized{}
 }
 
@@ -239,49 +264,59 @@ type DeleteCurrentAPISessionCertificateUnauthorized struct {
 
 // IsSuccess returns true when this delete current Api session certificate unauthorized response has a 2xx status code
 func (o *DeleteCurrentAPISessionCertificateUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete current Api session certificate unauthorized response has a 3xx status code
 func (o *DeleteCurrentAPISessionCertificateUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete current Api session certificate unauthorized response has a 4xx status code
 func (o *DeleteCurrentAPISessionCertificateUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete current Api session certificate unauthorized response has a 5xx status code
 func (o *DeleteCurrentAPISessionCertificateUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete current Api session certificate unauthorized response a status code equal to that given
 func (o *DeleteCurrentAPISessionCertificateUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the delete current Api session certificate unauthorized response
 func (o *DeleteCurrentAPISessionCertificateUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DeleteCurrentAPISessionCertificateUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-api-session/certificates/{id}][%d] deleteCurrentApiSessionCertificateUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteCurrentAPISessionCertificateUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-api-session/certificates/{id}][%d] deleteCurrentApiSessionCertificateUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteCurrentAPISessionCertificateUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteCurrentAPISessionCertificateUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *DeleteCurrentAPISessionCertificateUnauthorized) readResponse(response r
 
 // NewDeleteCurrentAPISessionCertificateTooManyRequests creates a DeleteCurrentAPISessionCertificateTooManyRequests with default headers values
 func NewDeleteCurrentAPISessionCertificateTooManyRequests() *DeleteCurrentAPISessionCertificateTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DeleteCurrentAPISessionCertificateTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type DeleteCurrentAPISessionCertificateTooManyRequests struct {
 
 // IsSuccess returns true when this delete current Api session certificate too many requests response has a 2xx status code
 func (o *DeleteCurrentAPISessionCertificateTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete current Api session certificate too many requests response has a 3xx status code
 func (o *DeleteCurrentAPISessionCertificateTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete current Api session certificate too many requests response has a 4xx status code
 func (o *DeleteCurrentAPISessionCertificateTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete current Api session certificate too many requests response has a 5xx status code
 func (o *DeleteCurrentAPISessionCertificateTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete current Api session certificate too many requests response a status code equal to that given
 func (o *DeleteCurrentAPISessionCertificateTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the delete current Api session certificate too many requests response
 func (o *DeleteCurrentAPISessionCertificateTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DeleteCurrentAPISessionCertificateTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-api-session/certificates/{id}][%d] deleteCurrentApiSessionCertificateTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteCurrentAPISessionCertificateTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-api-session/certificates/{id}][%d] deleteCurrentApiSessionCertificateTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteCurrentAPISessionCertificateTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteCurrentAPISessionCertificateTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *DeleteCurrentAPISessionCertificateTooManyRequests) readResponse(respons
 
 // NewDeleteCurrentAPISessionCertificateServiceUnavailable creates a DeleteCurrentAPISessionCertificateServiceUnavailable with default headers values
 func NewDeleteCurrentAPISessionCertificateServiceUnavailable() *DeleteCurrentAPISessionCertificateServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DeleteCurrentAPISessionCertificateServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type DeleteCurrentAPISessionCertificateServiceUnavailable struct {
 
 // IsSuccess returns true when this delete current Api session certificate service unavailable response has a 2xx status code
 func (o *DeleteCurrentAPISessionCertificateServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete current Api session certificate service unavailable response has a 3xx status code
 func (o *DeleteCurrentAPISessionCertificateServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete current Api session certificate service unavailable response has a 4xx status code
 func (o *DeleteCurrentAPISessionCertificateServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete current Api session certificate service unavailable response has a 5xx status code
 func (o *DeleteCurrentAPISessionCertificateServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this delete current Api session certificate service unavailable response a status code equal to that given
 func (o *DeleteCurrentAPISessionCertificateServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the delete current Api session certificate service unavailable response
 func (o *DeleteCurrentAPISessionCertificateServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DeleteCurrentAPISessionCertificateServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-api-session/certificates/{id}][%d] deleteCurrentApiSessionCertificateServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteCurrentAPISessionCertificateServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-api-session/certificates/{id}][%d] deleteCurrentApiSessionCertificateServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteCurrentAPISessionCertificateServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteCurrentAPISessionCertificateServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DeleteConfigTypeReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DeleteConfigTypeReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDeleteConfigTypeOK()
@@ -97,6 +99,7 @@ func (o *DeleteConfigTypeReader) ReadResponse(response runtime.ClientResponse, c
 
 // NewDeleteConfigTypeOK creates a DeleteConfigTypeOK with default headers values
 func NewDeleteConfigTypeOK() *DeleteConfigTypeOK {
+    logtrace.LogWithFunctionName()
 	return &DeleteConfigTypeOK{}
 }
 
@@ -111,49 +114,59 @@ type DeleteConfigTypeOK struct {
 
 // IsSuccess returns true when this delete config type o k response has a 2xx status code
 func (o *DeleteConfigTypeOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this delete config type o k response has a 3xx status code
 func (o *DeleteConfigTypeOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete config type o k response has a 4xx status code
 func (o *DeleteConfigTypeOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete config type o k response has a 5xx status code
 func (o *DeleteConfigTypeOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete config type o k response a status code equal to that given
 func (o *DeleteConfigTypeOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the delete config type o k response
 func (o *DeleteConfigTypeOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DeleteConfigTypeOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /config-types/{id}][%d] deleteConfigTypeOK %s", 200, payload)
 }
 
 func (o *DeleteConfigTypeOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /config-types/{id}][%d] deleteConfigTypeOK %s", 200, payload)
 }
 
 func (o *DeleteConfigTypeOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteConfigTypeOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -167,6 +180,7 @@ func (o *DeleteConfigTypeOK) readResponse(response runtime.ClientResponse, consu
 
 // NewDeleteConfigTypeBadRequest creates a DeleteConfigTypeBadRequest with default headers values
 func NewDeleteConfigTypeBadRequest() *DeleteConfigTypeBadRequest {
+    logtrace.LogWithFunctionName()
 	return &DeleteConfigTypeBadRequest{}
 }
 
@@ -181,49 +195,59 @@ type DeleteConfigTypeBadRequest struct {
 
 // IsSuccess returns true when this delete config type bad request response has a 2xx status code
 func (o *DeleteConfigTypeBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete config type bad request response has a 3xx status code
 func (o *DeleteConfigTypeBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete config type bad request response has a 4xx status code
 func (o *DeleteConfigTypeBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete config type bad request response has a 5xx status code
 func (o *DeleteConfigTypeBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete config type bad request response a status code equal to that given
 func (o *DeleteConfigTypeBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the delete config type bad request response
 func (o *DeleteConfigTypeBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *DeleteConfigTypeBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /config-types/{id}][%d] deleteConfigTypeBadRequest %s", 400, payload)
 }
 
 func (o *DeleteConfigTypeBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /config-types/{id}][%d] deleteConfigTypeBadRequest %s", 400, payload)
 }
 
 func (o *DeleteConfigTypeBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteConfigTypeBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -237,6 +261,7 @@ func (o *DeleteConfigTypeBadRequest) readResponse(response runtime.ClientRespons
 
 // NewDeleteConfigTypeUnauthorized creates a DeleteConfigTypeUnauthorized with default headers values
 func NewDeleteConfigTypeUnauthorized() *DeleteConfigTypeUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DeleteConfigTypeUnauthorized{}
 }
 
@@ -251,49 +276,59 @@ type DeleteConfigTypeUnauthorized struct {
 
 // IsSuccess returns true when this delete config type unauthorized response has a 2xx status code
 func (o *DeleteConfigTypeUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete config type unauthorized response has a 3xx status code
 func (o *DeleteConfigTypeUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete config type unauthorized response has a 4xx status code
 func (o *DeleteConfigTypeUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete config type unauthorized response has a 5xx status code
 func (o *DeleteConfigTypeUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete config type unauthorized response a status code equal to that given
 func (o *DeleteConfigTypeUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the delete config type unauthorized response
 func (o *DeleteConfigTypeUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DeleteConfigTypeUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /config-types/{id}][%d] deleteConfigTypeUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteConfigTypeUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /config-types/{id}][%d] deleteConfigTypeUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteConfigTypeUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteConfigTypeUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -307,6 +342,7 @@ func (o *DeleteConfigTypeUnauthorized) readResponse(response runtime.ClientRespo
 
 // NewDeleteConfigTypeNotFound creates a DeleteConfigTypeNotFound with default headers values
 func NewDeleteConfigTypeNotFound() *DeleteConfigTypeNotFound {
+    logtrace.LogWithFunctionName()
 	return &DeleteConfigTypeNotFound{}
 }
 
@@ -321,49 +357,59 @@ type DeleteConfigTypeNotFound struct {
 
 // IsSuccess returns true when this delete config type not found response has a 2xx status code
 func (o *DeleteConfigTypeNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete config type not found response has a 3xx status code
 func (o *DeleteConfigTypeNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete config type not found response has a 4xx status code
 func (o *DeleteConfigTypeNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete config type not found response has a 5xx status code
 func (o *DeleteConfigTypeNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete config type not found response a status code equal to that given
 func (o *DeleteConfigTypeNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the delete config type not found response
 func (o *DeleteConfigTypeNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DeleteConfigTypeNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /config-types/{id}][%d] deleteConfigTypeNotFound %s", 404, payload)
 }
 
 func (o *DeleteConfigTypeNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /config-types/{id}][%d] deleteConfigTypeNotFound %s", 404, payload)
 }
 
 func (o *DeleteConfigTypeNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteConfigTypeNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -377,6 +423,7 @@ func (o *DeleteConfigTypeNotFound) readResponse(response runtime.ClientResponse,
 
 // NewDeleteConfigTypeConflict creates a DeleteConfigTypeConflict with default headers values
 func NewDeleteConfigTypeConflict() *DeleteConfigTypeConflict {
+    logtrace.LogWithFunctionName()
 	return &DeleteConfigTypeConflict{}
 }
 
@@ -391,49 +438,59 @@ type DeleteConfigTypeConflict struct {
 
 // IsSuccess returns true when this delete config type conflict response has a 2xx status code
 func (o *DeleteConfigTypeConflict) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete config type conflict response has a 3xx status code
 func (o *DeleteConfigTypeConflict) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete config type conflict response has a 4xx status code
 func (o *DeleteConfigTypeConflict) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete config type conflict response has a 5xx status code
 func (o *DeleteConfigTypeConflict) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete config type conflict response a status code equal to that given
 func (o *DeleteConfigTypeConflict) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 409
 }
 
 // Code gets the status code for the delete config type conflict response
 func (o *DeleteConfigTypeConflict) Code() int {
+    logtrace.LogWithFunctionName()
 	return 409
 }
 
 func (o *DeleteConfigTypeConflict) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /config-types/{id}][%d] deleteConfigTypeConflict %s", 409, payload)
 }
 
 func (o *DeleteConfigTypeConflict) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /config-types/{id}][%d] deleteConfigTypeConflict %s", 409, payload)
 }
 
 func (o *DeleteConfigTypeConflict) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteConfigTypeConflict) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -447,6 +504,7 @@ func (o *DeleteConfigTypeConflict) readResponse(response runtime.ClientResponse,
 
 // NewDeleteConfigTypeTooManyRequests creates a DeleteConfigTypeTooManyRequests with default headers values
 func NewDeleteConfigTypeTooManyRequests() *DeleteConfigTypeTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DeleteConfigTypeTooManyRequests{}
 }
 
@@ -461,49 +519,59 @@ type DeleteConfigTypeTooManyRequests struct {
 
 // IsSuccess returns true when this delete config type too many requests response has a 2xx status code
 func (o *DeleteConfigTypeTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete config type too many requests response has a 3xx status code
 func (o *DeleteConfigTypeTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete config type too many requests response has a 4xx status code
 func (o *DeleteConfigTypeTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete config type too many requests response has a 5xx status code
 func (o *DeleteConfigTypeTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete config type too many requests response a status code equal to that given
 func (o *DeleteConfigTypeTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the delete config type too many requests response
 func (o *DeleteConfigTypeTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DeleteConfigTypeTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /config-types/{id}][%d] deleteConfigTypeTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteConfigTypeTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /config-types/{id}][%d] deleteConfigTypeTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteConfigTypeTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteConfigTypeTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -517,6 +585,7 @@ func (o *DeleteConfigTypeTooManyRequests) readResponse(response runtime.ClientRe
 
 // NewDeleteConfigTypeServiceUnavailable creates a DeleteConfigTypeServiceUnavailable with default headers values
 func NewDeleteConfigTypeServiceUnavailable() *DeleteConfigTypeServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DeleteConfigTypeServiceUnavailable{}
 }
 
@@ -531,49 +600,59 @@ type DeleteConfigTypeServiceUnavailable struct {
 
 // IsSuccess returns true when this delete config type service unavailable response has a 2xx status code
 func (o *DeleteConfigTypeServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete config type service unavailable response has a 3xx status code
 func (o *DeleteConfigTypeServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete config type service unavailable response has a 4xx status code
 func (o *DeleteConfigTypeServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete config type service unavailable response has a 5xx status code
 func (o *DeleteConfigTypeServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this delete config type service unavailable response a status code equal to that given
 func (o *DeleteConfigTypeServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the delete config type service unavailable response
 func (o *DeleteConfigTypeServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DeleteConfigTypeServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /config-types/{id}][%d] deleteConfigTypeServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteConfigTypeServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /config-types/{id}][%d] deleteConfigTypeServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteConfigTypeServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteConfigTypeServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

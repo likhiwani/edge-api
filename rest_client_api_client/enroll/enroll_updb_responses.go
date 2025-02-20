@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"encoding/json"
 	"fmt"
@@ -50,6 +51,7 @@ type EnrollUpdbReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *EnrollUpdbReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewEnrollUpdbOK()
@@ -82,6 +84,7 @@ func (o *EnrollUpdbReader) ReadResponse(response runtime.ClientResponse, consume
 
 // NewEnrollUpdbOK creates a EnrollUpdbOK with default headers values
 func NewEnrollUpdbOK() *EnrollUpdbOK {
+    logtrace.LogWithFunctionName()
 	return &EnrollUpdbOK{}
 }
 
@@ -96,49 +99,59 @@ type EnrollUpdbOK struct {
 
 // IsSuccess returns true when this enroll updb o k response has a 2xx status code
 func (o *EnrollUpdbOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this enroll updb o k response has a 3xx status code
 func (o *EnrollUpdbOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this enroll updb o k response has a 4xx status code
 func (o *EnrollUpdbOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this enroll updb o k response has a 5xx status code
 func (o *EnrollUpdbOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this enroll updb o k response a status code equal to that given
 func (o *EnrollUpdbOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the enroll updb o k response
 func (o *EnrollUpdbOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *EnrollUpdbOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/updb][%d] enrollUpdbOK %s", 200, payload)
 }
 
 func (o *EnrollUpdbOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/updb][%d] enrollUpdbOK %s", 200, payload)
 }
 
 func (o *EnrollUpdbOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *EnrollUpdbOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -152,6 +165,7 @@ func (o *EnrollUpdbOK) readResponse(response runtime.ClientResponse, consumer ru
 
 // NewEnrollUpdbNotFound creates a EnrollUpdbNotFound with default headers values
 func NewEnrollUpdbNotFound() *EnrollUpdbNotFound {
+    logtrace.LogWithFunctionName()
 	return &EnrollUpdbNotFound{}
 }
 
@@ -166,49 +180,59 @@ type EnrollUpdbNotFound struct {
 
 // IsSuccess returns true when this enroll updb not found response has a 2xx status code
 func (o *EnrollUpdbNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this enroll updb not found response has a 3xx status code
 func (o *EnrollUpdbNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this enroll updb not found response has a 4xx status code
 func (o *EnrollUpdbNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this enroll updb not found response has a 5xx status code
 func (o *EnrollUpdbNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this enroll updb not found response a status code equal to that given
 func (o *EnrollUpdbNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the enroll updb not found response
 func (o *EnrollUpdbNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *EnrollUpdbNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/updb][%d] enrollUpdbNotFound %s", 404, payload)
 }
 
 func (o *EnrollUpdbNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/updb][%d] enrollUpdbNotFound %s", 404, payload)
 }
 
 func (o *EnrollUpdbNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *EnrollUpdbNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -222,6 +246,7 @@ func (o *EnrollUpdbNotFound) readResponse(response runtime.ClientResponse, consu
 
 // NewEnrollUpdbTooManyRequests creates a EnrollUpdbTooManyRequests with default headers values
 func NewEnrollUpdbTooManyRequests() *EnrollUpdbTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &EnrollUpdbTooManyRequests{}
 }
 
@@ -236,49 +261,59 @@ type EnrollUpdbTooManyRequests struct {
 
 // IsSuccess returns true when this enroll updb too many requests response has a 2xx status code
 func (o *EnrollUpdbTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this enroll updb too many requests response has a 3xx status code
 func (o *EnrollUpdbTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this enroll updb too many requests response has a 4xx status code
 func (o *EnrollUpdbTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this enroll updb too many requests response has a 5xx status code
 func (o *EnrollUpdbTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this enroll updb too many requests response a status code equal to that given
 func (o *EnrollUpdbTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the enroll updb too many requests response
 func (o *EnrollUpdbTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *EnrollUpdbTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/updb][%d] enrollUpdbTooManyRequests %s", 429, payload)
 }
 
 func (o *EnrollUpdbTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/updb][%d] enrollUpdbTooManyRequests %s", 429, payload)
 }
 
 func (o *EnrollUpdbTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *EnrollUpdbTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -292,6 +327,7 @@ func (o *EnrollUpdbTooManyRequests) readResponse(response runtime.ClientResponse
 
 // NewEnrollUpdbServiceUnavailable creates a EnrollUpdbServiceUnavailable with default headers values
 func NewEnrollUpdbServiceUnavailable() *EnrollUpdbServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &EnrollUpdbServiceUnavailable{}
 }
 
@@ -306,49 +342,59 @@ type EnrollUpdbServiceUnavailable struct {
 
 // IsSuccess returns true when this enroll updb service unavailable response has a 2xx status code
 func (o *EnrollUpdbServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this enroll updb service unavailable response has a 3xx status code
 func (o *EnrollUpdbServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this enroll updb service unavailable response has a 4xx status code
 func (o *EnrollUpdbServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this enroll updb service unavailable response has a 5xx status code
 func (o *EnrollUpdbServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this enroll updb service unavailable response a status code equal to that given
 func (o *EnrollUpdbServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the enroll updb service unavailable response
 func (o *EnrollUpdbServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *EnrollUpdbServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/updb][%d] enrollUpdbServiceUnavailable %s", 503, payload)
 }
 
 func (o *EnrollUpdbServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/updb][%d] enrollUpdbServiceUnavailable %s", 503, payload)
 }
 
 func (o *EnrollUpdbServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *EnrollUpdbServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -375,6 +421,7 @@ type EnrollUpdbBody struct {
 
 // Validate validates this enroll updb body
 func (o *EnrollUpdbBody) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := o.validatePassword(formats); err != nil {
@@ -392,6 +439,7 @@ func (o *EnrollUpdbBody) Validate(formats strfmt.Registry) error {
 }
 
 func (o *EnrollUpdbBody) validatePassword(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(o.Password) { // not required
 		return nil
 	}
@@ -409,6 +457,7 @@ func (o *EnrollUpdbBody) validatePassword(formats strfmt.Registry) error {
 }
 
 func (o *EnrollUpdbBody) validateUsername(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(o.Username) { // not required
 		return nil
 	}
@@ -427,6 +476,7 @@ func (o *EnrollUpdbBody) validateUsername(formats strfmt.Registry) error {
 
 // ContextValidate validate this enroll updb body based on the context it is used
 func (o *EnrollUpdbBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := o.contextValidatePassword(ctx, formats); err != nil {
@@ -444,6 +494,7 @@ func (o *EnrollUpdbBody) ContextValidate(ctx context.Context, formats strfmt.Reg
 }
 
 func (o *EnrollUpdbBody) contextValidatePassword(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(o.Password) { // not required
 		return nil
@@ -462,6 +513,7 @@ func (o *EnrollUpdbBody) contextValidatePassword(ctx context.Context, formats st
 }
 
 func (o *EnrollUpdbBody) contextValidateUsername(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(o.Username) { // not required
 		return nil
@@ -481,6 +533,7 @@ func (o *EnrollUpdbBody) contextValidateUsername(ctx context.Context, formats st
 
 // MarshalBinary interface implementation
 func (o *EnrollUpdbBody) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if o == nil {
 		return nil, nil
 	}
@@ -489,6 +542,7 @@ func (o *EnrollUpdbBody) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (o *EnrollUpdbBody) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res EnrollUpdbBody
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

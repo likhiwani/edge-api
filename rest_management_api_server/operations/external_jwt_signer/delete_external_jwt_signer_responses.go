@@ -30,6 +30,7 @@ package external_jwt_signer
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DeleteExternalJWTSignerOK struct {
 
 // NewDeleteExternalJWTSignerOK creates DeleteExternalJWTSignerOK with default headers values
 func NewDeleteExternalJWTSignerOK() *DeleteExternalJWTSignerOK {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteExternalJWTSignerOK{}
 }
 
 // WithPayload adds the payload to the delete external Jwt signer o k response
 func (o *DeleteExternalJWTSignerOK) WithPayload(payload *rest_model.Empty) *DeleteExternalJWTSignerOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete external Jwt signer o k response
 func (o *DeleteExternalJWTSignerOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteExternalJWTSignerOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DeleteExternalJWTSignerBadRequest struct {
 
 // NewDeleteExternalJWTSignerBadRequest creates DeleteExternalJWTSignerBadRequest with default headers values
 func NewDeleteExternalJWTSignerBadRequest() *DeleteExternalJWTSignerBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteExternalJWTSignerBadRequest{}
 }
 
 // WithPayload adds the payload to the delete external Jwt signer bad request response
 func (o *DeleteExternalJWTSignerBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteExternalJWTSignerBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete external Jwt signer bad request response
 func (o *DeleteExternalJWTSignerBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteExternalJWTSignerBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DeleteExternalJWTSignerUnauthorized struct {
 
 // NewDeleteExternalJWTSignerUnauthorized creates DeleteExternalJWTSignerUnauthorized with default headers values
 func NewDeleteExternalJWTSignerUnauthorized() *DeleteExternalJWTSignerUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteExternalJWTSignerUnauthorized{}
 }
 
 // WithPayload adds the payload to the delete external Jwt signer unauthorized response
 func (o *DeleteExternalJWTSignerUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteExternalJWTSignerUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete external Jwt signer unauthorized response
 func (o *DeleteExternalJWTSignerUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteExternalJWTSignerUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DeleteExternalJWTSignerNotFound struct {
 
 // NewDeleteExternalJWTSignerNotFound creates DeleteExternalJWTSignerNotFound with default headers values
 func NewDeleteExternalJWTSignerNotFound() *DeleteExternalJWTSignerNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteExternalJWTSignerNotFound{}
 }
 
 // WithPayload adds the payload to the delete external Jwt signer not found response
 func (o *DeleteExternalJWTSignerNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteExternalJWTSignerNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete external Jwt signer not found response
 func (o *DeleteExternalJWTSignerNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteExternalJWTSignerNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DeleteExternalJWTSignerTooManyRequests struct {
 
 // NewDeleteExternalJWTSignerTooManyRequests creates DeleteExternalJWTSignerTooManyRequests with default headers values
 func NewDeleteExternalJWTSignerTooManyRequests() *DeleteExternalJWTSignerTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteExternalJWTSignerTooManyRequests{}
 }
 
 // WithPayload adds the payload to the delete external Jwt signer too many requests response
 func (o *DeleteExternalJWTSignerTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteExternalJWTSignerTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete external Jwt signer too many requests response
 func (o *DeleteExternalJWTSignerTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteExternalJWTSignerTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type DeleteExternalJWTSignerServiceUnavailable struct {
 
 // NewDeleteExternalJWTSignerServiceUnavailable creates DeleteExternalJWTSignerServiceUnavailable with default headers values
 func NewDeleteExternalJWTSignerServiceUnavailable() *DeleteExternalJWTSignerServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteExternalJWTSignerServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the delete external Jwt signer service unavailable response
 func (o *DeleteExternalJWTSignerServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteExternalJWTSignerServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete external Jwt signer service unavailable response
 func (o *DeleteExternalJWTSignerServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteExternalJWTSignerServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

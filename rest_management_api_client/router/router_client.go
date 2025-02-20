@@ -30,6 +30,7 @@ package router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new router API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -113,6 +117,7 @@ CreateRouter creates a router resource
 Create a router resource. Requires admin access.
 */
 func (a *Client) CreateRouter(params *CreateRouterParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateRouterCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreateRouterParams()
@@ -154,6 +159,7 @@ CreateTransitRouter creates a router resource
 Create a router resource. Requires admin access.
 */
 func (a *Client) CreateTransitRouter(params *CreateTransitRouterParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateTransitRouterCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreateTransitRouterParams()
@@ -195,6 +201,7 @@ DeleteRouter deletes a router
 Delete a router by id. Requires admin access.
 */
 func (a *Client) DeleteRouter(params *DeleteRouterParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteRouterOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteRouterParams()
@@ -236,6 +243,7 @@ DeleteTransitRouter deletes a router
 Delete a router by id. Requires admin access.
 */
 func (a *Client) DeleteTransitRouter(params *DeleteTransitRouterParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteTransitRouterOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteTransitRouterParams()
@@ -277,6 +285,7 @@ DetailRouter retrieves a single router
 Retrieves a single router by id. Requires admin access.
 */
 func (a *Client) DetailRouter(params *DetailRouterParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailRouterOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailRouterParams()
@@ -318,6 +327,7 @@ DetailTransitRouter retrieves a single router
 Retrieves a single router by id. Requires admin access.
 */
 func (a *Client) DetailTransitRouter(params *DetailTransitRouterParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailTransitRouterOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailTransitRouterParams()
@@ -359,6 +369,7 @@ ListRouters lists routers
 Retrieves a list of router resources; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListRouters(params *ListRoutersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListRoutersOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListRoutersParams()
@@ -400,6 +411,7 @@ ListTransitRouters lists routers
 Retrieves a list of router resources; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListTransitRouters(params *ListTransitRoutersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListTransitRoutersOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListTransitRoutersParams()
@@ -441,6 +453,7 @@ PatchRouter updates the supplied fields on a router
 Update the supplied fields on a router. Requires admin access.
 */
 func (a *Client) PatchRouter(params *PatchRouterParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PatchRouterOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPatchRouterParams()
@@ -482,6 +495,7 @@ PatchTransitRouter updates the supplied fields on a router
 Update the supplied fields on a router. Requires admin access.
 */
 func (a *Client) PatchTransitRouter(params *PatchTransitRouterParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PatchTransitRouterOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPatchTransitRouterParams()
@@ -523,6 +537,7 @@ UpdateRouter updates all fields on a router
 Update all fields on a router by id. Requires admin access.
 */
 func (a *Client) UpdateRouter(params *UpdateRouterParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UpdateRouterOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUpdateRouterParams()
@@ -564,6 +579,7 @@ UpdateTransitRouter updates all fields on a router
 Update all fields on a router by id. Requires admin access.
 */
 func (a *Client) UpdateTransitRouter(params *UpdateTransitRouterParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UpdateTransitRouterOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUpdateTransitRouterParams()
@@ -601,5 +617,6 @@ func (a *Client) UpdateTransitRouter(params *UpdateTransitRouterParams, authInfo
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

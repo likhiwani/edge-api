@@ -30,6 +30,7 @@ package controllers
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListControllersOK struct {
 
 // NewListControllersOK creates ListControllersOK with default headers values
 func NewListControllersOK() *ListControllersOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListControllersOK{}
 }
 
 // WithPayload adds the payload to the list controllers o k response
 func (o *ListControllersOK) WithPayload(payload *rest_model.ListControllersEnvelope) *ListControllersOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list controllers o k response
 func (o *ListControllersOK) SetPayload(payload *rest_model.ListControllersEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListControllersOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ListControllersBadRequest struct {
 
 // NewListControllersBadRequest creates ListControllersBadRequest with default headers values
 func NewListControllersBadRequest() *ListControllersBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &ListControllersBadRequest{}
 }
 
 // WithPayload adds the payload to the list controllers bad request response
 func (o *ListControllersBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *ListControllersBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list controllers bad request response
 func (o *ListControllersBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListControllersBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ListControllersUnauthorized struct {
 
 // NewListControllersUnauthorized creates ListControllersUnauthorized with default headers values
 func NewListControllersUnauthorized() *ListControllersUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &ListControllersUnauthorized{}
 }
 
 // WithPayload adds the payload to the list controllers unauthorized response
 func (o *ListControllersUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *ListControllersUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list controllers unauthorized response
 func (o *ListControllersUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListControllersUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type ListControllersTooManyRequests struct {
 
 // NewListControllersTooManyRequests creates ListControllersTooManyRequests with default headers values
 func NewListControllersTooManyRequests() *ListControllersTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ListControllersTooManyRequests{}
 }
 
 // WithPayload adds the payload to the list controllers too many requests response
 func (o *ListControllersTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ListControllersTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list controllers too many requests response
 func (o *ListControllersTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListControllersTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {

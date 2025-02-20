@@ -30,6 +30,7 @@ package service_policy
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type ListServicePoliciesHandlerFunc func(ListServicePoliciesParams, interface{})
 
 // Handle executing the request and returning a response
 func (fn ListServicePoliciesHandlerFunc) Handle(params ListServicePoliciesParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type ListServicePoliciesHandler interface {
 
 // NewListServicePolicies creates a new http.Handler for the list service policies operation
 func NewListServicePolicies(ctx *middleware.Context, handler ListServicePoliciesHandler) *ListServicePolicies {
+    logtrace.LogWithFunctionName()
 	return &ListServicePolicies{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type ListServicePolicies struct {
 }
 
 func (o *ListServicePolicies) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

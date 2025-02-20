@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ListRootReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ListRootReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewListRootOK()
@@ -61,6 +63,7 @@ func (o *ListRootReader) ReadResponse(response runtime.ClientResponse, consumer 
 
 // NewListRootOK creates a ListRootOK with default headers values
 func NewListRootOK() *ListRootOK {
+    logtrace.LogWithFunctionName()
 	return &ListRootOK{}
 }
 
@@ -75,49 +78,59 @@ type ListRootOK struct {
 
 // IsSuccess returns true when this list root o k response has a 2xx status code
 func (o *ListRootOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this list root o k response has a 3xx status code
 func (o *ListRootOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list root o k response has a 4xx status code
 func (o *ListRootOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list root o k response has a 5xx status code
 func (o *ListRootOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list root o k response a status code equal to that given
 func (o *ListRootOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the list root o k response
 func (o *ListRootOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ListRootOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /][%d] listRootOK %s", 200, payload)
 }
 
 func (o *ListRootOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /][%d] listRootOK %s", 200, payload)
 }
 
 func (o *ListRootOK) GetPayload() *rest_model.ListVersionEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListRootOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListVersionEnvelope)
 

@@ -30,6 +30,7 @@ package session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -48,6 +49,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListSessionsParams() *ListSessionsParams {
+    logtrace.LogWithFunctionName()
 	return &ListSessionsParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -56,6 +58,7 @@ func NewListSessionsParams() *ListSessionsParams {
 // NewListSessionsParamsWithTimeout creates a new ListSessionsParams object
 // with the ability to set a timeout on a request.
 func NewListSessionsParamsWithTimeout(timeout time.Duration) *ListSessionsParams {
+    logtrace.LogWithFunctionName()
 	return &ListSessionsParams{
 		timeout: timeout,
 	}
@@ -64,6 +67,7 @@ func NewListSessionsParamsWithTimeout(timeout time.Duration) *ListSessionsParams
 // NewListSessionsParamsWithContext creates a new ListSessionsParams object
 // with the ability to set a context for a request.
 func NewListSessionsParamsWithContext(ctx context.Context) *ListSessionsParams {
+    logtrace.LogWithFunctionName()
 	return &ListSessionsParams{
 		Context: ctx,
 	}
@@ -72,6 +76,7 @@ func NewListSessionsParamsWithContext(ctx context.Context) *ListSessionsParams {
 // NewListSessionsParamsWithHTTPClient creates a new ListSessionsParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListSessionsParamsWithHTTPClient(client *http.Client) *ListSessionsParams {
+    logtrace.LogWithFunctionName()
 	return &ListSessionsParams{
 		HTTPClient: client,
 	}
@@ -104,6 +109,7 @@ type ListSessionsParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListSessionsParams) WithDefaults() *ListSessionsParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -112,77 +118,91 @@ func (o *ListSessionsParams) WithDefaults() *ListSessionsParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListSessionsParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list sessions params
 func (o *ListSessionsParams) WithTimeout(timeout time.Duration) *ListSessionsParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list sessions params
 func (o *ListSessionsParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list sessions params
 func (o *ListSessionsParams) WithContext(ctx context.Context) *ListSessionsParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list sessions params
 func (o *ListSessionsParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list sessions params
 func (o *ListSessionsParams) WithHTTPClient(client *http.Client) *ListSessionsParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list sessions params
 func (o *ListSessionsParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithFilter adds the filter to the list sessions params
 func (o *ListSessionsParams) WithFilter(filter *string) *ListSessionsParams {
+    logtrace.LogWithFunctionName()
 	o.SetFilter(filter)
 	return o
 }
 
 // SetFilter adds the filter to the list sessions params
 func (o *ListSessionsParams) SetFilter(filter *string) {
+    logtrace.LogWithFunctionName()
 	o.Filter = filter
 }
 
 // WithLimit adds the limit to the list sessions params
 func (o *ListSessionsParams) WithLimit(limit *int64) *ListSessionsParams {
+    logtrace.LogWithFunctionName()
 	o.SetLimit(limit)
 	return o
 }
 
 // SetLimit adds the limit to the list sessions params
 func (o *ListSessionsParams) SetLimit(limit *int64) {
+    logtrace.LogWithFunctionName()
 	o.Limit = limit
 }
 
 // WithOffset adds the offset to the list sessions params
 func (o *ListSessionsParams) WithOffset(offset *int64) *ListSessionsParams {
+    logtrace.LogWithFunctionName()
 	o.SetOffset(offset)
 	return o
 }
 
 // SetOffset adds the offset to the list sessions params
 func (o *ListSessionsParams) SetOffset(offset *int64) {
+    logtrace.LogWithFunctionName()
 	o.Offset = offset
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListSessionsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type UpdatePostureCheckOK struct {
 
 // NewUpdatePostureCheckOK creates UpdatePostureCheckOK with default headers values
 func NewUpdatePostureCheckOK() *UpdatePostureCheckOK {
+    logtrace.LogWithFunctionName()
 
 	return &UpdatePostureCheckOK{}
 }
 
 // WithPayload adds the payload to the update posture check o k response
 func (o *UpdatePostureCheckOK) WithPayload(payload *rest_model.Empty) *UpdatePostureCheckOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update posture check o k response
 func (o *UpdatePostureCheckOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdatePostureCheckOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type UpdatePostureCheckBadRequest struct {
 
 // NewUpdatePostureCheckBadRequest creates UpdatePostureCheckBadRequest with default headers values
 func NewUpdatePostureCheckBadRequest() *UpdatePostureCheckBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &UpdatePostureCheckBadRequest{}
 }
 
 // WithPayload adds the payload to the update posture check bad request response
 func (o *UpdatePostureCheckBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdatePostureCheckBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update posture check bad request response
 func (o *UpdatePostureCheckBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdatePostureCheckBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type UpdatePostureCheckUnauthorized struct {
 
 // NewUpdatePostureCheckUnauthorized creates UpdatePostureCheckUnauthorized with default headers values
 func NewUpdatePostureCheckUnauthorized() *UpdatePostureCheckUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &UpdatePostureCheckUnauthorized{}
 }
 
 // WithPayload adds the payload to the update posture check unauthorized response
 func (o *UpdatePostureCheckUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdatePostureCheckUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update posture check unauthorized response
 func (o *UpdatePostureCheckUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdatePostureCheckUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type UpdatePostureCheckNotFound struct {
 
 // NewUpdatePostureCheckNotFound creates UpdatePostureCheckNotFound with default headers values
 func NewUpdatePostureCheckNotFound() *UpdatePostureCheckNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &UpdatePostureCheckNotFound{}
 }
 
 // WithPayload adds the payload to the update posture check not found response
 func (o *UpdatePostureCheckNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdatePostureCheckNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update posture check not found response
 func (o *UpdatePostureCheckNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdatePostureCheckNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type UpdatePostureCheckTooManyRequests struct {
 
 // NewUpdatePostureCheckTooManyRequests creates UpdatePostureCheckTooManyRequests with default headers values
 func NewUpdatePostureCheckTooManyRequests() *UpdatePostureCheckTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &UpdatePostureCheckTooManyRequests{}
 }
 
 // WithPayload adds the payload to the update posture check too many requests response
 func (o *UpdatePostureCheckTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdatePostureCheckTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update posture check too many requests response
 func (o *UpdatePostureCheckTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdatePostureCheckTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type UpdatePostureCheckServiceUnavailable struct {
 
 // NewUpdatePostureCheckServiceUnavailable creates UpdatePostureCheckServiceUnavailable with default headers values
 func NewUpdatePostureCheckServiceUnavailable() *UpdatePostureCheckServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &UpdatePostureCheckServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the update posture check service unavailable response
 func (o *UpdatePostureCheckServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdatePostureCheckServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update posture check service unavailable response
 func (o *UpdatePostureCheckServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdatePostureCheckServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

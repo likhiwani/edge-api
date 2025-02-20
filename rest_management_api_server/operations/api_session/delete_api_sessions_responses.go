@@ -30,6 +30,7 @@ package api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DeleteAPISessionsOK struct {
 
 // NewDeleteAPISessionsOK creates DeleteAPISessionsOK with default headers values
 func NewDeleteAPISessionsOK() *DeleteAPISessionsOK {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteAPISessionsOK{}
 }
 
 // WithPayload adds the payload to the delete Api sessions o k response
 func (o *DeleteAPISessionsOK) WithPayload(payload *rest_model.Empty) *DeleteAPISessionsOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete Api sessions o k response
 func (o *DeleteAPISessionsOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteAPISessionsOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DeleteAPISessionsUnauthorized struct {
 
 // NewDeleteAPISessionsUnauthorized creates DeleteAPISessionsUnauthorized with default headers values
 func NewDeleteAPISessionsUnauthorized() *DeleteAPISessionsUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteAPISessionsUnauthorized{}
 }
 
 // WithPayload adds the payload to the delete Api sessions unauthorized response
 func (o *DeleteAPISessionsUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteAPISessionsUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete Api sessions unauthorized response
 func (o *DeleteAPISessionsUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteAPISessionsUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DeleteAPISessionsForbidden struct {
 
 // NewDeleteAPISessionsForbidden creates DeleteAPISessionsForbidden with default headers values
 func NewDeleteAPISessionsForbidden() *DeleteAPISessionsForbidden {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteAPISessionsForbidden{}
 }
 
 // WithPayload adds the payload to the delete Api sessions forbidden response
 func (o *DeleteAPISessionsForbidden) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteAPISessionsForbidden {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete Api sessions forbidden response
 func (o *DeleteAPISessionsForbidden) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteAPISessionsForbidden) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(403)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DeleteAPISessionsNotFound struct {
 
 // NewDeleteAPISessionsNotFound creates DeleteAPISessionsNotFound with default headers values
 func NewDeleteAPISessionsNotFound() *DeleteAPISessionsNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteAPISessionsNotFound{}
 }
 
 // WithPayload adds the payload to the delete Api sessions not found response
 func (o *DeleteAPISessionsNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteAPISessionsNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete Api sessions not found response
 func (o *DeleteAPISessionsNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteAPISessionsNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DeleteAPISessionsTooManyRequests struct {
 
 // NewDeleteAPISessionsTooManyRequests creates DeleteAPISessionsTooManyRequests with default headers values
 func NewDeleteAPISessionsTooManyRequests() *DeleteAPISessionsTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteAPISessionsTooManyRequests{}
 }
 
 // WithPayload adds the payload to the delete Api sessions too many requests response
 func (o *DeleteAPISessionsTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteAPISessionsTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete Api sessions too many requests response
 func (o *DeleteAPISessionsTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteAPISessionsTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type DeleteAPISessionsServiceUnavailable struct {
 
 // NewDeleteAPISessionsServiceUnavailable creates DeleteAPISessionsServiceUnavailable with default headers values
 func NewDeleteAPISessionsServiceUnavailable() *DeleteAPISessionsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteAPISessionsServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the delete Api sessions service unavailable response
 func (o *DeleteAPISessionsServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteAPISessionsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete Api sessions service unavailable response
 func (o *DeleteAPISessionsServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteAPISessionsServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

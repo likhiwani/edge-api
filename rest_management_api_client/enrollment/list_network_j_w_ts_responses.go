@@ -30,6 +30,7 @@ package enrollment
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ListNetworkJWTsReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ListNetworkJWTsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewListNetworkJWTsOK()
@@ -73,6 +75,7 @@ func (o *ListNetworkJWTsReader) ReadResponse(response runtime.ClientResponse, co
 
 // NewListNetworkJWTsOK creates a ListNetworkJWTsOK with default headers values
 func NewListNetworkJWTsOK() *ListNetworkJWTsOK {
+    logtrace.LogWithFunctionName()
 	return &ListNetworkJWTsOK{}
 }
 
@@ -87,49 +90,59 @@ type ListNetworkJWTsOK struct {
 
 // IsSuccess returns true when this list network j w ts o k response has a 2xx status code
 func (o *ListNetworkJWTsOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this list network j w ts o k response has a 3xx status code
 func (o *ListNetworkJWTsOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list network j w ts o k response has a 4xx status code
 func (o *ListNetworkJWTsOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list network j w ts o k response has a 5xx status code
 func (o *ListNetworkJWTsOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list network j w ts o k response a status code equal to that given
 func (o *ListNetworkJWTsOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the list network j w ts o k response
 func (o *ListNetworkJWTsOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ListNetworkJWTsOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /network-jwts][%d] listNetworkJWTsOK %s", 200, payload)
 }
 
 func (o *ListNetworkJWTsOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /network-jwts][%d] listNetworkJWTsOK %s", 200, payload)
 }
 
 func (o *ListNetworkJWTsOK) GetPayload() *rest_model.ListNetworkJWTsEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListNetworkJWTsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListNetworkJWTsEnvelope)
 
@@ -143,6 +156,7 @@ func (o *ListNetworkJWTsOK) readResponse(response runtime.ClientResponse, consum
 
 // NewListNetworkJWTsBadRequest creates a ListNetworkJWTsBadRequest with default headers values
 func NewListNetworkJWTsBadRequest() *ListNetworkJWTsBadRequest {
+    logtrace.LogWithFunctionName()
 	return &ListNetworkJWTsBadRequest{}
 }
 
@@ -157,49 +171,59 @@ type ListNetworkJWTsBadRequest struct {
 
 // IsSuccess returns true when this list network j w ts bad request response has a 2xx status code
 func (o *ListNetworkJWTsBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list network j w ts bad request response has a 3xx status code
 func (o *ListNetworkJWTsBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list network j w ts bad request response has a 4xx status code
 func (o *ListNetworkJWTsBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list network j w ts bad request response has a 5xx status code
 func (o *ListNetworkJWTsBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list network j w ts bad request response a status code equal to that given
 func (o *ListNetworkJWTsBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the list network j w ts bad request response
 func (o *ListNetworkJWTsBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *ListNetworkJWTsBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /network-jwts][%d] listNetworkJWTsBadRequest %s", 400, payload)
 }
 
 func (o *ListNetworkJWTsBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /network-jwts][%d] listNetworkJWTsBadRequest %s", 400, payload)
 }
 
 func (o *ListNetworkJWTsBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListNetworkJWTsBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -213,6 +237,7 @@ func (o *ListNetworkJWTsBadRequest) readResponse(response runtime.ClientResponse
 
 // NewListNetworkJWTsTooManyRequests creates a ListNetworkJWTsTooManyRequests with default headers values
 func NewListNetworkJWTsTooManyRequests() *ListNetworkJWTsTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &ListNetworkJWTsTooManyRequests{}
 }
 
@@ -227,49 +252,59 @@ type ListNetworkJWTsTooManyRequests struct {
 
 // IsSuccess returns true when this list network j w ts too many requests response has a 2xx status code
 func (o *ListNetworkJWTsTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list network j w ts too many requests response has a 3xx status code
 func (o *ListNetworkJWTsTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list network j w ts too many requests response has a 4xx status code
 func (o *ListNetworkJWTsTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list network j w ts too many requests response has a 5xx status code
 func (o *ListNetworkJWTsTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list network j w ts too many requests response a status code equal to that given
 func (o *ListNetworkJWTsTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the list network j w ts too many requests response
 func (o *ListNetworkJWTsTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *ListNetworkJWTsTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /network-jwts][%d] listNetworkJWTsTooManyRequests %s", 429, payload)
 }
 
 func (o *ListNetworkJWTsTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /network-jwts][%d] listNetworkJWTsTooManyRequests %s", 429, payload)
 }
 
 func (o *ListNetworkJWTsTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListNetworkJWTsTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

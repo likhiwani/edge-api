@@ -30,6 +30,7 @@ package role_attributes
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ListEdgeRouterRoleAttributesReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ListEdgeRouterRoleAttributesReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewListEdgeRouterRoleAttributesOK()
@@ -85,6 +87,7 @@ func (o *ListEdgeRouterRoleAttributesReader) ReadResponse(response runtime.Clien
 
 // NewListEdgeRouterRoleAttributesOK creates a ListEdgeRouterRoleAttributesOK with default headers values
 func NewListEdgeRouterRoleAttributesOK() *ListEdgeRouterRoleAttributesOK {
+    logtrace.LogWithFunctionName()
 	return &ListEdgeRouterRoleAttributesOK{}
 }
 
@@ -99,49 +102,59 @@ type ListEdgeRouterRoleAttributesOK struct {
 
 // IsSuccess returns true when this list edge router role attributes o k response has a 2xx status code
 func (o *ListEdgeRouterRoleAttributesOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this list edge router role attributes o k response has a 3xx status code
 func (o *ListEdgeRouterRoleAttributesOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list edge router role attributes o k response has a 4xx status code
 func (o *ListEdgeRouterRoleAttributesOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list edge router role attributes o k response has a 5xx status code
 func (o *ListEdgeRouterRoleAttributesOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list edge router role attributes o k response a status code equal to that given
 func (o *ListEdgeRouterRoleAttributesOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the list edge router role attributes o k response
 func (o *ListEdgeRouterRoleAttributesOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ListEdgeRouterRoleAttributesOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-role-attributes][%d] listEdgeRouterRoleAttributesOK %s", 200, payload)
 }
 
 func (o *ListEdgeRouterRoleAttributesOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-role-attributes][%d] listEdgeRouterRoleAttributesOK %s", 200, payload)
 }
 
 func (o *ListEdgeRouterRoleAttributesOK) GetPayload() *rest_model.ListRoleAttributesEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListEdgeRouterRoleAttributesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListRoleAttributesEnvelope)
 
@@ -155,6 +168,7 @@ func (o *ListEdgeRouterRoleAttributesOK) readResponse(response runtime.ClientRes
 
 // NewListEdgeRouterRoleAttributesBadRequest creates a ListEdgeRouterRoleAttributesBadRequest with default headers values
 func NewListEdgeRouterRoleAttributesBadRequest() *ListEdgeRouterRoleAttributesBadRequest {
+    logtrace.LogWithFunctionName()
 	return &ListEdgeRouterRoleAttributesBadRequest{}
 }
 
@@ -169,49 +183,59 @@ type ListEdgeRouterRoleAttributesBadRequest struct {
 
 // IsSuccess returns true when this list edge router role attributes bad request response has a 2xx status code
 func (o *ListEdgeRouterRoleAttributesBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list edge router role attributes bad request response has a 3xx status code
 func (o *ListEdgeRouterRoleAttributesBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list edge router role attributes bad request response has a 4xx status code
 func (o *ListEdgeRouterRoleAttributesBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list edge router role attributes bad request response has a 5xx status code
 func (o *ListEdgeRouterRoleAttributesBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list edge router role attributes bad request response a status code equal to that given
 func (o *ListEdgeRouterRoleAttributesBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the list edge router role attributes bad request response
 func (o *ListEdgeRouterRoleAttributesBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *ListEdgeRouterRoleAttributesBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-role-attributes][%d] listEdgeRouterRoleAttributesBadRequest %s", 400, payload)
 }
 
 func (o *ListEdgeRouterRoleAttributesBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-role-attributes][%d] listEdgeRouterRoleAttributesBadRequest %s", 400, payload)
 }
 
 func (o *ListEdgeRouterRoleAttributesBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListEdgeRouterRoleAttributesBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *ListEdgeRouterRoleAttributesBadRequest) readResponse(response runtime.C
 
 // NewListEdgeRouterRoleAttributesUnauthorized creates a ListEdgeRouterRoleAttributesUnauthorized with default headers values
 func NewListEdgeRouterRoleAttributesUnauthorized() *ListEdgeRouterRoleAttributesUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &ListEdgeRouterRoleAttributesUnauthorized{}
 }
 
@@ -239,49 +264,59 @@ type ListEdgeRouterRoleAttributesUnauthorized struct {
 
 // IsSuccess returns true when this list edge router role attributes unauthorized response has a 2xx status code
 func (o *ListEdgeRouterRoleAttributesUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list edge router role attributes unauthorized response has a 3xx status code
 func (o *ListEdgeRouterRoleAttributesUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list edge router role attributes unauthorized response has a 4xx status code
 func (o *ListEdgeRouterRoleAttributesUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list edge router role attributes unauthorized response has a 5xx status code
 func (o *ListEdgeRouterRoleAttributesUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list edge router role attributes unauthorized response a status code equal to that given
 func (o *ListEdgeRouterRoleAttributesUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the list edge router role attributes unauthorized response
 func (o *ListEdgeRouterRoleAttributesUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *ListEdgeRouterRoleAttributesUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-role-attributes][%d] listEdgeRouterRoleAttributesUnauthorized %s", 401, payload)
 }
 
 func (o *ListEdgeRouterRoleAttributesUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-role-attributes][%d] listEdgeRouterRoleAttributesUnauthorized %s", 401, payload)
 }
 
 func (o *ListEdgeRouterRoleAttributesUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListEdgeRouterRoleAttributesUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *ListEdgeRouterRoleAttributesUnauthorized) readResponse(response runtime
 
 // NewListEdgeRouterRoleAttributesTooManyRequests creates a ListEdgeRouterRoleAttributesTooManyRequests with default headers values
 func NewListEdgeRouterRoleAttributesTooManyRequests() *ListEdgeRouterRoleAttributesTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &ListEdgeRouterRoleAttributesTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type ListEdgeRouterRoleAttributesTooManyRequests struct {
 
 // IsSuccess returns true when this list edge router role attributes too many requests response has a 2xx status code
 func (o *ListEdgeRouterRoleAttributesTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list edge router role attributes too many requests response has a 3xx status code
 func (o *ListEdgeRouterRoleAttributesTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list edge router role attributes too many requests response has a 4xx status code
 func (o *ListEdgeRouterRoleAttributesTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list edge router role attributes too many requests response has a 5xx status code
 func (o *ListEdgeRouterRoleAttributesTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list edge router role attributes too many requests response a status code equal to that given
 func (o *ListEdgeRouterRoleAttributesTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the list edge router role attributes too many requests response
 func (o *ListEdgeRouterRoleAttributesTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *ListEdgeRouterRoleAttributesTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-role-attributes][%d] listEdgeRouterRoleAttributesTooManyRequests %s", 429, payload)
 }
 
 func (o *ListEdgeRouterRoleAttributesTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-role-attributes][%d] listEdgeRouterRoleAttributesTooManyRequests %s", 429, payload)
 }
 
 func (o *ListEdgeRouterRoleAttributesTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListEdgeRouterRoleAttributesTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *ListEdgeRouterRoleAttributesTooManyRequests) readResponse(response runt
 
 // NewListEdgeRouterRoleAttributesServiceUnavailable creates a ListEdgeRouterRoleAttributesServiceUnavailable with default headers values
 func NewListEdgeRouterRoleAttributesServiceUnavailable() *ListEdgeRouterRoleAttributesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &ListEdgeRouterRoleAttributesServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type ListEdgeRouterRoleAttributesServiceUnavailable struct {
 
 // IsSuccess returns true when this list edge router role attributes service unavailable response has a 2xx status code
 func (o *ListEdgeRouterRoleAttributesServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list edge router role attributes service unavailable response has a 3xx status code
 func (o *ListEdgeRouterRoleAttributesServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list edge router role attributes service unavailable response has a 4xx status code
 func (o *ListEdgeRouterRoleAttributesServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list edge router role attributes service unavailable response has a 5xx status code
 func (o *ListEdgeRouterRoleAttributesServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this list edge router role attributes service unavailable response a status code equal to that given
 func (o *ListEdgeRouterRoleAttributesServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the list edge router role attributes service unavailable response
 func (o *ListEdgeRouterRoleAttributesServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *ListEdgeRouterRoleAttributesServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-role-attributes][%d] listEdgeRouterRoleAttributesServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListEdgeRouterRoleAttributesServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /edge-router-role-attributes][%d] listEdgeRouterRoleAttributesServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListEdgeRouterRoleAttributesServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListEdgeRouterRoleAttributesServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

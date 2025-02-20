@@ -30,6 +30,7 @@ package service_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type PatchServicePolicyOK struct {
 
 // NewPatchServicePolicyOK creates PatchServicePolicyOK with default headers values
 func NewPatchServicePolicyOK() *PatchServicePolicyOK {
+    logtrace.LogWithFunctionName()
 
 	return &PatchServicePolicyOK{}
 }
 
 // WithPayload adds the payload to the patch service policy o k response
 func (o *PatchServicePolicyOK) WithPayload(payload *rest_model.Empty) *PatchServicePolicyOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch service policy o k response
 func (o *PatchServicePolicyOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchServicePolicyOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type PatchServicePolicyBadRequest struct {
 
 // NewPatchServicePolicyBadRequest creates PatchServicePolicyBadRequest with default headers values
 func NewPatchServicePolicyBadRequest() *PatchServicePolicyBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &PatchServicePolicyBadRequest{}
 }
 
 // WithPayload adds the payload to the patch service policy bad request response
 func (o *PatchServicePolicyBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchServicePolicyBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch service policy bad request response
 func (o *PatchServicePolicyBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchServicePolicyBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type PatchServicePolicyUnauthorized struct {
 
 // NewPatchServicePolicyUnauthorized creates PatchServicePolicyUnauthorized with default headers values
 func NewPatchServicePolicyUnauthorized() *PatchServicePolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &PatchServicePolicyUnauthorized{}
 }
 
 // WithPayload adds the payload to the patch service policy unauthorized response
 func (o *PatchServicePolicyUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchServicePolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch service policy unauthorized response
 func (o *PatchServicePolicyUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchServicePolicyUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type PatchServicePolicyNotFound struct {
 
 // NewPatchServicePolicyNotFound creates PatchServicePolicyNotFound with default headers values
 func NewPatchServicePolicyNotFound() *PatchServicePolicyNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &PatchServicePolicyNotFound{}
 }
 
 // WithPayload adds the payload to the patch service policy not found response
 func (o *PatchServicePolicyNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchServicePolicyNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch service policy not found response
 func (o *PatchServicePolicyNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchServicePolicyNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type PatchServicePolicyTooManyRequests struct {
 
 // NewPatchServicePolicyTooManyRequests creates PatchServicePolicyTooManyRequests with default headers values
 func NewPatchServicePolicyTooManyRequests() *PatchServicePolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &PatchServicePolicyTooManyRequests{}
 }
 
 // WithPayload adds the payload to the patch service policy too many requests response
 func (o *PatchServicePolicyTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchServicePolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch service policy too many requests response
 func (o *PatchServicePolicyTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchServicePolicyTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type PatchServicePolicyServiceUnavailable struct {
 
 // NewPatchServicePolicyServiceUnavailable creates PatchServicePolicyServiceUnavailable with default headers values
 func NewPatchServicePolicyServiceUnavailable() *PatchServicePolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &PatchServicePolicyServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the patch service policy service unavailable response
 func (o *PatchServicePolicyServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchServicePolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch service policy service unavailable response
 func (o *PatchServicePolicyServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchServicePolicyServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

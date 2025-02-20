@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDetailPostureCheckParams() *DetailPostureCheckParams {
+    logtrace.LogWithFunctionName()
 	return &DetailPostureCheckParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDetailPostureCheckParams() *DetailPostureCheckParams {
 // NewDetailPostureCheckParamsWithTimeout creates a new DetailPostureCheckParams object
 // with the ability to set a timeout on a request.
 func NewDetailPostureCheckParamsWithTimeout(timeout time.Duration) *DetailPostureCheckParams {
+    logtrace.LogWithFunctionName()
 	return &DetailPostureCheckParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDetailPostureCheckParamsWithTimeout(timeout time.Duration) *DetailPostur
 // NewDetailPostureCheckParamsWithContext creates a new DetailPostureCheckParams object
 // with the ability to set a context for a request.
 func NewDetailPostureCheckParamsWithContext(ctx context.Context) *DetailPostureCheckParams {
+    logtrace.LogWithFunctionName()
 	return &DetailPostureCheckParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDetailPostureCheckParamsWithContext(ctx context.Context) *DetailPostureC
 // NewDetailPostureCheckParamsWithHTTPClient creates a new DetailPostureCheckParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDetailPostureCheckParamsWithHTTPClient(client *http.Client) *DetailPostureCheckParams {
+    logtrace.LogWithFunctionName()
 	return &DetailPostureCheckParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DetailPostureCheckParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailPostureCheckParams) WithDefaults() *DetailPostureCheckParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DetailPostureCheckParams) WithDefaults() *DetailPostureCheckParams {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailPostureCheckParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the detail posture check params
 func (o *DetailPostureCheckParams) WithTimeout(timeout time.Duration) *DetailPostureCheckParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the detail posture check params
 func (o *DetailPostureCheckParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the detail posture check params
 func (o *DetailPostureCheckParams) WithContext(ctx context.Context) *DetailPostureCheckParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the detail posture check params
 func (o *DetailPostureCheckParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the detail posture check params
 func (o *DetailPostureCheckParams) WithHTTPClient(client *http.Client) *DetailPostureCheckParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the detail posture check params
 func (o *DetailPostureCheckParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the detail posture check params
 func (o *DetailPostureCheckParams) WithID(id string) *DetailPostureCheckParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the detail posture check params
 func (o *DetailPostureCheckParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DetailPostureCheckParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

@@ -30,6 +30,7 @@ package router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DeleteRouterReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DeleteRouterReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDeleteRouterOK()
@@ -91,6 +93,7 @@ func (o *DeleteRouterReader) ReadResponse(response runtime.ClientResponse, consu
 
 // NewDeleteRouterOK creates a DeleteRouterOK with default headers values
 func NewDeleteRouterOK() *DeleteRouterOK {
+    logtrace.LogWithFunctionName()
 	return &DeleteRouterOK{}
 }
 
@@ -105,49 +108,59 @@ type DeleteRouterOK struct {
 
 // IsSuccess returns true when this delete router o k response has a 2xx status code
 func (o *DeleteRouterOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this delete router o k response has a 3xx status code
 func (o *DeleteRouterOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete router o k response has a 4xx status code
 func (o *DeleteRouterOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete router o k response has a 5xx status code
 func (o *DeleteRouterOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete router o k response a status code equal to that given
 func (o *DeleteRouterOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the delete router o k response
 func (o *DeleteRouterOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DeleteRouterOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /routers/{id}][%d] deleteRouterOK %s", 200, payload)
 }
 
 func (o *DeleteRouterOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /routers/{id}][%d] deleteRouterOK %s", 200, payload)
 }
 
 func (o *DeleteRouterOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteRouterOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -161,6 +174,7 @@ func (o *DeleteRouterOK) readResponse(response runtime.ClientResponse, consumer 
 
 // NewDeleteRouterBadRequest creates a DeleteRouterBadRequest with default headers values
 func NewDeleteRouterBadRequest() *DeleteRouterBadRequest {
+    logtrace.LogWithFunctionName()
 	return &DeleteRouterBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type DeleteRouterBadRequest struct {
 
 // IsSuccess returns true when this delete router bad request response has a 2xx status code
 func (o *DeleteRouterBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete router bad request response has a 3xx status code
 func (o *DeleteRouterBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete router bad request response has a 4xx status code
 func (o *DeleteRouterBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete router bad request response has a 5xx status code
 func (o *DeleteRouterBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete router bad request response a status code equal to that given
 func (o *DeleteRouterBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the delete router bad request response
 func (o *DeleteRouterBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *DeleteRouterBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /routers/{id}][%d] deleteRouterBadRequest %s", 400, payload)
 }
 
 func (o *DeleteRouterBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /routers/{id}][%d] deleteRouterBadRequest %s", 400, payload)
 }
 
 func (o *DeleteRouterBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteRouterBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *DeleteRouterBadRequest) readResponse(response runtime.ClientResponse, c
 
 // NewDeleteRouterUnauthorized creates a DeleteRouterUnauthorized with default headers values
 func NewDeleteRouterUnauthorized() *DeleteRouterUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DeleteRouterUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type DeleteRouterUnauthorized struct {
 
 // IsSuccess returns true when this delete router unauthorized response has a 2xx status code
 func (o *DeleteRouterUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete router unauthorized response has a 3xx status code
 func (o *DeleteRouterUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete router unauthorized response has a 4xx status code
 func (o *DeleteRouterUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete router unauthorized response has a 5xx status code
 func (o *DeleteRouterUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete router unauthorized response a status code equal to that given
 func (o *DeleteRouterUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the delete router unauthorized response
 func (o *DeleteRouterUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DeleteRouterUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /routers/{id}][%d] deleteRouterUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteRouterUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /routers/{id}][%d] deleteRouterUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteRouterUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteRouterUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *DeleteRouterUnauthorized) readResponse(response runtime.ClientResponse,
 
 // NewDeleteRouterConflict creates a DeleteRouterConflict with default headers values
 func NewDeleteRouterConflict() *DeleteRouterConflict {
+    logtrace.LogWithFunctionName()
 	return &DeleteRouterConflict{}
 }
 
@@ -315,49 +351,59 @@ type DeleteRouterConflict struct {
 
 // IsSuccess returns true when this delete router conflict response has a 2xx status code
 func (o *DeleteRouterConflict) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete router conflict response has a 3xx status code
 func (o *DeleteRouterConflict) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete router conflict response has a 4xx status code
 func (o *DeleteRouterConflict) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete router conflict response has a 5xx status code
 func (o *DeleteRouterConflict) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete router conflict response a status code equal to that given
 func (o *DeleteRouterConflict) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 409
 }
 
 // Code gets the status code for the delete router conflict response
 func (o *DeleteRouterConflict) Code() int {
+    logtrace.LogWithFunctionName()
 	return 409
 }
 
 func (o *DeleteRouterConflict) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /routers/{id}][%d] deleteRouterConflict %s", 409, payload)
 }
 
 func (o *DeleteRouterConflict) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /routers/{id}][%d] deleteRouterConflict %s", 409, payload)
 }
 
 func (o *DeleteRouterConflict) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteRouterConflict) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *DeleteRouterConflict) readResponse(response runtime.ClientResponse, con
 
 // NewDeleteRouterTooManyRequests creates a DeleteRouterTooManyRequests with default headers values
 func NewDeleteRouterTooManyRequests() *DeleteRouterTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DeleteRouterTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type DeleteRouterTooManyRequests struct {
 
 // IsSuccess returns true when this delete router too many requests response has a 2xx status code
 func (o *DeleteRouterTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete router too many requests response has a 3xx status code
 func (o *DeleteRouterTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete router too many requests response has a 4xx status code
 func (o *DeleteRouterTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete router too many requests response has a 5xx status code
 func (o *DeleteRouterTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete router too many requests response a status code equal to that given
 func (o *DeleteRouterTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the delete router too many requests response
 func (o *DeleteRouterTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DeleteRouterTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /routers/{id}][%d] deleteRouterTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteRouterTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /routers/{id}][%d] deleteRouterTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteRouterTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteRouterTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *DeleteRouterTooManyRequests) readResponse(response runtime.ClientRespon
 
 // NewDeleteRouterServiceUnavailable creates a DeleteRouterServiceUnavailable with default headers values
 func NewDeleteRouterServiceUnavailable() *DeleteRouterServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DeleteRouterServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type DeleteRouterServiceUnavailable struct {
 
 // IsSuccess returns true when this delete router service unavailable response has a 2xx status code
 func (o *DeleteRouterServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete router service unavailable response has a 3xx status code
 func (o *DeleteRouterServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete router service unavailable response has a 4xx status code
 func (o *DeleteRouterServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete router service unavailable response has a 5xx status code
 func (o *DeleteRouterServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this delete router service unavailable response a status code equal to that given
 func (o *DeleteRouterServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the delete router service unavailable response
 func (o *DeleteRouterServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DeleteRouterServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /routers/{id}][%d] deleteRouterServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteRouterServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /routers/{id}][%d] deleteRouterServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteRouterServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteRouterServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

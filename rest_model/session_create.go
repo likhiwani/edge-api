@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -54,6 +55,7 @@ type SessionCreate struct {
 
 // Validate validates this session create
 func (m *SessionCreate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateTags(formats); err != nil {
@@ -71,6 +73,7 @@ func (m *SessionCreate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *SessionCreate) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -90,6 +93,7 @@ func (m *SessionCreate) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *SessionCreate) validateType(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Type) { // not required
 		return nil
 	}
@@ -108,6 +112,7 @@ func (m *SessionCreate) validateType(formats strfmt.Registry) error {
 
 // ContextValidate validate this session create based on the context it is used
 func (m *SessionCreate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateTags(ctx, formats); err != nil {
@@ -125,6 +130,7 @@ func (m *SessionCreate) ContextValidate(ctx context.Context, formats strfmt.Regi
 }
 
 func (m *SessionCreate) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -146,6 +152,7 @@ func (m *SessionCreate) contextValidateTags(ctx context.Context, formats strfmt.
 }
 
 func (m *SessionCreate) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.Type) { // not required
 		return nil
@@ -165,6 +172,7 @@ func (m *SessionCreate) contextValidateType(ctx context.Context, formats strfmt.
 
 // MarshalBinary interface implementation
 func (m *SessionCreate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -173,6 +181,7 @@ func (m *SessionCreate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *SessionCreate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res SessionCreate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

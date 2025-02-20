@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -95,6 +96,7 @@ type APISessionDetail struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *APISessionDetail) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 BaseEntity
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -161,6 +163,7 @@ func (m *APISessionDetail) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m APISessionDetail) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.BaseEntity)
@@ -228,6 +231,7 @@ func (m APISessionDetail) MarshalJSON() ([]byte, error) {
 
 // Validate validates this api session detail
 func (m *APISessionDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -290,6 +294,7 @@ func (m *APISessionDetail) Validate(formats strfmt.Registry) error {
 }
 
 func (m *APISessionDetail) validateAuthQueries(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("authQueries", "body", m.AuthQueries); err != nil {
 		return err
@@ -308,6 +313,7 @@ func (m *APISessionDetail) validateAuthQueries(formats strfmt.Registry) error {
 }
 
 func (m *APISessionDetail) validateAuthenticatorID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("authenticatorId", "body", m.AuthenticatorID); err != nil {
 		return err
@@ -317,6 +323,7 @@ func (m *APISessionDetail) validateAuthenticatorID(formats strfmt.Registry) erro
 }
 
 func (m *APISessionDetail) validateCachedLastActivityAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.CachedLastActivityAt) { // not required
 		return nil
@@ -330,6 +337,7 @@ func (m *APISessionDetail) validateCachedLastActivityAt(formats strfmt.Registry)
 }
 
 func (m *APISessionDetail) validateConfigTypes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("configTypes", "body", m.ConfigTypes); err != nil {
 		return err
@@ -339,6 +347,7 @@ func (m *APISessionDetail) validateConfigTypes(formats strfmt.Registry) error {
 }
 
 func (m *APISessionDetail) validateIdentity(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("identity", "body", m.Identity); err != nil {
 		return err
@@ -359,6 +368,7 @@ func (m *APISessionDetail) validateIdentity(formats strfmt.Registry) error {
 }
 
 func (m *APISessionDetail) validateIdentityID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("identityId", "body", m.IdentityID); err != nil {
 		return err
@@ -368,6 +378,7 @@ func (m *APISessionDetail) validateIdentityID(formats strfmt.Registry) error {
 }
 
 func (m *APISessionDetail) validateIPAddress(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("ipAddress", "body", m.IPAddress); err != nil {
 		return err
@@ -377,6 +388,7 @@ func (m *APISessionDetail) validateIPAddress(formats strfmt.Registry) error {
 }
 
 func (m *APISessionDetail) validateIsCertExtendable(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isCertExtendable", "body", m.IsCertExtendable); err != nil {
 		return err
@@ -386,6 +398,7 @@ func (m *APISessionDetail) validateIsCertExtendable(formats strfmt.Registry) err
 }
 
 func (m *APISessionDetail) validateIsMfaComplete(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isMfaComplete", "body", m.IsMfaComplete); err != nil {
 		return err
@@ -395,6 +408,7 @@ func (m *APISessionDetail) validateIsMfaComplete(formats strfmt.Registry) error 
 }
 
 func (m *APISessionDetail) validateIsMfaRequired(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isMfaRequired", "body", m.IsMfaRequired); err != nil {
 		return err
@@ -404,6 +418,7 @@ func (m *APISessionDetail) validateIsMfaRequired(formats strfmt.Registry) error 
 }
 
 func (m *APISessionDetail) validateLastActivityAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.LastActivityAt) { // not required
 		return nil
@@ -417,6 +432,7 @@ func (m *APISessionDetail) validateLastActivityAt(formats strfmt.Registry) error
 }
 
 func (m *APISessionDetail) validateToken(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("token", "body", m.Token); err != nil {
 		return err
@@ -427,6 +443,7 @@ func (m *APISessionDetail) validateToken(formats strfmt.Registry) error {
 
 // ContextValidate validate this api session detail based on the context it is used
 func (m *APISessionDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -449,6 +466,7 @@ func (m *APISessionDetail) ContextValidate(ctx context.Context, formats strfmt.R
 }
 
 func (m *APISessionDetail) contextValidateAuthQueries(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.AuthQueries.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -463,6 +481,7 @@ func (m *APISessionDetail) contextValidateAuthQueries(ctx context.Context, forma
 }
 
 func (m *APISessionDetail) contextValidateIdentity(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Identity != nil {
 
@@ -481,6 +500,7 @@ func (m *APISessionDetail) contextValidateIdentity(ctx context.Context, formats 
 
 // MarshalBinary interface implementation
 func (m *APISessionDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -489,6 +509,7 @@ func (m *APISessionDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *APISessionDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res APISessionDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

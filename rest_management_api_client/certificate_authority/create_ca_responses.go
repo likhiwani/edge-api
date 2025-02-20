@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type CreateCaReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *CreateCaReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 201:
 		result := NewCreateCaCreated()
@@ -85,6 +87,7 @@ func (o *CreateCaReader) ReadResponse(response runtime.ClientResponse, consumer 
 
 // NewCreateCaCreated creates a CreateCaCreated with default headers values
 func NewCreateCaCreated() *CreateCaCreated {
+    logtrace.LogWithFunctionName()
 	return &CreateCaCreated{}
 }
 
@@ -99,49 +102,59 @@ type CreateCaCreated struct {
 
 // IsSuccess returns true when this create ca created response has a 2xx status code
 func (o *CreateCaCreated) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this create ca created response has a 3xx status code
 func (o *CreateCaCreated) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create ca created response has a 4xx status code
 func (o *CreateCaCreated) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this create ca created response has a 5xx status code
 func (o *CreateCaCreated) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create ca created response a status code equal to that given
 func (o *CreateCaCreated) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 201
 }
 
 // Code gets the status code for the create ca created response
 func (o *CreateCaCreated) Code() int {
+    logtrace.LogWithFunctionName()
 	return 201
 }
 
 func (o *CreateCaCreated) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas][%d] createCaCreated %s", 201, payload)
 }
 
 func (o *CreateCaCreated) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas][%d] createCaCreated %s", 201, payload)
 }
 
 func (o *CreateCaCreated) GetPayload() *rest_model.CreateEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateCaCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.CreateEnvelope)
 
@@ -155,6 +168,7 @@ func (o *CreateCaCreated) readResponse(response runtime.ClientResponse, consumer
 
 // NewCreateCaBadRequest creates a CreateCaBadRequest with default headers values
 func NewCreateCaBadRequest() *CreateCaBadRequest {
+    logtrace.LogWithFunctionName()
 	return &CreateCaBadRequest{}
 }
 
@@ -169,49 +183,59 @@ type CreateCaBadRequest struct {
 
 // IsSuccess returns true when this create ca bad request response has a 2xx status code
 func (o *CreateCaBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create ca bad request response has a 3xx status code
 func (o *CreateCaBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create ca bad request response has a 4xx status code
 func (o *CreateCaBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create ca bad request response has a 5xx status code
 func (o *CreateCaBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create ca bad request response a status code equal to that given
 func (o *CreateCaBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the create ca bad request response
 func (o *CreateCaBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *CreateCaBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas][%d] createCaBadRequest %s", 400, payload)
 }
 
 func (o *CreateCaBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas][%d] createCaBadRequest %s", 400, payload)
 }
 
 func (o *CreateCaBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateCaBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *CreateCaBadRequest) readResponse(response runtime.ClientResponse, consu
 
 // NewCreateCaUnauthorized creates a CreateCaUnauthorized with default headers values
 func NewCreateCaUnauthorized() *CreateCaUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &CreateCaUnauthorized{}
 }
 
@@ -239,49 +264,59 @@ type CreateCaUnauthorized struct {
 
 // IsSuccess returns true when this create ca unauthorized response has a 2xx status code
 func (o *CreateCaUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create ca unauthorized response has a 3xx status code
 func (o *CreateCaUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create ca unauthorized response has a 4xx status code
 func (o *CreateCaUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create ca unauthorized response has a 5xx status code
 func (o *CreateCaUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create ca unauthorized response a status code equal to that given
 func (o *CreateCaUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the create ca unauthorized response
 func (o *CreateCaUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *CreateCaUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas][%d] createCaUnauthorized %s", 401, payload)
 }
 
 func (o *CreateCaUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas][%d] createCaUnauthorized %s", 401, payload)
 }
 
 func (o *CreateCaUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateCaUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *CreateCaUnauthorized) readResponse(response runtime.ClientResponse, con
 
 // NewCreateCaTooManyRequests creates a CreateCaTooManyRequests with default headers values
 func NewCreateCaTooManyRequests() *CreateCaTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &CreateCaTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type CreateCaTooManyRequests struct {
 
 // IsSuccess returns true when this create ca too many requests response has a 2xx status code
 func (o *CreateCaTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create ca too many requests response has a 3xx status code
 func (o *CreateCaTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create ca too many requests response has a 4xx status code
 func (o *CreateCaTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create ca too many requests response has a 5xx status code
 func (o *CreateCaTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create ca too many requests response a status code equal to that given
 func (o *CreateCaTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the create ca too many requests response
 func (o *CreateCaTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *CreateCaTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas][%d] createCaTooManyRequests %s", 429, payload)
 }
 
 func (o *CreateCaTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas][%d] createCaTooManyRequests %s", 429, payload)
 }
 
 func (o *CreateCaTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateCaTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *CreateCaTooManyRequests) readResponse(response runtime.ClientResponse, 
 
 // NewCreateCaServiceUnavailable creates a CreateCaServiceUnavailable with default headers values
 func NewCreateCaServiceUnavailable() *CreateCaServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &CreateCaServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type CreateCaServiceUnavailable struct {
 
 // IsSuccess returns true when this create ca service unavailable response has a 2xx status code
 func (o *CreateCaServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create ca service unavailable response has a 3xx status code
 func (o *CreateCaServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create ca service unavailable response has a 4xx status code
 func (o *CreateCaServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this create ca service unavailable response has a 5xx status code
 func (o *CreateCaServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this create ca service unavailable response a status code equal to that given
 func (o *CreateCaServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the create ca service unavailable response
 func (o *CreateCaServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *CreateCaServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas][%d] createCaServiceUnavailable %s", 503, payload)
 }
 
 func (o *CreateCaServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /cas][%d] createCaServiceUnavailable %s", 503, payload)
 }
 
 func (o *CreateCaServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateCaServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

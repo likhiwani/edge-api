@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewGetCurrentAPISessionParams() *GetCurrentAPISessionParams {
+    logtrace.LogWithFunctionName()
 	return &GetCurrentAPISessionParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewGetCurrentAPISessionParams() *GetCurrentAPISessionParams {
 // NewGetCurrentAPISessionParamsWithTimeout creates a new GetCurrentAPISessionParams object
 // with the ability to set a timeout on a request.
 func NewGetCurrentAPISessionParamsWithTimeout(timeout time.Duration) *GetCurrentAPISessionParams {
+    logtrace.LogWithFunctionName()
 	return &GetCurrentAPISessionParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewGetCurrentAPISessionParamsWithTimeout(timeout time.Duration) *GetCurrent
 // NewGetCurrentAPISessionParamsWithContext creates a new GetCurrentAPISessionParams object
 // with the ability to set a context for a request.
 func NewGetCurrentAPISessionParamsWithContext(ctx context.Context) *GetCurrentAPISessionParams {
+    logtrace.LogWithFunctionName()
 	return &GetCurrentAPISessionParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewGetCurrentAPISessionParamsWithContext(ctx context.Context) *GetCurrentAP
 // NewGetCurrentAPISessionParamsWithHTTPClient creates a new GetCurrentAPISessionParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewGetCurrentAPISessionParamsWithHTTPClient(client *http.Client) *GetCurrentAPISessionParams {
+    logtrace.LogWithFunctionName()
 	return &GetCurrentAPISessionParams{
 		HTTPClient: client,
 	}
@@ -93,6 +98,7 @@ type GetCurrentAPISessionParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *GetCurrentAPISessionParams) WithDefaults() *GetCurrentAPISessionParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -101,44 +107,52 @@ func (o *GetCurrentAPISessionParams) WithDefaults() *GetCurrentAPISessionParams 
 //
 // All values with no default are reset to their zero value.
 func (o *GetCurrentAPISessionParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the get current API session params
 func (o *GetCurrentAPISessionParams) WithTimeout(timeout time.Duration) *GetCurrentAPISessionParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the get current API session params
 func (o *GetCurrentAPISessionParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the get current API session params
 func (o *GetCurrentAPISessionParams) WithContext(ctx context.Context) *GetCurrentAPISessionParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the get current API session params
 func (o *GetCurrentAPISessionParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the get current API session params
 func (o *GetCurrentAPISessionParams) WithHTTPClient(client *http.Client) *GetCurrentAPISessionParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the get current API session params
 func (o *GetCurrentAPISessionParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *GetCurrentAPISessionParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

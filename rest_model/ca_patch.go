@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -73,6 +74,7 @@ type CaPatch struct {
 
 // Validate validates this ca patch
 func (m *CaPatch) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateExternalIDClaim(formats); err != nil {
@@ -94,6 +96,7 @@ func (m *CaPatch) Validate(formats strfmt.Registry) error {
 }
 
 func (m *CaPatch) validateExternalIDClaim(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.ExternalIDClaim) { // not required
 		return nil
 	}
@@ -113,6 +116,7 @@ func (m *CaPatch) validateExternalIDClaim(formats strfmt.Registry) error {
 }
 
 func (m *CaPatch) validateIdentityRoles(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.IdentityRoles) { // not required
 		return nil
 	}
@@ -130,6 +134,7 @@ func (m *CaPatch) validateIdentityRoles(formats strfmt.Registry) error {
 }
 
 func (m *CaPatch) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -150,6 +155,7 @@ func (m *CaPatch) validateTags(formats strfmt.Registry) error {
 
 // ContextValidate validate this ca patch based on the context it is used
 func (m *CaPatch) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateExternalIDClaim(ctx, formats); err != nil {
@@ -171,6 +177,7 @@ func (m *CaPatch) ContextValidate(ctx context.Context, formats strfmt.Registry) 
 }
 
 func (m *CaPatch) contextValidateExternalIDClaim(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.ExternalIDClaim != nil {
 
@@ -192,6 +199,7 @@ func (m *CaPatch) contextValidateExternalIDClaim(ctx context.Context, formats st
 }
 
 func (m *CaPatch) contextValidateIdentityRoles(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.IdentityRoles.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -206,6 +214,7 @@ func (m *CaPatch) contextValidateIdentityRoles(ctx context.Context, formats strf
 }
 
 func (m *CaPatch) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -228,6 +237,7 @@ func (m *CaPatch) contextValidateTags(ctx context.Context, formats strfmt.Regist
 
 // MarshalBinary interface implementation
 func (m *CaPatch) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -236,6 +246,7 @@ func (m *CaPatch) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *CaPatch) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res CaPatch
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -90,6 +91,7 @@ type ExternalJWTSignerPatch struct {
 
 // Validate validates this external Jwt signer patch
 func (m *ExternalJWTSignerPatch) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateJwksEndpoint(formats); err != nil {
@@ -111,6 +113,7 @@ func (m *ExternalJWTSignerPatch) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ExternalJWTSignerPatch) validateJwksEndpoint(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.JwksEndpoint) { // not required
 		return nil
 	}
@@ -123,6 +126,7 @@ func (m *ExternalJWTSignerPatch) validateJwksEndpoint(formats strfmt.Registry) e
 }
 
 func (m *ExternalJWTSignerPatch) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -142,6 +146,7 @@ func (m *ExternalJWTSignerPatch) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *ExternalJWTSignerPatch) validateTargetToken(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.TargetToken) { // not required
 		return nil
 	}
@@ -162,6 +167,7 @@ func (m *ExternalJWTSignerPatch) validateTargetToken(formats strfmt.Registry) er
 
 // ContextValidate validate this external Jwt signer patch based on the context it is used
 func (m *ExternalJWTSignerPatch) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateTags(ctx, formats); err != nil {
@@ -179,6 +185,7 @@ func (m *ExternalJWTSignerPatch) ContextValidate(ctx context.Context, formats st
 }
 
 func (m *ExternalJWTSignerPatch) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -200,6 +207,7 @@ func (m *ExternalJWTSignerPatch) contextValidateTags(ctx context.Context, format
 }
 
 func (m *ExternalJWTSignerPatch) contextValidateTargetToken(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.TargetToken != nil {
 
@@ -222,6 +230,7 @@ func (m *ExternalJWTSignerPatch) contextValidateTargetToken(ctx context.Context,
 
 // MarshalBinary interface implementation
 func (m *ExternalJWTSignerPatch) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -230,6 +239,7 @@ func (m *ExternalJWTSignerPatch) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ExternalJWTSignerPatch) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ExternalJWTSignerPatch
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

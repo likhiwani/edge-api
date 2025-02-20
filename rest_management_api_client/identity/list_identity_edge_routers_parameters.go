@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListIdentityEdgeRoutersParams() *ListIdentityEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	return &ListIdentityEdgeRoutersParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewListIdentityEdgeRoutersParams() *ListIdentityEdgeRoutersParams {
 // NewListIdentityEdgeRoutersParamsWithTimeout creates a new ListIdentityEdgeRoutersParams object
 // with the ability to set a timeout on a request.
 func NewListIdentityEdgeRoutersParamsWithTimeout(timeout time.Duration) *ListIdentityEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	return &ListIdentityEdgeRoutersParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewListIdentityEdgeRoutersParamsWithTimeout(timeout time.Duration) *ListIde
 // NewListIdentityEdgeRoutersParamsWithContext creates a new ListIdentityEdgeRoutersParams object
 // with the ability to set a context for a request.
 func NewListIdentityEdgeRoutersParamsWithContext(ctx context.Context) *ListIdentityEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	return &ListIdentityEdgeRoutersParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewListIdentityEdgeRoutersParamsWithContext(ctx context.Context) *ListIdent
 // NewListIdentityEdgeRoutersParamsWithHTTPClient creates a new ListIdentityEdgeRoutersParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListIdentityEdgeRoutersParamsWithHTTPClient(client *http.Client) *ListIdentityEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	return &ListIdentityEdgeRoutersParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type ListIdentityEdgeRoutersParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListIdentityEdgeRoutersParams) WithDefaults() *ListIdentityEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *ListIdentityEdgeRoutersParams) WithDefaults() *ListIdentityEdgeRoutersP
 //
 // All values with no default are reset to their zero value.
 func (o *ListIdentityEdgeRoutersParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list identity edge routers params
 func (o *ListIdentityEdgeRoutersParams) WithTimeout(timeout time.Duration) *ListIdentityEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list identity edge routers params
 func (o *ListIdentityEdgeRoutersParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list identity edge routers params
 func (o *ListIdentityEdgeRoutersParams) WithContext(ctx context.Context) *ListIdentityEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list identity edge routers params
 func (o *ListIdentityEdgeRoutersParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list identity edge routers params
 func (o *ListIdentityEdgeRoutersParams) WithHTTPClient(client *http.Client) *ListIdentityEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list identity edge routers params
 func (o *ListIdentityEdgeRoutersParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the list identity edge routers params
 func (o *ListIdentityEdgeRoutersParams) WithID(id string) *ListIdentityEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the list identity edge routers params
 func (o *ListIdentityEdgeRoutersParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListIdentityEdgeRoutersParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

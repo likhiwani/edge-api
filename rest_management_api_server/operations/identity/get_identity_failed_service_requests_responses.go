@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type GetIdentityFailedServiceRequestsOK struct {
 
 // NewGetIdentityFailedServiceRequestsOK creates GetIdentityFailedServiceRequestsOK with default headers values
 func NewGetIdentityFailedServiceRequestsOK() *GetIdentityFailedServiceRequestsOK {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityFailedServiceRequestsOK{}
 }
 
 // WithPayload adds the payload to the get identity failed service requests o k response
 func (o *GetIdentityFailedServiceRequestsOK) WithPayload(payload *rest_model.FailedServiceRequestEnvelope) *GetIdentityFailedServiceRequestsOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity failed service requests o k response
 func (o *GetIdentityFailedServiceRequestsOK) SetPayload(payload *rest_model.FailedServiceRequestEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityFailedServiceRequestsOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type GetIdentityFailedServiceRequestsUnauthorized struct {
 
 // NewGetIdentityFailedServiceRequestsUnauthorized creates GetIdentityFailedServiceRequestsUnauthorized with default headers values
 func NewGetIdentityFailedServiceRequestsUnauthorized() *GetIdentityFailedServiceRequestsUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityFailedServiceRequestsUnauthorized{}
 }
 
 // WithPayload adds the payload to the get identity failed service requests unauthorized response
 func (o *GetIdentityFailedServiceRequestsUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityFailedServiceRequestsUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity failed service requests unauthorized response
 func (o *GetIdentityFailedServiceRequestsUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityFailedServiceRequestsUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type GetIdentityFailedServiceRequestsNotFound struct {
 
 // NewGetIdentityFailedServiceRequestsNotFound creates GetIdentityFailedServiceRequestsNotFound with default headers values
 func NewGetIdentityFailedServiceRequestsNotFound() *GetIdentityFailedServiceRequestsNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityFailedServiceRequestsNotFound{}
 }
 
 // WithPayload adds the payload to the get identity failed service requests not found response
 func (o *GetIdentityFailedServiceRequestsNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityFailedServiceRequestsNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity failed service requests not found response
 func (o *GetIdentityFailedServiceRequestsNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityFailedServiceRequestsNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type GetIdentityFailedServiceRequestsTooManyRequests struct {
 
 // NewGetIdentityFailedServiceRequestsTooManyRequests creates GetIdentityFailedServiceRequestsTooManyRequests with default headers values
 func NewGetIdentityFailedServiceRequestsTooManyRequests() *GetIdentityFailedServiceRequestsTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityFailedServiceRequestsTooManyRequests{}
 }
 
 // WithPayload adds the payload to the get identity failed service requests too many requests response
 func (o *GetIdentityFailedServiceRequestsTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityFailedServiceRequestsTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity failed service requests too many requests response
 func (o *GetIdentityFailedServiceRequestsTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityFailedServiceRequestsTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type GetIdentityFailedServiceRequestsServiceUnavailable struct {
 
 // NewGetIdentityFailedServiceRequestsServiceUnavailable creates GetIdentityFailedServiceRequestsServiceUnavailable with default headers values
 func NewGetIdentityFailedServiceRequestsServiceUnavailable() *GetIdentityFailedServiceRequestsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityFailedServiceRequestsServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the get identity failed service requests service unavailable response
 func (o *GetIdentityFailedServiceRequestsServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityFailedServiceRequestsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity failed service requests service unavailable response
 func (o *GetIdentityFailedServiceRequestsServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityFailedServiceRequestsServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

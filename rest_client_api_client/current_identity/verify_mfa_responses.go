@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type VerifyMfaReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *VerifyMfaReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewVerifyMfaOK()
@@ -73,6 +75,7 @@ func (o *VerifyMfaReader) ReadResponse(response runtime.ClientResponse, consumer
 
 // NewVerifyMfaOK creates a VerifyMfaOK with default headers values
 func NewVerifyMfaOK() *VerifyMfaOK {
+    logtrace.LogWithFunctionName()
 	return &VerifyMfaOK{}
 }
 
@@ -87,49 +90,59 @@ type VerifyMfaOK struct {
 
 // IsSuccess returns true when this verify mfa o k response has a 2xx status code
 func (o *VerifyMfaOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this verify mfa o k response has a 3xx status code
 func (o *VerifyMfaOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this verify mfa o k response has a 4xx status code
 func (o *VerifyMfaOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this verify mfa o k response has a 5xx status code
 func (o *VerifyMfaOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this verify mfa o k response a status code equal to that given
 func (o *VerifyMfaOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the verify mfa o k response
 func (o *VerifyMfaOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *VerifyMfaOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/mfa/verify][%d] verifyMfaOK %s", 200, payload)
 }
 
 func (o *VerifyMfaOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/mfa/verify][%d] verifyMfaOK %s", 200, payload)
 }
 
 func (o *VerifyMfaOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *VerifyMfaOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -143,6 +156,7 @@ func (o *VerifyMfaOK) readResponse(response runtime.ClientResponse, consumer run
 
 // NewVerifyMfaUnauthorized creates a VerifyMfaUnauthorized with default headers values
 func NewVerifyMfaUnauthorized() *VerifyMfaUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &VerifyMfaUnauthorized{}
 }
 
@@ -157,49 +171,59 @@ type VerifyMfaUnauthorized struct {
 
 // IsSuccess returns true when this verify mfa unauthorized response has a 2xx status code
 func (o *VerifyMfaUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this verify mfa unauthorized response has a 3xx status code
 func (o *VerifyMfaUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this verify mfa unauthorized response has a 4xx status code
 func (o *VerifyMfaUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this verify mfa unauthorized response has a 5xx status code
 func (o *VerifyMfaUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this verify mfa unauthorized response a status code equal to that given
 func (o *VerifyMfaUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the verify mfa unauthorized response
 func (o *VerifyMfaUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *VerifyMfaUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/mfa/verify][%d] verifyMfaUnauthorized %s", 401, payload)
 }
 
 func (o *VerifyMfaUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/mfa/verify][%d] verifyMfaUnauthorized %s", 401, payload)
 }
 
 func (o *VerifyMfaUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *VerifyMfaUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -213,6 +237,7 @@ func (o *VerifyMfaUnauthorized) readResponse(response runtime.ClientResponse, co
 
 // NewVerifyMfaNotFound creates a VerifyMfaNotFound with default headers values
 func NewVerifyMfaNotFound() *VerifyMfaNotFound {
+    logtrace.LogWithFunctionName()
 	return &VerifyMfaNotFound{}
 }
 
@@ -227,49 +252,59 @@ type VerifyMfaNotFound struct {
 
 // IsSuccess returns true when this verify mfa not found response has a 2xx status code
 func (o *VerifyMfaNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this verify mfa not found response has a 3xx status code
 func (o *VerifyMfaNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this verify mfa not found response has a 4xx status code
 func (o *VerifyMfaNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this verify mfa not found response has a 5xx status code
 func (o *VerifyMfaNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this verify mfa not found response a status code equal to that given
 func (o *VerifyMfaNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the verify mfa not found response
 func (o *VerifyMfaNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *VerifyMfaNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/mfa/verify][%d] verifyMfaNotFound %s", 404, payload)
 }
 
 func (o *VerifyMfaNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/mfa/verify][%d] verifyMfaNotFound %s", 404, payload)
 }
 
 func (o *VerifyMfaNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *VerifyMfaNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

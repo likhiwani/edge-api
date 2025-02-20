@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -54,6 +55,7 @@ type AuthPolicyPrimaryCert struct {
 
 // Validate validates this auth policy primary cert
 func (m *AuthPolicyPrimaryCert) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateAllowExpiredCerts(formats); err != nil {
@@ -71,6 +73,7 @@ func (m *AuthPolicyPrimaryCert) Validate(formats strfmt.Registry) error {
 }
 
 func (m *AuthPolicyPrimaryCert) validateAllowExpiredCerts(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("allowExpiredCerts", "body", m.AllowExpiredCerts); err != nil {
 		return err
@@ -80,6 +83,7 @@ func (m *AuthPolicyPrimaryCert) validateAllowExpiredCerts(formats strfmt.Registr
 }
 
 func (m *AuthPolicyPrimaryCert) validateAllowed(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("allowed", "body", m.Allowed); err != nil {
 		return err
@@ -90,11 +94,13 @@ func (m *AuthPolicyPrimaryCert) validateAllowed(formats strfmt.Registry) error {
 
 // ContextValidate validates this auth policy primary cert based on context it is used
 func (m *AuthPolicyPrimaryCert) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *AuthPolicyPrimaryCert) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -103,6 +109,7 @@ func (m *AuthPolicyPrimaryCert) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *AuthPolicyPrimaryCert) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res AuthPolicyPrimaryCert
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

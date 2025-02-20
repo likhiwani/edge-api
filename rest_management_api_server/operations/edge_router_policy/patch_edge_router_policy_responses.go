@@ -30,6 +30,7 @@ package edge_router_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type PatchEdgeRouterPolicyOK struct {
 
 // NewPatchEdgeRouterPolicyOK creates PatchEdgeRouterPolicyOK with default headers values
 func NewPatchEdgeRouterPolicyOK() *PatchEdgeRouterPolicyOK {
+    logtrace.LogWithFunctionName()
 
 	return &PatchEdgeRouterPolicyOK{}
 }
 
 // WithPayload adds the payload to the patch edge router policy o k response
 func (o *PatchEdgeRouterPolicyOK) WithPayload(payload *rest_model.Empty) *PatchEdgeRouterPolicyOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch edge router policy o k response
 func (o *PatchEdgeRouterPolicyOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchEdgeRouterPolicyOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type PatchEdgeRouterPolicyBadRequest struct {
 
 // NewPatchEdgeRouterPolicyBadRequest creates PatchEdgeRouterPolicyBadRequest with default headers values
 func NewPatchEdgeRouterPolicyBadRequest() *PatchEdgeRouterPolicyBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &PatchEdgeRouterPolicyBadRequest{}
 }
 
 // WithPayload adds the payload to the patch edge router policy bad request response
 func (o *PatchEdgeRouterPolicyBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchEdgeRouterPolicyBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch edge router policy bad request response
 func (o *PatchEdgeRouterPolicyBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchEdgeRouterPolicyBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type PatchEdgeRouterPolicyUnauthorized struct {
 
 // NewPatchEdgeRouterPolicyUnauthorized creates PatchEdgeRouterPolicyUnauthorized with default headers values
 func NewPatchEdgeRouterPolicyUnauthorized() *PatchEdgeRouterPolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &PatchEdgeRouterPolicyUnauthorized{}
 }
 
 // WithPayload adds the payload to the patch edge router policy unauthorized response
 func (o *PatchEdgeRouterPolicyUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchEdgeRouterPolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch edge router policy unauthorized response
 func (o *PatchEdgeRouterPolicyUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchEdgeRouterPolicyUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type PatchEdgeRouterPolicyNotFound struct {
 
 // NewPatchEdgeRouterPolicyNotFound creates PatchEdgeRouterPolicyNotFound with default headers values
 func NewPatchEdgeRouterPolicyNotFound() *PatchEdgeRouterPolicyNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &PatchEdgeRouterPolicyNotFound{}
 }
 
 // WithPayload adds the payload to the patch edge router policy not found response
 func (o *PatchEdgeRouterPolicyNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchEdgeRouterPolicyNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch edge router policy not found response
 func (o *PatchEdgeRouterPolicyNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchEdgeRouterPolicyNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type PatchEdgeRouterPolicyTooManyRequests struct {
 
 // NewPatchEdgeRouterPolicyTooManyRequests creates PatchEdgeRouterPolicyTooManyRequests with default headers values
 func NewPatchEdgeRouterPolicyTooManyRequests() *PatchEdgeRouterPolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &PatchEdgeRouterPolicyTooManyRequests{}
 }
 
 // WithPayload adds the payload to the patch edge router policy too many requests response
 func (o *PatchEdgeRouterPolicyTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchEdgeRouterPolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch edge router policy too many requests response
 func (o *PatchEdgeRouterPolicyTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchEdgeRouterPolicyTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type PatchEdgeRouterPolicyServiceUnavailable struct {
 
 // NewPatchEdgeRouterPolicyServiceUnavailable creates PatchEdgeRouterPolicyServiceUnavailable with default headers values
 func NewPatchEdgeRouterPolicyServiceUnavailable() *PatchEdgeRouterPolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &PatchEdgeRouterPolicyServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the patch edge router policy service unavailable response
 func (o *PatchEdgeRouterPolicyServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchEdgeRouterPolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch edge router policy service unavailable response
 func (o *PatchEdgeRouterPolicyServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchEdgeRouterPolicyServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

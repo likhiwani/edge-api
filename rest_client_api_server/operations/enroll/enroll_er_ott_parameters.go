@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"io"
 	"net/http"
 
@@ -45,6 +46,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewEnrollErOttParams() EnrollErOttParams {
+    logtrace.LogWithFunctionName()
 
 	return EnrollErOttParams{}
 }
@@ -70,6 +72,7 @@ type EnrollErOttParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewEnrollErOttParams() beforehand.
 func (o *EnrollErOttParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r

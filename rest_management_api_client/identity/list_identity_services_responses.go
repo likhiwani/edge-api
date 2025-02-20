@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ListIdentityServicesReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ListIdentityServicesReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewListIdentityServicesOK()
@@ -85,6 +87,7 @@ func (o *ListIdentityServicesReader) ReadResponse(response runtime.ClientRespons
 
 // NewListIdentityServicesOK creates a ListIdentityServicesOK with default headers values
 func NewListIdentityServicesOK() *ListIdentityServicesOK {
+    logtrace.LogWithFunctionName()
 	return &ListIdentityServicesOK{}
 }
 
@@ -99,49 +102,59 @@ type ListIdentityServicesOK struct {
 
 // IsSuccess returns true when this list identity services o k response has a 2xx status code
 func (o *ListIdentityServicesOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this list identity services o k response has a 3xx status code
 func (o *ListIdentityServicesOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list identity services o k response has a 4xx status code
 func (o *ListIdentityServicesOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list identity services o k response has a 5xx status code
 func (o *ListIdentityServicesOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list identity services o k response a status code equal to that given
 func (o *ListIdentityServicesOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the list identity services o k response
 func (o *ListIdentityServicesOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ListIdentityServicesOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/services][%d] listIdentityServicesOK %s", 200, payload)
 }
 
 func (o *ListIdentityServicesOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/services][%d] listIdentityServicesOK %s", 200, payload)
 }
 
 func (o *ListIdentityServicesOK) GetPayload() *rest_model.ListServicesEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListIdentityServicesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListServicesEnvelope)
 
@@ -155,6 +168,7 @@ func (o *ListIdentityServicesOK) readResponse(response runtime.ClientResponse, c
 
 // NewListIdentityServicesUnauthorized creates a ListIdentityServicesUnauthorized with default headers values
 func NewListIdentityServicesUnauthorized() *ListIdentityServicesUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &ListIdentityServicesUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type ListIdentityServicesUnauthorized struct {
 
 // IsSuccess returns true when this list identity services unauthorized response has a 2xx status code
 func (o *ListIdentityServicesUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list identity services unauthorized response has a 3xx status code
 func (o *ListIdentityServicesUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list identity services unauthorized response has a 4xx status code
 func (o *ListIdentityServicesUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list identity services unauthorized response has a 5xx status code
 func (o *ListIdentityServicesUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list identity services unauthorized response a status code equal to that given
 func (o *ListIdentityServicesUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the list identity services unauthorized response
 func (o *ListIdentityServicesUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *ListIdentityServicesUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/services][%d] listIdentityServicesUnauthorized %s", 401, payload)
 }
 
 func (o *ListIdentityServicesUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/services][%d] listIdentityServicesUnauthorized %s", 401, payload)
 }
 
 func (o *ListIdentityServicesUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListIdentityServicesUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *ListIdentityServicesUnauthorized) readResponse(response runtime.ClientR
 
 // NewListIdentityServicesNotFound creates a ListIdentityServicesNotFound with default headers values
 func NewListIdentityServicesNotFound() *ListIdentityServicesNotFound {
+    logtrace.LogWithFunctionName()
 	return &ListIdentityServicesNotFound{}
 }
 
@@ -239,49 +264,59 @@ type ListIdentityServicesNotFound struct {
 
 // IsSuccess returns true when this list identity services not found response has a 2xx status code
 func (o *ListIdentityServicesNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list identity services not found response has a 3xx status code
 func (o *ListIdentityServicesNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list identity services not found response has a 4xx status code
 func (o *ListIdentityServicesNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list identity services not found response has a 5xx status code
 func (o *ListIdentityServicesNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list identity services not found response a status code equal to that given
 func (o *ListIdentityServicesNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the list identity services not found response
 func (o *ListIdentityServicesNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *ListIdentityServicesNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/services][%d] listIdentityServicesNotFound %s", 404, payload)
 }
 
 func (o *ListIdentityServicesNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/services][%d] listIdentityServicesNotFound %s", 404, payload)
 }
 
 func (o *ListIdentityServicesNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListIdentityServicesNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *ListIdentityServicesNotFound) readResponse(response runtime.ClientRespo
 
 // NewListIdentityServicesTooManyRequests creates a ListIdentityServicesTooManyRequests with default headers values
 func NewListIdentityServicesTooManyRequests() *ListIdentityServicesTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &ListIdentityServicesTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type ListIdentityServicesTooManyRequests struct {
 
 // IsSuccess returns true when this list identity services too many requests response has a 2xx status code
 func (o *ListIdentityServicesTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list identity services too many requests response has a 3xx status code
 func (o *ListIdentityServicesTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list identity services too many requests response has a 4xx status code
 func (o *ListIdentityServicesTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list identity services too many requests response has a 5xx status code
 func (o *ListIdentityServicesTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list identity services too many requests response a status code equal to that given
 func (o *ListIdentityServicesTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the list identity services too many requests response
 func (o *ListIdentityServicesTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *ListIdentityServicesTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/services][%d] listIdentityServicesTooManyRequests %s", 429, payload)
 }
 
 func (o *ListIdentityServicesTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/services][%d] listIdentityServicesTooManyRequests %s", 429, payload)
 }
 
 func (o *ListIdentityServicesTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListIdentityServicesTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *ListIdentityServicesTooManyRequests) readResponse(response runtime.Clie
 
 // NewListIdentityServicesServiceUnavailable creates a ListIdentityServicesServiceUnavailable with default headers values
 func NewListIdentityServicesServiceUnavailable() *ListIdentityServicesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &ListIdentityServicesServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type ListIdentityServicesServiceUnavailable struct {
 
 // IsSuccess returns true when this list identity services service unavailable response has a 2xx status code
 func (o *ListIdentityServicesServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list identity services service unavailable response has a 3xx status code
 func (o *ListIdentityServicesServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list identity services service unavailable response has a 4xx status code
 func (o *ListIdentityServicesServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list identity services service unavailable response has a 5xx status code
 func (o *ListIdentityServicesServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this list identity services service unavailable response a status code equal to that given
 func (o *ListIdentityServicesServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the list identity services service unavailable response
 func (o *ListIdentityServicesServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *ListIdentityServicesServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/services][%d] listIdentityServicesServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListIdentityServicesServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /identities/{id}/services][%d] listIdentityServicesServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListIdentityServicesServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListIdentityServicesServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

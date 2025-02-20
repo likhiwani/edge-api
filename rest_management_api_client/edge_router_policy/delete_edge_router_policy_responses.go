@@ -30,6 +30,7 @@ package edge_router_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DeleteEdgeRouterPolicyReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DeleteEdgeRouterPolicyReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDeleteEdgeRouterPolicyOK()
@@ -97,6 +99,7 @@ func (o *DeleteEdgeRouterPolicyReader) ReadResponse(response runtime.ClientRespo
 
 // NewDeleteEdgeRouterPolicyOK creates a DeleteEdgeRouterPolicyOK with default headers values
 func NewDeleteEdgeRouterPolicyOK() *DeleteEdgeRouterPolicyOK {
+    logtrace.LogWithFunctionName()
 	return &DeleteEdgeRouterPolicyOK{}
 }
 
@@ -111,49 +114,59 @@ type DeleteEdgeRouterPolicyOK struct {
 
 // IsSuccess returns true when this delete edge router policy o k response has a 2xx status code
 func (o *DeleteEdgeRouterPolicyOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this delete edge router policy o k response has a 3xx status code
 func (o *DeleteEdgeRouterPolicyOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete edge router policy o k response has a 4xx status code
 func (o *DeleteEdgeRouterPolicyOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete edge router policy o k response has a 5xx status code
 func (o *DeleteEdgeRouterPolicyOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete edge router policy o k response a status code equal to that given
 func (o *DeleteEdgeRouterPolicyOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the delete edge router policy o k response
 func (o *DeleteEdgeRouterPolicyOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DeleteEdgeRouterPolicyOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-router-policies/{id}][%d] deleteEdgeRouterPolicyOK %s", 200, payload)
 }
 
 func (o *DeleteEdgeRouterPolicyOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-router-policies/{id}][%d] deleteEdgeRouterPolicyOK %s", 200, payload)
 }
 
 func (o *DeleteEdgeRouterPolicyOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEdgeRouterPolicyOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -167,6 +180,7 @@ func (o *DeleteEdgeRouterPolicyOK) readResponse(response runtime.ClientResponse,
 
 // NewDeleteEdgeRouterPolicyBadRequest creates a DeleteEdgeRouterPolicyBadRequest with default headers values
 func NewDeleteEdgeRouterPolicyBadRequest() *DeleteEdgeRouterPolicyBadRequest {
+    logtrace.LogWithFunctionName()
 	return &DeleteEdgeRouterPolicyBadRequest{}
 }
 
@@ -181,49 +195,59 @@ type DeleteEdgeRouterPolicyBadRequest struct {
 
 // IsSuccess returns true when this delete edge router policy bad request response has a 2xx status code
 func (o *DeleteEdgeRouterPolicyBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete edge router policy bad request response has a 3xx status code
 func (o *DeleteEdgeRouterPolicyBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete edge router policy bad request response has a 4xx status code
 func (o *DeleteEdgeRouterPolicyBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete edge router policy bad request response has a 5xx status code
 func (o *DeleteEdgeRouterPolicyBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete edge router policy bad request response a status code equal to that given
 func (o *DeleteEdgeRouterPolicyBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the delete edge router policy bad request response
 func (o *DeleteEdgeRouterPolicyBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *DeleteEdgeRouterPolicyBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-router-policies/{id}][%d] deleteEdgeRouterPolicyBadRequest %s", 400, payload)
 }
 
 func (o *DeleteEdgeRouterPolicyBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-router-policies/{id}][%d] deleteEdgeRouterPolicyBadRequest %s", 400, payload)
 }
 
 func (o *DeleteEdgeRouterPolicyBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEdgeRouterPolicyBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -237,6 +261,7 @@ func (o *DeleteEdgeRouterPolicyBadRequest) readResponse(response runtime.ClientR
 
 // NewDeleteEdgeRouterPolicyUnauthorized creates a DeleteEdgeRouterPolicyUnauthorized with default headers values
 func NewDeleteEdgeRouterPolicyUnauthorized() *DeleteEdgeRouterPolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DeleteEdgeRouterPolicyUnauthorized{}
 }
 
@@ -251,49 +276,59 @@ type DeleteEdgeRouterPolicyUnauthorized struct {
 
 // IsSuccess returns true when this delete edge router policy unauthorized response has a 2xx status code
 func (o *DeleteEdgeRouterPolicyUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete edge router policy unauthorized response has a 3xx status code
 func (o *DeleteEdgeRouterPolicyUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete edge router policy unauthorized response has a 4xx status code
 func (o *DeleteEdgeRouterPolicyUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete edge router policy unauthorized response has a 5xx status code
 func (o *DeleteEdgeRouterPolicyUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete edge router policy unauthorized response a status code equal to that given
 func (o *DeleteEdgeRouterPolicyUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the delete edge router policy unauthorized response
 func (o *DeleteEdgeRouterPolicyUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DeleteEdgeRouterPolicyUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-router-policies/{id}][%d] deleteEdgeRouterPolicyUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteEdgeRouterPolicyUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-router-policies/{id}][%d] deleteEdgeRouterPolicyUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteEdgeRouterPolicyUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEdgeRouterPolicyUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -307,6 +342,7 @@ func (o *DeleteEdgeRouterPolicyUnauthorized) readResponse(response runtime.Clien
 
 // NewDeleteEdgeRouterPolicyNotFound creates a DeleteEdgeRouterPolicyNotFound with default headers values
 func NewDeleteEdgeRouterPolicyNotFound() *DeleteEdgeRouterPolicyNotFound {
+    logtrace.LogWithFunctionName()
 	return &DeleteEdgeRouterPolicyNotFound{}
 }
 
@@ -321,49 +357,59 @@ type DeleteEdgeRouterPolicyNotFound struct {
 
 // IsSuccess returns true when this delete edge router policy not found response has a 2xx status code
 func (o *DeleteEdgeRouterPolicyNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete edge router policy not found response has a 3xx status code
 func (o *DeleteEdgeRouterPolicyNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete edge router policy not found response has a 4xx status code
 func (o *DeleteEdgeRouterPolicyNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete edge router policy not found response has a 5xx status code
 func (o *DeleteEdgeRouterPolicyNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete edge router policy not found response a status code equal to that given
 func (o *DeleteEdgeRouterPolicyNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the delete edge router policy not found response
 func (o *DeleteEdgeRouterPolicyNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DeleteEdgeRouterPolicyNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-router-policies/{id}][%d] deleteEdgeRouterPolicyNotFound %s", 404, payload)
 }
 
 func (o *DeleteEdgeRouterPolicyNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-router-policies/{id}][%d] deleteEdgeRouterPolicyNotFound %s", 404, payload)
 }
 
 func (o *DeleteEdgeRouterPolicyNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEdgeRouterPolicyNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -377,6 +423,7 @@ func (o *DeleteEdgeRouterPolicyNotFound) readResponse(response runtime.ClientRes
 
 // NewDeleteEdgeRouterPolicyConflict creates a DeleteEdgeRouterPolicyConflict with default headers values
 func NewDeleteEdgeRouterPolicyConflict() *DeleteEdgeRouterPolicyConflict {
+    logtrace.LogWithFunctionName()
 	return &DeleteEdgeRouterPolicyConflict{}
 }
 
@@ -391,49 +438,59 @@ type DeleteEdgeRouterPolicyConflict struct {
 
 // IsSuccess returns true when this delete edge router policy conflict response has a 2xx status code
 func (o *DeleteEdgeRouterPolicyConflict) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete edge router policy conflict response has a 3xx status code
 func (o *DeleteEdgeRouterPolicyConflict) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete edge router policy conflict response has a 4xx status code
 func (o *DeleteEdgeRouterPolicyConflict) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete edge router policy conflict response has a 5xx status code
 func (o *DeleteEdgeRouterPolicyConflict) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete edge router policy conflict response a status code equal to that given
 func (o *DeleteEdgeRouterPolicyConflict) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 409
 }
 
 // Code gets the status code for the delete edge router policy conflict response
 func (o *DeleteEdgeRouterPolicyConflict) Code() int {
+    logtrace.LogWithFunctionName()
 	return 409
 }
 
 func (o *DeleteEdgeRouterPolicyConflict) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-router-policies/{id}][%d] deleteEdgeRouterPolicyConflict %s", 409, payload)
 }
 
 func (o *DeleteEdgeRouterPolicyConflict) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-router-policies/{id}][%d] deleteEdgeRouterPolicyConflict %s", 409, payload)
 }
 
 func (o *DeleteEdgeRouterPolicyConflict) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEdgeRouterPolicyConflict) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -447,6 +504,7 @@ func (o *DeleteEdgeRouterPolicyConflict) readResponse(response runtime.ClientRes
 
 // NewDeleteEdgeRouterPolicyTooManyRequests creates a DeleteEdgeRouterPolicyTooManyRequests with default headers values
 func NewDeleteEdgeRouterPolicyTooManyRequests() *DeleteEdgeRouterPolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DeleteEdgeRouterPolicyTooManyRequests{}
 }
 
@@ -461,49 +519,59 @@ type DeleteEdgeRouterPolicyTooManyRequests struct {
 
 // IsSuccess returns true when this delete edge router policy too many requests response has a 2xx status code
 func (o *DeleteEdgeRouterPolicyTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete edge router policy too many requests response has a 3xx status code
 func (o *DeleteEdgeRouterPolicyTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete edge router policy too many requests response has a 4xx status code
 func (o *DeleteEdgeRouterPolicyTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete edge router policy too many requests response has a 5xx status code
 func (o *DeleteEdgeRouterPolicyTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete edge router policy too many requests response a status code equal to that given
 func (o *DeleteEdgeRouterPolicyTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the delete edge router policy too many requests response
 func (o *DeleteEdgeRouterPolicyTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DeleteEdgeRouterPolicyTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-router-policies/{id}][%d] deleteEdgeRouterPolicyTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteEdgeRouterPolicyTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-router-policies/{id}][%d] deleteEdgeRouterPolicyTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteEdgeRouterPolicyTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEdgeRouterPolicyTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -517,6 +585,7 @@ func (o *DeleteEdgeRouterPolicyTooManyRequests) readResponse(response runtime.Cl
 
 // NewDeleteEdgeRouterPolicyServiceUnavailable creates a DeleteEdgeRouterPolicyServiceUnavailable with default headers values
 func NewDeleteEdgeRouterPolicyServiceUnavailable() *DeleteEdgeRouterPolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DeleteEdgeRouterPolicyServiceUnavailable{}
 }
 
@@ -531,49 +600,59 @@ type DeleteEdgeRouterPolicyServiceUnavailable struct {
 
 // IsSuccess returns true when this delete edge router policy service unavailable response has a 2xx status code
 func (o *DeleteEdgeRouterPolicyServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete edge router policy service unavailable response has a 3xx status code
 func (o *DeleteEdgeRouterPolicyServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete edge router policy service unavailable response has a 4xx status code
 func (o *DeleteEdgeRouterPolicyServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete edge router policy service unavailable response has a 5xx status code
 func (o *DeleteEdgeRouterPolicyServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this delete edge router policy service unavailable response a status code equal to that given
 func (o *DeleteEdgeRouterPolicyServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the delete edge router policy service unavailable response
 func (o *DeleteEdgeRouterPolicyServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DeleteEdgeRouterPolicyServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-router-policies/{id}][%d] deleteEdgeRouterPolicyServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteEdgeRouterPolicyServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-router-policies/{id}][%d] deleteEdgeRouterPolicyServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteEdgeRouterPolicyServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEdgeRouterPolicyServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

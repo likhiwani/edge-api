@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type GetCurrentIdentityReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *GetCurrentIdentityReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewGetCurrentIdentityOK()
@@ -67,6 +69,7 @@ func (o *GetCurrentIdentityReader) ReadResponse(response runtime.ClientResponse,
 
 // NewGetCurrentIdentityOK creates a GetCurrentIdentityOK with default headers values
 func NewGetCurrentIdentityOK() *GetCurrentIdentityOK {
+    logtrace.LogWithFunctionName()
 	return &GetCurrentIdentityOK{}
 }
 
@@ -81,49 +84,59 @@ type GetCurrentIdentityOK struct {
 
 // IsSuccess returns true when this get current identity o k response has a 2xx status code
 func (o *GetCurrentIdentityOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this get current identity o k response has a 3xx status code
 func (o *GetCurrentIdentityOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get current identity o k response has a 4xx status code
 func (o *GetCurrentIdentityOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this get current identity o k response has a 5xx status code
 func (o *GetCurrentIdentityOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get current identity o k response a status code equal to that given
 func (o *GetCurrentIdentityOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the get current identity o k response
 func (o *GetCurrentIdentityOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *GetCurrentIdentityOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-identity][%d] getCurrentIdentityOK %s", 200, payload)
 }
 
 func (o *GetCurrentIdentityOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-identity][%d] getCurrentIdentityOK %s", 200, payload)
 }
 
 func (o *GetCurrentIdentityOK) GetPayload() *rest_model.CurrentIdentityDetailEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetCurrentIdentityOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.CurrentIdentityDetailEnvelope)
 
@@ -137,6 +150,7 @@ func (o *GetCurrentIdentityOK) readResponse(response runtime.ClientResponse, con
 
 // NewGetCurrentIdentityUnauthorized creates a GetCurrentIdentityUnauthorized with default headers values
 func NewGetCurrentIdentityUnauthorized() *GetCurrentIdentityUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &GetCurrentIdentityUnauthorized{}
 }
 
@@ -151,49 +165,59 @@ type GetCurrentIdentityUnauthorized struct {
 
 // IsSuccess returns true when this get current identity unauthorized response has a 2xx status code
 func (o *GetCurrentIdentityUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this get current identity unauthorized response has a 3xx status code
 func (o *GetCurrentIdentityUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get current identity unauthorized response has a 4xx status code
 func (o *GetCurrentIdentityUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this get current identity unauthorized response has a 5xx status code
 func (o *GetCurrentIdentityUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get current identity unauthorized response a status code equal to that given
 func (o *GetCurrentIdentityUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the get current identity unauthorized response
 func (o *GetCurrentIdentityUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *GetCurrentIdentityUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-identity][%d] getCurrentIdentityUnauthorized %s", 401, payload)
 }
 
 func (o *GetCurrentIdentityUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-identity][%d] getCurrentIdentityUnauthorized %s", 401, payload)
 }
 
 func (o *GetCurrentIdentityUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetCurrentIdentityUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

@@ -30,6 +30,7 @@ package authenticator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDetailAuthenticatorParams() *DetailAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &DetailAuthenticatorParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDetailAuthenticatorParams() *DetailAuthenticatorParams {
 // NewDetailAuthenticatorParamsWithTimeout creates a new DetailAuthenticatorParams object
 // with the ability to set a timeout on a request.
 func NewDetailAuthenticatorParamsWithTimeout(timeout time.Duration) *DetailAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &DetailAuthenticatorParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDetailAuthenticatorParamsWithTimeout(timeout time.Duration) *DetailAuthe
 // NewDetailAuthenticatorParamsWithContext creates a new DetailAuthenticatorParams object
 // with the ability to set a context for a request.
 func NewDetailAuthenticatorParamsWithContext(ctx context.Context) *DetailAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &DetailAuthenticatorParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDetailAuthenticatorParamsWithContext(ctx context.Context) *DetailAuthent
 // NewDetailAuthenticatorParamsWithHTTPClient creates a new DetailAuthenticatorParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDetailAuthenticatorParamsWithHTTPClient(client *http.Client) *DetailAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &DetailAuthenticatorParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DetailAuthenticatorParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailAuthenticatorParams) WithDefaults() *DetailAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DetailAuthenticatorParams) WithDefaults() *DetailAuthenticatorParams {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailAuthenticatorParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the detail authenticator params
 func (o *DetailAuthenticatorParams) WithTimeout(timeout time.Duration) *DetailAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the detail authenticator params
 func (o *DetailAuthenticatorParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the detail authenticator params
 func (o *DetailAuthenticatorParams) WithContext(ctx context.Context) *DetailAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the detail authenticator params
 func (o *DetailAuthenticatorParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the detail authenticator params
 func (o *DetailAuthenticatorParams) WithHTTPClient(client *http.Client) *DetailAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the detail authenticator params
 func (o *DetailAuthenticatorParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the detail authenticator params
 func (o *DetailAuthenticatorParams) WithID(id string) *DetailAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the detail authenticator params
 func (o *DetailAuthenticatorParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DetailAuthenticatorParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

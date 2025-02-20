@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type DeleteCurrentAPISessionHandlerFunc func(DeleteCurrentAPISessionParams, inte
 
 // Handle executing the request and returning a response
 func (fn DeleteCurrentAPISessionHandlerFunc) Handle(params DeleteCurrentAPISessionParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type DeleteCurrentAPISessionHandler interface {
 
 // NewDeleteCurrentAPISession creates a new http.Handler for the delete current API session operation
 func NewDeleteCurrentAPISession(ctx *middleware.Context, handler DeleteCurrentAPISessionHandler) *DeleteCurrentAPISession {
+    logtrace.LogWithFunctionName()
 	return &DeleteCurrentAPISession{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type DeleteCurrentAPISession struct {
 }
 
 func (o *DeleteCurrentAPISession) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

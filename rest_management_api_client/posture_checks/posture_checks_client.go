@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new posture checks API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -87,6 +91,7 @@ type ClientOption func(*runtime.ClientOperation)
 //
 // You may use this option to set arbitrary extensions to your MIME media type.
 func WithAccept(mime string) ClientOption {
+    logtrace.LogWithFunctionName()
 	return func(r *runtime.ClientOperation) {
 		r.ProducesMediaTypes = []string{mime}
 	}
@@ -94,11 +99,13 @@ func WithAccept(mime string) ClientOption {
 
 // WithAcceptApplicationJSON sets the Accept header to "application/json".
 func WithAcceptApplicationJSON(r *runtime.ClientOperation) {
+    logtrace.LogWithFunctionName()
 	r.ProducesMediaTypes = []string{"application/json"}
 }
 
 // WithAcceptApplicationJSONCharsetUTF8 sets the Accept header to "application/json; charset=utf-8".
 func WithAcceptApplicationJSONCharsetUTF8(r *runtime.ClientOperation) {
+    logtrace.LogWithFunctionName()
 	r.ProducesMediaTypes = []string{"application/json; charset=utf-8"}
 }
 
@@ -129,6 +136,7 @@ CreatePostureCheck creates a posture checks
 Creates a Posture Checks
 */
 func (a *Client) CreatePostureCheck(params *CreatePostureCheckParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreatePostureCheckCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreatePostureCheckParams()
@@ -170,6 +178,7 @@ DeletePostureCheck deletes an posture checks
 Deletes and Posture Checks by id
 */
 func (a *Client) DeletePostureCheck(params *DeletePostureCheckParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeletePostureCheckOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeletePostureCheckParams()
@@ -211,6 +220,7 @@ DetailPostureCheck retrieves a single posture checks
 Retrieves a single Posture Checks by id
 */
 func (a *Client) DetailPostureCheck(params *DetailPostureCheckParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailPostureCheckOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailPostureCheckParams()
@@ -252,6 +262,7 @@ DetailPostureCheckType retrieves a single posture check type
 Retrieves a single posture check type by id
 */
 func (a *Client) DetailPostureCheckType(params *DetailPostureCheckTypeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailPostureCheckTypeOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailPostureCheckTypeParams()
@@ -293,6 +304,7 @@ ListPostureCheckTypes lists a subset of posture check types
 Retrieves a list of posture check types
 */
 func (a *Client) ListPostureCheckTypes(params *ListPostureCheckTypesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListPostureCheckTypesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListPostureCheckTypesParams()
@@ -334,6 +346,7 @@ ListPostureChecks lists a subset of posture checks
 Retrieves a list of posture checks
 */
 func (a *Client) ListPostureChecks(params *ListPostureChecksParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListPostureChecksOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListPostureChecksParams()
@@ -375,6 +388,7 @@ PatchPostureCheck updates the supplied fields on a posture checks
 Update only the supplied fields on a Posture Checks by id
 */
 func (a *Client) PatchPostureCheck(params *PatchPostureCheckParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PatchPostureCheckOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPatchPostureCheckParams()
@@ -416,6 +430,7 @@ UpdatePostureCheck updates all fields on a posture checks
 Update all fields on a Posture Checks by id
 */
 func (a *Client) UpdatePostureCheck(params *UpdatePostureCheckParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UpdatePostureCheckOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUpdatePostureCheckParams()
@@ -453,5 +468,6 @@ func (a *Client) UpdatePostureCheck(params *UpdatePostureCheckParams, authInfo r
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

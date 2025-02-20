@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -69,6 +70,7 @@ type CurrentAPISessionCertificateDetail struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *CurrentAPISessionCertificateDetail) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 BaseEntity
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -107,6 +109,7 @@ func (m *CurrentAPISessionCertificateDetail) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m CurrentAPISessionCertificateDetail) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.BaseEntity)
@@ -146,6 +149,7 @@ func (m CurrentAPISessionCertificateDetail) MarshalJSON() ([]byte, error) {
 
 // Validate validates this current Api session certificate detail
 func (m *CurrentAPISessionCertificateDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -180,6 +184,7 @@ func (m *CurrentAPISessionCertificateDetail) Validate(formats strfmt.Registry) e
 }
 
 func (m *CurrentAPISessionCertificateDetail) validateCertificate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("certificate", "body", m.Certificate); err != nil {
 		return err
@@ -189,6 +194,7 @@ func (m *CurrentAPISessionCertificateDetail) validateCertificate(formats strfmt.
 }
 
 func (m *CurrentAPISessionCertificateDetail) validateFingerprint(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("fingerprint", "body", m.Fingerprint); err != nil {
 		return err
@@ -198,6 +204,7 @@ func (m *CurrentAPISessionCertificateDetail) validateFingerprint(formats strfmt.
 }
 
 func (m *CurrentAPISessionCertificateDetail) validateSubject(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("subject", "body", m.Subject); err != nil {
 		return err
@@ -207,6 +214,7 @@ func (m *CurrentAPISessionCertificateDetail) validateSubject(formats strfmt.Regi
 }
 
 func (m *CurrentAPISessionCertificateDetail) validateValidFrom(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("validFrom", "body", m.ValidFrom); err != nil {
 		return err
@@ -220,6 +228,7 @@ func (m *CurrentAPISessionCertificateDetail) validateValidFrom(formats strfmt.Re
 }
 
 func (m *CurrentAPISessionCertificateDetail) validateValidTo(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("validTo", "body", m.ValidTo); err != nil {
 		return err
@@ -234,6 +243,7 @@ func (m *CurrentAPISessionCertificateDetail) validateValidTo(formats strfmt.Regi
 
 // ContextValidate validate this current Api session certificate detail based on the context it is used
 func (m *CurrentAPISessionCertificateDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -249,6 +259,7 @@ func (m *CurrentAPISessionCertificateDetail) ContextValidate(ctx context.Context
 
 // MarshalBinary interface implementation
 func (m *CurrentAPISessionCertificateDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -257,6 +268,7 @@ func (m *CurrentAPISessionCertificateDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *CurrentAPISessionCertificateDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res CurrentAPISessionCertificateDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

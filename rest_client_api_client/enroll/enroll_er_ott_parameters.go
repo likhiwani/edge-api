@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewEnrollErOttParams() *EnrollErOttParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollErOttParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewEnrollErOttParams() *EnrollErOttParams {
 // NewEnrollErOttParamsWithTimeout creates a new EnrollErOttParams object
 // with the ability to set a timeout on a request.
 func NewEnrollErOttParamsWithTimeout(timeout time.Duration) *EnrollErOttParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollErOttParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewEnrollErOttParamsWithTimeout(timeout time.Duration) *EnrollErOttParams {
 // NewEnrollErOttParamsWithContext creates a new EnrollErOttParams object
 // with the ability to set a context for a request.
 func NewEnrollErOttParamsWithContext(ctx context.Context) *EnrollErOttParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollErOttParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewEnrollErOttParamsWithContext(ctx context.Context) *EnrollErOttParams {
 // NewEnrollErOttParamsWithHTTPClient creates a new EnrollErOttParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewEnrollErOttParamsWithHTTPClient(client *http.Client) *EnrollErOttParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollErOttParams{
 		HTTPClient: client,
 	}
@@ -102,6 +107,7 @@ type EnrollErOttParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *EnrollErOttParams) WithDefaults() *EnrollErOttParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -110,55 +116,65 @@ func (o *EnrollErOttParams) WithDefaults() *EnrollErOttParams {
 //
 // All values with no default are reset to their zero value.
 func (o *EnrollErOttParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the enroll er ott params
 func (o *EnrollErOttParams) WithTimeout(timeout time.Duration) *EnrollErOttParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the enroll er ott params
 func (o *EnrollErOttParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the enroll er ott params
 func (o *EnrollErOttParams) WithContext(ctx context.Context) *EnrollErOttParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the enroll er ott params
 func (o *EnrollErOttParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the enroll er ott params
 func (o *EnrollErOttParams) WithHTTPClient(client *http.Client) *EnrollErOttParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the enroll er ott params
 func (o *EnrollErOttParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithErOttEnrollmentRequest adds the erOttEnrollmentRequest to the enroll er ott params
 func (o *EnrollErOttParams) WithErOttEnrollmentRequest(erOttEnrollmentRequest *rest_model.ErOttEnrollmentRequest) *EnrollErOttParams {
+    logtrace.LogWithFunctionName()
 	o.SetErOttEnrollmentRequest(erOttEnrollmentRequest)
 	return o
 }
 
 // SetErOttEnrollmentRequest adds the erOttEnrollmentRequest to the enroll er ott params
 func (o *EnrollErOttParams) SetErOttEnrollmentRequest(erOttEnrollmentRequest *rest_model.ErOttEnrollmentRequest) {
+    logtrace.LogWithFunctionName()
 	o.ErOttEnrollmentRequest = erOttEnrollmentRequest
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *EnrollErOttParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

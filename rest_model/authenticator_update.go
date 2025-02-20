@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -57,6 +58,7 @@ type AuthenticatorUpdate struct {
 
 // Validate validates this authenticator update
 func (m *AuthenticatorUpdate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validatePassword(formats); err != nil {
@@ -78,6 +80,7 @@ func (m *AuthenticatorUpdate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *AuthenticatorUpdate) validatePassword(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("password", "body", m.Password); err != nil {
 		return err
@@ -102,6 +105,7 @@ func (m *AuthenticatorUpdate) validatePassword(formats strfmt.Registry) error {
 }
 
 func (m *AuthenticatorUpdate) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -121,6 +125,7 @@ func (m *AuthenticatorUpdate) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *AuthenticatorUpdate) validateUsername(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("username", "body", m.Username); err != nil {
 		return err
@@ -146,6 +151,7 @@ func (m *AuthenticatorUpdate) validateUsername(formats strfmt.Registry) error {
 
 // ContextValidate validate this authenticator update based on the context it is used
 func (m *AuthenticatorUpdate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidatePassword(ctx, formats); err != nil {
@@ -167,6 +173,7 @@ func (m *AuthenticatorUpdate) ContextValidate(ctx context.Context, formats strfm
 }
 
 func (m *AuthenticatorUpdate) contextValidatePassword(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Password != nil {
 
@@ -184,6 +191,7 @@ func (m *AuthenticatorUpdate) contextValidatePassword(ctx context.Context, forma
 }
 
 func (m *AuthenticatorUpdate) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -205,6 +213,7 @@ func (m *AuthenticatorUpdate) contextValidateTags(ctx context.Context, formats s
 }
 
 func (m *AuthenticatorUpdate) contextValidateUsername(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Username != nil {
 
@@ -223,6 +232,7 @@ func (m *AuthenticatorUpdate) contextValidateUsername(ctx context.Context, forma
 
 // MarshalBinary interface implementation
 func (m *AuthenticatorUpdate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -231,6 +241,7 @@ func (m *AuthenticatorUpdate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *AuthenticatorUpdate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res AuthenticatorUpdate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

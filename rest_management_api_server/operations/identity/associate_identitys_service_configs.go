@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type AssociateIdentitysServiceConfigsHandlerFunc func(AssociateIdentitysServiceC
 
 // Handle executing the request and returning a response
 func (fn AssociateIdentitysServiceConfigsHandlerFunc) Handle(params AssociateIdentitysServiceConfigsParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type AssociateIdentitysServiceConfigsHandler interface {
 
 // NewAssociateIdentitysServiceConfigs creates a new http.Handler for the associate identitys service configs operation
 func NewAssociateIdentitysServiceConfigs(ctx *middleware.Context, handler AssociateIdentitysServiceConfigsHandler) *AssociateIdentitysServiceConfigs {
+    logtrace.LogWithFunctionName()
 	return &AssociateIdentitysServiceConfigs{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type AssociateIdentitysServiceConfigs struct {
 }
 
 func (o *AssociateIdentitysServiceConfigs) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

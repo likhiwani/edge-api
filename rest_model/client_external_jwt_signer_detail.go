@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -68,6 +69,7 @@ type ClientExternalJWTSignerDetail struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *ClientExternalJWTSignerDetail) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 BaseEntity
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -110,6 +112,7 @@ func (m *ClientExternalJWTSignerDetail) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m ClientExternalJWTSignerDetail) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.BaseEntity)
@@ -153,6 +156,7 @@ func (m ClientExternalJWTSignerDetail) MarshalJSON() ([]byte, error) {
 
 // Validate validates this client external Jwt signer detail
 func (m *ClientExternalJWTSignerDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -179,6 +183,7 @@ func (m *ClientExternalJWTSignerDetail) Validate(formats strfmt.Registry) error 
 }
 
 func (m *ClientExternalJWTSignerDetail) validateExternalAuthURL(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("externalAuthUrl", "body", m.ExternalAuthURL); err != nil {
 		return err
@@ -188,6 +193,7 @@ func (m *ClientExternalJWTSignerDetail) validateExternalAuthURL(formats strfmt.R
 }
 
 func (m *ClientExternalJWTSignerDetail) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -197,6 +203,7 @@ func (m *ClientExternalJWTSignerDetail) validateName(formats strfmt.Registry) er
 }
 
 func (m *ClientExternalJWTSignerDetail) validateTargetToken(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.TargetToken) { // not required
 		return nil
@@ -218,6 +225,7 @@ func (m *ClientExternalJWTSignerDetail) validateTargetToken(formats strfmt.Regis
 
 // ContextValidate validate this client external Jwt signer detail based on the context it is used
 func (m *ClientExternalJWTSignerDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -236,6 +244,7 @@ func (m *ClientExternalJWTSignerDetail) ContextValidate(ctx context.Context, for
 }
 
 func (m *ClientExternalJWTSignerDetail) contextValidateTargetToken(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.TargetToken != nil {
 
@@ -258,6 +267,7 @@ func (m *ClientExternalJWTSignerDetail) contextValidateTargetToken(ctx context.C
 
 // MarshalBinary interface implementation
 func (m *ClientExternalJWTSignerDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -266,6 +276,7 @@ func (m *ClientExternalJWTSignerDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ClientExternalJWTSignerDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ClientExternalJWTSignerDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

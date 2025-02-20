@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DetailCurrentIdentityAuthenticatorOK struct {
 
 // NewDetailCurrentIdentityAuthenticatorOK creates DetailCurrentIdentityAuthenticatorOK with default headers values
 func NewDetailCurrentIdentityAuthenticatorOK() *DetailCurrentIdentityAuthenticatorOK {
+    logtrace.LogWithFunctionName()
 
 	return &DetailCurrentIdentityAuthenticatorOK{}
 }
 
 // WithPayload adds the payload to the detail current identity authenticator o k response
 func (o *DetailCurrentIdentityAuthenticatorOK) WithPayload(payload *rest_model.DetailAuthenticatorEnvelope) *DetailCurrentIdentityAuthenticatorOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail current identity authenticator o k response
 func (o *DetailCurrentIdentityAuthenticatorOK) SetPayload(payload *rest_model.DetailAuthenticatorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailCurrentIdentityAuthenticatorOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DetailCurrentIdentityAuthenticatorUnauthorized struct {
 
 // NewDetailCurrentIdentityAuthenticatorUnauthorized creates DetailCurrentIdentityAuthenticatorUnauthorized with default headers values
 func NewDetailCurrentIdentityAuthenticatorUnauthorized() *DetailCurrentIdentityAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DetailCurrentIdentityAuthenticatorUnauthorized{}
 }
 
 // WithPayload adds the payload to the detail current identity authenticator unauthorized response
 func (o *DetailCurrentIdentityAuthenticatorUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailCurrentIdentityAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail current identity authenticator unauthorized response
 func (o *DetailCurrentIdentityAuthenticatorUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailCurrentIdentityAuthenticatorUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DetailCurrentIdentityAuthenticatorNotFound struct {
 
 // NewDetailCurrentIdentityAuthenticatorNotFound creates DetailCurrentIdentityAuthenticatorNotFound with default headers values
 func NewDetailCurrentIdentityAuthenticatorNotFound() *DetailCurrentIdentityAuthenticatorNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DetailCurrentIdentityAuthenticatorNotFound{}
 }
 
 // WithPayload adds the payload to the detail current identity authenticator not found response
 func (o *DetailCurrentIdentityAuthenticatorNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailCurrentIdentityAuthenticatorNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail current identity authenticator not found response
 func (o *DetailCurrentIdentityAuthenticatorNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailCurrentIdentityAuthenticatorNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {

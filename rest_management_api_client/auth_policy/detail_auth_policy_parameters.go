@@ -30,6 +30,7 @@ package auth_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDetailAuthPolicyParams() *DetailAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	return &DetailAuthPolicyParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDetailAuthPolicyParams() *DetailAuthPolicyParams {
 // NewDetailAuthPolicyParamsWithTimeout creates a new DetailAuthPolicyParams object
 // with the ability to set a timeout on a request.
 func NewDetailAuthPolicyParamsWithTimeout(timeout time.Duration) *DetailAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	return &DetailAuthPolicyParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDetailAuthPolicyParamsWithTimeout(timeout time.Duration) *DetailAuthPoli
 // NewDetailAuthPolicyParamsWithContext creates a new DetailAuthPolicyParams object
 // with the ability to set a context for a request.
 func NewDetailAuthPolicyParamsWithContext(ctx context.Context) *DetailAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	return &DetailAuthPolicyParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDetailAuthPolicyParamsWithContext(ctx context.Context) *DetailAuthPolicy
 // NewDetailAuthPolicyParamsWithHTTPClient creates a new DetailAuthPolicyParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDetailAuthPolicyParamsWithHTTPClient(client *http.Client) *DetailAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	return &DetailAuthPolicyParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DetailAuthPolicyParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailAuthPolicyParams) WithDefaults() *DetailAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DetailAuthPolicyParams) WithDefaults() *DetailAuthPolicyParams {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailAuthPolicyParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the detail auth policy params
 func (o *DetailAuthPolicyParams) WithTimeout(timeout time.Duration) *DetailAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the detail auth policy params
 func (o *DetailAuthPolicyParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the detail auth policy params
 func (o *DetailAuthPolicyParams) WithContext(ctx context.Context) *DetailAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the detail auth policy params
 func (o *DetailAuthPolicyParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the detail auth policy params
 func (o *DetailAuthPolicyParams) WithHTTPClient(client *http.Client) *DetailAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the detail auth policy params
 func (o *DetailAuthPolicyParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the detail auth policy params
 func (o *DetailAuthPolicyParams) WithID(id string) *DetailAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the detail auth policy params
 func (o *DetailAuthPolicyParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DetailAuthPolicyParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

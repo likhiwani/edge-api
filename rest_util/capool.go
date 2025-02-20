@@ -21,13 +21,16 @@ import (
 	"crypto/x509"
 	"encoding/base64"
 	"fmt"
-	"github.com/fullsailor/pkcs7"
 	"io"
+	"ztna-core/ztna/logtrace"
+
+	"github.com/fullsailor/pkcs7"
 )
 
 // VerifyController will attempt to use the provided x509.CertPool to connect to the provided controller.
 // If successful true an no error will be returned.
 func VerifyController(controllerAddr string, caPool *x509.CertPool) (bool, error) {
+	logtrace.LogWithFunctionName()
 	tlsConfig, err := NewTlsConfig()
 
 	if err != nil {
@@ -54,6 +57,7 @@ func VerifyController(controllerAddr string, caPool *x509.CertPool) (bool, error
 // GetControllerWellKnownCasWithTlsConfig will attempt to connect to a controller and retrieve its PKCS11 well-known CA
 // bundle with a specific TLS config.
 func GetControllerWellKnownCasWithTlsConfig(controllerAddr string, tlsConfig *tls.Config) ([]*x509.Certificate, error) {
+	logtrace.LogWithFunctionName()
 	httpClient, err := NewHttpClientWithTlsConfig(tlsConfig)
 
 	if err != nil {
@@ -83,6 +87,7 @@ func GetControllerWellKnownCasWithTlsConfig(controllerAddr string, tlsConfig *tl
 
 // GetControllerWellKnownCas will attempt to connect to a controller and retrieve its PKCS11 well-known CA bundle.
 func GetControllerWellKnownCas(controllerAddr string) ([]*x509.Certificate, error) {
+	logtrace.LogWithFunctionName()
 	tlsConfig, err := NewTlsConfig()
 
 	if err != nil {
@@ -97,6 +102,7 @@ func GetControllerWellKnownCas(controllerAddr string) ([]*x509.Certificate, erro
 // GetControllerWellKnownCaPoolWithTlsConfig will attempt to connect to a controller and retrieve its PKCS11 well-known
 // CA bundle as an x509.CertPool using a pre-configured TLS config.
 func GetControllerWellKnownCaPoolWithTlsConfig(controllerAddr string, tlsConfig *tls.Config) (*x509.CertPool, error) {
+	logtrace.LogWithFunctionName()
 	certs, err := GetControllerWellKnownCasWithTlsConfig(controllerAddr, tlsConfig)
 
 	if err != nil {
@@ -115,6 +121,7 @@ func GetControllerWellKnownCaPoolWithTlsConfig(controllerAddr string, tlsConfig 
 // GetControllerWellKnownCaPool will attempt to connect to a controller and retrieve its PKCS11 well-known CA bundle as
 // an x509.CertPool.
 func GetControllerWellKnownCaPool(controllerAddr string) (*x509.CertPool, error) {
+	logtrace.LogWithFunctionName()
 	certs, err := GetControllerWellKnownCas(controllerAddr)
 
 	if err != nil {

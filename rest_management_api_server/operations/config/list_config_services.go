@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type ListConfigServicesHandlerFunc func(ListConfigServicesParams, interface{}) m
 
 // Handle executing the request and returning a response
 func (fn ListConfigServicesHandlerFunc) Handle(params ListConfigServicesParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type ListConfigServicesHandler interface {
 
 // NewListConfigServices creates a new http.Handler for the list config services operation
 func NewListConfigServices(ctx *middleware.Context, handler ListConfigServicesHandler) *ListConfigServices {
+    logtrace.LogWithFunctionName()
 	return &ListConfigServices{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type ListConfigServices struct {
 }
 
 func (o *ListConfigServices) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

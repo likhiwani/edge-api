@@ -30,6 +30,7 @@ package session
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type CreateSessionHandlerFunc func(CreateSessionParams, interface{}) middleware.
 
 // Handle executing the request and returning a response
 func (fn CreateSessionHandlerFunc) Handle(params CreateSessionParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type CreateSessionHandler interface {
 
 // NewCreateSession creates a new http.Handler for the create session operation
 func NewCreateSession(ctx *middleware.Context, handler CreateSessionHandler) *CreateSession {
+    logtrace.LogWithFunctionName()
 	return &CreateSession{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type CreateSession struct {
 }
 
 func (o *CreateSession) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

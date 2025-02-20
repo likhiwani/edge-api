@@ -19,11 +19,13 @@ package rest_util
 import (
 	"fmt"
 	"ztna-core/edge-api/rest_model"
+	"ztna-core/ztna/logtrace"
 )
 
 // WrapErr return an error that has been wrapped so that err.Error() prints useful API error information if possible.
 // If the error does not support deep API error information, the error is returned as is.
 func WrapErr(err error) error {
+	logtrace.LogWithFunctionName()
 	if errWithPayload, ok := err.(ApiErrorPayload); ok {
 		apiErrEnv := errWithPayload.GetPayload()
 
@@ -46,10 +48,12 @@ type APIFormattedError struct {
 }
 
 func (e *APIFormattedError) Unwrap() error {
+	logtrace.LogWithFunctionName()
 	return e.source
 }
 
 func (e *APIFormattedError) Error() string {
+	logtrace.LogWithFunctionName()
 	causeStr := ""
 
 	if e.Cause != nil {

@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -73,6 +74,7 @@ type EdgeRouterCreate struct {
 
 // Validate validates this edge router create
 func (m *EdgeRouterCreate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateAppData(formats); err != nil {
@@ -102,6 +104,7 @@ func (m *EdgeRouterCreate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *EdgeRouterCreate) validateAppData(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.AppData) { // not required
 		return nil
 	}
@@ -121,6 +124,7 @@ func (m *EdgeRouterCreate) validateAppData(formats strfmt.Registry) error {
 }
 
 func (m *EdgeRouterCreate) validateCost(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Cost) { // not required
 		return nil
 	}
@@ -137,6 +141,7 @@ func (m *EdgeRouterCreate) validateCost(formats strfmt.Registry) error {
 }
 
 func (m *EdgeRouterCreate) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -146,6 +151,7 @@ func (m *EdgeRouterCreate) validateName(formats strfmt.Registry) error {
 }
 
 func (m *EdgeRouterCreate) validateRoleAttributes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.RoleAttributes) { // not required
 		return nil
 	}
@@ -165,6 +171,7 @@ func (m *EdgeRouterCreate) validateRoleAttributes(formats strfmt.Registry) error
 }
 
 func (m *EdgeRouterCreate) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -185,6 +192,7 @@ func (m *EdgeRouterCreate) validateTags(formats strfmt.Registry) error {
 
 // ContextValidate validate this edge router create based on the context it is used
 func (m *EdgeRouterCreate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateAppData(ctx, formats); err != nil {
@@ -206,6 +214,7 @@ func (m *EdgeRouterCreate) ContextValidate(ctx context.Context, formats strfmt.R
 }
 
 func (m *EdgeRouterCreate) contextValidateAppData(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.AppData != nil {
 
@@ -227,6 +236,7 @@ func (m *EdgeRouterCreate) contextValidateAppData(ctx context.Context, formats s
 }
 
 func (m *EdgeRouterCreate) contextValidateRoleAttributes(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.RoleAttributes != nil {
 		if err := m.RoleAttributes.ContextValidate(ctx, formats); err != nil {
@@ -243,6 +253,7 @@ func (m *EdgeRouterCreate) contextValidateRoleAttributes(ctx context.Context, fo
 }
 
 func (m *EdgeRouterCreate) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -265,6 +276,7 @@ func (m *EdgeRouterCreate) contextValidateTags(ctx context.Context, formats strf
 
 // MarshalBinary interface implementation
 func (m *EdgeRouterCreate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -273,6 +285,7 @@ func (m *EdgeRouterCreate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *EdgeRouterCreate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res EdgeRouterCreate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

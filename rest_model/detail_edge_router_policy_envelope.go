@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -54,6 +55,7 @@ type DetailEdgeRouterPolicyEnvelope struct {
 
 // Validate validates this detail edge router policy envelope
 func (m *DetailEdgeRouterPolicyEnvelope) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateData(formats); err != nil {
@@ -71,6 +73,7 @@ func (m *DetailEdgeRouterPolicyEnvelope) Validate(formats strfmt.Registry) error
 }
 
 func (m *DetailEdgeRouterPolicyEnvelope) validateData(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("data", "body", m.Data); err != nil {
 		return err
@@ -91,6 +94,7 @@ func (m *DetailEdgeRouterPolicyEnvelope) validateData(formats strfmt.Registry) e
 }
 
 func (m *DetailEdgeRouterPolicyEnvelope) validateMeta(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("meta", "body", m.Meta); err != nil {
 		return err
@@ -112,6 +116,7 @@ func (m *DetailEdgeRouterPolicyEnvelope) validateMeta(formats strfmt.Registry) e
 
 // ContextValidate validate this detail edge router policy envelope based on the context it is used
 func (m *DetailEdgeRouterPolicyEnvelope) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateData(ctx, formats); err != nil {
@@ -129,6 +134,7 @@ func (m *DetailEdgeRouterPolicyEnvelope) ContextValidate(ctx context.Context, fo
 }
 
 func (m *DetailEdgeRouterPolicyEnvelope) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Data != nil {
 
@@ -146,6 +152,7 @@ func (m *DetailEdgeRouterPolicyEnvelope) contextValidateData(ctx context.Context
 }
 
 func (m *DetailEdgeRouterPolicyEnvelope) contextValidateMeta(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Meta != nil {
 
@@ -164,6 +171,7 @@ func (m *DetailEdgeRouterPolicyEnvelope) contextValidateMeta(ctx context.Context
 
 // MarshalBinary interface implementation
 func (m *DetailEdgeRouterPolicyEnvelope) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -172,6 +180,7 @@ func (m *DetailEdgeRouterPolicyEnvelope) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *DetailEdgeRouterPolicyEnvelope) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res DetailEdgeRouterPolicyEnvelope
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

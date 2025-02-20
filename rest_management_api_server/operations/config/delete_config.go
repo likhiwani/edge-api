@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type DeleteConfigHandlerFunc func(DeleteConfigParams, interface{}) middleware.Re
 
 // Handle executing the request and returning a response
 func (fn DeleteConfigHandlerFunc) Handle(params DeleteConfigParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type DeleteConfigHandler interface {
 
 // NewDeleteConfig creates a new http.Handler for the delete config operation
 func NewDeleteConfig(ctx *middleware.Context, handler DeleteConfigHandler) *DeleteConfig {
+    logtrace.LogWithFunctionName()
 	return &DeleteConfig{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type DeleteConfig struct {
 }
 
 func (o *DeleteConfig) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

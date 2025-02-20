@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type VerifyMfaHandlerFunc func(VerifyMfaParams, interface{}) middleware.Responde
 
 // Handle executing the request and returning a response
 func (fn VerifyMfaHandlerFunc) Handle(params VerifyMfaParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type VerifyMfaHandler interface {
 
 // NewVerifyMfa creates a new http.Handler for the verify mfa operation
 func NewVerifyMfa(ctx *middleware.Context, handler VerifyMfaHandler) *VerifyMfa {
+    logtrace.LogWithFunctionName()
 	return &VerifyMfa{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type VerifyMfa struct {
 }
 
 func (o *VerifyMfa) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

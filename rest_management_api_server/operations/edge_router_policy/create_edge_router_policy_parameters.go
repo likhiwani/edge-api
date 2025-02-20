@@ -30,6 +30,7 @@ package edge_router_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"io"
 	"net/http"
 
@@ -45,6 +46,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewCreateEdgeRouterPolicyParams() CreateEdgeRouterPolicyParams {
+    logtrace.LogWithFunctionName()
 
 	return CreateEdgeRouterPolicyParams{}
 }
@@ -70,6 +72,7 @@ type CreateEdgeRouterPolicyParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewCreateEdgeRouterPolicyParams() beforehand.
 func (o *CreateEdgeRouterPolicyParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r

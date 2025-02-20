@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -41,6 +42,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewDetailCaParams() DetailCaParams {
+    logtrace.LogWithFunctionName()
 
 	return DetailCaParams{}
 }
@@ -66,6 +68,7 @@ type DetailCaParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewDetailCaParams() beforehand.
 func (o *DetailCaParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r
@@ -82,6 +85,7 @@ func (o *DetailCaParams) BindRequest(r *http.Request, route *middleware.MatchedR
 
 // bindID binds and validates parameter ID from path.
 func (o *DetailCaParams) bindID(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]

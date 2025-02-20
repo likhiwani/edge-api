@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/strfmt"
@@ -56,16 +57,19 @@ type PostureCheckMfaProperties struct {
 
 // Validate validates this posture check mfa properties
 func (m *PostureCheckMfaProperties) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // ContextValidate validates this posture check mfa properties based on context it is used
 func (m *PostureCheckMfaProperties) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *PostureCheckMfaProperties) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -74,6 +78,7 @@ func (m *PostureCheckMfaProperties) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureCheckMfaProperties) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureCheckMfaProperties
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

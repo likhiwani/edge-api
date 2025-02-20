@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type EnrollmentChallengeReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *EnrollmentChallengeReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewEnrollmentChallengeOK()
@@ -73,6 +75,7 @@ func (o *EnrollmentChallengeReader) ReadResponse(response runtime.ClientResponse
 
 // NewEnrollmentChallengeOK creates a EnrollmentChallengeOK with default headers values
 func NewEnrollmentChallengeOK() *EnrollmentChallengeOK {
+    logtrace.LogWithFunctionName()
 	return &EnrollmentChallengeOK{}
 }
 
@@ -87,49 +90,59 @@ type EnrollmentChallengeOK struct {
 
 // IsSuccess returns true when this enrollment challenge o k response has a 2xx status code
 func (o *EnrollmentChallengeOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this enrollment challenge o k response has a 3xx status code
 func (o *EnrollmentChallengeOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this enrollment challenge o k response has a 4xx status code
 func (o *EnrollmentChallengeOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this enrollment challenge o k response has a 5xx status code
 func (o *EnrollmentChallengeOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this enrollment challenge o k response a status code equal to that given
 func (o *EnrollmentChallengeOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the enrollment challenge o k response
 func (o *EnrollmentChallengeOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *EnrollmentChallengeOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/challenge][%d] enrollmentChallengeOK %s", 200, payload)
 }
 
 func (o *EnrollmentChallengeOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/challenge][%d] enrollmentChallengeOK %s", 200, payload)
 }
 
 func (o *EnrollmentChallengeOK) GetPayload() *rest_model.NonceSignature {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *EnrollmentChallengeOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.NonceSignature)
 
@@ -143,6 +156,7 @@ func (o *EnrollmentChallengeOK) readResponse(response runtime.ClientResponse, co
 
 // NewEnrollmentChallengeBadRequest creates a EnrollmentChallengeBadRequest with default headers values
 func NewEnrollmentChallengeBadRequest() *EnrollmentChallengeBadRequest {
+    logtrace.LogWithFunctionName()
 	return &EnrollmentChallengeBadRequest{}
 }
 
@@ -157,49 +171,59 @@ type EnrollmentChallengeBadRequest struct {
 
 // IsSuccess returns true when this enrollment challenge bad request response has a 2xx status code
 func (o *EnrollmentChallengeBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this enrollment challenge bad request response has a 3xx status code
 func (o *EnrollmentChallengeBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this enrollment challenge bad request response has a 4xx status code
 func (o *EnrollmentChallengeBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this enrollment challenge bad request response has a 5xx status code
 func (o *EnrollmentChallengeBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this enrollment challenge bad request response a status code equal to that given
 func (o *EnrollmentChallengeBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the enrollment challenge bad request response
 func (o *EnrollmentChallengeBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *EnrollmentChallengeBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/challenge][%d] enrollmentChallengeBadRequest %s", 400, payload)
 }
 
 func (o *EnrollmentChallengeBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/challenge][%d] enrollmentChallengeBadRequest %s", 400, payload)
 }
 
 func (o *EnrollmentChallengeBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *EnrollmentChallengeBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -213,6 +237,7 @@ func (o *EnrollmentChallengeBadRequest) readResponse(response runtime.ClientResp
 
 // NewEnrollmentChallengeTooManyRequests creates a EnrollmentChallengeTooManyRequests with default headers values
 func NewEnrollmentChallengeTooManyRequests() *EnrollmentChallengeTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &EnrollmentChallengeTooManyRequests{}
 }
 
@@ -227,49 +252,59 @@ type EnrollmentChallengeTooManyRequests struct {
 
 // IsSuccess returns true when this enrollment challenge too many requests response has a 2xx status code
 func (o *EnrollmentChallengeTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this enrollment challenge too many requests response has a 3xx status code
 func (o *EnrollmentChallengeTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this enrollment challenge too many requests response has a 4xx status code
 func (o *EnrollmentChallengeTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this enrollment challenge too many requests response has a 5xx status code
 func (o *EnrollmentChallengeTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this enrollment challenge too many requests response a status code equal to that given
 func (o *EnrollmentChallengeTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the enrollment challenge too many requests response
 func (o *EnrollmentChallengeTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *EnrollmentChallengeTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/challenge][%d] enrollmentChallengeTooManyRequests %s", 429, payload)
 }
 
 func (o *EnrollmentChallengeTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/challenge][%d] enrollmentChallengeTooManyRequests %s", 429, payload)
 }
 
 func (o *EnrollmentChallengeTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *EnrollmentChallengeTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

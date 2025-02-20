@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"strconv"
 
@@ -111,6 +112,7 @@ type Jwk struct {
 
 // Validate validates this jwk
 func (m *Jwk) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateKty(formats); err != nil {
@@ -128,6 +130,7 @@ func (m *Jwk) Validate(formats strfmt.Registry) error {
 }
 
 func (m *Jwk) validateKty(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("kty", "body", m.Kty); err != nil {
 		return err
@@ -137,6 +140,7 @@ func (m *Jwk) validateKty(formats strfmt.Registry) error {
 }
 
 func (m *Jwk) validateOth(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Oth) { // not required
 		return nil
 	}
@@ -164,6 +168,7 @@ func (m *Jwk) validateOth(formats strfmt.Registry) error {
 
 // ContextValidate validate this jwk based on the context it is used
 func (m *Jwk) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateOth(ctx, formats); err != nil {
@@ -177,6 +182,7 @@ func (m *Jwk) ContextValidate(ctx context.Context, formats strfmt.Registry) erro
 }
 
 func (m *Jwk) contextValidateOth(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	for i := 0; i < len(m.Oth); i++ {
 
@@ -203,6 +209,7 @@ func (m *Jwk) contextValidateOth(ctx context.Context, formats strfmt.Registry) e
 
 // MarshalBinary interface implementation
 func (m *Jwk) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -211,6 +218,7 @@ func (m *Jwk) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *Jwk) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res Jwk
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

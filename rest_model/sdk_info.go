@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -70,6 +71,7 @@ type SdkInfo struct {
 
 // Validate validates this sdk info
 func (m *SdkInfo) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateAppID(formats); err != nil {
@@ -103,6 +105,7 @@ func (m *SdkInfo) Validate(formats strfmt.Registry) error {
 }
 
 func (m *SdkInfo) validateAppID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.AppID) { // not required
 		return nil
 	}
@@ -115,6 +118,7 @@ func (m *SdkInfo) validateAppID(formats strfmt.Registry) error {
 }
 
 func (m *SdkInfo) validateAppVersion(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.AppVersion) { // not required
 		return nil
 	}
@@ -127,6 +131,7 @@ func (m *SdkInfo) validateAppVersion(formats strfmt.Registry) error {
 }
 
 func (m *SdkInfo) validateBranch(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Branch) { // not required
 		return nil
 	}
@@ -139,6 +144,7 @@ func (m *SdkInfo) validateBranch(formats strfmt.Registry) error {
 }
 
 func (m *SdkInfo) validateRevision(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Revision) { // not required
 		return nil
 	}
@@ -151,6 +157,7 @@ func (m *SdkInfo) validateRevision(formats strfmt.Registry) error {
 }
 
 func (m *SdkInfo) validateType(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Type) { // not required
 		return nil
 	}
@@ -163,6 +170,7 @@ func (m *SdkInfo) validateType(formats strfmt.Registry) error {
 }
 
 func (m *SdkInfo) validateVersion(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Version) { // not required
 		return nil
 	}
@@ -176,11 +184,13 @@ func (m *SdkInfo) validateVersion(formats strfmt.Registry) error {
 
 // ContextValidate validates this sdk info based on context it is used
 func (m *SdkInfo) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *SdkInfo) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -189,6 +199,7 @@ func (m *SdkInfo) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *SdkInfo) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res SdkInfo
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

@@ -30,6 +30,7 @@ package enrollment
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCreateEnrollmentParams() *CreateEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	return &CreateEnrollmentParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewCreateEnrollmentParams() *CreateEnrollmentParams {
 // NewCreateEnrollmentParamsWithTimeout creates a new CreateEnrollmentParams object
 // with the ability to set a timeout on a request.
 func NewCreateEnrollmentParamsWithTimeout(timeout time.Duration) *CreateEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	return &CreateEnrollmentParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewCreateEnrollmentParamsWithTimeout(timeout time.Duration) *CreateEnrollme
 // NewCreateEnrollmentParamsWithContext creates a new CreateEnrollmentParams object
 // with the ability to set a context for a request.
 func NewCreateEnrollmentParamsWithContext(ctx context.Context) *CreateEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	return &CreateEnrollmentParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewCreateEnrollmentParamsWithContext(ctx context.Context) *CreateEnrollment
 // NewCreateEnrollmentParamsWithHTTPClient creates a new CreateEnrollmentParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewCreateEnrollmentParamsWithHTTPClient(client *http.Client) *CreateEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	return &CreateEnrollmentParams{
 		HTTPClient: client,
 	}
@@ -102,6 +107,7 @@ type CreateEnrollmentParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *CreateEnrollmentParams) WithDefaults() *CreateEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -110,55 +116,65 @@ func (o *CreateEnrollmentParams) WithDefaults() *CreateEnrollmentParams {
 //
 // All values with no default are reset to their zero value.
 func (o *CreateEnrollmentParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the create enrollment params
 func (o *CreateEnrollmentParams) WithTimeout(timeout time.Duration) *CreateEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the create enrollment params
 func (o *CreateEnrollmentParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the create enrollment params
 func (o *CreateEnrollmentParams) WithContext(ctx context.Context) *CreateEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the create enrollment params
 func (o *CreateEnrollmentParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the create enrollment params
 func (o *CreateEnrollmentParams) WithHTTPClient(client *http.Client) *CreateEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the create enrollment params
 func (o *CreateEnrollmentParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithEnrollment adds the enrollment to the create enrollment params
 func (o *CreateEnrollmentParams) WithEnrollment(enrollment *rest_model.EnrollmentCreate) *CreateEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetEnrollment(enrollment)
 	return o
 }
 
 // SetEnrollment adds the enrollment to the create enrollment params
 func (o *CreateEnrollmentParams) SetEnrollment(enrollment *rest_model.EnrollmentCreate) {
+    logtrace.LogWithFunctionName()
 	o.Enrollment = enrollment
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *CreateEnrollmentParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

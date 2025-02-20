@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type EnrollmentChallengeOK struct {
 
 // NewEnrollmentChallengeOK creates EnrollmentChallengeOK with default headers values
 func NewEnrollmentChallengeOK() *EnrollmentChallengeOK {
+    logtrace.LogWithFunctionName()
 
 	return &EnrollmentChallengeOK{}
 }
 
 // WithPayload adds the payload to the enrollment challenge o k response
 func (o *EnrollmentChallengeOK) WithPayload(payload *rest_model.NonceSignature) *EnrollmentChallengeOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the enrollment challenge o k response
 func (o *EnrollmentChallengeOK) SetPayload(payload *rest_model.NonceSignature) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *EnrollmentChallengeOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type EnrollmentChallengeBadRequest struct {
 
 // NewEnrollmentChallengeBadRequest creates EnrollmentChallengeBadRequest with default headers values
 func NewEnrollmentChallengeBadRequest() *EnrollmentChallengeBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &EnrollmentChallengeBadRequest{}
 }
 
 // WithPayload adds the payload to the enrollment challenge bad request response
 func (o *EnrollmentChallengeBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *EnrollmentChallengeBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the enrollment challenge bad request response
 func (o *EnrollmentChallengeBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *EnrollmentChallengeBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type EnrollmentChallengeTooManyRequests struct {
 
 // NewEnrollmentChallengeTooManyRequests creates EnrollmentChallengeTooManyRequests with default headers values
 func NewEnrollmentChallengeTooManyRequests() *EnrollmentChallengeTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &EnrollmentChallengeTooManyRequests{}
 }
 
 // WithPayload adds the payload to the enrollment challenge too many requests response
 func (o *EnrollmentChallengeTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *EnrollmentChallengeTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the enrollment challenge too many requests response
 func (o *EnrollmentChallengeTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *EnrollmentChallengeTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {

@@ -30,6 +30,7 @@ package edge_router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ReEnrollEdgeRouterReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ReEnrollEdgeRouterReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewReEnrollEdgeRouterOK()
@@ -85,6 +87,7 @@ func (o *ReEnrollEdgeRouterReader) ReadResponse(response runtime.ClientResponse,
 
 // NewReEnrollEdgeRouterOK creates a ReEnrollEdgeRouterOK with default headers values
 func NewReEnrollEdgeRouterOK() *ReEnrollEdgeRouterOK {
+    logtrace.LogWithFunctionName()
 	return &ReEnrollEdgeRouterOK{}
 }
 
@@ -99,49 +102,59 @@ type ReEnrollEdgeRouterOK struct {
 
 // IsSuccess returns true when this re enroll edge router o k response has a 2xx status code
 func (o *ReEnrollEdgeRouterOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this re enroll edge router o k response has a 3xx status code
 func (o *ReEnrollEdgeRouterOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this re enroll edge router o k response has a 4xx status code
 func (o *ReEnrollEdgeRouterOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this re enroll edge router o k response has a 5xx status code
 func (o *ReEnrollEdgeRouterOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this re enroll edge router o k response a status code equal to that given
 func (o *ReEnrollEdgeRouterOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the re enroll edge router o k response
 func (o *ReEnrollEdgeRouterOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ReEnrollEdgeRouterOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterOK %s", 200, payload)
 }
 
 func (o *ReEnrollEdgeRouterOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterOK %s", 200, payload)
 }
 
 func (o *ReEnrollEdgeRouterOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ReEnrollEdgeRouterOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -155,6 +168,7 @@ func (o *ReEnrollEdgeRouterOK) readResponse(response runtime.ClientResponse, con
 
 // NewReEnrollEdgeRouterUnauthorized creates a ReEnrollEdgeRouterUnauthorized with default headers values
 func NewReEnrollEdgeRouterUnauthorized() *ReEnrollEdgeRouterUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &ReEnrollEdgeRouterUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type ReEnrollEdgeRouterUnauthorized struct {
 
 // IsSuccess returns true when this re enroll edge router unauthorized response has a 2xx status code
 func (o *ReEnrollEdgeRouterUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this re enroll edge router unauthorized response has a 3xx status code
 func (o *ReEnrollEdgeRouterUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this re enroll edge router unauthorized response has a 4xx status code
 func (o *ReEnrollEdgeRouterUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this re enroll edge router unauthorized response has a 5xx status code
 func (o *ReEnrollEdgeRouterUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this re enroll edge router unauthorized response a status code equal to that given
 func (o *ReEnrollEdgeRouterUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the re enroll edge router unauthorized response
 func (o *ReEnrollEdgeRouterUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *ReEnrollEdgeRouterUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterUnauthorized %s", 401, payload)
 }
 
 func (o *ReEnrollEdgeRouterUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterUnauthorized %s", 401, payload)
 }
 
 func (o *ReEnrollEdgeRouterUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ReEnrollEdgeRouterUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *ReEnrollEdgeRouterUnauthorized) readResponse(response runtime.ClientRes
 
 // NewReEnrollEdgeRouterNotFound creates a ReEnrollEdgeRouterNotFound with default headers values
 func NewReEnrollEdgeRouterNotFound() *ReEnrollEdgeRouterNotFound {
+    logtrace.LogWithFunctionName()
 	return &ReEnrollEdgeRouterNotFound{}
 }
 
@@ -239,49 +264,59 @@ type ReEnrollEdgeRouterNotFound struct {
 
 // IsSuccess returns true when this re enroll edge router not found response has a 2xx status code
 func (o *ReEnrollEdgeRouterNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this re enroll edge router not found response has a 3xx status code
 func (o *ReEnrollEdgeRouterNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this re enroll edge router not found response has a 4xx status code
 func (o *ReEnrollEdgeRouterNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this re enroll edge router not found response has a 5xx status code
 func (o *ReEnrollEdgeRouterNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this re enroll edge router not found response a status code equal to that given
 func (o *ReEnrollEdgeRouterNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the re enroll edge router not found response
 func (o *ReEnrollEdgeRouterNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *ReEnrollEdgeRouterNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterNotFound %s", 404, payload)
 }
 
 func (o *ReEnrollEdgeRouterNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterNotFound %s", 404, payload)
 }
 
 func (o *ReEnrollEdgeRouterNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ReEnrollEdgeRouterNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *ReEnrollEdgeRouterNotFound) readResponse(response runtime.ClientRespons
 
 // NewReEnrollEdgeRouterTooManyRequests creates a ReEnrollEdgeRouterTooManyRequests with default headers values
 func NewReEnrollEdgeRouterTooManyRequests() *ReEnrollEdgeRouterTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &ReEnrollEdgeRouterTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type ReEnrollEdgeRouterTooManyRequests struct {
 
 // IsSuccess returns true when this re enroll edge router too many requests response has a 2xx status code
 func (o *ReEnrollEdgeRouterTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this re enroll edge router too many requests response has a 3xx status code
 func (o *ReEnrollEdgeRouterTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this re enroll edge router too many requests response has a 4xx status code
 func (o *ReEnrollEdgeRouterTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this re enroll edge router too many requests response has a 5xx status code
 func (o *ReEnrollEdgeRouterTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this re enroll edge router too many requests response a status code equal to that given
 func (o *ReEnrollEdgeRouterTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the re enroll edge router too many requests response
 func (o *ReEnrollEdgeRouterTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *ReEnrollEdgeRouterTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterTooManyRequests %s", 429, payload)
 }
 
 func (o *ReEnrollEdgeRouterTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterTooManyRequests %s", 429, payload)
 }
 
 func (o *ReEnrollEdgeRouterTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ReEnrollEdgeRouterTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *ReEnrollEdgeRouterTooManyRequests) readResponse(response runtime.Client
 
 // NewReEnrollEdgeRouterServiceUnavailable creates a ReEnrollEdgeRouterServiceUnavailable with default headers values
 func NewReEnrollEdgeRouterServiceUnavailable() *ReEnrollEdgeRouterServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &ReEnrollEdgeRouterServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type ReEnrollEdgeRouterServiceUnavailable struct {
 
 // IsSuccess returns true when this re enroll edge router service unavailable response has a 2xx status code
 func (o *ReEnrollEdgeRouterServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this re enroll edge router service unavailable response has a 3xx status code
 func (o *ReEnrollEdgeRouterServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this re enroll edge router service unavailable response has a 4xx status code
 func (o *ReEnrollEdgeRouterServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this re enroll edge router service unavailable response has a 5xx status code
 func (o *ReEnrollEdgeRouterServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this re enroll edge router service unavailable response a status code equal to that given
 func (o *ReEnrollEdgeRouterServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the re enroll edge router service unavailable response
 func (o *ReEnrollEdgeRouterServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *ReEnrollEdgeRouterServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterServiceUnavailable %s", 503, payload)
 }
 
 func (o *ReEnrollEdgeRouterServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /edge-routers/{id}/re-enroll][%d] reEnrollEdgeRouterServiceUnavailable %s", 503, payload)
 }
 
 func (o *ReEnrollEdgeRouterServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ReEnrollEdgeRouterServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

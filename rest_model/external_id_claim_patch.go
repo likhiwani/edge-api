@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"encoding/json"
 
@@ -68,6 +69,7 @@ type ExternalIDClaimPatch struct {
 
 // Validate validates this external Id claim patch
 func (m *ExternalIDClaimPatch) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateLocation(formats); err != nil {
@@ -91,6 +93,7 @@ func (m *ExternalIDClaimPatch) Validate(formats strfmt.Registry) error {
 var externalIdClaimPatchTypeLocationPropEnum []interface{}
 
 func init() {
+    logtrace.LogWithFunctionName()
 	var res []string
 	if err := json.Unmarshal([]byte(`["COMMON_NAME","SAN_URI","SAN_EMAIL"]`), &res); err != nil {
 		panic(err)
@@ -114,6 +117,7 @@ const (
 
 // prop value enum
 func (m *ExternalIDClaimPatch) validateLocationEnum(path, location string, value string) error {
+    logtrace.LogWithFunctionName()
 	if err := validate.EnumCase(path, location, value, externalIdClaimPatchTypeLocationPropEnum, true); err != nil {
 		return err
 	}
@@ -121,6 +125,7 @@ func (m *ExternalIDClaimPatch) validateLocationEnum(path, location string, value
 }
 
 func (m *ExternalIDClaimPatch) validateLocation(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Location) { // not required
 		return nil
 	}
@@ -136,6 +141,7 @@ func (m *ExternalIDClaimPatch) validateLocation(formats strfmt.Registry) error {
 var externalIdClaimPatchTypeMatcherPropEnum []interface{}
 
 func init() {
+    logtrace.LogWithFunctionName()
 	var res []string
 	if err := json.Unmarshal([]byte(`["ALL","PREFIX","SUFFIX","SCHEME"]`), &res); err != nil {
 		panic(err)
@@ -162,6 +168,7 @@ const (
 
 // prop value enum
 func (m *ExternalIDClaimPatch) validateMatcherEnum(path, location string, value string) error {
+    logtrace.LogWithFunctionName()
 	if err := validate.EnumCase(path, location, value, externalIdClaimPatchTypeMatcherPropEnum, true); err != nil {
 		return err
 	}
@@ -169,6 +176,7 @@ func (m *ExternalIDClaimPatch) validateMatcherEnum(path, location string, value 
 }
 
 func (m *ExternalIDClaimPatch) validateMatcher(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Matcher) { // not required
 		return nil
 	}
@@ -184,6 +192,7 @@ func (m *ExternalIDClaimPatch) validateMatcher(formats strfmt.Registry) error {
 var externalIdClaimPatchTypeParserPropEnum []interface{}
 
 func init() {
+    logtrace.LogWithFunctionName()
 	var res []string
 	if err := json.Unmarshal([]byte(`["NONE","SPLIT"]`), &res); err != nil {
 		panic(err)
@@ -204,6 +213,7 @@ const (
 
 // prop value enum
 func (m *ExternalIDClaimPatch) validateParserEnum(path, location string, value string) error {
+    logtrace.LogWithFunctionName()
 	if err := validate.EnumCase(path, location, value, externalIdClaimPatchTypeParserPropEnum, true); err != nil {
 		return err
 	}
@@ -211,6 +221,7 @@ func (m *ExternalIDClaimPatch) validateParserEnum(path, location string, value s
 }
 
 func (m *ExternalIDClaimPatch) validateParser(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Parser) { // not required
 		return nil
 	}
@@ -225,11 +236,13 @@ func (m *ExternalIDClaimPatch) validateParser(formats strfmt.Registry) error {
 
 // ContextValidate validates this external Id claim patch based on context it is used
 func (m *ExternalIDClaimPatch) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *ExternalIDClaimPatch) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -238,6 +251,7 @@ func (m *ExternalIDClaimPatch) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ExternalIDClaimPatch) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ExternalIDClaimPatch
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

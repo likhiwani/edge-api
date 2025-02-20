@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type GetIdentityFailedServiceRequestsHandlerFunc func(GetIdentityFailedServiceRe
 
 // Handle executing the request and returning a response
 func (fn GetIdentityFailedServiceRequestsHandlerFunc) Handle(params GetIdentityFailedServiceRequestsParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type GetIdentityFailedServiceRequestsHandler interface {
 
 // NewGetIdentityFailedServiceRequests creates a new http.Handler for the get identity failed service requests operation
 func NewGetIdentityFailedServiceRequests(ctx *middleware.Context, handler GetIdentityFailedServiceRequestsHandler) *GetIdentityFailedServiceRequests {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityFailedServiceRequests{Context: ctx, Handler: handler}
 }
 
@@ -68,6 +71,7 @@ type GetIdentityFailedServiceRequests struct {
 }
 
 func (o *GetIdentityFailedServiceRequests) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

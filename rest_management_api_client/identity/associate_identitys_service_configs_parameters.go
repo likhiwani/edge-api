@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewAssociateIdentitysServiceConfigsParams() *AssociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	return &AssociateIdentitysServiceConfigsParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewAssociateIdentitysServiceConfigsParams() *AssociateIdentitysServiceConfi
 // NewAssociateIdentitysServiceConfigsParamsWithTimeout creates a new AssociateIdentitysServiceConfigsParams object
 // with the ability to set a timeout on a request.
 func NewAssociateIdentitysServiceConfigsParamsWithTimeout(timeout time.Duration) *AssociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	return &AssociateIdentitysServiceConfigsParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewAssociateIdentitysServiceConfigsParamsWithTimeout(timeout time.Duration)
 // NewAssociateIdentitysServiceConfigsParamsWithContext creates a new AssociateIdentitysServiceConfigsParams object
 // with the ability to set a context for a request.
 func NewAssociateIdentitysServiceConfigsParamsWithContext(ctx context.Context) *AssociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	return &AssociateIdentitysServiceConfigsParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewAssociateIdentitysServiceConfigsParamsWithContext(ctx context.Context) *
 // NewAssociateIdentitysServiceConfigsParamsWithHTTPClient creates a new AssociateIdentitysServiceConfigsParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewAssociateIdentitysServiceConfigsParamsWithHTTPClient(client *http.Client) *AssociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	return &AssociateIdentitysServiceConfigsParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type AssociateIdentitysServiceConfigsParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *AssociateIdentitysServiceConfigsParams) WithDefaults() *AssociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *AssociateIdentitysServiceConfigsParams) WithDefaults() *AssociateIdenti
 //
 // All values with no default are reset to their zero value.
 func (o *AssociateIdentitysServiceConfigsParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the associate identitys service configs params
 func (o *AssociateIdentitysServiceConfigsParams) WithTimeout(timeout time.Duration) *AssociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the associate identitys service configs params
 func (o *AssociateIdentitysServiceConfigsParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the associate identitys service configs params
 func (o *AssociateIdentitysServiceConfigsParams) WithContext(ctx context.Context) *AssociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the associate identitys service configs params
 func (o *AssociateIdentitysServiceConfigsParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the associate identitys service configs params
 func (o *AssociateIdentitysServiceConfigsParams) WithHTTPClient(client *http.Client) *AssociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the associate identitys service configs params
 func (o *AssociateIdentitysServiceConfigsParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the associate identitys service configs params
 func (o *AssociateIdentitysServiceConfigsParams) WithID(id string) *AssociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the associate identitys service configs params
 func (o *AssociateIdentitysServiceConfigsParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WithServiceConfigs adds the serviceConfigs to the associate identitys service configs params
 func (o *AssociateIdentitysServiceConfigsParams) WithServiceConfigs(serviceConfigs rest_model.ServiceConfigsAssignList) *AssociateIdentitysServiceConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetServiceConfigs(serviceConfigs)
 	return o
 }
 
 // SetServiceConfigs adds the serviceConfigs to the associate identitys service configs params
 func (o *AssociateIdentitysServiceConfigsParams) SetServiceConfigs(serviceConfigs rest_model.ServiceConfigsAssignList) {
+    logtrace.LogWithFunctionName()
 	o.ServiceConfigs = serviceConfigs
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *AssociateIdentitysServiceConfigsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

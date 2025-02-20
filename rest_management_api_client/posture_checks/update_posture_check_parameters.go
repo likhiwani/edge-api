@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewUpdatePostureCheckParams() *UpdatePostureCheckParams {
+    logtrace.LogWithFunctionName()
 	return &UpdatePostureCheckParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewUpdatePostureCheckParams() *UpdatePostureCheckParams {
 // NewUpdatePostureCheckParamsWithTimeout creates a new UpdatePostureCheckParams object
 // with the ability to set a timeout on a request.
 func NewUpdatePostureCheckParamsWithTimeout(timeout time.Duration) *UpdatePostureCheckParams {
+    logtrace.LogWithFunctionName()
 	return &UpdatePostureCheckParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewUpdatePostureCheckParamsWithTimeout(timeout time.Duration) *UpdatePostur
 // NewUpdatePostureCheckParamsWithContext creates a new UpdatePostureCheckParams object
 // with the ability to set a context for a request.
 func NewUpdatePostureCheckParamsWithContext(ctx context.Context) *UpdatePostureCheckParams {
+    logtrace.LogWithFunctionName()
 	return &UpdatePostureCheckParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewUpdatePostureCheckParamsWithContext(ctx context.Context) *UpdatePostureC
 // NewUpdatePostureCheckParamsWithHTTPClient creates a new UpdatePostureCheckParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewUpdatePostureCheckParamsWithHTTPClient(client *http.Client) *UpdatePostureCheckParams {
+    logtrace.LogWithFunctionName()
 	return &UpdatePostureCheckParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type UpdatePostureCheckParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *UpdatePostureCheckParams) WithDefaults() *UpdatePostureCheckParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *UpdatePostureCheckParams) WithDefaults() *UpdatePostureCheckParams {
 //
 // All values with no default are reset to their zero value.
 func (o *UpdatePostureCheckParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the update posture check params
 func (o *UpdatePostureCheckParams) WithTimeout(timeout time.Duration) *UpdatePostureCheckParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the update posture check params
 func (o *UpdatePostureCheckParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the update posture check params
 func (o *UpdatePostureCheckParams) WithContext(ctx context.Context) *UpdatePostureCheckParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the update posture check params
 func (o *UpdatePostureCheckParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the update posture check params
 func (o *UpdatePostureCheckParams) WithHTTPClient(client *http.Client) *UpdatePostureCheckParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the update posture check params
 func (o *UpdatePostureCheckParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the update posture check params
 func (o *UpdatePostureCheckParams) WithID(id string) *UpdatePostureCheckParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the update posture check params
 func (o *UpdatePostureCheckParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WithPostureCheck adds the postureCheck to the update posture check params
 func (o *UpdatePostureCheckParams) WithPostureCheck(postureCheck rest_model.PostureCheckUpdate) *UpdatePostureCheckParams {
+    logtrace.LogWithFunctionName()
 	o.SetPostureCheck(postureCheck)
 	return o
 }
 
 // SetPostureCheck adds the postureCheck to the update posture check params
 func (o *UpdatePostureCheckParams) SetPostureCheck(postureCheck rest_model.PostureCheckUpdate) {
+    logtrace.LogWithFunctionName()
 	o.PostureCheck = postureCheck
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *UpdatePostureCheckParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

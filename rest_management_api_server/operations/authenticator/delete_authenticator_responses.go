@@ -30,6 +30,7 @@ package authenticator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DeleteAuthenticatorOK struct {
 
 // NewDeleteAuthenticatorOK creates DeleteAuthenticatorOK with default headers values
 func NewDeleteAuthenticatorOK() *DeleteAuthenticatorOK {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteAuthenticatorOK{}
 }
 
 // WithPayload adds the payload to the delete authenticator o k response
 func (o *DeleteAuthenticatorOK) WithPayload(payload *rest_model.Empty) *DeleteAuthenticatorOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete authenticator o k response
 func (o *DeleteAuthenticatorOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteAuthenticatorOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DeleteAuthenticatorBadRequest struct {
 
 // NewDeleteAuthenticatorBadRequest creates DeleteAuthenticatorBadRequest with default headers values
 func NewDeleteAuthenticatorBadRequest() *DeleteAuthenticatorBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteAuthenticatorBadRequest{}
 }
 
 // WithPayload adds the payload to the delete authenticator bad request response
 func (o *DeleteAuthenticatorBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteAuthenticatorBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete authenticator bad request response
 func (o *DeleteAuthenticatorBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteAuthenticatorBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DeleteAuthenticatorUnauthorized struct {
 
 // NewDeleteAuthenticatorUnauthorized creates DeleteAuthenticatorUnauthorized with default headers values
 func NewDeleteAuthenticatorUnauthorized() *DeleteAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteAuthenticatorUnauthorized{}
 }
 
 // WithPayload adds the payload to the delete authenticator unauthorized response
 func (o *DeleteAuthenticatorUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete authenticator unauthorized response
 func (o *DeleteAuthenticatorUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteAuthenticatorUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DeleteAuthenticatorNotFound struct {
 
 // NewDeleteAuthenticatorNotFound creates DeleteAuthenticatorNotFound with default headers values
 func NewDeleteAuthenticatorNotFound() *DeleteAuthenticatorNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteAuthenticatorNotFound{}
 }
 
 // WithPayload adds the payload to the delete authenticator not found response
 func (o *DeleteAuthenticatorNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteAuthenticatorNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete authenticator not found response
 func (o *DeleteAuthenticatorNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteAuthenticatorNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DeleteAuthenticatorTooManyRequests struct {
 
 // NewDeleteAuthenticatorTooManyRequests creates DeleteAuthenticatorTooManyRequests with default headers values
 func NewDeleteAuthenticatorTooManyRequests() *DeleteAuthenticatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteAuthenticatorTooManyRequests{}
 }
 
 // WithPayload adds the payload to the delete authenticator too many requests response
 func (o *DeleteAuthenticatorTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteAuthenticatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete authenticator too many requests response
 func (o *DeleteAuthenticatorTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteAuthenticatorTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type DeleteAuthenticatorServiceUnavailable struct {
 
 // NewDeleteAuthenticatorServiceUnavailable creates DeleteAuthenticatorServiceUnavailable with default headers values
 func NewDeleteAuthenticatorServiceUnavailable() *DeleteAuthenticatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteAuthenticatorServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the delete authenticator service unavailable response
 func (o *DeleteAuthenticatorServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteAuthenticatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete authenticator service unavailable response
 func (o *DeleteAuthenticatorServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteAuthenticatorServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

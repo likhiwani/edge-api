@@ -30,6 +30,7 @@ package session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DetailSessionRoutePathOK struct {
 
 // NewDetailSessionRoutePathOK creates DetailSessionRoutePathOK with default headers values
 func NewDetailSessionRoutePathOK() *DetailSessionRoutePathOK {
+    logtrace.LogWithFunctionName()
 
 	return &DetailSessionRoutePathOK{}
 }
 
 // WithPayload adds the payload to the detail session route path o k response
 func (o *DetailSessionRoutePathOK) WithPayload(payload *rest_model.DetailSessionRoutePathEnvelope) *DetailSessionRoutePathOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail session route path o k response
 func (o *DetailSessionRoutePathOK) SetPayload(payload *rest_model.DetailSessionRoutePathEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailSessionRoutePathOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DetailSessionRoutePathUnauthorized struct {
 
 // NewDetailSessionRoutePathUnauthorized creates DetailSessionRoutePathUnauthorized with default headers values
 func NewDetailSessionRoutePathUnauthorized() *DetailSessionRoutePathUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DetailSessionRoutePathUnauthorized{}
 }
 
 // WithPayload adds the payload to the detail session route path unauthorized response
 func (o *DetailSessionRoutePathUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailSessionRoutePathUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail session route path unauthorized response
 func (o *DetailSessionRoutePathUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailSessionRoutePathUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DetailSessionRoutePathNotFound struct {
 
 // NewDetailSessionRoutePathNotFound creates DetailSessionRoutePathNotFound with default headers values
 func NewDetailSessionRoutePathNotFound() *DetailSessionRoutePathNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DetailSessionRoutePathNotFound{}
 }
 
 // WithPayload adds the payload to the detail session route path not found response
 func (o *DetailSessionRoutePathNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailSessionRoutePathNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail session route path not found response
 func (o *DetailSessionRoutePathNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailSessionRoutePathNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DetailSessionRoutePathTooManyRequests struct {
 
 // NewDetailSessionRoutePathTooManyRequests creates DetailSessionRoutePathTooManyRequests with default headers values
 func NewDetailSessionRoutePathTooManyRequests() *DetailSessionRoutePathTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DetailSessionRoutePathTooManyRequests{}
 }
 
 // WithPayload adds the payload to the detail session route path too many requests response
 func (o *DetailSessionRoutePathTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailSessionRoutePathTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail session route path too many requests response
 func (o *DetailSessionRoutePathTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailSessionRoutePathTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DetailSessionRoutePathServiceUnavailable struct {
 
 // NewDetailSessionRoutePathServiceUnavailable creates DetailSessionRoutePathServiceUnavailable with default headers values
 func NewDetailSessionRoutePathServiceUnavailable() *DetailSessionRoutePathServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DetailSessionRoutePathServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the detail session route path service unavailable response
 func (o *DetailSessionRoutePathServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailSessionRoutePathServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail session route path service unavailable response
 func (o *DetailSessionRoutePathServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailSessionRoutePathServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

@@ -30,6 +30,7 @@ package service_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DetailServicePolicyOK struct {
 
 // NewDetailServicePolicyOK creates DetailServicePolicyOK with default headers values
 func NewDetailServicePolicyOK() *DetailServicePolicyOK {
+    logtrace.LogWithFunctionName()
 
 	return &DetailServicePolicyOK{}
 }
 
 // WithPayload adds the payload to the detail service policy o k response
 func (o *DetailServicePolicyOK) WithPayload(payload *rest_model.DetailServicePolicyEnvelop) *DetailServicePolicyOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail service policy o k response
 func (o *DetailServicePolicyOK) SetPayload(payload *rest_model.DetailServicePolicyEnvelop) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailServicePolicyOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DetailServicePolicyUnauthorized struct {
 
 // NewDetailServicePolicyUnauthorized creates DetailServicePolicyUnauthorized with default headers values
 func NewDetailServicePolicyUnauthorized() *DetailServicePolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DetailServicePolicyUnauthorized{}
 }
 
 // WithPayload adds the payload to the detail service policy unauthorized response
 func (o *DetailServicePolicyUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailServicePolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail service policy unauthorized response
 func (o *DetailServicePolicyUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailServicePolicyUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DetailServicePolicyNotFound struct {
 
 // NewDetailServicePolicyNotFound creates DetailServicePolicyNotFound with default headers values
 func NewDetailServicePolicyNotFound() *DetailServicePolicyNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DetailServicePolicyNotFound{}
 }
 
 // WithPayload adds the payload to the detail service policy not found response
 func (o *DetailServicePolicyNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailServicePolicyNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail service policy not found response
 func (o *DetailServicePolicyNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailServicePolicyNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DetailServicePolicyTooManyRequests struct {
 
 // NewDetailServicePolicyTooManyRequests creates DetailServicePolicyTooManyRequests with default headers values
 func NewDetailServicePolicyTooManyRequests() *DetailServicePolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DetailServicePolicyTooManyRequests{}
 }
 
 // WithPayload adds the payload to the detail service policy too many requests response
 func (o *DetailServicePolicyTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailServicePolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail service policy too many requests response
 func (o *DetailServicePolicyTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailServicePolicyTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DetailServicePolicyServiceUnavailable struct {
 
 // NewDetailServicePolicyServiceUnavailable creates DetailServicePolicyServiceUnavailable with default headers values
 func NewDetailServicePolicyServiceUnavailable() *DetailServicePolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DetailServicePolicyServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the detail service policy service unavailable response
 func (o *DetailServicePolicyServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailServicePolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail service policy service unavailable response
 func (o *DetailServicePolicyServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailServicePolicyServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

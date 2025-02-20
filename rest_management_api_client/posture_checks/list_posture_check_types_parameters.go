@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -48,6 +49,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListPostureCheckTypesParams() *ListPostureCheckTypesParams {
+    logtrace.LogWithFunctionName()
 	return &ListPostureCheckTypesParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -56,6 +58,7 @@ func NewListPostureCheckTypesParams() *ListPostureCheckTypesParams {
 // NewListPostureCheckTypesParamsWithTimeout creates a new ListPostureCheckTypesParams object
 // with the ability to set a timeout on a request.
 func NewListPostureCheckTypesParamsWithTimeout(timeout time.Duration) *ListPostureCheckTypesParams {
+    logtrace.LogWithFunctionName()
 	return &ListPostureCheckTypesParams{
 		timeout: timeout,
 	}
@@ -64,6 +67,7 @@ func NewListPostureCheckTypesParamsWithTimeout(timeout time.Duration) *ListPostu
 // NewListPostureCheckTypesParamsWithContext creates a new ListPostureCheckTypesParams object
 // with the ability to set a context for a request.
 func NewListPostureCheckTypesParamsWithContext(ctx context.Context) *ListPostureCheckTypesParams {
+    logtrace.LogWithFunctionName()
 	return &ListPostureCheckTypesParams{
 		Context: ctx,
 	}
@@ -72,6 +76,7 @@ func NewListPostureCheckTypesParamsWithContext(ctx context.Context) *ListPosture
 // NewListPostureCheckTypesParamsWithHTTPClient creates a new ListPostureCheckTypesParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListPostureCheckTypesParamsWithHTTPClient(client *http.Client) *ListPostureCheckTypesParams {
+    logtrace.LogWithFunctionName()
 	return &ListPostureCheckTypesParams{
 		HTTPClient: client,
 	}
@@ -104,6 +109,7 @@ type ListPostureCheckTypesParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListPostureCheckTypesParams) WithDefaults() *ListPostureCheckTypesParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -112,77 +118,91 @@ func (o *ListPostureCheckTypesParams) WithDefaults() *ListPostureCheckTypesParam
 //
 // All values with no default are reset to their zero value.
 func (o *ListPostureCheckTypesParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list posture check types params
 func (o *ListPostureCheckTypesParams) WithTimeout(timeout time.Duration) *ListPostureCheckTypesParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list posture check types params
 func (o *ListPostureCheckTypesParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list posture check types params
 func (o *ListPostureCheckTypesParams) WithContext(ctx context.Context) *ListPostureCheckTypesParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list posture check types params
 func (o *ListPostureCheckTypesParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list posture check types params
 func (o *ListPostureCheckTypesParams) WithHTTPClient(client *http.Client) *ListPostureCheckTypesParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list posture check types params
 func (o *ListPostureCheckTypesParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithFilter adds the filter to the list posture check types params
 func (o *ListPostureCheckTypesParams) WithFilter(filter *string) *ListPostureCheckTypesParams {
+    logtrace.LogWithFunctionName()
 	o.SetFilter(filter)
 	return o
 }
 
 // SetFilter adds the filter to the list posture check types params
 func (o *ListPostureCheckTypesParams) SetFilter(filter *string) {
+    logtrace.LogWithFunctionName()
 	o.Filter = filter
 }
 
 // WithLimit adds the limit to the list posture check types params
 func (o *ListPostureCheckTypesParams) WithLimit(limit *int64) *ListPostureCheckTypesParams {
+    logtrace.LogWithFunctionName()
 	o.SetLimit(limit)
 	return o
 }
 
 // SetLimit adds the limit to the list posture check types params
 func (o *ListPostureCheckTypesParams) SetLimit(limit *int64) {
+    logtrace.LogWithFunctionName()
 	o.Limit = limit
 }
 
 // WithOffset adds the offset to the list posture check types params
 func (o *ListPostureCheckTypesParams) WithOffset(offset *int64) *ListPostureCheckTypesParams {
+    logtrace.LogWithFunctionName()
 	o.SetOffset(offset)
 	return o
 }
 
 // SetOffset adds the offset to the list posture check types params
 func (o *ListPostureCheckTypesParams) SetOffset(offset *int64) {
+    logtrace.LogWithFunctionName()
 	o.Offset = offset
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListPostureCheckTypesParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

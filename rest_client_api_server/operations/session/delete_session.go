@@ -30,6 +30,7 @@ package session
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type DeleteSessionHandlerFunc func(DeleteSessionParams, interface{}) middleware.
 
 // Handle executing the request and returning a response
 func (fn DeleteSessionHandlerFunc) Handle(params DeleteSessionParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type DeleteSessionHandler interface {
 
 // NewDeleteSession creates a new http.Handler for the delete session operation
 func NewDeleteSession(ctx *middleware.Context, handler DeleteSessionHandler) *DeleteSession {
+    logtrace.LogWithFunctionName()
 	return &DeleteSession{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type DeleteSession struct {
 }
 
 func (o *DeleteSession) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewEnrollCaParams() *EnrollCaParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollCaParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewEnrollCaParams() *EnrollCaParams {
 // NewEnrollCaParamsWithTimeout creates a new EnrollCaParams object
 // with the ability to set a timeout on a request.
 func NewEnrollCaParamsWithTimeout(timeout time.Duration) *EnrollCaParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollCaParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewEnrollCaParamsWithTimeout(timeout time.Duration) *EnrollCaParams {
 // NewEnrollCaParamsWithContext creates a new EnrollCaParams object
 // with the ability to set a context for a request.
 func NewEnrollCaParamsWithContext(ctx context.Context) *EnrollCaParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollCaParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewEnrollCaParamsWithContext(ctx context.Context) *EnrollCaParams {
 // NewEnrollCaParamsWithHTTPClient creates a new EnrollCaParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewEnrollCaParamsWithHTTPClient(client *http.Client) *EnrollCaParams {
+    logtrace.LogWithFunctionName()
 	return &EnrollCaParams{
 		HTTPClient: client,
 	}
@@ -93,6 +98,7 @@ type EnrollCaParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *EnrollCaParams) WithDefaults() *EnrollCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -101,44 +107,52 @@ func (o *EnrollCaParams) WithDefaults() *EnrollCaParams {
 //
 // All values with no default are reset to their zero value.
 func (o *EnrollCaParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the enroll ca params
 func (o *EnrollCaParams) WithTimeout(timeout time.Duration) *EnrollCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the enroll ca params
 func (o *EnrollCaParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the enroll ca params
 func (o *EnrollCaParams) WithContext(ctx context.Context) *EnrollCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the enroll ca params
 func (o *EnrollCaParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the enroll ca params
 func (o *EnrollCaParams) WithHTTPClient(client *http.Client) *EnrollCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the enroll ca params
 func (o *EnrollCaParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *EnrollCaParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

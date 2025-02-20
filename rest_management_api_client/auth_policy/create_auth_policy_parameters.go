@@ -30,6 +30,7 @@ package auth_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCreateAuthPolicyParams() *CreateAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	return &CreateAuthPolicyParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewCreateAuthPolicyParams() *CreateAuthPolicyParams {
 // NewCreateAuthPolicyParamsWithTimeout creates a new CreateAuthPolicyParams object
 // with the ability to set a timeout on a request.
 func NewCreateAuthPolicyParamsWithTimeout(timeout time.Duration) *CreateAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	return &CreateAuthPolicyParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewCreateAuthPolicyParamsWithTimeout(timeout time.Duration) *CreateAuthPoli
 // NewCreateAuthPolicyParamsWithContext creates a new CreateAuthPolicyParams object
 // with the ability to set a context for a request.
 func NewCreateAuthPolicyParamsWithContext(ctx context.Context) *CreateAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	return &CreateAuthPolicyParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewCreateAuthPolicyParamsWithContext(ctx context.Context) *CreateAuthPolicy
 // NewCreateAuthPolicyParamsWithHTTPClient creates a new CreateAuthPolicyParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewCreateAuthPolicyParamsWithHTTPClient(client *http.Client) *CreateAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	return &CreateAuthPolicyParams{
 		HTTPClient: client,
 	}
@@ -102,6 +107,7 @@ type CreateAuthPolicyParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *CreateAuthPolicyParams) WithDefaults() *CreateAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -110,55 +116,65 @@ func (o *CreateAuthPolicyParams) WithDefaults() *CreateAuthPolicyParams {
 //
 // All values with no default are reset to their zero value.
 func (o *CreateAuthPolicyParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the create auth policy params
 func (o *CreateAuthPolicyParams) WithTimeout(timeout time.Duration) *CreateAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the create auth policy params
 func (o *CreateAuthPolicyParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the create auth policy params
 func (o *CreateAuthPolicyParams) WithContext(ctx context.Context) *CreateAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the create auth policy params
 func (o *CreateAuthPolicyParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the create auth policy params
 func (o *CreateAuthPolicyParams) WithHTTPClient(client *http.Client) *CreateAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the create auth policy params
 func (o *CreateAuthPolicyParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithAuthPolicy adds the authPolicy to the create auth policy params
 func (o *CreateAuthPolicyParams) WithAuthPolicy(authPolicy *rest_model.AuthPolicyCreate) *CreateAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetAuthPolicy(authPolicy)
 	return o
 }
 
 // SetAuthPolicy adds the authPolicy to the create auth policy params
 func (o *CreateAuthPolicyParams) SetAuthPolicy(authPolicy *rest_model.AuthPolicyCreate) {
+    logtrace.LogWithFunctionName()
 	o.AuthPolicy = authPolicy
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *CreateAuthPolicyParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DisassociateIdentitysServiceConfigsReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DisassociateIdentitysServiceConfigsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDisassociateIdentitysServiceConfigsOK()
@@ -91,6 +93,7 @@ func (o *DisassociateIdentitysServiceConfigsReader) ReadResponse(response runtim
 
 // NewDisassociateIdentitysServiceConfigsOK creates a DisassociateIdentitysServiceConfigsOK with default headers values
 func NewDisassociateIdentitysServiceConfigsOK() *DisassociateIdentitysServiceConfigsOK {
+    logtrace.LogWithFunctionName()
 	return &DisassociateIdentitysServiceConfigsOK{}
 }
 
@@ -105,49 +108,59 @@ type DisassociateIdentitysServiceConfigsOK struct {
 
 // IsSuccess returns true when this disassociate identitys service configs o k response has a 2xx status code
 func (o *DisassociateIdentitysServiceConfigsOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this disassociate identitys service configs o k response has a 3xx status code
 func (o *DisassociateIdentitysServiceConfigsOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this disassociate identitys service configs o k response has a 4xx status code
 func (o *DisassociateIdentitysServiceConfigsOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this disassociate identitys service configs o k response has a 5xx status code
 func (o *DisassociateIdentitysServiceConfigsOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this disassociate identitys service configs o k response a status code equal to that given
 func (o *DisassociateIdentitysServiceConfigsOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the disassociate identitys service configs o k response
 func (o *DisassociateIdentitysServiceConfigsOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DisassociateIdentitysServiceConfigsOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/service-configs][%d] disassociateIdentitysServiceConfigsOK %s", 200, payload)
 }
 
 func (o *DisassociateIdentitysServiceConfigsOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/service-configs][%d] disassociateIdentitysServiceConfigsOK %s", 200, payload)
 }
 
 func (o *DisassociateIdentitysServiceConfigsOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DisassociateIdentitysServiceConfigsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -161,6 +174,7 @@ func (o *DisassociateIdentitysServiceConfigsOK) readResponse(response runtime.Cl
 
 // NewDisassociateIdentitysServiceConfigsBadRequest creates a DisassociateIdentitysServiceConfigsBadRequest with default headers values
 func NewDisassociateIdentitysServiceConfigsBadRequest() *DisassociateIdentitysServiceConfigsBadRequest {
+    logtrace.LogWithFunctionName()
 	return &DisassociateIdentitysServiceConfigsBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type DisassociateIdentitysServiceConfigsBadRequest struct {
 
 // IsSuccess returns true when this disassociate identitys service configs bad request response has a 2xx status code
 func (o *DisassociateIdentitysServiceConfigsBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this disassociate identitys service configs bad request response has a 3xx status code
 func (o *DisassociateIdentitysServiceConfigsBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this disassociate identitys service configs bad request response has a 4xx status code
 func (o *DisassociateIdentitysServiceConfigsBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this disassociate identitys service configs bad request response has a 5xx status code
 func (o *DisassociateIdentitysServiceConfigsBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this disassociate identitys service configs bad request response a status code equal to that given
 func (o *DisassociateIdentitysServiceConfigsBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the disassociate identitys service configs bad request response
 func (o *DisassociateIdentitysServiceConfigsBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *DisassociateIdentitysServiceConfigsBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/service-configs][%d] disassociateIdentitysServiceConfigsBadRequest %s", 400, payload)
 }
 
 func (o *DisassociateIdentitysServiceConfigsBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/service-configs][%d] disassociateIdentitysServiceConfigsBadRequest %s", 400, payload)
 }
 
 func (o *DisassociateIdentitysServiceConfigsBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DisassociateIdentitysServiceConfigsBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *DisassociateIdentitysServiceConfigsBadRequest) readResponse(response ru
 
 // NewDisassociateIdentitysServiceConfigsUnauthorized creates a DisassociateIdentitysServiceConfigsUnauthorized with default headers values
 func NewDisassociateIdentitysServiceConfigsUnauthorized() *DisassociateIdentitysServiceConfigsUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DisassociateIdentitysServiceConfigsUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type DisassociateIdentitysServiceConfigsUnauthorized struct {
 
 // IsSuccess returns true when this disassociate identitys service configs unauthorized response has a 2xx status code
 func (o *DisassociateIdentitysServiceConfigsUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this disassociate identitys service configs unauthorized response has a 3xx status code
 func (o *DisassociateIdentitysServiceConfigsUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this disassociate identitys service configs unauthorized response has a 4xx status code
 func (o *DisassociateIdentitysServiceConfigsUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this disassociate identitys service configs unauthorized response has a 5xx status code
 func (o *DisassociateIdentitysServiceConfigsUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this disassociate identitys service configs unauthorized response a status code equal to that given
 func (o *DisassociateIdentitysServiceConfigsUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the disassociate identitys service configs unauthorized response
 func (o *DisassociateIdentitysServiceConfigsUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DisassociateIdentitysServiceConfigsUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/service-configs][%d] disassociateIdentitysServiceConfigsUnauthorized %s", 401, payload)
 }
 
 func (o *DisassociateIdentitysServiceConfigsUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/service-configs][%d] disassociateIdentitysServiceConfigsUnauthorized %s", 401, payload)
 }
 
 func (o *DisassociateIdentitysServiceConfigsUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DisassociateIdentitysServiceConfigsUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *DisassociateIdentitysServiceConfigsUnauthorized) readResponse(response 
 
 // NewDisassociateIdentitysServiceConfigsNotFound creates a DisassociateIdentitysServiceConfigsNotFound with default headers values
 func NewDisassociateIdentitysServiceConfigsNotFound() *DisassociateIdentitysServiceConfigsNotFound {
+    logtrace.LogWithFunctionName()
 	return &DisassociateIdentitysServiceConfigsNotFound{}
 }
 
@@ -315,49 +351,59 @@ type DisassociateIdentitysServiceConfigsNotFound struct {
 
 // IsSuccess returns true when this disassociate identitys service configs not found response has a 2xx status code
 func (o *DisassociateIdentitysServiceConfigsNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this disassociate identitys service configs not found response has a 3xx status code
 func (o *DisassociateIdentitysServiceConfigsNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this disassociate identitys service configs not found response has a 4xx status code
 func (o *DisassociateIdentitysServiceConfigsNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this disassociate identitys service configs not found response has a 5xx status code
 func (o *DisassociateIdentitysServiceConfigsNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this disassociate identitys service configs not found response a status code equal to that given
 func (o *DisassociateIdentitysServiceConfigsNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the disassociate identitys service configs not found response
 func (o *DisassociateIdentitysServiceConfigsNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DisassociateIdentitysServiceConfigsNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/service-configs][%d] disassociateIdentitysServiceConfigsNotFound %s", 404, payload)
 }
 
 func (o *DisassociateIdentitysServiceConfigsNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/service-configs][%d] disassociateIdentitysServiceConfigsNotFound %s", 404, payload)
 }
 
 func (o *DisassociateIdentitysServiceConfigsNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DisassociateIdentitysServiceConfigsNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *DisassociateIdentitysServiceConfigsNotFound) readResponse(response runt
 
 // NewDisassociateIdentitysServiceConfigsTooManyRequests creates a DisassociateIdentitysServiceConfigsTooManyRequests with default headers values
 func NewDisassociateIdentitysServiceConfigsTooManyRequests() *DisassociateIdentitysServiceConfigsTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DisassociateIdentitysServiceConfigsTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type DisassociateIdentitysServiceConfigsTooManyRequests struct {
 
 // IsSuccess returns true when this disassociate identitys service configs too many requests response has a 2xx status code
 func (o *DisassociateIdentitysServiceConfigsTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this disassociate identitys service configs too many requests response has a 3xx status code
 func (o *DisassociateIdentitysServiceConfigsTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this disassociate identitys service configs too many requests response has a 4xx status code
 func (o *DisassociateIdentitysServiceConfigsTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this disassociate identitys service configs too many requests response has a 5xx status code
 func (o *DisassociateIdentitysServiceConfigsTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this disassociate identitys service configs too many requests response a status code equal to that given
 func (o *DisassociateIdentitysServiceConfigsTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the disassociate identitys service configs too many requests response
 func (o *DisassociateIdentitysServiceConfigsTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DisassociateIdentitysServiceConfigsTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/service-configs][%d] disassociateIdentitysServiceConfigsTooManyRequests %s", 429, payload)
 }
 
 func (o *DisassociateIdentitysServiceConfigsTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/service-configs][%d] disassociateIdentitysServiceConfigsTooManyRequests %s", 429, payload)
 }
 
 func (o *DisassociateIdentitysServiceConfigsTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DisassociateIdentitysServiceConfigsTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *DisassociateIdentitysServiceConfigsTooManyRequests) readResponse(respon
 
 // NewDisassociateIdentitysServiceConfigsServiceUnavailable creates a DisassociateIdentitysServiceConfigsServiceUnavailable with default headers values
 func NewDisassociateIdentitysServiceConfigsServiceUnavailable() *DisassociateIdentitysServiceConfigsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DisassociateIdentitysServiceConfigsServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type DisassociateIdentitysServiceConfigsServiceUnavailable struct {
 
 // IsSuccess returns true when this disassociate identitys service configs service unavailable response has a 2xx status code
 func (o *DisassociateIdentitysServiceConfigsServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this disassociate identitys service configs service unavailable response has a 3xx status code
 func (o *DisassociateIdentitysServiceConfigsServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this disassociate identitys service configs service unavailable response has a 4xx status code
 func (o *DisassociateIdentitysServiceConfigsServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this disassociate identitys service configs service unavailable response has a 5xx status code
 func (o *DisassociateIdentitysServiceConfigsServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this disassociate identitys service configs service unavailable response a status code equal to that given
 func (o *DisassociateIdentitysServiceConfigsServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the disassociate identitys service configs service unavailable response
 func (o *DisassociateIdentitysServiceConfigsServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DisassociateIdentitysServiceConfigsServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/service-configs][%d] disassociateIdentitysServiceConfigsServiceUnavailable %s", 503, payload)
 }
 
 func (o *DisassociateIdentitysServiceConfigsServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}/service-configs][%d] disassociateIdentitysServiceConfigsServiceUnavailable %s", 503, payload)
 }
 
 func (o *DisassociateIdentitysServiceConfigsServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DisassociateIdentitysServiceConfigsServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

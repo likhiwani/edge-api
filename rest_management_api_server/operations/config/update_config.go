@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type UpdateConfigHandlerFunc func(UpdateConfigParams, interface{}) middleware.Re
 
 // Handle executing the request and returning a response
 func (fn UpdateConfigHandlerFunc) Handle(params UpdateConfigParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type UpdateConfigHandler interface {
 
 // NewUpdateConfig creates a new http.Handler for the update config operation
 func NewUpdateConfig(ctx *middleware.Context, handler UpdateConfigHandler) *UpdateConfig {
+    logtrace.LogWithFunctionName()
 	return &UpdateConfig{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type UpdateConfig struct {
 }
 
 func (o *UpdateConfig) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

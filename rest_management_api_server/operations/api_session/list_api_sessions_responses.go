@@ -30,6 +30,7 @@ package api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListAPISessionsOK struct {
 
 // NewListAPISessionsOK creates ListAPISessionsOK with default headers values
 func NewListAPISessionsOK() *ListAPISessionsOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListAPISessionsOK{}
 }
 
 // WithPayload adds the payload to the list Api sessions o k response
 func (o *ListAPISessionsOK) WithPayload(payload *rest_model.ListAPISessionsEnvelope) *ListAPISessionsOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list Api sessions o k response
 func (o *ListAPISessionsOK) SetPayload(payload *rest_model.ListAPISessionsEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListAPISessionsOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ListAPISessionsBadRequest struct {
 
 // NewListAPISessionsBadRequest creates ListAPISessionsBadRequest with default headers values
 func NewListAPISessionsBadRequest() *ListAPISessionsBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &ListAPISessionsBadRequest{}
 }
 
 // WithPayload adds the payload to the list Api sessions bad request response
 func (o *ListAPISessionsBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *ListAPISessionsBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list Api sessions bad request response
 func (o *ListAPISessionsBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListAPISessionsBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ListAPISessionsUnauthorized struct {
 
 // NewListAPISessionsUnauthorized creates ListAPISessionsUnauthorized with default headers values
 func NewListAPISessionsUnauthorized() *ListAPISessionsUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &ListAPISessionsUnauthorized{}
 }
 
 // WithPayload adds the payload to the list Api sessions unauthorized response
 func (o *ListAPISessionsUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *ListAPISessionsUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list Api sessions unauthorized response
 func (o *ListAPISessionsUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListAPISessionsUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type ListAPISessionsTooManyRequests struct {
 
 // NewListAPISessionsTooManyRequests creates ListAPISessionsTooManyRequests with default headers values
 func NewListAPISessionsTooManyRequests() *ListAPISessionsTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ListAPISessionsTooManyRequests{}
 }
 
 // WithPayload adds the payload to the list Api sessions too many requests response
 func (o *ListAPISessionsTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ListAPISessionsTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list Api sessions too many requests response
 func (o *ListAPISessionsTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListAPISessionsTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type ListAPISessionsServiceUnavailable struct {
 
 // NewListAPISessionsServiceUnavailable creates ListAPISessionsServiceUnavailable with default headers values
 func NewListAPISessionsServiceUnavailable() *ListAPISessionsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &ListAPISessionsServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the list Api sessions service unavailable response
 func (o *ListAPISessionsServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *ListAPISessionsServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list Api sessions service unavailable response
 func (o *ListAPISessionsServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListAPISessionsServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

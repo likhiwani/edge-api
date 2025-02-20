@@ -30,6 +30,7 @@ package router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type PatchTransitRouterOK struct {
 
 // NewPatchTransitRouterOK creates PatchTransitRouterOK with default headers values
 func NewPatchTransitRouterOK() *PatchTransitRouterOK {
+    logtrace.LogWithFunctionName()
 
 	return &PatchTransitRouterOK{}
 }
 
 // WithPayload adds the payload to the patch transit router o k response
 func (o *PatchTransitRouterOK) WithPayload(payload *rest_model.Empty) *PatchTransitRouterOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch transit router o k response
 func (o *PatchTransitRouterOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchTransitRouterOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type PatchTransitRouterBadRequest struct {
 
 // NewPatchTransitRouterBadRequest creates PatchTransitRouterBadRequest with default headers values
 func NewPatchTransitRouterBadRequest() *PatchTransitRouterBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &PatchTransitRouterBadRequest{}
 }
 
 // WithPayload adds the payload to the patch transit router bad request response
 func (o *PatchTransitRouterBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchTransitRouterBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch transit router bad request response
 func (o *PatchTransitRouterBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchTransitRouterBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type PatchTransitRouterUnauthorized struct {
 
 // NewPatchTransitRouterUnauthorized creates PatchTransitRouterUnauthorized with default headers values
 func NewPatchTransitRouterUnauthorized() *PatchTransitRouterUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &PatchTransitRouterUnauthorized{}
 }
 
 // WithPayload adds the payload to the patch transit router unauthorized response
 func (o *PatchTransitRouterUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchTransitRouterUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch transit router unauthorized response
 func (o *PatchTransitRouterUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchTransitRouterUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type PatchTransitRouterNotFound struct {
 
 // NewPatchTransitRouterNotFound creates PatchTransitRouterNotFound with default headers values
 func NewPatchTransitRouterNotFound() *PatchTransitRouterNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &PatchTransitRouterNotFound{}
 }
 
 // WithPayload adds the payload to the patch transit router not found response
 func (o *PatchTransitRouterNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchTransitRouterNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch transit router not found response
 func (o *PatchTransitRouterNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchTransitRouterNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type PatchTransitRouterTooManyRequests struct {
 
 // NewPatchTransitRouterTooManyRequests creates PatchTransitRouterTooManyRequests with default headers values
 func NewPatchTransitRouterTooManyRequests() *PatchTransitRouterTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &PatchTransitRouterTooManyRequests{}
 }
 
 // WithPayload adds the payload to the patch transit router too many requests response
 func (o *PatchTransitRouterTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchTransitRouterTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch transit router too many requests response
 func (o *PatchTransitRouterTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchTransitRouterTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type PatchTransitRouterServiceUnavailable struct {
 
 // NewPatchTransitRouterServiceUnavailable creates PatchTransitRouterServiceUnavailable with default headers values
 func NewPatchTransitRouterServiceUnavailable() *PatchTransitRouterServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &PatchTransitRouterServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the patch transit router service unavailable response
 func (o *PatchTransitRouterServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchTransitRouterServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch transit router service unavailable response
 func (o *PatchTransitRouterServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchTransitRouterServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

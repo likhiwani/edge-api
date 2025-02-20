@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -48,6 +49,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListIdentityTypesParams() *ListIdentityTypesParams {
+    logtrace.LogWithFunctionName()
 	return &ListIdentityTypesParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -56,6 +58,7 @@ func NewListIdentityTypesParams() *ListIdentityTypesParams {
 // NewListIdentityTypesParamsWithTimeout creates a new ListIdentityTypesParams object
 // with the ability to set a timeout on a request.
 func NewListIdentityTypesParamsWithTimeout(timeout time.Duration) *ListIdentityTypesParams {
+    logtrace.LogWithFunctionName()
 	return &ListIdentityTypesParams{
 		timeout: timeout,
 	}
@@ -64,6 +67,7 @@ func NewListIdentityTypesParamsWithTimeout(timeout time.Duration) *ListIdentityT
 // NewListIdentityTypesParamsWithContext creates a new ListIdentityTypesParams object
 // with the ability to set a context for a request.
 func NewListIdentityTypesParamsWithContext(ctx context.Context) *ListIdentityTypesParams {
+    logtrace.LogWithFunctionName()
 	return &ListIdentityTypesParams{
 		Context: ctx,
 	}
@@ -72,6 +76,7 @@ func NewListIdentityTypesParamsWithContext(ctx context.Context) *ListIdentityTyp
 // NewListIdentityTypesParamsWithHTTPClient creates a new ListIdentityTypesParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListIdentityTypesParamsWithHTTPClient(client *http.Client) *ListIdentityTypesParams {
+    logtrace.LogWithFunctionName()
 	return &ListIdentityTypesParams{
 		HTTPClient: client,
 	}
@@ -104,6 +109,7 @@ type ListIdentityTypesParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListIdentityTypesParams) WithDefaults() *ListIdentityTypesParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -112,77 +118,91 @@ func (o *ListIdentityTypesParams) WithDefaults() *ListIdentityTypesParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListIdentityTypesParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list identity types params
 func (o *ListIdentityTypesParams) WithTimeout(timeout time.Duration) *ListIdentityTypesParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list identity types params
 func (o *ListIdentityTypesParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list identity types params
 func (o *ListIdentityTypesParams) WithContext(ctx context.Context) *ListIdentityTypesParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list identity types params
 func (o *ListIdentityTypesParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list identity types params
 func (o *ListIdentityTypesParams) WithHTTPClient(client *http.Client) *ListIdentityTypesParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list identity types params
 func (o *ListIdentityTypesParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithFilter adds the filter to the list identity types params
 func (o *ListIdentityTypesParams) WithFilter(filter *string) *ListIdentityTypesParams {
+    logtrace.LogWithFunctionName()
 	o.SetFilter(filter)
 	return o
 }
 
 // SetFilter adds the filter to the list identity types params
 func (o *ListIdentityTypesParams) SetFilter(filter *string) {
+    logtrace.LogWithFunctionName()
 	o.Filter = filter
 }
 
 // WithLimit adds the limit to the list identity types params
 func (o *ListIdentityTypesParams) WithLimit(limit *int64) *ListIdentityTypesParams {
+    logtrace.LogWithFunctionName()
 	o.SetLimit(limit)
 	return o
 }
 
 // SetLimit adds the limit to the list identity types params
 func (o *ListIdentityTypesParams) SetLimit(limit *int64) {
+    logtrace.LogWithFunctionName()
 	o.Limit = limit
 }
 
 // WithOffset adds the offset to the list identity types params
 func (o *ListIdentityTypesParams) WithOffset(offset *int64) *ListIdentityTypesParams {
+    logtrace.LogWithFunctionName()
 	o.SetOffset(offset)
 	return o
 }
 
 // SetOffset adds the offset to the list identity types params
 func (o *ListIdentityTypesParams) SetOffset(offset *int64) {
+    logtrace.LogWithFunctionName()
 	o.Offset = offset
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListIdentityTypesParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

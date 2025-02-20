@@ -30,6 +30,7 @@ package external_jwt_signer
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type DeleteExternalJWTSignerHandlerFunc func(DeleteExternalJWTSignerParams, inte
 
 // Handle executing the request and returning a response
 func (fn DeleteExternalJWTSignerHandlerFunc) Handle(params DeleteExternalJWTSignerParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type DeleteExternalJWTSignerHandler interface {
 
 // NewDeleteExternalJWTSigner creates a new http.Handler for the delete external Jwt signer operation
 func NewDeleteExternalJWTSigner(ctx *middleware.Context, handler DeleteExternalJWTSignerHandler) *DeleteExternalJWTSigner {
+    logtrace.LogWithFunctionName()
 	return &DeleteExternalJWTSigner{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type DeleteExternalJWTSigner struct {
 }
 
 func (o *DeleteExternalJWTSigner) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

@@ -30,6 +30,7 @@ package authenticator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewPatchAuthenticatorParams() *PatchAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthenticatorParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewPatchAuthenticatorParams() *PatchAuthenticatorParams {
 // NewPatchAuthenticatorParamsWithTimeout creates a new PatchAuthenticatorParams object
 // with the ability to set a timeout on a request.
 func NewPatchAuthenticatorParamsWithTimeout(timeout time.Duration) *PatchAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthenticatorParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewPatchAuthenticatorParamsWithTimeout(timeout time.Duration) *PatchAuthent
 // NewPatchAuthenticatorParamsWithContext creates a new PatchAuthenticatorParams object
 // with the ability to set a context for a request.
 func NewPatchAuthenticatorParamsWithContext(ctx context.Context) *PatchAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthenticatorParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewPatchAuthenticatorParamsWithContext(ctx context.Context) *PatchAuthentic
 // NewPatchAuthenticatorParamsWithHTTPClient creates a new PatchAuthenticatorParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewPatchAuthenticatorParamsWithHTTPClient(client *http.Client) *PatchAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthenticatorParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type PatchAuthenticatorParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchAuthenticatorParams) WithDefaults() *PatchAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *PatchAuthenticatorParams) WithDefaults() *PatchAuthenticatorParams {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchAuthenticatorParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the patch authenticator params
 func (o *PatchAuthenticatorParams) WithTimeout(timeout time.Duration) *PatchAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the patch authenticator params
 func (o *PatchAuthenticatorParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the patch authenticator params
 func (o *PatchAuthenticatorParams) WithContext(ctx context.Context) *PatchAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the patch authenticator params
 func (o *PatchAuthenticatorParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the patch authenticator params
 func (o *PatchAuthenticatorParams) WithHTTPClient(client *http.Client) *PatchAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the patch authenticator params
 func (o *PatchAuthenticatorParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithAuthenticator adds the authenticator to the patch authenticator params
 func (o *PatchAuthenticatorParams) WithAuthenticator(authenticator *rest_model.AuthenticatorPatch) *PatchAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetAuthenticator(authenticator)
 	return o
 }
 
 // SetAuthenticator adds the authenticator to the patch authenticator params
 func (o *PatchAuthenticatorParams) SetAuthenticator(authenticator *rest_model.AuthenticatorPatch) {
+    logtrace.LogWithFunctionName()
 	o.Authenticator = authenticator
 }
 
 // WithID adds the id to the patch authenticator params
 func (o *PatchAuthenticatorParams) WithID(id string) *PatchAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the patch authenticator params
 func (o *PatchAuthenticatorParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *PatchAuthenticatorParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

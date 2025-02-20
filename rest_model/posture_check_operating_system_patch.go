@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"bytes"
 	"context"
 	"encoding/json"
@@ -58,45 +59,54 @@ type PostureCheckOperatingSystemPatch struct {
 
 // Name gets the name of this subtype
 func (m *PostureCheckOperatingSystemPatch) Name() string {
+    logtrace.LogWithFunctionName()
 	return m.nameField
 }
 
 // SetName sets the name of this subtype
 func (m *PostureCheckOperatingSystemPatch) SetName(val string) {
+    logtrace.LogWithFunctionName()
 	m.nameField = val
 }
 
 // RoleAttributes gets the role attributes of this subtype
 func (m *PostureCheckOperatingSystemPatch) RoleAttributes() *Attributes {
+    logtrace.LogWithFunctionName()
 	return m.roleAttributesField
 }
 
 // SetRoleAttributes sets the role attributes of this subtype
 func (m *PostureCheckOperatingSystemPatch) SetRoleAttributes(val *Attributes) {
+    logtrace.LogWithFunctionName()
 	m.roleAttributesField = val
 }
 
 // Tags gets the tags of this subtype
 func (m *PostureCheckOperatingSystemPatch) Tags() *Tags {
+    logtrace.LogWithFunctionName()
 	return m.tagsField
 }
 
 // SetTags sets the tags of this subtype
 func (m *PostureCheckOperatingSystemPatch) SetTags(val *Tags) {
+    logtrace.LogWithFunctionName()
 	m.tagsField = val
 }
 
 // TypeID gets the type Id of this subtype
 func (m *PostureCheckOperatingSystemPatch) TypeID() PostureCheckType {
+    logtrace.LogWithFunctionName()
 	return "OS"
 }
 
 // SetTypeID sets the type Id of this subtype
 func (m *PostureCheckOperatingSystemPatch) SetTypeID(val PostureCheckType) {
+    logtrace.LogWithFunctionName()
 }
 
 // UnmarshalJSON unmarshals this object with a polymorphic type from a JSON structure
 func (m *PostureCheckOperatingSystemPatch) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	var data struct {
 
 		// operating systems
@@ -152,6 +162,7 @@ func (m *PostureCheckOperatingSystemPatch) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object with a polymorphic type to a JSON structure
 func (m PostureCheckOperatingSystemPatch) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	var b1, b2, b3 []byte
 	var err error
 	b1, err = json.Marshal(struct {
@@ -193,6 +204,7 @@ func (m PostureCheckOperatingSystemPatch) MarshalJSON() ([]byte, error) {
 
 // Validate validates this posture check operating system patch
 func (m *PostureCheckOperatingSystemPatch) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateRoleAttributes(formats); err != nil {
@@ -214,6 +226,7 @@ func (m *PostureCheckOperatingSystemPatch) Validate(formats strfmt.Registry) err
 }
 
 func (m *PostureCheckOperatingSystemPatch) validateRoleAttributes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.RoleAttributes()) { // not required
 		return nil
@@ -234,6 +247,7 @@ func (m *PostureCheckOperatingSystemPatch) validateRoleAttributes(formats strfmt
 }
 
 func (m *PostureCheckOperatingSystemPatch) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.Tags()) { // not required
 		return nil
@@ -254,6 +268,7 @@ func (m *PostureCheckOperatingSystemPatch) validateTags(formats strfmt.Registry)
 }
 
 func (m *PostureCheckOperatingSystemPatch) validateOperatingSystems(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.OperatingSystems) { // not required
 		return nil
@@ -288,6 +303,7 @@ func (m *PostureCheckOperatingSystemPatch) validateOperatingSystems(formats strf
 
 // ContextValidate validate this posture check operating system patch based on the context it is used
 func (m *PostureCheckOperatingSystemPatch) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateRoleAttributes(ctx, formats); err != nil {
@@ -309,6 +325,7 @@ func (m *PostureCheckOperatingSystemPatch) ContextValidate(ctx context.Context, 
 }
 
 func (m *PostureCheckOperatingSystemPatch) contextValidateRoleAttributes(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.RoleAttributes() != nil {
 		if err := m.RoleAttributes().ContextValidate(ctx, formats); err != nil {
@@ -325,6 +342,7 @@ func (m *PostureCheckOperatingSystemPatch) contextValidateRoleAttributes(ctx con
 }
 
 func (m *PostureCheckOperatingSystemPatch) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags() != nil {
 
@@ -346,6 +364,7 @@ func (m *PostureCheckOperatingSystemPatch) contextValidateTags(ctx context.Conte
 }
 
 func (m *PostureCheckOperatingSystemPatch) contextValidateTypeID(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.TypeID().ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -360,6 +379,7 @@ func (m *PostureCheckOperatingSystemPatch) contextValidateTypeID(ctx context.Con
 }
 
 func (m *PostureCheckOperatingSystemPatch) contextValidateOperatingSystems(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	for i := 0; i < len(m.OperatingSystems); i++ {
 
@@ -386,6 +406,7 @@ func (m *PostureCheckOperatingSystemPatch) contextValidateOperatingSystems(ctx c
 
 // MarshalBinary interface implementation
 func (m *PostureCheckOperatingSystemPatch) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -394,6 +415,7 @@ func (m *PostureCheckOperatingSystemPatch) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureCheckOperatingSystemPatch) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureCheckOperatingSystemPatch
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

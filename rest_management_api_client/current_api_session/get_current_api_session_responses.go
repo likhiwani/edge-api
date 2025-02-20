@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type GetCurrentAPISessionReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *GetCurrentAPISessionReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewGetCurrentAPISessionOK()
@@ -67,6 +69,7 @@ func (o *GetCurrentAPISessionReader) ReadResponse(response runtime.ClientRespons
 
 // NewGetCurrentAPISessionOK creates a GetCurrentAPISessionOK with default headers values
 func NewGetCurrentAPISessionOK() *GetCurrentAPISessionOK {
+    logtrace.LogWithFunctionName()
 	return &GetCurrentAPISessionOK{}
 }
 
@@ -81,49 +84,59 @@ type GetCurrentAPISessionOK struct {
 
 // IsSuccess returns true when this get current Api session o k response has a 2xx status code
 func (o *GetCurrentAPISessionOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this get current Api session o k response has a 3xx status code
 func (o *GetCurrentAPISessionOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get current Api session o k response has a 4xx status code
 func (o *GetCurrentAPISessionOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this get current Api session o k response has a 5xx status code
 func (o *GetCurrentAPISessionOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get current Api session o k response a status code equal to that given
 func (o *GetCurrentAPISessionOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the get current Api session o k response
 func (o *GetCurrentAPISessionOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *GetCurrentAPISessionOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session][%d] getCurrentApiSessionOK %s", 200, payload)
 }
 
 func (o *GetCurrentAPISessionOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session][%d] getCurrentApiSessionOK %s", 200, payload)
 }
 
 func (o *GetCurrentAPISessionOK) GetPayload() *rest_model.CurrentAPISessionDetailEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetCurrentAPISessionOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.CurrentAPISessionDetailEnvelope)
 
@@ -137,6 +150,7 @@ func (o *GetCurrentAPISessionOK) readResponse(response runtime.ClientResponse, c
 
 // NewGetCurrentAPISessionUnauthorized creates a GetCurrentAPISessionUnauthorized with default headers values
 func NewGetCurrentAPISessionUnauthorized() *GetCurrentAPISessionUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &GetCurrentAPISessionUnauthorized{}
 }
 
@@ -151,49 +165,59 @@ type GetCurrentAPISessionUnauthorized struct {
 
 // IsSuccess returns true when this get current Api session unauthorized response has a 2xx status code
 func (o *GetCurrentAPISessionUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this get current Api session unauthorized response has a 3xx status code
 func (o *GetCurrentAPISessionUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get current Api session unauthorized response has a 4xx status code
 func (o *GetCurrentAPISessionUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this get current Api session unauthorized response has a 5xx status code
 func (o *GetCurrentAPISessionUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get current Api session unauthorized response a status code equal to that given
 func (o *GetCurrentAPISessionUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the get current Api session unauthorized response
 func (o *GetCurrentAPISessionUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *GetCurrentAPISessionUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session][%d] getCurrentApiSessionUnauthorized %s", 401, payload)
 }
 
 func (o *GetCurrentAPISessionUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session][%d] getCurrentApiSessionUnauthorized %s", 401, payload)
 }
 
 func (o *GetCurrentAPISessionUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetCurrentAPISessionUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

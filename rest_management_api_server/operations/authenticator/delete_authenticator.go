@@ -30,6 +30,7 @@ package authenticator
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type DeleteAuthenticatorHandlerFunc func(DeleteAuthenticatorParams, interface{})
 
 // Handle executing the request and returning a response
 func (fn DeleteAuthenticatorHandlerFunc) Handle(params DeleteAuthenticatorParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type DeleteAuthenticatorHandler interface {
 
 // NewDeleteAuthenticator creates a new http.Handler for the delete authenticator operation
 func NewDeleteAuthenticator(ctx *middleware.Context, handler DeleteAuthenticatorHandler) *DeleteAuthenticator {
+    logtrace.LogWithFunctionName()
 	return &DeleteAuthenticator{Context: ctx, Handler: handler}
 }
 
@@ -67,6 +70,7 @@ type DeleteAuthenticator struct {
 }
 
 func (o *DeleteAuthenticator) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"bytes"
 	"context"
 	"encoding/json"
@@ -54,45 +55,54 @@ type PostureCheckMfaPatch struct {
 
 // Name gets the name of this subtype
 func (m *PostureCheckMfaPatch) Name() string {
+    logtrace.LogWithFunctionName()
 	return m.nameField
 }
 
 // SetName sets the name of this subtype
 func (m *PostureCheckMfaPatch) SetName(val string) {
+    logtrace.LogWithFunctionName()
 	m.nameField = val
 }
 
 // RoleAttributes gets the role attributes of this subtype
 func (m *PostureCheckMfaPatch) RoleAttributes() *Attributes {
+    logtrace.LogWithFunctionName()
 	return m.roleAttributesField
 }
 
 // SetRoleAttributes sets the role attributes of this subtype
 func (m *PostureCheckMfaPatch) SetRoleAttributes(val *Attributes) {
+    logtrace.LogWithFunctionName()
 	m.roleAttributesField = val
 }
 
 // Tags gets the tags of this subtype
 func (m *PostureCheckMfaPatch) Tags() *Tags {
+    logtrace.LogWithFunctionName()
 	return m.tagsField
 }
 
 // SetTags sets the tags of this subtype
 func (m *PostureCheckMfaPatch) SetTags(val *Tags) {
+    logtrace.LogWithFunctionName()
 	m.tagsField = val
 }
 
 // TypeID gets the type Id of this subtype
 func (m *PostureCheckMfaPatch) TypeID() PostureCheckType {
+    logtrace.LogWithFunctionName()
 	return "MFA"
 }
 
 // SetTypeID sets the type Id of this subtype
 func (m *PostureCheckMfaPatch) SetTypeID(val PostureCheckType) {
+    logtrace.LogWithFunctionName()
 }
 
 // UnmarshalJSON unmarshals this object with a polymorphic type from a JSON structure
 func (m *PostureCheckMfaPatch) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	var data struct {
 		PostureCheckMfaPropertiesPatch
 	}
@@ -144,6 +154,7 @@ func (m *PostureCheckMfaPatch) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object with a polymorphic type to a JSON structure
 func (m PostureCheckMfaPatch) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	var b1, b2, b3 []byte
 	var err error
 	b1, err = json.Marshal(struct {
@@ -182,6 +193,7 @@ func (m PostureCheckMfaPatch) MarshalJSON() ([]byte, error) {
 
 // Validate validates this posture check mfa patch
 func (m *PostureCheckMfaPatch) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateRoleAttributes(formats); err != nil {
@@ -204,6 +216,7 @@ func (m *PostureCheckMfaPatch) Validate(formats strfmt.Registry) error {
 }
 
 func (m *PostureCheckMfaPatch) validateRoleAttributes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.RoleAttributes()) { // not required
 		return nil
@@ -224,6 +237,7 @@ func (m *PostureCheckMfaPatch) validateRoleAttributes(formats strfmt.Registry) e
 }
 
 func (m *PostureCheckMfaPatch) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.Tags()) { // not required
 		return nil
@@ -245,6 +259,7 @@ func (m *PostureCheckMfaPatch) validateTags(formats strfmt.Registry) error {
 
 // ContextValidate validate this posture check mfa patch based on the context it is used
 func (m *PostureCheckMfaPatch) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateRoleAttributes(ctx, formats); err != nil {
@@ -267,6 +282,7 @@ func (m *PostureCheckMfaPatch) ContextValidate(ctx context.Context, formats strf
 }
 
 func (m *PostureCheckMfaPatch) contextValidateRoleAttributes(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.RoleAttributes() != nil {
 		if err := m.RoleAttributes().ContextValidate(ctx, formats); err != nil {
@@ -283,6 +299,7 @@ func (m *PostureCheckMfaPatch) contextValidateRoleAttributes(ctx context.Context
 }
 
 func (m *PostureCheckMfaPatch) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags() != nil {
 
@@ -304,6 +321,7 @@ func (m *PostureCheckMfaPatch) contextValidateTags(ctx context.Context, formats 
 }
 
 func (m *PostureCheckMfaPatch) contextValidateTypeID(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.TypeID().ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -319,6 +337,7 @@ func (m *PostureCheckMfaPatch) contextValidateTypeID(ctx context.Context, format
 
 // MarshalBinary interface implementation
 func (m *PostureCheckMfaPatch) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -327,6 +346,7 @@ func (m *PostureCheckMfaPatch) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureCheckMfaPatch) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureCheckMfaPatch
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

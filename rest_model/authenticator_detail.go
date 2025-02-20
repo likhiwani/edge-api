@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -71,6 +72,7 @@ type AuthenticatorDetail struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *AuthenticatorDetail) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 BaseEntity
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -117,6 +119,7 @@ func (m *AuthenticatorDetail) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m AuthenticatorDetail) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.BaseEntity)
@@ -164,6 +167,7 @@ func (m AuthenticatorDetail) MarshalJSON() ([]byte, error) {
 
 // Validate validates this authenticator detail
 func (m *AuthenticatorDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -190,6 +194,7 @@ func (m *AuthenticatorDetail) Validate(formats strfmt.Registry) error {
 }
 
 func (m *AuthenticatorDetail) validateIdentity(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("identity", "body", m.Identity); err != nil {
 		return err
@@ -210,6 +215,7 @@ func (m *AuthenticatorDetail) validateIdentity(formats strfmt.Registry) error {
 }
 
 func (m *AuthenticatorDetail) validateIdentityID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("identityId", "body", m.IdentityID); err != nil {
 		return err
@@ -219,6 +225,7 @@ func (m *AuthenticatorDetail) validateIdentityID(formats strfmt.Registry) error 
 }
 
 func (m *AuthenticatorDetail) validateMethod(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("method", "body", m.Method); err != nil {
 		return err
@@ -229,6 +236,7 @@ func (m *AuthenticatorDetail) validateMethod(formats strfmt.Registry) error {
 
 // ContextValidate validate this authenticator detail based on the context it is used
 func (m *AuthenticatorDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -247,6 +255,7 @@ func (m *AuthenticatorDetail) ContextValidate(ctx context.Context, formats strfm
 }
 
 func (m *AuthenticatorDetail) contextValidateIdentity(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Identity != nil {
 
@@ -265,6 +274,7 @@ func (m *AuthenticatorDetail) contextValidateIdentity(ctx context.Context, forma
 
 // MarshalBinary interface implementation
 func (m *AuthenticatorDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -273,6 +283,7 @@ func (m *AuthenticatorDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *AuthenticatorDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res AuthenticatorDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

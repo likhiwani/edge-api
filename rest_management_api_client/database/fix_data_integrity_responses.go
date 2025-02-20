@@ -30,6 +30,7 @@ package database
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type FixDataIntegrityReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *FixDataIntegrityReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 202:
 		result := NewFixDataIntegrityAccepted()
@@ -73,6 +75,7 @@ func (o *FixDataIntegrityReader) ReadResponse(response runtime.ClientResponse, c
 
 // NewFixDataIntegrityAccepted creates a FixDataIntegrityAccepted with default headers values
 func NewFixDataIntegrityAccepted() *FixDataIntegrityAccepted {
+    logtrace.LogWithFunctionName()
 	return &FixDataIntegrityAccepted{}
 }
 
@@ -87,49 +90,59 @@ type FixDataIntegrityAccepted struct {
 
 // IsSuccess returns true when this fix data integrity accepted response has a 2xx status code
 func (o *FixDataIntegrityAccepted) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this fix data integrity accepted response has a 3xx status code
 func (o *FixDataIntegrityAccepted) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this fix data integrity accepted response has a 4xx status code
 func (o *FixDataIntegrityAccepted) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this fix data integrity accepted response has a 5xx status code
 func (o *FixDataIntegrityAccepted) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this fix data integrity accepted response a status code equal to that given
 func (o *FixDataIntegrityAccepted) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 202
 }
 
 // Code gets the status code for the fix data integrity accepted response
 func (o *FixDataIntegrityAccepted) Code() int {
+    logtrace.LogWithFunctionName()
 	return 202
 }
 
 func (o *FixDataIntegrityAccepted) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /database/fix-data-integrity][%d] fixDataIntegrityAccepted %s", 202, payload)
 }
 
 func (o *FixDataIntegrityAccepted) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /database/fix-data-integrity][%d] fixDataIntegrityAccepted %s", 202, payload)
 }
 
 func (o *FixDataIntegrityAccepted) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *FixDataIntegrityAccepted) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -143,6 +156,7 @@ func (o *FixDataIntegrityAccepted) readResponse(response runtime.ClientResponse,
 
 // NewFixDataIntegrityUnauthorized creates a FixDataIntegrityUnauthorized with default headers values
 func NewFixDataIntegrityUnauthorized() *FixDataIntegrityUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &FixDataIntegrityUnauthorized{}
 }
 
@@ -157,49 +171,59 @@ type FixDataIntegrityUnauthorized struct {
 
 // IsSuccess returns true when this fix data integrity unauthorized response has a 2xx status code
 func (o *FixDataIntegrityUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this fix data integrity unauthorized response has a 3xx status code
 func (o *FixDataIntegrityUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this fix data integrity unauthorized response has a 4xx status code
 func (o *FixDataIntegrityUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this fix data integrity unauthorized response has a 5xx status code
 func (o *FixDataIntegrityUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this fix data integrity unauthorized response a status code equal to that given
 func (o *FixDataIntegrityUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the fix data integrity unauthorized response
 func (o *FixDataIntegrityUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *FixDataIntegrityUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /database/fix-data-integrity][%d] fixDataIntegrityUnauthorized %s", 401, payload)
 }
 
 func (o *FixDataIntegrityUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /database/fix-data-integrity][%d] fixDataIntegrityUnauthorized %s", 401, payload)
 }
 
 func (o *FixDataIntegrityUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *FixDataIntegrityUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -213,6 +237,7 @@ func (o *FixDataIntegrityUnauthorized) readResponse(response runtime.ClientRespo
 
 // NewFixDataIntegrityTooManyRequests creates a FixDataIntegrityTooManyRequests with default headers values
 func NewFixDataIntegrityTooManyRequests() *FixDataIntegrityTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &FixDataIntegrityTooManyRequests{}
 }
 
@@ -227,49 +252,59 @@ type FixDataIntegrityTooManyRequests struct {
 
 // IsSuccess returns true when this fix data integrity too many requests response has a 2xx status code
 func (o *FixDataIntegrityTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this fix data integrity too many requests response has a 3xx status code
 func (o *FixDataIntegrityTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this fix data integrity too many requests response has a 4xx status code
 func (o *FixDataIntegrityTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this fix data integrity too many requests response has a 5xx status code
 func (o *FixDataIntegrityTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this fix data integrity too many requests response a status code equal to that given
 func (o *FixDataIntegrityTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the fix data integrity too many requests response
 func (o *FixDataIntegrityTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *FixDataIntegrityTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /database/fix-data-integrity][%d] fixDataIntegrityTooManyRequests %s", 429, payload)
 }
 
 func (o *FixDataIntegrityTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /database/fix-data-integrity][%d] fixDataIntegrityTooManyRequests %s", 429, payload)
 }
 
 func (o *FixDataIntegrityTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *FixDataIntegrityTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

@@ -30,6 +30,7 @@ package edge_router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -48,6 +49,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListEdgeRoutersParams() *ListEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	return &ListEdgeRoutersParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -56,6 +58,7 @@ func NewListEdgeRoutersParams() *ListEdgeRoutersParams {
 // NewListEdgeRoutersParamsWithTimeout creates a new ListEdgeRoutersParams object
 // with the ability to set a timeout on a request.
 func NewListEdgeRoutersParamsWithTimeout(timeout time.Duration) *ListEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	return &ListEdgeRoutersParams{
 		timeout: timeout,
 	}
@@ -64,6 +67,7 @@ func NewListEdgeRoutersParamsWithTimeout(timeout time.Duration) *ListEdgeRouters
 // NewListEdgeRoutersParamsWithContext creates a new ListEdgeRoutersParams object
 // with the ability to set a context for a request.
 func NewListEdgeRoutersParamsWithContext(ctx context.Context) *ListEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	return &ListEdgeRoutersParams{
 		Context: ctx,
 	}
@@ -72,6 +76,7 @@ func NewListEdgeRoutersParamsWithContext(ctx context.Context) *ListEdgeRoutersPa
 // NewListEdgeRoutersParamsWithHTTPClient creates a new ListEdgeRoutersParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListEdgeRoutersParamsWithHTTPClient(client *http.Client) *ListEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	return &ListEdgeRoutersParams{
 		HTTPClient: client,
 	}
@@ -110,6 +115,7 @@ type ListEdgeRoutersParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListEdgeRoutersParams) WithDefaults() *ListEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -118,99 +124,117 @@ func (o *ListEdgeRoutersParams) WithDefaults() *ListEdgeRoutersParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListEdgeRoutersParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list edge routers params
 func (o *ListEdgeRoutersParams) WithTimeout(timeout time.Duration) *ListEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list edge routers params
 func (o *ListEdgeRoutersParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list edge routers params
 func (o *ListEdgeRoutersParams) WithContext(ctx context.Context) *ListEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list edge routers params
 func (o *ListEdgeRoutersParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list edge routers params
 func (o *ListEdgeRoutersParams) WithHTTPClient(client *http.Client) *ListEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list edge routers params
 func (o *ListEdgeRoutersParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithFilter adds the filter to the list edge routers params
 func (o *ListEdgeRoutersParams) WithFilter(filter *string) *ListEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetFilter(filter)
 	return o
 }
 
 // SetFilter adds the filter to the list edge routers params
 func (o *ListEdgeRoutersParams) SetFilter(filter *string) {
+    logtrace.LogWithFunctionName()
 	o.Filter = filter
 }
 
 // WithLimit adds the limit to the list edge routers params
 func (o *ListEdgeRoutersParams) WithLimit(limit *int64) *ListEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetLimit(limit)
 	return o
 }
 
 // SetLimit adds the limit to the list edge routers params
 func (o *ListEdgeRoutersParams) SetLimit(limit *int64) {
+    logtrace.LogWithFunctionName()
 	o.Limit = limit
 }
 
 // WithOffset adds the offset to the list edge routers params
 func (o *ListEdgeRoutersParams) WithOffset(offset *int64) *ListEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetOffset(offset)
 	return o
 }
 
 // SetOffset adds the offset to the list edge routers params
 func (o *ListEdgeRoutersParams) SetOffset(offset *int64) {
+    logtrace.LogWithFunctionName()
 	o.Offset = offset
 }
 
 // WithRoleFilter adds the roleFilter to the list edge routers params
 func (o *ListEdgeRoutersParams) WithRoleFilter(roleFilter []string) *ListEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetRoleFilter(roleFilter)
 	return o
 }
 
 // SetRoleFilter adds the roleFilter to the list edge routers params
 func (o *ListEdgeRoutersParams) SetRoleFilter(roleFilter []string) {
+    logtrace.LogWithFunctionName()
 	o.RoleFilter = roleFilter
 }
 
 // WithRoleSemantic adds the roleSemantic to the list edge routers params
 func (o *ListEdgeRoutersParams) WithRoleSemantic(roleSemantic *string) *ListEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetRoleSemantic(roleSemantic)
 	return o
 }
 
 // SetRoleSemantic adds the roleSemantic to the list edge routers params
 func (o *ListEdgeRoutersParams) SetRoleSemantic(roleSemantic *string) {
+    logtrace.LogWithFunctionName()
 	o.RoleSemantic = roleSemantic
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListEdgeRoutersParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err
@@ -304,6 +328,7 @@ func (o *ListEdgeRoutersParams) WriteToRequest(r runtime.ClientRequest, reg strf
 
 // bindParamListEdgeRouters binds the parameter roleFilter
 func (o *ListEdgeRoutersParams) bindParamRoleFilter(formats strfmt.Registry) []string {
+    logtrace.LogWithFunctionName()
 	roleFilterIR := o.RoleFilter
 
 	var roleFilterIC []string

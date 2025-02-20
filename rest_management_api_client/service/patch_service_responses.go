@@ -30,6 +30,7 @@ package service
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type PatchServiceReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *PatchServiceReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewPatchServiceOK()
@@ -91,6 +93,7 @@ func (o *PatchServiceReader) ReadResponse(response runtime.ClientResponse, consu
 
 // NewPatchServiceOK creates a PatchServiceOK with default headers values
 func NewPatchServiceOK() *PatchServiceOK {
+    logtrace.LogWithFunctionName()
 	return &PatchServiceOK{}
 }
 
@@ -105,49 +108,59 @@ type PatchServiceOK struct {
 
 // IsSuccess returns true when this patch service o k response has a 2xx status code
 func (o *PatchServiceOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this patch service o k response has a 3xx status code
 func (o *PatchServiceOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch service o k response has a 4xx status code
 func (o *PatchServiceOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this patch service o k response has a 5xx status code
 func (o *PatchServiceOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch service o k response a status code equal to that given
 func (o *PatchServiceOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the patch service o k response
 func (o *PatchServiceOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *PatchServiceOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /services/{id}][%d] patchServiceOK %s", 200, payload)
 }
 
 func (o *PatchServiceOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /services/{id}][%d] patchServiceOK %s", 200, payload)
 }
 
 func (o *PatchServiceOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchServiceOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -161,6 +174,7 @@ func (o *PatchServiceOK) readResponse(response runtime.ClientResponse, consumer 
 
 // NewPatchServiceBadRequest creates a PatchServiceBadRequest with default headers values
 func NewPatchServiceBadRequest() *PatchServiceBadRequest {
+    logtrace.LogWithFunctionName()
 	return &PatchServiceBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type PatchServiceBadRequest struct {
 
 // IsSuccess returns true when this patch service bad request response has a 2xx status code
 func (o *PatchServiceBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch service bad request response has a 3xx status code
 func (o *PatchServiceBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch service bad request response has a 4xx status code
 func (o *PatchServiceBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch service bad request response has a 5xx status code
 func (o *PatchServiceBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch service bad request response a status code equal to that given
 func (o *PatchServiceBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the patch service bad request response
 func (o *PatchServiceBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *PatchServiceBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /services/{id}][%d] patchServiceBadRequest %s", 400, payload)
 }
 
 func (o *PatchServiceBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /services/{id}][%d] patchServiceBadRequest %s", 400, payload)
 }
 
 func (o *PatchServiceBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchServiceBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *PatchServiceBadRequest) readResponse(response runtime.ClientResponse, c
 
 // NewPatchServiceUnauthorized creates a PatchServiceUnauthorized with default headers values
 func NewPatchServiceUnauthorized() *PatchServiceUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &PatchServiceUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type PatchServiceUnauthorized struct {
 
 // IsSuccess returns true when this patch service unauthorized response has a 2xx status code
 func (o *PatchServiceUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch service unauthorized response has a 3xx status code
 func (o *PatchServiceUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch service unauthorized response has a 4xx status code
 func (o *PatchServiceUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch service unauthorized response has a 5xx status code
 func (o *PatchServiceUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch service unauthorized response a status code equal to that given
 func (o *PatchServiceUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the patch service unauthorized response
 func (o *PatchServiceUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *PatchServiceUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /services/{id}][%d] patchServiceUnauthorized %s", 401, payload)
 }
 
 func (o *PatchServiceUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /services/{id}][%d] patchServiceUnauthorized %s", 401, payload)
 }
 
 func (o *PatchServiceUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchServiceUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *PatchServiceUnauthorized) readResponse(response runtime.ClientResponse,
 
 // NewPatchServiceNotFound creates a PatchServiceNotFound with default headers values
 func NewPatchServiceNotFound() *PatchServiceNotFound {
+    logtrace.LogWithFunctionName()
 	return &PatchServiceNotFound{}
 }
 
@@ -315,49 +351,59 @@ type PatchServiceNotFound struct {
 
 // IsSuccess returns true when this patch service not found response has a 2xx status code
 func (o *PatchServiceNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch service not found response has a 3xx status code
 func (o *PatchServiceNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch service not found response has a 4xx status code
 func (o *PatchServiceNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch service not found response has a 5xx status code
 func (o *PatchServiceNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch service not found response a status code equal to that given
 func (o *PatchServiceNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the patch service not found response
 func (o *PatchServiceNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *PatchServiceNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /services/{id}][%d] patchServiceNotFound %s", 404, payload)
 }
 
 func (o *PatchServiceNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /services/{id}][%d] patchServiceNotFound %s", 404, payload)
 }
 
 func (o *PatchServiceNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchServiceNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *PatchServiceNotFound) readResponse(response runtime.ClientResponse, con
 
 // NewPatchServiceTooManyRequests creates a PatchServiceTooManyRequests with default headers values
 func NewPatchServiceTooManyRequests() *PatchServiceTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &PatchServiceTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type PatchServiceTooManyRequests struct {
 
 // IsSuccess returns true when this patch service too many requests response has a 2xx status code
 func (o *PatchServiceTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch service too many requests response has a 3xx status code
 func (o *PatchServiceTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch service too many requests response has a 4xx status code
 func (o *PatchServiceTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch service too many requests response has a 5xx status code
 func (o *PatchServiceTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch service too many requests response a status code equal to that given
 func (o *PatchServiceTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the patch service too many requests response
 func (o *PatchServiceTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *PatchServiceTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /services/{id}][%d] patchServiceTooManyRequests %s", 429, payload)
 }
 
 func (o *PatchServiceTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /services/{id}][%d] patchServiceTooManyRequests %s", 429, payload)
 }
 
 func (o *PatchServiceTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchServiceTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *PatchServiceTooManyRequests) readResponse(response runtime.ClientRespon
 
 // NewPatchServiceServiceUnavailable creates a PatchServiceServiceUnavailable with default headers values
 func NewPatchServiceServiceUnavailable() *PatchServiceServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &PatchServiceServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type PatchServiceServiceUnavailable struct {
 
 // IsSuccess returns true when this patch service service unavailable response has a 2xx status code
 func (o *PatchServiceServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch service service unavailable response has a 3xx status code
 func (o *PatchServiceServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch service service unavailable response has a 4xx status code
 func (o *PatchServiceServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this patch service service unavailable response has a 5xx status code
 func (o *PatchServiceServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this patch service service unavailable response a status code equal to that given
 func (o *PatchServiceServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the patch service service unavailable response
 func (o *PatchServiceServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *PatchServiceServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /services/{id}][%d] patchServiceServiceUnavailable %s", 503, payload)
 }
 
 func (o *PatchServiceServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /services/{id}][%d] patchServiceServiceUnavailable %s", 503, payload)
 }
 
 func (o *PatchServiceServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchServiceServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

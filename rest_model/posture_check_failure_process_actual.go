@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -64,6 +65,7 @@ type PostureCheckFailureProcessActual struct {
 
 // Validate validates this posture check failure process actual
 func (m *PostureCheckFailureProcessActual) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateHash(formats); err != nil {
@@ -89,6 +91,7 @@ func (m *PostureCheckFailureProcessActual) Validate(formats strfmt.Registry) err
 }
 
 func (m *PostureCheckFailureProcessActual) validateHash(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("hash", "body", m.Hash); err != nil {
 		return err
@@ -98,6 +101,7 @@ func (m *PostureCheckFailureProcessActual) validateHash(formats strfmt.Registry)
 }
 
 func (m *PostureCheckFailureProcessActual) validateIsRunning(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isRunning", "body", m.IsRunning); err != nil {
 		return err
@@ -107,6 +111,7 @@ func (m *PostureCheckFailureProcessActual) validateIsRunning(formats strfmt.Regi
 }
 
 func (m *PostureCheckFailureProcessActual) validateOsType(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.OsType) { // not required
 		return nil
 	}
@@ -124,6 +129,7 @@ func (m *PostureCheckFailureProcessActual) validateOsType(formats strfmt.Registr
 }
 
 func (m *PostureCheckFailureProcessActual) validateSignerFingerprints(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("signerFingerprints", "body", m.SignerFingerprints); err != nil {
 		return err
@@ -134,6 +140,7 @@ func (m *PostureCheckFailureProcessActual) validateSignerFingerprints(formats st
 
 // ContextValidate validate this posture check failure process actual based on the context it is used
 func (m *PostureCheckFailureProcessActual) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateOsType(ctx, formats); err != nil {
@@ -147,6 +154,7 @@ func (m *PostureCheckFailureProcessActual) ContextValidate(ctx context.Context, 
 }
 
 func (m *PostureCheckFailureProcessActual) contextValidateOsType(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.OsType) { // not required
 		return nil
@@ -166,6 +174,7 @@ func (m *PostureCheckFailureProcessActual) contextValidateOsType(ctx context.Con
 
 // MarshalBinary interface implementation
 func (m *PostureCheckFailureProcessActual) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -174,6 +183,7 @@ func (m *PostureCheckFailureProcessActual) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureCheckFailureProcessActual) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureCheckFailureProcessActual
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDeleteCurrentAPISessionCertificateParams() *DeleteCurrentAPISessionCertificateParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteCurrentAPISessionCertificateParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDeleteCurrentAPISessionCertificateParams() *DeleteCurrentAPISessionCerti
 // NewDeleteCurrentAPISessionCertificateParamsWithTimeout creates a new DeleteCurrentAPISessionCertificateParams object
 // with the ability to set a timeout on a request.
 func NewDeleteCurrentAPISessionCertificateParamsWithTimeout(timeout time.Duration) *DeleteCurrentAPISessionCertificateParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteCurrentAPISessionCertificateParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDeleteCurrentAPISessionCertificateParamsWithTimeout(timeout time.Duratio
 // NewDeleteCurrentAPISessionCertificateParamsWithContext creates a new DeleteCurrentAPISessionCertificateParams object
 // with the ability to set a context for a request.
 func NewDeleteCurrentAPISessionCertificateParamsWithContext(ctx context.Context) *DeleteCurrentAPISessionCertificateParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteCurrentAPISessionCertificateParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDeleteCurrentAPISessionCertificateParamsWithContext(ctx context.Context)
 // NewDeleteCurrentAPISessionCertificateParamsWithHTTPClient creates a new DeleteCurrentAPISessionCertificateParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDeleteCurrentAPISessionCertificateParamsWithHTTPClient(client *http.Client) *DeleteCurrentAPISessionCertificateParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteCurrentAPISessionCertificateParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DeleteCurrentAPISessionCertificateParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteCurrentAPISessionCertificateParams) WithDefaults() *DeleteCurrentAPISessionCertificateParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DeleteCurrentAPISessionCertificateParams) WithDefaults() *DeleteCurrent
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteCurrentAPISessionCertificateParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the delete current Api session certificate params
 func (o *DeleteCurrentAPISessionCertificateParams) WithTimeout(timeout time.Duration) *DeleteCurrentAPISessionCertificateParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the delete current Api session certificate params
 func (o *DeleteCurrentAPISessionCertificateParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the delete current Api session certificate params
 func (o *DeleteCurrentAPISessionCertificateParams) WithContext(ctx context.Context) *DeleteCurrentAPISessionCertificateParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the delete current Api session certificate params
 func (o *DeleteCurrentAPISessionCertificateParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the delete current Api session certificate params
 func (o *DeleteCurrentAPISessionCertificateParams) WithHTTPClient(client *http.Client) *DeleteCurrentAPISessionCertificateParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the delete current Api session certificate params
 func (o *DeleteCurrentAPISessionCertificateParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the delete current Api session certificate params
 func (o *DeleteCurrentAPISessionCertificateParams) WithID(id string) *DeleteCurrentAPISessionCertificateParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the delete current Api session certificate params
 func (o *DeleteCurrentAPISessionCertificateParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DeleteCurrentAPISessionCertificateParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

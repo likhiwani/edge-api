@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DetailSpecBodyReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DetailSpecBodyReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDetailSpecBodyOK()
@@ -61,6 +63,7 @@ func (o *DetailSpecBodyReader) ReadResponse(response runtime.ClientResponse, con
 
 // NewDetailSpecBodyOK creates a DetailSpecBodyOK with default headers values
 func NewDetailSpecBodyOK() *DetailSpecBodyOK {
+    logtrace.LogWithFunctionName()
 	return &DetailSpecBodyOK{}
 }
 
@@ -75,49 +78,59 @@ type DetailSpecBodyOK struct {
 
 // IsSuccess returns true when this detail spec body o k response has a 2xx status code
 func (o *DetailSpecBodyOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this detail spec body o k response has a 3xx status code
 func (o *DetailSpecBodyOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail spec body o k response has a 4xx status code
 func (o *DetailSpecBodyOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail spec body o k response has a 5xx status code
 func (o *DetailSpecBodyOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail spec body o k response a status code equal to that given
 func (o *DetailSpecBodyOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the detail spec body o k response
 func (o *DetailSpecBodyOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DetailSpecBodyOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /specs/{id}/spec][%d] detailSpecBodyOK %s", 200, payload)
 }
 
 func (o *DetailSpecBodyOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /specs/{id}/spec][%d] detailSpecBodyOK %s", 200, payload)
 }
 
 func (o *DetailSpecBodyOK) GetPayload() *rest_model.DetailSpecBodyEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailSpecBodyOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.DetailSpecBodyEnvelope)
 

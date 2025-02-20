@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewRemoveIdentityMfaParams() *RemoveIdentityMfaParams {
+    logtrace.LogWithFunctionName()
 	return &RemoveIdentityMfaParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewRemoveIdentityMfaParams() *RemoveIdentityMfaParams {
 // NewRemoveIdentityMfaParamsWithTimeout creates a new RemoveIdentityMfaParams object
 // with the ability to set a timeout on a request.
 func NewRemoveIdentityMfaParamsWithTimeout(timeout time.Duration) *RemoveIdentityMfaParams {
+    logtrace.LogWithFunctionName()
 	return &RemoveIdentityMfaParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewRemoveIdentityMfaParamsWithTimeout(timeout time.Duration) *RemoveIdentit
 // NewRemoveIdentityMfaParamsWithContext creates a new RemoveIdentityMfaParams object
 // with the ability to set a context for a request.
 func NewRemoveIdentityMfaParamsWithContext(ctx context.Context) *RemoveIdentityMfaParams {
+    logtrace.LogWithFunctionName()
 	return &RemoveIdentityMfaParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewRemoveIdentityMfaParamsWithContext(ctx context.Context) *RemoveIdentityM
 // NewRemoveIdentityMfaParamsWithHTTPClient creates a new RemoveIdentityMfaParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewRemoveIdentityMfaParamsWithHTTPClient(client *http.Client) *RemoveIdentityMfaParams {
+    logtrace.LogWithFunctionName()
 	return &RemoveIdentityMfaParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type RemoveIdentityMfaParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *RemoveIdentityMfaParams) WithDefaults() *RemoveIdentityMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *RemoveIdentityMfaParams) WithDefaults() *RemoveIdentityMfaParams {
 //
 // All values with no default are reset to their zero value.
 func (o *RemoveIdentityMfaParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the remove identity mfa params
 func (o *RemoveIdentityMfaParams) WithTimeout(timeout time.Duration) *RemoveIdentityMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the remove identity mfa params
 func (o *RemoveIdentityMfaParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the remove identity mfa params
 func (o *RemoveIdentityMfaParams) WithContext(ctx context.Context) *RemoveIdentityMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the remove identity mfa params
 func (o *RemoveIdentityMfaParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the remove identity mfa params
 func (o *RemoveIdentityMfaParams) WithHTTPClient(client *http.Client) *RemoveIdentityMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the remove identity mfa params
 func (o *RemoveIdentityMfaParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the remove identity mfa params
 func (o *RemoveIdentityMfaParams) WithID(id string) *RemoveIdentityMfaParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the remove identity mfa params
 func (o *RemoveIdentityMfaParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *RemoveIdentityMfaParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

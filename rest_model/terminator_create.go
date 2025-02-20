@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -78,6 +79,7 @@ type TerminatorCreate struct {
 
 // Validate validates this terminator create
 func (m *TerminatorCreate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateAddress(formats); err != nil {
@@ -115,6 +117,7 @@ func (m *TerminatorCreate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorCreate) validateAddress(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("address", "body", m.Address); err != nil {
 		return err
@@ -124,6 +127,7 @@ func (m *TerminatorCreate) validateAddress(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorCreate) validateBinding(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("binding", "body", m.Binding); err != nil {
 		return err
@@ -133,6 +137,7 @@ func (m *TerminatorCreate) validateBinding(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorCreate) validateCost(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Cost) { // not required
 		return nil
 	}
@@ -152,6 +157,7 @@ func (m *TerminatorCreate) validateCost(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorCreate) validatePrecedence(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Precedence) { // not required
 		return nil
 	}
@@ -169,6 +175,7 @@ func (m *TerminatorCreate) validatePrecedence(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorCreate) validateRouter(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("router", "body", m.Router); err != nil {
 		return err
@@ -178,6 +185,7 @@ func (m *TerminatorCreate) validateRouter(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorCreate) validateService(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("service", "body", m.Service); err != nil {
 		return err
@@ -187,6 +195,7 @@ func (m *TerminatorCreate) validateService(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorCreate) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -207,6 +216,7 @@ func (m *TerminatorCreate) validateTags(formats strfmt.Registry) error {
 
 // ContextValidate validate this terminator create based on the context it is used
 func (m *TerminatorCreate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateCost(ctx, formats); err != nil {
@@ -228,6 +238,7 @@ func (m *TerminatorCreate) ContextValidate(ctx context.Context, formats strfmt.R
 }
 
 func (m *TerminatorCreate) contextValidateCost(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Cost != nil {
 
@@ -249,6 +260,7 @@ func (m *TerminatorCreate) contextValidateCost(ctx context.Context, formats strf
 }
 
 func (m *TerminatorCreate) contextValidatePrecedence(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.Precedence) { // not required
 		return nil
@@ -267,6 +279,7 @@ func (m *TerminatorCreate) contextValidatePrecedence(ctx context.Context, format
 }
 
 func (m *TerminatorCreate) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -289,6 +302,7 @@ func (m *TerminatorCreate) contextValidateTags(ctx context.Context, formats strf
 
 // MarshalBinary interface implementation
 func (m *TerminatorCreate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -297,6 +311,7 @@ func (m *TerminatorCreate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *TerminatorCreate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res TerminatorCreate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

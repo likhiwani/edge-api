@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type PatchCurrentIdentityAuthenticatorOK struct {
 
 // NewPatchCurrentIdentityAuthenticatorOK creates PatchCurrentIdentityAuthenticatorOK with default headers values
 func NewPatchCurrentIdentityAuthenticatorOK() *PatchCurrentIdentityAuthenticatorOK {
+    logtrace.LogWithFunctionName()
 
 	return &PatchCurrentIdentityAuthenticatorOK{}
 }
 
 // WithPayload adds the payload to the patch current identity authenticator o k response
 func (o *PatchCurrentIdentityAuthenticatorOK) WithPayload(payload *rest_model.Empty) *PatchCurrentIdentityAuthenticatorOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch current identity authenticator o k response
 func (o *PatchCurrentIdentityAuthenticatorOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchCurrentIdentityAuthenticatorOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type PatchCurrentIdentityAuthenticatorBadRequest struct {
 
 // NewPatchCurrentIdentityAuthenticatorBadRequest creates PatchCurrentIdentityAuthenticatorBadRequest with default headers values
 func NewPatchCurrentIdentityAuthenticatorBadRequest() *PatchCurrentIdentityAuthenticatorBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &PatchCurrentIdentityAuthenticatorBadRequest{}
 }
 
 // WithPayload adds the payload to the patch current identity authenticator bad request response
 func (o *PatchCurrentIdentityAuthenticatorBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchCurrentIdentityAuthenticatorBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch current identity authenticator bad request response
 func (o *PatchCurrentIdentityAuthenticatorBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchCurrentIdentityAuthenticatorBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type PatchCurrentIdentityAuthenticatorUnauthorized struct {
 
 // NewPatchCurrentIdentityAuthenticatorUnauthorized creates PatchCurrentIdentityAuthenticatorUnauthorized with default headers values
 func NewPatchCurrentIdentityAuthenticatorUnauthorized() *PatchCurrentIdentityAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &PatchCurrentIdentityAuthenticatorUnauthorized{}
 }
 
 // WithPayload adds the payload to the patch current identity authenticator unauthorized response
 func (o *PatchCurrentIdentityAuthenticatorUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchCurrentIdentityAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch current identity authenticator unauthorized response
 func (o *PatchCurrentIdentityAuthenticatorUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchCurrentIdentityAuthenticatorUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type PatchCurrentIdentityAuthenticatorNotFound struct {
 
 // NewPatchCurrentIdentityAuthenticatorNotFound creates PatchCurrentIdentityAuthenticatorNotFound with default headers values
 func NewPatchCurrentIdentityAuthenticatorNotFound() *PatchCurrentIdentityAuthenticatorNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &PatchCurrentIdentityAuthenticatorNotFound{}
 }
 
 // WithPayload adds the payload to the patch current identity authenticator not found response
 func (o *PatchCurrentIdentityAuthenticatorNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchCurrentIdentityAuthenticatorNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch current identity authenticator not found response
 func (o *PatchCurrentIdentityAuthenticatorNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchCurrentIdentityAuthenticatorNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {

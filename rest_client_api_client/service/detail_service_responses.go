@@ -30,6 +30,7 @@ package service
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DetailServiceReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DetailServiceReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDetailServiceOK()
@@ -85,6 +87,7 @@ func (o *DetailServiceReader) ReadResponse(response runtime.ClientResponse, cons
 
 // NewDetailServiceOK creates a DetailServiceOK with default headers values
 func NewDetailServiceOK() *DetailServiceOK {
+    logtrace.LogWithFunctionName()
 	return &DetailServiceOK{}
 }
 
@@ -99,49 +102,59 @@ type DetailServiceOK struct {
 
 // IsSuccess returns true when this detail service o k response has a 2xx status code
 func (o *DetailServiceOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this detail service o k response has a 3xx status code
 func (o *DetailServiceOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail service o k response has a 4xx status code
 func (o *DetailServiceOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail service o k response has a 5xx status code
 func (o *DetailServiceOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail service o k response a status code equal to that given
 func (o *DetailServiceOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the detail service o k response
 func (o *DetailServiceOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DetailServiceOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}][%d] detailServiceOK %s", 200, payload)
 }
 
 func (o *DetailServiceOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}][%d] detailServiceOK %s", 200, payload)
 }
 
 func (o *DetailServiceOK) GetPayload() *rest_model.DetailServiceEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailServiceOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.DetailServiceEnvelope)
 
@@ -155,6 +168,7 @@ func (o *DetailServiceOK) readResponse(response runtime.ClientResponse, consumer
 
 // NewDetailServiceUnauthorized creates a DetailServiceUnauthorized with default headers values
 func NewDetailServiceUnauthorized() *DetailServiceUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DetailServiceUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type DetailServiceUnauthorized struct {
 
 // IsSuccess returns true when this detail service unauthorized response has a 2xx status code
 func (o *DetailServiceUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail service unauthorized response has a 3xx status code
 func (o *DetailServiceUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail service unauthorized response has a 4xx status code
 func (o *DetailServiceUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail service unauthorized response has a 5xx status code
 func (o *DetailServiceUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail service unauthorized response a status code equal to that given
 func (o *DetailServiceUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the detail service unauthorized response
 func (o *DetailServiceUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DetailServiceUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}][%d] detailServiceUnauthorized %s", 401, payload)
 }
 
 func (o *DetailServiceUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}][%d] detailServiceUnauthorized %s", 401, payload)
 }
 
 func (o *DetailServiceUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailServiceUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *DetailServiceUnauthorized) readResponse(response runtime.ClientResponse
 
 // NewDetailServiceNotFound creates a DetailServiceNotFound with default headers values
 func NewDetailServiceNotFound() *DetailServiceNotFound {
+    logtrace.LogWithFunctionName()
 	return &DetailServiceNotFound{}
 }
 
@@ -239,49 +264,59 @@ type DetailServiceNotFound struct {
 
 // IsSuccess returns true when this detail service not found response has a 2xx status code
 func (o *DetailServiceNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail service not found response has a 3xx status code
 func (o *DetailServiceNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail service not found response has a 4xx status code
 func (o *DetailServiceNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail service not found response has a 5xx status code
 func (o *DetailServiceNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail service not found response a status code equal to that given
 func (o *DetailServiceNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the detail service not found response
 func (o *DetailServiceNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DetailServiceNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}][%d] detailServiceNotFound %s", 404, payload)
 }
 
 func (o *DetailServiceNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}][%d] detailServiceNotFound %s", 404, payload)
 }
 
 func (o *DetailServiceNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailServiceNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *DetailServiceNotFound) readResponse(response runtime.ClientResponse, co
 
 // NewDetailServiceTooManyRequests creates a DetailServiceTooManyRequests with default headers values
 func NewDetailServiceTooManyRequests() *DetailServiceTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DetailServiceTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type DetailServiceTooManyRequests struct {
 
 // IsSuccess returns true when this detail service too many requests response has a 2xx status code
 func (o *DetailServiceTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail service too many requests response has a 3xx status code
 func (o *DetailServiceTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail service too many requests response has a 4xx status code
 func (o *DetailServiceTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail service too many requests response has a 5xx status code
 func (o *DetailServiceTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail service too many requests response a status code equal to that given
 func (o *DetailServiceTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the detail service too many requests response
 func (o *DetailServiceTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DetailServiceTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}][%d] detailServiceTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailServiceTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}][%d] detailServiceTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailServiceTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailServiceTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *DetailServiceTooManyRequests) readResponse(response runtime.ClientRespo
 
 // NewDetailServiceServiceUnavailable creates a DetailServiceServiceUnavailable with default headers values
 func NewDetailServiceServiceUnavailable() *DetailServiceServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DetailServiceServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type DetailServiceServiceUnavailable struct {
 
 // IsSuccess returns true when this detail service service unavailable response has a 2xx status code
 func (o *DetailServiceServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail service service unavailable response has a 3xx status code
 func (o *DetailServiceServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail service service unavailable response has a 4xx status code
 func (o *DetailServiceServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail service service unavailable response has a 5xx status code
 func (o *DetailServiceServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this detail service service unavailable response a status code equal to that given
 func (o *DetailServiceServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the detail service service unavailable response
 func (o *DetailServiceServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DetailServiceServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}][%d] detailServiceServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailServiceServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /services/{id}][%d] detailServiceServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailServiceServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailServiceServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

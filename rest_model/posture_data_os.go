@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -59,6 +60,7 @@ type PostureDataOs struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *PostureDataOs) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 PostureDataBase
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -89,6 +91,7 @@ func (m *PostureDataOs) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m PostureDataOs) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.PostureDataBase)
@@ -120,6 +123,7 @@ func (m PostureDataOs) MarshalJSON() ([]byte, error) {
 
 // Validate validates this posture data os
 func (m *PostureDataOs) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with PostureDataBase
@@ -146,6 +150,7 @@ func (m *PostureDataOs) Validate(formats strfmt.Registry) error {
 }
 
 func (m *PostureDataOs) validateBuild(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("build", "body", m.Build); err != nil {
 		return err
@@ -155,6 +160,7 @@ func (m *PostureDataOs) validateBuild(formats strfmt.Registry) error {
 }
 
 func (m *PostureDataOs) validateType(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("type", "body", m.Type); err != nil {
 		return err
@@ -164,6 +170,7 @@ func (m *PostureDataOs) validateType(formats strfmt.Registry) error {
 }
 
 func (m *PostureDataOs) validateVersion(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("version", "body", m.Version); err != nil {
 		return err
@@ -174,6 +181,7 @@ func (m *PostureDataOs) validateVersion(formats strfmt.Registry) error {
 
 // ContextValidate validate this posture data os based on the context it is used
 func (m *PostureDataOs) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with PostureDataBase
@@ -189,6 +197,7 @@ func (m *PostureDataOs) ContextValidate(ctx context.Context, formats strfmt.Regi
 
 // MarshalBinary interface implementation
 func (m *PostureDataOs) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -197,6 +206,7 @@ func (m *PostureDataOs) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureDataOs) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureDataOs
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

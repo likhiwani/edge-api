@@ -30,6 +30,7 @@ package service
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -48,6 +49,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListServiceIdentitiesParams() *ListServiceIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	return &ListServiceIdentitiesParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -56,6 +58,7 @@ func NewListServiceIdentitiesParams() *ListServiceIdentitiesParams {
 // NewListServiceIdentitiesParamsWithTimeout creates a new ListServiceIdentitiesParams object
 // with the ability to set a timeout on a request.
 func NewListServiceIdentitiesParamsWithTimeout(timeout time.Duration) *ListServiceIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	return &ListServiceIdentitiesParams{
 		timeout: timeout,
 	}
@@ -64,6 +67,7 @@ func NewListServiceIdentitiesParamsWithTimeout(timeout time.Duration) *ListServi
 // NewListServiceIdentitiesParamsWithContext creates a new ListServiceIdentitiesParams object
 // with the ability to set a context for a request.
 func NewListServiceIdentitiesParamsWithContext(ctx context.Context) *ListServiceIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	return &ListServiceIdentitiesParams{
 		Context: ctx,
 	}
@@ -72,6 +76,7 @@ func NewListServiceIdentitiesParamsWithContext(ctx context.Context) *ListService
 // NewListServiceIdentitiesParamsWithHTTPClient creates a new ListServiceIdentitiesParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListServiceIdentitiesParamsWithHTTPClient(client *http.Client) *ListServiceIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	return &ListServiceIdentitiesParams{
 		HTTPClient: client,
 	}
@@ -113,6 +118,7 @@ type ListServiceIdentitiesParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListServiceIdentitiesParams) WithDefaults() *ListServiceIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -121,99 +127,117 @@ func (o *ListServiceIdentitiesParams) WithDefaults() *ListServiceIdentitiesParam
 //
 // All values with no default are reset to their zero value.
 func (o *ListServiceIdentitiesParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list service identities params
 func (o *ListServiceIdentitiesParams) WithTimeout(timeout time.Duration) *ListServiceIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list service identities params
 func (o *ListServiceIdentitiesParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list service identities params
 func (o *ListServiceIdentitiesParams) WithContext(ctx context.Context) *ListServiceIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list service identities params
 func (o *ListServiceIdentitiesParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list service identities params
 func (o *ListServiceIdentitiesParams) WithHTTPClient(client *http.Client) *ListServiceIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list service identities params
 func (o *ListServiceIdentitiesParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithFilter adds the filter to the list service identities params
 func (o *ListServiceIdentitiesParams) WithFilter(filter *string) *ListServiceIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetFilter(filter)
 	return o
 }
 
 // SetFilter adds the filter to the list service identities params
 func (o *ListServiceIdentitiesParams) SetFilter(filter *string) {
+    logtrace.LogWithFunctionName()
 	o.Filter = filter
 }
 
 // WithID adds the id to the list service identities params
 func (o *ListServiceIdentitiesParams) WithID(id string) *ListServiceIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the list service identities params
 func (o *ListServiceIdentitiesParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WithLimit adds the limit to the list service identities params
 func (o *ListServiceIdentitiesParams) WithLimit(limit *int64) *ListServiceIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetLimit(limit)
 	return o
 }
 
 // SetLimit adds the limit to the list service identities params
 func (o *ListServiceIdentitiesParams) SetLimit(limit *int64) {
+    logtrace.LogWithFunctionName()
 	o.Limit = limit
 }
 
 // WithOffset adds the offset to the list service identities params
 func (o *ListServiceIdentitiesParams) WithOffset(offset *int64) *ListServiceIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetOffset(offset)
 	return o
 }
 
 // SetOffset adds the offset to the list service identities params
 func (o *ListServiceIdentitiesParams) SetOffset(offset *int64) {
+    logtrace.LogWithFunctionName()
 	o.Offset = offset
 }
 
 // WithPolicyType adds the policyType to the list service identities params
 func (o *ListServiceIdentitiesParams) WithPolicyType(policyType *string) *ListServiceIdentitiesParams {
+    logtrace.LogWithFunctionName()
 	o.SetPolicyType(policyType)
 	return o
 }
 
 // SetPolicyType adds the policyType to the list service identities params
 func (o *ListServiceIdentitiesParams) SetPolicyType(policyType *string) {
+    logtrace.LogWithFunctionName()
 	o.PolicyType = policyType
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListServiceIdentitiesParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

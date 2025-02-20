@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -66,6 +67,7 @@ type ServicePatch struct {
 
 // Validate validates this service patch
 func (m *ServicePatch) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateTags(formats); err != nil {
@@ -79,6 +81,7 @@ func (m *ServicePatch) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ServicePatch) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -99,6 +102,7 @@ func (m *ServicePatch) validateTags(formats strfmt.Registry) error {
 
 // ContextValidate validate this service patch based on the context it is used
 func (m *ServicePatch) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateTags(ctx, formats); err != nil {
@@ -112,6 +116,7 @@ func (m *ServicePatch) ContextValidate(ctx context.Context, formats strfmt.Regis
 }
 
 func (m *ServicePatch) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -134,6 +139,7 @@ func (m *ServicePatch) contextValidateTags(ctx context.Context, formats strfmt.R
 
 // MarshalBinary interface implementation
 func (m *ServicePatch) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -142,6 +148,7 @@ func (m *ServicePatch) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ServicePatch) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ServicePatch
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

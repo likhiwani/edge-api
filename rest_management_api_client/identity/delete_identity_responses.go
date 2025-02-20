@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DeleteIdentityReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DeleteIdentityReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDeleteIdentityOK()
@@ -97,6 +99,7 @@ func (o *DeleteIdentityReader) ReadResponse(response runtime.ClientResponse, con
 
 // NewDeleteIdentityOK creates a DeleteIdentityOK with default headers values
 func NewDeleteIdentityOK() *DeleteIdentityOK {
+    logtrace.LogWithFunctionName()
 	return &DeleteIdentityOK{}
 }
 
@@ -111,49 +114,59 @@ type DeleteIdentityOK struct {
 
 // IsSuccess returns true when this delete identity o k response has a 2xx status code
 func (o *DeleteIdentityOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this delete identity o k response has a 3xx status code
 func (o *DeleteIdentityOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete identity o k response has a 4xx status code
 func (o *DeleteIdentityOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete identity o k response has a 5xx status code
 func (o *DeleteIdentityOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete identity o k response a status code equal to that given
 func (o *DeleteIdentityOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the delete identity o k response
 func (o *DeleteIdentityOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DeleteIdentityOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}][%d] deleteIdentityOK %s", 200, payload)
 }
 
 func (o *DeleteIdentityOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}][%d] deleteIdentityOK %s", 200, payload)
 }
 
 func (o *DeleteIdentityOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteIdentityOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -167,6 +180,7 @@ func (o *DeleteIdentityOK) readResponse(response runtime.ClientResponse, consume
 
 // NewDeleteIdentityBadRequest creates a DeleteIdentityBadRequest with default headers values
 func NewDeleteIdentityBadRequest() *DeleteIdentityBadRequest {
+    logtrace.LogWithFunctionName()
 	return &DeleteIdentityBadRequest{}
 }
 
@@ -181,49 +195,59 @@ type DeleteIdentityBadRequest struct {
 
 // IsSuccess returns true when this delete identity bad request response has a 2xx status code
 func (o *DeleteIdentityBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete identity bad request response has a 3xx status code
 func (o *DeleteIdentityBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete identity bad request response has a 4xx status code
 func (o *DeleteIdentityBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete identity bad request response has a 5xx status code
 func (o *DeleteIdentityBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete identity bad request response a status code equal to that given
 func (o *DeleteIdentityBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the delete identity bad request response
 func (o *DeleteIdentityBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *DeleteIdentityBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}][%d] deleteIdentityBadRequest %s", 400, payload)
 }
 
 func (o *DeleteIdentityBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}][%d] deleteIdentityBadRequest %s", 400, payload)
 }
 
 func (o *DeleteIdentityBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteIdentityBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -237,6 +261,7 @@ func (o *DeleteIdentityBadRequest) readResponse(response runtime.ClientResponse,
 
 // NewDeleteIdentityUnauthorized creates a DeleteIdentityUnauthorized with default headers values
 func NewDeleteIdentityUnauthorized() *DeleteIdentityUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DeleteIdentityUnauthorized{}
 }
 
@@ -251,49 +276,59 @@ type DeleteIdentityUnauthorized struct {
 
 // IsSuccess returns true when this delete identity unauthorized response has a 2xx status code
 func (o *DeleteIdentityUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete identity unauthorized response has a 3xx status code
 func (o *DeleteIdentityUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete identity unauthorized response has a 4xx status code
 func (o *DeleteIdentityUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete identity unauthorized response has a 5xx status code
 func (o *DeleteIdentityUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete identity unauthorized response a status code equal to that given
 func (o *DeleteIdentityUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the delete identity unauthorized response
 func (o *DeleteIdentityUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DeleteIdentityUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}][%d] deleteIdentityUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteIdentityUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}][%d] deleteIdentityUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteIdentityUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteIdentityUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -307,6 +342,7 @@ func (o *DeleteIdentityUnauthorized) readResponse(response runtime.ClientRespons
 
 // NewDeleteIdentityNotFound creates a DeleteIdentityNotFound with default headers values
 func NewDeleteIdentityNotFound() *DeleteIdentityNotFound {
+    logtrace.LogWithFunctionName()
 	return &DeleteIdentityNotFound{}
 }
 
@@ -321,49 +357,59 @@ type DeleteIdentityNotFound struct {
 
 // IsSuccess returns true when this delete identity not found response has a 2xx status code
 func (o *DeleteIdentityNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete identity not found response has a 3xx status code
 func (o *DeleteIdentityNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete identity not found response has a 4xx status code
 func (o *DeleteIdentityNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete identity not found response has a 5xx status code
 func (o *DeleteIdentityNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete identity not found response a status code equal to that given
 func (o *DeleteIdentityNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the delete identity not found response
 func (o *DeleteIdentityNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DeleteIdentityNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}][%d] deleteIdentityNotFound %s", 404, payload)
 }
 
 func (o *DeleteIdentityNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}][%d] deleteIdentityNotFound %s", 404, payload)
 }
 
 func (o *DeleteIdentityNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteIdentityNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -377,6 +423,7 @@ func (o *DeleteIdentityNotFound) readResponse(response runtime.ClientResponse, c
 
 // NewDeleteIdentityConflict creates a DeleteIdentityConflict with default headers values
 func NewDeleteIdentityConflict() *DeleteIdentityConflict {
+    logtrace.LogWithFunctionName()
 	return &DeleteIdentityConflict{}
 }
 
@@ -391,49 +438,59 @@ type DeleteIdentityConflict struct {
 
 // IsSuccess returns true when this delete identity conflict response has a 2xx status code
 func (o *DeleteIdentityConflict) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete identity conflict response has a 3xx status code
 func (o *DeleteIdentityConflict) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete identity conflict response has a 4xx status code
 func (o *DeleteIdentityConflict) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete identity conflict response has a 5xx status code
 func (o *DeleteIdentityConflict) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete identity conflict response a status code equal to that given
 func (o *DeleteIdentityConflict) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 409
 }
 
 // Code gets the status code for the delete identity conflict response
 func (o *DeleteIdentityConflict) Code() int {
+    logtrace.LogWithFunctionName()
 	return 409
 }
 
 func (o *DeleteIdentityConflict) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}][%d] deleteIdentityConflict %s", 409, payload)
 }
 
 func (o *DeleteIdentityConflict) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}][%d] deleteIdentityConflict %s", 409, payload)
 }
 
 func (o *DeleteIdentityConflict) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteIdentityConflict) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -447,6 +504,7 @@ func (o *DeleteIdentityConflict) readResponse(response runtime.ClientResponse, c
 
 // NewDeleteIdentityTooManyRequests creates a DeleteIdentityTooManyRequests with default headers values
 func NewDeleteIdentityTooManyRequests() *DeleteIdentityTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DeleteIdentityTooManyRequests{}
 }
 
@@ -461,49 +519,59 @@ type DeleteIdentityTooManyRequests struct {
 
 // IsSuccess returns true when this delete identity too many requests response has a 2xx status code
 func (o *DeleteIdentityTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete identity too many requests response has a 3xx status code
 func (o *DeleteIdentityTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete identity too many requests response has a 4xx status code
 func (o *DeleteIdentityTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete identity too many requests response has a 5xx status code
 func (o *DeleteIdentityTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete identity too many requests response a status code equal to that given
 func (o *DeleteIdentityTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the delete identity too many requests response
 func (o *DeleteIdentityTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DeleteIdentityTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}][%d] deleteIdentityTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteIdentityTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}][%d] deleteIdentityTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteIdentityTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteIdentityTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -517,6 +585,7 @@ func (o *DeleteIdentityTooManyRequests) readResponse(response runtime.ClientResp
 
 // NewDeleteIdentityServiceUnavailable creates a DeleteIdentityServiceUnavailable with default headers values
 func NewDeleteIdentityServiceUnavailable() *DeleteIdentityServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DeleteIdentityServiceUnavailable{}
 }
 
@@ -531,49 +600,59 @@ type DeleteIdentityServiceUnavailable struct {
 
 // IsSuccess returns true when this delete identity service unavailable response has a 2xx status code
 func (o *DeleteIdentityServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete identity service unavailable response has a 3xx status code
 func (o *DeleteIdentityServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete identity service unavailable response has a 4xx status code
 func (o *DeleteIdentityServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete identity service unavailable response has a 5xx status code
 func (o *DeleteIdentityServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this delete identity service unavailable response a status code equal to that given
 func (o *DeleteIdentityServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the delete identity service unavailable response
 func (o *DeleteIdentityServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DeleteIdentityServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}][%d] deleteIdentityServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteIdentityServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /identities/{id}][%d] deleteIdentityServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteIdentityServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteIdentityServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

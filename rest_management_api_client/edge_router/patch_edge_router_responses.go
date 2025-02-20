@@ -30,6 +30,7 @@ package edge_router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type PatchEdgeRouterReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *PatchEdgeRouterReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewPatchEdgeRouterOK()
@@ -91,6 +93,7 @@ func (o *PatchEdgeRouterReader) ReadResponse(response runtime.ClientResponse, co
 
 // NewPatchEdgeRouterOK creates a PatchEdgeRouterOK with default headers values
 func NewPatchEdgeRouterOK() *PatchEdgeRouterOK {
+    logtrace.LogWithFunctionName()
 	return &PatchEdgeRouterOK{}
 }
 
@@ -105,49 +108,59 @@ type PatchEdgeRouterOK struct {
 
 // IsSuccess returns true when this patch edge router o k response has a 2xx status code
 func (o *PatchEdgeRouterOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this patch edge router o k response has a 3xx status code
 func (o *PatchEdgeRouterOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch edge router o k response has a 4xx status code
 func (o *PatchEdgeRouterOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this patch edge router o k response has a 5xx status code
 func (o *PatchEdgeRouterOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch edge router o k response a status code equal to that given
 func (o *PatchEdgeRouterOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the patch edge router o k response
 func (o *PatchEdgeRouterOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *PatchEdgeRouterOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /edge-routers/{id}][%d] patchEdgeRouterOK %s", 200, payload)
 }
 
 func (o *PatchEdgeRouterOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /edge-routers/{id}][%d] patchEdgeRouterOK %s", 200, payload)
 }
 
 func (o *PatchEdgeRouterOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchEdgeRouterOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -161,6 +174,7 @@ func (o *PatchEdgeRouterOK) readResponse(response runtime.ClientResponse, consum
 
 // NewPatchEdgeRouterBadRequest creates a PatchEdgeRouterBadRequest with default headers values
 func NewPatchEdgeRouterBadRequest() *PatchEdgeRouterBadRequest {
+    logtrace.LogWithFunctionName()
 	return &PatchEdgeRouterBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type PatchEdgeRouterBadRequest struct {
 
 // IsSuccess returns true when this patch edge router bad request response has a 2xx status code
 func (o *PatchEdgeRouterBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch edge router bad request response has a 3xx status code
 func (o *PatchEdgeRouterBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch edge router bad request response has a 4xx status code
 func (o *PatchEdgeRouterBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch edge router bad request response has a 5xx status code
 func (o *PatchEdgeRouterBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch edge router bad request response a status code equal to that given
 func (o *PatchEdgeRouterBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the patch edge router bad request response
 func (o *PatchEdgeRouterBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *PatchEdgeRouterBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /edge-routers/{id}][%d] patchEdgeRouterBadRequest %s", 400, payload)
 }
 
 func (o *PatchEdgeRouterBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /edge-routers/{id}][%d] patchEdgeRouterBadRequest %s", 400, payload)
 }
 
 func (o *PatchEdgeRouterBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchEdgeRouterBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *PatchEdgeRouterBadRequest) readResponse(response runtime.ClientResponse
 
 // NewPatchEdgeRouterUnauthorized creates a PatchEdgeRouterUnauthorized with default headers values
 func NewPatchEdgeRouterUnauthorized() *PatchEdgeRouterUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &PatchEdgeRouterUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type PatchEdgeRouterUnauthorized struct {
 
 // IsSuccess returns true when this patch edge router unauthorized response has a 2xx status code
 func (o *PatchEdgeRouterUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch edge router unauthorized response has a 3xx status code
 func (o *PatchEdgeRouterUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch edge router unauthorized response has a 4xx status code
 func (o *PatchEdgeRouterUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch edge router unauthorized response has a 5xx status code
 func (o *PatchEdgeRouterUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch edge router unauthorized response a status code equal to that given
 func (o *PatchEdgeRouterUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the patch edge router unauthorized response
 func (o *PatchEdgeRouterUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *PatchEdgeRouterUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /edge-routers/{id}][%d] patchEdgeRouterUnauthorized %s", 401, payload)
 }
 
 func (o *PatchEdgeRouterUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /edge-routers/{id}][%d] patchEdgeRouterUnauthorized %s", 401, payload)
 }
 
 func (o *PatchEdgeRouterUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchEdgeRouterUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *PatchEdgeRouterUnauthorized) readResponse(response runtime.ClientRespon
 
 // NewPatchEdgeRouterNotFound creates a PatchEdgeRouterNotFound with default headers values
 func NewPatchEdgeRouterNotFound() *PatchEdgeRouterNotFound {
+    logtrace.LogWithFunctionName()
 	return &PatchEdgeRouterNotFound{}
 }
 
@@ -315,49 +351,59 @@ type PatchEdgeRouterNotFound struct {
 
 // IsSuccess returns true when this patch edge router not found response has a 2xx status code
 func (o *PatchEdgeRouterNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch edge router not found response has a 3xx status code
 func (o *PatchEdgeRouterNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch edge router not found response has a 4xx status code
 func (o *PatchEdgeRouterNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch edge router not found response has a 5xx status code
 func (o *PatchEdgeRouterNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch edge router not found response a status code equal to that given
 func (o *PatchEdgeRouterNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the patch edge router not found response
 func (o *PatchEdgeRouterNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *PatchEdgeRouterNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /edge-routers/{id}][%d] patchEdgeRouterNotFound %s", 404, payload)
 }
 
 func (o *PatchEdgeRouterNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /edge-routers/{id}][%d] patchEdgeRouterNotFound %s", 404, payload)
 }
 
 func (o *PatchEdgeRouterNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchEdgeRouterNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *PatchEdgeRouterNotFound) readResponse(response runtime.ClientResponse, 
 
 // NewPatchEdgeRouterTooManyRequests creates a PatchEdgeRouterTooManyRequests with default headers values
 func NewPatchEdgeRouterTooManyRequests() *PatchEdgeRouterTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &PatchEdgeRouterTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type PatchEdgeRouterTooManyRequests struct {
 
 // IsSuccess returns true when this patch edge router too many requests response has a 2xx status code
 func (o *PatchEdgeRouterTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch edge router too many requests response has a 3xx status code
 func (o *PatchEdgeRouterTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch edge router too many requests response has a 4xx status code
 func (o *PatchEdgeRouterTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch edge router too many requests response has a 5xx status code
 func (o *PatchEdgeRouterTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch edge router too many requests response a status code equal to that given
 func (o *PatchEdgeRouterTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the patch edge router too many requests response
 func (o *PatchEdgeRouterTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *PatchEdgeRouterTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /edge-routers/{id}][%d] patchEdgeRouterTooManyRequests %s", 429, payload)
 }
 
 func (o *PatchEdgeRouterTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /edge-routers/{id}][%d] patchEdgeRouterTooManyRequests %s", 429, payload)
 }
 
 func (o *PatchEdgeRouterTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchEdgeRouterTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *PatchEdgeRouterTooManyRequests) readResponse(response runtime.ClientRes
 
 // NewPatchEdgeRouterServiceUnavailable creates a PatchEdgeRouterServiceUnavailable with default headers values
 func NewPatchEdgeRouterServiceUnavailable() *PatchEdgeRouterServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &PatchEdgeRouterServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type PatchEdgeRouterServiceUnavailable struct {
 
 // IsSuccess returns true when this patch edge router service unavailable response has a 2xx status code
 func (o *PatchEdgeRouterServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch edge router service unavailable response has a 3xx status code
 func (o *PatchEdgeRouterServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch edge router service unavailable response has a 4xx status code
 func (o *PatchEdgeRouterServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this patch edge router service unavailable response has a 5xx status code
 func (o *PatchEdgeRouterServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this patch edge router service unavailable response a status code equal to that given
 func (o *PatchEdgeRouterServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the patch edge router service unavailable response
 func (o *PatchEdgeRouterServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *PatchEdgeRouterServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /edge-routers/{id}][%d] patchEdgeRouterServiceUnavailable %s", 503, payload)
 }
 
 func (o *PatchEdgeRouterServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /edge-routers/{id}][%d] patchEdgeRouterServiceUnavailable %s", 503, payload)
 }
 
 func (o *PatchEdgeRouterServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchEdgeRouterServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

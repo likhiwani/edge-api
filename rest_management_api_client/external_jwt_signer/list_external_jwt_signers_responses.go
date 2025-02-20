@@ -30,6 +30,7 @@ package external_jwt_signer
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ListExternalJWTSignersReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ListExternalJWTSignersReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewListExternalJWTSignersOK()
@@ -85,6 +87,7 @@ func (o *ListExternalJWTSignersReader) ReadResponse(response runtime.ClientRespo
 
 // NewListExternalJWTSignersOK creates a ListExternalJWTSignersOK with default headers values
 func NewListExternalJWTSignersOK() *ListExternalJWTSignersOK {
+    logtrace.LogWithFunctionName()
 	return &ListExternalJWTSignersOK{}
 }
 
@@ -99,49 +102,59 @@ type ListExternalJWTSignersOK struct {
 
 // IsSuccess returns true when this list external Jwt signers o k response has a 2xx status code
 func (o *ListExternalJWTSignersOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this list external Jwt signers o k response has a 3xx status code
 func (o *ListExternalJWTSignersOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list external Jwt signers o k response has a 4xx status code
 func (o *ListExternalJWTSignersOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list external Jwt signers o k response has a 5xx status code
 func (o *ListExternalJWTSignersOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list external Jwt signers o k response a status code equal to that given
 func (o *ListExternalJWTSignersOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the list external Jwt signers o k response
 func (o *ListExternalJWTSignersOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ListExternalJWTSignersOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /external-jwt-signers][%d] listExternalJwtSignersOK %s", 200, payload)
 }
 
 func (o *ListExternalJWTSignersOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /external-jwt-signers][%d] listExternalJwtSignersOK %s", 200, payload)
 }
 
 func (o *ListExternalJWTSignersOK) GetPayload() *rest_model.ListExternalJWTSignersEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListExternalJWTSignersOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListExternalJWTSignersEnvelope)
 
@@ -155,6 +168,7 @@ func (o *ListExternalJWTSignersOK) readResponse(response runtime.ClientResponse,
 
 // NewListExternalJWTSignersBadRequest creates a ListExternalJWTSignersBadRequest with default headers values
 func NewListExternalJWTSignersBadRequest() *ListExternalJWTSignersBadRequest {
+    logtrace.LogWithFunctionName()
 	return &ListExternalJWTSignersBadRequest{}
 }
 
@@ -169,49 +183,59 @@ type ListExternalJWTSignersBadRequest struct {
 
 // IsSuccess returns true when this list external Jwt signers bad request response has a 2xx status code
 func (o *ListExternalJWTSignersBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list external Jwt signers bad request response has a 3xx status code
 func (o *ListExternalJWTSignersBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list external Jwt signers bad request response has a 4xx status code
 func (o *ListExternalJWTSignersBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list external Jwt signers bad request response has a 5xx status code
 func (o *ListExternalJWTSignersBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list external Jwt signers bad request response a status code equal to that given
 func (o *ListExternalJWTSignersBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the list external Jwt signers bad request response
 func (o *ListExternalJWTSignersBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *ListExternalJWTSignersBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /external-jwt-signers][%d] listExternalJwtSignersBadRequest %s", 400, payload)
 }
 
 func (o *ListExternalJWTSignersBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /external-jwt-signers][%d] listExternalJwtSignersBadRequest %s", 400, payload)
 }
 
 func (o *ListExternalJWTSignersBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListExternalJWTSignersBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *ListExternalJWTSignersBadRequest) readResponse(response runtime.ClientR
 
 // NewListExternalJWTSignersUnauthorized creates a ListExternalJWTSignersUnauthorized with default headers values
 func NewListExternalJWTSignersUnauthorized() *ListExternalJWTSignersUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &ListExternalJWTSignersUnauthorized{}
 }
 
@@ -239,49 +264,59 @@ type ListExternalJWTSignersUnauthorized struct {
 
 // IsSuccess returns true when this list external Jwt signers unauthorized response has a 2xx status code
 func (o *ListExternalJWTSignersUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list external Jwt signers unauthorized response has a 3xx status code
 func (o *ListExternalJWTSignersUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list external Jwt signers unauthorized response has a 4xx status code
 func (o *ListExternalJWTSignersUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list external Jwt signers unauthorized response has a 5xx status code
 func (o *ListExternalJWTSignersUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list external Jwt signers unauthorized response a status code equal to that given
 func (o *ListExternalJWTSignersUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the list external Jwt signers unauthorized response
 func (o *ListExternalJWTSignersUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *ListExternalJWTSignersUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /external-jwt-signers][%d] listExternalJwtSignersUnauthorized %s", 401, payload)
 }
 
 func (o *ListExternalJWTSignersUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /external-jwt-signers][%d] listExternalJwtSignersUnauthorized %s", 401, payload)
 }
 
 func (o *ListExternalJWTSignersUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListExternalJWTSignersUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *ListExternalJWTSignersUnauthorized) readResponse(response runtime.Clien
 
 // NewListExternalJWTSignersTooManyRequests creates a ListExternalJWTSignersTooManyRequests with default headers values
 func NewListExternalJWTSignersTooManyRequests() *ListExternalJWTSignersTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &ListExternalJWTSignersTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type ListExternalJWTSignersTooManyRequests struct {
 
 // IsSuccess returns true when this list external Jwt signers too many requests response has a 2xx status code
 func (o *ListExternalJWTSignersTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list external Jwt signers too many requests response has a 3xx status code
 func (o *ListExternalJWTSignersTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list external Jwt signers too many requests response has a 4xx status code
 func (o *ListExternalJWTSignersTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list external Jwt signers too many requests response has a 5xx status code
 func (o *ListExternalJWTSignersTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list external Jwt signers too many requests response a status code equal to that given
 func (o *ListExternalJWTSignersTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the list external Jwt signers too many requests response
 func (o *ListExternalJWTSignersTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *ListExternalJWTSignersTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /external-jwt-signers][%d] listExternalJwtSignersTooManyRequests %s", 429, payload)
 }
 
 func (o *ListExternalJWTSignersTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /external-jwt-signers][%d] listExternalJwtSignersTooManyRequests %s", 429, payload)
 }
 
 func (o *ListExternalJWTSignersTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListExternalJWTSignersTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *ListExternalJWTSignersTooManyRequests) readResponse(response runtime.Cl
 
 // NewListExternalJWTSignersServiceUnavailable creates a ListExternalJWTSignersServiceUnavailable with default headers values
 func NewListExternalJWTSignersServiceUnavailable() *ListExternalJWTSignersServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &ListExternalJWTSignersServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type ListExternalJWTSignersServiceUnavailable struct {
 
 // IsSuccess returns true when this list external Jwt signers service unavailable response has a 2xx status code
 func (o *ListExternalJWTSignersServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list external Jwt signers service unavailable response has a 3xx status code
 func (o *ListExternalJWTSignersServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list external Jwt signers service unavailable response has a 4xx status code
 func (o *ListExternalJWTSignersServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list external Jwt signers service unavailable response has a 5xx status code
 func (o *ListExternalJWTSignersServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this list external Jwt signers service unavailable response a status code equal to that given
 func (o *ListExternalJWTSignersServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the list external Jwt signers service unavailable response
 func (o *ListExternalJWTSignersServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *ListExternalJWTSignersServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /external-jwt-signers][%d] listExternalJwtSignersServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListExternalJWTSignersServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /external-jwt-signers][%d] listExternalJwtSignersServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListExternalJWTSignersServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListExternalJWTSignersServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

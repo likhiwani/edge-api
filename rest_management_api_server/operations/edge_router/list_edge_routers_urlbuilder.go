@@ -30,6 +30,7 @@ package edge_router
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"errors"
 	"net/url"
 	golangswaggerpaths "path"
@@ -54,6 +55,7 @@ type ListEdgeRoutersURL struct {
 // base path specified in the swagger spec.
 // When the value of the base path is an empty string
 func (o *ListEdgeRoutersURL) WithBasePath(bp string) *ListEdgeRoutersURL {
+    logtrace.LogWithFunctionName()
 	o.SetBasePath(bp)
 	return o
 }
@@ -62,11 +64,13 @@ func (o *ListEdgeRoutersURL) WithBasePath(bp string) *ListEdgeRoutersURL {
 // base path specified in the swagger spec.
 // When the value of the base path is an empty string
 func (o *ListEdgeRoutersURL) SetBasePath(bp string) {
+    logtrace.LogWithFunctionName()
 	o._basePath = bp
 }
 
 // Build a url path and query string
 func (o *ListEdgeRoutersURL) Build() (*url.URL, error) {
+    logtrace.LogWithFunctionName()
 	var _result url.URL
 
 	var _path = "/edge-routers"
@@ -132,6 +136,7 @@ func (o *ListEdgeRoutersURL) Build() (*url.URL, error) {
 
 // Must is a helper function to panic when the url builder returns an error
 func (o *ListEdgeRoutersURL) Must(u *url.URL, err error) *url.URL {
+    logtrace.LogWithFunctionName()
 	if err != nil {
 		panic(err)
 	}
@@ -143,11 +148,13 @@ func (o *ListEdgeRoutersURL) Must(u *url.URL, err error) *url.URL {
 
 // String returns the string representation of the path with query string
 func (o *ListEdgeRoutersURL) String() string {
+    logtrace.LogWithFunctionName()
 	return o.Must(o.Build()).String()
 }
 
 // BuildFull builds a full url with scheme, host, path and query string
 func (o *ListEdgeRoutersURL) BuildFull(scheme, host string) (*url.URL, error) {
+    logtrace.LogWithFunctionName()
 	if scheme == "" {
 		return nil, errors.New("scheme is required for a full url on ListEdgeRoutersURL")
 	}
@@ -167,5 +174,6 @@ func (o *ListEdgeRoutersURL) BuildFull(scheme, host string) (*url.URL, error) {
 
 // StringFull returns the string representation of a complete url
 func (o *ListEdgeRoutersURL) StringFull(scheme, host string) string {
+    logtrace.LogWithFunctionName()
 	return o.Must(o.BuildFull(scheme, host)).String()
 }

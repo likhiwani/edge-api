@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type UpdateIdentityTracingReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *UpdateIdentityTracingReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewUpdateIdentityTracingOK()
@@ -91,6 +93,7 @@ func (o *UpdateIdentityTracingReader) ReadResponse(response runtime.ClientRespon
 
 // NewUpdateIdentityTracingOK creates a UpdateIdentityTracingOK with default headers values
 func NewUpdateIdentityTracingOK() *UpdateIdentityTracingOK {
+    logtrace.LogWithFunctionName()
 	return &UpdateIdentityTracingOK{}
 }
 
@@ -105,49 +108,59 @@ type UpdateIdentityTracingOK struct {
 
 // IsSuccess returns true when this update identity tracing o k response has a 2xx status code
 func (o *UpdateIdentityTracingOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this update identity tracing o k response has a 3xx status code
 func (o *UpdateIdentityTracingOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update identity tracing o k response has a 4xx status code
 func (o *UpdateIdentityTracingOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this update identity tracing o k response has a 5xx status code
 func (o *UpdateIdentityTracingOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update identity tracing o k response a status code equal to that given
 func (o *UpdateIdentityTracingOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the update identity tracing o k response
 func (o *UpdateIdentityTracingOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *UpdateIdentityTracingOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}/trace][%d] updateIdentityTracingOK %s", 200, payload)
 }
 
 func (o *UpdateIdentityTracingOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}/trace][%d] updateIdentityTracingOK %s", 200, payload)
 }
 
 func (o *UpdateIdentityTracingOK) GetPayload() *rest_model.TraceDetailEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateIdentityTracingOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.TraceDetailEnvelope)
 
@@ -161,6 +174,7 @@ func (o *UpdateIdentityTracingOK) readResponse(response runtime.ClientResponse, 
 
 // NewUpdateIdentityTracingBadRequest creates a UpdateIdentityTracingBadRequest with default headers values
 func NewUpdateIdentityTracingBadRequest() *UpdateIdentityTracingBadRequest {
+    logtrace.LogWithFunctionName()
 	return &UpdateIdentityTracingBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type UpdateIdentityTracingBadRequest struct {
 
 // IsSuccess returns true when this update identity tracing bad request response has a 2xx status code
 func (o *UpdateIdentityTracingBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update identity tracing bad request response has a 3xx status code
 func (o *UpdateIdentityTracingBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update identity tracing bad request response has a 4xx status code
 func (o *UpdateIdentityTracingBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update identity tracing bad request response has a 5xx status code
 func (o *UpdateIdentityTracingBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update identity tracing bad request response a status code equal to that given
 func (o *UpdateIdentityTracingBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the update identity tracing bad request response
 func (o *UpdateIdentityTracingBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *UpdateIdentityTracingBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}/trace][%d] updateIdentityTracingBadRequest %s", 400, payload)
 }
 
 func (o *UpdateIdentityTracingBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}/trace][%d] updateIdentityTracingBadRequest %s", 400, payload)
 }
 
 func (o *UpdateIdentityTracingBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateIdentityTracingBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *UpdateIdentityTracingBadRequest) readResponse(response runtime.ClientRe
 
 // NewUpdateIdentityTracingUnauthorized creates a UpdateIdentityTracingUnauthorized with default headers values
 func NewUpdateIdentityTracingUnauthorized() *UpdateIdentityTracingUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &UpdateIdentityTracingUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type UpdateIdentityTracingUnauthorized struct {
 
 // IsSuccess returns true when this update identity tracing unauthorized response has a 2xx status code
 func (o *UpdateIdentityTracingUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update identity tracing unauthorized response has a 3xx status code
 func (o *UpdateIdentityTracingUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update identity tracing unauthorized response has a 4xx status code
 func (o *UpdateIdentityTracingUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update identity tracing unauthorized response has a 5xx status code
 func (o *UpdateIdentityTracingUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update identity tracing unauthorized response a status code equal to that given
 func (o *UpdateIdentityTracingUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the update identity tracing unauthorized response
 func (o *UpdateIdentityTracingUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *UpdateIdentityTracingUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}/trace][%d] updateIdentityTracingUnauthorized %s", 401, payload)
 }
 
 func (o *UpdateIdentityTracingUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}/trace][%d] updateIdentityTracingUnauthorized %s", 401, payload)
 }
 
 func (o *UpdateIdentityTracingUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateIdentityTracingUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *UpdateIdentityTracingUnauthorized) readResponse(response runtime.Client
 
 // NewUpdateIdentityTracingNotFound creates a UpdateIdentityTracingNotFound with default headers values
 func NewUpdateIdentityTracingNotFound() *UpdateIdentityTracingNotFound {
+    logtrace.LogWithFunctionName()
 	return &UpdateIdentityTracingNotFound{}
 }
 
@@ -315,49 +351,59 @@ type UpdateIdentityTracingNotFound struct {
 
 // IsSuccess returns true when this update identity tracing not found response has a 2xx status code
 func (o *UpdateIdentityTracingNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update identity tracing not found response has a 3xx status code
 func (o *UpdateIdentityTracingNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update identity tracing not found response has a 4xx status code
 func (o *UpdateIdentityTracingNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update identity tracing not found response has a 5xx status code
 func (o *UpdateIdentityTracingNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update identity tracing not found response a status code equal to that given
 func (o *UpdateIdentityTracingNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the update identity tracing not found response
 func (o *UpdateIdentityTracingNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *UpdateIdentityTracingNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}/trace][%d] updateIdentityTracingNotFound %s", 404, payload)
 }
 
 func (o *UpdateIdentityTracingNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}/trace][%d] updateIdentityTracingNotFound %s", 404, payload)
 }
 
 func (o *UpdateIdentityTracingNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateIdentityTracingNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *UpdateIdentityTracingNotFound) readResponse(response runtime.ClientResp
 
 // NewUpdateIdentityTracingTooManyRequests creates a UpdateIdentityTracingTooManyRequests with default headers values
 func NewUpdateIdentityTracingTooManyRequests() *UpdateIdentityTracingTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &UpdateIdentityTracingTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type UpdateIdentityTracingTooManyRequests struct {
 
 // IsSuccess returns true when this update identity tracing too many requests response has a 2xx status code
 func (o *UpdateIdentityTracingTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update identity tracing too many requests response has a 3xx status code
 func (o *UpdateIdentityTracingTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update identity tracing too many requests response has a 4xx status code
 func (o *UpdateIdentityTracingTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update identity tracing too many requests response has a 5xx status code
 func (o *UpdateIdentityTracingTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update identity tracing too many requests response a status code equal to that given
 func (o *UpdateIdentityTracingTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the update identity tracing too many requests response
 func (o *UpdateIdentityTracingTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *UpdateIdentityTracingTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}/trace][%d] updateIdentityTracingTooManyRequests %s", 429, payload)
 }
 
 func (o *UpdateIdentityTracingTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}/trace][%d] updateIdentityTracingTooManyRequests %s", 429, payload)
 }
 
 func (o *UpdateIdentityTracingTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateIdentityTracingTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *UpdateIdentityTracingTooManyRequests) readResponse(response runtime.Cli
 
 // NewUpdateIdentityTracingServiceUnavailable creates a UpdateIdentityTracingServiceUnavailable with default headers values
 func NewUpdateIdentityTracingServiceUnavailable() *UpdateIdentityTracingServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &UpdateIdentityTracingServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type UpdateIdentityTracingServiceUnavailable struct {
 
 // IsSuccess returns true when this update identity tracing service unavailable response has a 2xx status code
 func (o *UpdateIdentityTracingServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update identity tracing service unavailable response has a 3xx status code
 func (o *UpdateIdentityTracingServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update identity tracing service unavailable response has a 4xx status code
 func (o *UpdateIdentityTracingServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this update identity tracing service unavailable response has a 5xx status code
 func (o *UpdateIdentityTracingServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this update identity tracing service unavailable response a status code equal to that given
 func (o *UpdateIdentityTracingServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the update identity tracing service unavailable response
 func (o *UpdateIdentityTracingServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *UpdateIdentityTracingServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}/trace][%d] updateIdentityTracingServiceUnavailable %s", 503, payload)
 }
 
 func (o *UpdateIdentityTracingServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /identities/{id}/trace][%d] updateIdentityTracingServiceUnavailable %s", 503, payload)
 }
 
 func (o *UpdateIdentityTracingServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateIdentityTracingServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

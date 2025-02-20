@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"io"
 	"net/http"
 
@@ -45,6 +46,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewVerifyMfaParams() VerifyMfaParams {
+    logtrace.LogWithFunctionName()
 
 	return VerifyMfaParams{}
 }
@@ -70,6 +72,7 @@ type VerifyMfaParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewVerifyMfaParams() beforehand.
 func (o *VerifyMfaParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r

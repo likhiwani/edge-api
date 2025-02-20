@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -87,6 +88,7 @@ type TerminatorDetail struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *TerminatorDetail) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 BaseEntity
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -145,6 +147,7 @@ func (m *TerminatorDetail) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m TerminatorDetail) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.BaseEntity)
@@ -204,6 +207,7 @@ func (m TerminatorDetail) MarshalJSON() ([]byte, error) {
 
 // Validate validates this terminator detail
 func (m *TerminatorDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -258,6 +262,7 @@ func (m *TerminatorDetail) Validate(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorDetail) validateAddress(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("address", "body", m.Address); err != nil {
 		return err
@@ -267,6 +272,7 @@ func (m *TerminatorDetail) validateAddress(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorDetail) validateBinding(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("binding", "body", m.Binding); err != nil {
 		return err
@@ -276,6 +282,7 @@ func (m *TerminatorDetail) validateBinding(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorDetail) validateCost(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("cost", "body", m.Cost); err != nil {
 		return err
@@ -300,6 +307,7 @@ func (m *TerminatorDetail) validateCost(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorDetail) validateDynamicCost(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("dynamicCost", "body", m.DynamicCost); err != nil {
 		return err
@@ -324,6 +332,7 @@ func (m *TerminatorDetail) validateDynamicCost(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorDetail) validateIdentity(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("identity", "body", m.Identity); err != nil {
 		return err
@@ -333,6 +342,7 @@ func (m *TerminatorDetail) validateIdentity(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorDetail) validatePrecedence(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("precedence", "body", m.Precedence); err != nil {
 		return err
@@ -357,6 +367,7 @@ func (m *TerminatorDetail) validatePrecedence(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorDetail) validateRouter(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("router", "body", m.Router); err != nil {
 		return err
@@ -377,6 +388,7 @@ func (m *TerminatorDetail) validateRouter(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorDetail) validateRouterID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("routerId", "body", m.RouterID); err != nil {
 		return err
@@ -386,6 +398,7 @@ func (m *TerminatorDetail) validateRouterID(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorDetail) validateService(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("service", "body", m.Service); err != nil {
 		return err
@@ -406,6 +419,7 @@ func (m *TerminatorDetail) validateService(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorDetail) validateServiceID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("serviceId", "body", m.ServiceID); err != nil {
 		return err
@@ -416,6 +430,7 @@ func (m *TerminatorDetail) validateServiceID(formats strfmt.Registry) error {
 
 // ContextValidate validate this terminator detail based on the context it is used
 func (m *TerminatorDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -450,6 +465,7 @@ func (m *TerminatorDetail) ContextValidate(ctx context.Context, formats strfmt.R
 }
 
 func (m *TerminatorDetail) contextValidateCost(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Cost != nil {
 
@@ -467,6 +483,7 @@ func (m *TerminatorDetail) contextValidateCost(ctx context.Context, formats strf
 }
 
 func (m *TerminatorDetail) contextValidateDynamicCost(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.DynamicCost != nil {
 
@@ -484,6 +501,7 @@ func (m *TerminatorDetail) contextValidateDynamicCost(ctx context.Context, forma
 }
 
 func (m *TerminatorDetail) contextValidatePrecedence(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Precedence != nil {
 
@@ -501,6 +519,7 @@ func (m *TerminatorDetail) contextValidatePrecedence(ctx context.Context, format
 }
 
 func (m *TerminatorDetail) contextValidateRouter(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Router != nil {
 
@@ -518,6 +537,7 @@ func (m *TerminatorDetail) contextValidateRouter(ctx context.Context, formats st
 }
 
 func (m *TerminatorDetail) contextValidateService(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Service != nil {
 
@@ -536,6 +556,7 @@ func (m *TerminatorDetail) contextValidateService(ctx context.Context, formats s
 
 // MarshalBinary interface implementation
 func (m *TerminatorDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -544,6 +565,7 @@ func (m *TerminatorDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *TerminatorDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res TerminatorDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

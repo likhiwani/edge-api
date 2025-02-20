@@ -30,6 +30,7 @@ package router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DeleteTransitRouterOK struct {
 
 // NewDeleteTransitRouterOK creates DeleteTransitRouterOK with default headers values
 func NewDeleteTransitRouterOK() *DeleteTransitRouterOK {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteTransitRouterOK{}
 }
 
 // WithPayload adds the payload to the delete transit router o k response
 func (o *DeleteTransitRouterOK) WithPayload(payload *rest_model.Empty) *DeleteTransitRouterOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete transit router o k response
 func (o *DeleteTransitRouterOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteTransitRouterOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DeleteTransitRouterBadRequest struct {
 
 // NewDeleteTransitRouterBadRequest creates DeleteTransitRouterBadRequest with default headers values
 func NewDeleteTransitRouterBadRequest() *DeleteTransitRouterBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteTransitRouterBadRequest{}
 }
 
 // WithPayload adds the payload to the delete transit router bad request response
 func (o *DeleteTransitRouterBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteTransitRouterBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete transit router bad request response
 func (o *DeleteTransitRouterBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteTransitRouterBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DeleteTransitRouterUnauthorized struct {
 
 // NewDeleteTransitRouterUnauthorized creates DeleteTransitRouterUnauthorized with default headers values
 func NewDeleteTransitRouterUnauthorized() *DeleteTransitRouterUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteTransitRouterUnauthorized{}
 }
 
 // WithPayload adds the payload to the delete transit router unauthorized response
 func (o *DeleteTransitRouterUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteTransitRouterUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete transit router unauthorized response
 func (o *DeleteTransitRouterUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteTransitRouterUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DeleteTransitRouterNotFound struct {
 
 // NewDeleteTransitRouterNotFound creates DeleteTransitRouterNotFound with default headers values
 func NewDeleteTransitRouterNotFound() *DeleteTransitRouterNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteTransitRouterNotFound{}
 }
 
 // WithPayload adds the payload to the delete transit router not found response
 func (o *DeleteTransitRouterNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteTransitRouterNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete transit router not found response
 func (o *DeleteTransitRouterNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteTransitRouterNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DeleteTransitRouterConflict struct {
 
 // NewDeleteTransitRouterConflict creates DeleteTransitRouterConflict with default headers values
 func NewDeleteTransitRouterConflict() *DeleteTransitRouterConflict {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteTransitRouterConflict{}
 }
 
 // WithPayload adds the payload to the delete transit router conflict response
 func (o *DeleteTransitRouterConflict) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteTransitRouterConflict {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete transit router conflict response
 func (o *DeleteTransitRouterConflict) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteTransitRouterConflict) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(409)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type DeleteTransitRouterTooManyRequests struct {
 
 // NewDeleteTransitRouterTooManyRequests creates DeleteTransitRouterTooManyRequests with default headers values
 func NewDeleteTransitRouterTooManyRequests() *DeleteTransitRouterTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteTransitRouterTooManyRequests{}
 }
 
 // WithPayload adds the payload to the delete transit router too many requests response
 func (o *DeleteTransitRouterTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteTransitRouterTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete transit router too many requests response
 func (o *DeleteTransitRouterTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteTransitRouterTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -325,23 +350,27 @@ type DeleteTransitRouterServiceUnavailable struct {
 
 // NewDeleteTransitRouterServiceUnavailable creates DeleteTransitRouterServiceUnavailable with default headers values
 func NewDeleteTransitRouterServiceUnavailable() *DeleteTransitRouterServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteTransitRouterServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the delete transit router service unavailable response
 func (o *DeleteTransitRouterServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteTransitRouterServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete transit router service unavailable response
 func (o *DeleteTransitRouterServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteTransitRouterServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

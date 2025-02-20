@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"encoding/json"
 
@@ -44,11 +45,13 @@ import (
 type Semantic string
 
 func NewSemantic(value Semantic) *Semantic {
+    logtrace.LogWithFunctionName()
 	return &value
 }
 
 // Pointer returns a pointer to a freshly-allocated Semantic.
 func (m Semantic) Pointer() *Semantic {
+    logtrace.LogWithFunctionName()
 	return &m
 }
 
@@ -65,6 +68,7 @@ const (
 var semanticEnum []interface{}
 
 func init() {
+    logtrace.LogWithFunctionName()
 	var res []Semantic
 	if err := json.Unmarshal([]byte(`["AllOf","AnyOf"]`), &res); err != nil {
 		panic(err)
@@ -75,6 +79,7 @@ func init() {
 }
 
 func (m Semantic) validateSemanticEnum(path, location string, value Semantic) error {
+    logtrace.LogWithFunctionName()
 	if err := validate.EnumCase(path, location, value, semanticEnum, true); err != nil {
 		return err
 	}
@@ -83,6 +88,7 @@ func (m Semantic) validateSemanticEnum(path, location string, value Semantic) er
 
 // Validate validates this semantic
 func (m Semantic) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// value enum
@@ -98,5 +104,6 @@ func (m Semantic) Validate(formats strfmt.Registry) error {
 
 // ContextValidate validates this semantic based on context it is used
 func (m Semantic) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }

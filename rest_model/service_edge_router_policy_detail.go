@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -71,6 +72,7 @@ type ServiceEdgeRouterPolicyDetail struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *ServiceEdgeRouterPolicyDetail) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 BaseEntity
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -113,6 +115,7 @@ func (m *ServiceEdgeRouterPolicyDetail) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m ServiceEdgeRouterPolicyDetail) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.BaseEntity)
@@ -156,6 +159,7 @@ func (m ServiceEdgeRouterPolicyDetail) MarshalJSON() ([]byte, error) {
 
 // Validate validates this service edge router policy detail
 func (m *ServiceEdgeRouterPolicyDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -194,6 +198,7 @@ func (m *ServiceEdgeRouterPolicyDetail) Validate(formats strfmt.Registry) error 
 }
 
 func (m *ServiceEdgeRouterPolicyDetail) validateEdgeRouterRoles(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("edgeRouterRoles", "body", m.EdgeRouterRoles); err != nil {
 		return err
@@ -212,6 +217,7 @@ func (m *ServiceEdgeRouterPolicyDetail) validateEdgeRouterRoles(formats strfmt.R
 }
 
 func (m *ServiceEdgeRouterPolicyDetail) validateEdgeRouterRolesDisplay(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("edgeRouterRolesDisplay", "body", m.EdgeRouterRolesDisplay); err != nil {
 		return err
@@ -230,6 +236,7 @@ func (m *ServiceEdgeRouterPolicyDetail) validateEdgeRouterRolesDisplay(formats s
 }
 
 func (m *ServiceEdgeRouterPolicyDetail) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -239,6 +246,7 @@ func (m *ServiceEdgeRouterPolicyDetail) validateName(formats strfmt.Registry) er
 }
 
 func (m *ServiceEdgeRouterPolicyDetail) validateSemantic(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("semantic", "body", m.Semantic); err != nil {
 		return err
@@ -263,6 +271,7 @@ func (m *ServiceEdgeRouterPolicyDetail) validateSemantic(formats strfmt.Registry
 }
 
 func (m *ServiceEdgeRouterPolicyDetail) validateServiceRoles(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("serviceRoles", "body", m.ServiceRoles); err != nil {
 		return err
@@ -281,6 +290,7 @@ func (m *ServiceEdgeRouterPolicyDetail) validateServiceRoles(formats strfmt.Regi
 }
 
 func (m *ServiceEdgeRouterPolicyDetail) validateServiceRolesDisplay(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("serviceRolesDisplay", "body", m.ServiceRolesDisplay); err != nil {
 		return err
@@ -300,6 +310,7 @@ func (m *ServiceEdgeRouterPolicyDetail) validateServiceRolesDisplay(formats strf
 
 // ContextValidate validate this service edge router policy detail based on the context it is used
 func (m *ServiceEdgeRouterPolicyDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -334,6 +345,7 @@ func (m *ServiceEdgeRouterPolicyDetail) ContextValidate(ctx context.Context, for
 }
 
 func (m *ServiceEdgeRouterPolicyDetail) contextValidateEdgeRouterRoles(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.EdgeRouterRoles.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -348,6 +360,7 @@ func (m *ServiceEdgeRouterPolicyDetail) contextValidateEdgeRouterRoles(ctx conte
 }
 
 func (m *ServiceEdgeRouterPolicyDetail) contextValidateEdgeRouterRolesDisplay(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.EdgeRouterRolesDisplay.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -362,6 +375,7 @@ func (m *ServiceEdgeRouterPolicyDetail) contextValidateEdgeRouterRolesDisplay(ct
 }
 
 func (m *ServiceEdgeRouterPolicyDetail) contextValidateSemantic(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Semantic != nil {
 
@@ -379,6 +393,7 @@ func (m *ServiceEdgeRouterPolicyDetail) contextValidateSemantic(ctx context.Cont
 }
 
 func (m *ServiceEdgeRouterPolicyDetail) contextValidateServiceRoles(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.ServiceRoles.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -393,6 +408,7 @@ func (m *ServiceEdgeRouterPolicyDetail) contextValidateServiceRoles(ctx context.
 }
 
 func (m *ServiceEdgeRouterPolicyDetail) contextValidateServiceRolesDisplay(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.ServiceRolesDisplay.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -408,6 +424,7 @@ func (m *ServiceEdgeRouterPolicyDetail) contextValidateServiceRolesDisplay(ctx c
 
 // MarshalBinary interface implementation
 func (m *ServiceEdgeRouterPolicyDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -416,6 +433,7 @@ func (m *ServiceEdgeRouterPolicyDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ServiceEdgeRouterPolicyDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ServiceEdgeRouterPolicyDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

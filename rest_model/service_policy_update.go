@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -70,6 +71,7 @@ type ServicePolicyUpdate struct {
 
 // Validate validates this service policy update
 func (m *ServicePolicyUpdate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateIdentityRoles(formats); err != nil {
@@ -107,6 +109,7 @@ func (m *ServicePolicyUpdate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ServicePolicyUpdate) validateIdentityRoles(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.IdentityRoles) { // not required
 		return nil
 	}
@@ -124,6 +127,7 @@ func (m *ServicePolicyUpdate) validateIdentityRoles(formats strfmt.Registry) err
 }
 
 func (m *ServicePolicyUpdate) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -133,6 +137,7 @@ func (m *ServicePolicyUpdate) validateName(formats strfmt.Registry) error {
 }
 
 func (m *ServicePolicyUpdate) validatePostureCheckRoles(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.PostureCheckRoles) { // not required
 		return nil
 	}
@@ -150,6 +155,7 @@ func (m *ServicePolicyUpdate) validatePostureCheckRoles(formats strfmt.Registry)
 }
 
 func (m *ServicePolicyUpdate) validateSemantic(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("semantic", "body", m.Semantic); err != nil {
 		return err
@@ -174,6 +180,7 @@ func (m *ServicePolicyUpdate) validateSemantic(formats strfmt.Registry) error {
 }
 
 func (m *ServicePolicyUpdate) validateServiceRoles(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.ServiceRoles) { // not required
 		return nil
 	}
@@ -191,6 +198,7 @@ func (m *ServicePolicyUpdate) validateServiceRoles(formats strfmt.Registry) erro
 }
 
 func (m *ServicePolicyUpdate) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -210,6 +218,7 @@ func (m *ServicePolicyUpdate) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *ServicePolicyUpdate) validateType(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("type", "body", m.Type); err != nil {
 		return err
@@ -235,6 +244,7 @@ func (m *ServicePolicyUpdate) validateType(formats strfmt.Registry) error {
 
 // ContextValidate validate this service policy update based on the context it is used
 func (m *ServicePolicyUpdate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateIdentityRoles(ctx, formats); err != nil {
@@ -268,6 +278,7 @@ func (m *ServicePolicyUpdate) ContextValidate(ctx context.Context, formats strfm
 }
 
 func (m *ServicePolicyUpdate) contextValidateIdentityRoles(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.IdentityRoles.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -282,6 +293,7 @@ func (m *ServicePolicyUpdate) contextValidateIdentityRoles(ctx context.Context, 
 }
 
 func (m *ServicePolicyUpdate) contextValidatePostureCheckRoles(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.PostureCheckRoles.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -296,6 +308,7 @@ func (m *ServicePolicyUpdate) contextValidatePostureCheckRoles(ctx context.Conte
 }
 
 func (m *ServicePolicyUpdate) contextValidateSemantic(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Semantic != nil {
 
@@ -313,6 +326,7 @@ func (m *ServicePolicyUpdate) contextValidateSemantic(ctx context.Context, forma
 }
 
 func (m *ServicePolicyUpdate) contextValidateServiceRoles(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.ServiceRoles.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -327,6 +341,7 @@ func (m *ServicePolicyUpdate) contextValidateServiceRoles(ctx context.Context, f
 }
 
 func (m *ServicePolicyUpdate) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -348,6 +363,7 @@ func (m *ServicePolicyUpdate) contextValidateTags(ctx context.Context, formats s
 }
 
 func (m *ServicePolicyUpdate) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Type != nil {
 
@@ -366,6 +382,7 @@ func (m *ServicePolicyUpdate) contextValidateType(ctx context.Context, formats s
 
 // MarshalBinary interface implementation
 func (m *ServicePolicyUpdate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -374,6 +391,7 @@ func (m *ServicePolicyUpdate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ServicePolicyUpdate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ServicePolicyUpdate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

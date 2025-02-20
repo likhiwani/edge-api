@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ExtendRouterEnrollmentOK struct {
 
 // NewExtendRouterEnrollmentOK creates ExtendRouterEnrollmentOK with default headers values
 func NewExtendRouterEnrollmentOK() *ExtendRouterEnrollmentOK {
+    logtrace.LogWithFunctionName()
 
 	return &ExtendRouterEnrollmentOK{}
 }
 
 // WithPayload adds the payload to the extend router enrollment o k response
 func (o *ExtendRouterEnrollmentOK) WithPayload(payload *rest_model.EnrollmentCertsEnvelope) *ExtendRouterEnrollmentOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the extend router enrollment o k response
 func (o *ExtendRouterEnrollmentOK) SetPayload(payload *rest_model.EnrollmentCertsEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ExtendRouterEnrollmentOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ExtendRouterEnrollmentUnauthorized struct {
 
 // NewExtendRouterEnrollmentUnauthorized creates ExtendRouterEnrollmentUnauthorized with default headers values
 func NewExtendRouterEnrollmentUnauthorized() *ExtendRouterEnrollmentUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &ExtendRouterEnrollmentUnauthorized{}
 }
 
 // WithPayload adds the payload to the extend router enrollment unauthorized response
 func (o *ExtendRouterEnrollmentUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *ExtendRouterEnrollmentUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the extend router enrollment unauthorized response
 func (o *ExtendRouterEnrollmentUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ExtendRouterEnrollmentUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ExtendRouterEnrollmentTooManyRequests struct {
 
 // NewExtendRouterEnrollmentTooManyRequests creates ExtendRouterEnrollmentTooManyRequests with default headers values
 func NewExtendRouterEnrollmentTooManyRequests() *ExtendRouterEnrollmentTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ExtendRouterEnrollmentTooManyRequests{}
 }
 
 // WithPayload adds the payload to the extend router enrollment too many requests response
 func (o *ExtendRouterEnrollmentTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ExtendRouterEnrollmentTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the extend router enrollment too many requests response
 func (o *ExtendRouterEnrollmentTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ExtendRouterEnrollmentTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {

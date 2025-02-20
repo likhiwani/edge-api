@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type CreatePostureResponseCreated struct {
 
 // NewCreatePostureResponseCreated creates CreatePostureResponseCreated with default headers values
 func NewCreatePostureResponseCreated() *CreatePostureResponseCreated {
+    logtrace.LogWithFunctionName()
 
 	return &CreatePostureResponseCreated{}
 }
 
 // WithPayload adds the payload to the create posture response created response
 func (o *CreatePostureResponseCreated) WithPayload(payload *rest_model.PostureResponseEnvelope) *CreatePostureResponseCreated {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create posture response created response
 func (o *CreatePostureResponseCreated) SetPayload(payload *rest_model.PostureResponseEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreatePostureResponseCreated) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(201)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type CreatePostureResponseBadRequest struct {
 
 // NewCreatePostureResponseBadRequest creates CreatePostureResponseBadRequest with default headers values
 func NewCreatePostureResponseBadRequest() *CreatePostureResponseBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &CreatePostureResponseBadRequest{}
 }
 
 // WithPayload adds the payload to the create posture response bad request response
 func (o *CreatePostureResponseBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *CreatePostureResponseBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create posture response bad request response
 func (o *CreatePostureResponseBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreatePostureResponseBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type CreatePostureResponseUnauthorized struct {
 
 // NewCreatePostureResponseUnauthorized creates CreatePostureResponseUnauthorized with default headers values
 func NewCreatePostureResponseUnauthorized() *CreatePostureResponseUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &CreatePostureResponseUnauthorized{}
 }
 
 // WithPayload adds the payload to the create posture response unauthorized response
 func (o *CreatePostureResponseUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *CreatePostureResponseUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create posture response unauthorized response
 func (o *CreatePostureResponseUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreatePostureResponseUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type CreatePostureResponseTooManyRequests struct {
 
 // NewCreatePostureResponseTooManyRequests creates CreatePostureResponseTooManyRequests with default headers values
 func NewCreatePostureResponseTooManyRequests() *CreatePostureResponseTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &CreatePostureResponseTooManyRequests{}
 }
 
 // WithPayload adds the payload to the create posture response too many requests response
 func (o *CreatePostureResponseTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *CreatePostureResponseTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create posture response too many requests response
 func (o *CreatePostureResponseTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreatePostureResponseTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type CreatePostureResponseServiceUnavailable struct {
 
 // NewCreatePostureResponseServiceUnavailable creates CreatePostureResponseServiceUnavailable with default headers values
 func NewCreatePostureResponseServiceUnavailable() *CreatePostureResponseServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &CreatePostureResponseServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the create posture response service unavailable response
 func (o *CreatePostureResponseServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *CreatePostureResponseServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create posture response service unavailable response
 func (o *CreatePostureResponseServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreatePostureResponseServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

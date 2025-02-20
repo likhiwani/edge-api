@@ -30,6 +30,7 @@ package role_attributes
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ListServiceRoleAttributesReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ListServiceRoleAttributesReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewListServiceRoleAttributesOK()
@@ -85,6 +87,7 @@ func (o *ListServiceRoleAttributesReader) ReadResponse(response runtime.ClientRe
 
 // NewListServiceRoleAttributesOK creates a ListServiceRoleAttributesOK with default headers values
 func NewListServiceRoleAttributesOK() *ListServiceRoleAttributesOK {
+    logtrace.LogWithFunctionName()
 	return &ListServiceRoleAttributesOK{}
 }
 
@@ -99,49 +102,59 @@ type ListServiceRoleAttributesOK struct {
 
 // IsSuccess returns true when this list service role attributes o k response has a 2xx status code
 func (o *ListServiceRoleAttributesOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this list service role attributes o k response has a 3xx status code
 func (o *ListServiceRoleAttributesOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list service role attributes o k response has a 4xx status code
 func (o *ListServiceRoleAttributesOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list service role attributes o k response has a 5xx status code
 func (o *ListServiceRoleAttributesOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list service role attributes o k response a status code equal to that given
 func (o *ListServiceRoleAttributesOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the list service role attributes o k response
 func (o *ListServiceRoleAttributesOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ListServiceRoleAttributesOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-role-attributes][%d] listServiceRoleAttributesOK %s", 200, payload)
 }
 
 func (o *ListServiceRoleAttributesOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-role-attributes][%d] listServiceRoleAttributesOK %s", 200, payload)
 }
 
 func (o *ListServiceRoleAttributesOK) GetPayload() *rest_model.ListRoleAttributesEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListServiceRoleAttributesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListRoleAttributesEnvelope)
 
@@ -155,6 +168,7 @@ func (o *ListServiceRoleAttributesOK) readResponse(response runtime.ClientRespon
 
 // NewListServiceRoleAttributesBadRequest creates a ListServiceRoleAttributesBadRequest with default headers values
 func NewListServiceRoleAttributesBadRequest() *ListServiceRoleAttributesBadRequest {
+    logtrace.LogWithFunctionName()
 	return &ListServiceRoleAttributesBadRequest{}
 }
 
@@ -169,49 +183,59 @@ type ListServiceRoleAttributesBadRequest struct {
 
 // IsSuccess returns true when this list service role attributes bad request response has a 2xx status code
 func (o *ListServiceRoleAttributesBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list service role attributes bad request response has a 3xx status code
 func (o *ListServiceRoleAttributesBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list service role attributes bad request response has a 4xx status code
 func (o *ListServiceRoleAttributesBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list service role attributes bad request response has a 5xx status code
 func (o *ListServiceRoleAttributesBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list service role attributes bad request response a status code equal to that given
 func (o *ListServiceRoleAttributesBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the list service role attributes bad request response
 func (o *ListServiceRoleAttributesBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *ListServiceRoleAttributesBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-role-attributes][%d] listServiceRoleAttributesBadRequest %s", 400, payload)
 }
 
 func (o *ListServiceRoleAttributesBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-role-attributes][%d] listServiceRoleAttributesBadRequest %s", 400, payload)
 }
 
 func (o *ListServiceRoleAttributesBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListServiceRoleAttributesBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *ListServiceRoleAttributesBadRequest) readResponse(response runtime.Clie
 
 // NewListServiceRoleAttributesUnauthorized creates a ListServiceRoleAttributesUnauthorized with default headers values
 func NewListServiceRoleAttributesUnauthorized() *ListServiceRoleAttributesUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &ListServiceRoleAttributesUnauthorized{}
 }
 
@@ -239,49 +264,59 @@ type ListServiceRoleAttributesUnauthorized struct {
 
 // IsSuccess returns true when this list service role attributes unauthorized response has a 2xx status code
 func (o *ListServiceRoleAttributesUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list service role attributes unauthorized response has a 3xx status code
 func (o *ListServiceRoleAttributesUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list service role attributes unauthorized response has a 4xx status code
 func (o *ListServiceRoleAttributesUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list service role attributes unauthorized response has a 5xx status code
 func (o *ListServiceRoleAttributesUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list service role attributes unauthorized response a status code equal to that given
 func (o *ListServiceRoleAttributesUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the list service role attributes unauthorized response
 func (o *ListServiceRoleAttributesUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *ListServiceRoleAttributesUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-role-attributes][%d] listServiceRoleAttributesUnauthorized %s", 401, payload)
 }
 
 func (o *ListServiceRoleAttributesUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-role-attributes][%d] listServiceRoleAttributesUnauthorized %s", 401, payload)
 }
 
 func (o *ListServiceRoleAttributesUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListServiceRoleAttributesUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *ListServiceRoleAttributesUnauthorized) readResponse(response runtime.Cl
 
 // NewListServiceRoleAttributesTooManyRequests creates a ListServiceRoleAttributesTooManyRequests with default headers values
 func NewListServiceRoleAttributesTooManyRequests() *ListServiceRoleAttributesTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &ListServiceRoleAttributesTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type ListServiceRoleAttributesTooManyRequests struct {
 
 // IsSuccess returns true when this list service role attributes too many requests response has a 2xx status code
 func (o *ListServiceRoleAttributesTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list service role attributes too many requests response has a 3xx status code
 func (o *ListServiceRoleAttributesTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list service role attributes too many requests response has a 4xx status code
 func (o *ListServiceRoleAttributesTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list service role attributes too many requests response has a 5xx status code
 func (o *ListServiceRoleAttributesTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list service role attributes too many requests response a status code equal to that given
 func (o *ListServiceRoleAttributesTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the list service role attributes too many requests response
 func (o *ListServiceRoleAttributesTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *ListServiceRoleAttributesTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-role-attributes][%d] listServiceRoleAttributesTooManyRequests %s", 429, payload)
 }
 
 func (o *ListServiceRoleAttributesTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-role-attributes][%d] listServiceRoleAttributesTooManyRequests %s", 429, payload)
 }
 
 func (o *ListServiceRoleAttributesTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListServiceRoleAttributesTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *ListServiceRoleAttributesTooManyRequests) readResponse(response runtime
 
 // NewListServiceRoleAttributesServiceUnavailable creates a ListServiceRoleAttributesServiceUnavailable with default headers values
 func NewListServiceRoleAttributesServiceUnavailable() *ListServiceRoleAttributesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &ListServiceRoleAttributesServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type ListServiceRoleAttributesServiceUnavailable struct {
 
 // IsSuccess returns true when this list service role attributes service unavailable response has a 2xx status code
 func (o *ListServiceRoleAttributesServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list service role attributes service unavailable response has a 3xx status code
 func (o *ListServiceRoleAttributesServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list service role attributes service unavailable response has a 4xx status code
 func (o *ListServiceRoleAttributesServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list service role attributes service unavailable response has a 5xx status code
 func (o *ListServiceRoleAttributesServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this list service role attributes service unavailable response a status code equal to that given
 func (o *ListServiceRoleAttributesServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the list service role attributes service unavailable response
 func (o *ListServiceRoleAttributesServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *ListServiceRoleAttributesServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-role-attributes][%d] listServiceRoleAttributesServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListServiceRoleAttributesServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /service-role-attributes][%d] listServiceRoleAttributesServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListServiceRoleAttributesServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListServiceRoleAttributesServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

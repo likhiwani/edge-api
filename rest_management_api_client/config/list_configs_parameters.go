@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -48,6 +49,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListConfigsParams() *ListConfigsParams {
+    logtrace.LogWithFunctionName()
 	return &ListConfigsParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -56,6 +58,7 @@ func NewListConfigsParams() *ListConfigsParams {
 // NewListConfigsParamsWithTimeout creates a new ListConfigsParams object
 // with the ability to set a timeout on a request.
 func NewListConfigsParamsWithTimeout(timeout time.Duration) *ListConfigsParams {
+    logtrace.LogWithFunctionName()
 	return &ListConfigsParams{
 		timeout: timeout,
 	}
@@ -64,6 +67,7 @@ func NewListConfigsParamsWithTimeout(timeout time.Duration) *ListConfigsParams {
 // NewListConfigsParamsWithContext creates a new ListConfigsParams object
 // with the ability to set a context for a request.
 func NewListConfigsParamsWithContext(ctx context.Context) *ListConfigsParams {
+    logtrace.LogWithFunctionName()
 	return &ListConfigsParams{
 		Context: ctx,
 	}
@@ -72,6 +76,7 @@ func NewListConfigsParamsWithContext(ctx context.Context) *ListConfigsParams {
 // NewListConfigsParamsWithHTTPClient creates a new ListConfigsParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListConfigsParamsWithHTTPClient(client *http.Client) *ListConfigsParams {
+    logtrace.LogWithFunctionName()
 	return &ListConfigsParams{
 		HTTPClient: client,
 	}
@@ -104,6 +109,7 @@ type ListConfigsParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListConfigsParams) WithDefaults() *ListConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -112,77 +118,91 @@ func (o *ListConfigsParams) WithDefaults() *ListConfigsParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListConfigsParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list configs params
 func (o *ListConfigsParams) WithTimeout(timeout time.Duration) *ListConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list configs params
 func (o *ListConfigsParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list configs params
 func (o *ListConfigsParams) WithContext(ctx context.Context) *ListConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list configs params
 func (o *ListConfigsParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list configs params
 func (o *ListConfigsParams) WithHTTPClient(client *http.Client) *ListConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list configs params
 func (o *ListConfigsParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithFilter adds the filter to the list configs params
 func (o *ListConfigsParams) WithFilter(filter *string) *ListConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetFilter(filter)
 	return o
 }
 
 // SetFilter adds the filter to the list configs params
 func (o *ListConfigsParams) SetFilter(filter *string) {
+    logtrace.LogWithFunctionName()
 	o.Filter = filter
 }
 
 // WithLimit adds the limit to the list configs params
 func (o *ListConfigsParams) WithLimit(limit *int64) *ListConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetLimit(limit)
 	return o
 }
 
 // SetLimit adds the limit to the list configs params
 func (o *ListConfigsParams) SetLimit(limit *int64) {
+    logtrace.LogWithFunctionName()
 	o.Limit = limit
 }
 
 // WithOffset adds the offset to the list configs params
 func (o *ListConfigsParams) WithOffset(offset *int64) *ListConfigsParams {
+    logtrace.LogWithFunctionName()
 	o.SetOffset(offset)
 	return o
 }
 
 // SetOffset adds the offset to the list configs params
 func (o *ListConfigsParams) SetOffset(offset *int64) {
+    logtrace.LogWithFunctionName()
 	o.Offset = offset
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListConfigsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

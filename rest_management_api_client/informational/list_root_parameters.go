@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListRootParams() *ListRootParams {
+    logtrace.LogWithFunctionName()
 	return &ListRootParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewListRootParams() *ListRootParams {
 // NewListRootParamsWithTimeout creates a new ListRootParams object
 // with the ability to set a timeout on a request.
 func NewListRootParamsWithTimeout(timeout time.Duration) *ListRootParams {
+    logtrace.LogWithFunctionName()
 	return &ListRootParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewListRootParamsWithTimeout(timeout time.Duration) *ListRootParams {
 // NewListRootParamsWithContext creates a new ListRootParams object
 // with the ability to set a context for a request.
 func NewListRootParamsWithContext(ctx context.Context) *ListRootParams {
+    logtrace.LogWithFunctionName()
 	return &ListRootParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewListRootParamsWithContext(ctx context.Context) *ListRootParams {
 // NewListRootParamsWithHTTPClient creates a new ListRootParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListRootParamsWithHTTPClient(client *http.Client) *ListRootParams {
+    logtrace.LogWithFunctionName()
 	return &ListRootParams{
 		HTTPClient: client,
 	}
@@ -93,6 +98,7 @@ type ListRootParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListRootParams) WithDefaults() *ListRootParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -101,44 +107,52 @@ func (o *ListRootParams) WithDefaults() *ListRootParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListRootParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list root params
 func (o *ListRootParams) WithTimeout(timeout time.Duration) *ListRootParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list root params
 func (o *ListRootParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list root params
 func (o *ListRootParams) WithContext(ctx context.Context) *ListRootParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list root params
 func (o *ListRootParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list root params
 func (o *ListRootParams) WithHTTPClient(client *http.Client) *ListRootParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list root params
 func (o *ListRootParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListRootParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

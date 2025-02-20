@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/strfmt"
@@ -50,16 +51,19 @@ type NamedRole struct {
 
 // Validate validates this named role
 func (m *NamedRole) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // ContextValidate validates this named role based on context it is used
 func (m *NamedRole) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *NamedRole) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -68,6 +72,7 @@ func (m *NamedRole) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *NamedRole) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res NamedRole
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

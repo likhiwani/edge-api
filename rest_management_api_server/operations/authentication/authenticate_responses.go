@@ -30,6 +30,7 @@ package authentication
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type AuthenticateOK struct {
 
 // NewAuthenticateOK creates AuthenticateOK with default headers values
 func NewAuthenticateOK() *AuthenticateOK {
+    logtrace.LogWithFunctionName()
 
 	return &AuthenticateOK{}
 }
 
 // WithPayload adds the payload to the authenticate o k response
 func (o *AuthenticateOK) WithPayload(payload *rest_model.CurrentAPISessionDetailEnvelope) *AuthenticateOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the authenticate o k response
 func (o *AuthenticateOK) SetPayload(payload *rest_model.CurrentAPISessionDetailEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *AuthenticateOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type AuthenticateBadRequest struct {
 
 // NewAuthenticateBadRequest creates AuthenticateBadRequest with default headers values
 func NewAuthenticateBadRequest() *AuthenticateBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &AuthenticateBadRequest{}
 }
 
 // WithPayload adds the payload to the authenticate bad request response
 func (o *AuthenticateBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *AuthenticateBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the authenticate bad request response
 func (o *AuthenticateBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *AuthenticateBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type AuthenticateUnauthorized struct {
 
 // NewAuthenticateUnauthorized creates AuthenticateUnauthorized with default headers values
 func NewAuthenticateUnauthorized() *AuthenticateUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &AuthenticateUnauthorized{}
 }
 
 // WithPayload adds the payload to the authenticate unauthorized response
 func (o *AuthenticateUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *AuthenticateUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the authenticate unauthorized response
 func (o *AuthenticateUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *AuthenticateUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type AuthenticateTooManyRequests struct {
 
 // NewAuthenticateTooManyRequests creates AuthenticateTooManyRequests with default headers values
 func NewAuthenticateTooManyRequests() *AuthenticateTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &AuthenticateTooManyRequests{}
 }
 
 // WithPayload adds the payload to the authenticate too many requests response
 func (o *AuthenticateTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *AuthenticateTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the authenticate too many requests response
 func (o *AuthenticateTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *AuthenticateTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {

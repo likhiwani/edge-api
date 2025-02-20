@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DetailCurrentIdentityAuthenticatorReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DetailCurrentIdentityAuthenticatorReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDetailCurrentIdentityAuthenticatorOK()
@@ -73,6 +75,7 @@ func (o *DetailCurrentIdentityAuthenticatorReader) ReadResponse(response runtime
 
 // NewDetailCurrentIdentityAuthenticatorOK creates a DetailCurrentIdentityAuthenticatorOK with default headers values
 func NewDetailCurrentIdentityAuthenticatorOK() *DetailCurrentIdentityAuthenticatorOK {
+    logtrace.LogWithFunctionName()
 	return &DetailCurrentIdentityAuthenticatorOK{}
 }
 
@@ -87,49 +90,59 @@ type DetailCurrentIdentityAuthenticatorOK struct {
 
 // IsSuccess returns true when this detail current identity authenticator o k response has a 2xx status code
 func (o *DetailCurrentIdentityAuthenticatorOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this detail current identity authenticator o k response has a 3xx status code
 func (o *DetailCurrentIdentityAuthenticatorOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail current identity authenticator o k response has a 4xx status code
 func (o *DetailCurrentIdentityAuthenticatorOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail current identity authenticator o k response has a 5xx status code
 func (o *DetailCurrentIdentityAuthenticatorOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail current identity authenticator o k response a status code equal to that given
 func (o *DetailCurrentIdentityAuthenticatorOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the detail current identity authenticator o k response
 func (o *DetailCurrentIdentityAuthenticatorOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DetailCurrentIdentityAuthenticatorOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-identity/authenticators/{id}][%d] detailCurrentIdentityAuthenticatorOK %s", 200, payload)
 }
 
 func (o *DetailCurrentIdentityAuthenticatorOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-identity/authenticators/{id}][%d] detailCurrentIdentityAuthenticatorOK %s", 200, payload)
 }
 
 func (o *DetailCurrentIdentityAuthenticatorOK) GetPayload() *rest_model.DetailAuthenticatorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailCurrentIdentityAuthenticatorOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.DetailAuthenticatorEnvelope)
 
@@ -143,6 +156,7 @@ func (o *DetailCurrentIdentityAuthenticatorOK) readResponse(response runtime.Cli
 
 // NewDetailCurrentIdentityAuthenticatorUnauthorized creates a DetailCurrentIdentityAuthenticatorUnauthorized with default headers values
 func NewDetailCurrentIdentityAuthenticatorUnauthorized() *DetailCurrentIdentityAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DetailCurrentIdentityAuthenticatorUnauthorized{}
 }
 
@@ -157,49 +171,59 @@ type DetailCurrentIdentityAuthenticatorUnauthorized struct {
 
 // IsSuccess returns true when this detail current identity authenticator unauthorized response has a 2xx status code
 func (o *DetailCurrentIdentityAuthenticatorUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail current identity authenticator unauthorized response has a 3xx status code
 func (o *DetailCurrentIdentityAuthenticatorUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail current identity authenticator unauthorized response has a 4xx status code
 func (o *DetailCurrentIdentityAuthenticatorUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail current identity authenticator unauthorized response has a 5xx status code
 func (o *DetailCurrentIdentityAuthenticatorUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail current identity authenticator unauthorized response a status code equal to that given
 func (o *DetailCurrentIdentityAuthenticatorUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the detail current identity authenticator unauthorized response
 func (o *DetailCurrentIdentityAuthenticatorUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DetailCurrentIdentityAuthenticatorUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-identity/authenticators/{id}][%d] detailCurrentIdentityAuthenticatorUnauthorized %s", 401, payload)
 }
 
 func (o *DetailCurrentIdentityAuthenticatorUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-identity/authenticators/{id}][%d] detailCurrentIdentityAuthenticatorUnauthorized %s", 401, payload)
 }
 
 func (o *DetailCurrentIdentityAuthenticatorUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailCurrentIdentityAuthenticatorUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -213,6 +237,7 @@ func (o *DetailCurrentIdentityAuthenticatorUnauthorized) readResponse(response r
 
 // NewDetailCurrentIdentityAuthenticatorNotFound creates a DetailCurrentIdentityAuthenticatorNotFound with default headers values
 func NewDetailCurrentIdentityAuthenticatorNotFound() *DetailCurrentIdentityAuthenticatorNotFound {
+    logtrace.LogWithFunctionName()
 	return &DetailCurrentIdentityAuthenticatorNotFound{}
 }
 
@@ -227,49 +252,59 @@ type DetailCurrentIdentityAuthenticatorNotFound struct {
 
 // IsSuccess returns true when this detail current identity authenticator not found response has a 2xx status code
 func (o *DetailCurrentIdentityAuthenticatorNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail current identity authenticator not found response has a 3xx status code
 func (o *DetailCurrentIdentityAuthenticatorNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail current identity authenticator not found response has a 4xx status code
 func (o *DetailCurrentIdentityAuthenticatorNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail current identity authenticator not found response has a 5xx status code
 func (o *DetailCurrentIdentityAuthenticatorNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail current identity authenticator not found response a status code equal to that given
 func (o *DetailCurrentIdentityAuthenticatorNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the detail current identity authenticator not found response
 func (o *DetailCurrentIdentityAuthenticatorNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DetailCurrentIdentityAuthenticatorNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-identity/authenticators/{id}][%d] detailCurrentIdentityAuthenticatorNotFound %s", 404, payload)
 }
 
 func (o *DetailCurrentIdentityAuthenticatorNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-identity/authenticators/{id}][%d] detailCurrentIdentityAuthenticatorNotFound %s", 404, payload)
 }
 
 func (o *DetailCurrentIdentityAuthenticatorNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailCurrentIdentityAuthenticatorNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"io"
 	"net/http"
 
@@ -45,6 +46,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewCreateCaParams() CreateCaParams {
+    logtrace.LogWithFunctionName()
 
 	return CreateCaParams{}
 }
@@ -70,6 +72,7 @@ type CreateCaParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewCreateCaParams() beforehand.
 func (o *CreateCaParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r

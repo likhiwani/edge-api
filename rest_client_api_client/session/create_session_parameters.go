@@ -30,6 +30,7 @@ package session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCreateSessionParams() *CreateSessionParams {
+    logtrace.LogWithFunctionName()
 	return &CreateSessionParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewCreateSessionParams() *CreateSessionParams {
 // NewCreateSessionParamsWithTimeout creates a new CreateSessionParams object
 // with the ability to set a timeout on a request.
 func NewCreateSessionParamsWithTimeout(timeout time.Duration) *CreateSessionParams {
+    logtrace.LogWithFunctionName()
 	return &CreateSessionParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewCreateSessionParamsWithTimeout(timeout time.Duration) *CreateSessionPara
 // NewCreateSessionParamsWithContext creates a new CreateSessionParams object
 // with the ability to set a context for a request.
 func NewCreateSessionParamsWithContext(ctx context.Context) *CreateSessionParams {
+    logtrace.LogWithFunctionName()
 	return &CreateSessionParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewCreateSessionParamsWithContext(ctx context.Context) *CreateSessionParams
 // NewCreateSessionParamsWithHTTPClient creates a new CreateSessionParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewCreateSessionParamsWithHTTPClient(client *http.Client) *CreateSessionParams {
+    logtrace.LogWithFunctionName()
 	return &CreateSessionParams{
 		HTTPClient: client,
 	}
@@ -102,6 +107,7 @@ type CreateSessionParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *CreateSessionParams) WithDefaults() *CreateSessionParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -110,55 +116,65 @@ func (o *CreateSessionParams) WithDefaults() *CreateSessionParams {
 //
 // All values with no default are reset to their zero value.
 func (o *CreateSessionParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the create session params
 func (o *CreateSessionParams) WithTimeout(timeout time.Duration) *CreateSessionParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the create session params
 func (o *CreateSessionParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the create session params
 func (o *CreateSessionParams) WithContext(ctx context.Context) *CreateSessionParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the create session params
 func (o *CreateSessionParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the create session params
 func (o *CreateSessionParams) WithHTTPClient(client *http.Client) *CreateSessionParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the create session params
 func (o *CreateSessionParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithSession adds the session to the create session params
 func (o *CreateSessionParams) WithSession(session *rest_model.SessionCreate) *CreateSessionParams {
+    logtrace.LogWithFunctionName()
 	o.SetSession(session)
 	return o
 }
 
 // SetSession adds the session to the create session params
 func (o *CreateSessionParams) SetSession(session *rest_model.SessionCreate) {
+    logtrace.LogWithFunctionName()
 	o.Session = session
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *CreateSessionParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

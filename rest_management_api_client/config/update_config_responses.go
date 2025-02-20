@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type UpdateConfigReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *UpdateConfigReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewUpdateConfigOK()
@@ -91,6 +93,7 @@ func (o *UpdateConfigReader) ReadResponse(response runtime.ClientResponse, consu
 
 // NewUpdateConfigOK creates a UpdateConfigOK with default headers values
 func NewUpdateConfigOK() *UpdateConfigOK {
+    logtrace.LogWithFunctionName()
 	return &UpdateConfigOK{}
 }
 
@@ -105,49 +108,59 @@ type UpdateConfigOK struct {
 
 // IsSuccess returns true when this update config o k response has a 2xx status code
 func (o *UpdateConfigOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this update config o k response has a 3xx status code
 func (o *UpdateConfigOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update config o k response has a 4xx status code
 func (o *UpdateConfigOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this update config o k response has a 5xx status code
 func (o *UpdateConfigOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update config o k response a status code equal to that given
 func (o *UpdateConfigOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the update config o k response
 func (o *UpdateConfigOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *UpdateConfigOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /configs/{id}][%d] updateConfigOK %s", 200, payload)
 }
 
 func (o *UpdateConfigOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /configs/{id}][%d] updateConfigOK %s", 200, payload)
 }
 
 func (o *UpdateConfigOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateConfigOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -161,6 +174,7 @@ func (o *UpdateConfigOK) readResponse(response runtime.ClientResponse, consumer 
 
 // NewUpdateConfigBadRequest creates a UpdateConfigBadRequest with default headers values
 func NewUpdateConfigBadRequest() *UpdateConfigBadRequest {
+    logtrace.LogWithFunctionName()
 	return &UpdateConfigBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type UpdateConfigBadRequest struct {
 
 // IsSuccess returns true when this update config bad request response has a 2xx status code
 func (o *UpdateConfigBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update config bad request response has a 3xx status code
 func (o *UpdateConfigBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update config bad request response has a 4xx status code
 func (o *UpdateConfigBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update config bad request response has a 5xx status code
 func (o *UpdateConfigBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update config bad request response a status code equal to that given
 func (o *UpdateConfigBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the update config bad request response
 func (o *UpdateConfigBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *UpdateConfigBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /configs/{id}][%d] updateConfigBadRequest %s", 400, payload)
 }
 
 func (o *UpdateConfigBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /configs/{id}][%d] updateConfigBadRequest %s", 400, payload)
 }
 
 func (o *UpdateConfigBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateConfigBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *UpdateConfigBadRequest) readResponse(response runtime.ClientResponse, c
 
 // NewUpdateConfigUnauthorized creates a UpdateConfigUnauthorized with default headers values
 func NewUpdateConfigUnauthorized() *UpdateConfigUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &UpdateConfigUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type UpdateConfigUnauthorized struct {
 
 // IsSuccess returns true when this update config unauthorized response has a 2xx status code
 func (o *UpdateConfigUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update config unauthorized response has a 3xx status code
 func (o *UpdateConfigUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update config unauthorized response has a 4xx status code
 func (o *UpdateConfigUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update config unauthorized response has a 5xx status code
 func (o *UpdateConfigUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update config unauthorized response a status code equal to that given
 func (o *UpdateConfigUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the update config unauthorized response
 func (o *UpdateConfigUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *UpdateConfigUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /configs/{id}][%d] updateConfigUnauthorized %s", 401, payload)
 }
 
 func (o *UpdateConfigUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /configs/{id}][%d] updateConfigUnauthorized %s", 401, payload)
 }
 
 func (o *UpdateConfigUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateConfigUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *UpdateConfigUnauthorized) readResponse(response runtime.ClientResponse,
 
 // NewUpdateConfigNotFound creates a UpdateConfigNotFound with default headers values
 func NewUpdateConfigNotFound() *UpdateConfigNotFound {
+    logtrace.LogWithFunctionName()
 	return &UpdateConfigNotFound{}
 }
 
@@ -315,49 +351,59 @@ type UpdateConfigNotFound struct {
 
 // IsSuccess returns true when this update config not found response has a 2xx status code
 func (o *UpdateConfigNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update config not found response has a 3xx status code
 func (o *UpdateConfigNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update config not found response has a 4xx status code
 func (o *UpdateConfigNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update config not found response has a 5xx status code
 func (o *UpdateConfigNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update config not found response a status code equal to that given
 func (o *UpdateConfigNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the update config not found response
 func (o *UpdateConfigNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *UpdateConfigNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /configs/{id}][%d] updateConfigNotFound %s", 404, payload)
 }
 
 func (o *UpdateConfigNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /configs/{id}][%d] updateConfigNotFound %s", 404, payload)
 }
 
 func (o *UpdateConfigNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateConfigNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *UpdateConfigNotFound) readResponse(response runtime.ClientResponse, con
 
 // NewUpdateConfigTooManyRequests creates a UpdateConfigTooManyRequests with default headers values
 func NewUpdateConfigTooManyRequests() *UpdateConfigTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &UpdateConfigTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type UpdateConfigTooManyRequests struct {
 
 // IsSuccess returns true when this update config too many requests response has a 2xx status code
 func (o *UpdateConfigTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update config too many requests response has a 3xx status code
 func (o *UpdateConfigTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update config too many requests response has a 4xx status code
 func (o *UpdateConfigTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this update config too many requests response has a 5xx status code
 func (o *UpdateConfigTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this update config too many requests response a status code equal to that given
 func (o *UpdateConfigTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the update config too many requests response
 func (o *UpdateConfigTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *UpdateConfigTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /configs/{id}][%d] updateConfigTooManyRequests %s", 429, payload)
 }
 
 func (o *UpdateConfigTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /configs/{id}][%d] updateConfigTooManyRequests %s", 429, payload)
 }
 
 func (o *UpdateConfigTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateConfigTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *UpdateConfigTooManyRequests) readResponse(response runtime.ClientRespon
 
 // NewUpdateConfigServiceUnavailable creates a UpdateConfigServiceUnavailable with default headers values
 func NewUpdateConfigServiceUnavailable() *UpdateConfigServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &UpdateConfigServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type UpdateConfigServiceUnavailable struct {
 
 // IsSuccess returns true when this update config service unavailable response has a 2xx status code
 func (o *UpdateConfigServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this update config service unavailable response has a 3xx status code
 func (o *UpdateConfigServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this update config service unavailable response has a 4xx status code
 func (o *UpdateConfigServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this update config service unavailable response has a 5xx status code
 func (o *UpdateConfigServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this update config service unavailable response a status code equal to that given
 func (o *UpdateConfigServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the update config service unavailable response
 func (o *UpdateConfigServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *UpdateConfigServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /configs/{id}][%d] updateConfigServiceUnavailable %s", 503, payload)
 }
 
 func (o *UpdateConfigServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PUT /configs/{id}][%d] updateConfigServiceUnavailable %s", 503, payload)
 }
 
 func (o *UpdateConfigServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *UpdateConfigServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

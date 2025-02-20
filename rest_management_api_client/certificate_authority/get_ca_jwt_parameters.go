@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewGetCaJWTParams() *GetCaJWTParams {
+    logtrace.LogWithFunctionName()
 	return &GetCaJWTParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewGetCaJWTParams() *GetCaJWTParams {
 // NewGetCaJWTParamsWithTimeout creates a new GetCaJWTParams object
 // with the ability to set a timeout on a request.
 func NewGetCaJWTParamsWithTimeout(timeout time.Duration) *GetCaJWTParams {
+    logtrace.LogWithFunctionName()
 	return &GetCaJWTParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewGetCaJWTParamsWithTimeout(timeout time.Duration) *GetCaJWTParams {
 // NewGetCaJWTParamsWithContext creates a new GetCaJWTParams object
 // with the ability to set a context for a request.
 func NewGetCaJWTParamsWithContext(ctx context.Context) *GetCaJWTParams {
+    logtrace.LogWithFunctionName()
 	return &GetCaJWTParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewGetCaJWTParamsWithContext(ctx context.Context) *GetCaJWTParams {
 // NewGetCaJWTParamsWithHTTPClient creates a new GetCaJWTParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewGetCaJWTParamsWithHTTPClient(client *http.Client) *GetCaJWTParams {
+    logtrace.LogWithFunctionName()
 	return &GetCaJWTParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type GetCaJWTParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *GetCaJWTParams) WithDefaults() *GetCaJWTParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *GetCaJWTParams) WithDefaults() *GetCaJWTParams {
 //
 // All values with no default are reset to their zero value.
 func (o *GetCaJWTParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the get ca Jwt params
 func (o *GetCaJWTParams) WithTimeout(timeout time.Duration) *GetCaJWTParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the get ca Jwt params
 func (o *GetCaJWTParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the get ca Jwt params
 func (o *GetCaJWTParams) WithContext(ctx context.Context) *GetCaJWTParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the get ca Jwt params
 func (o *GetCaJWTParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the get ca Jwt params
 func (o *GetCaJWTParams) WithHTTPClient(client *http.Client) *GetCaJWTParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the get ca Jwt params
 func (o *GetCaJWTParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the get ca Jwt params
 func (o *GetCaJWTParams) WithID(id string) *GetCaJWTParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the get ca Jwt params
 func (o *GetCaJWTParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *GetCaJWTParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

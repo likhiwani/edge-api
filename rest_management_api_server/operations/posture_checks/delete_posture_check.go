@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type DeletePostureCheckHandlerFunc func(DeletePostureCheckParams, interface{}) m
 
 // Handle executing the request and returning a response
 func (fn DeletePostureCheckHandlerFunc) Handle(params DeletePostureCheckParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type DeletePostureCheckHandler interface {
 
 // NewDeletePostureCheck creates a new http.Handler for the delete posture check operation
 func NewDeletePostureCheck(ctx *middleware.Context, handler DeletePostureCheckHandler) *DeletePostureCheck {
+    logtrace.LogWithFunctionName()
 	return &DeletePostureCheck{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type DeletePostureCheck struct {
 }
 
 func (o *DeletePostureCheck) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

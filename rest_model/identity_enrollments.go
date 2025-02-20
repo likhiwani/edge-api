@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -55,6 +56,7 @@ type IdentityEnrollments struct {
 
 // Validate validates this identity enrollments
 func (m *IdentityEnrollments) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateOtt(formats); err != nil {
@@ -76,6 +78,7 @@ func (m *IdentityEnrollments) Validate(formats strfmt.Registry) error {
 }
 
 func (m *IdentityEnrollments) validateOtt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Ott) { // not required
 		return nil
 	}
@@ -95,6 +98,7 @@ func (m *IdentityEnrollments) validateOtt(formats strfmt.Registry) error {
 }
 
 func (m *IdentityEnrollments) validateOttca(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Ottca) { // not required
 		return nil
 	}
@@ -114,6 +118,7 @@ func (m *IdentityEnrollments) validateOttca(formats strfmt.Registry) error {
 }
 
 func (m *IdentityEnrollments) validateUpdb(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Updb) { // not required
 		return nil
 	}
@@ -134,6 +139,7 @@ func (m *IdentityEnrollments) validateUpdb(formats strfmt.Registry) error {
 
 // ContextValidate validate this identity enrollments based on the context it is used
 func (m *IdentityEnrollments) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateOtt(ctx, formats); err != nil {
@@ -155,6 +161,7 @@ func (m *IdentityEnrollments) ContextValidate(ctx context.Context, formats strfm
 }
 
 func (m *IdentityEnrollments) contextValidateOtt(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Ott != nil {
 
@@ -176,6 +183,7 @@ func (m *IdentityEnrollments) contextValidateOtt(ctx context.Context, formats st
 }
 
 func (m *IdentityEnrollments) contextValidateOttca(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Ottca != nil {
 
@@ -197,6 +205,7 @@ func (m *IdentityEnrollments) contextValidateOttca(ctx context.Context, formats 
 }
 
 func (m *IdentityEnrollments) contextValidateUpdb(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Updb != nil {
 
@@ -219,6 +228,7 @@ func (m *IdentityEnrollments) contextValidateUpdb(ctx context.Context, formats s
 
 // MarshalBinary interface implementation
 func (m *IdentityEnrollments) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -227,6 +237,7 @@ func (m *IdentityEnrollments) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *IdentityEnrollments) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res IdentityEnrollments
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
@@ -256,6 +267,7 @@ type IdentityEnrollmentsOtt struct {
 
 // Validate validates this identity enrollments ott
 func (m *IdentityEnrollmentsOtt) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateExpiresAt(formats); err != nil {
@@ -269,6 +281,7 @@ func (m *IdentityEnrollmentsOtt) Validate(formats strfmt.Registry) error {
 }
 
 func (m *IdentityEnrollmentsOtt) validateExpiresAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.ExpiresAt) { // not required
 		return nil
 	}
@@ -282,11 +295,13 @@ func (m *IdentityEnrollmentsOtt) validateExpiresAt(formats strfmt.Registry) erro
 
 // ContextValidate validates this identity enrollments ott based on context it is used
 func (m *IdentityEnrollmentsOtt) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *IdentityEnrollmentsOtt) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -295,6 +310,7 @@ func (m *IdentityEnrollmentsOtt) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *IdentityEnrollmentsOtt) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res IdentityEnrollmentsOtt
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
@@ -330,6 +346,7 @@ type IdentityEnrollmentsOttca struct {
 
 // Validate validates this identity enrollments ottca
 func (m *IdentityEnrollmentsOttca) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateCa(formats); err != nil {
@@ -347,6 +364,7 @@ func (m *IdentityEnrollmentsOttca) Validate(formats strfmt.Registry) error {
 }
 
 func (m *IdentityEnrollmentsOttca) validateCa(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Ca) { // not required
 		return nil
 	}
@@ -366,6 +384,7 @@ func (m *IdentityEnrollmentsOttca) validateCa(formats strfmt.Registry) error {
 }
 
 func (m *IdentityEnrollmentsOttca) validateExpiresAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.ExpiresAt) { // not required
 		return nil
 	}
@@ -379,6 +398,7 @@ func (m *IdentityEnrollmentsOttca) validateExpiresAt(formats strfmt.Registry) er
 
 // ContextValidate validate this identity enrollments ottca based on the context it is used
 func (m *IdentityEnrollmentsOttca) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateCa(ctx, formats); err != nil {
@@ -392,6 +412,7 @@ func (m *IdentityEnrollmentsOttca) ContextValidate(ctx context.Context, formats 
 }
 
 func (m *IdentityEnrollmentsOttca) contextValidateCa(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Ca != nil {
 
@@ -414,6 +435,7 @@ func (m *IdentityEnrollmentsOttca) contextValidateCa(ctx context.Context, format
 
 // MarshalBinary interface implementation
 func (m *IdentityEnrollmentsOttca) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -422,6 +444,7 @@ func (m *IdentityEnrollmentsOttca) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *IdentityEnrollmentsOttca) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res IdentityEnrollmentsOttca
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
@@ -451,6 +474,7 @@ type IdentityEnrollmentsUpdb struct {
 
 // Validate validates this identity enrollments updb
 func (m *IdentityEnrollmentsUpdb) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateExpiresAt(formats); err != nil {
@@ -464,6 +488,7 @@ func (m *IdentityEnrollmentsUpdb) Validate(formats strfmt.Registry) error {
 }
 
 func (m *IdentityEnrollmentsUpdb) validateExpiresAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.ExpiresAt) { // not required
 		return nil
 	}
@@ -477,11 +502,13 @@ func (m *IdentityEnrollmentsUpdb) validateExpiresAt(formats strfmt.Registry) err
 
 // ContextValidate validates this identity enrollments updb based on context it is used
 func (m *IdentityEnrollmentsUpdb) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *IdentityEnrollmentsUpdb) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -490,6 +517,7 @@ func (m *IdentityEnrollmentsUpdb) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *IdentityEnrollmentsUpdb) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res IdentityEnrollmentsUpdb
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

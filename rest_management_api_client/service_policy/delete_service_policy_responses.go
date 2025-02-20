@@ -30,6 +30,7 @@ package service_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DeleteServicePolicyReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DeleteServicePolicyReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDeleteServicePolicyOK()
@@ -97,6 +99,7 @@ func (o *DeleteServicePolicyReader) ReadResponse(response runtime.ClientResponse
 
 // NewDeleteServicePolicyOK creates a DeleteServicePolicyOK with default headers values
 func NewDeleteServicePolicyOK() *DeleteServicePolicyOK {
+    logtrace.LogWithFunctionName()
 	return &DeleteServicePolicyOK{}
 }
 
@@ -111,49 +114,59 @@ type DeleteServicePolicyOK struct {
 
 // IsSuccess returns true when this delete service policy o k response has a 2xx status code
 func (o *DeleteServicePolicyOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this delete service policy o k response has a 3xx status code
 func (o *DeleteServicePolicyOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete service policy o k response has a 4xx status code
 func (o *DeleteServicePolicyOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete service policy o k response has a 5xx status code
 func (o *DeleteServicePolicyOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete service policy o k response a status code equal to that given
 func (o *DeleteServicePolicyOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the delete service policy o k response
 func (o *DeleteServicePolicyOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DeleteServicePolicyOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /service-policies/{id}][%d] deleteServicePolicyOK %s", 200, payload)
 }
 
 func (o *DeleteServicePolicyOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /service-policies/{id}][%d] deleteServicePolicyOK %s", 200, payload)
 }
 
 func (o *DeleteServicePolicyOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteServicePolicyOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -167,6 +180,7 @@ func (o *DeleteServicePolicyOK) readResponse(response runtime.ClientResponse, co
 
 // NewDeleteServicePolicyBadRequest creates a DeleteServicePolicyBadRequest with default headers values
 func NewDeleteServicePolicyBadRequest() *DeleteServicePolicyBadRequest {
+    logtrace.LogWithFunctionName()
 	return &DeleteServicePolicyBadRequest{}
 }
 
@@ -181,49 +195,59 @@ type DeleteServicePolicyBadRequest struct {
 
 // IsSuccess returns true when this delete service policy bad request response has a 2xx status code
 func (o *DeleteServicePolicyBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete service policy bad request response has a 3xx status code
 func (o *DeleteServicePolicyBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete service policy bad request response has a 4xx status code
 func (o *DeleteServicePolicyBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete service policy bad request response has a 5xx status code
 func (o *DeleteServicePolicyBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete service policy bad request response a status code equal to that given
 func (o *DeleteServicePolicyBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the delete service policy bad request response
 func (o *DeleteServicePolicyBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *DeleteServicePolicyBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /service-policies/{id}][%d] deleteServicePolicyBadRequest %s", 400, payload)
 }
 
 func (o *DeleteServicePolicyBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /service-policies/{id}][%d] deleteServicePolicyBadRequest %s", 400, payload)
 }
 
 func (o *DeleteServicePolicyBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteServicePolicyBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -237,6 +261,7 @@ func (o *DeleteServicePolicyBadRequest) readResponse(response runtime.ClientResp
 
 // NewDeleteServicePolicyUnauthorized creates a DeleteServicePolicyUnauthorized with default headers values
 func NewDeleteServicePolicyUnauthorized() *DeleteServicePolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DeleteServicePolicyUnauthorized{}
 }
 
@@ -251,49 +276,59 @@ type DeleteServicePolicyUnauthorized struct {
 
 // IsSuccess returns true when this delete service policy unauthorized response has a 2xx status code
 func (o *DeleteServicePolicyUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete service policy unauthorized response has a 3xx status code
 func (o *DeleteServicePolicyUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete service policy unauthorized response has a 4xx status code
 func (o *DeleteServicePolicyUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete service policy unauthorized response has a 5xx status code
 func (o *DeleteServicePolicyUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete service policy unauthorized response a status code equal to that given
 func (o *DeleteServicePolicyUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the delete service policy unauthorized response
 func (o *DeleteServicePolicyUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DeleteServicePolicyUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /service-policies/{id}][%d] deleteServicePolicyUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteServicePolicyUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /service-policies/{id}][%d] deleteServicePolicyUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteServicePolicyUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteServicePolicyUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -307,6 +342,7 @@ func (o *DeleteServicePolicyUnauthorized) readResponse(response runtime.ClientRe
 
 // NewDeleteServicePolicyNotFound creates a DeleteServicePolicyNotFound with default headers values
 func NewDeleteServicePolicyNotFound() *DeleteServicePolicyNotFound {
+    logtrace.LogWithFunctionName()
 	return &DeleteServicePolicyNotFound{}
 }
 
@@ -321,49 +357,59 @@ type DeleteServicePolicyNotFound struct {
 
 // IsSuccess returns true when this delete service policy not found response has a 2xx status code
 func (o *DeleteServicePolicyNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete service policy not found response has a 3xx status code
 func (o *DeleteServicePolicyNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete service policy not found response has a 4xx status code
 func (o *DeleteServicePolicyNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete service policy not found response has a 5xx status code
 func (o *DeleteServicePolicyNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete service policy not found response a status code equal to that given
 func (o *DeleteServicePolicyNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the delete service policy not found response
 func (o *DeleteServicePolicyNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DeleteServicePolicyNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /service-policies/{id}][%d] deleteServicePolicyNotFound %s", 404, payload)
 }
 
 func (o *DeleteServicePolicyNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /service-policies/{id}][%d] deleteServicePolicyNotFound %s", 404, payload)
 }
 
 func (o *DeleteServicePolicyNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteServicePolicyNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -377,6 +423,7 @@ func (o *DeleteServicePolicyNotFound) readResponse(response runtime.ClientRespon
 
 // NewDeleteServicePolicyConflict creates a DeleteServicePolicyConflict with default headers values
 func NewDeleteServicePolicyConflict() *DeleteServicePolicyConflict {
+    logtrace.LogWithFunctionName()
 	return &DeleteServicePolicyConflict{}
 }
 
@@ -391,49 +438,59 @@ type DeleteServicePolicyConflict struct {
 
 // IsSuccess returns true when this delete service policy conflict response has a 2xx status code
 func (o *DeleteServicePolicyConflict) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete service policy conflict response has a 3xx status code
 func (o *DeleteServicePolicyConflict) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete service policy conflict response has a 4xx status code
 func (o *DeleteServicePolicyConflict) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete service policy conflict response has a 5xx status code
 func (o *DeleteServicePolicyConflict) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete service policy conflict response a status code equal to that given
 func (o *DeleteServicePolicyConflict) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 409
 }
 
 // Code gets the status code for the delete service policy conflict response
 func (o *DeleteServicePolicyConflict) Code() int {
+    logtrace.LogWithFunctionName()
 	return 409
 }
 
 func (o *DeleteServicePolicyConflict) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /service-policies/{id}][%d] deleteServicePolicyConflict %s", 409, payload)
 }
 
 func (o *DeleteServicePolicyConflict) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /service-policies/{id}][%d] deleteServicePolicyConflict %s", 409, payload)
 }
 
 func (o *DeleteServicePolicyConflict) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteServicePolicyConflict) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -447,6 +504,7 @@ func (o *DeleteServicePolicyConflict) readResponse(response runtime.ClientRespon
 
 // NewDeleteServicePolicyTooManyRequests creates a DeleteServicePolicyTooManyRequests with default headers values
 func NewDeleteServicePolicyTooManyRequests() *DeleteServicePolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DeleteServicePolicyTooManyRequests{}
 }
 
@@ -461,49 +519,59 @@ type DeleteServicePolicyTooManyRequests struct {
 
 // IsSuccess returns true when this delete service policy too many requests response has a 2xx status code
 func (o *DeleteServicePolicyTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete service policy too many requests response has a 3xx status code
 func (o *DeleteServicePolicyTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete service policy too many requests response has a 4xx status code
 func (o *DeleteServicePolicyTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete service policy too many requests response has a 5xx status code
 func (o *DeleteServicePolicyTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete service policy too many requests response a status code equal to that given
 func (o *DeleteServicePolicyTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the delete service policy too many requests response
 func (o *DeleteServicePolicyTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DeleteServicePolicyTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /service-policies/{id}][%d] deleteServicePolicyTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteServicePolicyTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /service-policies/{id}][%d] deleteServicePolicyTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteServicePolicyTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteServicePolicyTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -517,6 +585,7 @@ func (o *DeleteServicePolicyTooManyRequests) readResponse(response runtime.Clien
 
 // NewDeleteServicePolicyServiceUnavailable creates a DeleteServicePolicyServiceUnavailable with default headers values
 func NewDeleteServicePolicyServiceUnavailable() *DeleteServicePolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DeleteServicePolicyServiceUnavailable{}
 }
 
@@ -531,49 +600,59 @@ type DeleteServicePolicyServiceUnavailable struct {
 
 // IsSuccess returns true when this delete service policy service unavailable response has a 2xx status code
 func (o *DeleteServicePolicyServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete service policy service unavailable response has a 3xx status code
 func (o *DeleteServicePolicyServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete service policy service unavailable response has a 4xx status code
 func (o *DeleteServicePolicyServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete service policy service unavailable response has a 5xx status code
 func (o *DeleteServicePolicyServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this delete service policy service unavailable response a status code equal to that given
 func (o *DeleteServicePolicyServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the delete service policy service unavailable response
 func (o *DeleteServicePolicyServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DeleteServicePolicyServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /service-policies/{id}][%d] deleteServicePolicyServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteServicePolicyServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /service-policies/{id}][%d] deleteServicePolicyServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteServicePolicyServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteServicePolicyServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

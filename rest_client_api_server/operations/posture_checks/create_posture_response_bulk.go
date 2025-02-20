@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type CreatePostureResponseBulkHandlerFunc func(CreatePostureResponseBulkParams, 
 
 // Handle executing the request and returning a response
 func (fn CreatePostureResponseBulkHandlerFunc) Handle(params CreatePostureResponseBulkParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type CreatePostureResponseBulkHandler interface {
 
 // NewCreatePostureResponseBulk creates a new http.Handler for the create posture response bulk operation
 func NewCreatePostureResponseBulk(ctx *middleware.Context, handler CreatePostureResponseBulkHandler) *CreatePostureResponseBulk {
+    logtrace.LogWithFunctionName()
 	return &CreatePostureResponseBulk{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type CreatePostureResponseBulk struct {
 }
 
 func (o *CreatePostureResponseBulk) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

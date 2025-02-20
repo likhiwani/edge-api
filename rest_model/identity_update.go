@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -85,6 +86,7 @@ type IdentityUpdate struct {
 
 // Validate validates this identity update
 func (m *IdentityUpdate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateAppData(formats); err != nil {
@@ -134,6 +136,7 @@ func (m *IdentityUpdate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *IdentityUpdate) validateAppData(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.AppData) { // not required
 		return nil
 	}
@@ -153,6 +156,7 @@ func (m *IdentityUpdate) validateAppData(formats strfmt.Registry) error {
 }
 
 func (m *IdentityUpdate) validateDefaultHostingCost(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.DefaultHostingCost) { // not required
 		return nil
 	}
@@ -172,6 +176,7 @@ func (m *IdentityUpdate) validateDefaultHostingCost(formats strfmt.Registry) err
 }
 
 func (m *IdentityUpdate) validateDefaultHostingPrecedence(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.DefaultHostingPrecedence) { // not required
 		return nil
 	}
@@ -189,6 +194,7 @@ func (m *IdentityUpdate) validateDefaultHostingPrecedence(formats strfmt.Registr
 }
 
 func (m *IdentityUpdate) validateIsAdmin(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isAdmin", "body", m.IsAdmin); err != nil {
 		return err
@@ -198,6 +204,7 @@ func (m *IdentityUpdate) validateIsAdmin(formats strfmt.Registry) error {
 }
 
 func (m *IdentityUpdate) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -207,6 +214,7 @@ func (m *IdentityUpdate) validateName(formats strfmt.Registry) error {
 }
 
 func (m *IdentityUpdate) validateRoleAttributes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.RoleAttributes) { // not required
 		return nil
 	}
@@ -226,6 +234,7 @@ func (m *IdentityUpdate) validateRoleAttributes(formats strfmt.Registry) error {
 }
 
 func (m *IdentityUpdate) validateServiceHostingCosts(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.ServiceHostingCosts) { // not required
 		return nil
 	}
@@ -245,6 +254,7 @@ func (m *IdentityUpdate) validateServiceHostingCosts(formats strfmt.Registry) er
 }
 
 func (m *IdentityUpdate) validateServiceHostingPrecedences(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.ServiceHostingPrecedences) { // not required
 		return nil
 	}
@@ -264,6 +274,7 @@ func (m *IdentityUpdate) validateServiceHostingPrecedences(formats strfmt.Regist
 }
 
 func (m *IdentityUpdate) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -283,6 +294,7 @@ func (m *IdentityUpdate) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *IdentityUpdate) validateType(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("type", "body", m.Type); err != nil {
 		return err
@@ -308,6 +320,7 @@ func (m *IdentityUpdate) validateType(formats strfmt.Registry) error {
 
 // ContextValidate validate this identity update based on the context it is used
 func (m *IdentityUpdate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateAppData(ctx, formats); err != nil {
@@ -349,6 +362,7 @@ func (m *IdentityUpdate) ContextValidate(ctx context.Context, formats strfmt.Reg
 }
 
 func (m *IdentityUpdate) contextValidateAppData(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.AppData != nil {
 
@@ -370,6 +384,7 @@ func (m *IdentityUpdate) contextValidateAppData(ctx context.Context, formats str
 }
 
 func (m *IdentityUpdate) contextValidateDefaultHostingCost(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.DefaultHostingCost != nil {
 
@@ -391,6 +406,7 @@ func (m *IdentityUpdate) contextValidateDefaultHostingCost(ctx context.Context, 
 }
 
 func (m *IdentityUpdate) contextValidateDefaultHostingPrecedence(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.DefaultHostingPrecedence) { // not required
 		return nil
@@ -409,6 +425,7 @@ func (m *IdentityUpdate) contextValidateDefaultHostingPrecedence(ctx context.Con
 }
 
 func (m *IdentityUpdate) contextValidateRoleAttributes(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.RoleAttributes != nil {
 		if err := m.RoleAttributes.ContextValidate(ctx, formats); err != nil {
@@ -425,6 +442,7 @@ func (m *IdentityUpdate) contextValidateRoleAttributes(ctx context.Context, form
 }
 
 func (m *IdentityUpdate) contextValidateServiceHostingCosts(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.ServiceHostingCosts) { // not required
 		return nil
@@ -443,6 +461,7 @@ func (m *IdentityUpdate) contextValidateServiceHostingCosts(ctx context.Context,
 }
 
 func (m *IdentityUpdate) contextValidateServiceHostingPrecedences(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.ServiceHostingPrecedences) { // not required
 		return nil
@@ -461,6 +480,7 @@ func (m *IdentityUpdate) contextValidateServiceHostingPrecedences(ctx context.Co
 }
 
 func (m *IdentityUpdate) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -482,6 +502,7 @@ func (m *IdentityUpdate) contextValidateTags(ctx context.Context, formats strfmt
 }
 
 func (m *IdentityUpdate) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Type != nil {
 
@@ -500,6 +521,7 @@ func (m *IdentityUpdate) contextValidateType(ctx context.Context, formats strfmt
 
 // MarshalBinary interface implementation
 func (m *IdentityUpdate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -508,6 +530,7 @@ func (m *IdentityUpdate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *IdentityUpdate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res IdentityUpdate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

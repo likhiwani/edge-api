@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -68,6 +69,7 @@ type ServiceUpdate struct {
 
 // Validate validates this service update
 func (m *ServiceUpdate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateName(formats); err != nil {
@@ -85,6 +87,7 @@ func (m *ServiceUpdate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ServiceUpdate) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -94,6 +97,7 @@ func (m *ServiceUpdate) validateName(formats strfmt.Registry) error {
 }
 
 func (m *ServiceUpdate) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -114,6 +118,7 @@ func (m *ServiceUpdate) validateTags(formats strfmt.Registry) error {
 
 // ContextValidate validate this service update based on the context it is used
 func (m *ServiceUpdate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateTags(ctx, formats); err != nil {
@@ -127,6 +132,7 @@ func (m *ServiceUpdate) ContextValidate(ctx context.Context, formats strfmt.Regi
 }
 
 func (m *ServiceUpdate) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -149,6 +155,7 @@ func (m *ServiceUpdate) contextValidateTags(ctx context.Context, formats strfmt.
 
 // MarshalBinary interface implementation
 func (m *ServiceUpdate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -157,6 +164,7 @@ func (m *ServiceUpdate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ServiceUpdate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ServiceUpdate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

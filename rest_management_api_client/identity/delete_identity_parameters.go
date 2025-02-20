@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDeleteIdentityParams() *DeleteIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteIdentityParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDeleteIdentityParams() *DeleteIdentityParams {
 // NewDeleteIdentityParamsWithTimeout creates a new DeleteIdentityParams object
 // with the ability to set a timeout on a request.
 func NewDeleteIdentityParamsWithTimeout(timeout time.Duration) *DeleteIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteIdentityParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDeleteIdentityParamsWithTimeout(timeout time.Duration) *DeleteIdentityPa
 // NewDeleteIdentityParamsWithContext creates a new DeleteIdentityParams object
 // with the ability to set a context for a request.
 func NewDeleteIdentityParamsWithContext(ctx context.Context) *DeleteIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteIdentityParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDeleteIdentityParamsWithContext(ctx context.Context) *DeleteIdentityPara
 // NewDeleteIdentityParamsWithHTTPClient creates a new DeleteIdentityParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDeleteIdentityParamsWithHTTPClient(client *http.Client) *DeleteIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteIdentityParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DeleteIdentityParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteIdentityParams) WithDefaults() *DeleteIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DeleteIdentityParams) WithDefaults() *DeleteIdentityParams {
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteIdentityParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the delete identity params
 func (o *DeleteIdentityParams) WithTimeout(timeout time.Duration) *DeleteIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the delete identity params
 func (o *DeleteIdentityParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the delete identity params
 func (o *DeleteIdentityParams) WithContext(ctx context.Context) *DeleteIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the delete identity params
 func (o *DeleteIdentityParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the delete identity params
 func (o *DeleteIdentityParams) WithHTTPClient(client *http.Client) *DeleteIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the delete identity params
 func (o *DeleteIdentityParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the delete identity params
 func (o *DeleteIdentityParams) WithID(id string) *DeleteIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the delete identity params
 func (o *DeleteIdentityParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DeleteIdentityParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

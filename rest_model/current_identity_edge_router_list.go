@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"strconv"
 
@@ -45,6 +46,7 @@ type CurrentIdentityEdgeRouterList []*CurrentIdentityEdgeRouterDetail
 
 // Validate validates this current identity edge router list
 func (m CurrentIdentityEdgeRouterList) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	for i := 0; i < len(m); i++ {
@@ -73,6 +75,7 @@ func (m CurrentIdentityEdgeRouterList) Validate(formats strfmt.Registry) error {
 
 // ContextValidate validate this current identity edge router list based on the context it is used
 func (m CurrentIdentityEdgeRouterList) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	for i := 0; i < len(m); i++ {

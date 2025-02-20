@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type RemoveIdentityMfaHandlerFunc func(RemoveIdentityMfaParams, interface{}) mid
 
 // Handle executing the request and returning a response
 func (fn RemoveIdentityMfaHandlerFunc) Handle(params RemoveIdentityMfaParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type RemoveIdentityMfaHandler interface {
 
 // NewRemoveIdentityMfa creates a new http.Handler for the remove identity mfa operation
 func NewRemoveIdentityMfa(ctx *middleware.Context, handler RemoveIdentityMfaHandler) *RemoveIdentityMfa {
+    logtrace.LogWithFunctionName()
 	return &RemoveIdentityMfa{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type RemoveIdentityMfa struct {
 }
 
 func (o *RemoveIdentityMfa) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

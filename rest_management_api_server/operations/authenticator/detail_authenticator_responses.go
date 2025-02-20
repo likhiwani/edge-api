@@ -30,6 +30,7 @@ package authenticator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DetailAuthenticatorOK struct {
 
 // NewDetailAuthenticatorOK creates DetailAuthenticatorOK with default headers values
 func NewDetailAuthenticatorOK() *DetailAuthenticatorOK {
+    logtrace.LogWithFunctionName()
 
 	return &DetailAuthenticatorOK{}
 }
 
 // WithPayload adds the payload to the detail authenticator o k response
 func (o *DetailAuthenticatorOK) WithPayload(payload *rest_model.DetailAuthenticatorEnvelope) *DetailAuthenticatorOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail authenticator o k response
 func (o *DetailAuthenticatorOK) SetPayload(payload *rest_model.DetailAuthenticatorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailAuthenticatorOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DetailAuthenticatorUnauthorized struct {
 
 // NewDetailAuthenticatorUnauthorized creates DetailAuthenticatorUnauthorized with default headers values
 func NewDetailAuthenticatorUnauthorized() *DetailAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DetailAuthenticatorUnauthorized{}
 }
 
 // WithPayload adds the payload to the detail authenticator unauthorized response
 func (o *DetailAuthenticatorUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail authenticator unauthorized response
 func (o *DetailAuthenticatorUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailAuthenticatorUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DetailAuthenticatorNotFound struct {
 
 // NewDetailAuthenticatorNotFound creates DetailAuthenticatorNotFound with default headers values
 func NewDetailAuthenticatorNotFound() *DetailAuthenticatorNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DetailAuthenticatorNotFound{}
 }
 
 // WithPayload adds the payload to the detail authenticator not found response
 func (o *DetailAuthenticatorNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailAuthenticatorNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail authenticator not found response
 func (o *DetailAuthenticatorNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailAuthenticatorNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DetailAuthenticatorTooManyRequests struct {
 
 // NewDetailAuthenticatorTooManyRequests creates DetailAuthenticatorTooManyRequests with default headers values
 func NewDetailAuthenticatorTooManyRequests() *DetailAuthenticatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DetailAuthenticatorTooManyRequests{}
 }
 
 // WithPayload adds the payload to the detail authenticator too many requests response
 func (o *DetailAuthenticatorTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailAuthenticatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail authenticator too many requests response
 func (o *DetailAuthenticatorTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailAuthenticatorTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DetailAuthenticatorServiceUnavailable struct {
 
 // NewDetailAuthenticatorServiceUnavailable creates DetailAuthenticatorServiceUnavailable with default headers values
 func NewDetailAuthenticatorServiceUnavailable() *DetailAuthenticatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DetailAuthenticatorServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the detail authenticator service unavailable response
 func (o *DetailAuthenticatorServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailAuthenticatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail authenticator service unavailable response
 func (o *DetailAuthenticatorServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailAuthenticatorServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type UpdateIdentityTracingOK struct {
 
 // NewUpdateIdentityTracingOK creates UpdateIdentityTracingOK with default headers values
 func NewUpdateIdentityTracingOK() *UpdateIdentityTracingOK {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateIdentityTracingOK{}
 }
 
 // WithPayload adds the payload to the update identity tracing o k response
 func (o *UpdateIdentityTracingOK) WithPayload(payload *rest_model.TraceDetailEnvelope) *UpdateIdentityTracingOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update identity tracing o k response
 func (o *UpdateIdentityTracingOK) SetPayload(payload *rest_model.TraceDetailEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateIdentityTracingOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type UpdateIdentityTracingBadRequest struct {
 
 // NewUpdateIdentityTracingBadRequest creates UpdateIdentityTracingBadRequest with default headers values
 func NewUpdateIdentityTracingBadRequest() *UpdateIdentityTracingBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateIdentityTracingBadRequest{}
 }
 
 // WithPayload adds the payload to the update identity tracing bad request response
 func (o *UpdateIdentityTracingBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateIdentityTracingBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update identity tracing bad request response
 func (o *UpdateIdentityTracingBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateIdentityTracingBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type UpdateIdentityTracingUnauthorized struct {
 
 // NewUpdateIdentityTracingUnauthorized creates UpdateIdentityTracingUnauthorized with default headers values
 func NewUpdateIdentityTracingUnauthorized() *UpdateIdentityTracingUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateIdentityTracingUnauthorized{}
 }
 
 // WithPayload adds the payload to the update identity tracing unauthorized response
 func (o *UpdateIdentityTracingUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateIdentityTracingUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update identity tracing unauthorized response
 func (o *UpdateIdentityTracingUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateIdentityTracingUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type UpdateIdentityTracingNotFound struct {
 
 // NewUpdateIdentityTracingNotFound creates UpdateIdentityTracingNotFound with default headers values
 func NewUpdateIdentityTracingNotFound() *UpdateIdentityTracingNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateIdentityTracingNotFound{}
 }
 
 // WithPayload adds the payload to the update identity tracing not found response
 func (o *UpdateIdentityTracingNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateIdentityTracingNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update identity tracing not found response
 func (o *UpdateIdentityTracingNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateIdentityTracingNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type UpdateIdentityTracingTooManyRequests struct {
 
 // NewUpdateIdentityTracingTooManyRequests creates UpdateIdentityTracingTooManyRequests with default headers values
 func NewUpdateIdentityTracingTooManyRequests() *UpdateIdentityTracingTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateIdentityTracingTooManyRequests{}
 }
 
 // WithPayload adds the payload to the update identity tracing too many requests response
 func (o *UpdateIdentityTracingTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateIdentityTracingTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update identity tracing too many requests response
 func (o *UpdateIdentityTracingTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateIdentityTracingTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type UpdateIdentityTracingServiceUnavailable struct {
 
 // NewUpdateIdentityTracingServiceUnavailable creates UpdateIdentityTracingServiceUnavailable with default headers values
 func NewUpdateIdentityTracingServiceUnavailable() *UpdateIdentityTracingServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateIdentityTracingServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the update identity tracing service unavailable response
 func (o *UpdateIdentityTracingServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateIdentityTracingServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update identity tracing service unavailable response
 func (o *UpdateIdentityTracingServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateIdentityTracingServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

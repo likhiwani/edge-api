@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DetailConfigOK struct {
 
 // NewDetailConfigOK creates DetailConfigOK with default headers values
 func NewDetailConfigOK() *DetailConfigOK {
+    logtrace.LogWithFunctionName()
 
 	return &DetailConfigOK{}
 }
 
 // WithPayload adds the payload to the detail config o k response
 func (o *DetailConfigOK) WithPayload(payload *rest_model.DetailConfigEnvelope) *DetailConfigOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail config o k response
 func (o *DetailConfigOK) SetPayload(payload *rest_model.DetailConfigEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailConfigOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DetailConfigUnauthorized struct {
 
 // NewDetailConfigUnauthorized creates DetailConfigUnauthorized with default headers values
 func NewDetailConfigUnauthorized() *DetailConfigUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DetailConfigUnauthorized{}
 }
 
 // WithPayload adds the payload to the detail config unauthorized response
 func (o *DetailConfigUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailConfigUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail config unauthorized response
 func (o *DetailConfigUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailConfigUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DetailConfigNotFound struct {
 
 // NewDetailConfigNotFound creates DetailConfigNotFound with default headers values
 func NewDetailConfigNotFound() *DetailConfigNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DetailConfigNotFound{}
 }
 
 // WithPayload adds the payload to the detail config not found response
 func (o *DetailConfigNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailConfigNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail config not found response
 func (o *DetailConfigNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailConfigNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DetailConfigTooManyRequests struct {
 
 // NewDetailConfigTooManyRequests creates DetailConfigTooManyRequests with default headers values
 func NewDetailConfigTooManyRequests() *DetailConfigTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DetailConfigTooManyRequests{}
 }
 
 // WithPayload adds the payload to the detail config too many requests response
 func (o *DetailConfigTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailConfigTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail config too many requests response
 func (o *DetailConfigTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailConfigTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DetailConfigServiceUnavailable struct {
 
 // NewDetailConfigServiceUnavailable creates DetailConfigServiceUnavailable with default headers values
 func NewDetailConfigServiceUnavailable() *DetailConfigServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DetailConfigServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the detail config service unavailable response
 func (o *DetailConfigServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailConfigServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail config service unavailable response
 func (o *DetailConfigServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailConfigServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

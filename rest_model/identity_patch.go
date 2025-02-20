@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -81,6 +82,7 @@ type IdentityPatch struct {
 
 // Validate validates this identity patch
 func (m *IdentityPatch) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateAppData(formats); err != nil {
@@ -122,6 +124,7 @@ func (m *IdentityPatch) Validate(formats strfmt.Registry) error {
 }
 
 func (m *IdentityPatch) validateAppData(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.AppData) { // not required
 		return nil
 	}
@@ -141,6 +144,7 @@ func (m *IdentityPatch) validateAppData(formats strfmt.Registry) error {
 }
 
 func (m *IdentityPatch) validateDefaultHostingCost(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.DefaultHostingCost) { // not required
 		return nil
 	}
@@ -160,6 +164,7 @@ func (m *IdentityPatch) validateDefaultHostingCost(formats strfmt.Registry) erro
 }
 
 func (m *IdentityPatch) validateDefaultHostingPrecedence(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.DefaultHostingPrecedence) { // not required
 		return nil
 	}
@@ -177,6 +182,7 @@ func (m *IdentityPatch) validateDefaultHostingPrecedence(formats strfmt.Registry
 }
 
 func (m *IdentityPatch) validateRoleAttributes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.RoleAttributes) { // not required
 		return nil
 	}
@@ -196,6 +202,7 @@ func (m *IdentityPatch) validateRoleAttributes(formats strfmt.Registry) error {
 }
 
 func (m *IdentityPatch) validateServiceHostingCosts(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.ServiceHostingCosts) { // not required
 		return nil
 	}
@@ -215,6 +222,7 @@ func (m *IdentityPatch) validateServiceHostingCosts(formats strfmt.Registry) err
 }
 
 func (m *IdentityPatch) validateServiceHostingPrecedences(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.ServiceHostingPrecedences) { // not required
 		return nil
 	}
@@ -234,6 +242,7 @@ func (m *IdentityPatch) validateServiceHostingPrecedences(formats strfmt.Registr
 }
 
 func (m *IdentityPatch) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -253,6 +262,7 @@ func (m *IdentityPatch) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *IdentityPatch) validateType(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Type) { // not required
 		return nil
 	}
@@ -271,6 +281,7 @@ func (m *IdentityPatch) validateType(formats strfmt.Registry) error {
 
 // ContextValidate validate this identity patch based on the context it is used
 func (m *IdentityPatch) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateAppData(ctx, formats); err != nil {
@@ -312,6 +323,7 @@ func (m *IdentityPatch) ContextValidate(ctx context.Context, formats strfmt.Regi
 }
 
 func (m *IdentityPatch) contextValidateAppData(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.AppData != nil {
 
@@ -333,6 +345,7 @@ func (m *IdentityPatch) contextValidateAppData(ctx context.Context, formats strf
 }
 
 func (m *IdentityPatch) contextValidateDefaultHostingCost(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.DefaultHostingCost != nil {
 
@@ -354,6 +367,7 @@ func (m *IdentityPatch) contextValidateDefaultHostingCost(ctx context.Context, f
 }
 
 func (m *IdentityPatch) contextValidateDefaultHostingPrecedence(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.DefaultHostingPrecedence) { // not required
 		return nil
@@ -372,6 +386,7 @@ func (m *IdentityPatch) contextValidateDefaultHostingPrecedence(ctx context.Cont
 }
 
 func (m *IdentityPatch) contextValidateRoleAttributes(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.RoleAttributes != nil {
 		if err := m.RoleAttributes.ContextValidate(ctx, formats); err != nil {
@@ -388,6 +403,7 @@ func (m *IdentityPatch) contextValidateRoleAttributes(ctx context.Context, forma
 }
 
 func (m *IdentityPatch) contextValidateServiceHostingCosts(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.ServiceHostingCosts) { // not required
 		return nil
@@ -406,6 +422,7 @@ func (m *IdentityPatch) contextValidateServiceHostingCosts(ctx context.Context, 
 }
 
 func (m *IdentityPatch) contextValidateServiceHostingPrecedences(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.ServiceHostingPrecedences) { // not required
 		return nil
@@ -424,6 +441,7 @@ func (m *IdentityPatch) contextValidateServiceHostingPrecedences(ctx context.Con
 }
 
 func (m *IdentityPatch) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -445,6 +463,7 @@ func (m *IdentityPatch) contextValidateTags(ctx context.Context, formats strfmt.
 }
 
 func (m *IdentityPatch) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.Type) { // not required
 		return nil
@@ -464,6 +483,7 @@ func (m *IdentityPatch) contextValidateType(ctx context.Context, formats strfmt.
 
 // MarshalBinary interface implementation
 func (m *IdentityPatch) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -472,6 +492,7 @@ func (m *IdentityPatch) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *IdentityPatch) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res IdentityPatch
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

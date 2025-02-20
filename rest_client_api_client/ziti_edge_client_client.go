@@ -30,6 +30,7 @@ package rest_client_api_client
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"github.com/go-openapi/runtime"
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
@@ -65,12 +66,14 @@ var DefaultSchemes = []string{"https"}
 
 // NewHTTPClient creates a new ziti edge client HTTP client.
 func NewHTTPClient(formats strfmt.Registry) *ZitiEdgeClient {
+    logtrace.LogWithFunctionName()
 	return NewHTTPClientWithConfig(formats, nil)
 }
 
 // NewHTTPClientWithConfig creates a new ziti edge client HTTP client,
 // using a customizable transport config.
 func NewHTTPClientWithConfig(formats strfmt.Registry, cfg *TransportConfig) *ZitiEdgeClient {
+    logtrace.LogWithFunctionName()
 	// ensure nullable parameters have default
 	if cfg == nil {
 		cfg = DefaultTransportConfig()
@@ -83,6 +86,7 @@ func NewHTTPClientWithConfig(formats strfmt.Registry, cfg *TransportConfig) *Zit
 
 // New creates a new ziti edge client client
 func New(transport runtime.ClientTransport, formats strfmt.Registry) *ZitiEdgeClient {
+    logtrace.LogWithFunctionName()
 	// ensure nullable parameters have default
 	if formats == nil {
 		formats = strfmt.Default
@@ -108,6 +112,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *ZitiEdgeCl
 // DefaultTransportConfig creates a TransportConfig with the
 // default settings taken from the meta section of the spec file.
 func DefaultTransportConfig() *TransportConfig {
+    logtrace.LogWithFunctionName()
 	return &TransportConfig{
 		Host:     DefaultHost,
 		BasePath: DefaultBasePath,
@@ -126,6 +131,7 @@ type TransportConfig struct {
 // WithHost overrides the default host,
 // provided by the meta section of the spec file.
 func (cfg *TransportConfig) WithHost(host string) *TransportConfig {
+    logtrace.LogWithFunctionName()
 	cfg.Host = host
 	return cfg
 }
@@ -133,6 +139,7 @@ func (cfg *TransportConfig) WithHost(host string) *TransportConfig {
 // WithBasePath overrides the default basePath,
 // provided by the meta section of the spec file.
 func (cfg *TransportConfig) WithBasePath(basePath string) *TransportConfig {
+    logtrace.LogWithFunctionName()
 	cfg.BasePath = basePath
 	return cfg
 }
@@ -140,6 +147,7 @@ func (cfg *TransportConfig) WithBasePath(basePath string) *TransportConfig {
 // WithSchemes overrides the default schemes,
 // provided by the meta section of the spec file.
 func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
+    logtrace.LogWithFunctionName()
 	cfg.Schemes = schemes
 	return cfg
 }
@@ -175,6 +183,7 @@ type ZitiEdgeClient struct {
 
 // SetTransport changes the transport on the client and all its subresources
 func (c *ZitiEdgeClient) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	c.Transport = transport
 	c.Authentication.SetTransport(transport)
 	c.Controllers.SetTransport(transport)

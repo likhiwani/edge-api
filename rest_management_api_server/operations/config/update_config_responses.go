@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type UpdateConfigOK struct {
 
 // NewUpdateConfigOK creates UpdateConfigOK with default headers values
 func NewUpdateConfigOK() *UpdateConfigOK {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateConfigOK{}
 }
 
 // WithPayload adds the payload to the update config o k response
 func (o *UpdateConfigOK) WithPayload(payload *rest_model.Empty) *UpdateConfigOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update config o k response
 func (o *UpdateConfigOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateConfigOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type UpdateConfigBadRequest struct {
 
 // NewUpdateConfigBadRequest creates UpdateConfigBadRequest with default headers values
 func NewUpdateConfigBadRequest() *UpdateConfigBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateConfigBadRequest{}
 }
 
 // WithPayload adds the payload to the update config bad request response
 func (o *UpdateConfigBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateConfigBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update config bad request response
 func (o *UpdateConfigBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateConfigBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type UpdateConfigUnauthorized struct {
 
 // NewUpdateConfigUnauthorized creates UpdateConfigUnauthorized with default headers values
 func NewUpdateConfigUnauthorized() *UpdateConfigUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateConfigUnauthorized{}
 }
 
 // WithPayload adds the payload to the update config unauthorized response
 func (o *UpdateConfigUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateConfigUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update config unauthorized response
 func (o *UpdateConfigUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateConfigUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type UpdateConfigNotFound struct {
 
 // NewUpdateConfigNotFound creates UpdateConfigNotFound with default headers values
 func NewUpdateConfigNotFound() *UpdateConfigNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateConfigNotFound{}
 }
 
 // WithPayload adds the payload to the update config not found response
 func (o *UpdateConfigNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateConfigNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update config not found response
 func (o *UpdateConfigNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateConfigNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type UpdateConfigTooManyRequests struct {
 
 // NewUpdateConfigTooManyRequests creates UpdateConfigTooManyRequests with default headers values
 func NewUpdateConfigTooManyRequests() *UpdateConfigTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateConfigTooManyRequests{}
 }
 
 // WithPayload adds the payload to the update config too many requests response
 func (o *UpdateConfigTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateConfigTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update config too many requests response
 func (o *UpdateConfigTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateConfigTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type UpdateConfigServiceUnavailable struct {
 
 // NewUpdateConfigServiceUnavailable creates UpdateConfigServiceUnavailable with default headers values
 func NewUpdateConfigServiceUnavailable() *UpdateConfigServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateConfigServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the update config service unavailable response
 func (o *UpdateConfigServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateConfigServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update config service unavailable response
 func (o *UpdateConfigServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateConfigServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

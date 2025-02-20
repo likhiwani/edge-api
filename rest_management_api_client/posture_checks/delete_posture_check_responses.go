@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DeletePostureCheckReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DeletePostureCheckReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDeletePostureCheckOK()
@@ -85,6 +87,7 @@ func (o *DeletePostureCheckReader) ReadResponse(response runtime.ClientResponse,
 
 // NewDeletePostureCheckOK creates a DeletePostureCheckOK with default headers values
 func NewDeletePostureCheckOK() *DeletePostureCheckOK {
+    logtrace.LogWithFunctionName()
 	return &DeletePostureCheckOK{}
 }
 
@@ -99,49 +102,59 @@ type DeletePostureCheckOK struct {
 
 // IsSuccess returns true when this delete posture check o k response has a 2xx status code
 func (o *DeletePostureCheckOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this delete posture check o k response has a 3xx status code
 func (o *DeletePostureCheckOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete posture check o k response has a 4xx status code
 func (o *DeletePostureCheckOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete posture check o k response has a 5xx status code
 func (o *DeletePostureCheckOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete posture check o k response a status code equal to that given
 func (o *DeletePostureCheckOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the delete posture check o k response
 func (o *DeletePostureCheckOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DeletePostureCheckOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckOK %s", 200, payload)
 }
 
 func (o *DeletePostureCheckOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckOK %s", 200, payload)
 }
 
 func (o *DeletePostureCheckOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeletePostureCheckOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -155,6 +168,7 @@ func (o *DeletePostureCheckOK) readResponse(response runtime.ClientResponse, con
 
 // NewDeletePostureCheckForbidden creates a DeletePostureCheckForbidden with default headers values
 func NewDeletePostureCheckForbidden() *DeletePostureCheckForbidden {
+    logtrace.LogWithFunctionName()
 	return &DeletePostureCheckForbidden{}
 }
 
@@ -169,49 +183,59 @@ type DeletePostureCheckForbidden struct {
 
 // IsSuccess returns true when this delete posture check forbidden response has a 2xx status code
 func (o *DeletePostureCheckForbidden) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete posture check forbidden response has a 3xx status code
 func (o *DeletePostureCheckForbidden) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete posture check forbidden response has a 4xx status code
 func (o *DeletePostureCheckForbidden) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete posture check forbidden response has a 5xx status code
 func (o *DeletePostureCheckForbidden) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete posture check forbidden response a status code equal to that given
 func (o *DeletePostureCheckForbidden) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 403
 }
 
 // Code gets the status code for the delete posture check forbidden response
 func (o *DeletePostureCheckForbidden) Code() int {
+    logtrace.LogWithFunctionName()
 	return 403
 }
 
 func (o *DeletePostureCheckForbidden) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckForbidden %s", 403, payload)
 }
 
 func (o *DeletePostureCheckForbidden) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckForbidden %s", 403, payload)
 }
 
 func (o *DeletePostureCheckForbidden) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeletePostureCheckForbidden) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *DeletePostureCheckForbidden) readResponse(response runtime.ClientRespon
 
 // NewDeletePostureCheckNotFound creates a DeletePostureCheckNotFound with default headers values
 func NewDeletePostureCheckNotFound() *DeletePostureCheckNotFound {
+    logtrace.LogWithFunctionName()
 	return &DeletePostureCheckNotFound{}
 }
 
@@ -239,49 +264,59 @@ type DeletePostureCheckNotFound struct {
 
 // IsSuccess returns true when this delete posture check not found response has a 2xx status code
 func (o *DeletePostureCheckNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete posture check not found response has a 3xx status code
 func (o *DeletePostureCheckNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete posture check not found response has a 4xx status code
 func (o *DeletePostureCheckNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete posture check not found response has a 5xx status code
 func (o *DeletePostureCheckNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete posture check not found response a status code equal to that given
 func (o *DeletePostureCheckNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the delete posture check not found response
 func (o *DeletePostureCheckNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DeletePostureCheckNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckNotFound %s", 404, payload)
 }
 
 func (o *DeletePostureCheckNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckNotFound %s", 404, payload)
 }
 
 func (o *DeletePostureCheckNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeletePostureCheckNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *DeletePostureCheckNotFound) readResponse(response runtime.ClientRespons
 
 // NewDeletePostureCheckTooManyRequests creates a DeletePostureCheckTooManyRequests with default headers values
 func NewDeletePostureCheckTooManyRequests() *DeletePostureCheckTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DeletePostureCheckTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type DeletePostureCheckTooManyRequests struct {
 
 // IsSuccess returns true when this delete posture check too many requests response has a 2xx status code
 func (o *DeletePostureCheckTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete posture check too many requests response has a 3xx status code
 func (o *DeletePostureCheckTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete posture check too many requests response has a 4xx status code
 func (o *DeletePostureCheckTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete posture check too many requests response has a 5xx status code
 func (o *DeletePostureCheckTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete posture check too many requests response a status code equal to that given
 func (o *DeletePostureCheckTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the delete posture check too many requests response
 func (o *DeletePostureCheckTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DeletePostureCheckTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckTooManyRequests %s", 429, payload)
 }
 
 func (o *DeletePostureCheckTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckTooManyRequests %s", 429, payload)
 }
 
 func (o *DeletePostureCheckTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeletePostureCheckTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *DeletePostureCheckTooManyRequests) readResponse(response runtime.Client
 
 // NewDeletePostureCheckServiceUnavailable creates a DeletePostureCheckServiceUnavailable with default headers values
 func NewDeletePostureCheckServiceUnavailable() *DeletePostureCheckServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DeletePostureCheckServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type DeletePostureCheckServiceUnavailable struct {
 
 // IsSuccess returns true when this delete posture check service unavailable response has a 2xx status code
 func (o *DeletePostureCheckServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete posture check service unavailable response has a 3xx status code
 func (o *DeletePostureCheckServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete posture check service unavailable response has a 4xx status code
 func (o *DeletePostureCheckServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete posture check service unavailable response has a 5xx status code
 func (o *DeletePostureCheckServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this delete posture check service unavailable response a status code equal to that given
 func (o *DeletePostureCheckServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the delete posture check service unavailable response
 func (o *DeletePostureCheckServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DeletePostureCheckServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeletePostureCheckServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /posture-checks/{id}][%d] deletePostureCheckServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeletePostureCheckServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeletePostureCheckServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

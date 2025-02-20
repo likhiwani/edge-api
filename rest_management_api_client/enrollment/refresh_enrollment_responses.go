@@ -30,6 +30,7 @@ package enrollment
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type RefreshEnrollmentReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *RefreshEnrollmentReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewRefreshEnrollmentOK()
@@ -85,6 +87,7 @@ func (o *RefreshEnrollmentReader) ReadResponse(response runtime.ClientResponse, 
 
 // NewRefreshEnrollmentOK creates a RefreshEnrollmentOK with default headers values
 func NewRefreshEnrollmentOK() *RefreshEnrollmentOK {
+    logtrace.LogWithFunctionName()
 	return &RefreshEnrollmentOK{}
 }
 
@@ -99,49 +102,59 @@ type RefreshEnrollmentOK struct {
 
 // IsSuccess returns true when this refresh enrollment o k response has a 2xx status code
 func (o *RefreshEnrollmentOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this refresh enrollment o k response has a 3xx status code
 func (o *RefreshEnrollmentOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this refresh enrollment o k response has a 4xx status code
 func (o *RefreshEnrollmentOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this refresh enrollment o k response has a 5xx status code
 func (o *RefreshEnrollmentOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this refresh enrollment o k response a status code equal to that given
 func (o *RefreshEnrollmentOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the refresh enrollment o k response
 func (o *RefreshEnrollmentOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *RefreshEnrollmentOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enrollments/{id}/refresh][%d] refreshEnrollmentOK %s", 200, payload)
 }
 
 func (o *RefreshEnrollmentOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enrollments/{id}/refresh][%d] refreshEnrollmentOK %s", 200, payload)
 }
 
 func (o *RefreshEnrollmentOK) GetPayload() *rest_model.CreateEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *RefreshEnrollmentOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.CreateEnvelope)
 
@@ -155,6 +168,7 @@ func (o *RefreshEnrollmentOK) readResponse(response runtime.ClientResponse, cons
 
 // NewRefreshEnrollmentBadRequest creates a RefreshEnrollmentBadRequest with default headers values
 func NewRefreshEnrollmentBadRequest() *RefreshEnrollmentBadRequest {
+    logtrace.LogWithFunctionName()
 	return &RefreshEnrollmentBadRequest{}
 }
 
@@ -169,49 +183,59 @@ type RefreshEnrollmentBadRequest struct {
 
 // IsSuccess returns true when this refresh enrollment bad request response has a 2xx status code
 func (o *RefreshEnrollmentBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this refresh enrollment bad request response has a 3xx status code
 func (o *RefreshEnrollmentBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this refresh enrollment bad request response has a 4xx status code
 func (o *RefreshEnrollmentBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this refresh enrollment bad request response has a 5xx status code
 func (o *RefreshEnrollmentBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this refresh enrollment bad request response a status code equal to that given
 func (o *RefreshEnrollmentBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the refresh enrollment bad request response
 func (o *RefreshEnrollmentBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *RefreshEnrollmentBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enrollments/{id}/refresh][%d] refreshEnrollmentBadRequest %s", 400, payload)
 }
 
 func (o *RefreshEnrollmentBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enrollments/{id}/refresh][%d] refreshEnrollmentBadRequest %s", 400, payload)
 }
 
 func (o *RefreshEnrollmentBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *RefreshEnrollmentBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *RefreshEnrollmentBadRequest) readResponse(response runtime.ClientRespon
 
 // NewRefreshEnrollmentUnauthorized creates a RefreshEnrollmentUnauthorized with default headers values
 func NewRefreshEnrollmentUnauthorized() *RefreshEnrollmentUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &RefreshEnrollmentUnauthorized{}
 }
 
@@ -239,49 +264,59 @@ type RefreshEnrollmentUnauthorized struct {
 
 // IsSuccess returns true when this refresh enrollment unauthorized response has a 2xx status code
 func (o *RefreshEnrollmentUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this refresh enrollment unauthorized response has a 3xx status code
 func (o *RefreshEnrollmentUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this refresh enrollment unauthorized response has a 4xx status code
 func (o *RefreshEnrollmentUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this refresh enrollment unauthorized response has a 5xx status code
 func (o *RefreshEnrollmentUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this refresh enrollment unauthorized response a status code equal to that given
 func (o *RefreshEnrollmentUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the refresh enrollment unauthorized response
 func (o *RefreshEnrollmentUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *RefreshEnrollmentUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enrollments/{id}/refresh][%d] refreshEnrollmentUnauthorized %s", 401, payload)
 }
 
 func (o *RefreshEnrollmentUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enrollments/{id}/refresh][%d] refreshEnrollmentUnauthorized %s", 401, payload)
 }
 
 func (o *RefreshEnrollmentUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *RefreshEnrollmentUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *RefreshEnrollmentUnauthorized) readResponse(response runtime.ClientResp
 
 // NewRefreshEnrollmentTooManyRequests creates a RefreshEnrollmentTooManyRequests with default headers values
 func NewRefreshEnrollmentTooManyRequests() *RefreshEnrollmentTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &RefreshEnrollmentTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type RefreshEnrollmentTooManyRequests struct {
 
 // IsSuccess returns true when this refresh enrollment too many requests response has a 2xx status code
 func (o *RefreshEnrollmentTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this refresh enrollment too many requests response has a 3xx status code
 func (o *RefreshEnrollmentTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this refresh enrollment too many requests response has a 4xx status code
 func (o *RefreshEnrollmentTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this refresh enrollment too many requests response has a 5xx status code
 func (o *RefreshEnrollmentTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this refresh enrollment too many requests response a status code equal to that given
 func (o *RefreshEnrollmentTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the refresh enrollment too many requests response
 func (o *RefreshEnrollmentTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *RefreshEnrollmentTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enrollments/{id}/refresh][%d] refreshEnrollmentTooManyRequests %s", 429, payload)
 }
 
 func (o *RefreshEnrollmentTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enrollments/{id}/refresh][%d] refreshEnrollmentTooManyRequests %s", 429, payload)
 }
 
 func (o *RefreshEnrollmentTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *RefreshEnrollmentTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *RefreshEnrollmentTooManyRequests) readResponse(response runtime.ClientR
 
 // NewRefreshEnrollmentServiceUnavailable creates a RefreshEnrollmentServiceUnavailable with default headers values
 func NewRefreshEnrollmentServiceUnavailable() *RefreshEnrollmentServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &RefreshEnrollmentServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type RefreshEnrollmentServiceUnavailable struct {
 
 // IsSuccess returns true when this refresh enrollment service unavailable response has a 2xx status code
 func (o *RefreshEnrollmentServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this refresh enrollment service unavailable response has a 3xx status code
 func (o *RefreshEnrollmentServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this refresh enrollment service unavailable response has a 4xx status code
 func (o *RefreshEnrollmentServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this refresh enrollment service unavailable response has a 5xx status code
 func (o *RefreshEnrollmentServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this refresh enrollment service unavailable response a status code equal to that given
 func (o *RefreshEnrollmentServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the refresh enrollment service unavailable response
 func (o *RefreshEnrollmentServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *RefreshEnrollmentServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enrollments/{id}/refresh][%d] refreshEnrollmentServiceUnavailable %s", 503, payload)
 }
 
 func (o *RefreshEnrollmentServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enrollments/{id}/refresh][%d] refreshEnrollmentServiceUnavailable %s", 503, payload)
 }
 
 func (o *RefreshEnrollmentServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *RefreshEnrollmentServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

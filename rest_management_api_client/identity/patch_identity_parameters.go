@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewPatchIdentityParams() *PatchIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &PatchIdentityParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewPatchIdentityParams() *PatchIdentityParams {
 // NewPatchIdentityParamsWithTimeout creates a new PatchIdentityParams object
 // with the ability to set a timeout on a request.
 func NewPatchIdentityParamsWithTimeout(timeout time.Duration) *PatchIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &PatchIdentityParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewPatchIdentityParamsWithTimeout(timeout time.Duration) *PatchIdentityPara
 // NewPatchIdentityParamsWithContext creates a new PatchIdentityParams object
 // with the ability to set a context for a request.
 func NewPatchIdentityParamsWithContext(ctx context.Context) *PatchIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &PatchIdentityParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewPatchIdentityParamsWithContext(ctx context.Context) *PatchIdentityParams
 // NewPatchIdentityParamsWithHTTPClient creates a new PatchIdentityParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewPatchIdentityParamsWithHTTPClient(client *http.Client) *PatchIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &PatchIdentityParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type PatchIdentityParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchIdentityParams) WithDefaults() *PatchIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *PatchIdentityParams) WithDefaults() *PatchIdentityParams {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchIdentityParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the patch identity params
 func (o *PatchIdentityParams) WithTimeout(timeout time.Duration) *PatchIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the patch identity params
 func (o *PatchIdentityParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the patch identity params
 func (o *PatchIdentityParams) WithContext(ctx context.Context) *PatchIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the patch identity params
 func (o *PatchIdentityParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the patch identity params
 func (o *PatchIdentityParams) WithHTTPClient(client *http.Client) *PatchIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the patch identity params
 func (o *PatchIdentityParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the patch identity params
 func (o *PatchIdentityParams) WithID(id string) *PatchIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the patch identity params
 func (o *PatchIdentityParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WithIdentity adds the identity to the patch identity params
 func (o *PatchIdentityParams) WithIdentity(identity *rest_model.IdentityPatch) *PatchIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetIdentity(identity)
 	return o
 }
 
 // SetIdentity adds the identity to the patch identity params
 func (o *PatchIdentityParams) SetIdentity(identity *rest_model.IdentityPatch) {
+    logtrace.LogWithFunctionName()
 	o.Identity = identity
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *PatchIdentityParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

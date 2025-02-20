@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"encoding/json"
 
@@ -44,11 +45,13 @@ import (
 type TargetToken string
 
 func NewTargetToken(value TargetToken) *TargetToken {
+    logtrace.LogWithFunctionName()
 	return &value
 }
 
 // Pointer returns a pointer to a freshly-allocated TargetToken.
 func (m TargetToken) Pointer() *TargetToken {
+    logtrace.LogWithFunctionName()
 	return &m
 }
 
@@ -65,6 +68,7 @@ const (
 var targetTokenEnum []interface{}
 
 func init() {
+    logtrace.LogWithFunctionName()
 	var res []TargetToken
 	if err := json.Unmarshal([]byte(`["ACCESS","ID"]`), &res); err != nil {
 		panic(err)
@@ -75,6 +79,7 @@ func init() {
 }
 
 func (m TargetToken) validateTargetTokenEnum(path, location string, value TargetToken) error {
+    logtrace.LogWithFunctionName()
 	if err := validate.EnumCase(path, location, value, targetTokenEnum, true); err != nil {
 		return err
 	}
@@ -83,6 +88,7 @@ func (m TargetToken) validateTargetTokenEnum(path, location string, value Target
 
 // Validate validates this target token
 func (m TargetToken) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// value enum
@@ -98,5 +104,6 @@ func (m TargetToken) Validate(formats strfmt.Registry) error {
 
 // ContextValidate validates this target token based on context it is used
 func (m TargetToken) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }

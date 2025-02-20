@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DeletePostureCheckOK struct {
 
 // NewDeletePostureCheckOK creates DeletePostureCheckOK with default headers values
 func NewDeletePostureCheckOK() *DeletePostureCheckOK {
+    logtrace.LogWithFunctionName()
 
 	return &DeletePostureCheckOK{}
 }
 
 // WithPayload adds the payload to the delete posture check o k response
 func (o *DeletePostureCheckOK) WithPayload(payload *rest_model.Empty) *DeletePostureCheckOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete posture check o k response
 func (o *DeletePostureCheckOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeletePostureCheckOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DeletePostureCheckForbidden struct {
 
 // NewDeletePostureCheckForbidden creates DeletePostureCheckForbidden with default headers values
 func NewDeletePostureCheckForbidden() *DeletePostureCheckForbidden {
+    logtrace.LogWithFunctionName()
 
 	return &DeletePostureCheckForbidden{}
 }
 
 // WithPayload adds the payload to the delete posture check forbidden response
 func (o *DeletePostureCheckForbidden) WithPayload(payload *rest_model.APIErrorEnvelope) *DeletePostureCheckForbidden {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete posture check forbidden response
 func (o *DeletePostureCheckForbidden) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeletePostureCheckForbidden) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(403)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DeletePostureCheckNotFound struct {
 
 // NewDeletePostureCheckNotFound creates DeletePostureCheckNotFound with default headers values
 func NewDeletePostureCheckNotFound() *DeletePostureCheckNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DeletePostureCheckNotFound{}
 }
 
 // WithPayload adds the payload to the delete posture check not found response
 func (o *DeletePostureCheckNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DeletePostureCheckNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete posture check not found response
 func (o *DeletePostureCheckNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeletePostureCheckNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DeletePostureCheckTooManyRequests struct {
 
 // NewDeletePostureCheckTooManyRequests creates DeletePostureCheckTooManyRequests with default headers values
 func NewDeletePostureCheckTooManyRequests() *DeletePostureCheckTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DeletePostureCheckTooManyRequests{}
 }
 
 // WithPayload adds the payload to the delete posture check too many requests response
 func (o *DeletePostureCheckTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DeletePostureCheckTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete posture check too many requests response
 func (o *DeletePostureCheckTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeletePostureCheckTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DeletePostureCheckServiceUnavailable struct {
 
 // NewDeletePostureCheckServiceUnavailable creates DeletePostureCheckServiceUnavailable with default headers values
 func NewDeletePostureCheckServiceUnavailable() *DeletePostureCheckServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DeletePostureCheckServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the delete posture check service unavailable response
 func (o *DeletePostureCheckServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DeletePostureCheckServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete posture check service unavailable response
 func (o *DeletePostureCheckServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeletePostureCheckServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

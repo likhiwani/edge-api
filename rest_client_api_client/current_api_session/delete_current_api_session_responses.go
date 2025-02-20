@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DeleteCurrentAPISessionReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DeleteCurrentAPISessionReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDeleteCurrentAPISessionOK()
@@ -67,6 +69,7 @@ func (o *DeleteCurrentAPISessionReader) ReadResponse(response runtime.ClientResp
 
 // NewDeleteCurrentAPISessionOK creates a DeleteCurrentAPISessionOK with default headers values
 func NewDeleteCurrentAPISessionOK() *DeleteCurrentAPISessionOK {
+    logtrace.LogWithFunctionName()
 	return &DeleteCurrentAPISessionOK{}
 }
 
@@ -81,49 +84,59 @@ type DeleteCurrentAPISessionOK struct {
 
 // IsSuccess returns true when this delete current Api session o k response has a 2xx status code
 func (o *DeleteCurrentAPISessionOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this delete current Api session o k response has a 3xx status code
 func (o *DeleteCurrentAPISessionOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete current Api session o k response has a 4xx status code
 func (o *DeleteCurrentAPISessionOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete current Api session o k response has a 5xx status code
 func (o *DeleteCurrentAPISessionOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete current Api session o k response a status code equal to that given
 func (o *DeleteCurrentAPISessionOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the delete current Api session o k response
 func (o *DeleteCurrentAPISessionOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DeleteCurrentAPISessionOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-api-session][%d] deleteCurrentApiSessionOK %s", 200, payload)
 }
 
 func (o *DeleteCurrentAPISessionOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-api-session][%d] deleteCurrentApiSessionOK %s", 200, payload)
 }
 
 func (o *DeleteCurrentAPISessionOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteCurrentAPISessionOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -137,6 +150,7 @@ func (o *DeleteCurrentAPISessionOK) readResponse(response runtime.ClientResponse
 
 // NewDeleteCurrentAPISessionUnauthorized creates a DeleteCurrentAPISessionUnauthorized with default headers values
 func NewDeleteCurrentAPISessionUnauthorized() *DeleteCurrentAPISessionUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DeleteCurrentAPISessionUnauthorized{}
 }
 
@@ -151,49 +165,59 @@ type DeleteCurrentAPISessionUnauthorized struct {
 
 // IsSuccess returns true when this delete current Api session unauthorized response has a 2xx status code
 func (o *DeleteCurrentAPISessionUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete current Api session unauthorized response has a 3xx status code
 func (o *DeleteCurrentAPISessionUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete current Api session unauthorized response has a 4xx status code
 func (o *DeleteCurrentAPISessionUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete current Api session unauthorized response has a 5xx status code
 func (o *DeleteCurrentAPISessionUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete current Api session unauthorized response a status code equal to that given
 func (o *DeleteCurrentAPISessionUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the delete current Api session unauthorized response
 func (o *DeleteCurrentAPISessionUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DeleteCurrentAPISessionUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-api-session][%d] deleteCurrentApiSessionUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteCurrentAPISessionUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /current-api-session][%d] deleteCurrentApiSessionUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteCurrentAPISessionUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteCurrentAPISessionUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

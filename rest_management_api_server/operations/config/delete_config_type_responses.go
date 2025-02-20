@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DeleteConfigTypeOK struct {
 
 // NewDeleteConfigTypeOK creates DeleteConfigTypeOK with default headers values
 func NewDeleteConfigTypeOK() *DeleteConfigTypeOK {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteConfigTypeOK{}
 }
 
 // WithPayload adds the payload to the delete config type o k response
 func (o *DeleteConfigTypeOK) WithPayload(payload *rest_model.Empty) *DeleteConfigTypeOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete config type o k response
 func (o *DeleteConfigTypeOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteConfigTypeOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DeleteConfigTypeBadRequest struct {
 
 // NewDeleteConfigTypeBadRequest creates DeleteConfigTypeBadRequest with default headers values
 func NewDeleteConfigTypeBadRequest() *DeleteConfigTypeBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteConfigTypeBadRequest{}
 }
 
 // WithPayload adds the payload to the delete config type bad request response
 func (o *DeleteConfigTypeBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteConfigTypeBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete config type bad request response
 func (o *DeleteConfigTypeBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteConfigTypeBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DeleteConfigTypeUnauthorized struct {
 
 // NewDeleteConfigTypeUnauthorized creates DeleteConfigTypeUnauthorized with default headers values
 func NewDeleteConfigTypeUnauthorized() *DeleteConfigTypeUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteConfigTypeUnauthorized{}
 }
 
 // WithPayload adds the payload to the delete config type unauthorized response
 func (o *DeleteConfigTypeUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteConfigTypeUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete config type unauthorized response
 func (o *DeleteConfigTypeUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteConfigTypeUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DeleteConfigTypeNotFound struct {
 
 // NewDeleteConfigTypeNotFound creates DeleteConfigTypeNotFound with default headers values
 func NewDeleteConfigTypeNotFound() *DeleteConfigTypeNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteConfigTypeNotFound{}
 }
 
 // WithPayload adds the payload to the delete config type not found response
 func (o *DeleteConfigTypeNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteConfigTypeNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete config type not found response
 func (o *DeleteConfigTypeNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteConfigTypeNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DeleteConfigTypeConflict struct {
 
 // NewDeleteConfigTypeConflict creates DeleteConfigTypeConflict with default headers values
 func NewDeleteConfigTypeConflict() *DeleteConfigTypeConflict {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteConfigTypeConflict{}
 }
 
 // WithPayload adds the payload to the delete config type conflict response
 func (o *DeleteConfigTypeConflict) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteConfigTypeConflict {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete config type conflict response
 func (o *DeleteConfigTypeConflict) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteConfigTypeConflict) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(409)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type DeleteConfigTypeTooManyRequests struct {
 
 // NewDeleteConfigTypeTooManyRequests creates DeleteConfigTypeTooManyRequests with default headers values
 func NewDeleteConfigTypeTooManyRequests() *DeleteConfigTypeTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteConfigTypeTooManyRequests{}
 }
 
 // WithPayload adds the payload to the delete config type too many requests response
 func (o *DeleteConfigTypeTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteConfigTypeTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete config type too many requests response
 func (o *DeleteConfigTypeTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteConfigTypeTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -325,23 +350,27 @@ type DeleteConfigTypeServiceUnavailable struct {
 
 // NewDeleteConfigTypeServiceUnavailable creates DeleteConfigTypeServiceUnavailable with default headers values
 func NewDeleteConfigTypeServiceUnavailable() *DeleteConfigTypeServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteConfigTypeServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the delete config type service unavailable response
 func (o *DeleteConfigTypeServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteConfigTypeServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete config type service unavailable response
 func (o *DeleteConfigTypeServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteConfigTypeServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

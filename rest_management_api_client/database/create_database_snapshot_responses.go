@@ -30,6 +30,7 @@ package database
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type CreateDatabaseSnapshotReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *CreateDatabaseSnapshotReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewCreateDatabaseSnapshotOK()
@@ -73,6 +75,7 @@ func (o *CreateDatabaseSnapshotReader) ReadResponse(response runtime.ClientRespo
 
 // NewCreateDatabaseSnapshotOK creates a CreateDatabaseSnapshotOK with default headers values
 func NewCreateDatabaseSnapshotOK() *CreateDatabaseSnapshotOK {
+    logtrace.LogWithFunctionName()
 	return &CreateDatabaseSnapshotOK{}
 }
 
@@ -87,49 +90,59 @@ type CreateDatabaseSnapshotOK struct {
 
 // IsSuccess returns true when this create database snapshot o k response has a 2xx status code
 func (o *CreateDatabaseSnapshotOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this create database snapshot o k response has a 3xx status code
 func (o *CreateDatabaseSnapshotOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create database snapshot o k response has a 4xx status code
 func (o *CreateDatabaseSnapshotOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this create database snapshot o k response has a 5xx status code
 func (o *CreateDatabaseSnapshotOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create database snapshot o k response a status code equal to that given
 func (o *CreateDatabaseSnapshotOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the create database snapshot o k response
 func (o *CreateDatabaseSnapshotOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *CreateDatabaseSnapshotOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /database/snapshot][%d] createDatabaseSnapshotOK %s", 200, payload)
 }
 
 func (o *CreateDatabaseSnapshotOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /database/snapshot][%d] createDatabaseSnapshotOK %s", 200, payload)
 }
 
 func (o *CreateDatabaseSnapshotOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateDatabaseSnapshotOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -143,6 +156,7 @@ func (o *CreateDatabaseSnapshotOK) readResponse(response runtime.ClientResponse,
 
 // NewCreateDatabaseSnapshotUnauthorized creates a CreateDatabaseSnapshotUnauthorized with default headers values
 func NewCreateDatabaseSnapshotUnauthorized() *CreateDatabaseSnapshotUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &CreateDatabaseSnapshotUnauthorized{}
 }
 
@@ -157,49 +171,59 @@ type CreateDatabaseSnapshotUnauthorized struct {
 
 // IsSuccess returns true when this create database snapshot unauthorized response has a 2xx status code
 func (o *CreateDatabaseSnapshotUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create database snapshot unauthorized response has a 3xx status code
 func (o *CreateDatabaseSnapshotUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create database snapshot unauthorized response has a 4xx status code
 func (o *CreateDatabaseSnapshotUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create database snapshot unauthorized response has a 5xx status code
 func (o *CreateDatabaseSnapshotUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create database snapshot unauthorized response a status code equal to that given
 func (o *CreateDatabaseSnapshotUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the create database snapshot unauthorized response
 func (o *CreateDatabaseSnapshotUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *CreateDatabaseSnapshotUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /database/snapshot][%d] createDatabaseSnapshotUnauthorized %s", 401, payload)
 }
 
 func (o *CreateDatabaseSnapshotUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /database/snapshot][%d] createDatabaseSnapshotUnauthorized %s", 401, payload)
 }
 
 func (o *CreateDatabaseSnapshotUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateDatabaseSnapshotUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -213,6 +237,7 @@ func (o *CreateDatabaseSnapshotUnauthorized) readResponse(response runtime.Clien
 
 // NewCreateDatabaseSnapshotTooManyRequests creates a CreateDatabaseSnapshotTooManyRequests with default headers values
 func NewCreateDatabaseSnapshotTooManyRequests() *CreateDatabaseSnapshotTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &CreateDatabaseSnapshotTooManyRequests{}
 }
 
@@ -227,49 +252,59 @@ type CreateDatabaseSnapshotTooManyRequests struct {
 
 // IsSuccess returns true when this create database snapshot too many requests response has a 2xx status code
 func (o *CreateDatabaseSnapshotTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this create database snapshot too many requests response has a 3xx status code
 func (o *CreateDatabaseSnapshotTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this create database snapshot too many requests response has a 4xx status code
 func (o *CreateDatabaseSnapshotTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this create database snapshot too many requests response has a 5xx status code
 func (o *CreateDatabaseSnapshotTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this create database snapshot too many requests response a status code equal to that given
 func (o *CreateDatabaseSnapshotTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the create database snapshot too many requests response
 func (o *CreateDatabaseSnapshotTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *CreateDatabaseSnapshotTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /database/snapshot][%d] createDatabaseSnapshotTooManyRequests %s", 429, payload)
 }
 
 func (o *CreateDatabaseSnapshotTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /database/snapshot][%d] createDatabaseSnapshotTooManyRequests %s", 429, payload)
 }
 
 func (o *CreateDatabaseSnapshotTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *CreateDatabaseSnapshotTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

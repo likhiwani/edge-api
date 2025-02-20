@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -51,6 +52,7 @@ type SessionCreateEnvelope struct {
 
 // Validate validates this session create envelope
 func (m *SessionCreateEnvelope) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateData(formats); err != nil {
@@ -68,6 +70,7 @@ func (m *SessionCreateEnvelope) Validate(formats strfmt.Registry) error {
 }
 
 func (m *SessionCreateEnvelope) validateData(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Data) { // not required
 		return nil
 	}
@@ -87,6 +90,7 @@ func (m *SessionCreateEnvelope) validateData(formats strfmt.Registry) error {
 }
 
 func (m *SessionCreateEnvelope) validateMeta(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Meta) { // not required
 		return nil
 	}
@@ -107,6 +111,7 @@ func (m *SessionCreateEnvelope) validateMeta(formats strfmt.Registry) error {
 
 // ContextValidate validate this session create envelope based on the context it is used
 func (m *SessionCreateEnvelope) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateData(ctx, formats); err != nil {
@@ -124,6 +129,7 @@ func (m *SessionCreateEnvelope) ContextValidate(ctx context.Context, formats str
 }
 
 func (m *SessionCreateEnvelope) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Data != nil {
 
@@ -145,6 +151,7 @@ func (m *SessionCreateEnvelope) contextValidateData(ctx context.Context, formats
 }
 
 func (m *SessionCreateEnvelope) contextValidateMeta(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Meta != nil {
 
@@ -167,6 +174,7 @@ func (m *SessionCreateEnvelope) contextValidateMeta(ctx context.Context, formats
 
 // MarshalBinary interface implementation
 func (m *SessionCreateEnvelope) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -175,6 +183,7 @@ func (m *SessionCreateEnvelope) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *SessionCreateEnvelope) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res SessionCreateEnvelope
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

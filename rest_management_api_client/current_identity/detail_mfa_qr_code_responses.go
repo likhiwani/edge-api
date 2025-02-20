@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -43,6 +44,7 @@ type DetailMfaQrCodeReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DetailMfaQrCodeReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDetailMfaQrCodeOK()
@@ -63,6 +65,7 @@ func (o *DetailMfaQrCodeReader) ReadResponse(response runtime.ClientResponse, co
 
 // NewDetailMfaQrCodeOK creates a DetailMfaQrCodeOK with default headers values
 func NewDetailMfaQrCodeOK() *DetailMfaQrCodeOK {
+    logtrace.LogWithFunctionName()
 	return &DetailMfaQrCodeOK{}
 }
 
@@ -76,49 +79,59 @@ type DetailMfaQrCodeOK struct {
 
 // IsSuccess returns true when this detail mfa qr code o k response has a 2xx status code
 func (o *DetailMfaQrCodeOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this detail mfa qr code o k response has a 3xx status code
 func (o *DetailMfaQrCodeOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail mfa qr code o k response has a 4xx status code
 func (o *DetailMfaQrCodeOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail mfa qr code o k response has a 5xx status code
 func (o *DetailMfaQrCodeOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail mfa qr code o k response a status code equal to that given
 func (o *DetailMfaQrCodeOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the detail mfa qr code o k response
 func (o *DetailMfaQrCodeOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DetailMfaQrCodeOK) Error() string {
+    logtrace.LogWithFunctionName()
 	return fmt.Sprintf("[GET /current-identity/mfa/qr-code][%d] detailMfaQrCodeOK", 200)
 }
 
 func (o *DetailMfaQrCodeOK) String() string {
+    logtrace.LogWithFunctionName()
 	return fmt.Sprintf("[GET /current-identity/mfa/qr-code][%d] detailMfaQrCodeOK", 200)
 }
 
 func (o *DetailMfaQrCodeOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	return nil
 }
 
 // NewDetailMfaQrCodeNotFound creates a DetailMfaQrCodeNotFound with default headers values
 func NewDetailMfaQrCodeNotFound() *DetailMfaQrCodeNotFound {
+    logtrace.LogWithFunctionName()
 	return &DetailMfaQrCodeNotFound{}
 }
 
@@ -132,43 +145,52 @@ type DetailMfaQrCodeNotFound struct {
 
 // IsSuccess returns true when this detail mfa qr code not found response has a 2xx status code
 func (o *DetailMfaQrCodeNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail mfa qr code not found response has a 3xx status code
 func (o *DetailMfaQrCodeNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail mfa qr code not found response has a 4xx status code
 func (o *DetailMfaQrCodeNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail mfa qr code not found response has a 5xx status code
 func (o *DetailMfaQrCodeNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail mfa qr code not found response a status code equal to that given
 func (o *DetailMfaQrCodeNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the detail mfa qr code not found response
 func (o *DetailMfaQrCodeNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DetailMfaQrCodeNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	return fmt.Sprintf("[GET /current-identity/mfa/qr-code][%d] detailMfaQrCodeNotFound", 404)
 }
 
 func (o *DetailMfaQrCodeNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	return fmt.Sprintf("[GET /current-identity/mfa/qr-code][%d] detailMfaQrCodeNotFound", 404)
 }
 
 func (o *DetailMfaQrCodeNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	return nil
 }

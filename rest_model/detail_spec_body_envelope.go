@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -54,6 +55,7 @@ type DetailSpecBodyEnvelope struct {
 
 // Validate validates this detail spec body envelope
 func (m *DetailSpecBodyEnvelope) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateData(formats); err != nil {
@@ -71,6 +73,7 @@ func (m *DetailSpecBodyEnvelope) Validate(formats strfmt.Registry) error {
 }
 
 func (m *DetailSpecBodyEnvelope) validateData(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("data", "body", m.Data); err != nil {
 		return err
@@ -95,6 +98,7 @@ func (m *DetailSpecBodyEnvelope) validateData(formats strfmt.Registry) error {
 }
 
 func (m *DetailSpecBodyEnvelope) validateMeta(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("meta", "body", m.Meta); err != nil {
 		return err
@@ -116,6 +120,7 @@ func (m *DetailSpecBodyEnvelope) validateMeta(formats strfmt.Registry) error {
 
 // ContextValidate validate this detail spec body envelope based on the context it is used
 func (m *DetailSpecBodyEnvelope) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateData(ctx, formats); err != nil {
@@ -133,6 +138,7 @@ func (m *DetailSpecBodyEnvelope) ContextValidate(ctx context.Context, formats st
 }
 
 func (m *DetailSpecBodyEnvelope) contextValidateData(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Data != nil {
 
@@ -150,6 +156,7 @@ func (m *DetailSpecBodyEnvelope) contextValidateData(ctx context.Context, format
 }
 
 func (m *DetailSpecBodyEnvelope) contextValidateMeta(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Meta != nil {
 
@@ -168,6 +175,7 @@ func (m *DetailSpecBodyEnvelope) contextValidateMeta(ctx context.Context, format
 
 // MarshalBinary interface implementation
 func (m *DetailSpecBodyEnvelope) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -176,6 +184,7 @@ func (m *DetailSpecBodyEnvelope) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *DetailSpecBodyEnvelope) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res DetailSpecBodyEnvelope
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

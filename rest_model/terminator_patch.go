@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -66,6 +67,7 @@ type TerminatorPatch struct {
 
 // Validate validates this terminator patch
 func (m *TerminatorPatch) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateCost(formats); err != nil {
@@ -87,6 +89,7 @@ func (m *TerminatorPatch) Validate(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorPatch) validateCost(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Cost) { // not required
 		return nil
 	}
@@ -106,6 +109,7 @@ func (m *TerminatorPatch) validateCost(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorPatch) validatePrecedence(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Precedence) { // not required
 		return nil
 	}
@@ -123,6 +127,7 @@ func (m *TerminatorPatch) validatePrecedence(formats strfmt.Registry) error {
 }
 
 func (m *TerminatorPatch) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -143,6 +148,7 @@ func (m *TerminatorPatch) validateTags(formats strfmt.Registry) error {
 
 // ContextValidate validate this terminator patch based on the context it is used
 func (m *TerminatorPatch) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateCost(ctx, formats); err != nil {
@@ -164,6 +170,7 @@ func (m *TerminatorPatch) ContextValidate(ctx context.Context, formats strfmt.Re
 }
 
 func (m *TerminatorPatch) contextValidateCost(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Cost != nil {
 
@@ -185,6 +192,7 @@ func (m *TerminatorPatch) contextValidateCost(ctx context.Context, formats strfm
 }
 
 func (m *TerminatorPatch) contextValidatePrecedence(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.Precedence) { // not required
 		return nil
@@ -203,6 +211,7 @@ func (m *TerminatorPatch) contextValidatePrecedence(ctx context.Context, formats
 }
 
 func (m *TerminatorPatch) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -225,6 +234,7 @@ func (m *TerminatorPatch) contextValidateTags(ctx context.Context, formats strfm
 
 // MarshalBinary interface implementation
 func (m *TerminatorPatch) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -233,6 +243,7 @@ func (m *TerminatorPatch) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *TerminatorPatch) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res TerminatorPatch
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

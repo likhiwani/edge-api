@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListIdentityServicePoliciesOK struct {
 
 // NewListIdentityServicePoliciesOK creates ListIdentityServicePoliciesOK with default headers values
 func NewListIdentityServicePoliciesOK() *ListIdentityServicePoliciesOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListIdentityServicePoliciesOK{}
 }
 
 // WithPayload adds the payload to the list identity service policies o k response
 func (o *ListIdentityServicePoliciesOK) WithPayload(payload *rest_model.ListServicePoliciesEnvelope) *ListIdentityServicePoliciesOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list identity service policies o k response
 func (o *ListIdentityServicePoliciesOK) SetPayload(payload *rest_model.ListServicePoliciesEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListIdentityServicePoliciesOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ListIdentityServicePoliciesUnauthorized struct {
 
 // NewListIdentityServicePoliciesUnauthorized creates ListIdentityServicePoliciesUnauthorized with default headers values
 func NewListIdentityServicePoliciesUnauthorized() *ListIdentityServicePoliciesUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &ListIdentityServicePoliciesUnauthorized{}
 }
 
 // WithPayload adds the payload to the list identity service policies unauthorized response
 func (o *ListIdentityServicePoliciesUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *ListIdentityServicePoliciesUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list identity service policies unauthorized response
 func (o *ListIdentityServicePoliciesUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListIdentityServicePoliciesUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ListIdentityServicePoliciesNotFound struct {
 
 // NewListIdentityServicePoliciesNotFound creates ListIdentityServicePoliciesNotFound with default headers values
 func NewListIdentityServicePoliciesNotFound() *ListIdentityServicePoliciesNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &ListIdentityServicePoliciesNotFound{}
 }
 
 // WithPayload adds the payload to the list identity service policies not found response
 func (o *ListIdentityServicePoliciesNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *ListIdentityServicePoliciesNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list identity service policies not found response
 func (o *ListIdentityServicePoliciesNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListIdentityServicePoliciesNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type ListIdentityServicePoliciesTooManyRequests struct {
 
 // NewListIdentityServicePoliciesTooManyRequests creates ListIdentityServicePoliciesTooManyRequests with default headers values
 func NewListIdentityServicePoliciesTooManyRequests() *ListIdentityServicePoliciesTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ListIdentityServicePoliciesTooManyRequests{}
 }
 
 // WithPayload adds the payload to the list identity service policies too many requests response
 func (o *ListIdentityServicePoliciesTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ListIdentityServicePoliciesTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list identity service policies too many requests response
 func (o *ListIdentityServicePoliciesTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListIdentityServicePoliciesTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type ListIdentityServicePoliciesServiceUnavailable struct {
 
 // NewListIdentityServicePoliciesServiceUnavailable creates ListIdentityServicePoliciesServiceUnavailable with default headers values
 func NewListIdentityServicePoliciesServiceUnavailable() *ListIdentityServicePoliciesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &ListIdentityServicePoliciesServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the list identity service policies service unavailable response
 func (o *ListIdentityServicePoliciesServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *ListIdentityServicePoliciesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list identity service policies service unavailable response
 func (o *ListIdentityServicePoliciesServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListIdentityServicePoliciesServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

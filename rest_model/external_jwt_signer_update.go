@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -94,6 +95,7 @@ type ExternalJWTSignerUpdate struct {
 
 // Validate validates this external Jwt signer update
 func (m *ExternalJWTSignerUpdate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateAudience(formats); err != nil {
@@ -131,6 +133,7 @@ func (m *ExternalJWTSignerUpdate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ExternalJWTSignerUpdate) validateAudience(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("audience", "body", m.Audience); err != nil {
 		return err
@@ -140,6 +143,7 @@ func (m *ExternalJWTSignerUpdate) validateAudience(formats strfmt.Registry) erro
 }
 
 func (m *ExternalJWTSignerUpdate) validateEnabled(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("enabled", "body", m.Enabled); err != nil {
 		return err
@@ -149,6 +153,7 @@ func (m *ExternalJWTSignerUpdate) validateEnabled(formats strfmt.Registry) error
 }
 
 func (m *ExternalJWTSignerUpdate) validateIssuer(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("issuer", "body", m.Issuer); err != nil {
 		return err
@@ -158,6 +163,7 @@ func (m *ExternalJWTSignerUpdate) validateIssuer(formats strfmt.Registry) error 
 }
 
 func (m *ExternalJWTSignerUpdate) validateJwksEndpoint(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.JwksEndpoint) { // not required
 		return nil
 	}
@@ -170,6 +176,7 @@ func (m *ExternalJWTSignerUpdate) validateJwksEndpoint(formats strfmt.Registry) 
 }
 
 func (m *ExternalJWTSignerUpdate) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -179,6 +186,7 @@ func (m *ExternalJWTSignerUpdate) validateName(formats strfmt.Registry) error {
 }
 
 func (m *ExternalJWTSignerUpdate) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -198,6 +206,7 @@ func (m *ExternalJWTSignerUpdate) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *ExternalJWTSignerUpdate) validateTargetToken(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.TargetToken) { // not required
 		return nil
 	}
@@ -218,6 +227,7 @@ func (m *ExternalJWTSignerUpdate) validateTargetToken(formats strfmt.Registry) e
 
 // ContextValidate validate this external Jwt signer update based on the context it is used
 func (m *ExternalJWTSignerUpdate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateTags(ctx, formats); err != nil {
@@ -235,6 +245,7 @@ func (m *ExternalJWTSignerUpdate) ContextValidate(ctx context.Context, formats s
 }
 
 func (m *ExternalJWTSignerUpdate) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -256,6 +267,7 @@ func (m *ExternalJWTSignerUpdate) contextValidateTags(ctx context.Context, forma
 }
 
 func (m *ExternalJWTSignerUpdate) contextValidateTargetToken(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.TargetToken != nil {
 
@@ -278,6 +290,7 @@ func (m *ExternalJWTSignerUpdate) contextValidateTargetToken(ctx context.Context
 
 // MarshalBinary interface implementation
 func (m *ExternalJWTSignerUpdate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -286,6 +299,7 @@ func (m *ExternalJWTSignerUpdate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ExternalJWTSignerUpdate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ExternalJWTSignerUpdate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

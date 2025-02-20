@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -51,6 +52,7 @@ type PostureQueryProcess struct {
 
 // Validate validates this posture query process
 func (m *PostureQueryProcess) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateOsType(formats); err != nil {
@@ -64,6 +66,7 @@ func (m *PostureQueryProcess) Validate(formats strfmt.Registry) error {
 }
 
 func (m *PostureQueryProcess) validateOsType(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.OsType) { // not required
 		return nil
 	}
@@ -82,6 +85,7 @@ func (m *PostureQueryProcess) validateOsType(formats strfmt.Registry) error {
 
 // ContextValidate validate this posture query process based on the context it is used
 func (m *PostureQueryProcess) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateOsType(ctx, formats); err != nil {
@@ -95,6 +99,7 @@ func (m *PostureQueryProcess) ContextValidate(ctx context.Context, formats strfm
 }
 
 func (m *PostureQueryProcess) contextValidateOsType(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.OsType) { // not required
 		return nil
@@ -114,6 +119,7 @@ func (m *PostureQueryProcess) contextValidateOsType(ctx context.Context, formats
 
 // MarshalBinary interface implementation
 func (m *PostureQueryProcess) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -122,6 +128,7 @@ func (m *PostureQueryProcess) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureQueryProcess) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureQueryProcess
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

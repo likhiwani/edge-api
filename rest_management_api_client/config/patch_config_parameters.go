@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewPatchConfigParams() *PatchConfigParams {
+    logtrace.LogWithFunctionName()
 	return &PatchConfigParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewPatchConfigParams() *PatchConfigParams {
 // NewPatchConfigParamsWithTimeout creates a new PatchConfigParams object
 // with the ability to set a timeout on a request.
 func NewPatchConfigParamsWithTimeout(timeout time.Duration) *PatchConfigParams {
+    logtrace.LogWithFunctionName()
 	return &PatchConfigParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewPatchConfigParamsWithTimeout(timeout time.Duration) *PatchConfigParams {
 // NewPatchConfigParamsWithContext creates a new PatchConfigParams object
 // with the ability to set a context for a request.
 func NewPatchConfigParamsWithContext(ctx context.Context) *PatchConfigParams {
+    logtrace.LogWithFunctionName()
 	return &PatchConfigParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewPatchConfigParamsWithContext(ctx context.Context) *PatchConfigParams {
 // NewPatchConfigParamsWithHTTPClient creates a new PatchConfigParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewPatchConfigParamsWithHTTPClient(client *http.Client) *PatchConfigParams {
+    logtrace.LogWithFunctionName()
 	return &PatchConfigParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type PatchConfigParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchConfigParams) WithDefaults() *PatchConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *PatchConfigParams) WithDefaults() *PatchConfigParams {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchConfigParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the patch config params
 func (o *PatchConfigParams) WithTimeout(timeout time.Duration) *PatchConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the patch config params
 func (o *PatchConfigParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the patch config params
 func (o *PatchConfigParams) WithContext(ctx context.Context) *PatchConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the patch config params
 func (o *PatchConfigParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the patch config params
 func (o *PatchConfigParams) WithHTTPClient(client *http.Client) *PatchConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the patch config params
 func (o *PatchConfigParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithConfig adds the config to the patch config params
 func (o *PatchConfigParams) WithConfig(config *rest_model.ConfigPatch) *PatchConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetConfig(config)
 	return o
 }
 
 // SetConfig adds the config to the patch config params
 func (o *PatchConfigParams) SetConfig(config *rest_model.ConfigPatch) {
+    logtrace.LogWithFunctionName()
 	o.Config = config
 }
 
 // WithID adds the id to the patch config params
 func (o *PatchConfigParams) WithID(id string) *PatchConfigParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the patch config params
 func (o *PatchConfigParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *PatchConfigParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 
@@ -46,6 +47,7 @@ type EnrollUpdbHandlerFunc func(EnrollUpdbParams) middleware.Responder
 
 // Handle executing the request and returning a response
 func (fn EnrollUpdbHandlerFunc) Handle(params EnrollUpdbParams) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params)
 }
 
@@ -56,6 +58,7 @@ type EnrollUpdbHandler interface {
 
 // NewEnrollUpdb creates a new http.Handler for the enroll updb operation
 func NewEnrollUpdb(ctx *middleware.Context, handler EnrollUpdbHandler) *EnrollUpdb {
+    logtrace.LogWithFunctionName()
 	return &EnrollUpdb{Context: ctx, Handler: handler}
 }
 
@@ -72,6 +75,7 @@ type EnrollUpdb struct {
 }
 
 func (o *EnrollUpdb) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx
@@ -101,6 +105,7 @@ type EnrollUpdbBody struct {
 
 // Validate validates this enroll updb body
 func (o *EnrollUpdbBody) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := o.validatePassword(formats); err != nil {
@@ -118,6 +123,7 @@ func (o *EnrollUpdbBody) Validate(formats strfmt.Registry) error {
 }
 
 func (o *EnrollUpdbBody) validatePassword(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(o.Password) { // not required
 		return nil
 	}
@@ -135,6 +141,7 @@ func (o *EnrollUpdbBody) validatePassword(formats strfmt.Registry) error {
 }
 
 func (o *EnrollUpdbBody) validateUsername(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(o.Username) { // not required
 		return nil
 	}
@@ -153,6 +160,7 @@ func (o *EnrollUpdbBody) validateUsername(formats strfmt.Registry) error {
 
 // ContextValidate validate this enroll updb body based on the context it is used
 func (o *EnrollUpdbBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := o.contextValidatePassword(ctx, formats); err != nil {
@@ -170,6 +178,7 @@ func (o *EnrollUpdbBody) ContextValidate(ctx context.Context, formats strfmt.Reg
 }
 
 func (o *EnrollUpdbBody) contextValidatePassword(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(o.Password) { // not required
 		return nil
@@ -188,6 +197,7 @@ func (o *EnrollUpdbBody) contextValidatePassword(ctx context.Context, formats st
 }
 
 func (o *EnrollUpdbBody) contextValidateUsername(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(o.Username) { // not required
 		return nil
@@ -207,6 +217,7 @@ func (o *EnrollUpdbBody) contextValidateUsername(ctx context.Context, formats st
 
 // MarshalBinary interface implementation
 func (o *EnrollUpdbBody) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if o == nil {
 		return nil, nil
 	}
@@ -215,6 +226,7 @@ func (o *EnrollUpdbBody) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (o *EnrollUpdbBody) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res EnrollUpdbBody
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

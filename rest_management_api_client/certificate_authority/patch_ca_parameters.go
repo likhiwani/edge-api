@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewPatchCaParams() *PatchCaParams {
+    logtrace.LogWithFunctionName()
 	return &PatchCaParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewPatchCaParams() *PatchCaParams {
 // NewPatchCaParamsWithTimeout creates a new PatchCaParams object
 // with the ability to set a timeout on a request.
 func NewPatchCaParamsWithTimeout(timeout time.Duration) *PatchCaParams {
+    logtrace.LogWithFunctionName()
 	return &PatchCaParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewPatchCaParamsWithTimeout(timeout time.Duration) *PatchCaParams {
 // NewPatchCaParamsWithContext creates a new PatchCaParams object
 // with the ability to set a context for a request.
 func NewPatchCaParamsWithContext(ctx context.Context) *PatchCaParams {
+    logtrace.LogWithFunctionName()
 	return &PatchCaParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewPatchCaParamsWithContext(ctx context.Context) *PatchCaParams {
 // NewPatchCaParamsWithHTTPClient creates a new PatchCaParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewPatchCaParamsWithHTTPClient(client *http.Client) *PatchCaParams {
+    logtrace.LogWithFunctionName()
 	return &PatchCaParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type PatchCaParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchCaParams) WithDefaults() *PatchCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *PatchCaParams) WithDefaults() *PatchCaParams {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchCaParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the patch ca params
 func (o *PatchCaParams) WithTimeout(timeout time.Duration) *PatchCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the patch ca params
 func (o *PatchCaParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the patch ca params
 func (o *PatchCaParams) WithContext(ctx context.Context) *PatchCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the patch ca params
 func (o *PatchCaParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the patch ca params
 func (o *PatchCaParams) WithHTTPClient(client *http.Client) *PatchCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the patch ca params
 func (o *PatchCaParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithCa adds the ca to the patch ca params
 func (o *PatchCaParams) WithCa(ca *rest_model.CaPatch) *PatchCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetCa(ca)
 	return o
 }
 
 // SetCa adds the ca to the patch ca params
 func (o *PatchCaParams) SetCa(ca *rest_model.CaPatch) {
+    logtrace.LogWithFunctionName()
 	o.Ca = ca
 }
 
 // WithID adds the id to the patch ca params
 func (o *PatchCaParams) WithID(id string) *PatchCaParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the patch ca params
 func (o *PatchCaParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *PatchCaParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

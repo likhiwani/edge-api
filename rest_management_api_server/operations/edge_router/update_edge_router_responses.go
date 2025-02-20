@@ -30,6 +30,7 @@ package edge_router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type UpdateEdgeRouterOK struct {
 
 // NewUpdateEdgeRouterOK creates UpdateEdgeRouterOK with default headers values
 func NewUpdateEdgeRouterOK() *UpdateEdgeRouterOK {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateEdgeRouterOK{}
 }
 
 // WithPayload adds the payload to the update edge router o k response
 func (o *UpdateEdgeRouterOK) WithPayload(payload *rest_model.Empty) *UpdateEdgeRouterOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update edge router o k response
 func (o *UpdateEdgeRouterOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateEdgeRouterOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type UpdateEdgeRouterBadRequest struct {
 
 // NewUpdateEdgeRouterBadRequest creates UpdateEdgeRouterBadRequest with default headers values
 func NewUpdateEdgeRouterBadRequest() *UpdateEdgeRouterBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateEdgeRouterBadRequest{}
 }
 
 // WithPayload adds the payload to the update edge router bad request response
 func (o *UpdateEdgeRouterBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateEdgeRouterBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update edge router bad request response
 func (o *UpdateEdgeRouterBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateEdgeRouterBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type UpdateEdgeRouterUnauthorized struct {
 
 // NewUpdateEdgeRouterUnauthorized creates UpdateEdgeRouterUnauthorized with default headers values
 func NewUpdateEdgeRouterUnauthorized() *UpdateEdgeRouterUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateEdgeRouterUnauthorized{}
 }
 
 // WithPayload adds the payload to the update edge router unauthorized response
 func (o *UpdateEdgeRouterUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateEdgeRouterUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update edge router unauthorized response
 func (o *UpdateEdgeRouterUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateEdgeRouterUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type UpdateEdgeRouterNotFound struct {
 
 // NewUpdateEdgeRouterNotFound creates UpdateEdgeRouterNotFound with default headers values
 func NewUpdateEdgeRouterNotFound() *UpdateEdgeRouterNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateEdgeRouterNotFound{}
 }
 
 // WithPayload adds the payload to the update edge router not found response
 func (o *UpdateEdgeRouterNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateEdgeRouterNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update edge router not found response
 func (o *UpdateEdgeRouterNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateEdgeRouterNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type UpdateEdgeRouterTooManyRequests struct {
 
 // NewUpdateEdgeRouterTooManyRequests creates UpdateEdgeRouterTooManyRequests with default headers values
 func NewUpdateEdgeRouterTooManyRequests() *UpdateEdgeRouterTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateEdgeRouterTooManyRequests{}
 }
 
 // WithPayload adds the payload to the update edge router too many requests response
 func (o *UpdateEdgeRouterTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateEdgeRouterTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update edge router too many requests response
 func (o *UpdateEdgeRouterTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateEdgeRouterTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type UpdateEdgeRouterServiceUnavailable struct {
 
 // NewUpdateEdgeRouterServiceUnavailable creates UpdateEdgeRouterServiceUnavailable with default headers values
 func NewUpdateEdgeRouterServiceUnavailable() *UpdateEdgeRouterServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &UpdateEdgeRouterServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the update edge router service unavailable response
 func (o *UpdateEdgeRouterServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *UpdateEdgeRouterServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the update edge router service unavailable response
 func (o *UpdateEdgeRouterServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *UpdateEdgeRouterServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

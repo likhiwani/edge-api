@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type DetailMfaRecoveryCodesHandlerFunc func(DetailMfaRecoveryCodesParams, interf
 
 // Handle executing the request and returning a response
 func (fn DetailMfaRecoveryCodesHandlerFunc) Handle(params DetailMfaRecoveryCodesParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type DetailMfaRecoveryCodesHandler interface {
 
 // NewDetailMfaRecoveryCodes creates a new http.Handler for the detail mfa recovery codes operation
 func NewDetailMfaRecoveryCodes(ctx *middleware.Context, handler DetailMfaRecoveryCodesHandler) *DetailMfaRecoveryCodes {
+    logtrace.LogWithFunctionName()
 	return &DetailMfaRecoveryCodes{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type DetailMfaRecoveryCodes struct {
 }
 
 func (o *DetailMfaRecoveryCodes) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"bytes"
 	"context"
 	"encoding/json"
@@ -77,35 +78,42 @@ type postureCheckFailure struct {
 
 // PostureCheckID gets the posture check Id of this polymorphic type
 func (m *postureCheckFailure) PostureCheckID() *string {
+    logtrace.LogWithFunctionName()
 	return m.postureCheckIdField
 }
 
 // SetPostureCheckID sets the posture check Id of this polymorphic type
 func (m *postureCheckFailure) SetPostureCheckID(val *string) {
+    logtrace.LogWithFunctionName()
 	m.postureCheckIdField = val
 }
 
 // PostureCheckName gets the posture check name of this polymorphic type
 func (m *postureCheckFailure) PostureCheckName() *string {
+    logtrace.LogWithFunctionName()
 	return m.postureCheckNameField
 }
 
 // SetPostureCheckName sets the posture check name of this polymorphic type
 func (m *postureCheckFailure) SetPostureCheckName(val *string) {
+    logtrace.LogWithFunctionName()
 	m.postureCheckNameField = val
 }
 
 // PostureCheckType gets the posture check type of this polymorphic type
 func (m *postureCheckFailure) PostureCheckType() string {
+    logtrace.LogWithFunctionName()
 	return "postureCheckFailure"
 }
 
 // SetPostureCheckType sets the posture check type of this polymorphic type
 func (m *postureCheckFailure) SetPostureCheckType(val string) {
+    logtrace.LogWithFunctionName()
 }
 
 // UnmarshalPostureCheckFailureSlice unmarshals polymorphic slices of PostureCheckFailure
 func UnmarshalPostureCheckFailureSlice(reader io.Reader, consumer runtime.Consumer) ([]PostureCheckFailure, error) {
+    logtrace.LogWithFunctionName()
 	var elements []json.RawMessage
 	if err := consumer.Consume(reader, &elements); err != nil {
 		return nil, err
@@ -124,6 +132,7 @@ func UnmarshalPostureCheckFailureSlice(reader io.Reader, consumer runtime.Consum
 
 // UnmarshalPostureCheckFailure unmarshals polymorphic PostureCheckFailure
 func UnmarshalPostureCheckFailure(reader io.Reader, consumer runtime.Consumer) (PostureCheckFailure, error) {
+    logtrace.LogWithFunctionName()
 	// we need to read this twice, so first into a buffer
 	data, err := io.ReadAll(reader)
 	if err != nil {
@@ -133,6 +142,7 @@ func UnmarshalPostureCheckFailure(reader io.Reader, consumer runtime.Consumer) (
 }
 
 func unmarshalPostureCheckFailure(data []byte, consumer runtime.Consumer) (PostureCheckFailure, error) {
+    logtrace.LogWithFunctionName()
 	buf := bytes.NewBuffer(data)
 	buf2 := bytes.NewBuffer(data)
 
@@ -198,6 +208,7 @@ func unmarshalPostureCheckFailure(data []byte, consumer runtime.Consumer) (Postu
 
 // Validate validates this posture check failure
 func (m *postureCheckFailure) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validatePostureCheckID(formats); err != nil {
@@ -215,6 +226,7 @@ func (m *postureCheckFailure) Validate(formats strfmt.Registry) error {
 }
 
 func (m *postureCheckFailure) validatePostureCheckID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("postureCheckId", "body", m.PostureCheckID()); err != nil {
 		return err
@@ -224,6 +236,7 @@ func (m *postureCheckFailure) validatePostureCheckID(formats strfmt.Registry) er
 }
 
 func (m *postureCheckFailure) validatePostureCheckName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("postureCheckName", "body", m.PostureCheckName()); err != nil {
 		return err
@@ -234,5 +247,6 @@ func (m *postureCheckFailure) validatePostureCheckName(formats strfmt.Registry) 
 
 // ContextValidate validates this posture check failure based on context it is used
 func (m *postureCheckFailure) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }

@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -68,6 +69,7 @@ type Version struct {
 
 // Validate validates this version
 func (m *Version) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateAPIVersions(formats); err != nil {
@@ -81,6 +83,7 @@ func (m *Version) Validate(formats strfmt.Registry) error {
 }
 
 func (m *Version) validateAPIVersions(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.APIVersions) { // not required
 		return nil
 	}
@@ -112,6 +115,7 @@ func (m *Version) validateAPIVersions(formats strfmt.Registry) error {
 
 // ContextValidate validate this version based on the context it is used
 func (m *Version) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateAPIVersions(ctx, formats); err != nil {
@@ -125,6 +129,7 @@ func (m *Version) ContextValidate(ctx context.Context, formats strfmt.Registry) 
 }
 
 func (m *Version) contextValidateAPIVersions(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	for k := range m.APIVersions {
 
@@ -145,6 +150,7 @@ func (m *Version) contextValidateAPIVersions(ctx context.Context, formats strfmt
 
 // MarshalBinary interface implementation
 func (m *Version) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -153,6 +159,7 @@ func (m *Version) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *Version) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res Version
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

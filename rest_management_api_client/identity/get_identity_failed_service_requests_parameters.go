@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewGetIdentityFailedServiceRequestsParams() *GetIdentityFailedServiceRequestsParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityFailedServiceRequestsParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewGetIdentityFailedServiceRequestsParams() *GetIdentityFailedServiceReques
 // NewGetIdentityFailedServiceRequestsParamsWithTimeout creates a new GetIdentityFailedServiceRequestsParams object
 // with the ability to set a timeout on a request.
 func NewGetIdentityFailedServiceRequestsParamsWithTimeout(timeout time.Duration) *GetIdentityFailedServiceRequestsParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityFailedServiceRequestsParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewGetIdentityFailedServiceRequestsParamsWithTimeout(timeout time.Duration)
 // NewGetIdentityFailedServiceRequestsParamsWithContext creates a new GetIdentityFailedServiceRequestsParams object
 // with the ability to set a context for a request.
 func NewGetIdentityFailedServiceRequestsParamsWithContext(ctx context.Context) *GetIdentityFailedServiceRequestsParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityFailedServiceRequestsParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewGetIdentityFailedServiceRequestsParamsWithContext(ctx context.Context) *
 // NewGetIdentityFailedServiceRequestsParamsWithHTTPClient creates a new GetIdentityFailedServiceRequestsParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewGetIdentityFailedServiceRequestsParamsWithHTTPClient(client *http.Client) *GetIdentityFailedServiceRequestsParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityFailedServiceRequestsParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type GetIdentityFailedServiceRequestsParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *GetIdentityFailedServiceRequestsParams) WithDefaults() *GetIdentityFailedServiceRequestsParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *GetIdentityFailedServiceRequestsParams) WithDefaults() *GetIdentityFail
 //
 // All values with no default are reset to their zero value.
 func (o *GetIdentityFailedServiceRequestsParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the get identity failed service requests params
 func (o *GetIdentityFailedServiceRequestsParams) WithTimeout(timeout time.Duration) *GetIdentityFailedServiceRequestsParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the get identity failed service requests params
 func (o *GetIdentityFailedServiceRequestsParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the get identity failed service requests params
 func (o *GetIdentityFailedServiceRequestsParams) WithContext(ctx context.Context) *GetIdentityFailedServiceRequestsParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the get identity failed service requests params
 func (o *GetIdentityFailedServiceRequestsParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the get identity failed service requests params
 func (o *GetIdentityFailedServiceRequestsParams) WithHTTPClient(client *http.Client) *GetIdentityFailedServiceRequestsParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the get identity failed service requests params
 func (o *GetIdentityFailedServiceRequestsParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the get identity failed service requests params
 func (o *GetIdentityFailedServiceRequestsParams) WithID(id string) *GetIdentityFailedServiceRequestsParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the get identity failed service requests params
 func (o *GetIdentityFailedServiceRequestsParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *GetIdentityFailedServiceRequestsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

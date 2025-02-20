@@ -30,6 +30,7 @@ package terminator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DetailTerminatorOK struct {
 
 // NewDetailTerminatorOK creates DetailTerminatorOK with default headers values
 func NewDetailTerminatorOK() *DetailTerminatorOK {
+    logtrace.LogWithFunctionName()
 
 	return &DetailTerminatorOK{}
 }
 
 // WithPayload adds the payload to the detail terminator o k response
 func (o *DetailTerminatorOK) WithPayload(payload *rest_model.DetailTerminatorEnvelope) *DetailTerminatorOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail terminator o k response
 func (o *DetailTerminatorOK) SetPayload(payload *rest_model.DetailTerminatorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailTerminatorOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DetailTerminatorUnauthorized struct {
 
 // NewDetailTerminatorUnauthorized creates DetailTerminatorUnauthorized with default headers values
 func NewDetailTerminatorUnauthorized() *DetailTerminatorUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DetailTerminatorUnauthorized{}
 }
 
 // WithPayload adds the payload to the detail terminator unauthorized response
 func (o *DetailTerminatorUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailTerminatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail terminator unauthorized response
 func (o *DetailTerminatorUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailTerminatorUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DetailTerminatorNotFound struct {
 
 // NewDetailTerminatorNotFound creates DetailTerminatorNotFound with default headers values
 func NewDetailTerminatorNotFound() *DetailTerminatorNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DetailTerminatorNotFound{}
 }
 
 // WithPayload adds the payload to the detail terminator not found response
 func (o *DetailTerminatorNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailTerminatorNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail terminator not found response
 func (o *DetailTerminatorNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailTerminatorNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DetailTerminatorTooManyRequests struct {
 
 // NewDetailTerminatorTooManyRequests creates DetailTerminatorTooManyRequests with default headers values
 func NewDetailTerminatorTooManyRequests() *DetailTerminatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DetailTerminatorTooManyRequests{}
 }
 
 // WithPayload adds the payload to the detail terminator too many requests response
 func (o *DetailTerminatorTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailTerminatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail terminator too many requests response
 func (o *DetailTerminatorTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailTerminatorTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DetailTerminatorServiceUnavailable struct {
 
 // NewDetailTerminatorServiceUnavailable creates DetailTerminatorServiceUnavailable with default headers values
 func NewDetailTerminatorServiceUnavailable() *DetailTerminatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DetailTerminatorServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the detail terminator service unavailable response
 func (o *DetailTerminatorServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailTerminatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail terminator service unavailable response
 func (o *DetailTerminatorServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailTerminatorServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

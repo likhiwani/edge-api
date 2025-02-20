@@ -30,6 +30,7 @@ package router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewPatchTransitRouterParams() *PatchTransitRouterParams {
+    logtrace.LogWithFunctionName()
 	return &PatchTransitRouterParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewPatchTransitRouterParams() *PatchTransitRouterParams {
 // NewPatchTransitRouterParamsWithTimeout creates a new PatchTransitRouterParams object
 // with the ability to set a timeout on a request.
 func NewPatchTransitRouterParamsWithTimeout(timeout time.Duration) *PatchTransitRouterParams {
+    logtrace.LogWithFunctionName()
 	return &PatchTransitRouterParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewPatchTransitRouterParamsWithTimeout(timeout time.Duration) *PatchTransit
 // NewPatchTransitRouterParamsWithContext creates a new PatchTransitRouterParams object
 // with the ability to set a context for a request.
 func NewPatchTransitRouterParamsWithContext(ctx context.Context) *PatchTransitRouterParams {
+    logtrace.LogWithFunctionName()
 	return &PatchTransitRouterParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewPatchTransitRouterParamsWithContext(ctx context.Context) *PatchTransitRo
 // NewPatchTransitRouterParamsWithHTTPClient creates a new PatchTransitRouterParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewPatchTransitRouterParamsWithHTTPClient(client *http.Client) *PatchTransitRouterParams {
+    logtrace.LogWithFunctionName()
 	return &PatchTransitRouterParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type PatchTransitRouterParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchTransitRouterParams) WithDefaults() *PatchTransitRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *PatchTransitRouterParams) WithDefaults() *PatchTransitRouterParams {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchTransitRouterParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the patch transit router params
 func (o *PatchTransitRouterParams) WithTimeout(timeout time.Duration) *PatchTransitRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the patch transit router params
 func (o *PatchTransitRouterParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the patch transit router params
 func (o *PatchTransitRouterParams) WithContext(ctx context.Context) *PatchTransitRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the patch transit router params
 func (o *PatchTransitRouterParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the patch transit router params
 func (o *PatchTransitRouterParams) WithHTTPClient(client *http.Client) *PatchTransitRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the patch transit router params
 func (o *PatchTransitRouterParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the patch transit router params
 func (o *PatchTransitRouterParams) WithID(id string) *PatchTransitRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the patch transit router params
 func (o *PatchTransitRouterParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WithRouter adds the router to the patch transit router params
 func (o *PatchTransitRouterParams) WithRouter(router *rest_model.RouterPatch) *PatchTransitRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetRouter(router)
 	return o
 }
 
 // SetRouter adds the router to the patch transit router params
 func (o *PatchTransitRouterParams) SetRouter(router *rest_model.RouterPatch) {
+    logtrace.LogWithFunctionName()
 	o.Router = router
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *PatchTransitRouterParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

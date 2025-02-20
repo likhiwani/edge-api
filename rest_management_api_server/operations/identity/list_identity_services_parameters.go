@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -43,6 +44,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewListIdentityServicesParams() ListIdentityServicesParams {
+    logtrace.LogWithFunctionName()
 
 	return ListIdentityServicesParams{}
 }
@@ -76,6 +78,7 @@ type ListIdentityServicesParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewListIdentityServicesParams() beforehand.
 func (o *ListIdentityServicesParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r
@@ -104,6 +107,7 @@ func (o *ListIdentityServicesParams) BindRequest(r *http.Request, route *middlew
 
 // bindFilter binds and validates parameter Filter from query.
 func (o *ListIdentityServicesParams) bindFilter(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -122,6 +126,7 @@ func (o *ListIdentityServicesParams) bindFilter(rawData []string, hasKey bool, f
 
 // bindID binds and validates parameter ID from path.
 func (o *ListIdentityServicesParams) bindID(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -136,6 +141,7 @@ func (o *ListIdentityServicesParams) bindID(rawData []string, hasKey bool, forma
 
 // bindPolicyType binds and validates parameter PolicyType from query.
 func (o *ListIdentityServicesParams) bindPolicyType(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -158,6 +164,7 @@ func (o *ListIdentityServicesParams) bindPolicyType(rawData []string, hasKey boo
 
 // validatePolicyType carries on validations for parameter PolicyType
 func (o *ListIdentityServicesParams) validatePolicyType(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.EnumCase("policyType", "query", *o.PolicyType, []interface{}{"dial", "bind"}, true); err != nil {
 		return err

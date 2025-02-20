@@ -30,6 +30,7 @@ package auth_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DetailAuthPolicyReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DetailAuthPolicyReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDetailAuthPolicyOK()
@@ -85,6 +87,7 @@ func (o *DetailAuthPolicyReader) ReadResponse(response runtime.ClientResponse, c
 
 // NewDetailAuthPolicyOK creates a DetailAuthPolicyOK with default headers values
 func NewDetailAuthPolicyOK() *DetailAuthPolicyOK {
+    logtrace.LogWithFunctionName()
 	return &DetailAuthPolicyOK{}
 }
 
@@ -99,49 +102,59 @@ type DetailAuthPolicyOK struct {
 
 // IsSuccess returns true when this detail auth policy o k response has a 2xx status code
 func (o *DetailAuthPolicyOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this detail auth policy o k response has a 3xx status code
 func (o *DetailAuthPolicyOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail auth policy o k response has a 4xx status code
 func (o *DetailAuthPolicyOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail auth policy o k response has a 5xx status code
 func (o *DetailAuthPolicyOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail auth policy o k response a status code equal to that given
 func (o *DetailAuthPolicyOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the detail auth policy o k response
 func (o *DetailAuthPolicyOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DetailAuthPolicyOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /auth-policies/{id}][%d] detailAuthPolicyOK %s", 200, payload)
 }
 
 func (o *DetailAuthPolicyOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /auth-policies/{id}][%d] detailAuthPolicyOK %s", 200, payload)
 }
 
 func (o *DetailAuthPolicyOK) GetPayload() *rest_model.DetailAuthPolicyEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailAuthPolicyOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.DetailAuthPolicyEnvelope)
 
@@ -155,6 +168,7 @@ func (o *DetailAuthPolicyOK) readResponse(response runtime.ClientResponse, consu
 
 // NewDetailAuthPolicyUnauthorized creates a DetailAuthPolicyUnauthorized with default headers values
 func NewDetailAuthPolicyUnauthorized() *DetailAuthPolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DetailAuthPolicyUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type DetailAuthPolicyUnauthorized struct {
 
 // IsSuccess returns true when this detail auth policy unauthorized response has a 2xx status code
 func (o *DetailAuthPolicyUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail auth policy unauthorized response has a 3xx status code
 func (o *DetailAuthPolicyUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail auth policy unauthorized response has a 4xx status code
 func (o *DetailAuthPolicyUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail auth policy unauthorized response has a 5xx status code
 func (o *DetailAuthPolicyUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail auth policy unauthorized response a status code equal to that given
 func (o *DetailAuthPolicyUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the detail auth policy unauthorized response
 func (o *DetailAuthPolicyUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DetailAuthPolicyUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /auth-policies/{id}][%d] detailAuthPolicyUnauthorized %s", 401, payload)
 }
 
 func (o *DetailAuthPolicyUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /auth-policies/{id}][%d] detailAuthPolicyUnauthorized %s", 401, payload)
 }
 
 func (o *DetailAuthPolicyUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailAuthPolicyUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *DetailAuthPolicyUnauthorized) readResponse(response runtime.ClientRespo
 
 // NewDetailAuthPolicyNotFound creates a DetailAuthPolicyNotFound with default headers values
 func NewDetailAuthPolicyNotFound() *DetailAuthPolicyNotFound {
+    logtrace.LogWithFunctionName()
 	return &DetailAuthPolicyNotFound{}
 }
 
@@ -239,49 +264,59 @@ type DetailAuthPolicyNotFound struct {
 
 // IsSuccess returns true when this detail auth policy not found response has a 2xx status code
 func (o *DetailAuthPolicyNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail auth policy not found response has a 3xx status code
 func (o *DetailAuthPolicyNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail auth policy not found response has a 4xx status code
 func (o *DetailAuthPolicyNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail auth policy not found response has a 5xx status code
 func (o *DetailAuthPolicyNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail auth policy not found response a status code equal to that given
 func (o *DetailAuthPolicyNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the detail auth policy not found response
 func (o *DetailAuthPolicyNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DetailAuthPolicyNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /auth-policies/{id}][%d] detailAuthPolicyNotFound %s", 404, payload)
 }
 
 func (o *DetailAuthPolicyNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /auth-policies/{id}][%d] detailAuthPolicyNotFound %s", 404, payload)
 }
 
 func (o *DetailAuthPolicyNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailAuthPolicyNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *DetailAuthPolicyNotFound) readResponse(response runtime.ClientResponse,
 
 // NewDetailAuthPolicyTooManyRequests creates a DetailAuthPolicyTooManyRequests with default headers values
 func NewDetailAuthPolicyTooManyRequests() *DetailAuthPolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DetailAuthPolicyTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type DetailAuthPolicyTooManyRequests struct {
 
 // IsSuccess returns true when this detail auth policy too many requests response has a 2xx status code
 func (o *DetailAuthPolicyTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail auth policy too many requests response has a 3xx status code
 func (o *DetailAuthPolicyTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail auth policy too many requests response has a 4xx status code
 func (o *DetailAuthPolicyTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail auth policy too many requests response has a 5xx status code
 func (o *DetailAuthPolicyTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail auth policy too many requests response a status code equal to that given
 func (o *DetailAuthPolicyTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the detail auth policy too many requests response
 func (o *DetailAuthPolicyTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DetailAuthPolicyTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /auth-policies/{id}][%d] detailAuthPolicyTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailAuthPolicyTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /auth-policies/{id}][%d] detailAuthPolicyTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailAuthPolicyTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailAuthPolicyTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *DetailAuthPolicyTooManyRequests) readResponse(response runtime.ClientRe
 
 // NewDetailAuthPolicyServiceUnavailable creates a DetailAuthPolicyServiceUnavailable with default headers values
 func NewDetailAuthPolicyServiceUnavailable() *DetailAuthPolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DetailAuthPolicyServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type DetailAuthPolicyServiceUnavailable struct {
 
 // IsSuccess returns true when this detail auth policy service unavailable response has a 2xx status code
 func (o *DetailAuthPolicyServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail auth policy service unavailable response has a 3xx status code
 func (o *DetailAuthPolicyServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail auth policy service unavailable response has a 4xx status code
 func (o *DetailAuthPolicyServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail auth policy service unavailable response has a 5xx status code
 func (o *DetailAuthPolicyServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this detail auth policy service unavailable response a status code equal to that given
 func (o *DetailAuthPolicyServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the detail auth policy service unavailable response
 func (o *DetailAuthPolicyServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DetailAuthPolicyServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /auth-policies/{id}][%d] detailAuthPolicyServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailAuthPolicyServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /auth-policies/{id}][%d] detailAuthPolicyServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailAuthPolicyServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailAuthPolicyServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

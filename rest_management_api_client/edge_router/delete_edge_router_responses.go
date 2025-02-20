@@ -30,6 +30,7 @@ package edge_router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DeleteEdgeRouterReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DeleteEdgeRouterReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDeleteEdgeRouterOK()
@@ -97,6 +99,7 @@ func (o *DeleteEdgeRouterReader) ReadResponse(response runtime.ClientResponse, c
 
 // NewDeleteEdgeRouterOK creates a DeleteEdgeRouterOK with default headers values
 func NewDeleteEdgeRouterOK() *DeleteEdgeRouterOK {
+    logtrace.LogWithFunctionName()
 	return &DeleteEdgeRouterOK{}
 }
 
@@ -111,49 +114,59 @@ type DeleteEdgeRouterOK struct {
 
 // IsSuccess returns true when this delete edge router o k response has a 2xx status code
 func (o *DeleteEdgeRouterOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this delete edge router o k response has a 3xx status code
 func (o *DeleteEdgeRouterOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete edge router o k response has a 4xx status code
 func (o *DeleteEdgeRouterOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete edge router o k response has a 5xx status code
 func (o *DeleteEdgeRouterOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete edge router o k response a status code equal to that given
 func (o *DeleteEdgeRouterOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the delete edge router o k response
 func (o *DeleteEdgeRouterOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DeleteEdgeRouterOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-routers/{id}][%d] deleteEdgeRouterOK %s", 200, payload)
 }
 
 func (o *DeleteEdgeRouterOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-routers/{id}][%d] deleteEdgeRouterOK %s", 200, payload)
 }
 
 func (o *DeleteEdgeRouterOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEdgeRouterOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -167,6 +180,7 @@ func (o *DeleteEdgeRouterOK) readResponse(response runtime.ClientResponse, consu
 
 // NewDeleteEdgeRouterBadRequest creates a DeleteEdgeRouterBadRequest with default headers values
 func NewDeleteEdgeRouterBadRequest() *DeleteEdgeRouterBadRequest {
+    logtrace.LogWithFunctionName()
 	return &DeleteEdgeRouterBadRequest{}
 }
 
@@ -181,49 +195,59 @@ type DeleteEdgeRouterBadRequest struct {
 
 // IsSuccess returns true when this delete edge router bad request response has a 2xx status code
 func (o *DeleteEdgeRouterBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete edge router bad request response has a 3xx status code
 func (o *DeleteEdgeRouterBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete edge router bad request response has a 4xx status code
 func (o *DeleteEdgeRouterBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete edge router bad request response has a 5xx status code
 func (o *DeleteEdgeRouterBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete edge router bad request response a status code equal to that given
 func (o *DeleteEdgeRouterBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the delete edge router bad request response
 func (o *DeleteEdgeRouterBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *DeleteEdgeRouterBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-routers/{id}][%d] deleteEdgeRouterBadRequest %s", 400, payload)
 }
 
 func (o *DeleteEdgeRouterBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-routers/{id}][%d] deleteEdgeRouterBadRequest %s", 400, payload)
 }
 
 func (o *DeleteEdgeRouterBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEdgeRouterBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -237,6 +261,7 @@ func (o *DeleteEdgeRouterBadRequest) readResponse(response runtime.ClientRespons
 
 // NewDeleteEdgeRouterUnauthorized creates a DeleteEdgeRouterUnauthorized with default headers values
 func NewDeleteEdgeRouterUnauthorized() *DeleteEdgeRouterUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DeleteEdgeRouterUnauthorized{}
 }
 
@@ -251,49 +276,59 @@ type DeleteEdgeRouterUnauthorized struct {
 
 // IsSuccess returns true when this delete edge router unauthorized response has a 2xx status code
 func (o *DeleteEdgeRouterUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete edge router unauthorized response has a 3xx status code
 func (o *DeleteEdgeRouterUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete edge router unauthorized response has a 4xx status code
 func (o *DeleteEdgeRouterUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete edge router unauthorized response has a 5xx status code
 func (o *DeleteEdgeRouterUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete edge router unauthorized response a status code equal to that given
 func (o *DeleteEdgeRouterUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the delete edge router unauthorized response
 func (o *DeleteEdgeRouterUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DeleteEdgeRouterUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-routers/{id}][%d] deleteEdgeRouterUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteEdgeRouterUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-routers/{id}][%d] deleteEdgeRouterUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteEdgeRouterUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEdgeRouterUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -307,6 +342,7 @@ func (o *DeleteEdgeRouterUnauthorized) readResponse(response runtime.ClientRespo
 
 // NewDeleteEdgeRouterNotFound creates a DeleteEdgeRouterNotFound with default headers values
 func NewDeleteEdgeRouterNotFound() *DeleteEdgeRouterNotFound {
+    logtrace.LogWithFunctionName()
 	return &DeleteEdgeRouterNotFound{}
 }
 
@@ -321,49 +357,59 @@ type DeleteEdgeRouterNotFound struct {
 
 // IsSuccess returns true when this delete edge router not found response has a 2xx status code
 func (o *DeleteEdgeRouterNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete edge router not found response has a 3xx status code
 func (o *DeleteEdgeRouterNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete edge router not found response has a 4xx status code
 func (o *DeleteEdgeRouterNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete edge router not found response has a 5xx status code
 func (o *DeleteEdgeRouterNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete edge router not found response a status code equal to that given
 func (o *DeleteEdgeRouterNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the delete edge router not found response
 func (o *DeleteEdgeRouterNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DeleteEdgeRouterNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-routers/{id}][%d] deleteEdgeRouterNotFound %s", 404, payload)
 }
 
 func (o *DeleteEdgeRouterNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-routers/{id}][%d] deleteEdgeRouterNotFound %s", 404, payload)
 }
 
 func (o *DeleteEdgeRouterNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEdgeRouterNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -377,6 +423,7 @@ func (o *DeleteEdgeRouterNotFound) readResponse(response runtime.ClientResponse,
 
 // NewDeleteEdgeRouterConflict creates a DeleteEdgeRouterConflict with default headers values
 func NewDeleteEdgeRouterConflict() *DeleteEdgeRouterConflict {
+    logtrace.LogWithFunctionName()
 	return &DeleteEdgeRouterConflict{}
 }
 
@@ -391,49 +438,59 @@ type DeleteEdgeRouterConflict struct {
 
 // IsSuccess returns true when this delete edge router conflict response has a 2xx status code
 func (o *DeleteEdgeRouterConflict) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete edge router conflict response has a 3xx status code
 func (o *DeleteEdgeRouterConflict) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete edge router conflict response has a 4xx status code
 func (o *DeleteEdgeRouterConflict) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete edge router conflict response has a 5xx status code
 func (o *DeleteEdgeRouterConflict) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete edge router conflict response a status code equal to that given
 func (o *DeleteEdgeRouterConflict) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 409
 }
 
 // Code gets the status code for the delete edge router conflict response
 func (o *DeleteEdgeRouterConflict) Code() int {
+    logtrace.LogWithFunctionName()
 	return 409
 }
 
 func (o *DeleteEdgeRouterConflict) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-routers/{id}][%d] deleteEdgeRouterConflict %s", 409, payload)
 }
 
 func (o *DeleteEdgeRouterConflict) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-routers/{id}][%d] deleteEdgeRouterConflict %s", 409, payload)
 }
 
 func (o *DeleteEdgeRouterConflict) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEdgeRouterConflict) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -447,6 +504,7 @@ func (o *DeleteEdgeRouterConflict) readResponse(response runtime.ClientResponse,
 
 // NewDeleteEdgeRouterTooManyRequests creates a DeleteEdgeRouterTooManyRequests with default headers values
 func NewDeleteEdgeRouterTooManyRequests() *DeleteEdgeRouterTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DeleteEdgeRouterTooManyRequests{}
 }
 
@@ -461,49 +519,59 @@ type DeleteEdgeRouterTooManyRequests struct {
 
 // IsSuccess returns true when this delete edge router too many requests response has a 2xx status code
 func (o *DeleteEdgeRouterTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete edge router too many requests response has a 3xx status code
 func (o *DeleteEdgeRouterTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete edge router too many requests response has a 4xx status code
 func (o *DeleteEdgeRouterTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete edge router too many requests response has a 5xx status code
 func (o *DeleteEdgeRouterTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete edge router too many requests response a status code equal to that given
 func (o *DeleteEdgeRouterTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the delete edge router too many requests response
 func (o *DeleteEdgeRouterTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DeleteEdgeRouterTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-routers/{id}][%d] deleteEdgeRouterTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteEdgeRouterTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-routers/{id}][%d] deleteEdgeRouterTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteEdgeRouterTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEdgeRouterTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -517,6 +585,7 @@ func (o *DeleteEdgeRouterTooManyRequests) readResponse(response runtime.ClientRe
 
 // NewDeleteEdgeRouterServiceUnavailable creates a DeleteEdgeRouterServiceUnavailable with default headers values
 func NewDeleteEdgeRouterServiceUnavailable() *DeleteEdgeRouterServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DeleteEdgeRouterServiceUnavailable{}
 }
 
@@ -531,49 +600,59 @@ type DeleteEdgeRouterServiceUnavailable struct {
 
 // IsSuccess returns true when this delete edge router service unavailable response has a 2xx status code
 func (o *DeleteEdgeRouterServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete edge router service unavailable response has a 3xx status code
 func (o *DeleteEdgeRouterServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete edge router service unavailable response has a 4xx status code
 func (o *DeleteEdgeRouterServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete edge router service unavailable response has a 5xx status code
 func (o *DeleteEdgeRouterServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this delete edge router service unavailable response a status code equal to that given
 func (o *DeleteEdgeRouterServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the delete edge router service unavailable response
 func (o *DeleteEdgeRouterServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DeleteEdgeRouterServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-routers/{id}][%d] deleteEdgeRouterServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteEdgeRouterServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /edge-routers/{id}][%d] deleteEdgeRouterServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteEdgeRouterServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEdgeRouterServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

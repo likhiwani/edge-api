@@ -30,6 +30,7 @@ package enrollment
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListNetworkJWTsParams() *ListNetworkJWTsParams {
+    logtrace.LogWithFunctionName()
 	return &ListNetworkJWTsParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewListNetworkJWTsParams() *ListNetworkJWTsParams {
 // NewListNetworkJWTsParamsWithTimeout creates a new ListNetworkJWTsParams object
 // with the ability to set a timeout on a request.
 func NewListNetworkJWTsParamsWithTimeout(timeout time.Duration) *ListNetworkJWTsParams {
+    logtrace.LogWithFunctionName()
 	return &ListNetworkJWTsParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewListNetworkJWTsParamsWithTimeout(timeout time.Duration) *ListNetworkJWTs
 // NewListNetworkJWTsParamsWithContext creates a new ListNetworkJWTsParams object
 // with the ability to set a context for a request.
 func NewListNetworkJWTsParamsWithContext(ctx context.Context) *ListNetworkJWTsParams {
+    logtrace.LogWithFunctionName()
 	return &ListNetworkJWTsParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewListNetworkJWTsParamsWithContext(ctx context.Context) *ListNetworkJWTsPa
 // NewListNetworkJWTsParamsWithHTTPClient creates a new ListNetworkJWTsParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListNetworkJWTsParamsWithHTTPClient(client *http.Client) *ListNetworkJWTsParams {
+    logtrace.LogWithFunctionName()
 	return &ListNetworkJWTsParams{
 		HTTPClient: client,
 	}
@@ -93,6 +98,7 @@ type ListNetworkJWTsParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListNetworkJWTsParams) WithDefaults() *ListNetworkJWTsParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -101,44 +107,52 @@ func (o *ListNetworkJWTsParams) WithDefaults() *ListNetworkJWTsParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListNetworkJWTsParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list network j w ts params
 func (o *ListNetworkJWTsParams) WithTimeout(timeout time.Duration) *ListNetworkJWTsParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list network j w ts params
 func (o *ListNetworkJWTsParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list network j w ts params
 func (o *ListNetworkJWTsParams) WithContext(ctx context.Context) *ListNetworkJWTsParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list network j w ts params
 func (o *ListNetworkJWTsParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list network j w ts params
 func (o *ListNetworkJWTsParams) WithHTTPClient(client *http.Client) *ListNetworkJWTsParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list network j w ts params
 func (o *ListNetworkJWTsParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListNetworkJWTsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type PatchPostureCheckOK struct {
 
 // NewPatchPostureCheckOK creates PatchPostureCheckOK with default headers values
 func NewPatchPostureCheckOK() *PatchPostureCheckOK {
+    logtrace.LogWithFunctionName()
 
 	return &PatchPostureCheckOK{}
 }
 
 // WithPayload adds the payload to the patch posture check o k response
 func (o *PatchPostureCheckOK) WithPayload(payload *rest_model.Empty) *PatchPostureCheckOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch posture check o k response
 func (o *PatchPostureCheckOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchPostureCheckOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type PatchPostureCheckBadRequest struct {
 
 // NewPatchPostureCheckBadRequest creates PatchPostureCheckBadRequest with default headers values
 func NewPatchPostureCheckBadRequest() *PatchPostureCheckBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &PatchPostureCheckBadRequest{}
 }
 
 // WithPayload adds the payload to the patch posture check bad request response
 func (o *PatchPostureCheckBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchPostureCheckBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch posture check bad request response
 func (o *PatchPostureCheckBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchPostureCheckBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type PatchPostureCheckUnauthorized struct {
 
 // NewPatchPostureCheckUnauthorized creates PatchPostureCheckUnauthorized with default headers values
 func NewPatchPostureCheckUnauthorized() *PatchPostureCheckUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &PatchPostureCheckUnauthorized{}
 }
 
 // WithPayload adds the payload to the patch posture check unauthorized response
 func (o *PatchPostureCheckUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchPostureCheckUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch posture check unauthorized response
 func (o *PatchPostureCheckUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchPostureCheckUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type PatchPostureCheckNotFound struct {
 
 // NewPatchPostureCheckNotFound creates PatchPostureCheckNotFound with default headers values
 func NewPatchPostureCheckNotFound() *PatchPostureCheckNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &PatchPostureCheckNotFound{}
 }
 
 // WithPayload adds the payload to the patch posture check not found response
 func (o *PatchPostureCheckNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchPostureCheckNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch posture check not found response
 func (o *PatchPostureCheckNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchPostureCheckNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type PatchPostureCheckTooManyRequests struct {
 
 // NewPatchPostureCheckTooManyRequests creates PatchPostureCheckTooManyRequests with default headers values
 func NewPatchPostureCheckTooManyRequests() *PatchPostureCheckTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &PatchPostureCheckTooManyRequests{}
 }
 
 // WithPayload adds the payload to the patch posture check too many requests response
 func (o *PatchPostureCheckTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchPostureCheckTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch posture check too many requests response
 func (o *PatchPostureCheckTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchPostureCheckTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type PatchPostureCheckServiceUnavailable struct {
 
 // NewPatchPostureCheckServiceUnavailable creates PatchPostureCheckServiceUnavailable with default headers values
 func NewPatchPostureCheckServiceUnavailable() *PatchPostureCheckServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &PatchPostureCheckServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the patch posture check service unavailable response
 func (o *PatchPostureCheckServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchPostureCheckServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch posture check service unavailable response
 func (o *PatchPostureCheckServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchPostureCheckServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

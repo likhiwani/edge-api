@@ -30,6 +30,7 @@ package service_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -43,6 +44,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewListServicePolicyIdentitiesParams() ListServicePolicyIdentitiesParams {
+    logtrace.LogWithFunctionName()
 
 	return ListServicePolicyIdentitiesParams{}
 }
@@ -80,6 +82,7 @@ type ListServicePolicyIdentitiesParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewListServicePolicyIdentitiesParams() beforehand.
 func (o *ListServicePolicyIdentitiesParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r
@@ -113,6 +116,7 @@ func (o *ListServicePolicyIdentitiesParams) BindRequest(r *http.Request, route *
 
 // bindFilter binds and validates parameter Filter from query.
 func (o *ListServicePolicyIdentitiesParams) bindFilter(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -131,6 +135,7 @@ func (o *ListServicePolicyIdentitiesParams) bindFilter(rawData []string, hasKey 
 
 // bindID binds and validates parameter ID from path.
 func (o *ListServicePolicyIdentitiesParams) bindID(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -145,6 +150,7 @@ func (o *ListServicePolicyIdentitiesParams) bindID(rawData []string, hasKey bool
 
 // bindLimit binds and validates parameter Limit from query.
 func (o *ListServicePolicyIdentitiesParams) bindLimit(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -168,6 +174,7 @@ func (o *ListServicePolicyIdentitiesParams) bindLimit(rawData []string, hasKey b
 
 // bindOffset binds and validates parameter Offset from query.
 func (o *ListServicePolicyIdentitiesParams) bindOffset(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]

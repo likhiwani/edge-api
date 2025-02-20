@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type DetailPostureCheckTypeHandlerFunc func(DetailPostureCheckTypeParams, interf
 
 // Handle executing the request and returning a response
 func (fn DetailPostureCheckTypeHandlerFunc) Handle(params DetailPostureCheckTypeParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type DetailPostureCheckTypeHandler interface {
 
 // NewDetailPostureCheckType creates a new http.Handler for the detail posture check type operation
 func NewDetailPostureCheckType(ctx *middleware.Context, handler DetailPostureCheckTypeHandler) *DetailPostureCheckType {
+    logtrace.LogWithFunctionName()
 	return &DetailPostureCheckType{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type DetailPostureCheckType struct {
 }
 
 func (o *DetailPostureCheckType) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

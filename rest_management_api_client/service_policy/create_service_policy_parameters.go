@@ -30,6 +30,7 @@ package service_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCreateServicePolicyParams() *CreateServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	return &CreateServicePolicyParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewCreateServicePolicyParams() *CreateServicePolicyParams {
 // NewCreateServicePolicyParamsWithTimeout creates a new CreateServicePolicyParams object
 // with the ability to set a timeout on a request.
 func NewCreateServicePolicyParamsWithTimeout(timeout time.Duration) *CreateServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	return &CreateServicePolicyParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewCreateServicePolicyParamsWithTimeout(timeout time.Duration) *CreateServi
 // NewCreateServicePolicyParamsWithContext creates a new CreateServicePolicyParams object
 // with the ability to set a context for a request.
 func NewCreateServicePolicyParamsWithContext(ctx context.Context) *CreateServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	return &CreateServicePolicyParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewCreateServicePolicyParamsWithContext(ctx context.Context) *CreateService
 // NewCreateServicePolicyParamsWithHTTPClient creates a new CreateServicePolicyParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewCreateServicePolicyParamsWithHTTPClient(client *http.Client) *CreateServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	return &CreateServicePolicyParams{
 		HTTPClient: client,
 	}
@@ -102,6 +107,7 @@ type CreateServicePolicyParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *CreateServicePolicyParams) WithDefaults() *CreateServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -110,55 +116,65 @@ func (o *CreateServicePolicyParams) WithDefaults() *CreateServicePolicyParams {
 //
 // All values with no default are reset to their zero value.
 func (o *CreateServicePolicyParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the create service policy params
 func (o *CreateServicePolicyParams) WithTimeout(timeout time.Duration) *CreateServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the create service policy params
 func (o *CreateServicePolicyParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the create service policy params
 func (o *CreateServicePolicyParams) WithContext(ctx context.Context) *CreateServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the create service policy params
 func (o *CreateServicePolicyParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the create service policy params
 func (o *CreateServicePolicyParams) WithHTTPClient(client *http.Client) *CreateServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the create service policy params
 func (o *CreateServicePolicyParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithPolicy adds the policy to the create service policy params
 func (o *CreateServicePolicyParams) WithPolicy(policy *rest_model.ServicePolicyCreate) *CreateServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetPolicy(policy)
 	return o
 }
 
 // SetPolicy adds the policy to the create service policy params
 func (o *CreateServicePolicyParams) SetPolicy(policy *rest_model.ServicePolicyCreate) {
+    logtrace.LogWithFunctionName()
 	o.Policy = policy
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *CreateServicePolicyParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

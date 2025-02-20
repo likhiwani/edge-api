@@ -30,6 +30,7 @@ package external_jwt_signer
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type PatchExternalJWTSignerReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *PatchExternalJWTSignerReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewPatchExternalJWTSignerOK()
@@ -91,6 +93,7 @@ func (o *PatchExternalJWTSignerReader) ReadResponse(response runtime.ClientRespo
 
 // NewPatchExternalJWTSignerOK creates a PatchExternalJWTSignerOK with default headers values
 func NewPatchExternalJWTSignerOK() *PatchExternalJWTSignerOK {
+    logtrace.LogWithFunctionName()
 	return &PatchExternalJWTSignerOK{}
 }
 
@@ -105,49 +108,59 @@ type PatchExternalJWTSignerOK struct {
 
 // IsSuccess returns true when this patch external Jwt signer o k response has a 2xx status code
 func (o *PatchExternalJWTSignerOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this patch external Jwt signer o k response has a 3xx status code
 func (o *PatchExternalJWTSignerOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch external Jwt signer o k response has a 4xx status code
 func (o *PatchExternalJWTSignerOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this patch external Jwt signer o k response has a 5xx status code
 func (o *PatchExternalJWTSignerOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch external Jwt signer o k response a status code equal to that given
 func (o *PatchExternalJWTSignerOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the patch external Jwt signer o k response
 func (o *PatchExternalJWTSignerOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *PatchExternalJWTSignerOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /external-jwt-signers/{id}][%d] patchExternalJwtSignerOK %s", 200, payload)
 }
 
 func (o *PatchExternalJWTSignerOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /external-jwt-signers/{id}][%d] patchExternalJwtSignerOK %s", 200, payload)
 }
 
 func (o *PatchExternalJWTSignerOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchExternalJWTSignerOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -161,6 +174,7 @@ func (o *PatchExternalJWTSignerOK) readResponse(response runtime.ClientResponse,
 
 // NewPatchExternalJWTSignerBadRequest creates a PatchExternalJWTSignerBadRequest with default headers values
 func NewPatchExternalJWTSignerBadRequest() *PatchExternalJWTSignerBadRequest {
+    logtrace.LogWithFunctionName()
 	return &PatchExternalJWTSignerBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type PatchExternalJWTSignerBadRequest struct {
 
 // IsSuccess returns true when this patch external Jwt signer bad request response has a 2xx status code
 func (o *PatchExternalJWTSignerBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch external Jwt signer bad request response has a 3xx status code
 func (o *PatchExternalJWTSignerBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch external Jwt signer bad request response has a 4xx status code
 func (o *PatchExternalJWTSignerBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch external Jwt signer bad request response has a 5xx status code
 func (o *PatchExternalJWTSignerBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch external Jwt signer bad request response a status code equal to that given
 func (o *PatchExternalJWTSignerBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the patch external Jwt signer bad request response
 func (o *PatchExternalJWTSignerBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *PatchExternalJWTSignerBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /external-jwt-signers/{id}][%d] patchExternalJwtSignerBadRequest %s", 400, payload)
 }
 
 func (o *PatchExternalJWTSignerBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /external-jwt-signers/{id}][%d] patchExternalJwtSignerBadRequest %s", 400, payload)
 }
 
 func (o *PatchExternalJWTSignerBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchExternalJWTSignerBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *PatchExternalJWTSignerBadRequest) readResponse(response runtime.ClientR
 
 // NewPatchExternalJWTSignerUnauthorized creates a PatchExternalJWTSignerUnauthorized with default headers values
 func NewPatchExternalJWTSignerUnauthorized() *PatchExternalJWTSignerUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &PatchExternalJWTSignerUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type PatchExternalJWTSignerUnauthorized struct {
 
 // IsSuccess returns true when this patch external Jwt signer unauthorized response has a 2xx status code
 func (o *PatchExternalJWTSignerUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch external Jwt signer unauthorized response has a 3xx status code
 func (o *PatchExternalJWTSignerUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch external Jwt signer unauthorized response has a 4xx status code
 func (o *PatchExternalJWTSignerUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch external Jwt signer unauthorized response has a 5xx status code
 func (o *PatchExternalJWTSignerUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch external Jwt signer unauthorized response a status code equal to that given
 func (o *PatchExternalJWTSignerUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the patch external Jwt signer unauthorized response
 func (o *PatchExternalJWTSignerUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *PatchExternalJWTSignerUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /external-jwt-signers/{id}][%d] patchExternalJwtSignerUnauthorized %s", 401, payload)
 }
 
 func (o *PatchExternalJWTSignerUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /external-jwt-signers/{id}][%d] patchExternalJwtSignerUnauthorized %s", 401, payload)
 }
 
 func (o *PatchExternalJWTSignerUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchExternalJWTSignerUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *PatchExternalJWTSignerUnauthorized) readResponse(response runtime.Clien
 
 // NewPatchExternalJWTSignerNotFound creates a PatchExternalJWTSignerNotFound with default headers values
 func NewPatchExternalJWTSignerNotFound() *PatchExternalJWTSignerNotFound {
+    logtrace.LogWithFunctionName()
 	return &PatchExternalJWTSignerNotFound{}
 }
 
@@ -315,49 +351,59 @@ type PatchExternalJWTSignerNotFound struct {
 
 // IsSuccess returns true when this patch external Jwt signer not found response has a 2xx status code
 func (o *PatchExternalJWTSignerNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch external Jwt signer not found response has a 3xx status code
 func (o *PatchExternalJWTSignerNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch external Jwt signer not found response has a 4xx status code
 func (o *PatchExternalJWTSignerNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch external Jwt signer not found response has a 5xx status code
 func (o *PatchExternalJWTSignerNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch external Jwt signer not found response a status code equal to that given
 func (o *PatchExternalJWTSignerNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the patch external Jwt signer not found response
 func (o *PatchExternalJWTSignerNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *PatchExternalJWTSignerNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /external-jwt-signers/{id}][%d] patchExternalJwtSignerNotFound %s", 404, payload)
 }
 
 func (o *PatchExternalJWTSignerNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /external-jwt-signers/{id}][%d] patchExternalJwtSignerNotFound %s", 404, payload)
 }
 
 func (o *PatchExternalJWTSignerNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchExternalJWTSignerNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *PatchExternalJWTSignerNotFound) readResponse(response runtime.ClientRes
 
 // NewPatchExternalJWTSignerTooManyRequests creates a PatchExternalJWTSignerTooManyRequests with default headers values
 func NewPatchExternalJWTSignerTooManyRequests() *PatchExternalJWTSignerTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &PatchExternalJWTSignerTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type PatchExternalJWTSignerTooManyRequests struct {
 
 // IsSuccess returns true when this patch external Jwt signer too many requests response has a 2xx status code
 func (o *PatchExternalJWTSignerTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch external Jwt signer too many requests response has a 3xx status code
 func (o *PatchExternalJWTSignerTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch external Jwt signer too many requests response has a 4xx status code
 func (o *PatchExternalJWTSignerTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch external Jwt signer too many requests response has a 5xx status code
 func (o *PatchExternalJWTSignerTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch external Jwt signer too many requests response a status code equal to that given
 func (o *PatchExternalJWTSignerTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the patch external Jwt signer too many requests response
 func (o *PatchExternalJWTSignerTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *PatchExternalJWTSignerTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /external-jwt-signers/{id}][%d] patchExternalJwtSignerTooManyRequests %s", 429, payload)
 }
 
 func (o *PatchExternalJWTSignerTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /external-jwt-signers/{id}][%d] patchExternalJwtSignerTooManyRequests %s", 429, payload)
 }
 
 func (o *PatchExternalJWTSignerTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchExternalJWTSignerTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *PatchExternalJWTSignerTooManyRequests) readResponse(response runtime.Cl
 
 // NewPatchExternalJWTSignerServiceUnavailable creates a PatchExternalJWTSignerServiceUnavailable with default headers values
 func NewPatchExternalJWTSignerServiceUnavailable() *PatchExternalJWTSignerServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &PatchExternalJWTSignerServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type PatchExternalJWTSignerServiceUnavailable struct {
 
 // IsSuccess returns true when this patch external Jwt signer service unavailable response has a 2xx status code
 func (o *PatchExternalJWTSignerServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch external Jwt signer service unavailable response has a 3xx status code
 func (o *PatchExternalJWTSignerServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch external Jwt signer service unavailable response has a 4xx status code
 func (o *PatchExternalJWTSignerServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this patch external Jwt signer service unavailable response has a 5xx status code
 func (o *PatchExternalJWTSignerServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this patch external Jwt signer service unavailable response a status code equal to that given
 func (o *PatchExternalJWTSignerServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the patch external Jwt signer service unavailable response
 func (o *PatchExternalJWTSignerServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *PatchExternalJWTSignerServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /external-jwt-signers/{id}][%d] patchExternalJwtSignerServiceUnavailable %s", 503, payload)
 }
 
 func (o *PatchExternalJWTSignerServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /external-jwt-signers/{id}][%d] patchExternalJwtSignerServiceUnavailable %s", 503, payload)
 }
 
 func (o *PatchExternalJWTSignerServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchExternalJWTSignerServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

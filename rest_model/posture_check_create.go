@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"bytes"
 	"context"
 	"encoding/json"
@@ -83,45 +84,54 @@ type postureCheckCreate struct {
 
 // Name gets the name of this polymorphic type
 func (m *postureCheckCreate) Name() *string {
+    logtrace.LogWithFunctionName()
 	return m.nameField
 }
 
 // SetName sets the name of this polymorphic type
 func (m *postureCheckCreate) SetName(val *string) {
+    logtrace.LogWithFunctionName()
 	m.nameField = val
 }
 
 // RoleAttributes gets the role attributes of this polymorphic type
 func (m *postureCheckCreate) RoleAttributes() *Attributes {
+    logtrace.LogWithFunctionName()
 	return m.roleAttributesField
 }
 
 // SetRoleAttributes sets the role attributes of this polymorphic type
 func (m *postureCheckCreate) SetRoleAttributes(val *Attributes) {
+    logtrace.LogWithFunctionName()
 	m.roleAttributesField = val
 }
 
 // Tags gets the tags of this polymorphic type
 func (m *postureCheckCreate) Tags() *Tags {
+    logtrace.LogWithFunctionName()
 	return m.tagsField
 }
 
 // SetTags sets the tags of this polymorphic type
 func (m *postureCheckCreate) SetTags(val *Tags) {
+    logtrace.LogWithFunctionName()
 	m.tagsField = val
 }
 
 // TypeID gets the type Id of this polymorphic type
 func (m *postureCheckCreate) TypeID() PostureCheckType {
+    logtrace.LogWithFunctionName()
 	return "postureCheckCreate"
 }
 
 // SetTypeID sets the type Id of this polymorphic type
 func (m *postureCheckCreate) SetTypeID(val PostureCheckType) {
+    logtrace.LogWithFunctionName()
 }
 
 // UnmarshalPostureCheckCreateSlice unmarshals polymorphic slices of PostureCheckCreate
 func UnmarshalPostureCheckCreateSlice(reader io.Reader, consumer runtime.Consumer) ([]PostureCheckCreate, error) {
+    logtrace.LogWithFunctionName()
 	var elements []json.RawMessage
 	if err := consumer.Consume(reader, &elements); err != nil {
 		return nil, err
@@ -140,6 +150,7 @@ func UnmarshalPostureCheckCreateSlice(reader io.Reader, consumer runtime.Consume
 
 // UnmarshalPostureCheckCreate unmarshals polymorphic PostureCheckCreate
 func UnmarshalPostureCheckCreate(reader io.Reader, consumer runtime.Consumer) (PostureCheckCreate, error) {
+    logtrace.LogWithFunctionName()
 	// we need to read this twice, so first into a buffer
 	data, err := io.ReadAll(reader)
 	if err != nil {
@@ -149,6 +160,7 @@ func UnmarshalPostureCheckCreate(reader io.Reader, consumer runtime.Consumer) (P
 }
 
 func unmarshalPostureCheckCreate(data []byte, consumer runtime.Consumer) (PostureCheckCreate, error) {
+    logtrace.LogWithFunctionName()
 	buf := bytes.NewBuffer(data)
 	buf2 := bytes.NewBuffer(data)
 
@@ -214,6 +226,7 @@ func unmarshalPostureCheckCreate(data []byte, consumer runtime.Consumer) (Postur
 
 // Validate validates this posture check create
 func (m *postureCheckCreate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateName(formats); err != nil {
@@ -235,6 +248,7 @@ func (m *postureCheckCreate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *postureCheckCreate) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name()); err != nil {
 		return err
@@ -244,6 +258,7 @@ func (m *postureCheckCreate) validateName(formats strfmt.Registry) error {
 }
 
 func (m *postureCheckCreate) validateRoleAttributes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.RoleAttributes()) { // not required
 		return nil
 	}
@@ -263,6 +278,7 @@ func (m *postureCheckCreate) validateRoleAttributes(formats strfmt.Registry) err
 }
 
 func (m *postureCheckCreate) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags()) { // not required
 		return nil
 	}
@@ -283,6 +299,7 @@ func (m *postureCheckCreate) validateTags(formats strfmt.Registry) error {
 
 // ContextValidate validate this posture check create based on the context it is used
 func (m *postureCheckCreate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateRoleAttributes(ctx, formats); err != nil {
@@ -304,6 +321,7 @@ func (m *postureCheckCreate) ContextValidate(ctx context.Context, formats strfmt
 }
 
 func (m *postureCheckCreate) contextValidateRoleAttributes(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.RoleAttributes() != nil {
 		if err := m.RoleAttributes().ContextValidate(ctx, formats); err != nil {
@@ -320,6 +338,7 @@ func (m *postureCheckCreate) contextValidateRoleAttributes(ctx context.Context, 
 }
 
 func (m *postureCheckCreate) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags() != nil {
 
@@ -341,6 +360,7 @@ func (m *postureCheckCreate) contextValidateTags(ctx context.Context, formats st
 }
 
 func (m *postureCheckCreate) contextValidateTypeID(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.TypeID().ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {

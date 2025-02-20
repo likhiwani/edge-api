@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"encoding/json"
 
@@ -74,6 +75,7 @@ type ExternalIDClaim struct {
 
 // Validate validates this external Id claim
 func (m *ExternalIDClaim) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateIndex(formats); err != nil {
@@ -107,6 +109,7 @@ func (m *ExternalIDClaim) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ExternalIDClaim) validateIndex(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("index", "body", m.Index); err != nil {
 		return err
@@ -118,6 +121,7 @@ func (m *ExternalIDClaim) validateIndex(formats strfmt.Registry) error {
 var externalIdClaimTypeLocationPropEnum []interface{}
 
 func init() {
+    logtrace.LogWithFunctionName()
 	var res []string
 	if err := json.Unmarshal([]byte(`["COMMON_NAME","SAN_URI","SAN_EMAIL"]`), &res); err != nil {
 		panic(err)
@@ -141,6 +145,7 @@ const (
 
 // prop value enum
 func (m *ExternalIDClaim) validateLocationEnum(path, location string, value string) error {
+    logtrace.LogWithFunctionName()
 	if err := validate.EnumCase(path, location, value, externalIdClaimTypeLocationPropEnum, true); err != nil {
 		return err
 	}
@@ -148,6 +153,7 @@ func (m *ExternalIDClaim) validateLocationEnum(path, location string, value stri
 }
 
 func (m *ExternalIDClaim) validateLocation(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("location", "body", m.Location); err != nil {
 		return err
@@ -164,6 +170,7 @@ func (m *ExternalIDClaim) validateLocation(formats strfmt.Registry) error {
 var externalIdClaimTypeMatcherPropEnum []interface{}
 
 func init() {
+    logtrace.LogWithFunctionName()
 	var res []string
 	if err := json.Unmarshal([]byte(`["ALL","PREFIX","SUFFIX","SCHEME"]`), &res); err != nil {
 		panic(err)
@@ -190,6 +197,7 @@ const (
 
 // prop value enum
 func (m *ExternalIDClaim) validateMatcherEnum(path, location string, value string) error {
+    logtrace.LogWithFunctionName()
 	if err := validate.EnumCase(path, location, value, externalIdClaimTypeMatcherPropEnum, true); err != nil {
 		return err
 	}
@@ -197,6 +205,7 @@ func (m *ExternalIDClaim) validateMatcherEnum(path, location string, value strin
 }
 
 func (m *ExternalIDClaim) validateMatcher(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("matcher", "body", m.Matcher); err != nil {
 		return err
@@ -211,6 +220,7 @@ func (m *ExternalIDClaim) validateMatcher(formats strfmt.Registry) error {
 }
 
 func (m *ExternalIDClaim) validateMatcherCriteria(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("matcherCriteria", "body", m.MatcherCriteria); err != nil {
 		return err
@@ -222,6 +232,7 @@ func (m *ExternalIDClaim) validateMatcherCriteria(formats strfmt.Registry) error
 var externalIdClaimTypeParserPropEnum []interface{}
 
 func init() {
+    logtrace.LogWithFunctionName()
 	var res []string
 	if err := json.Unmarshal([]byte(`["NONE","SPLIT"]`), &res); err != nil {
 		panic(err)
@@ -242,6 +253,7 @@ const (
 
 // prop value enum
 func (m *ExternalIDClaim) validateParserEnum(path, location string, value string) error {
+    logtrace.LogWithFunctionName()
 	if err := validate.EnumCase(path, location, value, externalIdClaimTypeParserPropEnum, true); err != nil {
 		return err
 	}
@@ -249,6 +261,7 @@ func (m *ExternalIDClaim) validateParserEnum(path, location string, value string
 }
 
 func (m *ExternalIDClaim) validateParser(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("parser", "body", m.Parser); err != nil {
 		return err
@@ -263,6 +276,7 @@ func (m *ExternalIDClaim) validateParser(formats strfmt.Registry) error {
 }
 
 func (m *ExternalIDClaim) validateParserCriteria(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("parserCriteria", "body", m.ParserCriteria); err != nil {
 		return err
@@ -273,11 +287,13 @@ func (m *ExternalIDClaim) validateParserCriteria(formats strfmt.Registry) error 
 
 // ContextValidate validates this external Id claim based on context it is used
 func (m *ExternalIDClaim) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *ExternalIDClaim) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -286,6 +302,7 @@ func (m *ExternalIDClaim) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ExternalIDClaim) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ExternalIDClaim
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

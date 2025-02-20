@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewGetCurrentIdentityParams() *GetCurrentIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &GetCurrentIdentityParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewGetCurrentIdentityParams() *GetCurrentIdentityParams {
 // NewGetCurrentIdentityParamsWithTimeout creates a new GetCurrentIdentityParams object
 // with the ability to set a timeout on a request.
 func NewGetCurrentIdentityParamsWithTimeout(timeout time.Duration) *GetCurrentIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &GetCurrentIdentityParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewGetCurrentIdentityParamsWithTimeout(timeout time.Duration) *GetCurrentId
 // NewGetCurrentIdentityParamsWithContext creates a new GetCurrentIdentityParams object
 // with the ability to set a context for a request.
 func NewGetCurrentIdentityParamsWithContext(ctx context.Context) *GetCurrentIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &GetCurrentIdentityParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewGetCurrentIdentityParamsWithContext(ctx context.Context) *GetCurrentIden
 // NewGetCurrentIdentityParamsWithHTTPClient creates a new GetCurrentIdentityParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewGetCurrentIdentityParamsWithHTTPClient(client *http.Client) *GetCurrentIdentityParams {
+    logtrace.LogWithFunctionName()
 	return &GetCurrentIdentityParams{
 		HTTPClient: client,
 	}
@@ -93,6 +98,7 @@ type GetCurrentIdentityParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *GetCurrentIdentityParams) WithDefaults() *GetCurrentIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -101,44 +107,52 @@ func (o *GetCurrentIdentityParams) WithDefaults() *GetCurrentIdentityParams {
 //
 // All values with no default are reset to their zero value.
 func (o *GetCurrentIdentityParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the get current identity params
 func (o *GetCurrentIdentityParams) WithTimeout(timeout time.Duration) *GetCurrentIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the get current identity params
 func (o *GetCurrentIdentityParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the get current identity params
 func (o *GetCurrentIdentityParams) WithContext(ctx context.Context) *GetCurrentIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the get current identity params
 func (o *GetCurrentIdentityParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the get current identity params
 func (o *GetCurrentIdentityParams) WithHTTPClient(client *http.Client) *GetCurrentIdentityParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the get current identity params
 func (o *GetCurrentIdentityParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *GetCurrentIdentityParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

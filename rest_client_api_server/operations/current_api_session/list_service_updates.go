@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type ListServiceUpdatesHandlerFunc func(ListServiceUpdatesParams, interface{}) m
 
 // Handle executing the request and returning a response
 func (fn ListServiceUpdatesHandlerFunc) Handle(params ListServiceUpdatesParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type ListServiceUpdatesHandler interface {
 
 // NewListServiceUpdates creates a new http.Handler for the list service updates operation
 func NewListServiceUpdates(ctx *middleware.Context, handler ListServiceUpdatesHandler) *ListServiceUpdates {
+    logtrace.LogWithFunctionName()
 	return &ListServiceUpdates{Context: ctx, Handler: handler}
 }
 
@@ -67,6 +70,7 @@ type ListServiceUpdates struct {
 }
 
 func (o *ListServiceUpdates) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

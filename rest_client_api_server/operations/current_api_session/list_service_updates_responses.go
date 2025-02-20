@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListServiceUpdatesOK struct {
 
 // NewListServiceUpdatesOK creates ListServiceUpdatesOK with default headers values
 func NewListServiceUpdatesOK() *ListServiceUpdatesOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListServiceUpdatesOK{}
 }
 
 // WithPayload adds the payload to the list service updates o k response
 func (o *ListServiceUpdatesOK) WithPayload(payload *rest_model.ListCurrentAPISessionServiceUpdatesEnvelope) *ListServiceUpdatesOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list service updates o k response
 func (o *ListServiceUpdatesOK) SetPayload(payload *rest_model.ListCurrentAPISessionServiceUpdatesEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListServiceUpdatesOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ListServiceUpdatesUnauthorized struct {
 
 // NewListServiceUpdatesUnauthorized creates ListServiceUpdatesUnauthorized with default headers values
 func NewListServiceUpdatesUnauthorized() *ListServiceUpdatesUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &ListServiceUpdatesUnauthorized{}
 }
 
 // WithPayload adds the payload to the list service updates unauthorized response
 func (o *ListServiceUpdatesUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *ListServiceUpdatesUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list service updates unauthorized response
 func (o *ListServiceUpdatesUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListServiceUpdatesUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ListServiceUpdatesTooManyRequests struct {
 
 // NewListServiceUpdatesTooManyRequests creates ListServiceUpdatesTooManyRequests with default headers values
 func NewListServiceUpdatesTooManyRequests() *ListServiceUpdatesTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ListServiceUpdatesTooManyRequests{}
 }
 
 // WithPayload adds the payload to the list service updates too many requests response
 func (o *ListServiceUpdatesTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ListServiceUpdatesTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list service updates too many requests response
 func (o *ListServiceUpdatesTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListServiceUpdatesTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type ListServiceUpdatesServiceUnavailable struct {
 
 // NewListServiceUpdatesServiceUnavailable creates ListServiceUpdatesServiceUnavailable with default headers values
 func NewListServiceUpdatesServiceUnavailable() *ListServiceUpdatesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &ListServiceUpdatesServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the list service updates service unavailable response
 func (o *ListServiceUpdatesServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *ListServiceUpdatesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list service updates service unavailable response
 func (o *ListServiceUpdatesServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListServiceUpdatesServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

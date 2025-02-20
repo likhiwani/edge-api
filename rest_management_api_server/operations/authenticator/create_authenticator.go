@@ -30,6 +30,7 @@ package authenticator
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type CreateAuthenticatorHandlerFunc func(CreateAuthenticatorParams, interface{})
 
 // Handle executing the request and returning a response
 func (fn CreateAuthenticatorHandlerFunc) Handle(params CreateAuthenticatorParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type CreateAuthenticatorHandler interface {
 
 // NewCreateAuthenticator creates a new http.Handler for the create authenticator operation
 func NewCreateAuthenticator(ctx *middleware.Context, handler CreateAuthenticatorHandler) *CreateAuthenticator {
+    logtrace.LogWithFunctionName()
 	return &CreateAuthenticator{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type CreateAuthenticator struct {
 }
 
 func (o *CreateAuthenticator) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

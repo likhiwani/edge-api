@@ -30,6 +30,7 @@ package service
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -43,6 +44,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewListServiceEdgeRoutersParams() ListServiceEdgeRoutersParams {
+    logtrace.LogWithFunctionName()
 
 	return ListServiceEdgeRoutersParams{}
 }
@@ -80,6 +82,7 @@ type ListServiceEdgeRoutersParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewListServiceEdgeRoutersParams() beforehand.
 func (o *ListServiceEdgeRoutersParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r
@@ -113,6 +116,7 @@ func (o *ListServiceEdgeRoutersParams) BindRequest(r *http.Request, route *middl
 
 // bindFilter binds and validates parameter Filter from query.
 func (o *ListServiceEdgeRoutersParams) bindFilter(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -131,6 +135,7 @@ func (o *ListServiceEdgeRoutersParams) bindFilter(rawData []string, hasKey bool,
 
 // bindID binds and validates parameter ID from path.
 func (o *ListServiceEdgeRoutersParams) bindID(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -145,6 +150,7 @@ func (o *ListServiceEdgeRoutersParams) bindID(rawData []string, hasKey bool, for
 
 // bindLimit binds and validates parameter Limit from query.
 func (o *ListServiceEdgeRoutersParams) bindLimit(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]
@@ -168,6 +174,7 @@ func (o *ListServiceEdgeRoutersParams) bindLimit(rawData []string, hasKey bool, 
 
 // bindOffset binds and validates parameter Offset from query.
 func (o *ListServiceEdgeRoutersParams) bindOffset(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var raw string
 	if len(rawData) > 0 {
 		raw = rawData[len(rawData)-1]

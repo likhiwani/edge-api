@@ -30,6 +30,7 @@ package config
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new config API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -117,6 +121,7 @@ CreateConfig creates a config resource
 Create a config resource. Requires admin access.
 */
 func (a *Client) CreateConfig(params *CreateConfigParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateConfigCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreateConfigParams()
@@ -156,6 +161,7 @@ func (a *Client) CreateConfig(params *CreateConfigParams, authInfo runtime.Clien
 CreateConfigType creates a config type requires admin access
 */
 func (a *Client) CreateConfigType(params *CreateConfigTypeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateConfigTypeCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreateConfigTypeParams()
@@ -197,6 +203,7 @@ DeleteConfig deletes a config
 Delete a config by id. Requires admin access.
 */
 func (a *Client) DeleteConfig(params *DeleteConfigParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteConfigOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteConfigParams()
@@ -238,6 +245,7 @@ DeleteConfigType deletes a config type
 Delete a config-type by id. Removing a configuration type that are in use will result in a 409 conflict HTTP status code and error. All configurations of a type must be removed first.
 */
 func (a *Client) DeleteConfigType(params *DeleteConfigTypeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteConfigTypeOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteConfigTypeParams()
@@ -279,6 +287,7 @@ DetailConfig retrieves a single config
 Retrieves a single config by id. Requires admin access.
 */
 func (a *Client) DetailConfig(params *DetailConfigParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailConfigOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailConfigParams()
@@ -320,6 +329,7 @@ DetailConfigType retrieves a single config type
 Retrieves a single config-type by id. Requires admin access.
 */
 func (a *Client) DetailConfigType(params *DetailConfigTypeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailConfigTypeOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailConfigTypeParams()
@@ -361,6 +371,7 @@ ListConfigServices lists services referenced by a config
 Retrieves a list of service resources that reference a given config; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListConfigServices(params *ListConfigServicesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListConfigServicesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListConfigServicesParams()
@@ -402,6 +413,7 @@ ListConfigTypes lists config types
 Retrieves a list of config-type resources; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListConfigTypes(params *ListConfigTypesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListConfigTypesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListConfigTypesParams()
@@ -443,6 +455,7 @@ ListConfigs lists configs
 Retrieves a list of config resources; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListConfigs(params *ListConfigsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListConfigsOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListConfigsParams()
@@ -484,6 +497,7 @@ ListConfigsForConfigType lists the configs of a specific config type
 Lists the configs associated to a config-type. Requires admin access.
 */
 func (a *Client) ListConfigsForConfigType(params *ListConfigsForConfigTypeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListConfigsForConfigTypeOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListConfigsForConfigTypeParams()
@@ -525,6 +539,7 @@ PatchConfig updates the supplied fields on a config
 Update the supplied fields on a config. Requires admin access.
 */
 func (a *Client) PatchConfig(params *PatchConfigParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PatchConfigOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPatchConfigParams()
@@ -566,6 +581,7 @@ PatchConfigType updates the supplied fields on a config type
 Update the supplied fields on a config-type. Requires admin access.
 */
 func (a *Client) PatchConfigType(params *PatchConfigTypeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PatchConfigTypeOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPatchConfigTypeParams()
@@ -607,6 +623,7 @@ UpdateConfig updates all fields on a config
 Update all fields on a config by id. Requires admin access.
 */
 func (a *Client) UpdateConfig(params *UpdateConfigParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UpdateConfigOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUpdateConfigParams()
@@ -648,6 +665,7 @@ UpdateConfigType updates all fields on a config type
 Update all fields on a config-type by id. Requires admin access.
 */
 func (a *Client) UpdateConfigType(params *UpdateConfigTypeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UpdateConfigTypeOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUpdateConfigTypeParams()
@@ -685,5 +703,6 @@ func (a *Client) UpdateConfigType(params *UpdateConfigTypeParams, authInfo runti
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

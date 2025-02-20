@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -60,6 +61,7 @@ type Authenticate struct {
 
 // Validate validates this authenticate
 func (m *Authenticate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateConfigTypes(formats); err != nil {
@@ -89,6 +91,7 @@ func (m *Authenticate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *Authenticate) validateConfigTypes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.ConfigTypes) { // not required
 		return nil
 	}
@@ -106,6 +109,7 @@ func (m *Authenticate) validateConfigTypes(formats strfmt.Registry) error {
 }
 
 func (m *Authenticate) validateEnvInfo(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.EnvInfo) { // not required
 		return nil
 	}
@@ -125,6 +129,7 @@ func (m *Authenticate) validateEnvInfo(formats strfmt.Registry) error {
 }
 
 func (m *Authenticate) validatePassword(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Password) { // not required
 		return nil
 	}
@@ -142,6 +147,7 @@ func (m *Authenticate) validatePassword(formats strfmt.Registry) error {
 }
 
 func (m *Authenticate) validateSdkInfo(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.SdkInfo) { // not required
 		return nil
 	}
@@ -161,6 +167,7 @@ func (m *Authenticate) validateSdkInfo(formats strfmt.Registry) error {
 }
 
 func (m *Authenticate) validateUsername(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Username) { // not required
 		return nil
 	}
@@ -179,6 +186,7 @@ func (m *Authenticate) validateUsername(formats strfmt.Registry) error {
 
 // ContextValidate validate this authenticate based on the context it is used
 func (m *Authenticate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateConfigTypes(ctx, formats); err != nil {
@@ -208,6 +216,7 @@ func (m *Authenticate) ContextValidate(ctx context.Context, formats strfmt.Regis
 }
 
 func (m *Authenticate) contextValidateConfigTypes(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.ConfigTypes.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -222,6 +231,7 @@ func (m *Authenticate) contextValidateConfigTypes(ctx context.Context, formats s
 }
 
 func (m *Authenticate) contextValidateEnvInfo(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.EnvInfo != nil {
 
@@ -243,6 +253,7 @@ func (m *Authenticate) contextValidateEnvInfo(ctx context.Context, formats strfm
 }
 
 func (m *Authenticate) contextValidatePassword(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.Password) { // not required
 		return nil
@@ -261,6 +272,7 @@ func (m *Authenticate) contextValidatePassword(ctx context.Context, formats strf
 }
 
 func (m *Authenticate) contextValidateSdkInfo(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.SdkInfo != nil {
 
@@ -282,6 +294,7 @@ func (m *Authenticate) contextValidateSdkInfo(ctx context.Context, formats strfm
 }
 
 func (m *Authenticate) contextValidateUsername(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.Username) { // not required
 		return nil
@@ -301,6 +314,7 @@ func (m *Authenticate) contextValidateUsername(ctx context.Context, formats strf
 
 // MarshalBinary interface implementation
 func (m *Authenticate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -309,6 +323,7 @@ func (m *Authenticate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *Authenticate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res Authenticate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

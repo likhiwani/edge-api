@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"encoding/json"
 
@@ -147,6 +148,7 @@ type IdentityDetail struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *IdentityDetail) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 BaseEntity
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -265,6 +267,7 @@ func (m *IdentityDetail) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m IdentityDetail) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.BaseEntity)
@@ -384,6 +387,7 @@ func (m IdentityDetail) MarshalJSON() ([]byte, error) {
 
 // Validate validates this identity detail
 func (m *IdentityDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -498,6 +502,7 @@ func (m *IdentityDetail) Validate(formats strfmt.Registry) error {
 }
 
 func (m *IdentityDetail) validateAppData(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.AppData) { // not required
 		return nil
@@ -518,6 +523,7 @@ func (m *IdentityDetail) validateAppData(formats strfmt.Registry) error {
 }
 
 func (m *IdentityDetail) validateAuthPolicy(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("authPolicy", "body", m.AuthPolicy); err != nil {
 		return err
@@ -538,6 +544,7 @@ func (m *IdentityDetail) validateAuthPolicy(formats strfmt.Registry) error {
 }
 
 func (m *IdentityDetail) validateAuthPolicyID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("authPolicyId", "body", m.AuthPolicyID); err != nil {
 		return err
@@ -547,6 +554,7 @@ func (m *IdentityDetail) validateAuthPolicyID(formats strfmt.Registry) error {
 }
 
 func (m *IdentityDetail) validateAuthenticators(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("authenticators", "body", m.Authenticators); err != nil {
 		return err
@@ -567,6 +575,7 @@ func (m *IdentityDetail) validateAuthenticators(formats strfmt.Registry) error {
 }
 
 func (m *IdentityDetail) validateDefaultHostingCost(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("defaultHostingCost", "body", m.DefaultHostingCost); err != nil {
 		return err
@@ -591,6 +600,7 @@ func (m *IdentityDetail) validateDefaultHostingCost(formats strfmt.Registry) err
 }
 
 func (m *IdentityDetail) validateDefaultHostingPrecedence(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.DefaultHostingPrecedence) { // not required
 		return nil
@@ -609,6 +619,7 @@ func (m *IdentityDetail) validateDefaultHostingPrecedence(formats strfmt.Registr
 }
 
 func (m *IdentityDetail) validateDisabled(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("disabled", "body", m.Disabled); err != nil {
 		return err
@@ -618,6 +629,7 @@ func (m *IdentityDetail) validateDisabled(formats strfmt.Registry) error {
 }
 
 func (m *IdentityDetail) validateDisabledAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.DisabledAt) { // not required
 		return nil
@@ -631,6 +643,7 @@ func (m *IdentityDetail) validateDisabledAt(formats strfmt.Registry) error {
 }
 
 func (m *IdentityDetail) validateDisabledUntil(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.DisabledUntil) { // not required
 		return nil
@@ -646,6 +659,7 @@ func (m *IdentityDetail) validateDisabledUntil(formats strfmt.Registry) error {
 var identityDetailTypeEdgeRouterConnectionStatusPropEnum []interface{}
 
 func init() {
+    logtrace.LogWithFunctionName()
 	var res []string
 	if err := json.Unmarshal([]byte(`["online","offline","unknown"]`), &res); err != nil {
 		panic(err)
@@ -657,6 +671,7 @@ func init() {
 
 // property enum
 func (m *IdentityDetail) validateEdgeRouterConnectionStatusEnum(path, location string, value string) error {
+    logtrace.LogWithFunctionName()
 	if err := validate.EnumCase(path, location, value, identityDetailTypeEdgeRouterConnectionStatusPropEnum, true); err != nil {
 		return err
 	}
@@ -664,6 +679,7 @@ func (m *IdentityDetail) validateEdgeRouterConnectionStatusEnum(path, location s
 }
 
 func (m *IdentityDetail) validateEdgeRouterConnectionStatus(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("edgeRouterConnectionStatus", "body", m.EdgeRouterConnectionStatus); err != nil {
 		return err
@@ -678,6 +694,7 @@ func (m *IdentityDetail) validateEdgeRouterConnectionStatus(formats strfmt.Regis
 }
 
 func (m *IdentityDetail) validateEnrollment(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("enrollment", "body", m.Enrollment); err != nil {
 		return err
@@ -698,6 +715,7 @@ func (m *IdentityDetail) validateEnrollment(formats strfmt.Registry) error {
 }
 
 func (m *IdentityDetail) validateEnvInfo(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("envInfo", "body", m.EnvInfo); err != nil {
 		return err
@@ -718,6 +736,7 @@ func (m *IdentityDetail) validateEnvInfo(formats strfmt.Registry) error {
 }
 
 func (m *IdentityDetail) validateExternalID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("externalId", "body", m.ExternalID); err != nil {
 		return err
@@ -727,6 +746,7 @@ func (m *IdentityDetail) validateExternalID(formats strfmt.Registry) error {
 }
 
 func (m *IdentityDetail) validateHasAPISession(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("hasApiSession", "body", m.HasAPISession); err != nil {
 		return err
@@ -736,6 +756,7 @@ func (m *IdentityDetail) validateHasAPISession(formats strfmt.Registry) error {
 }
 
 func (m *IdentityDetail) validateHasEdgeRouterConnection(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("hasEdgeRouterConnection", "body", m.HasEdgeRouterConnection); err != nil {
 		return err
@@ -745,6 +766,7 @@ func (m *IdentityDetail) validateHasEdgeRouterConnection(formats strfmt.Registry
 }
 
 func (m *IdentityDetail) validateIsAdmin(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isAdmin", "body", m.IsAdmin); err != nil {
 		return err
@@ -754,6 +776,7 @@ func (m *IdentityDetail) validateIsAdmin(formats strfmt.Registry) error {
 }
 
 func (m *IdentityDetail) validateIsDefaultAdmin(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isDefaultAdmin", "body", m.IsDefaultAdmin); err != nil {
 		return err
@@ -763,6 +786,7 @@ func (m *IdentityDetail) validateIsDefaultAdmin(formats strfmt.Registry) error {
 }
 
 func (m *IdentityDetail) validateIsMfaEnabled(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isMfaEnabled", "body", m.IsMfaEnabled); err != nil {
 		return err
@@ -772,6 +796,7 @@ func (m *IdentityDetail) validateIsMfaEnabled(formats strfmt.Registry) error {
 }
 
 func (m *IdentityDetail) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -781,6 +806,7 @@ func (m *IdentityDetail) validateName(formats strfmt.Registry) error {
 }
 
 func (m *IdentityDetail) validateRoleAttributes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("roleAttributes", "body", m.RoleAttributes); err != nil {
 		return err
@@ -801,6 +827,7 @@ func (m *IdentityDetail) validateRoleAttributes(formats strfmt.Registry) error {
 }
 
 func (m *IdentityDetail) validateSdkInfo(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("sdkInfo", "body", m.SdkInfo); err != nil {
 		return err
@@ -821,6 +848,7 @@ func (m *IdentityDetail) validateSdkInfo(formats strfmt.Registry) error {
 }
 
 func (m *IdentityDetail) validateServiceHostingCosts(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("serviceHostingCosts", "body", m.ServiceHostingCosts); err != nil {
 		return err
@@ -841,6 +869,7 @@ func (m *IdentityDetail) validateServiceHostingCosts(formats strfmt.Registry) er
 }
 
 func (m *IdentityDetail) validateServiceHostingPrecedences(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("serviceHostingPrecedences", "body", m.ServiceHostingPrecedences); err != nil {
 		return err
@@ -861,6 +890,7 @@ func (m *IdentityDetail) validateServiceHostingPrecedences(formats strfmt.Regist
 }
 
 func (m *IdentityDetail) validateType(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("type", "body", m.Type); err != nil {
 		return err
@@ -881,6 +911,7 @@ func (m *IdentityDetail) validateType(formats strfmt.Registry) error {
 }
 
 func (m *IdentityDetail) validateTypeID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("typeId", "body", m.TypeID); err != nil {
 		return err
@@ -891,6 +922,7 @@ func (m *IdentityDetail) validateTypeID(formats strfmt.Registry) error {
 
 // ContextValidate validate this identity detail based on the context it is used
 func (m *IdentityDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -953,6 +985,7 @@ func (m *IdentityDetail) ContextValidate(ctx context.Context, formats strfmt.Reg
 }
 
 func (m *IdentityDetail) contextValidateAppData(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.AppData != nil {
 
@@ -974,6 +1007,7 @@ func (m *IdentityDetail) contextValidateAppData(ctx context.Context, formats str
 }
 
 func (m *IdentityDetail) contextValidateAuthPolicy(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.AuthPolicy != nil {
 
@@ -991,6 +1025,7 @@ func (m *IdentityDetail) contextValidateAuthPolicy(ctx context.Context, formats 
 }
 
 func (m *IdentityDetail) contextValidateAuthenticators(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Authenticators != nil {
 
@@ -1008,6 +1043,7 @@ func (m *IdentityDetail) contextValidateAuthenticators(ctx context.Context, form
 }
 
 func (m *IdentityDetail) contextValidateDefaultHostingCost(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.DefaultHostingCost != nil {
 
@@ -1025,6 +1061,7 @@ func (m *IdentityDetail) contextValidateDefaultHostingCost(ctx context.Context, 
 }
 
 func (m *IdentityDetail) contextValidateDefaultHostingPrecedence(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.DefaultHostingPrecedence) { // not required
 		return nil
@@ -1043,6 +1080,7 @@ func (m *IdentityDetail) contextValidateDefaultHostingPrecedence(ctx context.Con
 }
 
 func (m *IdentityDetail) contextValidateEnrollment(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Enrollment != nil {
 
@@ -1060,6 +1098,7 @@ func (m *IdentityDetail) contextValidateEnrollment(ctx context.Context, formats 
 }
 
 func (m *IdentityDetail) contextValidateEnvInfo(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.EnvInfo != nil {
 
@@ -1077,6 +1116,7 @@ func (m *IdentityDetail) contextValidateEnvInfo(ctx context.Context, formats str
 }
 
 func (m *IdentityDetail) contextValidateRoleAttributes(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.RoleAttributes != nil {
 		if err := m.RoleAttributes.ContextValidate(ctx, formats); err != nil {
@@ -1093,6 +1133,7 @@ func (m *IdentityDetail) contextValidateRoleAttributes(ctx context.Context, form
 }
 
 func (m *IdentityDetail) contextValidateSdkInfo(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.SdkInfo != nil {
 
@@ -1110,6 +1151,7 @@ func (m *IdentityDetail) contextValidateSdkInfo(ctx context.Context, formats str
 }
 
 func (m *IdentityDetail) contextValidateServiceHostingCosts(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.ServiceHostingCosts.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -1124,6 +1166,7 @@ func (m *IdentityDetail) contextValidateServiceHostingCosts(ctx context.Context,
 }
 
 func (m *IdentityDetail) contextValidateServiceHostingPrecedences(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.ServiceHostingPrecedences.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -1138,6 +1181,7 @@ func (m *IdentityDetail) contextValidateServiceHostingPrecedences(ctx context.Co
 }
 
 func (m *IdentityDetail) contextValidateType(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Type != nil {
 
@@ -1156,6 +1200,7 @@ func (m *IdentityDetail) contextValidateType(ctx context.Context, formats strfmt
 
 // MarshalBinary interface implementation
 func (m *IdentityDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -1164,6 +1209,7 @@ func (m *IdentityDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *IdentityDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res IdentityDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

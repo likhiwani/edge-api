@@ -30,6 +30,7 @@ package authenticator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type CreateAuthenticatorCreated struct {
 
 // NewCreateAuthenticatorCreated creates CreateAuthenticatorCreated with default headers values
 func NewCreateAuthenticatorCreated() *CreateAuthenticatorCreated {
+    logtrace.LogWithFunctionName()
 
 	return &CreateAuthenticatorCreated{}
 }
 
 // WithPayload adds the payload to the create authenticator created response
 func (o *CreateAuthenticatorCreated) WithPayload(payload *rest_model.CreateEnvelope) *CreateAuthenticatorCreated {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create authenticator created response
 func (o *CreateAuthenticatorCreated) SetPayload(payload *rest_model.CreateEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateAuthenticatorCreated) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(201)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type CreateAuthenticatorBadRequest struct {
 
 // NewCreateAuthenticatorBadRequest creates CreateAuthenticatorBadRequest with default headers values
 func NewCreateAuthenticatorBadRequest() *CreateAuthenticatorBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &CreateAuthenticatorBadRequest{}
 }
 
 // WithPayload adds the payload to the create authenticator bad request response
 func (o *CreateAuthenticatorBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateAuthenticatorBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create authenticator bad request response
 func (o *CreateAuthenticatorBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateAuthenticatorBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type CreateAuthenticatorUnauthorized struct {
 
 // NewCreateAuthenticatorUnauthorized creates CreateAuthenticatorUnauthorized with default headers values
 func NewCreateAuthenticatorUnauthorized() *CreateAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &CreateAuthenticatorUnauthorized{}
 }
 
 // WithPayload adds the payload to the create authenticator unauthorized response
 func (o *CreateAuthenticatorUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create authenticator unauthorized response
 func (o *CreateAuthenticatorUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateAuthenticatorUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type CreateAuthenticatorTooManyRequests struct {
 
 // NewCreateAuthenticatorTooManyRequests creates CreateAuthenticatorTooManyRequests with default headers values
 func NewCreateAuthenticatorTooManyRequests() *CreateAuthenticatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &CreateAuthenticatorTooManyRequests{}
 }
 
 // WithPayload adds the payload to the create authenticator too many requests response
 func (o *CreateAuthenticatorTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateAuthenticatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create authenticator too many requests response
 func (o *CreateAuthenticatorTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateAuthenticatorTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type CreateAuthenticatorServiceUnavailable struct {
 
 // NewCreateAuthenticatorServiceUnavailable creates CreateAuthenticatorServiceUnavailable with default headers values
 func NewCreateAuthenticatorServiceUnavailable() *CreateAuthenticatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &CreateAuthenticatorServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the create authenticator service unavailable response
 func (o *CreateAuthenticatorServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateAuthenticatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create authenticator service unavailable response
 func (o *CreateAuthenticatorServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateAuthenticatorServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

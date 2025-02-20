@@ -30,6 +30,7 @@ package enrollment
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DeleteEnrollmentReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DeleteEnrollmentReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDeleteEnrollmentOK()
@@ -91,6 +93,7 @@ func (o *DeleteEnrollmentReader) ReadResponse(response runtime.ClientResponse, c
 
 // NewDeleteEnrollmentOK creates a DeleteEnrollmentOK with default headers values
 func NewDeleteEnrollmentOK() *DeleteEnrollmentOK {
+    logtrace.LogWithFunctionName()
 	return &DeleteEnrollmentOK{}
 }
 
@@ -105,49 +108,59 @@ type DeleteEnrollmentOK struct {
 
 // IsSuccess returns true when this delete enrollment o k response has a 2xx status code
 func (o *DeleteEnrollmentOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this delete enrollment o k response has a 3xx status code
 func (o *DeleteEnrollmentOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete enrollment o k response has a 4xx status code
 func (o *DeleteEnrollmentOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete enrollment o k response has a 5xx status code
 func (o *DeleteEnrollmentOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete enrollment o k response a status code equal to that given
 func (o *DeleteEnrollmentOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the delete enrollment o k response
 func (o *DeleteEnrollmentOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DeleteEnrollmentOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /enrollments/{id}][%d] deleteEnrollmentOK %s", 200, payload)
 }
 
 func (o *DeleteEnrollmentOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /enrollments/{id}][%d] deleteEnrollmentOK %s", 200, payload)
 }
 
 func (o *DeleteEnrollmentOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEnrollmentOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -161,6 +174,7 @@ func (o *DeleteEnrollmentOK) readResponse(response runtime.ClientResponse, consu
 
 // NewDeleteEnrollmentBadRequest creates a DeleteEnrollmentBadRequest with default headers values
 func NewDeleteEnrollmentBadRequest() *DeleteEnrollmentBadRequest {
+    logtrace.LogWithFunctionName()
 	return &DeleteEnrollmentBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type DeleteEnrollmentBadRequest struct {
 
 // IsSuccess returns true when this delete enrollment bad request response has a 2xx status code
 func (o *DeleteEnrollmentBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete enrollment bad request response has a 3xx status code
 func (o *DeleteEnrollmentBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete enrollment bad request response has a 4xx status code
 func (o *DeleteEnrollmentBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete enrollment bad request response has a 5xx status code
 func (o *DeleteEnrollmentBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete enrollment bad request response a status code equal to that given
 func (o *DeleteEnrollmentBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the delete enrollment bad request response
 func (o *DeleteEnrollmentBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *DeleteEnrollmentBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /enrollments/{id}][%d] deleteEnrollmentBadRequest %s", 400, payload)
 }
 
 func (o *DeleteEnrollmentBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /enrollments/{id}][%d] deleteEnrollmentBadRequest %s", 400, payload)
 }
 
 func (o *DeleteEnrollmentBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEnrollmentBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *DeleteEnrollmentBadRequest) readResponse(response runtime.ClientRespons
 
 // NewDeleteEnrollmentUnauthorized creates a DeleteEnrollmentUnauthorized with default headers values
 func NewDeleteEnrollmentUnauthorized() *DeleteEnrollmentUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DeleteEnrollmentUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type DeleteEnrollmentUnauthorized struct {
 
 // IsSuccess returns true when this delete enrollment unauthorized response has a 2xx status code
 func (o *DeleteEnrollmentUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete enrollment unauthorized response has a 3xx status code
 func (o *DeleteEnrollmentUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete enrollment unauthorized response has a 4xx status code
 func (o *DeleteEnrollmentUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete enrollment unauthorized response has a 5xx status code
 func (o *DeleteEnrollmentUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete enrollment unauthorized response a status code equal to that given
 func (o *DeleteEnrollmentUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the delete enrollment unauthorized response
 func (o *DeleteEnrollmentUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DeleteEnrollmentUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /enrollments/{id}][%d] deleteEnrollmentUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteEnrollmentUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /enrollments/{id}][%d] deleteEnrollmentUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteEnrollmentUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEnrollmentUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *DeleteEnrollmentUnauthorized) readResponse(response runtime.ClientRespo
 
 // NewDeleteEnrollmentNotFound creates a DeleteEnrollmentNotFound with default headers values
 func NewDeleteEnrollmentNotFound() *DeleteEnrollmentNotFound {
+    logtrace.LogWithFunctionName()
 	return &DeleteEnrollmentNotFound{}
 }
 
@@ -315,49 +351,59 @@ type DeleteEnrollmentNotFound struct {
 
 // IsSuccess returns true when this delete enrollment not found response has a 2xx status code
 func (o *DeleteEnrollmentNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete enrollment not found response has a 3xx status code
 func (o *DeleteEnrollmentNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete enrollment not found response has a 4xx status code
 func (o *DeleteEnrollmentNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete enrollment not found response has a 5xx status code
 func (o *DeleteEnrollmentNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete enrollment not found response a status code equal to that given
 func (o *DeleteEnrollmentNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the delete enrollment not found response
 func (o *DeleteEnrollmentNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DeleteEnrollmentNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /enrollments/{id}][%d] deleteEnrollmentNotFound %s", 404, payload)
 }
 
 func (o *DeleteEnrollmentNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /enrollments/{id}][%d] deleteEnrollmentNotFound %s", 404, payload)
 }
 
 func (o *DeleteEnrollmentNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEnrollmentNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *DeleteEnrollmentNotFound) readResponse(response runtime.ClientResponse,
 
 // NewDeleteEnrollmentTooManyRequests creates a DeleteEnrollmentTooManyRequests with default headers values
 func NewDeleteEnrollmentTooManyRequests() *DeleteEnrollmentTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DeleteEnrollmentTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type DeleteEnrollmentTooManyRequests struct {
 
 // IsSuccess returns true when this delete enrollment too many requests response has a 2xx status code
 func (o *DeleteEnrollmentTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete enrollment too many requests response has a 3xx status code
 func (o *DeleteEnrollmentTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete enrollment too many requests response has a 4xx status code
 func (o *DeleteEnrollmentTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete enrollment too many requests response has a 5xx status code
 func (o *DeleteEnrollmentTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete enrollment too many requests response a status code equal to that given
 func (o *DeleteEnrollmentTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the delete enrollment too many requests response
 func (o *DeleteEnrollmentTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DeleteEnrollmentTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /enrollments/{id}][%d] deleteEnrollmentTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteEnrollmentTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /enrollments/{id}][%d] deleteEnrollmentTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteEnrollmentTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEnrollmentTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *DeleteEnrollmentTooManyRequests) readResponse(response runtime.ClientRe
 
 // NewDeleteEnrollmentServiceUnavailable creates a DeleteEnrollmentServiceUnavailable with default headers values
 func NewDeleteEnrollmentServiceUnavailable() *DeleteEnrollmentServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DeleteEnrollmentServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type DeleteEnrollmentServiceUnavailable struct {
 
 // IsSuccess returns true when this delete enrollment service unavailable response has a 2xx status code
 func (o *DeleteEnrollmentServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete enrollment service unavailable response has a 3xx status code
 func (o *DeleteEnrollmentServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete enrollment service unavailable response has a 4xx status code
 func (o *DeleteEnrollmentServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete enrollment service unavailable response has a 5xx status code
 func (o *DeleteEnrollmentServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this delete enrollment service unavailable response a status code equal to that given
 func (o *DeleteEnrollmentServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the delete enrollment service unavailable response
 func (o *DeleteEnrollmentServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DeleteEnrollmentServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /enrollments/{id}][%d] deleteEnrollmentServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteEnrollmentServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /enrollments/{id}][%d] deleteEnrollmentServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteEnrollmentServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteEnrollmentServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

@@ -30,6 +30,7 @@ package session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DeleteSessionReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DeleteSessionReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDeleteSessionOK()
@@ -91,6 +93,7 @@ func (o *DeleteSessionReader) ReadResponse(response runtime.ClientResponse, cons
 
 // NewDeleteSessionOK creates a DeleteSessionOK with default headers values
 func NewDeleteSessionOK() *DeleteSessionOK {
+    logtrace.LogWithFunctionName()
 	return &DeleteSessionOK{}
 }
 
@@ -105,49 +108,59 @@ type DeleteSessionOK struct {
 
 // IsSuccess returns true when this delete session o k response has a 2xx status code
 func (o *DeleteSessionOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this delete session o k response has a 3xx status code
 func (o *DeleteSessionOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete session o k response has a 4xx status code
 func (o *DeleteSessionOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete session o k response has a 5xx status code
 func (o *DeleteSessionOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete session o k response a status code equal to that given
 func (o *DeleteSessionOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the delete session o k response
 func (o *DeleteSessionOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DeleteSessionOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /sessions/{id}][%d] deleteSessionOK %s", 200, payload)
 }
 
 func (o *DeleteSessionOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /sessions/{id}][%d] deleteSessionOK %s", 200, payload)
 }
 
 func (o *DeleteSessionOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteSessionOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -161,6 +174,7 @@ func (o *DeleteSessionOK) readResponse(response runtime.ClientResponse, consumer
 
 // NewDeleteSessionBadRequest creates a DeleteSessionBadRequest with default headers values
 func NewDeleteSessionBadRequest() *DeleteSessionBadRequest {
+    logtrace.LogWithFunctionName()
 	return &DeleteSessionBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type DeleteSessionBadRequest struct {
 
 // IsSuccess returns true when this delete session bad request response has a 2xx status code
 func (o *DeleteSessionBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete session bad request response has a 3xx status code
 func (o *DeleteSessionBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete session bad request response has a 4xx status code
 func (o *DeleteSessionBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete session bad request response has a 5xx status code
 func (o *DeleteSessionBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete session bad request response a status code equal to that given
 func (o *DeleteSessionBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the delete session bad request response
 func (o *DeleteSessionBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *DeleteSessionBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /sessions/{id}][%d] deleteSessionBadRequest %s", 400, payload)
 }
 
 func (o *DeleteSessionBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /sessions/{id}][%d] deleteSessionBadRequest %s", 400, payload)
 }
 
 func (o *DeleteSessionBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteSessionBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *DeleteSessionBadRequest) readResponse(response runtime.ClientResponse, 
 
 // NewDeleteSessionUnauthorized creates a DeleteSessionUnauthorized with default headers values
 func NewDeleteSessionUnauthorized() *DeleteSessionUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DeleteSessionUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type DeleteSessionUnauthorized struct {
 
 // IsSuccess returns true when this delete session unauthorized response has a 2xx status code
 func (o *DeleteSessionUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete session unauthorized response has a 3xx status code
 func (o *DeleteSessionUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete session unauthorized response has a 4xx status code
 func (o *DeleteSessionUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete session unauthorized response has a 5xx status code
 func (o *DeleteSessionUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete session unauthorized response a status code equal to that given
 func (o *DeleteSessionUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the delete session unauthorized response
 func (o *DeleteSessionUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DeleteSessionUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /sessions/{id}][%d] deleteSessionUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteSessionUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /sessions/{id}][%d] deleteSessionUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteSessionUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteSessionUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *DeleteSessionUnauthorized) readResponse(response runtime.ClientResponse
 
 // NewDeleteSessionConflict creates a DeleteSessionConflict with default headers values
 func NewDeleteSessionConflict() *DeleteSessionConflict {
+    logtrace.LogWithFunctionName()
 	return &DeleteSessionConflict{}
 }
 
@@ -315,49 +351,59 @@ type DeleteSessionConflict struct {
 
 // IsSuccess returns true when this delete session conflict response has a 2xx status code
 func (o *DeleteSessionConflict) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete session conflict response has a 3xx status code
 func (o *DeleteSessionConflict) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete session conflict response has a 4xx status code
 func (o *DeleteSessionConflict) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete session conflict response has a 5xx status code
 func (o *DeleteSessionConflict) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete session conflict response a status code equal to that given
 func (o *DeleteSessionConflict) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 409
 }
 
 // Code gets the status code for the delete session conflict response
 func (o *DeleteSessionConflict) Code() int {
+    logtrace.LogWithFunctionName()
 	return 409
 }
 
 func (o *DeleteSessionConflict) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /sessions/{id}][%d] deleteSessionConflict %s", 409, payload)
 }
 
 func (o *DeleteSessionConflict) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /sessions/{id}][%d] deleteSessionConflict %s", 409, payload)
 }
 
 func (o *DeleteSessionConflict) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteSessionConflict) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *DeleteSessionConflict) readResponse(response runtime.ClientResponse, co
 
 // NewDeleteSessionTooManyRequests creates a DeleteSessionTooManyRequests with default headers values
 func NewDeleteSessionTooManyRequests() *DeleteSessionTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DeleteSessionTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type DeleteSessionTooManyRequests struct {
 
 // IsSuccess returns true when this delete session too many requests response has a 2xx status code
 func (o *DeleteSessionTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete session too many requests response has a 3xx status code
 func (o *DeleteSessionTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete session too many requests response has a 4xx status code
 func (o *DeleteSessionTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete session too many requests response has a 5xx status code
 func (o *DeleteSessionTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete session too many requests response a status code equal to that given
 func (o *DeleteSessionTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the delete session too many requests response
 func (o *DeleteSessionTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DeleteSessionTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /sessions/{id}][%d] deleteSessionTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteSessionTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /sessions/{id}][%d] deleteSessionTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteSessionTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteSessionTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *DeleteSessionTooManyRequests) readResponse(response runtime.ClientRespo
 
 // NewDeleteSessionServiceUnavailable creates a DeleteSessionServiceUnavailable with default headers values
 func NewDeleteSessionServiceUnavailable() *DeleteSessionServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DeleteSessionServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type DeleteSessionServiceUnavailable struct {
 
 // IsSuccess returns true when this delete session service unavailable response has a 2xx status code
 func (o *DeleteSessionServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete session service unavailable response has a 3xx status code
 func (o *DeleteSessionServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete session service unavailable response has a 4xx status code
 func (o *DeleteSessionServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete session service unavailable response has a 5xx status code
 func (o *DeleteSessionServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this delete session service unavailable response a status code equal to that given
 func (o *DeleteSessionServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the delete session service unavailable response
 func (o *DeleteSessionServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DeleteSessionServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /sessions/{id}][%d] deleteSessionServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteSessionServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /sessions/{id}][%d] deleteSessionServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteSessionServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteSessionServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"strconv"
 
@@ -45,6 +46,7 @@ type ConfigTypeList []*ConfigTypeDetail
 
 // Validate validates this config type list
 func (m ConfigTypeList) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	for i := 0; i < len(m); i++ {
@@ -73,6 +75,7 @@ func (m ConfigTypeList) Validate(formats strfmt.Registry) error {
 
 // ContextValidate validate this config type list based on the context it is used
 func (m ConfigTypeList) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	for i := 0; i < len(m); i++ {

@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ListCurrentAPISessionCertificatesReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ListCurrentAPISessionCertificatesReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewListCurrentAPISessionCertificatesOK()
@@ -85,6 +87,7 @@ func (o *ListCurrentAPISessionCertificatesReader) ReadResponse(response runtime.
 
 // NewListCurrentAPISessionCertificatesOK creates a ListCurrentAPISessionCertificatesOK with default headers values
 func NewListCurrentAPISessionCertificatesOK() *ListCurrentAPISessionCertificatesOK {
+    logtrace.LogWithFunctionName()
 	return &ListCurrentAPISessionCertificatesOK{}
 }
 
@@ -99,49 +102,59 @@ type ListCurrentAPISessionCertificatesOK struct {
 
 // IsSuccess returns true when this list current Api session certificates o k response has a 2xx status code
 func (o *ListCurrentAPISessionCertificatesOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this list current Api session certificates o k response has a 3xx status code
 func (o *ListCurrentAPISessionCertificatesOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list current Api session certificates o k response has a 4xx status code
 func (o *ListCurrentAPISessionCertificatesOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list current Api session certificates o k response has a 5xx status code
 func (o *ListCurrentAPISessionCertificatesOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list current Api session certificates o k response a status code equal to that given
 func (o *ListCurrentAPISessionCertificatesOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the list current Api session certificates o k response
 func (o *ListCurrentAPISessionCertificatesOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ListCurrentAPISessionCertificatesOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates][%d] listCurrentApiSessionCertificatesOK %s", 200, payload)
 }
 
 func (o *ListCurrentAPISessionCertificatesOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates][%d] listCurrentApiSessionCertificatesOK %s", 200, payload)
 }
 
 func (o *ListCurrentAPISessionCertificatesOK) GetPayload() *rest_model.ListCurrentAPISessionCertificatesEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListCurrentAPISessionCertificatesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.ListCurrentAPISessionCertificatesEnvelope)
 
@@ -155,6 +168,7 @@ func (o *ListCurrentAPISessionCertificatesOK) readResponse(response runtime.Clie
 
 // NewListCurrentAPISessionCertificatesBadRequest creates a ListCurrentAPISessionCertificatesBadRequest with default headers values
 func NewListCurrentAPISessionCertificatesBadRequest() *ListCurrentAPISessionCertificatesBadRequest {
+    logtrace.LogWithFunctionName()
 	return &ListCurrentAPISessionCertificatesBadRequest{}
 }
 
@@ -169,49 +183,59 @@ type ListCurrentAPISessionCertificatesBadRequest struct {
 
 // IsSuccess returns true when this list current Api session certificates bad request response has a 2xx status code
 func (o *ListCurrentAPISessionCertificatesBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list current Api session certificates bad request response has a 3xx status code
 func (o *ListCurrentAPISessionCertificatesBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list current Api session certificates bad request response has a 4xx status code
 func (o *ListCurrentAPISessionCertificatesBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list current Api session certificates bad request response has a 5xx status code
 func (o *ListCurrentAPISessionCertificatesBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list current Api session certificates bad request response a status code equal to that given
 func (o *ListCurrentAPISessionCertificatesBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the list current Api session certificates bad request response
 func (o *ListCurrentAPISessionCertificatesBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *ListCurrentAPISessionCertificatesBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates][%d] listCurrentApiSessionCertificatesBadRequest %s", 400, payload)
 }
 
 func (o *ListCurrentAPISessionCertificatesBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates][%d] listCurrentApiSessionCertificatesBadRequest %s", 400, payload)
 }
 
 func (o *ListCurrentAPISessionCertificatesBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListCurrentAPISessionCertificatesBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *ListCurrentAPISessionCertificatesBadRequest) readResponse(response runt
 
 // NewListCurrentAPISessionCertificatesUnauthorized creates a ListCurrentAPISessionCertificatesUnauthorized with default headers values
 func NewListCurrentAPISessionCertificatesUnauthorized() *ListCurrentAPISessionCertificatesUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &ListCurrentAPISessionCertificatesUnauthorized{}
 }
 
@@ -239,49 +264,59 @@ type ListCurrentAPISessionCertificatesUnauthorized struct {
 
 // IsSuccess returns true when this list current Api session certificates unauthorized response has a 2xx status code
 func (o *ListCurrentAPISessionCertificatesUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list current Api session certificates unauthorized response has a 3xx status code
 func (o *ListCurrentAPISessionCertificatesUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list current Api session certificates unauthorized response has a 4xx status code
 func (o *ListCurrentAPISessionCertificatesUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list current Api session certificates unauthorized response has a 5xx status code
 func (o *ListCurrentAPISessionCertificatesUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list current Api session certificates unauthorized response a status code equal to that given
 func (o *ListCurrentAPISessionCertificatesUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the list current Api session certificates unauthorized response
 func (o *ListCurrentAPISessionCertificatesUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *ListCurrentAPISessionCertificatesUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates][%d] listCurrentApiSessionCertificatesUnauthorized %s", 401, payload)
 }
 
 func (o *ListCurrentAPISessionCertificatesUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates][%d] listCurrentApiSessionCertificatesUnauthorized %s", 401, payload)
 }
 
 func (o *ListCurrentAPISessionCertificatesUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListCurrentAPISessionCertificatesUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *ListCurrentAPISessionCertificatesUnauthorized) readResponse(response ru
 
 // NewListCurrentAPISessionCertificatesTooManyRequests creates a ListCurrentAPISessionCertificatesTooManyRequests with default headers values
 func NewListCurrentAPISessionCertificatesTooManyRequests() *ListCurrentAPISessionCertificatesTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &ListCurrentAPISessionCertificatesTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type ListCurrentAPISessionCertificatesTooManyRequests struct {
 
 // IsSuccess returns true when this list current Api session certificates too many requests response has a 2xx status code
 func (o *ListCurrentAPISessionCertificatesTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list current Api session certificates too many requests response has a 3xx status code
 func (o *ListCurrentAPISessionCertificatesTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list current Api session certificates too many requests response has a 4xx status code
 func (o *ListCurrentAPISessionCertificatesTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this list current Api session certificates too many requests response has a 5xx status code
 func (o *ListCurrentAPISessionCertificatesTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this list current Api session certificates too many requests response a status code equal to that given
 func (o *ListCurrentAPISessionCertificatesTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the list current Api session certificates too many requests response
 func (o *ListCurrentAPISessionCertificatesTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *ListCurrentAPISessionCertificatesTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates][%d] listCurrentApiSessionCertificatesTooManyRequests %s", 429, payload)
 }
 
 func (o *ListCurrentAPISessionCertificatesTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates][%d] listCurrentApiSessionCertificatesTooManyRequests %s", 429, payload)
 }
 
 func (o *ListCurrentAPISessionCertificatesTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListCurrentAPISessionCertificatesTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *ListCurrentAPISessionCertificatesTooManyRequests) readResponse(response
 
 // NewListCurrentAPISessionCertificatesServiceUnavailable creates a ListCurrentAPISessionCertificatesServiceUnavailable with default headers values
 func NewListCurrentAPISessionCertificatesServiceUnavailable() *ListCurrentAPISessionCertificatesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &ListCurrentAPISessionCertificatesServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type ListCurrentAPISessionCertificatesServiceUnavailable struct {
 
 // IsSuccess returns true when this list current Api session certificates service unavailable response has a 2xx status code
 func (o *ListCurrentAPISessionCertificatesServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this list current Api session certificates service unavailable response has a 3xx status code
 func (o *ListCurrentAPISessionCertificatesServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this list current Api session certificates service unavailable response has a 4xx status code
 func (o *ListCurrentAPISessionCertificatesServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this list current Api session certificates service unavailable response has a 5xx status code
 func (o *ListCurrentAPISessionCertificatesServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this list current Api session certificates service unavailable response a status code equal to that given
 func (o *ListCurrentAPISessionCertificatesServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the list current Api session certificates service unavailable response
 func (o *ListCurrentAPISessionCertificatesServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *ListCurrentAPISessionCertificatesServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates][%d] listCurrentApiSessionCertificatesServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListCurrentAPISessionCertificatesServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates][%d] listCurrentApiSessionCertificatesServiceUnavailable %s", 503, payload)
 }
 
 func (o *ListCurrentAPISessionCertificatesServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ListCurrentAPISessionCertificatesServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

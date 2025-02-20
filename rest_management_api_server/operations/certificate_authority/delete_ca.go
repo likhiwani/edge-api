@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type DeleteCaHandlerFunc func(DeleteCaParams, interface{}) middleware.Responder
 
 // Handle executing the request and returning a response
 func (fn DeleteCaHandlerFunc) Handle(params DeleteCaParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type DeleteCaHandler interface {
 
 // NewDeleteCa creates a new http.Handler for the delete ca operation
 func NewDeleteCa(ctx *middleware.Context, handler DeleteCaHandler) *DeleteCa {
+    logtrace.LogWithFunctionName()
 	return &DeleteCa{Context: ctx, Handler: handler}
 }
 
@@ -67,6 +70,7 @@ type DeleteCa struct {
 }
 
 func (o *DeleteCa) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

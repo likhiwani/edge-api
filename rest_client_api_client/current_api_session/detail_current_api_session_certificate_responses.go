@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DetailCurrentAPISessionCertificateReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DetailCurrentAPISessionCertificateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDetailCurrentAPISessionCertificateOK()
@@ -85,6 +87,7 @@ func (o *DetailCurrentAPISessionCertificateReader) ReadResponse(response runtime
 
 // NewDetailCurrentAPISessionCertificateOK creates a DetailCurrentAPISessionCertificateOK with default headers values
 func NewDetailCurrentAPISessionCertificateOK() *DetailCurrentAPISessionCertificateOK {
+    logtrace.LogWithFunctionName()
 	return &DetailCurrentAPISessionCertificateOK{}
 }
 
@@ -99,49 +102,59 @@ type DetailCurrentAPISessionCertificateOK struct {
 
 // IsSuccess returns true when this detail current Api session certificate o k response has a 2xx status code
 func (o *DetailCurrentAPISessionCertificateOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this detail current Api session certificate o k response has a 3xx status code
 func (o *DetailCurrentAPISessionCertificateOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail current Api session certificate o k response has a 4xx status code
 func (o *DetailCurrentAPISessionCertificateOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail current Api session certificate o k response has a 5xx status code
 func (o *DetailCurrentAPISessionCertificateOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail current Api session certificate o k response a status code equal to that given
 func (o *DetailCurrentAPISessionCertificateOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the detail current Api session certificate o k response
 func (o *DetailCurrentAPISessionCertificateOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DetailCurrentAPISessionCertificateOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates/{id}][%d] detailCurrentApiSessionCertificateOK %s", 200, payload)
 }
 
 func (o *DetailCurrentAPISessionCertificateOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates/{id}][%d] detailCurrentApiSessionCertificateOK %s", 200, payload)
 }
 
 func (o *DetailCurrentAPISessionCertificateOK) GetPayload() *rest_model.DetailCurrentAPISessionCertificateEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailCurrentAPISessionCertificateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.DetailCurrentAPISessionCertificateEnvelope)
 
@@ -155,6 +168,7 @@ func (o *DetailCurrentAPISessionCertificateOK) readResponse(response runtime.Cli
 
 // NewDetailCurrentAPISessionCertificateUnauthorized creates a DetailCurrentAPISessionCertificateUnauthorized with default headers values
 func NewDetailCurrentAPISessionCertificateUnauthorized() *DetailCurrentAPISessionCertificateUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DetailCurrentAPISessionCertificateUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type DetailCurrentAPISessionCertificateUnauthorized struct {
 
 // IsSuccess returns true when this detail current Api session certificate unauthorized response has a 2xx status code
 func (o *DetailCurrentAPISessionCertificateUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail current Api session certificate unauthorized response has a 3xx status code
 func (o *DetailCurrentAPISessionCertificateUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail current Api session certificate unauthorized response has a 4xx status code
 func (o *DetailCurrentAPISessionCertificateUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail current Api session certificate unauthorized response has a 5xx status code
 func (o *DetailCurrentAPISessionCertificateUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail current Api session certificate unauthorized response a status code equal to that given
 func (o *DetailCurrentAPISessionCertificateUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the detail current Api session certificate unauthorized response
 func (o *DetailCurrentAPISessionCertificateUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DetailCurrentAPISessionCertificateUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates/{id}][%d] detailCurrentApiSessionCertificateUnauthorized %s", 401, payload)
 }
 
 func (o *DetailCurrentAPISessionCertificateUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates/{id}][%d] detailCurrentApiSessionCertificateUnauthorized %s", 401, payload)
 }
 
 func (o *DetailCurrentAPISessionCertificateUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailCurrentAPISessionCertificateUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *DetailCurrentAPISessionCertificateUnauthorized) readResponse(response r
 
 // NewDetailCurrentAPISessionCertificateNotFound creates a DetailCurrentAPISessionCertificateNotFound with default headers values
 func NewDetailCurrentAPISessionCertificateNotFound() *DetailCurrentAPISessionCertificateNotFound {
+    logtrace.LogWithFunctionName()
 	return &DetailCurrentAPISessionCertificateNotFound{}
 }
 
@@ -239,49 +264,59 @@ type DetailCurrentAPISessionCertificateNotFound struct {
 
 // IsSuccess returns true when this detail current Api session certificate not found response has a 2xx status code
 func (o *DetailCurrentAPISessionCertificateNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail current Api session certificate not found response has a 3xx status code
 func (o *DetailCurrentAPISessionCertificateNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail current Api session certificate not found response has a 4xx status code
 func (o *DetailCurrentAPISessionCertificateNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail current Api session certificate not found response has a 5xx status code
 func (o *DetailCurrentAPISessionCertificateNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail current Api session certificate not found response a status code equal to that given
 func (o *DetailCurrentAPISessionCertificateNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the detail current Api session certificate not found response
 func (o *DetailCurrentAPISessionCertificateNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DetailCurrentAPISessionCertificateNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates/{id}][%d] detailCurrentApiSessionCertificateNotFound %s", 404, payload)
 }
 
 func (o *DetailCurrentAPISessionCertificateNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates/{id}][%d] detailCurrentApiSessionCertificateNotFound %s", 404, payload)
 }
 
 func (o *DetailCurrentAPISessionCertificateNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailCurrentAPISessionCertificateNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *DetailCurrentAPISessionCertificateNotFound) readResponse(response runti
 
 // NewDetailCurrentAPISessionCertificateTooManyRequests creates a DetailCurrentAPISessionCertificateTooManyRequests with default headers values
 func NewDetailCurrentAPISessionCertificateTooManyRequests() *DetailCurrentAPISessionCertificateTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DetailCurrentAPISessionCertificateTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type DetailCurrentAPISessionCertificateTooManyRequests struct {
 
 // IsSuccess returns true when this detail current Api session certificate too many requests response has a 2xx status code
 func (o *DetailCurrentAPISessionCertificateTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail current Api session certificate too many requests response has a 3xx status code
 func (o *DetailCurrentAPISessionCertificateTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail current Api session certificate too many requests response has a 4xx status code
 func (o *DetailCurrentAPISessionCertificateTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail current Api session certificate too many requests response has a 5xx status code
 func (o *DetailCurrentAPISessionCertificateTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail current Api session certificate too many requests response a status code equal to that given
 func (o *DetailCurrentAPISessionCertificateTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the detail current Api session certificate too many requests response
 func (o *DetailCurrentAPISessionCertificateTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DetailCurrentAPISessionCertificateTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates/{id}][%d] detailCurrentApiSessionCertificateTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailCurrentAPISessionCertificateTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates/{id}][%d] detailCurrentApiSessionCertificateTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailCurrentAPISessionCertificateTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailCurrentAPISessionCertificateTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *DetailCurrentAPISessionCertificateTooManyRequests) readResponse(respons
 
 // NewDetailCurrentAPISessionCertificateServiceUnavailable creates a DetailCurrentAPISessionCertificateServiceUnavailable with default headers values
 func NewDetailCurrentAPISessionCertificateServiceUnavailable() *DetailCurrentAPISessionCertificateServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DetailCurrentAPISessionCertificateServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type DetailCurrentAPISessionCertificateServiceUnavailable struct {
 
 // IsSuccess returns true when this detail current Api session certificate service unavailable response has a 2xx status code
 func (o *DetailCurrentAPISessionCertificateServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail current Api session certificate service unavailable response has a 3xx status code
 func (o *DetailCurrentAPISessionCertificateServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail current Api session certificate service unavailable response has a 4xx status code
 func (o *DetailCurrentAPISessionCertificateServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail current Api session certificate service unavailable response has a 5xx status code
 func (o *DetailCurrentAPISessionCertificateServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this detail current Api session certificate service unavailable response a status code equal to that given
 func (o *DetailCurrentAPISessionCertificateServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the detail current Api session certificate service unavailable response
 func (o *DetailCurrentAPISessionCertificateServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DetailCurrentAPISessionCertificateServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates/{id}][%d] detailCurrentApiSessionCertificateServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailCurrentAPISessionCertificateServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /current-api-session/certificates/{id}][%d] detailCurrentApiSessionCertificateServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailCurrentAPISessionCertificateServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailCurrentAPISessionCertificateServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

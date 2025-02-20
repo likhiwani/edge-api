@@ -30,6 +30,7 @@ package service_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DeleteServicePolicyOK struct {
 
 // NewDeleteServicePolicyOK creates DeleteServicePolicyOK with default headers values
 func NewDeleteServicePolicyOK() *DeleteServicePolicyOK {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteServicePolicyOK{}
 }
 
 // WithPayload adds the payload to the delete service policy o k response
 func (o *DeleteServicePolicyOK) WithPayload(payload *rest_model.Empty) *DeleteServicePolicyOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete service policy o k response
 func (o *DeleteServicePolicyOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteServicePolicyOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DeleteServicePolicyBadRequest struct {
 
 // NewDeleteServicePolicyBadRequest creates DeleteServicePolicyBadRequest with default headers values
 func NewDeleteServicePolicyBadRequest() *DeleteServicePolicyBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteServicePolicyBadRequest{}
 }
 
 // WithPayload adds the payload to the delete service policy bad request response
 func (o *DeleteServicePolicyBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteServicePolicyBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete service policy bad request response
 func (o *DeleteServicePolicyBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteServicePolicyBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DeleteServicePolicyUnauthorized struct {
 
 // NewDeleteServicePolicyUnauthorized creates DeleteServicePolicyUnauthorized with default headers values
 func NewDeleteServicePolicyUnauthorized() *DeleteServicePolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteServicePolicyUnauthorized{}
 }
 
 // WithPayload adds the payload to the delete service policy unauthorized response
 func (o *DeleteServicePolicyUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteServicePolicyUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete service policy unauthorized response
 func (o *DeleteServicePolicyUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteServicePolicyUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DeleteServicePolicyNotFound struct {
 
 // NewDeleteServicePolicyNotFound creates DeleteServicePolicyNotFound with default headers values
 func NewDeleteServicePolicyNotFound() *DeleteServicePolicyNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteServicePolicyNotFound{}
 }
 
 // WithPayload adds the payload to the delete service policy not found response
 func (o *DeleteServicePolicyNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteServicePolicyNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete service policy not found response
 func (o *DeleteServicePolicyNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteServicePolicyNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DeleteServicePolicyConflict struct {
 
 // NewDeleteServicePolicyConflict creates DeleteServicePolicyConflict with default headers values
 func NewDeleteServicePolicyConflict() *DeleteServicePolicyConflict {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteServicePolicyConflict{}
 }
 
 // WithPayload adds the payload to the delete service policy conflict response
 func (o *DeleteServicePolicyConflict) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteServicePolicyConflict {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete service policy conflict response
 func (o *DeleteServicePolicyConflict) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteServicePolicyConflict) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(409)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type DeleteServicePolicyTooManyRequests struct {
 
 // NewDeleteServicePolicyTooManyRequests creates DeleteServicePolicyTooManyRequests with default headers values
 func NewDeleteServicePolicyTooManyRequests() *DeleteServicePolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteServicePolicyTooManyRequests{}
 }
 
 // WithPayload adds the payload to the delete service policy too many requests response
 func (o *DeleteServicePolicyTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteServicePolicyTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete service policy too many requests response
 func (o *DeleteServicePolicyTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteServicePolicyTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -325,23 +350,27 @@ type DeleteServicePolicyServiceUnavailable struct {
 
 // NewDeleteServicePolicyServiceUnavailable creates DeleteServicePolicyServiceUnavailable with default headers values
 func NewDeleteServicePolicyServiceUnavailable() *DeleteServicePolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteServicePolicyServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the delete service policy service unavailable response
 func (o *DeleteServicePolicyServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteServicePolicyServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete service policy service unavailable response
 func (o *DeleteServicePolicyServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteServicePolicyServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

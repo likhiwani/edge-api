@@ -30,6 +30,7 @@ package authenticator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DetailAuthenticatorReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DetailAuthenticatorReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDetailAuthenticatorOK()
@@ -85,6 +87,7 @@ func (o *DetailAuthenticatorReader) ReadResponse(response runtime.ClientResponse
 
 // NewDetailAuthenticatorOK creates a DetailAuthenticatorOK with default headers values
 func NewDetailAuthenticatorOK() *DetailAuthenticatorOK {
+    logtrace.LogWithFunctionName()
 	return &DetailAuthenticatorOK{}
 }
 
@@ -99,49 +102,59 @@ type DetailAuthenticatorOK struct {
 
 // IsSuccess returns true when this detail authenticator o k response has a 2xx status code
 func (o *DetailAuthenticatorOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this detail authenticator o k response has a 3xx status code
 func (o *DetailAuthenticatorOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail authenticator o k response has a 4xx status code
 func (o *DetailAuthenticatorOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail authenticator o k response has a 5xx status code
 func (o *DetailAuthenticatorOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail authenticator o k response a status code equal to that given
 func (o *DetailAuthenticatorOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the detail authenticator o k response
 func (o *DetailAuthenticatorOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DetailAuthenticatorOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /authenticators/{id}][%d] detailAuthenticatorOK %s", 200, payload)
 }
 
 func (o *DetailAuthenticatorOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /authenticators/{id}][%d] detailAuthenticatorOK %s", 200, payload)
 }
 
 func (o *DetailAuthenticatorOK) GetPayload() *rest_model.DetailAuthenticatorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailAuthenticatorOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.DetailAuthenticatorEnvelope)
 
@@ -155,6 +168,7 @@ func (o *DetailAuthenticatorOK) readResponse(response runtime.ClientResponse, co
 
 // NewDetailAuthenticatorUnauthorized creates a DetailAuthenticatorUnauthorized with default headers values
 func NewDetailAuthenticatorUnauthorized() *DetailAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DetailAuthenticatorUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type DetailAuthenticatorUnauthorized struct {
 
 // IsSuccess returns true when this detail authenticator unauthorized response has a 2xx status code
 func (o *DetailAuthenticatorUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail authenticator unauthorized response has a 3xx status code
 func (o *DetailAuthenticatorUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail authenticator unauthorized response has a 4xx status code
 func (o *DetailAuthenticatorUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail authenticator unauthorized response has a 5xx status code
 func (o *DetailAuthenticatorUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail authenticator unauthorized response a status code equal to that given
 func (o *DetailAuthenticatorUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the detail authenticator unauthorized response
 func (o *DetailAuthenticatorUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DetailAuthenticatorUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /authenticators/{id}][%d] detailAuthenticatorUnauthorized %s", 401, payload)
 }
 
 func (o *DetailAuthenticatorUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /authenticators/{id}][%d] detailAuthenticatorUnauthorized %s", 401, payload)
 }
 
 func (o *DetailAuthenticatorUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailAuthenticatorUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *DetailAuthenticatorUnauthorized) readResponse(response runtime.ClientRe
 
 // NewDetailAuthenticatorNotFound creates a DetailAuthenticatorNotFound with default headers values
 func NewDetailAuthenticatorNotFound() *DetailAuthenticatorNotFound {
+    logtrace.LogWithFunctionName()
 	return &DetailAuthenticatorNotFound{}
 }
 
@@ -239,49 +264,59 @@ type DetailAuthenticatorNotFound struct {
 
 // IsSuccess returns true when this detail authenticator not found response has a 2xx status code
 func (o *DetailAuthenticatorNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail authenticator not found response has a 3xx status code
 func (o *DetailAuthenticatorNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail authenticator not found response has a 4xx status code
 func (o *DetailAuthenticatorNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail authenticator not found response has a 5xx status code
 func (o *DetailAuthenticatorNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail authenticator not found response a status code equal to that given
 func (o *DetailAuthenticatorNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the detail authenticator not found response
 func (o *DetailAuthenticatorNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DetailAuthenticatorNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /authenticators/{id}][%d] detailAuthenticatorNotFound %s", 404, payload)
 }
 
 func (o *DetailAuthenticatorNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /authenticators/{id}][%d] detailAuthenticatorNotFound %s", 404, payload)
 }
 
 func (o *DetailAuthenticatorNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailAuthenticatorNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *DetailAuthenticatorNotFound) readResponse(response runtime.ClientRespon
 
 // NewDetailAuthenticatorTooManyRequests creates a DetailAuthenticatorTooManyRequests with default headers values
 func NewDetailAuthenticatorTooManyRequests() *DetailAuthenticatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DetailAuthenticatorTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type DetailAuthenticatorTooManyRequests struct {
 
 // IsSuccess returns true when this detail authenticator too many requests response has a 2xx status code
 func (o *DetailAuthenticatorTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail authenticator too many requests response has a 3xx status code
 func (o *DetailAuthenticatorTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail authenticator too many requests response has a 4xx status code
 func (o *DetailAuthenticatorTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail authenticator too many requests response has a 5xx status code
 func (o *DetailAuthenticatorTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail authenticator too many requests response a status code equal to that given
 func (o *DetailAuthenticatorTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the detail authenticator too many requests response
 func (o *DetailAuthenticatorTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DetailAuthenticatorTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /authenticators/{id}][%d] detailAuthenticatorTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailAuthenticatorTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /authenticators/{id}][%d] detailAuthenticatorTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailAuthenticatorTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailAuthenticatorTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *DetailAuthenticatorTooManyRequests) readResponse(response runtime.Clien
 
 // NewDetailAuthenticatorServiceUnavailable creates a DetailAuthenticatorServiceUnavailable with default headers values
 func NewDetailAuthenticatorServiceUnavailable() *DetailAuthenticatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DetailAuthenticatorServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type DetailAuthenticatorServiceUnavailable struct {
 
 // IsSuccess returns true when this detail authenticator service unavailable response has a 2xx status code
 func (o *DetailAuthenticatorServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail authenticator service unavailable response has a 3xx status code
 func (o *DetailAuthenticatorServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail authenticator service unavailable response has a 4xx status code
 func (o *DetailAuthenticatorServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail authenticator service unavailable response has a 5xx status code
 func (o *DetailAuthenticatorServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this detail authenticator service unavailable response a status code equal to that given
 func (o *DetailAuthenticatorServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the detail authenticator service unavailable response
 func (o *DetailAuthenticatorServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DetailAuthenticatorServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /authenticators/{id}][%d] detailAuthenticatorServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailAuthenticatorServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /authenticators/{id}][%d] detailAuthenticatorServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailAuthenticatorServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailAuthenticatorServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

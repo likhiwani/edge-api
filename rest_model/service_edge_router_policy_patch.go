@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -60,6 +61,7 @@ type ServiceEdgeRouterPolicyPatch struct {
 
 // Validate validates this service edge router policy patch
 func (m *ServiceEdgeRouterPolicyPatch) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateEdgeRouterRoles(formats); err != nil {
@@ -85,6 +87,7 @@ func (m *ServiceEdgeRouterPolicyPatch) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ServiceEdgeRouterPolicyPatch) validateEdgeRouterRoles(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.EdgeRouterRoles) { // not required
 		return nil
 	}
@@ -102,6 +105,7 @@ func (m *ServiceEdgeRouterPolicyPatch) validateEdgeRouterRoles(formats strfmt.Re
 }
 
 func (m *ServiceEdgeRouterPolicyPatch) validateSemantic(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Semantic) { // not required
 		return nil
 	}
@@ -119,6 +123,7 @@ func (m *ServiceEdgeRouterPolicyPatch) validateSemantic(formats strfmt.Registry)
 }
 
 func (m *ServiceEdgeRouterPolicyPatch) validateServiceRoles(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.ServiceRoles) { // not required
 		return nil
 	}
@@ -136,6 +141,7 @@ func (m *ServiceEdgeRouterPolicyPatch) validateServiceRoles(formats strfmt.Regis
 }
 
 func (m *ServiceEdgeRouterPolicyPatch) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -156,6 +162,7 @@ func (m *ServiceEdgeRouterPolicyPatch) validateTags(formats strfmt.Registry) err
 
 // ContextValidate validate this service edge router policy patch based on the context it is used
 func (m *ServiceEdgeRouterPolicyPatch) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateEdgeRouterRoles(ctx, formats); err != nil {
@@ -181,6 +188,7 @@ func (m *ServiceEdgeRouterPolicyPatch) ContextValidate(ctx context.Context, form
 }
 
 func (m *ServiceEdgeRouterPolicyPatch) contextValidateEdgeRouterRoles(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.EdgeRouterRoles.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -195,6 +203,7 @@ func (m *ServiceEdgeRouterPolicyPatch) contextValidateEdgeRouterRoles(ctx contex
 }
 
 func (m *ServiceEdgeRouterPolicyPatch) contextValidateSemantic(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.Semantic) { // not required
 		return nil
@@ -213,6 +222,7 @@ func (m *ServiceEdgeRouterPolicyPatch) contextValidateSemantic(ctx context.Conte
 }
 
 func (m *ServiceEdgeRouterPolicyPatch) contextValidateServiceRoles(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.ServiceRoles.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -227,6 +237,7 @@ func (m *ServiceEdgeRouterPolicyPatch) contextValidateServiceRoles(ctx context.C
 }
 
 func (m *ServiceEdgeRouterPolicyPatch) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -249,6 +260,7 @@ func (m *ServiceEdgeRouterPolicyPatch) contextValidateTags(ctx context.Context, 
 
 // MarshalBinary interface implementation
 func (m *ServiceEdgeRouterPolicyPatch) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -257,6 +269,7 @@ func (m *ServiceEdgeRouterPolicyPatch) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ServiceEdgeRouterPolicyPatch) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ServiceEdgeRouterPolicyPatch
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

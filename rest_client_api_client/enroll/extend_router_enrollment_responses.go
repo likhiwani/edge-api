@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ExtendRouterEnrollmentReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ExtendRouterEnrollmentReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewExtendRouterEnrollmentOK()
@@ -73,6 +75,7 @@ func (o *ExtendRouterEnrollmentReader) ReadResponse(response runtime.ClientRespo
 
 // NewExtendRouterEnrollmentOK creates a ExtendRouterEnrollmentOK with default headers values
 func NewExtendRouterEnrollmentOK() *ExtendRouterEnrollmentOK {
+    logtrace.LogWithFunctionName()
 	return &ExtendRouterEnrollmentOK{}
 }
 
@@ -87,49 +90,59 @@ type ExtendRouterEnrollmentOK struct {
 
 // IsSuccess returns true when this extend router enrollment o k response has a 2xx status code
 func (o *ExtendRouterEnrollmentOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this extend router enrollment o k response has a 3xx status code
 func (o *ExtendRouterEnrollmentOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this extend router enrollment o k response has a 4xx status code
 func (o *ExtendRouterEnrollmentOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this extend router enrollment o k response has a 5xx status code
 func (o *ExtendRouterEnrollmentOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this extend router enrollment o k response a status code equal to that given
 func (o *ExtendRouterEnrollmentOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the extend router enrollment o k response
 func (o *ExtendRouterEnrollmentOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ExtendRouterEnrollmentOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/extend/router][%d] extendRouterEnrollmentOK %s", 200, payload)
 }
 
 func (o *ExtendRouterEnrollmentOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/extend/router][%d] extendRouterEnrollmentOK %s", 200, payload)
 }
 
 func (o *ExtendRouterEnrollmentOK) GetPayload() *rest_model.EnrollmentCertsEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ExtendRouterEnrollmentOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.EnrollmentCertsEnvelope)
 
@@ -143,6 +156,7 @@ func (o *ExtendRouterEnrollmentOK) readResponse(response runtime.ClientResponse,
 
 // NewExtendRouterEnrollmentUnauthorized creates a ExtendRouterEnrollmentUnauthorized with default headers values
 func NewExtendRouterEnrollmentUnauthorized() *ExtendRouterEnrollmentUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &ExtendRouterEnrollmentUnauthorized{}
 }
 
@@ -157,49 +171,59 @@ type ExtendRouterEnrollmentUnauthorized struct {
 
 // IsSuccess returns true when this extend router enrollment unauthorized response has a 2xx status code
 func (o *ExtendRouterEnrollmentUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this extend router enrollment unauthorized response has a 3xx status code
 func (o *ExtendRouterEnrollmentUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this extend router enrollment unauthorized response has a 4xx status code
 func (o *ExtendRouterEnrollmentUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this extend router enrollment unauthorized response has a 5xx status code
 func (o *ExtendRouterEnrollmentUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this extend router enrollment unauthorized response a status code equal to that given
 func (o *ExtendRouterEnrollmentUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the extend router enrollment unauthorized response
 func (o *ExtendRouterEnrollmentUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *ExtendRouterEnrollmentUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/extend/router][%d] extendRouterEnrollmentUnauthorized %s", 401, payload)
 }
 
 func (o *ExtendRouterEnrollmentUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/extend/router][%d] extendRouterEnrollmentUnauthorized %s", 401, payload)
 }
 
 func (o *ExtendRouterEnrollmentUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ExtendRouterEnrollmentUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -213,6 +237,7 @@ func (o *ExtendRouterEnrollmentUnauthorized) readResponse(response runtime.Clien
 
 // NewExtendRouterEnrollmentTooManyRequests creates a ExtendRouterEnrollmentTooManyRequests with default headers values
 func NewExtendRouterEnrollmentTooManyRequests() *ExtendRouterEnrollmentTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &ExtendRouterEnrollmentTooManyRequests{}
 }
 
@@ -227,49 +252,59 @@ type ExtendRouterEnrollmentTooManyRequests struct {
 
 // IsSuccess returns true when this extend router enrollment too many requests response has a 2xx status code
 func (o *ExtendRouterEnrollmentTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this extend router enrollment too many requests response has a 3xx status code
 func (o *ExtendRouterEnrollmentTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this extend router enrollment too many requests response has a 4xx status code
 func (o *ExtendRouterEnrollmentTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this extend router enrollment too many requests response has a 5xx status code
 func (o *ExtendRouterEnrollmentTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this extend router enrollment too many requests response a status code equal to that given
 func (o *ExtendRouterEnrollmentTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the extend router enrollment too many requests response
 func (o *ExtendRouterEnrollmentTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *ExtendRouterEnrollmentTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/extend/router][%d] extendRouterEnrollmentTooManyRequests %s", 429, payload)
 }
 
 func (o *ExtendRouterEnrollmentTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /enroll/extend/router][%d] extendRouterEnrollmentTooManyRequests %s", 429, payload)
 }
 
 func (o *ExtendRouterEnrollmentTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ExtendRouterEnrollmentTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

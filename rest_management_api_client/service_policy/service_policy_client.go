@@ -30,6 +30,7 @@ package service_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new service policy API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -107,6 +111,7 @@ CreateServicePolicy creates a service policy resource
 Create a service policy resource. Requires admin access.
 */
 func (a *Client) CreateServicePolicy(params *CreateServicePolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateServicePolicyCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreateServicePolicyParams()
@@ -148,6 +153,7 @@ DeleteServicePolicy deletes a service policy
 Delete a service policy by id. Requires admin access.
 */
 func (a *Client) DeleteServicePolicy(params *DeleteServicePolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteServicePolicyOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteServicePolicyParams()
@@ -189,6 +195,7 @@ DetailServicePolicy retrieves a single service policy
 Retrieves a single service policy by id. Requires admin access.
 */
 func (a *Client) DetailServicePolicy(params *DetailServicePolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailServicePolicyOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailServicePolicyParams()
@@ -230,6 +237,7 @@ ListServicePolicies lists service policies
 Retrieves a list of service policy resources; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListServicePolicies(params *ListServicePoliciesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListServicePoliciesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListServicePoliciesParams()
@@ -271,6 +279,7 @@ ListServicePolicyIdentities lists identities a service policy affects
 Retrieves a list of identity resources that are affected by a service policy; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListServicePolicyIdentities(params *ListServicePolicyIdentitiesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListServicePolicyIdentitiesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListServicePolicyIdentitiesParams()
@@ -312,6 +321,7 @@ ListServicePolicyPostureChecks lists posture check a service policy includes
 Retrieves a list of posture check resources that are affected by a service policy; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListServicePolicyPostureChecks(params *ListServicePolicyPostureChecksParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListServicePolicyPostureChecksOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListServicePolicyPostureChecksParams()
@@ -353,6 +363,7 @@ ListServicePolicyServices lists services a service policy affects
 Retrieves a list of service resources that are affected by a service policy; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListServicePolicyServices(params *ListServicePolicyServicesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListServicePolicyServicesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListServicePolicyServicesParams()
@@ -394,6 +405,7 @@ PatchServicePolicy updates the supplied fields on a service policy
 Update the supplied fields on a service policy. Requires admin access.
 */
 func (a *Client) PatchServicePolicy(params *PatchServicePolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PatchServicePolicyOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPatchServicePolicyParams()
@@ -435,6 +447,7 @@ UpdateServicePolicy updates all fields on a service policy
 Update all fields on a service policy by id. Requires admin access.
 */
 func (a *Client) UpdateServicePolicy(params *UpdateServicePolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UpdateServicePolicyOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUpdateServicePolicyParams()
@@ -472,5 +485,6 @@ func (a *Client) UpdateServicePolicy(params *UpdateServicePolicyParams, authInfo
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

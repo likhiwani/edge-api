@@ -30,6 +30,7 @@ package auth_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewPatchAuthPolicyParams() *PatchAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthPolicyParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewPatchAuthPolicyParams() *PatchAuthPolicyParams {
 // NewPatchAuthPolicyParamsWithTimeout creates a new PatchAuthPolicyParams object
 // with the ability to set a timeout on a request.
 func NewPatchAuthPolicyParamsWithTimeout(timeout time.Duration) *PatchAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthPolicyParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewPatchAuthPolicyParamsWithTimeout(timeout time.Duration) *PatchAuthPolicy
 // NewPatchAuthPolicyParamsWithContext creates a new PatchAuthPolicyParams object
 // with the ability to set a context for a request.
 func NewPatchAuthPolicyParamsWithContext(ctx context.Context) *PatchAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthPolicyParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewPatchAuthPolicyParamsWithContext(ctx context.Context) *PatchAuthPolicyPa
 // NewPatchAuthPolicyParamsWithHTTPClient creates a new PatchAuthPolicyParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewPatchAuthPolicyParamsWithHTTPClient(client *http.Client) *PatchAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	return &PatchAuthPolicyParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type PatchAuthPolicyParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchAuthPolicyParams) WithDefaults() *PatchAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *PatchAuthPolicyParams) WithDefaults() *PatchAuthPolicyParams {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchAuthPolicyParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the patch auth policy params
 func (o *PatchAuthPolicyParams) WithTimeout(timeout time.Duration) *PatchAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the patch auth policy params
 func (o *PatchAuthPolicyParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the patch auth policy params
 func (o *PatchAuthPolicyParams) WithContext(ctx context.Context) *PatchAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the patch auth policy params
 func (o *PatchAuthPolicyParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the patch auth policy params
 func (o *PatchAuthPolicyParams) WithHTTPClient(client *http.Client) *PatchAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the patch auth policy params
 func (o *PatchAuthPolicyParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithAuthPolicy adds the authPolicy to the patch auth policy params
 func (o *PatchAuthPolicyParams) WithAuthPolicy(authPolicy *rest_model.AuthPolicyPatch) *PatchAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetAuthPolicy(authPolicy)
 	return o
 }
 
 // SetAuthPolicy adds the authPolicy to the patch auth policy params
 func (o *PatchAuthPolicyParams) SetAuthPolicy(authPolicy *rest_model.AuthPolicyPatch) {
+    logtrace.LogWithFunctionName()
 	o.AuthPolicy = authPolicy
 }
 
 // WithID adds the id to the patch auth policy params
 func (o *PatchAuthPolicyParams) WithID(id string) *PatchAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the patch auth policy params
 func (o *PatchAuthPolicyParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *PatchAuthPolicyParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

@@ -30,6 +30,7 @@ package authenticator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -48,6 +49,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListAuthenticatorsParams() *ListAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	return &ListAuthenticatorsParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -56,6 +58,7 @@ func NewListAuthenticatorsParams() *ListAuthenticatorsParams {
 // NewListAuthenticatorsParamsWithTimeout creates a new ListAuthenticatorsParams object
 // with the ability to set a timeout on a request.
 func NewListAuthenticatorsParamsWithTimeout(timeout time.Duration) *ListAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	return &ListAuthenticatorsParams{
 		timeout: timeout,
 	}
@@ -64,6 +67,7 @@ func NewListAuthenticatorsParamsWithTimeout(timeout time.Duration) *ListAuthenti
 // NewListAuthenticatorsParamsWithContext creates a new ListAuthenticatorsParams object
 // with the ability to set a context for a request.
 func NewListAuthenticatorsParamsWithContext(ctx context.Context) *ListAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	return &ListAuthenticatorsParams{
 		Context: ctx,
 	}
@@ -72,6 +76,7 @@ func NewListAuthenticatorsParamsWithContext(ctx context.Context) *ListAuthentica
 // NewListAuthenticatorsParamsWithHTTPClient creates a new ListAuthenticatorsParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListAuthenticatorsParamsWithHTTPClient(client *http.Client) *ListAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	return &ListAuthenticatorsParams{
 		HTTPClient: client,
 	}
@@ -104,6 +109,7 @@ type ListAuthenticatorsParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListAuthenticatorsParams) WithDefaults() *ListAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -112,77 +118,91 @@ func (o *ListAuthenticatorsParams) WithDefaults() *ListAuthenticatorsParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListAuthenticatorsParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list authenticators params
 func (o *ListAuthenticatorsParams) WithTimeout(timeout time.Duration) *ListAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list authenticators params
 func (o *ListAuthenticatorsParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list authenticators params
 func (o *ListAuthenticatorsParams) WithContext(ctx context.Context) *ListAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list authenticators params
 func (o *ListAuthenticatorsParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list authenticators params
 func (o *ListAuthenticatorsParams) WithHTTPClient(client *http.Client) *ListAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list authenticators params
 func (o *ListAuthenticatorsParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithFilter adds the filter to the list authenticators params
 func (o *ListAuthenticatorsParams) WithFilter(filter *string) *ListAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	o.SetFilter(filter)
 	return o
 }
 
 // SetFilter adds the filter to the list authenticators params
 func (o *ListAuthenticatorsParams) SetFilter(filter *string) {
+    logtrace.LogWithFunctionName()
 	o.Filter = filter
 }
 
 // WithLimit adds the limit to the list authenticators params
 func (o *ListAuthenticatorsParams) WithLimit(limit *int64) *ListAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	o.SetLimit(limit)
 	return o
 }
 
 // SetLimit adds the limit to the list authenticators params
 func (o *ListAuthenticatorsParams) SetLimit(limit *int64) {
+    logtrace.LogWithFunctionName()
 	o.Limit = limit
 }
 
 // WithOffset adds the offset to the list authenticators params
 func (o *ListAuthenticatorsParams) WithOffset(offset *int64) *ListAuthenticatorsParams {
+    logtrace.LogWithFunctionName()
 	o.SetOffset(offset)
 	return o
 }
 
 // SetOffset adds the offset to the list authenticators params
 func (o *ListAuthenticatorsParams) SetOffset(offset *int64) {
+    logtrace.LogWithFunctionName()
 	o.Offset = offset
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListAuthenticatorsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

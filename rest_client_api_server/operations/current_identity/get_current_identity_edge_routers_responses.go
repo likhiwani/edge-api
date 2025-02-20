@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type GetCurrentIdentityEdgeRoutersOK struct {
 
 // NewGetCurrentIdentityEdgeRoutersOK creates GetCurrentIdentityEdgeRoutersOK with default headers values
 func NewGetCurrentIdentityEdgeRoutersOK() *GetCurrentIdentityEdgeRoutersOK {
+    logtrace.LogWithFunctionName()
 
 	return &GetCurrentIdentityEdgeRoutersOK{}
 }
 
 // WithPayload adds the payload to the get current identity edge routers o k response
 func (o *GetCurrentIdentityEdgeRoutersOK) WithPayload(payload *rest_model.ListCurrentIdentityEdgeRoutersEnvelope) *GetCurrentIdentityEdgeRoutersOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get current identity edge routers o k response
 func (o *GetCurrentIdentityEdgeRoutersOK) SetPayload(payload *rest_model.ListCurrentIdentityEdgeRoutersEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetCurrentIdentityEdgeRoutersOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type GetCurrentIdentityEdgeRoutersUnauthorized struct {
 
 // NewGetCurrentIdentityEdgeRoutersUnauthorized creates GetCurrentIdentityEdgeRoutersUnauthorized with default headers values
 func NewGetCurrentIdentityEdgeRoutersUnauthorized() *GetCurrentIdentityEdgeRoutersUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &GetCurrentIdentityEdgeRoutersUnauthorized{}
 }
 
 // WithPayload adds the payload to the get current identity edge routers unauthorized response
 func (o *GetCurrentIdentityEdgeRoutersUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *GetCurrentIdentityEdgeRoutersUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get current identity edge routers unauthorized response
 func (o *GetCurrentIdentityEdgeRoutersUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetCurrentIdentityEdgeRoutersUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type GetCurrentIdentityEdgeRoutersTooManyRequests struct {
 
 // NewGetCurrentIdentityEdgeRoutersTooManyRequests creates GetCurrentIdentityEdgeRoutersTooManyRequests with default headers values
 func NewGetCurrentIdentityEdgeRoutersTooManyRequests() *GetCurrentIdentityEdgeRoutersTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &GetCurrentIdentityEdgeRoutersTooManyRequests{}
 }
 
 // WithPayload adds the payload to the get current identity edge routers too many requests response
 func (o *GetCurrentIdentityEdgeRoutersTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *GetCurrentIdentityEdgeRoutersTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get current identity edge routers too many requests response
 func (o *GetCurrentIdentityEdgeRoutersTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetCurrentIdentityEdgeRoutersTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type GetCurrentIdentityEdgeRoutersServiceUnavailable struct {
 
 // NewGetCurrentIdentityEdgeRoutersServiceUnavailable creates GetCurrentIdentityEdgeRoutersServiceUnavailable with default headers values
 func NewGetCurrentIdentityEdgeRoutersServiceUnavailable() *GetCurrentIdentityEdgeRoutersServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &GetCurrentIdentityEdgeRoutersServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the get current identity edge routers service unavailable response
 func (o *GetCurrentIdentityEdgeRoutersServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *GetCurrentIdentityEdgeRoutersServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get current identity edge routers service unavailable response
 func (o *GetCurrentIdentityEdgeRoutersServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetCurrentIdentityEdgeRoutersServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

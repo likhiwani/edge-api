@@ -30,6 +30,7 @@ package authenticator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ReEnrollAuthenticatorCreated struct {
 
 // NewReEnrollAuthenticatorCreated creates ReEnrollAuthenticatorCreated with default headers values
 func NewReEnrollAuthenticatorCreated() *ReEnrollAuthenticatorCreated {
+    logtrace.LogWithFunctionName()
 
 	return &ReEnrollAuthenticatorCreated{}
 }
 
 // WithPayload adds the payload to the re enroll authenticator created response
 func (o *ReEnrollAuthenticatorCreated) WithPayload(payload *rest_model.CreateEnvelope) *ReEnrollAuthenticatorCreated {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the re enroll authenticator created response
 func (o *ReEnrollAuthenticatorCreated) SetPayload(payload *rest_model.CreateEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ReEnrollAuthenticatorCreated) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(201)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ReEnrollAuthenticatorUnauthorized struct {
 
 // NewReEnrollAuthenticatorUnauthorized creates ReEnrollAuthenticatorUnauthorized with default headers values
 func NewReEnrollAuthenticatorUnauthorized() *ReEnrollAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &ReEnrollAuthenticatorUnauthorized{}
 }
 
 // WithPayload adds the payload to the re enroll authenticator unauthorized response
 func (o *ReEnrollAuthenticatorUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *ReEnrollAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the re enroll authenticator unauthorized response
 func (o *ReEnrollAuthenticatorUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ReEnrollAuthenticatorUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ReEnrollAuthenticatorNotFound struct {
 
 // NewReEnrollAuthenticatorNotFound creates ReEnrollAuthenticatorNotFound with default headers values
 func NewReEnrollAuthenticatorNotFound() *ReEnrollAuthenticatorNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &ReEnrollAuthenticatorNotFound{}
 }
 
 // WithPayload adds the payload to the re enroll authenticator not found response
 func (o *ReEnrollAuthenticatorNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *ReEnrollAuthenticatorNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the re enroll authenticator not found response
 func (o *ReEnrollAuthenticatorNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ReEnrollAuthenticatorNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type ReEnrollAuthenticatorTooManyRequests struct {
 
 // NewReEnrollAuthenticatorTooManyRequests creates ReEnrollAuthenticatorTooManyRequests with default headers values
 func NewReEnrollAuthenticatorTooManyRequests() *ReEnrollAuthenticatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ReEnrollAuthenticatorTooManyRequests{}
 }
 
 // WithPayload adds the payload to the re enroll authenticator too many requests response
 func (o *ReEnrollAuthenticatorTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ReEnrollAuthenticatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the re enroll authenticator too many requests response
 func (o *ReEnrollAuthenticatorTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ReEnrollAuthenticatorTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type ReEnrollAuthenticatorServiceUnavailable struct {
 
 // NewReEnrollAuthenticatorServiceUnavailable creates ReEnrollAuthenticatorServiceUnavailable with default headers values
 func NewReEnrollAuthenticatorServiceUnavailable() *ReEnrollAuthenticatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &ReEnrollAuthenticatorServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the re enroll authenticator service unavailable response
 func (o *ReEnrollAuthenticatorServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *ReEnrollAuthenticatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the re enroll authenticator service unavailable response
 func (o *ReEnrollAuthenticatorServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ReEnrollAuthenticatorServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

@@ -30,6 +30,7 @@ package edge_router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new edge router API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -111,6 +115,7 @@ CreateEdgeRouter creates an edge router
 Create a edge router resource. Requires admin access.
 */
 func (a *Client) CreateEdgeRouter(params *CreateEdgeRouterParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateEdgeRouterCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreateEdgeRouterParams()
@@ -152,6 +157,7 @@ DeleteEdgeRouter deletes an edge router
 Delete an edge router by id. Requires admin access.
 */
 func (a *Client) DeleteEdgeRouter(params *DeleteEdgeRouterParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteEdgeRouterOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteEdgeRouterParams()
@@ -193,6 +199,7 @@ DetailEdgeRouter retrieves a single edge router
 Retrieves a single edge router by id. Requires admin access.
 */
 func (a *Client) DetailEdgeRouter(params *DetailEdgeRouterParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailEdgeRouterOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailEdgeRouterParams()
@@ -234,6 +241,7 @@ ListEdgeRouterEdgeRouterPolicies lists the edge router policies that affect an e
 Retrieves a list of edge router policies that apply to the specified edge router.
 */
 func (a *Client) ListEdgeRouterEdgeRouterPolicies(params *ListEdgeRouterEdgeRouterPoliciesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListEdgeRouterEdgeRouterPoliciesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListEdgeRouterEdgeRouterPoliciesParams()
@@ -275,6 +283,7 @@ ListEdgeRouterIdentities lists associated identities
 Retrieves a list of identities that may access services via the given edge router. Supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListEdgeRouterIdentities(params *ListEdgeRouterIdentitiesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListEdgeRouterIdentitiesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListEdgeRouterIdentitiesParams()
@@ -316,6 +325,7 @@ ListEdgeRouterServiceEdgeRouterPolicies lists the service policies that affect a
 Retrieves a list of service policies policies that apply to the specified edge router.
 */
 func (a *Client) ListEdgeRouterServiceEdgeRouterPolicies(params *ListEdgeRouterServiceEdgeRouterPoliciesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListEdgeRouterServiceEdgeRouterPoliciesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListEdgeRouterServiceEdgeRouterPoliciesParams()
@@ -357,6 +367,7 @@ ListEdgeRouterServices lists associated services
 Retrieves a list of services that may be accessed via the given edge router. Supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListEdgeRouterServices(params *ListEdgeRouterServicesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListEdgeRouterServicesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListEdgeRouterServicesParams()
@@ -398,6 +409,7 @@ ListEdgeRouters lists edge routers
 Retrieves a list of edge router resources; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListEdgeRouters(params *ListEdgeRoutersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListEdgeRoutersOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListEdgeRoutersParams()
@@ -439,6 +451,7 @@ PatchEdgeRouter updates the supplied fields on an edge router
 Update the supplied fields on an edge router. Requires admin access.
 */
 func (a *Client) PatchEdgeRouter(params *PatchEdgeRouterParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PatchEdgeRouterOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPatchEdgeRouterParams()
@@ -486,6 +499,7 @@ If the edge router has an existing outstanding enrollment JWT it will be replace
 complete the enrollment process.
 */
 func (a *Client) ReEnrollEdgeRouter(params *ReEnrollEdgeRouterParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ReEnrollEdgeRouterOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewReEnrollEdgeRouterParams()
@@ -527,6 +541,7 @@ UpdateEdgeRouter updates all fields on an edge router
 Update all fields on an edge router by id. Requires admin access.
 */
 func (a *Client) UpdateEdgeRouter(params *UpdateEdgeRouterParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UpdateEdgeRouterOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUpdateEdgeRouterParams()
@@ -564,5 +579,6 @@ func (a *Client) UpdateEdgeRouter(params *UpdateEdgeRouterParams, authInfo runti
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

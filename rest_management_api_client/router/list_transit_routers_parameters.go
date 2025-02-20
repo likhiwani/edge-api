@@ -30,6 +30,7 @@ package router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -48,6 +49,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListTransitRoutersParams() *ListTransitRoutersParams {
+    logtrace.LogWithFunctionName()
 	return &ListTransitRoutersParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -56,6 +58,7 @@ func NewListTransitRoutersParams() *ListTransitRoutersParams {
 // NewListTransitRoutersParamsWithTimeout creates a new ListTransitRoutersParams object
 // with the ability to set a timeout on a request.
 func NewListTransitRoutersParamsWithTimeout(timeout time.Duration) *ListTransitRoutersParams {
+    logtrace.LogWithFunctionName()
 	return &ListTransitRoutersParams{
 		timeout: timeout,
 	}
@@ -64,6 +67,7 @@ func NewListTransitRoutersParamsWithTimeout(timeout time.Duration) *ListTransitR
 // NewListTransitRoutersParamsWithContext creates a new ListTransitRoutersParams object
 // with the ability to set a context for a request.
 func NewListTransitRoutersParamsWithContext(ctx context.Context) *ListTransitRoutersParams {
+    logtrace.LogWithFunctionName()
 	return &ListTransitRoutersParams{
 		Context: ctx,
 	}
@@ -72,6 +76,7 @@ func NewListTransitRoutersParamsWithContext(ctx context.Context) *ListTransitRou
 // NewListTransitRoutersParamsWithHTTPClient creates a new ListTransitRoutersParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListTransitRoutersParamsWithHTTPClient(client *http.Client) *ListTransitRoutersParams {
+    logtrace.LogWithFunctionName()
 	return &ListTransitRoutersParams{
 		HTTPClient: client,
 	}
@@ -104,6 +109,7 @@ type ListTransitRoutersParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListTransitRoutersParams) WithDefaults() *ListTransitRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -112,77 +118,91 @@ func (o *ListTransitRoutersParams) WithDefaults() *ListTransitRoutersParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListTransitRoutersParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list transit routers params
 func (o *ListTransitRoutersParams) WithTimeout(timeout time.Duration) *ListTransitRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list transit routers params
 func (o *ListTransitRoutersParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list transit routers params
 func (o *ListTransitRoutersParams) WithContext(ctx context.Context) *ListTransitRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list transit routers params
 func (o *ListTransitRoutersParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list transit routers params
 func (o *ListTransitRoutersParams) WithHTTPClient(client *http.Client) *ListTransitRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list transit routers params
 func (o *ListTransitRoutersParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithFilter adds the filter to the list transit routers params
 func (o *ListTransitRoutersParams) WithFilter(filter *string) *ListTransitRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetFilter(filter)
 	return o
 }
 
 // SetFilter adds the filter to the list transit routers params
 func (o *ListTransitRoutersParams) SetFilter(filter *string) {
+    logtrace.LogWithFunctionName()
 	o.Filter = filter
 }
 
 // WithLimit adds the limit to the list transit routers params
 func (o *ListTransitRoutersParams) WithLimit(limit *int64) *ListTransitRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetLimit(limit)
 	return o
 }
 
 // SetLimit adds the limit to the list transit routers params
 func (o *ListTransitRoutersParams) SetLimit(limit *int64) {
+    logtrace.LogWithFunctionName()
 	o.Limit = limit
 }
 
 // WithOffset adds the offset to the list transit routers params
 func (o *ListTransitRoutersParams) WithOffset(offset *int64) *ListTransitRoutersParams {
+    logtrace.LogWithFunctionName()
 	o.SetOffset(offset)
 	return o
 }
 
 // SetOffset adds the offset to the list transit routers params
 func (o *ListTransitRoutersParams) SetOffset(offset *int64) {
+    logtrace.LogWithFunctionName()
 	o.Offset = offset
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListTransitRoutersParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

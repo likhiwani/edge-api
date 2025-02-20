@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"strconv"
 
@@ -51,6 +52,7 @@ type PostureResponse struct {
 
 // Validate validates this posture response
 func (m *PostureResponse) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateServices(formats); err != nil {
@@ -64,6 +66,7 @@ func (m *PostureResponse) Validate(formats strfmt.Registry) error {
 }
 
 func (m *PostureResponse) validateServices(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("services", "body", m.Services); err != nil {
 		return err
@@ -92,6 +95,7 @@ func (m *PostureResponse) validateServices(formats strfmt.Registry) error {
 
 // ContextValidate validate this posture response based on the context it is used
 func (m *PostureResponse) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateServices(ctx, formats); err != nil {
@@ -105,6 +109,7 @@ func (m *PostureResponse) ContextValidate(ctx context.Context, formats strfmt.Re
 }
 
 func (m *PostureResponse) contextValidateServices(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	for i := 0; i < len(m.Services); i++ {
 
@@ -131,6 +136,7 @@ func (m *PostureResponse) contextValidateServices(ctx context.Context, formats s
 
 // MarshalBinary interface implementation
 func (m *PostureResponse) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -139,6 +145,7 @@ func (m *PostureResponse) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureResponse) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureResponse
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

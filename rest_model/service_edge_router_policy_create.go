@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -63,6 +64,7 @@ type ServiceEdgeRouterPolicyCreate struct {
 
 // Validate validates this service edge router policy create
 func (m *ServiceEdgeRouterPolicyCreate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateEdgeRouterRoles(formats); err != nil {
@@ -92,6 +94,7 @@ func (m *ServiceEdgeRouterPolicyCreate) Validate(formats strfmt.Registry) error 
 }
 
 func (m *ServiceEdgeRouterPolicyCreate) validateEdgeRouterRoles(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.EdgeRouterRoles) { // not required
 		return nil
 	}
@@ -109,6 +112,7 @@ func (m *ServiceEdgeRouterPolicyCreate) validateEdgeRouterRoles(formats strfmt.R
 }
 
 func (m *ServiceEdgeRouterPolicyCreate) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -118,6 +122,7 @@ func (m *ServiceEdgeRouterPolicyCreate) validateName(formats strfmt.Registry) er
 }
 
 func (m *ServiceEdgeRouterPolicyCreate) validateSemantic(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("semantic", "body", m.Semantic); err != nil {
 		return err
@@ -142,6 +147,7 @@ func (m *ServiceEdgeRouterPolicyCreate) validateSemantic(formats strfmt.Registry
 }
 
 func (m *ServiceEdgeRouterPolicyCreate) validateServiceRoles(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.ServiceRoles) { // not required
 		return nil
 	}
@@ -159,6 +165,7 @@ func (m *ServiceEdgeRouterPolicyCreate) validateServiceRoles(formats strfmt.Regi
 }
 
 func (m *ServiceEdgeRouterPolicyCreate) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -179,6 +186,7 @@ func (m *ServiceEdgeRouterPolicyCreate) validateTags(formats strfmt.Registry) er
 
 // ContextValidate validate this service edge router policy create based on the context it is used
 func (m *ServiceEdgeRouterPolicyCreate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateEdgeRouterRoles(ctx, formats); err != nil {
@@ -204,6 +212,7 @@ func (m *ServiceEdgeRouterPolicyCreate) ContextValidate(ctx context.Context, for
 }
 
 func (m *ServiceEdgeRouterPolicyCreate) contextValidateEdgeRouterRoles(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.EdgeRouterRoles.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -218,6 +227,7 @@ func (m *ServiceEdgeRouterPolicyCreate) contextValidateEdgeRouterRoles(ctx conte
 }
 
 func (m *ServiceEdgeRouterPolicyCreate) contextValidateSemantic(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Semantic != nil {
 
@@ -235,6 +245,7 @@ func (m *ServiceEdgeRouterPolicyCreate) contextValidateSemantic(ctx context.Cont
 }
 
 func (m *ServiceEdgeRouterPolicyCreate) contextValidateServiceRoles(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.ServiceRoles.ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -249,6 +260,7 @@ func (m *ServiceEdgeRouterPolicyCreate) contextValidateServiceRoles(ctx context.
 }
 
 func (m *ServiceEdgeRouterPolicyCreate) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -271,6 +283,7 @@ func (m *ServiceEdgeRouterPolicyCreate) contextValidateTags(ctx context.Context,
 
 // MarshalBinary interface implementation
 func (m *ServiceEdgeRouterPolicyCreate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -279,6 +292,7 @@ func (m *ServiceEdgeRouterPolicyCreate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ServiceEdgeRouterPolicyCreate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ServiceEdgeRouterPolicyCreate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

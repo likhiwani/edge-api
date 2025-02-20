@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type GetIdentityPolicyAdviceOK struct {
 
 // NewGetIdentityPolicyAdviceOK creates GetIdentityPolicyAdviceOK with default headers values
 func NewGetIdentityPolicyAdviceOK() *GetIdentityPolicyAdviceOK {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityPolicyAdviceOK{}
 }
 
 // WithPayload adds the payload to the get identity policy advice o k response
 func (o *GetIdentityPolicyAdviceOK) WithPayload(payload *rest_model.GetIdentityPolicyAdviceEnvelope) *GetIdentityPolicyAdviceOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity policy advice o k response
 func (o *GetIdentityPolicyAdviceOK) SetPayload(payload *rest_model.GetIdentityPolicyAdviceEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityPolicyAdviceOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type GetIdentityPolicyAdviceUnauthorized struct {
 
 // NewGetIdentityPolicyAdviceUnauthorized creates GetIdentityPolicyAdviceUnauthorized with default headers values
 func NewGetIdentityPolicyAdviceUnauthorized() *GetIdentityPolicyAdviceUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityPolicyAdviceUnauthorized{}
 }
 
 // WithPayload adds the payload to the get identity policy advice unauthorized response
 func (o *GetIdentityPolicyAdviceUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityPolicyAdviceUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity policy advice unauthorized response
 func (o *GetIdentityPolicyAdviceUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityPolicyAdviceUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type GetIdentityPolicyAdviceNotFound struct {
 
 // NewGetIdentityPolicyAdviceNotFound creates GetIdentityPolicyAdviceNotFound with default headers values
 func NewGetIdentityPolicyAdviceNotFound() *GetIdentityPolicyAdviceNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityPolicyAdviceNotFound{}
 }
 
 // WithPayload adds the payload to the get identity policy advice not found response
 func (o *GetIdentityPolicyAdviceNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityPolicyAdviceNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity policy advice not found response
 func (o *GetIdentityPolicyAdviceNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityPolicyAdviceNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type GetIdentityPolicyAdviceTooManyRequests struct {
 
 // NewGetIdentityPolicyAdviceTooManyRequests creates GetIdentityPolicyAdviceTooManyRequests with default headers values
 func NewGetIdentityPolicyAdviceTooManyRequests() *GetIdentityPolicyAdviceTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityPolicyAdviceTooManyRequests{}
 }
 
 // WithPayload adds the payload to the get identity policy advice too many requests response
 func (o *GetIdentityPolicyAdviceTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityPolicyAdviceTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity policy advice too many requests response
 func (o *GetIdentityPolicyAdviceTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityPolicyAdviceTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type GetIdentityPolicyAdviceServiceUnavailable struct {
 
 // NewGetIdentityPolicyAdviceServiceUnavailable creates GetIdentityPolicyAdviceServiceUnavailable with default headers values
 func NewGetIdentityPolicyAdviceServiceUnavailable() *GetIdentityPolicyAdviceServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &GetIdentityPolicyAdviceServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the get identity policy advice service unavailable response
 func (o *GetIdentityPolicyAdviceServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *GetIdentityPolicyAdviceServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get identity policy advice service unavailable response
 func (o *GetIdentityPolicyAdviceServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetIdentityPolicyAdviceServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

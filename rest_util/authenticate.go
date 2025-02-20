@@ -22,14 +22,16 @@ import (
 	"crypto/tls"
 	"crypto/x509"
 	"fmt"
-	"github.com/go-openapi/runtime"
-	openapiclient "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
+	"net/http"
+	"net/url"
 	"ztna-core/edge-api/rest_management_api_client"
 	"ztna-core/edge-api/rest_management_api_client/authentication"
 	"ztna-core/edge-api/rest_model"
-	"net/http"
-	"net/url"
+	"ztna-core/ztna/logtrace"
+
+	"github.com/go-openapi/runtime"
+	openapiclient "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/strfmt"
 )
 
 // Authenticator is an interface that facilitates obtaining an API Session.
@@ -66,6 +68,7 @@ type AuthenticatorBase struct {
 // BuildHttpClientWithModifyTls builds a new http.Client with the provided HttpClientFunc and TlsConfigFunc.
 // If not set, default NewHttpClientWithTlsConfig and NewTlsConfig will be used.
 func (a *AuthenticatorBase) BuildHttpClientWithModifyTls(modifyTls func(*tls.Config)) (*http.Client, error) {
+	logtrace.LogWithFunctionName()
 	if a.HttpClientFunc == nil {
 		a.HttpClientFunc = NewHttpClientWithTlsConfig
 	}
@@ -95,6 +98,7 @@ func (a *AuthenticatorBase) BuildHttpClientWithModifyTls(modifyTls func(*tls.Con
 }
 
 func (a *AuthenticatorBase) SetInfo(env *rest_model.EnvInfo, sdk *rest_model.SdkInfo) {
+	logtrace.LogWithFunctionName()
 	a.EnvInfo = env
 	a.SdkInfo = sdk
 }
@@ -110,6 +114,7 @@ type AuthenticatorUpdb struct {
 }
 
 func NewAuthenticatorUpdb(username, password string) *AuthenticatorUpdb {
+	logtrace.LogWithFunctionName()
 	return &AuthenticatorUpdb{
 		Username: username,
 		Password: password,
@@ -117,10 +122,12 @@ func NewAuthenticatorUpdb(username, password string) *AuthenticatorUpdb {
 }
 
 func (a *AuthenticatorUpdb) BuildHttpClient() (*http.Client, error) {
+	logtrace.LogWithFunctionName()
 	return a.BuildHttpClientWithModifyTls(nil)
 }
 
 func (a *AuthenticatorUpdb) Params() *authentication.AuthenticateParams {
+	logtrace.LogWithFunctionName()
 	return &authentication.AuthenticateParams{
 		Auth: &rest_model.Authenticate{
 			ConfigTypes: a.ConfigTypes,
@@ -135,6 +142,7 @@ func (a *AuthenticatorUpdb) Params() *authentication.AuthenticateParams {
 }
 
 func (a *AuthenticatorUpdb) Authenticate(controllerAddress *url.URL) (*rest_model.CurrentAPISessionDetail, error) {
+	logtrace.LogWithFunctionName()
 	httpClient, err := a.BuildHttpClientWithModifyTls(nil)
 
 	if err != nil {
@@ -182,6 +190,7 @@ type AuthenticatorIdentity struct {
 }
 
 func (a *AuthenticatorIdentity) BuildHttpClient() (*http.Client, error) {
+	logtrace.LogWithFunctionName()
 	return a.BuildHttpClientWithModifyTls(func(config *tls.Config) {
 		src := a.CertProvider.ClientTLSConfig()
 		config.Certificates = src.Certificates
@@ -198,6 +207,7 @@ type AuthenticatorCert struct {
 }
 
 func NewAuthenticatorCert(cert *x509.Certificate, privateKey crypto.PrivateKey) *AuthenticatorCert {
+	logtrace.LogWithFunctionName()
 	return &AuthenticatorCert{
 		Certificate: cert,
 		PrivateKey:  privateKey,
@@ -205,6 +215,7 @@ func NewAuthenticatorCert(cert *x509.Certificate, privateKey crypto.PrivateKey) 
 }
 
 func (a *AuthenticatorCert) BuildHttpClient() (*http.Client, error) {
+	logtrace.LogWithFunctionName()
 	return a.BuildHttpClientWithModifyTls(func(config *tls.Config) {
 		config.Certificates = []tls.Certificate{
 			{
@@ -217,6 +228,7 @@ func (a *AuthenticatorCert) BuildHttpClient() (*http.Client, error) {
 }
 
 func (a *AuthenticatorCert) Authenticate(controllerAddress *url.URL) (*rest_model.CurrentAPISessionDetail, error) {
+	logtrace.LogWithFunctionName()
 	httpClient, err := a.BuildHttpClient()
 	if err != nil {
 		return nil, err
@@ -247,6 +259,7 @@ func (a *AuthenticatorCert) Authenticate(controllerAddress *url.URL) (*rest_mode
 }
 
 func (a *AuthenticatorCert) Params() *authentication.AuthenticateParams {
+	logtrace.LogWithFunctionName()
 	return &authentication.AuthenticateParams{
 		Auth: &rest_model.Authenticate{
 			ConfigTypes: a.ConfigTypes,
@@ -264,22 +277,26 @@ type AuthenticatorAuthHeader struct {
 }
 
 func (a *AuthenticatorAuthHeader) AuthenticateRequest(request runtime.ClientRequest, registry strfmt.Registry) error {
+	logtrace.LogWithFunctionName()
 	return request.SetHeaderParam("authorization", a.Token)
 }
 
 func (a *AuthenticatorAuthHeader) BuildHttpClient() (*http.Client, error) {
+	logtrace.LogWithFunctionName()
 	return a.AuthenticatorBase.BuildHttpClientWithModifyTls(func(config *tls.Config) {
 		config.InsecureSkipVerify = true
 	})
 }
 
 func NewAuthenticatorAuthHeader(token string) *AuthenticatorAuthHeader {
+	logtrace.LogWithFunctionName()
 	return &AuthenticatorAuthHeader{
 		Token: token,
 	}
 }
 
 func (a *AuthenticatorAuthHeader) Params() *authentication.AuthenticateParams {
+	logtrace.LogWithFunctionName()
 	return &authentication.AuthenticateParams{
 		Auth: &rest_model.Authenticate{
 			ConfigTypes: a.ConfigTypes,
@@ -292,6 +309,7 @@ func (a *AuthenticatorAuthHeader) Params() *authentication.AuthenticateParams {
 }
 
 func (a *AuthenticatorAuthHeader) Authenticate(controllerAddress *url.URL) (*rest_model.CurrentAPISessionDetail, error) {
+	logtrace.LogWithFunctionName()
 	httpClient, err := a.BuildHttpClient()
 
 	if err != nil {

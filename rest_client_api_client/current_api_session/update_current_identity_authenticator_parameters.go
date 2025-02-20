@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewUpdateCurrentIdentityAuthenticatorParams() *UpdateCurrentIdentityAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateCurrentIdentityAuthenticatorParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewUpdateCurrentIdentityAuthenticatorParams() *UpdateCurrentIdentityAuthent
 // NewUpdateCurrentIdentityAuthenticatorParamsWithTimeout creates a new UpdateCurrentIdentityAuthenticatorParams object
 // with the ability to set a timeout on a request.
 func NewUpdateCurrentIdentityAuthenticatorParamsWithTimeout(timeout time.Duration) *UpdateCurrentIdentityAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateCurrentIdentityAuthenticatorParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewUpdateCurrentIdentityAuthenticatorParamsWithTimeout(timeout time.Duratio
 // NewUpdateCurrentIdentityAuthenticatorParamsWithContext creates a new UpdateCurrentIdentityAuthenticatorParams object
 // with the ability to set a context for a request.
 func NewUpdateCurrentIdentityAuthenticatorParamsWithContext(ctx context.Context) *UpdateCurrentIdentityAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateCurrentIdentityAuthenticatorParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewUpdateCurrentIdentityAuthenticatorParamsWithContext(ctx context.Context)
 // NewUpdateCurrentIdentityAuthenticatorParamsWithHTTPClient creates a new UpdateCurrentIdentityAuthenticatorParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewUpdateCurrentIdentityAuthenticatorParamsWithHTTPClient(client *http.Client) *UpdateCurrentIdentityAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	return &UpdateCurrentIdentityAuthenticatorParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type UpdateCurrentIdentityAuthenticatorParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *UpdateCurrentIdentityAuthenticatorParams) WithDefaults() *UpdateCurrentIdentityAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *UpdateCurrentIdentityAuthenticatorParams) WithDefaults() *UpdateCurrent
 //
 // All values with no default are reset to their zero value.
 func (o *UpdateCurrentIdentityAuthenticatorParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the update current identity authenticator params
 func (o *UpdateCurrentIdentityAuthenticatorParams) WithTimeout(timeout time.Duration) *UpdateCurrentIdentityAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the update current identity authenticator params
 func (o *UpdateCurrentIdentityAuthenticatorParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the update current identity authenticator params
 func (o *UpdateCurrentIdentityAuthenticatorParams) WithContext(ctx context.Context) *UpdateCurrentIdentityAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the update current identity authenticator params
 func (o *UpdateCurrentIdentityAuthenticatorParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the update current identity authenticator params
 func (o *UpdateCurrentIdentityAuthenticatorParams) WithHTTPClient(client *http.Client) *UpdateCurrentIdentityAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the update current identity authenticator params
 func (o *UpdateCurrentIdentityAuthenticatorParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithAuthenticator adds the authenticator to the update current identity authenticator params
 func (o *UpdateCurrentIdentityAuthenticatorParams) WithAuthenticator(authenticator *rest_model.AuthenticatorUpdateWithCurrent) *UpdateCurrentIdentityAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetAuthenticator(authenticator)
 	return o
 }
 
 // SetAuthenticator adds the authenticator to the update current identity authenticator params
 func (o *UpdateCurrentIdentityAuthenticatorParams) SetAuthenticator(authenticator *rest_model.AuthenticatorUpdateWithCurrent) {
+    logtrace.LogWithFunctionName()
 	o.Authenticator = authenticator
 }
 
 // WithID adds the id to the update current identity authenticator params
 func (o *UpdateCurrentIdentityAuthenticatorParams) WithID(id string) *UpdateCurrentIdentityAuthenticatorParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the update current identity authenticator params
 func (o *UpdateCurrentIdentityAuthenticatorParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *UpdateCurrentIdentityAuthenticatorParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

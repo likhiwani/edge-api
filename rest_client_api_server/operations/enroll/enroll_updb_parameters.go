@@ -30,6 +30,7 @@ package enroll
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"io"
 	"net/http"
 
@@ -44,6 +45,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewEnrollUpdbParams() EnrollUpdbParams {
+    logtrace.LogWithFunctionName()
 
 	return EnrollUpdbParams{}
 }
@@ -74,6 +76,7 @@ type EnrollUpdbParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewEnrollUpdbParams() beforehand.
 func (o *EnrollUpdbParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r
@@ -120,6 +123,7 @@ func (o *EnrollUpdbParams) BindRequest(r *http.Request, route *middleware.Matche
 
 // bindToken binds and validates parameter Token from query.
 func (o *EnrollUpdbParams) bindToken(rawData []string, hasKey bool, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if !hasKey {
 		return errors.Required("token", "query", rawData)
 	}
@@ -151,6 +155,7 @@ func (o *EnrollUpdbParams) bindToken(rawData []string, hasKey bool, formats strf
 
 // validateToken carries on validations for parameter Token
 func (o *EnrollUpdbParams) validateToken(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.FormatOf("token", "query", "uuid", o.Token.String(), formats); err != nil {
 		return err

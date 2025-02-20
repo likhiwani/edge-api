@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -48,6 +49,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListCasParams() *ListCasParams {
+    logtrace.LogWithFunctionName()
 	return &ListCasParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -56,6 +58,7 @@ func NewListCasParams() *ListCasParams {
 // NewListCasParamsWithTimeout creates a new ListCasParams object
 // with the ability to set a timeout on a request.
 func NewListCasParamsWithTimeout(timeout time.Duration) *ListCasParams {
+    logtrace.LogWithFunctionName()
 	return &ListCasParams{
 		timeout: timeout,
 	}
@@ -64,6 +67,7 @@ func NewListCasParamsWithTimeout(timeout time.Duration) *ListCasParams {
 // NewListCasParamsWithContext creates a new ListCasParams object
 // with the ability to set a context for a request.
 func NewListCasParamsWithContext(ctx context.Context) *ListCasParams {
+    logtrace.LogWithFunctionName()
 	return &ListCasParams{
 		Context: ctx,
 	}
@@ -72,6 +76,7 @@ func NewListCasParamsWithContext(ctx context.Context) *ListCasParams {
 // NewListCasParamsWithHTTPClient creates a new ListCasParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListCasParamsWithHTTPClient(client *http.Client) *ListCasParams {
+    logtrace.LogWithFunctionName()
 	return &ListCasParams{
 		HTTPClient: client,
 	}
@@ -104,6 +109,7 @@ type ListCasParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListCasParams) WithDefaults() *ListCasParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -112,77 +118,91 @@ func (o *ListCasParams) WithDefaults() *ListCasParams {
 //
 // All values with no default are reset to their zero value.
 func (o *ListCasParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list cas params
 func (o *ListCasParams) WithTimeout(timeout time.Duration) *ListCasParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list cas params
 func (o *ListCasParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list cas params
 func (o *ListCasParams) WithContext(ctx context.Context) *ListCasParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list cas params
 func (o *ListCasParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list cas params
 func (o *ListCasParams) WithHTTPClient(client *http.Client) *ListCasParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list cas params
 func (o *ListCasParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithFilter adds the filter to the list cas params
 func (o *ListCasParams) WithFilter(filter *string) *ListCasParams {
+    logtrace.LogWithFunctionName()
 	o.SetFilter(filter)
 	return o
 }
 
 // SetFilter adds the filter to the list cas params
 func (o *ListCasParams) SetFilter(filter *string) {
+    logtrace.LogWithFunctionName()
 	o.Filter = filter
 }
 
 // WithLimit adds the limit to the list cas params
 func (o *ListCasParams) WithLimit(limit *int64) *ListCasParams {
+    logtrace.LogWithFunctionName()
 	o.SetLimit(limit)
 	return o
 }
 
 // SetLimit adds the limit to the list cas params
 func (o *ListCasParams) SetLimit(limit *int64) {
+    logtrace.LogWithFunctionName()
 	o.Limit = limit
 }
 
 // WithOffset adds the offset to the list cas params
 func (o *ListCasParams) WithOffset(offset *int64) *ListCasParams {
+    logtrace.LogWithFunctionName()
 	o.SetOffset(offset)
 	return o
 }
 
 // SetOffset adds the offset to the list cas params
 func (o *ListCasParams) SetOffset(offset *int64) {
+    logtrace.LogWithFunctionName()
 	o.Offset = offset
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListCasParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

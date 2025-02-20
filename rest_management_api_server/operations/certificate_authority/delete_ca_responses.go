@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DeleteCaOK struct {
 
 // NewDeleteCaOK creates DeleteCaOK with default headers values
 func NewDeleteCaOK() *DeleteCaOK {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteCaOK{}
 }
 
 // WithPayload adds the payload to the delete ca o k response
 func (o *DeleteCaOK) WithPayload(payload *rest_model.Empty) *DeleteCaOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete ca o k response
 func (o *DeleteCaOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteCaOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DeleteCaBadRequest struct {
 
 // NewDeleteCaBadRequest creates DeleteCaBadRequest with default headers values
 func NewDeleteCaBadRequest() *DeleteCaBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteCaBadRequest{}
 }
 
 // WithPayload adds the payload to the delete ca bad request response
 func (o *DeleteCaBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteCaBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete ca bad request response
 func (o *DeleteCaBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteCaBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DeleteCaUnauthorized struct {
 
 // NewDeleteCaUnauthorized creates DeleteCaUnauthorized with default headers values
 func NewDeleteCaUnauthorized() *DeleteCaUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteCaUnauthorized{}
 }
 
 // WithPayload adds the payload to the delete ca unauthorized response
 func (o *DeleteCaUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteCaUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete ca unauthorized response
 func (o *DeleteCaUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteCaUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type DeleteCaNotFound struct {
 
 // NewDeleteCaNotFound creates DeleteCaNotFound with default headers values
 func NewDeleteCaNotFound() *DeleteCaNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteCaNotFound{}
 }
 
 // WithPayload adds the payload to the delete ca not found response
 func (o *DeleteCaNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteCaNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete ca not found response
 func (o *DeleteCaNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteCaNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type DeleteCaTooManyRequests struct {
 
 // NewDeleteCaTooManyRequests creates DeleteCaTooManyRequests with default headers values
 func NewDeleteCaTooManyRequests() *DeleteCaTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteCaTooManyRequests{}
 }
 
 // WithPayload adds the payload to the delete ca too many requests response
 func (o *DeleteCaTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteCaTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete ca too many requests response
 func (o *DeleteCaTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteCaTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type DeleteCaServiceUnavailable struct {
 
 // NewDeleteCaServiceUnavailable creates DeleteCaServiceUnavailable with default headers values
 func NewDeleteCaServiceUnavailable() *DeleteCaServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &DeleteCaServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the delete ca service unavailable response
 func (o *DeleteCaServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *DeleteCaServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the delete ca service unavailable response
 func (o *DeleteCaServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DeleteCaServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

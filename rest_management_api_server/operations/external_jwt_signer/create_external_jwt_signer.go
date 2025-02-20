@@ -30,6 +30,7 @@ package external_jwt_signer
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type CreateExternalJWTSignerHandlerFunc func(CreateExternalJWTSignerParams, inte
 
 // Handle executing the request and returning a response
 func (fn CreateExternalJWTSignerHandlerFunc) Handle(params CreateExternalJWTSignerParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type CreateExternalJWTSignerHandler interface {
 
 // NewCreateExternalJWTSigner creates a new http.Handler for the create external Jwt signer operation
 func NewCreateExternalJWTSigner(ctx *middleware.Context, handler CreateExternalJWTSignerHandler) *CreateExternalJWTSigner {
+    logtrace.LogWithFunctionName()
 	return &CreateExternalJWTSigner{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type CreateExternalJWTSigner struct {
 }
 
 func (o *CreateExternalJWTSigner) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

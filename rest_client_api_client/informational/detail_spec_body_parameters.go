@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDetailSpecBodyParams() *DetailSpecBodyParams {
+    logtrace.LogWithFunctionName()
 	return &DetailSpecBodyParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDetailSpecBodyParams() *DetailSpecBodyParams {
 // NewDetailSpecBodyParamsWithTimeout creates a new DetailSpecBodyParams object
 // with the ability to set a timeout on a request.
 func NewDetailSpecBodyParamsWithTimeout(timeout time.Duration) *DetailSpecBodyParams {
+    logtrace.LogWithFunctionName()
 	return &DetailSpecBodyParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDetailSpecBodyParamsWithTimeout(timeout time.Duration) *DetailSpecBodyPa
 // NewDetailSpecBodyParamsWithContext creates a new DetailSpecBodyParams object
 // with the ability to set a context for a request.
 func NewDetailSpecBodyParamsWithContext(ctx context.Context) *DetailSpecBodyParams {
+    logtrace.LogWithFunctionName()
 	return &DetailSpecBodyParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDetailSpecBodyParamsWithContext(ctx context.Context) *DetailSpecBodyPara
 // NewDetailSpecBodyParamsWithHTTPClient creates a new DetailSpecBodyParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDetailSpecBodyParamsWithHTTPClient(client *http.Client) *DetailSpecBodyParams {
+    logtrace.LogWithFunctionName()
 	return &DetailSpecBodyParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DetailSpecBodyParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailSpecBodyParams) WithDefaults() *DetailSpecBodyParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DetailSpecBodyParams) WithDefaults() *DetailSpecBodyParams {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailSpecBodyParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the detail spec body params
 func (o *DetailSpecBodyParams) WithTimeout(timeout time.Duration) *DetailSpecBodyParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the detail spec body params
 func (o *DetailSpecBodyParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the detail spec body params
 func (o *DetailSpecBodyParams) WithContext(ctx context.Context) *DetailSpecBodyParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the detail spec body params
 func (o *DetailSpecBodyParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the detail spec body params
 func (o *DetailSpecBodyParams) WithHTTPClient(client *http.Client) *DetailSpecBodyParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the detail spec body params
 func (o *DetailSpecBodyParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the detail spec body params
 func (o *DetailSpecBodyParams) WithID(id string) *DetailSpecBodyParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the detail spec body params
 func (o *DetailSpecBodyParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DetailSpecBodyParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

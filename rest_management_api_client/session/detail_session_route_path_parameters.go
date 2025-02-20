@@ -30,6 +30,7 @@ package session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDetailSessionRoutePathParams() *DetailSessionRoutePathParams {
+    logtrace.LogWithFunctionName()
 	return &DetailSessionRoutePathParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDetailSessionRoutePathParams() *DetailSessionRoutePathParams {
 // NewDetailSessionRoutePathParamsWithTimeout creates a new DetailSessionRoutePathParams object
 // with the ability to set a timeout on a request.
 func NewDetailSessionRoutePathParamsWithTimeout(timeout time.Duration) *DetailSessionRoutePathParams {
+    logtrace.LogWithFunctionName()
 	return &DetailSessionRoutePathParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDetailSessionRoutePathParamsWithTimeout(timeout time.Duration) *DetailSe
 // NewDetailSessionRoutePathParamsWithContext creates a new DetailSessionRoutePathParams object
 // with the ability to set a context for a request.
 func NewDetailSessionRoutePathParamsWithContext(ctx context.Context) *DetailSessionRoutePathParams {
+    logtrace.LogWithFunctionName()
 	return &DetailSessionRoutePathParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDetailSessionRoutePathParamsWithContext(ctx context.Context) *DetailSess
 // NewDetailSessionRoutePathParamsWithHTTPClient creates a new DetailSessionRoutePathParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDetailSessionRoutePathParamsWithHTTPClient(client *http.Client) *DetailSessionRoutePathParams {
+    logtrace.LogWithFunctionName()
 	return &DetailSessionRoutePathParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DetailSessionRoutePathParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DetailSessionRoutePathParams) WithDefaults() *DetailSessionRoutePathParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DetailSessionRoutePathParams) WithDefaults() *DetailSessionRoutePathPar
 //
 // All values with no default are reset to their zero value.
 func (o *DetailSessionRoutePathParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the detail session route path params
 func (o *DetailSessionRoutePathParams) WithTimeout(timeout time.Duration) *DetailSessionRoutePathParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the detail session route path params
 func (o *DetailSessionRoutePathParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the detail session route path params
 func (o *DetailSessionRoutePathParams) WithContext(ctx context.Context) *DetailSessionRoutePathParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the detail session route path params
 func (o *DetailSessionRoutePathParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the detail session route path params
 func (o *DetailSessionRoutePathParams) WithHTTPClient(client *http.Client) *DetailSessionRoutePathParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the detail session route path params
 func (o *DetailSessionRoutePathParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the detail session route path params
 func (o *DetailSessionRoutePathParams) WithID(id string) *DetailSessionRoutePathParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the detail session route path params
 func (o *DetailSessionRoutePathParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DetailSessionRoutePathParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

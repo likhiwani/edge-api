@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"bytes"
 	"context"
 	"encoding/json"
@@ -121,95 +122,114 @@ type postureCheckDetail struct {
 
 // Links gets the links of this polymorphic type
 func (m *postureCheckDetail) Links() Links {
+    logtrace.LogWithFunctionName()
 	return m.linksField
 }
 
 // SetLinks sets the links of this polymorphic type
 func (m *postureCheckDetail) SetLinks(val Links) {
+    logtrace.LogWithFunctionName()
 	m.linksField = val
 }
 
 // CreatedAt gets the created at of this polymorphic type
 func (m *postureCheckDetail) CreatedAt() *strfmt.DateTime {
+    logtrace.LogWithFunctionName()
 	return m.createdAtField
 }
 
 // SetCreatedAt sets the created at of this polymorphic type
 func (m *postureCheckDetail) SetCreatedAt(val *strfmt.DateTime) {
+    logtrace.LogWithFunctionName()
 	m.createdAtField = val
 }
 
 // ID gets the id of this polymorphic type
 func (m *postureCheckDetail) ID() *string {
+    logtrace.LogWithFunctionName()
 	return m.idField
 }
 
 // SetID sets the id of this polymorphic type
 func (m *postureCheckDetail) SetID(val *string) {
+    logtrace.LogWithFunctionName()
 	m.idField = val
 }
 
 // Name gets the name of this polymorphic type
 func (m *postureCheckDetail) Name() *string {
+    logtrace.LogWithFunctionName()
 	return m.nameField
 }
 
 // SetName sets the name of this polymorphic type
 func (m *postureCheckDetail) SetName(val *string) {
+    logtrace.LogWithFunctionName()
 	m.nameField = val
 }
 
 // RoleAttributes gets the role attributes of this polymorphic type
 func (m *postureCheckDetail) RoleAttributes() *Attributes {
+    logtrace.LogWithFunctionName()
 	return m.roleAttributesField
 }
 
 // SetRoleAttributes sets the role attributes of this polymorphic type
 func (m *postureCheckDetail) SetRoleAttributes(val *Attributes) {
+    logtrace.LogWithFunctionName()
 	m.roleAttributesField = val
 }
 
 // Tags gets the tags of this polymorphic type
 func (m *postureCheckDetail) Tags() *Tags {
+    logtrace.LogWithFunctionName()
 	return m.tagsField
 }
 
 // SetTags sets the tags of this polymorphic type
 func (m *postureCheckDetail) SetTags(val *Tags) {
+    logtrace.LogWithFunctionName()
 	m.tagsField = val
 }
 
 // TypeID gets the type Id of this polymorphic type
 func (m *postureCheckDetail) TypeID() string {
+    logtrace.LogWithFunctionName()
 	return "postureCheckDetail"
 }
 
 // SetTypeID sets the type Id of this polymorphic type
 func (m *postureCheckDetail) SetTypeID(val string) {
+    logtrace.LogWithFunctionName()
 }
 
 // UpdatedAt gets the updated at of this polymorphic type
 func (m *postureCheckDetail) UpdatedAt() *strfmt.DateTime {
+    logtrace.LogWithFunctionName()
 	return m.updatedAtField
 }
 
 // SetUpdatedAt sets the updated at of this polymorphic type
 func (m *postureCheckDetail) SetUpdatedAt(val *strfmt.DateTime) {
+    logtrace.LogWithFunctionName()
 	m.updatedAtField = val
 }
 
 // Version gets the version of this polymorphic type
 func (m *postureCheckDetail) Version() *int64 {
+    logtrace.LogWithFunctionName()
 	return m.versionField
 }
 
 // SetVersion sets the version of this polymorphic type
 func (m *postureCheckDetail) SetVersion(val *int64) {
+    logtrace.LogWithFunctionName()
 	m.versionField = val
 }
 
 // UnmarshalPostureCheckDetailSlice unmarshals polymorphic slices of PostureCheckDetail
 func UnmarshalPostureCheckDetailSlice(reader io.Reader, consumer runtime.Consumer) ([]PostureCheckDetail, error) {
+    logtrace.LogWithFunctionName()
 	var elements []json.RawMessage
 	if err := consumer.Consume(reader, &elements); err != nil {
 		return nil, err
@@ -228,6 +248,7 @@ func UnmarshalPostureCheckDetailSlice(reader io.Reader, consumer runtime.Consume
 
 // UnmarshalPostureCheckDetail unmarshals polymorphic PostureCheckDetail
 func UnmarshalPostureCheckDetail(reader io.Reader, consumer runtime.Consumer) (PostureCheckDetail, error) {
+    logtrace.LogWithFunctionName()
 	// we need to read this twice, so first into a buffer
 	data, err := io.ReadAll(reader)
 	if err != nil {
@@ -237,6 +258,7 @@ func UnmarshalPostureCheckDetail(reader io.Reader, consumer runtime.Consumer) (P
 }
 
 func unmarshalPostureCheckDetail(data []byte, consumer runtime.Consumer) (PostureCheckDetail, error) {
+    logtrace.LogWithFunctionName()
 	buf := bytes.NewBuffer(data)
 	buf2 := bytes.NewBuffer(data)
 
@@ -302,6 +324,7 @@ func unmarshalPostureCheckDetail(data []byte, consumer runtime.Consumer) (Postur
 
 // Validate validates this posture check detail
 func (m *postureCheckDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateLinks(formats); err != nil {
@@ -343,6 +366,7 @@ func (m *postureCheckDetail) Validate(formats strfmt.Registry) error {
 }
 
 func (m *postureCheckDetail) validateLinks(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("_links", "body", m.Links()); err != nil {
 		return err
@@ -363,6 +387,7 @@ func (m *postureCheckDetail) validateLinks(formats strfmt.Registry) error {
 }
 
 func (m *postureCheckDetail) validateCreatedAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("createdAt", "body", m.CreatedAt()); err != nil {
 		return err
@@ -376,6 +401,7 @@ func (m *postureCheckDetail) validateCreatedAt(formats strfmt.Registry) error {
 }
 
 func (m *postureCheckDetail) validateID(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("id", "body", m.ID()); err != nil {
 		return err
@@ -385,6 +411,7 @@ func (m *postureCheckDetail) validateID(formats strfmt.Registry) error {
 }
 
 func (m *postureCheckDetail) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name()); err != nil {
 		return err
@@ -394,6 +421,7 @@ func (m *postureCheckDetail) validateName(formats strfmt.Registry) error {
 }
 
 func (m *postureCheckDetail) validateRoleAttributes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("roleAttributes", "body", m.RoleAttributes()); err != nil {
 		return err
@@ -414,6 +442,7 @@ func (m *postureCheckDetail) validateRoleAttributes(formats strfmt.Registry) err
 }
 
 func (m *postureCheckDetail) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("tags", "body", m.Tags()); err != nil {
 		return err
@@ -434,6 +463,7 @@ func (m *postureCheckDetail) validateTags(formats strfmt.Registry) error {
 }
 
 func (m *postureCheckDetail) validateUpdatedAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("updatedAt", "body", m.UpdatedAt()); err != nil {
 		return err
@@ -447,6 +477,7 @@ func (m *postureCheckDetail) validateUpdatedAt(formats strfmt.Registry) error {
 }
 
 func (m *postureCheckDetail) validateVersion(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("version", "body", m.Version()); err != nil {
 		return err
@@ -457,6 +488,7 @@ func (m *postureCheckDetail) validateVersion(formats strfmt.Registry) error {
 
 // ContextValidate validate this posture check detail based on the context it is used
 func (m *postureCheckDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateLinks(ctx, formats); err != nil {
@@ -478,6 +510,7 @@ func (m *postureCheckDetail) ContextValidate(ctx context.Context, formats strfmt
 }
 
 func (m *postureCheckDetail) contextValidateLinks(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := m.Links().ContextValidate(ctx, formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
@@ -492,6 +525,7 @@ func (m *postureCheckDetail) contextValidateLinks(ctx context.Context, formats s
 }
 
 func (m *postureCheckDetail) contextValidateRoleAttributes(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.RoleAttributes() != nil {
 		if err := m.RoleAttributes().ContextValidate(ctx, formats); err != nil {
@@ -508,6 +542,7 @@ func (m *postureCheckDetail) contextValidateRoleAttributes(ctx context.Context, 
 }
 
 func (m *postureCheckDetail) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags() != nil {
 

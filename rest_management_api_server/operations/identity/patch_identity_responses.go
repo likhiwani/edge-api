@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type PatchIdentityOK struct {
 
 // NewPatchIdentityOK creates PatchIdentityOK with default headers values
 func NewPatchIdentityOK() *PatchIdentityOK {
+    logtrace.LogWithFunctionName()
 
 	return &PatchIdentityOK{}
 }
 
 // WithPayload adds the payload to the patch identity o k response
 func (o *PatchIdentityOK) WithPayload(payload *rest_model.Empty) *PatchIdentityOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch identity o k response
 func (o *PatchIdentityOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchIdentityOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type PatchIdentityBadRequest struct {
 
 // NewPatchIdentityBadRequest creates PatchIdentityBadRequest with default headers values
 func NewPatchIdentityBadRequest() *PatchIdentityBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &PatchIdentityBadRequest{}
 }
 
 // WithPayload adds the payload to the patch identity bad request response
 func (o *PatchIdentityBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchIdentityBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch identity bad request response
 func (o *PatchIdentityBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchIdentityBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type PatchIdentityUnauthorized struct {
 
 // NewPatchIdentityUnauthorized creates PatchIdentityUnauthorized with default headers values
 func NewPatchIdentityUnauthorized() *PatchIdentityUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &PatchIdentityUnauthorized{}
 }
 
 // WithPayload adds the payload to the patch identity unauthorized response
 func (o *PatchIdentityUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchIdentityUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch identity unauthorized response
 func (o *PatchIdentityUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchIdentityUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type PatchIdentityNotFound struct {
 
 // NewPatchIdentityNotFound creates PatchIdentityNotFound with default headers values
 func NewPatchIdentityNotFound() *PatchIdentityNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &PatchIdentityNotFound{}
 }
 
 // WithPayload adds the payload to the patch identity not found response
 func (o *PatchIdentityNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchIdentityNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch identity not found response
 func (o *PatchIdentityNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchIdentityNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type PatchIdentityTooManyRequests struct {
 
 // NewPatchIdentityTooManyRequests creates PatchIdentityTooManyRequests with default headers values
 func NewPatchIdentityTooManyRequests() *PatchIdentityTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &PatchIdentityTooManyRequests{}
 }
 
 // WithPayload adds the payload to the patch identity too many requests response
 func (o *PatchIdentityTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchIdentityTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch identity too many requests response
 func (o *PatchIdentityTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchIdentityTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -280,23 +301,27 @@ type PatchIdentityServiceUnavailable struct {
 
 // NewPatchIdentityServiceUnavailable creates PatchIdentityServiceUnavailable with default headers values
 func NewPatchIdentityServiceUnavailable() *PatchIdentityServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &PatchIdentityServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the patch identity service unavailable response
 func (o *PatchIdentityServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *PatchIdentityServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the patch identity service unavailable response
 func (o *PatchIdentityServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *PatchIdentityServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

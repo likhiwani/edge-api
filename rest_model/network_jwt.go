@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -54,6 +55,7 @@ type NetworkJWT struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *NetworkJWT) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var dataAO0 struct {
 		Name *string `json:"name"`
@@ -73,6 +75,7 @@ func (m *NetworkJWT) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m NetworkJWT) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 1)
 
 	var dataAO0 struct {
@@ -95,6 +98,7 @@ func (m NetworkJWT) MarshalJSON() ([]byte, error) {
 
 // Validate validates this network JWT
 func (m *NetworkJWT) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateName(formats); err != nil {
@@ -112,6 +116,7 @@ func (m *NetworkJWT) Validate(formats strfmt.Registry) error {
 }
 
 func (m *NetworkJWT) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -121,6 +126,7 @@ func (m *NetworkJWT) validateName(formats strfmt.Registry) error {
 }
 
 func (m *NetworkJWT) validateToken(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("token", "body", m.Token); err != nil {
 		return err
@@ -131,11 +137,13 @@ func (m *NetworkJWT) validateToken(formats strfmt.Registry) error {
 
 // ContextValidate validates this network JWT based on context it is used
 func (m *NetworkJWT) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *NetworkJWT) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -144,6 +152,7 @@ func (m *NetworkJWT) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *NetworkJWT) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res NetworkJWT
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

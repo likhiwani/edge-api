@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -69,6 +70,7 @@ type PostureChecksFailureMfaCriteria struct {
 
 // Validate validates this posture checks failure mfa criteria
 func (m *PostureChecksFailureMfaCriteria) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validatePassedMfaAt(formats); err != nil {
@@ -98,6 +100,7 @@ func (m *PostureChecksFailureMfaCriteria) Validate(formats strfmt.Registry) erro
 }
 
 func (m *PostureChecksFailureMfaCriteria) validatePassedMfaAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("passedMfaAt", "body", m.PassedMfaAt); err != nil {
 		return err
@@ -111,6 +114,7 @@ func (m *PostureChecksFailureMfaCriteria) validatePassedMfaAt(formats strfmt.Reg
 }
 
 func (m *PostureChecksFailureMfaCriteria) validateTimeoutRemainingSeconds(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("timeoutRemainingSeconds", "body", m.TimeoutRemainingSeconds); err != nil {
 		return err
@@ -120,6 +124,7 @@ func (m *PostureChecksFailureMfaCriteria) validateTimeoutRemainingSeconds(format
 }
 
 func (m *PostureChecksFailureMfaCriteria) validateTimeoutSeconds(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("timeoutSeconds", "body", m.TimeoutSeconds); err != nil {
 		return err
@@ -129,6 +134,7 @@ func (m *PostureChecksFailureMfaCriteria) validateTimeoutSeconds(formats strfmt.
 }
 
 func (m *PostureChecksFailureMfaCriteria) validateUnlockedAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("unlockedAt", "body", m.UnlockedAt); err != nil {
 		return err
@@ -142,6 +148,7 @@ func (m *PostureChecksFailureMfaCriteria) validateUnlockedAt(formats strfmt.Regi
 }
 
 func (m *PostureChecksFailureMfaCriteria) validateWokenAt(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("wokenAt", "body", m.WokenAt); err != nil {
 		return err
@@ -156,11 +163,13 @@ func (m *PostureChecksFailureMfaCriteria) validateWokenAt(formats strfmt.Registr
 
 // ContextValidate validates this posture checks failure mfa criteria based on context it is used
 func (m *PostureChecksFailureMfaCriteria) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *PostureChecksFailureMfaCriteria) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -169,6 +178,7 @@ func (m *PostureChecksFailureMfaCriteria) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureChecksFailureMfaCriteria) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureChecksFailureMfaCriteria
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

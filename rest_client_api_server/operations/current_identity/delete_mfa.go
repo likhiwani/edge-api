@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type DeleteMfaHandlerFunc func(DeleteMfaParams, interface{}) middleware.Responde
 
 // Handle executing the request and returning a response
 func (fn DeleteMfaHandlerFunc) Handle(params DeleteMfaParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type DeleteMfaHandler interface {
 
 // NewDeleteMfa creates a new http.Handler for the delete mfa operation
 func NewDeleteMfa(ctx *middleware.Context, handler DeleteMfaHandler) *DeleteMfa {
+    logtrace.LogWithFunctionName()
 	return &DeleteMfa{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type DeleteMfa struct {
 }
 
 func (o *DeleteMfa) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

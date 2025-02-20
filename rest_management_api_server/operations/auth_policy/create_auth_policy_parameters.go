@@ -30,6 +30,7 @@ package auth_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"io"
 	"net/http"
 
@@ -45,6 +46,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewCreateAuthPolicyParams() CreateAuthPolicyParams {
+    logtrace.LogWithFunctionName()
 
 	return CreateAuthPolicyParams{}
 }
@@ -70,6 +72,7 @@ type CreateAuthPolicyParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewCreateAuthPolicyParams() beforehand.
 func (o *CreateAuthPolicyParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r

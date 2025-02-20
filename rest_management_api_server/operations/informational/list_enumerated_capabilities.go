@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type ListEnumeratedCapabilitiesHandlerFunc func(ListEnumeratedCapabilitiesParams
 
 // Handle executing the request and returning a response
 func (fn ListEnumeratedCapabilitiesHandlerFunc) Handle(params ListEnumeratedCapabilitiesParams) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params)
 }
 
@@ -50,6 +52,7 @@ type ListEnumeratedCapabilitiesHandler interface {
 
 // NewListEnumeratedCapabilities creates a new http.Handler for the list enumerated capabilities operation
 func NewListEnumeratedCapabilities(ctx *middleware.Context, handler ListEnumeratedCapabilitiesHandler) *ListEnumeratedCapabilities {
+    logtrace.LogWithFunctionName()
 	return &ListEnumeratedCapabilities{Context: ctx, Handler: handler}
 }
 
@@ -64,6 +67,7 @@ type ListEnumeratedCapabilities struct {
 }
 
 func (o *ListEnumeratedCapabilities) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

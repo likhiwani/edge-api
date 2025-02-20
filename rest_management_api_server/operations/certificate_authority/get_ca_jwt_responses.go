@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type GetCaJWTOK struct {
 
 // NewGetCaJWTOK creates GetCaJWTOK with default headers values
 func NewGetCaJWTOK() *GetCaJWTOK {
+    logtrace.LogWithFunctionName()
 
 	return &GetCaJWTOK{}
 }
 
 // WithPayload adds the payload to the get ca Jwt o k response
 func (o *GetCaJWTOK) WithPayload(payload string) *GetCaJWTOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get ca Jwt o k response
 func (o *GetCaJWTOK) SetPayload(payload string) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetCaJWTOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	payload := o.Payload
@@ -98,23 +103,27 @@ type GetCaJWTUnauthorized struct {
 
 // NewGetCaJWTUnauthorized creates GetCaJWTUnauthorized with default headers values
 func NewGetCaJWTUnauthorized() *GetCaJWTUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &GetCaJWTUnauthorized{}
 }
 
 // WithPayload adds the payload to the get ca Jwt unauthorized response
 func (o *GetCaJWTUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *GetCaJWTUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get ca Jwt unauthorized response
 func (o *GetCaJWTUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetCaJWTUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -143,23 +152,27 @@ type GetCaJWTNotFound struct {
 
 // NewGetCaJWTNotFound creates GetCaJWTNotFound with default headers values
 func NewGetCaJWTNotFound() *GetCaJWTNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &GetCaJWTNotFound{}
 }
 
 // WithPayload adds the payload to the get ca Jwt not found response
 func (o *GetCaJWTNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *GetCaJWTNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get ca Jwt not found response
 func (o *GetCaJWTNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetCaJWTNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -188,23 +201,27 @@ type GetCaJWTTooManyRequests struct {
 
 // NewGetCaJWTTooManyRequests creates GetCaJWTTooManyRequests with default headers values
 func NewGetCaJWTTooManyRequests() *GetCaJWTTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &GetCaJWTTooManyRequests{}
 }
 
 // WithPayload adds the payload to the get ca Jwt too many requests response
 func (o *GetCaJWTTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *GetCaJWTTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get ca Jwt too many requests response
 func (o *GetCaJWTTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetCaJWTTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -233,23 +250,27 @@ type GetCaJWTServiceUnavailable struct {
 
 // NewGetCaJWTServiceUnavailable creates GetCaJWTServiceUnavailable with default headers values
 func NewGetCaJWTServiceUnavailable() *GetCaJWTServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &GetCaJWTServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the get ca Jwt service unavailable response
 func (o *GetCaJWTServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *GetCaJWTServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get ca Jwt service unavailable response
 func (o *GetCaJWTServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *GetCaJWTServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

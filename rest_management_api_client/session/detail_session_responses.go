@@ -30,6 +30,7 @@ package session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DetailSessionReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DetailSessionReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDetailSessionOK()
@@ -85,6 +87,7 @@ func (o *DetailSessionReader) ReadResponse(response runtime.ClientResponse, cons
 
 // NewDetailSessionOK creates a DetailSessionOK with default headers values
 func NewDetailSessionOK() *DetailSessionOK {
+    logtrace.LogWithFunctionName()
 	return &DetailSessionOK{}
 }
 
@@ -99,49 +102,59 @@ type DetailSessionOK struct {
 
 // IsSuccess returns true when this detail session o k response has a 2xx status code
 func (o *DetailSessionOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this detail session o k response has a 3xx status code
 func (o *DetailSessionOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail session o k response has a 4xx status code
 func (o *DetailSessionOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail session o k response has a 5xx status code
 func (o *DetailSessionOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail session o k response a status code equal to that given
 func (o *DetailSessionOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the detail session o k response
 func (o *DetailSessionOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DetailSessionOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}][%d] detailSessionOK %s", 200, payload)
 }
 
 func (o *DetailSessionOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}][%d] detailSessionOK %s", 200, payload)
 }
 
 func (o *DetailSessionOK) GetPayload() *rest_model.DetailSessionManagementEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailSessionOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.DetailSessionManagementEnvelope)
 
@@ -155,6 +168,7 @@ func (o *DetailSessionOK) readResponse(response runtime.ClientResponse, consumer
 
 // NewDetailSessionUnauthorized creates a DetailSessionUnauthorized with default headers values
 func NewDetailSessionUnauthorized() *DetailSessionUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DetailSessionUnauthorized{}
 }
 
@@ -169,49 +183,59 @@ type DetailSessionUnauthorized struct {
 
 // IsSuccess returns true when this detail session unauthorized response has a 2xx status code
 func (o *DetailSessionUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail session unauthorized response has a 3xx status code
 func (o *DetailSessionUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail session unauthorized response has a 4xx status code
 func (o *DetailSessionUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail session unauthorized response has a 5xx status code
 func (o *DetailSessionUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail session unauthorized response a status code equal to that given
 func (o *DetailSessionUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the detail session unauthorized response
 func (o *DetailSessionUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DetailSessionUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}][%d] detailSessionUnauthorized %s", 401, payload)
 }
 
 func (o *DetailSessionUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}][%d] detailSessionUnauthorized %s", 401, payload)
 }
 
 func (o *DetailSessionUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailSessionUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -225,6 +249,7 @@ func (o *DetailSessionUnauthorized) readResponse(response runtime.ClientResponse
 
 // NewDetailSessionNotFound creates a DetailSessionNotFound with default headers values
 func NewDetailSessionNotFound() *DetailSessionNotFound {
+    logtrace.LogWithFunctionName()
 	return &DetailSessionNotFound{}
 }
 
@@ -239,49 +264,59 @@ type DetailSessionNotFound struct {
 
 // IsSuccess returns true when this detail session not found response has a 2xx status code
 func (o *DetailSessionNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail session not found response has a 3xx status code
 func (o *DetailSessionNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail session not found response has a 4xx status code
 func (o *DetailSessionNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail session not found response has a 5xx status code
 func (o *DetailSessionNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail session not found response a status code equal to that given
 func (o *DetailSessionNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the detail session not found response
 func (o *DetailSessionNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DetailSessionNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}][%d] detailSessionNotFound %s", 404, payload)
 }
 
 func (o *DetailSessionNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}][%d] detailSessionNotFound %s", 404, payload)
 }
 
 func (o *DetailSessionNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailSessionNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -295,6 +330,7 @@ func (o *DetailSessionNotFound) readResponse(response runtime.ClientResponse, co
 
 // NewDetailSessionTooManyRequests creates a DetailSessionTooManyRequests with default headers values
 func NewDetailSessionTooManyRequests() *DetailSessionTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DetailSessionTooManyRequests{}
 }
 
@@ -309,49 +345,59 @@ type DetailSessionTooManyRequests struct {
 
 // IsSuccess returns true when this detail session too many requests response has a 2xx status code
 func (o *DetailSessionTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail session too many requests response has a 3xx status code
 func (o *DetailSessionTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail session too many requests response has a 4xx status code
 func (o *DetailSessionTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this detail session too many requests response has a 5xx status code
 func (o *DetailSessionTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this detail session too many requests response a status code equal to that given
 func (o *DetailSessionTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the detail session too many requests response
 func (o *DetailSessionTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DetailSessionTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}][%d] detailSessionTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailSessionTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}][%d] detailSessionTooManyRequests %s", 429, payload)
 }
 
 func (o *DetailSessionTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailSessionTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -365,6 +411,7 @@ func (o *DetailSessionTooManyRequests) readResponse(response runtime.ClientRespo
 
 // NewDetailSessionServiceUnavailable creates a DetailSessionServiceUnavailable with default headers values
 func NewDetailSessionServiceUnavailable() *DetailSessionServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DetailSessionServiceUnavailable{}
 }
 
@@ -379,49 +426,59 @@ type DetailSessionServiceUnavailable struct {
 
 // IsSuccess returns true when this detail session service unavailable response has a 2xx status code
 func (o *DetailSessionServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this detail session service unavailable response has a 3xx status code
 func (o *DetailSessionServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this detail session service unavailable response has a 4xx status code
 func (o *DetailSessionServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this detail session service unavailable response has a 5xx status code
 func (o *DetailSessionServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this detail session service unavailable response a status code equal to that given
 func (o *DetailSessionServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the detail session service unavailable response
 func (o *DetailSessionServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DetailSessionServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}][%d] detailSessionServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailSessionServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /sessions/{id}][%d] detailSessionServiceUnavailable %s", 503, payload)
 }
 
 func (o *DetailSessionServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DetailSessionServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

@@ -30,6 +30,7 @@ package current_api_session
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type ExtendVerifyCurrentIdentityAuthenticatorReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *ExtendVerifyCurrentIdentityAuthenticatorReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewExtendVerifyCurrentIdentityAuthenticatorOK()
@@ -67,6 +69,7 @@ func (o *ExtendVerifyCurrentIdentityAuthenticatorReader) ReadResponse(response r
 
 // NewExtendVerifyCurrentIdentityAuthenticatorOK creates a ExtendVerifyCurrentIdentityAuthenticatorOK with default headers values
 func NewExtendVerifyCurrentIdentityAuthenticatorOK() *ExtendVerifyCurrentIdentityAuthenticatorOK {
+    logtrace.LogWithFunctionName()
 	return &ExtendVerifyCurrentIdentityAuthenticatorOK{}
 }
 
@@ -81,49 +84,59 @@ type ExtendVerifyCurrentIdentityAuthenticatorOK struct {
 
 // IsSuccess returns true when this extend verify current identity authenticator o k response has a 2xx status code
 func (o *ExtendVerifyCurrentIdentityAuthenticatorOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this extend verify current identity authenticator o k response has a 3xx status code
 func (o *ExtendVerifyCurrentIdentityAuthenticatorOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this extend verify current identity authenticator o k response has a 4xx status code
 func (o *ExtendVerifyCurrentIdentityAuthenticatorOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this extend verify current identity authenticator o k response has a 5xx status code
 func (o *ExtendVerifyCurrentIdentityAuthenticatorOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this extend verify current identity authenticator o k response a status code equal to that given
 func (o *ExtendVerifyCurrentIdentityAuthenticatorOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the extend verify current identity authenticator o k response
 func (o *ExtendVerifyCurrentIdentityAuthenticatorOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *ExtendVerifyCurrentIdentityAuthenticatorOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/authenticators/{id}/extend-verify][%d] extendVerifyCurrentIdentityAuthenticatorOK %s", 200, payload)
 }
 
 func (o *ExtendVerifyCurrentIdentityAuthenticatorOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/authenticators/{id}/extend-verify][%d] extendVerifyCurrentIdentityAuthenticatorOK %s", 200, payload)
 }
 
 func (o *ExtendVerifyCurrentIdentityAuthenticatorOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ExtendVerifyCurrentIdentityAuthenticatorOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -137,6 +150,7 @@ func (o *ExtendVerifyCurrentIdentityAuthenticatorOK) readResponse(response runti
 
 // NewExtendVerifyCurrentIdentityAuthenticatorUnauthorized creates a ExtendVerifyCurrentIdentityAuthenticatorUnauthorized with default headers values
 func NewExtendVerifyCurrentIdentityAuthenticatorUnauthorized() *ExtendVerifyCurrentIdentityAuthenticatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &ExtendVerifyCurrentIdentityAuthenticatorUnauthorized{}
 }
 
@@ -151,49 +165,59 @@ type ExtendVerifyCurrentIdentityAuthenticatorUnauthorized struct {
 
 // IsSuccess returns true when this extend verify current identity authenticator unauthorized response has a 2xx status code
 func (o *ExtendVerifyCurrentIdentityAuthenticatorUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this extend verify current identity authenticator unauthorized response has a 3xx status code
 func (o *ExtendVerifyCurrentIdentityAuthenticatorUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this extend verify current identity authenticator unauthorized response has a 4xx status code
 func (o *ExtendVerifyCurrentIdentityAuthenticatorUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this extend verify current identity authenticator unauthorized response has a 5xx status code
 func (o *ExtendVerifyCurrentIdentityAuthenticatorUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this extend verify current identity authenticator unauthorized response a status code equal to that given
 func (o *ExtendVerifyCurrentIdentityAuthenticatorUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the extend verify current identity authenticator unauthorized response
 func (o *ExtendVerifyCurrentIdentityAuthenticatorUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *ExtendVerifyCurrentIdentityAuthenticatorUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/authenticators/{id}/extend-verify][%d] extendVerifyCurrentIdentityAuthenticatorUnauthorized %s", 401, payload)
 }
 
 func (o *ExtendVerifyCurrentIdentityAuthenticatorUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[POST /current-identity/authenticators/{id}/extend-verify][%d] extendVerifyCurrentIdentityAuthenticatorUnauthorized %s", 401, payload)
 }
 
 func (o *ExtendVerifyCurrentIdentityAuthenticatorUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *ExtendVerifyCurrentIdentityAuthenticatorUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

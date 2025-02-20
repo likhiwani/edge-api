@@ -30,6 +30,7 @@ package auth_policy
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type DetailAuthPolicyHandlerFunc func(DetailAuthPolicyParams, interface{}) middl
 
 // Handle executing the request and returning a response
 func (fn DetailAuthPolicyHandlerFunc) Handle(params DetailAuthPolicyParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type DetailAuthPolicyHandler interface {
 
 // NewDetailAuthPolicy creates a new http.Handler for the detail auth policy operation
 func NewDetailAuthPolicy(ctx *middleware.Context, handler DetailAuthPolicyHandler) *DetailAuthPolicy {
+    logtrace.LogWithFunctionName()
 	return &DetailAuthPolicy{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type DetailAuthPolicy struct {
 }
 
 func (o *DetailAuthPolicy) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

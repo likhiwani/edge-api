@@ -30,6 +30,7 @@ package informational
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/errors"
@@ -40,6 +41,7 @@ import (
 //
 // There are no default values defined in the spec.
 func NewListRootParams() ListRootParams {
+    logtrace.LogWithFunctionName()
 
 	return ListRootParams{}
 }
@@ -59,6 +61,7 @@ type ListRootParams struct {
 //
 // To ensure default values, the struct must have been initialized with NewListRootParams() beforehand.
 func (o *ListRootParams) BindRequest(r *http.Request, route *middleware.MatchedRoute) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	o.HTTPRequest = r

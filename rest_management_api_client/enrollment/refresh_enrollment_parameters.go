@@ -30,6 +30,7 @@ package enrollment
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewRefreshEnrollmentParams() *RefreshEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	return &RefreshEnrollmentParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewRefreshEnrollmentParams() *RefreshEnrollmentParams {
 // NewRefreshEnrollmentParamsWithTimeout creates a new RefreshEnrollmentParams object
 // with the ability to set a timeout on a request.
 func NewRefreshEnrollmentParamsWithTimeout(timeout time.Duration) *RefreshEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	return &RefreshEnrollmentParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewRefreshEnrollmentParamsWithTimeout(timeout time.Duration) *RefreshEnroll
 // NewRefreshEnrollmentParamsWithContext creates a new RefreshEnrollmentParams object
 // with the ability to set a context for a request.
 func NewRefreshEnrollmentParamsWithContext(ctx context.Context) *RefreshEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	return &RefreshEnrollmentParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewRefreshEnrollmentParamsWithContext(ctx context.Context) *RefreshEnrollme
 // NewRefreshEnrollmentParamsWithHTTPClient creates a new RefreshEnrollmentParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewRefreshEnrollmentParamsWithHTTPClient(client *http.Client) *RefreshEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	return &RefreshEnrollmentParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type RefreshEnrollmentParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *RefreshEnrollmentParams) WithDefaults() *RefreshEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *RefreshEnrollmentParams) WithDefaults() *RefreshEnrollmentParams {
 //
 // All values with no default are reset to their zero value.
 func (o *RefreshEnrollmentParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the refresh enrollment params
 func (o *RefreshEnrollmentParams) WithTimeout(timeout time.Duration) *RefreshEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the refresh enrollment params
 func (o *RefreshEnrollmentParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the refresh enrollment params
 func (o *RefreshEnrollmentParams) WithContext(ctx context.Context) *RefreshEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the refresh enrollment params
 func (o *RefreshEnrollmentParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the refresh enrollment params
 func (o *RefreshEnrollmentParams) WithHTTPClient(client *http.Client) *RefreshEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the refresh enrollment params
 func (o *RefreshEnrollmentParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the refresh enrollment params
 func (o *RefreshEnrollmentParams) WithID(id string) *RefreshEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the refresh enrollment params
 func (o *RefreshEnrollmentParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WithRefresh adds the refresh to the refresh enrollment params
 func (o *RefreshEnrollmentParams) WithRefresh(refresh *rest_model.EnrollmentRefresh) *RefreshEnrollmentParams {
+    logtrace.LogWithFunctionName()
 	o.SetRefresh(refresh)
 	return o
 }
 
 // SetRefresh adds the refresh to the refresh enrollment params
 func (o *RefreshEnrollmentParams) SetRefresh(refresh *rest_model.EnrollmentRefresh) {
+    logtrace.LogWithFunctionName()
 	o.Refresh = refresh
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *RefreshEnrollmentParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

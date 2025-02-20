@@ -30,6 +30,7 @@ package terminator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type CreateTerminatorCreated struct {
 
 // NewCreateTerminatorCreated creates CreateTerminatorCreated with default headers values
 func NewCreateTerminatorCreated() *CreateTerminatorCreated {
+    logtrace.LogWithFunctionName()
 
 	return &CreateTerminatorCreated{}
 }
 
 // WithPayload adds the payload to the create terminator created response
 func (o *CreateTerminatorCreated) WithPayload(payload *rest_model.CreateEnvelope) *CreateTerminatorCreated {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create terminator created response
 func (o *CreateTerminatorCreated) SetPayload(payload *rest_model.CreateEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateTerminatorCreated) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(201)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type CreateTerminatorBadRequest struct {
 
 // NewCreateTerminatorBadRequest creates CreateTerminatorBadRequest with default headers values
 func NewCreateTerminatorBadRequest() *CreateTerminatorBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &CreateTerminatorBadRequest{}
 }
 
 // WithPayload adds the payload to the create terminator bad request response
 func (o *CreateTerminatorBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateTerminatorBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create terminator bad request response
 func (o *CreateTerminatorBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateTerminatorBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type CreateTerminatorUnauthorized struct {
 
 // NewCreateTerminatorUnauthorized creates CreateTerminatorUnauthorized with default headers values
 func NewCreateTerminatorUnauthorized() *CreateTerminatorUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &CreateTerminatorUnauthorized{}
 }
 
 // WithPayload adds the payload to the create terminator unauthorized response
 func (o *CreateTerminatorUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateTerminatorUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create terminator unauthorized response
 func (o *CreateTerminatorUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateTerminatorUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type CreateTerminatorTooManyRequests struct {
 
 // NewCreateTerminatorTooManyRequests creates CreateTerminatorTooManyRequests with default headers values
 func NewCreateTerminatorTooManyRequests() *CreateTerminatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &CreateTerminatorTooManyRequests{}
 }
 
 // WithPayload adds the payload to the create terminator too many requests response
 func (o *CreateTerminatorTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateTerminatorTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create terminator too many requests response
 func (o *CreateTerminatorTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateTerminatorTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type CreateTerminatorServiceUnavailable struct {
 
 // NewCreateTerminatorServiceUnavailable creates CreateTerminatorServiceUnavailable with default headers values
 func NewCreateTerminatorServiceUnavailable() *CreateTerminatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &CreateTerminatorServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the create terminator service unavailable response
 func (o *CreateTerminatorServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateTerminatorServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create terminator service unavailable response
 func (o *CreateTerminatorServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateTerminatorServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

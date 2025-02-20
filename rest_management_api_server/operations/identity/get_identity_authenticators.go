@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type GetIdentityAuthenticatorsHandlerFunc func(GetIdentityAuthenticatorsParams, 
 
 // Handle executing the request and returning a response
 func (fn GetIdentityAuthenticatorsHandlerFunc) Handle(params GetIdentityAuthenticatorsParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type GetIdentityAuthenticatorsHandler interface {
 
 // NewGetIdentityAuthenticators creates a new http.Handler for the get identity authenticators operation
 func NewGetIdentityAuthenticators(ctx *middleware.Context, handler GetIdentityAuthenticatorsHandler) *GetIdentityAuthenticators {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityAuthenticators{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type GetIdentityAuthenticators struct {
 }
 
 func (o *GetIdentityAuthenticators) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

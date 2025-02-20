@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type VerifyMfaOK struct {
 
 // NewVerifyMfaOK creates VerifyMfaOK with default headers values
 func NewVerifyMfaOK() *VerifyMfaOK {
+    logtrace.LogWithFunctionName()
 
 	return &VerifyMfaOK{}
 }
 
 // WithPayload adds the payload to the verify mfa o k response
 func (o *VerifyMfaOK) WithPayload(payload *rest_model.Empty) *VerifyMfaOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the verify mfa o k response
 func (o *VerifyMfaOK) SetPayload(payload *rest_model.Empty) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *VerifyMfaOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type VerifyMfaUnauthorized struct {
 
 // NewVerifyMfaUnauthorized creates VerifyMfaUnauthorized with default headers values
 func NewVerifyMfaUnauthorized() *VerifyMfaUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &VerifyMfaUnauthorized{}
 }
 
 // WithPayload adds the payload to the verify mfa unauthorized response
 func (o *VerifyMfaUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *VerifyMfaUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the verify mfa unauthorized response
 func (o *VerifyMfaUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *VerifyMfaUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type VerifyMfaNotFound struct {
 
 // NewVerifyMfaNotFound creates VerifyMfaNotFound with default headers values
 func NewVerifyMfaNotFound() *VerifyMfaNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &VerifyMfaNotFound{}
 }
 
 // WithPayload adds the payload to the verify mfa not found response
 func (o *VerifyMfaNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *VerifyMfaNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the verify mfa not found response
 func (o *VerifyMfaNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *VerifyMfaNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {

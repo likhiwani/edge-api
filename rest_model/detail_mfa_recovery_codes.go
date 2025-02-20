@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -51,6 +52,7 @@ type DetailMfaRecoveryCodes struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *DetailMfaRecoveryCodes) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 BaseEntity
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -73,6 +75,7 @@ func (m *DetailMfaRecoveryCodes) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m DetailMfaRecoveryCodes) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.BaseEntity)
@@ -96,6 +99,7 @@ func (m DetailMfaRecoveryCodes) MarshalJSON() ([]byte, error) {
 
 // Validate validates this detail mfa recovery codes
 func (m *DetailMfaRecoveryCodes) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -114,6 +118,7 @@ func (m *DetailMfaRecoveryCodes) Validate(formats strfmt.Registry) error {
 }
 
 func (m *DetailMfaRecoveryCodes) validateRecoveryCodes(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("recoveryCodes", "body", m.RecoveryCodes); err != nil {
 		return err
@@ -124,6 +129,7 @@ func (m *DetailMfaRecoveryCodes) validateRecoveryCodes(formats strfmt.Registry) 
 
 // ContextValidate validate this detail mfa recovery codes based on the context it is used
 func (m *DetailMfaRecoveryCodes) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -139,6 +145,7 @@ func (m *DetailMfaRecoveryCodes) ContextValidate(ctx context.Context, formats st
 
 // MarshalBinary interface implementation
 func (m *DetailMfaRecoveryCodes) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -147,6 +154,7 @@ func (m *DetailMfaRecoveryCodes) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *DetailMfaRecoveryCodes) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res DetailMfaRecoveryCodes
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

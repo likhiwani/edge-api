@@ -30,6 +30,7 @@ package enrollment
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type RefreshEnrollmentOK struct {
 
 // NewRefreshEnrollmentOK creates RefreshEnrollmentOK with default headers values
 func NewRefreshEnrollmentOK() *RefreshEnrollmentOK {
+    logtrace.LogWithFunctionName()
 
 	return &RefreshEnrollmentOK{}
 }
 
 // WithPayload adds the payload to the refresh enrollment o k response
 func (o *RefreshEnrollmentOK) WithPayload(payload *rest_model.CreateEnvelope) *RefreshEnrollmentOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the refresh enrollment o k response
 func (o *RefreshEnrollmentOK) SetPayload(payload *rest_model.CreateEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *RefreshEnrollmentOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type RefreshEnrollmentBadRequest struct {
 
 // NewRefreshEnrollmentBadRequest creates RefreshEnrollmentBadRequest with default headers values
 func NewRefreshEnrollmentBadRequest() *RefreshEnrollmentBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &RefreshEnrollmentBadRequest{}
 }
 
 // WithPayload adds the payload to the refresh enrollment bad request response
 func (o *RefreshEnrollmentBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *RefreshEnrollmentBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the refresh enrollment bad request response
 func (o *RefreshEnrollmentBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *RefreshEnrollmentBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type RefreshEnrollmentUnauthorized struct {
 
 // NewRefreshEnrollmentUnauthorized creates RefreshEnrollmentUnauthorized with default headers values
 func NewRefreshEnrollmentUnauthorized() *RefreshEnrollmentUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &RefreshEnrollmentUnauthorized{}
 }
 
 // WithPayload adds the payload to the refresh enrollment unauthorized response
 func (o *RefreshEnrollmentUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *RefreshEnrollmentUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the refresh enrollment unauthorized response
 func (o *RefreshEnrollmentUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *RefreshEnrollmentUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type RefreshEnrollmentTooManyRequests struct {
 
 // NewRefreshEnrollmentTooManyRequests creates RefreshEnrollmentTooManyRequests with default headers values
 func NewRefreshEnrollmentTooManyRequests() *RefreshEnrollmentTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &RefreshEnrollmentTooManyRequests{}
 }
 
 // WithPayload adds the payload to the refresh enrollment too many requests response
 func (o *RefreshEnrollmentTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *RefreshEnrollmentTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the refresh enrollment too many requests response
 func (o *RefreshEnrollmentTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *RefreshEnrollmentTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type RefreshEnrollmentServiceUnavailable struct {
 
 // NewRefreshEnrollmentServiceUnavailable creates RefreshEnrollmentServiceUnavailable with default headers values
 func NewRefreshEnrollmentServiceUnavailable() *RefreshEnrollmentServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &RefreshEnrollmentServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the refresh enrollment service unavailable response
 func (o *RefreshEnrollmentServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *RefreshEnrollmentServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the refresh enrollment service unavailable response
 func (o *RefreshEnrollmentServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *RefreshEnrollmentServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

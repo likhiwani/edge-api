@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -83,6 +84,7 @@ type CommonEdgeRouterProperties struct {
 
 // Validate validates this common edge router properties
 func (m *CommonEdgeRouterProperties) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateAppData(formats); err != nil {
@@ -128,6 +130,7 @@ func (m *CommonEdgeRouterProperties) Validate(formats strfmt.Registry) error {
 }
 
 func (m *CommonEdgeRouterProperties) validateAppData(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.AppData) { // not required
 		return nil
 	}
@@ -147,6 +150,7 @@ func (m *CommonEdgeRouterProperties) validateAppData(formats strfmt.Registry) er
 }
 
 func (m *CommonEdgeRouterProperties) validateCost(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("cost", "body", m.Cost); err != nil {
 		return err
@@ -164,6 +168,7 @@ func (m *CommonEdgeRouterProperties) validateCost(formats strfmt.Registry) error
 }
 
 func (m *CommonEdgeRouterProperties) validateDisabled(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("disabled", "body", m.Disabled); err != nil {
 		return err
@@ -173,6 +178,7 @@ func (m *CommonEdgeRouterProperties) validateDisabled(formats strfmt.Registry) e
 }
 
 func (m *CommonEdgeRouterProperties) validateHostname(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("hostname", "body", m.Hostname); err != nil {
 		return err
@@ -182,6 +188,7 @@ func (m *CommonEdgeRouterProperties) validateHostname(formats strfmt.Registry) e
 }
 
 func (m *CommonEdgeRouterProperties) validateIsOnline(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isOnline", "body", m.IsOnline); err != nil {
 		return err
@@ -191,6 +198,7 @@ func (m *CommonEdgeRouterProperties) validateIsOnline(formats strfmt.Registry) e
 }
 
 func (m *CommonEdgeRouterProperties) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -200,6 +208,7 @@ func (m *CommonEdgeRouterProperties) validateName(formats strfmt.Registry) error
 }
 
 func (m *CommonEdgeRouterProperties) validateNoTraversal(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("noTraversal", "body", m.NoTraversal); err != nil {
 		return err
@@ -209,6 +218,7 @@ func (m *CommonEdgeRouterProperties) validateNoTraversal(formats strfmt.Registry
 }
 
 func (m *CommonEdgeRouterProperties) validateSupportedProtocols(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("supportedProtocols", "body", m.SupportedProtocols); err != nil {
 		return err
@@ -218,6 +228,7 @@ func (m *CommonEdgeRouterProperties) validateSupportedProtocols(formats strfmt.R
 }
 
 func (m *CommonEdgeRouterProperties) validateSyncStatus(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("syncStatus", "body", m.SyncStatus); err != nil {
 		return err
@@ -228,6 +239,7 @@ func (m *CommonEdgeRouterProperties) validateSyncStatus(formats strfmt.Registry)
 
 // ContextValidate validate this common edge router properties based on the context it is used
 func (m *CommonEdgeRouterProperties) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateAppData(ctx, formats); err != nil {
@@ -241,6 +253,7 @@ func (m *CommonEdgeRouterProperties) ContextValidate(ctx context.Context, format
 }
 
 func (m *CommonEdgeRouterProperties) contextValidateAppData(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.AppData != nil {
 
@@ -263,6 +276,7 @@ func (m *CommonEdgeRouterProperties) contextValidateAppData(ctx context.Context,
 
 // MarshalBinary interface implementation
 func (m *CommonEdgeRouterProperties) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -271,6 +285,7 @@ func (m *CommonEdgeRouterProperties) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *CommonEdgeRouterProperties) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res CommonEdgeRouterProperties
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

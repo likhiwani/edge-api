@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"strconv"
 
@@ -67,6 +68,7 @@ type PostureData struct {
 
 // Validate validates this posture data
 func (m *PostureData) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateAPISessionPostureData(formats); err != nil {
@@ -96,6 +98,7 @@ func (m *PostureData) Validate(formats strfmt.Registry) error {
 }
 
 func (m *PostureData) validateAPISessionPostureData(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("apiSessionPostureData", "body", m.APISessionPostureData); err != nil {
 		return err
@@ -123,6 +126,7 @@ func (m *PostureData) validateAPISessionPostureData(formats strfmt.Registry) err
 }
 
 func (m *PostureData) validateDomain(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("domain", "body", m.Domain); err != nil {
 		return err
@@ -143,6 +147,7 @@ func (m *PostureData) validateDomain(formats strfmt.Registry) error {
 }
 
 func (m *PostureData) validateMac(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("mac", "body", m.Mac); err != nil {
 		return err
@@ -163,6 +168,7 @@ func (m *PostureData) validateMac(formats strfmt.Registry) error {
 }
 
 func (m *PostureData) validateOs(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("os", "body", m.Os); err != nil {
 		return err
@@ -183,6 +189,7 @@ func (m *PostureData) validateOs(formats strfmt.Registry) error {
 }
 
 func (m *PostureData) validateProcesses(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("processes", "body", m.Processes); err != nil {
 		return err
@@ -211,6 +218,7 @@ func (m *PostureData) validateProcesses(formats strfmt.Registry) error {
 
 // ContextValidate validate this posture data based on the context it is used
 func (m *PostureData) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateAPISessionPostureData(ctx, formats); err != nil {
@@ -240,6 +248,7 @@ func (m *PostureData) ContextValidate(ctx context.Context, formats strfmt.Regist
 }
 
 func (m *PostureData) contextValidateAPISessionPostureData(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("apiSessionPostureData", "body", m.APISessionPostureData); err != nil {
 		return err
@@ -259,6 +268,7 @@ func (m *PostureData) contextValidateAPISessionPostureData(ctx context.Context, 
 }
 
 func (m *PostureData) contextValidateDomain(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Domain != nil {
 
@@ -276,6 +286,7 @@ func (m *PostureData) contextValidateDomain(ctx context.Context, formats strfmt.
 }
 
 func (m *PostureData) contextValidateMac(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Mac != nil {
 
@@ -293,6 +304,7 @@ func (m *PostureData) contextValidateMac(ctx context.Context, formats strfmt.Reg
 }
 
 func (m *PostureData) contextValidateOs(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Os != nil {
 
@@ -310,6 +322,7 @@ func (m *PostureData) contextValidateOs(ctx context.Context, formats strfmt.Regi
 }
 
 func (m *PostureData) contextValidateProcesses(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	for i := 0; i < len(m.Processes); i++ {
 
@@ -336,6 +349,7 @@ func (m *PostureData) contextValidateProcesses(ctx context.Context, formats strf
 
 // MarshalBinary interface implementation
 func (m *PostureData) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -344,6 +358,7 @@ func (m *PostureData) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureData) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureData
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

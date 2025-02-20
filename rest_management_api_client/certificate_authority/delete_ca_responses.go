@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type DeleteCaReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *DeleteCaReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewDeleteCaOK()
@@ -91,6 +93,7 @@ func (o *DeleteCaReader) ReadResponse(response runtime.ClientResponse, consumer 
 
 // NewDeleteCaOK creates a DeleteCaOK with default headers values
 func NewDeleteCaOK() *DeleteCaOK {
+    logtrace.LogWithFunctionName()
 	return &DeleteCaOK{}
 }
 
@@ -105,49 +108,59 @@ type DeleteCaOK struct {
 
 // IsSuccess returns true when this delete ca o k response has a 2xx status code
 func (o *DeleteCaOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this delete ca o k response has a 3xx status code
 func (o *DeleteCaOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete ca o k response has a 4xx status code
 func (o *DeleteCaOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete ca o k response has a 5xx status code
 func (o *DeleteCaOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete ca o k response a status code equal to that given
 func (o *DeleteCaOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the delete ca o k response
 func (o *DeleteCaOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *DeleteCaOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /cas/{id}][%d] deleteCaOK %s", 200, payload)
 }
 
 func (o *DeleteCaOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /cas/{id}][%d] deleteCaOK %s", 200, payload)
 }
 
 func (o *DeleteCaOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteCaOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -161,6 +174,7 @@ func (o *DeleteCaOK) readResponse(response runtime.ClientResponse, consumer runt
 
 // NewDeleteCaBadRequest creates a DeleteCaBadRequest with default headers values
 func NewDeleteCaBadRequest() *DeleteCaBadRequest {
+    logtrace.LogWithFunctionName()
 	return &DeleteCaBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type DeleteCaBadRequest struct {
 
 // IsSuccess returns true when this delete ca bad request response has a 2xx status code
 func (o *DeleteCaBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete ca bad request response has a 3xx status code
 func (o *DeleteCaBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete ca bad request response has a 4xx status code
 func (o *DeleteCaBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete ca bad request response has a 5xx status code
 func (o *DeleteCaBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete ca bad request response a status code equal to that given
 func (o *DeleteCaBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the delete ca bad request response
 func (o *DeleteCaBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *DeleteCaBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /cas/{id}][%d] deleteCaBadRequest %s", 400, payload)
 }
 
 func (o *DeleteCaBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /cas/{id}][%d] deleteCaBadRequest %s", 400, payload)
 }
 
 func (o *DeleteCaBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteCaBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *DeleteCaBadRequest) readResponse(response runtime.ClientResponse, consu
 
 // NewDeleteCaUnauthorized creates a DeleteCaUnauthorized with default headers values
 func NewDeleteCaUnauthorized() *DeleteCaUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &DeleteCaUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type DeleteCaUnauthorized struct {
 
 // IsSuccess returns true when this delete ca unauthorized response has a 2xx status code
 func (o *DeleteCaUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete ca unauthorized response has a 3xx status code
 func (o *DeleteCaUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete ca unauthorized response has a 4xx status code
 func (o *DeleteCaUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete ca unauthorized response has a 5xx status code
 func (o *DeleteCaUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete ca unauthorized response a status code equal to that given
 func (o *DeleteCaUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the delete ca unauthorized response
 func (o *DeleteCaUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *DeleteCaUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /cas/{id}][%d] deleteCaUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteCaUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /cas/{id}][%d] deleteCaUnauthorized %s", 401, payload)
 }
 
 func (o *DeleteCaUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteCaUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *DeleteCaUnauthorized) readResponse(response runtime.ClientResponse, con
 
 // NewDeleteCaNotFound creates a DeleteCaNotFound with default headers values
 func NewDeleteCaNotFound() *DeleteCaNotFound {
+    logtrace.LogWithFunctionName()
 	return &DeleteCaNotFound{}
 }
 
@@ -315,49 +351,59 @@ type DeleteCaNotFound struct {
 
 // IsSuccess returns true when this delete ca not found response has a 2xx status code
 func (o *DeleteCaNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete ca not found response has a 3xx status code
 func (o *DeleteCaNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete ca not found response has a 4xx status code
 func (o *DeleteCaNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete ca not found response has a 5xx status code
 func (o *DeleteCaNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete ca not found response a status code equal to that given
 func (o *DeleteCaNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the delete ca not found response
 func (o *DeleteCaNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *DeleteCaNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /cas/{id}][%d] deleteCaNotFound %s", 404, payload)
 }
 
 func (o *DeleteCaNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /cas/{id}][%d] deleteCaNotFound %s", 404, payload)
 }
 
 func (o *DeleteCaNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteCaNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *DeleteCaNotFound) readResponse(response runtime.ClientResponse, consume
 
 // NewDeleteCaTooManyRequests creates a DeleteCaTooManyRequests with default headers values
 func NewDeleteCaTooManyRequests() *DeleteCaTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &DeleteCaTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type DeleteCaTooManyRequests struct {
 
 // IsSuccess returns true when this delete ca too many requests response has a 2xx status code
 func (o *DeleteCaTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete ca too many requests response has a 3xx status code
 func (o *DeleteCaTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete ca too many requests response has a 4xx status code
 func (o *DeleteCaTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this delete ca too many requests response has a 5xx status code
 func (o *DeleteCaTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this delete ca too many requests response a status code equal to that given
 func (o *DeleteCaTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the delete ca too many requests response
 func (o *DeleteCaTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *DeleteCaTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /cas/{id}][%d] deleteCaTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteCaTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /cas/{id}][%d] deleteCaTooManyRequests %s", 429, payload)
 }
 
 func (o *DeleteCaTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteCaTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *DeleteCaTooManyRequests) readResponse(response runtime.ClientResponse, 
 
 // NewDeleteCaServiceUnavailable creates a DeleteCaServiceUnavailable with default headers values
 func NewDeleteCaServiceUnavailable() *DeleteCaServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &DeleteCaServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type DeleteCaServiceUnavailable struct {
 
 // IsSuccess returns true when this delete ca service unavailable response has a 2xx status code
 func (o *DeleteCaServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this delete ca service unavailable response has a 3xx status code
 func (o *DeleteCaServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this delete ca service unavailable response has a 4xx status code
 func (o *DeleteCaServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this delete ca service unavailable response has a 5xx status code
 func (o *DeleteCaServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this delete ca service unavailable response a status code equal to that given
 func (o *DeleteCaServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the delete ca service unavailable response
 func (o *DeleteCaServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *DeleteCaServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /cas/{id}][%d] deleteCaServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteCaServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[DELETE /cas/{id}][%d] deleteCaServiceUnavailable %s", 503, payload)
 }
 
 func (o *DeleteCaServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *DeleteCaServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

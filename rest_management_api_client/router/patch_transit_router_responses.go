@@ -30,6 +30,7 @@ package router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type PatchTransitRouterReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *PatchTransitRouterReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewPatchTransitRouterOK()
@@ -91,6 +93,7 @@ func (o *PatchTransitRouterReader) ReadResponse(response runtime.ClientResponse,
 
 // NewPatchTransitRouterOK creates a PatchTransitRouterOK with default headers values
 func NewPatchTransitRouterOK() *PatchTransitRouterOK {
+    logtrace.LogWithFunctionName()
 	return &PatchTransitRouterOK{}
 }
 
@@ -105,49 +108,59 @@ type PatchTransitRouterOK struct {
 
 // IsSuccess returns true when this patch transit router o k response has a 2xx status code
 func (o *PatchTransitRouterOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this patch transit router o k response has a 3xx status code
 func (o *PatchTransitRouterOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch transit router o k response has a 4xx status code
 func (o *PatchTransitRouterOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this patch transit router o k response has a 5xx status code
 func (o *PatchTransitRouterOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch transit router o k response a status code equal to that given
 func (o *PatchTransitRouterOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the patch transit router o k response
 func (o *PatchTransitRouterOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *PatchTransitRouterOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /transit-routers/{id}][%d] patchTransitRouterOK %s", 200, payload)
 }
 
 func (o *PatchTransitRouterOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /transit-routers/{id}][%d] patchTransitRouterOK %s", 200, payload)
 }
 
 func (o *PatchTransitRouterOK) GetPayload() *rest_model.Empty {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchTransitRouterOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.Empty)
 
@@ -161,6 +174,7 @@ func (o *PatchTransitRouterOK) readResponse(response runtime.ClientResponse, con
 
 // NewPatchTransitRouterBadRequest creates a PatchTransitRouterBadRequest with default headers values
 func NewPatchTransitRouterBadRequest() *PatchTransitRouterBadRequest {
+    logtrace.LogWithFunctionName()
 	return &PatchTransitRouterBadRequest{}
 }
 
@@ -175,49 +189,59 @@ type PatchTransitRouterBadRequest struct {
 
 // IsSuccess returns true when this patch transit router bad request response has a 2xx status code
 func (o *PatchTransitRouterBadRequest) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch transit router bad request response has a 3xx status code
 func (o *PatchTransitRouterBadRequest) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch transit router bad request response has a 4xx status code
 func (o *PatchTransitRouterBadRequest) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch transit router bad request response has a 5xx status code
 func (o *PatchTransitRouterBadRequest) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch transit router bad request response a status code equal to that given
 func (o *PatchTransitRouterBadRequest) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 400
 }
 
 // Code gets the status code for the patch transit router bad request response
 func (o *PatchTransitRouterBadRequest) Code() int {
+    logtrace.LogWithFunctionName()
 	return 400
 }
 
 func (o *PatchTransitRouterBadRequest) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /transit-routers/{id}][%d] patchTransitRouterBadRequest %s", 400, payload)
 }
 
 func (o *PatchTransitRouterBadRequest) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /transit-routers/{id}][%d] patchTransitRouterBadRequest %s", 400, payload)
 }
 
 func (o *PatchTransitRouterBadRequest) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchTransitRouterBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -231,6 +255,7 @@ func (o *PatchTransitRouterBadRequest) readResponse(response runtime.ClientRespo
 
 // NewPatchTransitRouterUnauthorized creates a PatchTransitRouterUnauthorized with default headers values
 func NewPatchTransitRouterUnauthorized() *PatchTransitRouterUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &PatchTransitRouterUnauthorized{}
 }
 
@@ -245,49 +270,59 @@ type PatchTransitRouterUnauthorized struct {
 
 // IsSuccess returns true when this patch transit router unauthorized response has a 2xx status code
 func (o *PatchTransitRouterUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch transit router unauthorized response has a 3xx status code
 func (o *PatchTransitRouterUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch transit router unauthorized response has a 4xx status code
 func (o *PatchTransitRouterUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch transit router unauthorized response has a 5xx status code
 func (o *PatchTransitRouterUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch transit router unauthorized response a status code equal to that given
 func (o *PatchTransitRouterUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the patch transit router unauthorized response
 func (o *PatchTransitRouterUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *PatchTransitRouterUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /transit-routers/{id}][%d] patchTransitRouterUnauthorized %s", 401, payload)
 }
 
 func (o *PatchTransitRouterUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /transit-routers/{id}][%d] patchTransitRouterUnauthorized %s", 401, payload)
 }
 
 func (o *PatchTransitRouterUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchTransitRouterUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -301,6 +336,7 @@ func (o *PatchTransitRouterUnauthorized) readResponse(response runtime.ClientRes
 
 // NewPatchTransitRouterNotFound creates a PatchTransitRouterNotFound with default headers values
 func NewPatchTransitRouterNotFound() *PatchTransitRouterNotFound {
+    logtrace.LogWithFunctionName()
 	return &PatchTransitRouterNotFound{}
 }
 
@@ -315,49 +351,59 @@ type PatchTransitRouterNotFound struct {
 
 // IsSuccess returns true when this patch transit router not found response has a 2xx status code
 func (o *PatchTransitRouterNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch transit router not found response has a 3xx status code
 func (o *PatchTransitRouterNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch transit router not found response has a 4xx status code
 func (o *PatchTransitRouterNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch transit router not found response has a 5xx status code
 func (o *PatchTransitRouterNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch transit router not found response a status code equal to that given
 func (o *PatchTransitRouterNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the patch transit router not found response
 func (o *PatchTransitRouterNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *PatchTransitRouterNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /transit-routers/{id}][%d] patchTransitRouterNotFound %s", 404, payload)
 }
 
 func (o *PatchTransitRouterNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /transit-routers/{id}][%d] patchTransitRouterNotFound %s", 404, payload)
 }
 
 func (o *PatchTransitRouterNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchTransitRouterNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -371,6 +417,7 @@ func (o *PatchTransitRouterNotFound) readResponse(response runtime.ClientRespons
 
 // NewPatchTransitRouterTooManyRequests creates a PatchTransitRouterTooManyRequests with default headers values
 func NewPatchTransitRouterTooManyRequests() *PatchTransitRouterTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &PatchTransitRouterTooManyRequests{}
 }
 
@@ -385,49 +432,59 @@ type PatchTransitRouterTooManyRequests struct {
 
 // IsSuccess returns true when this patch transit router too many requests response has a 2xx status code
 func (o *PatchTransitRouterTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch transit router too many requests response has a 3xx status code
 func (o *PatchTransitRouterTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch transit router too many requests response has a 4xx status code
 func (o *PatchTransitRouterTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this patch transit router too many requests response has a 5xx status code
 func (o *PatchTransitRouterTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this patch transit router too many requests response a status code equal to that given
 func (o *PatchTransitRouterTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the patch transit router too many requests response
 func (o *PatchTransitRouterTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *PatchTransitRouterTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /transit-routers/{id}][%d] patchTransitRouterTooManyRequests %s", 429, payload)
 }
 
 func (o *PatchTransitRouterTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /transit-routers/{id}][%d] patchTransitRouterTooManyRequests %s", 429, payload)
 }
 
 func (o *PatchTransitRouterTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchTransitRouterTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -441,6 +498,7 @@ func (o *PatchTransitRouterTooManyRequests) readResponse(response runtime.Client
 
 // NewPatchTransitRouterServiceUnavailable creates a PatchTransitRouterServiceUnavailable with default headers values
 func NewPatchTransitRouterServiceUnavailable() *PatchTransitRouterServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &PatchTransitRouterServiceUnavailable{}
 }
 
@@ -455,49 +513,59 @@ type PatchTransitRouterServiceUnavailable struct {
 
 // IsSuccess returns true when this patch transit router service unavailable response has a 2xx status code
 func (o *PatchTransitRouterServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this patch transit router service unavailable response has a 3xx status code
 func (o *PatchTransitRouterServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this patch transit router service unavailable response has a 4xx status code
 func (o *PatchTransitRouterServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this patch transit router service unavailable response has a 5xx status code
 func (o *PatchTransitRouterServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this patch transit router service unavailable response a status code equal to that given
 func (o *PatchTransitRouterServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the patch transit router service unavailable response
 func (o *PatchTransitRouterServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *PatchTransitRouterServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /transit-routers/{id}][%d] patchTransitRouterServiceUnavailable %s", 503, payload)
 }
 
 func (o *PatchTransitRouterServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[PATCH /transit-routers/{id}][%d] patchTransitRouterServiceUnavailable %s", 503, payload)
 }
 
 func (o *PatchTransitRouterServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *PatchTransitRouterServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

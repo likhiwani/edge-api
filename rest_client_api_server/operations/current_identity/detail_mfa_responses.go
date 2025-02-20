@@ -30,6 +30,7 @@ package current_identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type DetailMfaOK struct {
 
 // NewDetailMfaOK creates DetailMfaOK with default headers values
 func NewDetailMfaOK() *DetailMfaOK {
+    logtrace.LogWithFunctionName()
 
 	return &DetailMfaOK{}
 }
 
 // WithPayload adds the payload to the detail mfa o k response
 func (o *DetailMfaOK) WithPayload(payload *rest_model.DetailMfaEnvelope) *DetailMfaOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail mfa o k response
 func (o *DetailMfaOK) SetPayload(payload *rest_model.DetailMfaEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailMfaOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type DetailMfaUnauthorized struct {
 
 // NewDetailMfaUnauthorized creates DetailMfaUnauthorized with default headers values
 func NewDetailMfaUnauthorized() *DetailMfaUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &DetailMfaUnauthorized{}
 }
 
 // WithPayload adds the payload to the detail mfa unauthorized response
 func (o *DetailMfaUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailMfaUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail mfa unauthorized response
 func (o *DetailMfaUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailMfaUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type DetailMfaNotFound struct {
 
 // NewDetailMfaNotFound creates DetailMfaNotFound with default headers values
 func NewDetailMfaNotFound() *DetailMfaNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &DetailMfaNotFound{}
 }
 
 // WithPayload adds the payload to the detail mfa not found response
 func (o *DetailMfaNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *DetailMfaNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the detail mfa not found response
 func (o *DetailMfaNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *DetailMfaNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {

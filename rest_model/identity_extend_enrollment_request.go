@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -50,6 +51,7 @@ type IdentityExtendEnrollmentRequest struct {
 
 // Validate validates this identity extend enrollment request
 func (m *IdentityExtendEnrollmentRequest) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateClientCertCsr(formats); err != nil {
@@ -63,6 +65,7 @@ func (m *IdentityExtendEnrollmentRequest) Validate(formats strfmt.Registry) erro
 }
 
 func (m *IdentityExtendEnrollmentRequest) validateClientCertCsr(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("clientCertCsr", "body", m.ClientCertCsr); err != nil {
 		return err
@@ -73,11 +76,13 @@ func (m *IdentityExtendEnrollmentRequest) validateClientCertCsr(formats strfmt.R
 
 // ContextValidate validates this identity extend enrollment request based on context it is used
 func (m *IdentityExtendEnrollmentRequest) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *IdentityExtendEnrollmentRequest) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -86,6 +91,7 @@ func (m *IdentityExtendEnrollmentRequest) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *IdentityExtendEnrollmentRequest) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res IdentityExtendEnrollmentRequest
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

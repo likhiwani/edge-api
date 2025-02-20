@@ -30,6 +30,7 @@ package service_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -48,6 +49,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListServicePolicyPostureChecksParams() *ListServicePolicyPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	return &ListServicePolicyPostureChecksParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -56,6 +58,7 @@ func NewListServicePolicyPostureChecksParams() *ListServicePolicyPostureChecksPa
 // NewListServicePolicyPostureChecksParamsWithTimeout creates a new ListServicePolicyPostureChecksParams object
 // with the ability to set a timeout on a request.
 func NewListServicePolicyPostureChecksParamsWithTimeout(timeout time.Duration) *ListServicePolicyPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	return &ListServicePolicyPostureChecksParams{
 		timeout: timeout,
 	}
@@ -64,6 +67,7 @@ func NewListServicePolicyPostureChecksParamsWithTimeout(timeout time.Duration) *
 // NewListServicePolicyPostureChecksParamsWithContext creates a new ListServicePolicyPostureChecksParams object
 // with the ability to set a context for a request.
 func NewListServicePolicyPostureChecksParamsWithContext(ctx context.Context) *ListServicePolicyPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	return &ListServicePolicyPostureChecksParams{
 		Context: ctx,
 	}
@@ -72,6 +76,7 @@ func NewListServicePolicyPostureChecksParamsWithContext(ctx context.Context) *Li
 // NewListServicePolicyPostureChecksParamsWithHTTPClient creates a new ListServicePolicyPostureChecksParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListServicePolicyPostureChecksParamsWithHTTPClient(client *http.Client) *ListServicePolicyPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	return &ListServicePolicyPostureChecksParams{
 		HTTPClient: client,
 	}
@@ -110,6 +115,7 @@ type ListServicePolicyPostureChecksParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListServicePolicyPostureChecksParams) WithDefaults() *ListServicePolicyPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -118,88 +124,104 @@ func (o *ListServicePolicyPostureChecksParams) WithDefaults() *ListServicePolicy
 //
 // All values with no default are reset to their zero value.
 func (o *ListServicePolicyPostureChecksParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list service policy posture checks params
 func (o *ListServicePolicyPostureChecksParams) WithTimeout(timeout time.Duration) *ListServicePolicyPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list service policy posture checks params
 func (o *ListServicePolicyPostureChecksParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list service policy posture checks params
 func (o *ListServicePolicyPostureChecksParams) WithContext(ctx context.Context) *ListServicePolicyPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list service policy posture checks params
 func (o *ListServicePolicyPostureChecksParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list service policy posture checks params
 func (o *ListServicePolicyPostureChecksParams) WithHTTPClient(client *http.Client) *ListServicePolicyPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list service policy posture checks params
 func (o *ListServicePolicyPostureChecksParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithFilter adds the filter to the list service policy posture checks params
 func (o *ListServicePolicyPostureChecksParams) WithFilter(filter *string) *ListServicePolicyPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	o.SetFilter(filter)
 	return o
 }
 
 // SetFilter adds the filter to the list service policy posture checks params
 func (o *ListServicePolicyPostureChecksParams) SetFilter(filter *string) {
+    logtrace.LogWithFunctionName()
 	o.Filter = filter
 }
 
 // WithID adds the id to the list service policy posture checks params
 func (o *ListServicePolicyPostureChecksParams) WithID(id string) *ListServicePolicyPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the list service policy posture checks params
 func (o *ListServicePolicyPostureChecksParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WithLimit adds the limit to the list service policy posture checks params
 func (o *ListServicePolicyPostureChecksParams) WithLimit(limit *int64) *ListServicePolicyPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	o.SetLimit(limit)
 	return o
 }
 
 // SetLimit adds the limit to the list service policy posture checks params
 func (o *ListServicePolicyPostureChecksParams) SetLimit(limit *int64) {
+    logtrace.LogWithFunctionName()
 	o.Limit = limit
 }
 
 // WithOffset adds the offset to the list service policy posture checks params
 func (o *ListServicePolicyPostureChecksParams) WithOffset(offset *int64) *ListServicePolicyPostureChecksParams {
+    logtrace.LogWithFunctionName()
 	o.SetOffset(offset)
 	return o
 }
 
 // SetOffset adds the offset to the list service policy posture checks params
 func (o *ListServicePolicyPostureChecksParams) SetOffset(offset *int64) {
+    logtrace.LogWithFunctionName()
 	o.Offset = offset
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListServicePolicyPostureChecksParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

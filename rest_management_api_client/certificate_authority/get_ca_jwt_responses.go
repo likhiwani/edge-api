@@ -30,6 +30,7 @@ package certificate_authority
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -47,6 +48,7 @@ type GetCaJWTReader struct {
 
 // ReadResponse reads a server response into the received o.
 func (o *GetCaJWTReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+    logtrace.LogWithFunctionName()
 	switch response.Code() {
 	case 200:
 		result := NewGetCaJWTOK()
@@ -85,6 +87,7 @@ func (o *GetCaJWTReader) ReadResponse(response runtime.ClientResponse, consumer 
 
 // NewGetCaJWTOK creates a GetCaJWTOK with default headers values
 func NewGetCaJWTOK() *GetCaJWTOK {
+    logtrace.LogWithFunctionName()
 	return &GetCaJWTOK{}
 }
 
@@ -99,49 +102,59 @@ type GetCaJWTOK struct {
 
 // IsSuccess returns true when this get ca Jwt o k response has a 2xx status code
 func (o *GetCaJWTOK) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsRedirect returns true when this get ca Jwt o k response has a 3xx status code
 func (o *GetCaJWTOK) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get ca Jwt o k response has a 4xx status code
 func (o *GetCaJWTOK) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this get ca Jwt o k response has a 5xx status code
 func (o *GetCaJWTOK) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get ca Jwt o k response a status code equal to that given
 func (o *GetCaJWTOK) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 200
 }
 
 // Code gets the status code for the get ca Jwt o k response
 func (o *GetCaJWTOK) Code() int {
+    logtrace.LogWithFunctionName()
 	return 200
 }
 
 func (o *GetCaJWTOK) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtOK %s", 200, payload)
 }
 
 func (o *GetCaJWTOK) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtOK %s", 200, payload)
 }
 
 func (o *GetCaJWTOK) GetPayload() string {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetCaJWTOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
@@ -153,6 +166,7 @@ func (o *GetCaJWTOK) readResponse(response runtime.ClientResponse, consumer runt
 
 // NewGetCaJWTUnauthorized creates a GetCaJWTUnauthorized with default headers values
 func NewGetCaJWTUnauthorized() *GetCaJWTUnauthorized {
+    logtrace.LogWithFunctionName()
 	return &GetCaJWTUnauthorized{}
 }
 
@@ -167,49 +181,59 @@ type GetCaJWTUnauthorized struct {
 
 // IsSuccess returns true when this get ca Jwt unauthorized response has a 2xx status code
 func (o *GetCaJWTUnauthorized) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this get ca Jwt unauthorized response has a 3xx status code
 func (o *GetCaJWTUnauthorized) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get ca Jwt unauthorized response has a 4xx status code
 func (o *GetCaJWTUnauthorized) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this get ca Jwt unauthorized response has a 5xx status code
 func (o *GetCaJWTUnauthorized) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get ca Jwt unauthorized response a status code equal to that given
 func (o *GetCaJWTUnauthorized) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 401
 }
 
 // Code gets the status code for the get ca Jwt unauthorized response
 func (o *GetCaJWTUnauthorized) Code() int {
+    logtrace.LogWithFunctionName()
 	return 401
 }
 
 func (o *GetCaJWTUnauthorized) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtUnauthorized %s", 401, payload)
 }
 
 func (o *GetCaJWTUnauthorized) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtUnauthorized %s", 401, payload)
 }
 
 func (o *GetCaJWTUnauthorized) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetCaJWTUnauthorized) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -223,6 +247,7 @@ func (o *GetCaJWTUnauthorized) readResponse(response runtime.ClientResponse, con
 
 // NewGetCaJWTNotFound creates a GetCaJWTNotFound with default headers values
 func NewGetCaJWTNotFound() *GetCaJWTNotFound {
+    logtrace.LogWithFunctionName()
 	return &GetCaJWTNotFound{}
 }
 
@@ -237,49 +262,59 @@ type GetCaJWTNotFound struct {
 
 // IsSuccess returns true when this get ca Jwt not found response has a 2xx status code
 func (o *GetCaJWTNotFound) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this get ca Jwt not found response has a 3xx status code
 func (o *GetCaJWTNotFound) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get ca Jwt not found response has a 4xx status code
 func (o *GetCaJWTNotFound) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this get ca Jwt not found response has a 5xx status code
 func (o *GetCaJWTNotFound) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get ca Jwt not found response a status code equal to that given
 func (o *GetCaJWTNotFound) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 404
 }
 
 // Code gets the status code for the get ca Jwt not found response
 func (o *GetCaJWTNotFound) Code() int {
+    logtrace.LogWithFunctionName()
 	return 404
 }
 
 func (o *GetCaJWTNotFound) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtNotFound %s", 404, payload)
 }
 
 func (o *GetCaJWTNotFound) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtNotFound %s", 404, payload)
 }
 
 func (o *GetCaJWTNotFound) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetCaJWTNotFound) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -293,6 +328,7 @@ func (o *GetCaJWTNotFound) readResponse(response runtime.ClientResponse, consume
 
 // NewGetCaJWTTooManyRequests creates a GetCaJWTTooManyRequests with default headers values
 func NewGetCaJWTTooManyRequests() *GetCaJWTTooManyRequests {
+    logtrace.LogWithFunctionName()
 	return &GetCaJWTTooManyRequests{}
 }
 
@@ -307,49 +343,59 @@ type GetCaJWTTooManyRequests struct {
 
 // IsSuccess returns true when this get ca Jwt too many requests response has a 2xx status code
 func (o *GetCaJWTTooManyRequests) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this get ca Jwt too many requests response has a 3xx status code
 func (o *GetCaJWTTooManyRequests) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get ca Jwt too many requests response has a 4xx status code
 func (o *GetCaJWTTooManyRequests) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsServerError returns true when this get ca Jwt too many requests response has a 5xx status code
 func (o *GetCaJWTTooManyRequests) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsCode returns true when this get ca Jwt too many requests response a status code equal to that given
 func (o *GetCaJWTTooManyRequests) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 429
 }
 
 // Code gets the status code for the get ca Jwt too many requests response
 func (o *GetCaJWTTooManyRequests) Code() int {
+    logtrace.LogWithFunctionName()
 	return 429
 }
 
 func (o *GetCaJWTTooManyRequests) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtTooManyRequests %s", 429, payload)
 }
 
 func (o *GetCaJWTTooManyRequests) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtTooManyRequests %s", 429, payload)
 }
 
 func (o *GetCaJWTTooManyRequests) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetCaJWTTooManyRequests) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 
@@ -363,6 +409,7 @@ func (o *GetCaJWTTooManyRequests) readResponse(response runtime.ClientResponse, 
 
 // NewGetCaJWTServiceUnavailable creates a GetCaJWTServiceUnavailable with default headers values
 func NewGetCaJWTServiceUnavailable() *GetCaJWTServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	return &GetCaJWTServiceUnavailable{}
 }
 
@@ -377,49 +424,59 @@ type GetCaJWTServiceUnavailable struct {
 
 // IsSuccess returns true when this get ca Jwt service unavailable response has a 2xx status code
 func (o *GetCaJWTServiceUnavailable) IsSuccess() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsRedirect returns true when this get ca Jwt service unavailable response has a 3xx status code
 func (o *GetCaJWTServiceUnavailable) IsRedirect() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsClientError returns true when this get ca Jwt service unavailable response has a 4xx status code
 func (o *GetCaJWTServiceUnavailable) IsClientError() bool {
+    logtrace.LogWithFunctionName()
 	return false
 }
 
 // IsServerError returns true when this get ca Jwt service unavailable response has a 5xx status code
 func (o *GetCaJWTServiceUnavailable) IsServerError() bool {
+    logtrace.LogWithFunctionName()
 	return true
 }
 
 // IsCode returns true when this get ca Jwt service unavailable response a status code equal to that given
 func (o *GetCaJWTServiceUnavailable) IsCode(code int) bool {
+    logtrace.LogWithFunctionName()
 	return code == 503
 }
 
 // Code gets the status code for the get ca Jwt service unavailable response
 func (o *GetCaJWTServiceUnavailable) Code() int {
+    logtrace.LogWithFunctionName()
 	return 503
 }
 
 func (o *GetCaJWTServiceUnavailable) Error() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtServiceUnavailable %s", 503, payload)
 }
 
 func (o *GetCaJWTServiceUnavailable) String() string {
+    logtrace.LogWithFunctionName()
 	payload, _ := json.Marshal(o.Payload)
 	return fmt.Sprintf("[GET /cas/{id}/jwt][%d] getCaJwtServiceUnavailable %s", 503, payload)
 }
 
 func (o *GetCaJWTServiceUnavailable) GetPayload() *rest_model.APIErrorEnvelope {
+    logtrace.LogWithFunctionName()
 	return o.Payload
 }
 
 func (o *GetCaJWTServiceUnavailable) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	o.Payload = new(rest_model.APIErrorEnvelope)
 

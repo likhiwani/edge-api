@@ -30,6 +30,7 @@ package posture_checks
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"errors"
 	"net/url"
 	golangswaggerpaths "path"
@@ -52,6 +53,7 @@ type ListPostureCheckTypesURL struct {
 // base path specified in the swagger spec.
 // When the value of the base path is an empty string
 func (o *ListPostureCheckTypesURL) WithBasePath(bp string) *ListPostureCheckTypesURL {
+    logtrace.LogWithFunctionName()
 	o.SetBasePath(bp)
 	return o
 }
@@ -60,11 +62,13 @@ func (o *ListPostureCheckTypesURL) WithBasePath(bp string) *ListPostureCheckType
 // base path specified in the swagger spec.
 // When the value of the base path is an empty string
 func (o *ListPostureCheckTypesURL) SetBasePath(bp string) {
+    logtrace.LogWithFunctionName()
 	o._basePath = bp
 }
 
 // Build a url path and query string
 func (o *ListPostureCheckTypesURL) Build() (*url.URL, error) {
+    logtrace.LogWithFunctionName()
 	var _result url.URL
 
 	var _path = "/posture-check-types"
@@ -108,6 +112,7 @@ func (o *ListPostureCheckTypesURL) Build() (*url.URL, error) {
 
 // Must is a helper function to panic when the url builder returns an error
 func (o *ListPostureCheckTypesURL) Must(u *url.URL, err error) *url.URL {
+    logtrace.LogWithFunctionName()
 	if err != nil {
 		panic(err)
 	}
@@ -119,11 +124,13 @@ func (o *ListPostureCheckTypesURL) Must(u *url.URL, err error) *url.URL {
 
 // String returns the string representation of the path with query string
 func (o *ListPostureCheckTypesURL) String() string {
+    logtrace.LogWithFunctionName()
 	return o.Must(o.Build()).String()
 }
 
 // BuildFull builds a full url with scheme, host, path and query string
 func (o *ListPostureCheckTypesURL) BuildFull(scheme, host string) (*url.URL, error) {
+    logtrace.LogWithFunctionName()
 	if scheme == "" {
 		return nil, errors.New("scheme is required for a full url on ListPostureCheckTypesURL")
 	}
@@ -143,5 +150,6 @@ func (o *ListPostureCheckTypesURL) BuildFull(scheme, host string) (*url.URL, err
 
 // StringFull returns the string representation of a complete url
 func (o *ListPostureCheckTypesURL) StringFull(scheme, host string) string {
+    logtrace.LogWithFunctionName()
 	return o.Must(o.BuildFull(scheme, host)).String()
 }

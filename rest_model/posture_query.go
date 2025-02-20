@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"strconv"
 
@@ -70,6 +71,7 @@ type PostureQuery struct {
 
 // UnmarshalJSON unmarshals this object from a JSON structure
 func (m *PostureQuery) UnmarshalJSON(raw []byte) error {
+    logtrace.LogWithFunctionName()
 	// AO0
 	var aO0 BaseEntity
 	if err := swag.ReadJSON(raw, &aO0); err != nil {
@@ -112,6 +114,7 @@ func (m *PostureQuery) UnmarshalJSON(raw []byte) error {
 
 // MarshalJSON marshals this object to a JSON structure
 func (m PostureQuery) MarshalJSON() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	_parts := make([][]byte, 0, 2)
 
 	aO0, err := swag.WriteJSON(m.BaseEntity)
@@ -155,6 +158,7 @@ func (m PostureQuery) MarshalJSON() ([]byte, error) {
 
 // Validate validates this posture query
 func (m *PostureQuery) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -193,6 +197,7 @@ func (m *PostureQuery) Validate(formats strfmt.Registry) error {
 }
 
 func (m *PostureQuery) validateIsPassing(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("isPassing", "body", m.IsPassing); err != nil {
 		return err
@@ -202,6 +207,7 @@ func (m *PostureQuery) validateIsPassing(formats strfmt.Registry) error {
 }
 
 func (m *PostureQuery) validateProcess(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.Process) { // not required
 		return nil
@@ -222,6 +228,7 @@ func (m *PostureQuery) validateProcess(formats strfmt.Registry) error {
 }
 
 func (m *PostureQuery) validateProcesses(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if swag.IsZero(m.Processes) { // not required
 		return nil
@@ -249,6 +256,7 @@ func (m *PostureQuery) validateProcesses(formats strfmt.Registry) error {
 }
 
 func (m *PostureQuery) validateQueryType(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("queryType", "body", m.QueryType); err != nil {
 		return err
@@ -273,6 +281,7 @@ func (m *PostureQuery) validateQueryType(formats strfmt.Registry) error {
 }
 
 func (m *PostureQuery) validateTimeout(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("timeout", "body", m.Timeout); err != nil {
 		return err
@@ -282,6 +291,7 @@ func (m *PostureQuery) validateTimeout(formats strfmt.Registry) error {
 }
 
 func (m *PostureQuery) validateTimeoutRemaining(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("timeoutRemaining", "body", m.TimeoutRemaining); err != nil {
 		return err
@@ -292,6 +302,7 @@ func (m *PostureQuery) validateTimeoutRemaining(formats strfmt.Registry) error {
 
 // ContextValidate validate this posture query based on the context it is used
 func (m *PostureQuery) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	// validation for a type composition with BaseEntity
@@ -318,6 +329,7 @@ func (m *PostureQuery) ContextValidate(ctx context.Context, formats strfmt.Regis
 }
 
 func (m *PostureQuery) contextValidateProcess(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Process != nil {
 
@@ -339,6 +351,7 @@ func (m *PostureQuery) contextValidateProcess(ctx context.Context, formats strfm
 }
 
 func (m *PostureQuery) contextValidateProcesses(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	for i := 0; i < len(m.Processes); i++ {
 
@@ -364,6 +377,7 @@ func (m *PostureQuery) contextValidateProcesses(ctx context.Context, formats str
 }
 
 func (m *PostureQuery) contextValidateQueryType(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.QueryType != nil {
 
@@ -382,6 +396,7 @@ func (m *PostureQuery) contextValidateQueryType(ctx context.Context, formats str
 
 // MarshalBinary interface implementation
 func (m *PostureQuery) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -390,6 +405,7 @@ func (m *PostureQuery) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *PostureQuery) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res PostureQuery
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

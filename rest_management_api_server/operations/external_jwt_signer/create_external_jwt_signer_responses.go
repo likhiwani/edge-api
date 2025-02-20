@@ -30,6 +30,7 @@ package external_jwt_signer
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type CreateExternalJWTSignerCreated struct {
 
 // NewCreateExternalJWTSignerCreated creates CreateExternalJWTSignerCreated with default headers values
 func NewCreateExternalJWTSignerCreated() *CreateExternalJWTSignerCreated {
+    logtrace.LogWithFunctionName()
 
 	return &CreateExternalJWTSignerCreated{}
 }
 
 // WithPayload adds the payload to the create external Jwt signer created response
 func (o *CreateExternalJWTSignerCreated) WithPayload(payload *rest_model.CreateEnvelope) *CreateExternalJWTSignerCreated {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create external Jwt signer created response
 func (o *CreateExternalJWTSignerCreated) SetPayload(payload *rest_model.CreateEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateExternalJWTSignerCreated) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(201)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type CreateExternalJWTSignerBadRequest struct {
 
 // NewCreateExternalJWTSignerBadRequest creates CreateExternalJWTSignerBadRequest with default headers values
 func NewCreateExternalJWTSignerBadRequest() *CreateExternalJWTSignerBadRequest {
+    logtrace.LogWithFunctionName()
 
 	return &CreateExternalJWTSignerBadRequest{}
 }
 
 // WithPayload adds the payload to the create external Jwt signer bad request response
 func (o *CreateExternalJWTSignerBadRequest) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateExternalJWTSignerBadRequest {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create external Jwt signer bad request response
 func (o *CreateExternalJWTSignerBadRequest) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateExternalJWTSignerBadRequest) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(400)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type CreateExternalJWTSignerUnauthorized struct {
 
 // NewCreateExternalJWTSignerUnauthorized creates CreateExternalJWTSignerUnauthorized with default headers values
 func NewCreateExternalJWTSignerUnauthorized() *CreateExternalJWTSignerUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &CreateExternalJWTSignerUnauthorized{}
 }
 
 // WithPayload adds the payload to the create external Jwt signer unauthorized response
 func (o *CreateExternalJWTSignerUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateExternalJWTSignerUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create external Jwt signer unauthorized response
 func (o *CreateExternalJWTSignerUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateExternalJWTSignerUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type CreateExternalJWTSignerTooManyRequests struct {
 
 // NewCreateExternalJWTSignerTooManyRequests creates CreateExternalJWTSignerTooManyRequests with default headers values
 func NewCreateExternalJWTSignerTooManyRequests() *CreateExternalJWTSignerTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &CreateExternalJWTSignerTooManyRequests{}
 }
 
 // WithPayload adds the payload to the create external Jwt signer too many requests response
 func (o *CreateExternalJWTSignerTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateExternalJWTSignerTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create external Jwt signer too many requests response
 func (o *CreateExternalJWTSignerTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateExternalJWTSignerTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type CreateExternalJWTSignerServiceUnavailable struct {
 
 // NewCreateExternalJWTSignerServiceUnavailable creates CreateExternalJWTSignerServiceUnavailable with default headers values
 func NewCreateExternalJWTSignerServiceUnavailable() *CreateExternalJWTSignerServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &CreateExternalJWTSignerServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the create external Jwt signer service unavailable response
 func (o *CreateExternalJWTSignerServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *CreateExternalJWTSignerServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create external Jwt signer service unavailable response
 func (o *CreateExternalJWTSignerServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *CreateExternalJWTSignerServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

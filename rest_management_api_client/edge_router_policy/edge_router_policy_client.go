@@ -30,6 +30,7 @@ package edge_router_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new edge router policy API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -105,6 +109,7 @@ CreateEdgeRouterPolicy creates an edge router policy resource
 Create an edge router policy resource. Requires admin access.
 */
 func (a *Client) CreateEdgeRouterPolicy(params *CreateEdgeRouterPolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateEdgeRouterPolicyCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreateEdgeRouterPolicyParams()
@@ -146,6 +151,7 @@ DeleteEdgeRouterPolicy deletes an edge router policy
 Delete an edge router policy by id. Requires admin access.
 */
 func (a *Client) DeleteEdgeRouterPolicy(params *DeleteEdgeRouterPolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteEdgeRouterPolicyOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteEdgeRouterPolicyParams()
@@ -187,6 +193,7 @@ DetailEdgeRouterPolicy retrieves a single edge router policy
 Retrieves a single edge router policy by id. Requires admin access.
 */
 func (a *Client) DetailEdgeRouterPolicy(params *DetailEdgeRouterPolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailEdgeRouterPolicyOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailEdgeRouterPolicyParams()
@@ -228,6 +235,7 @@ ListEdgeRouterPolicies lists edge router policies
 Retrieves a list of edge router policy resources; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListEdgeRouterPolicies(params *ListEdgeRouterPoliciesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListEdgeRouterPoliciesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListEdgeRouterPoliciesParams()
@@ -269,6 +277,7 @@ ListEdgeRouterPolicyEdgeRouters lists edge routers a policy affects
 Retrieves a list of edge routers an edge router policy resources affects; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListEdgeRouterPolicyEdgeRouters(params *ListEdgeRouterPolicyEdgeRoutersParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListEdgeRouterPolicyEdgeRoutersOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListEdgeRouterPolicyEdgeRoutersParams()
@@ -310,6 +319,7 @@ ListEdgeRouterPolicyIdentities lists identities an edge router policy affects
 Retrieves a list of identities an edge router policy resources affects; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListEdgeRouterPolicyIdentities(params *ListEdgeRouterPolicyIdentitiesParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListEdgeRouterPolicyIdentitiesOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListEdgeRouterPolicyIdentitiesParams()
@@ -351,6 +361,7 @@ PatchEdgeRouterPolicy updates the supplied fields on an edge router policy
 Update the supplied fields on an edge router policy. Requires admin access.
 */
 func (a *Client) PatchEdgeRouterPolicy(params *PatchEdgeRouterPolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PatchEdgeRouterPolicyOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPatchEdgeRouterPolicyParams()
@@ -392,6 +403,7 @@ UpdateEdgeRouterPolicy updates all fields on an edge router policy
 Update all fields on an edge router policy by id. Requires admin access.
 */
 func (a *Client) UpdateEdgeRouterPolicy(params *UpdateEdgeRouterPolicyParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UpdateEdgeRouterPolicyOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUpdateEdgeRouterPolicyParams()
@@ -429,5 +441,6 @@ func (a *Client) UpdateEdgeRouterPolicy(params *UpdateEdgeRouterPolicyParams, au
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

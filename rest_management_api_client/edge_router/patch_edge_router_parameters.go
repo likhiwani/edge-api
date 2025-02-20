@@ -30,6 +30,7 @@ package edge_router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewPatchEdgeRouterParams() *PatchEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	return &PatchEdgeRouterParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewPatchEdgeRouterParams() *PatchEdgeRouterParams {
 // NewPatchEdgeRouterParamsWithTimeout creates a new PatchEdgeRouterParams object
 // with the ability to set a timeout on a request.
 func NewPatchEdgeRouterParamsWithTimeout(timeout time.Duration) *PatchEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	return &PatchEdgeRouterParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewPatchEdgeRouterParamsWithTimeout(timeout time.Duration) *PatchEdgeRouter
 // NewPatchEdgeRouterParamsWithContext creates a new PatchEdgeRouterParams object
 // with the ability to set a context for a request.
 func NewPatchEdgeRouterParamsWithContext(ctx context.Context) *PatchEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	return &PatchEdgeRouterParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewPatchEdgeRouterParamsWithContext(ctx context.Context) *PatchEdgeRouterPa
 // NewPatchEdgeRouterParamsWithHTTPClient creates a new PatchEdgeRouterParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewPatchEdgeRouterParamsWithHTTPClient(client *http.Client) *PatchEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	return &PatchEdgeRouterParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type PatchEdgeRouterParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchEdgeRouterParams) WithDefaults() *PatchEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *PatchEdgeRouterParams) WithDefaults() *PatchEdgeRouterParams {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchEdgeRouterParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the patch edge router params
 func (o *PatchEdgeRouterParams) WithTimeout(timeout time.Duration) *PatchEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the patch edge router params
 func (o *PatchEdgeRouterParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the patch edge router params
 func (o *PatchEdgeRouterParams) WithContext(ctx context.Context) *PatchEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the patch edge router params
 func (o *PatchEdgeRouterParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the patch edge router params
 func (o *PatchEdgeRouterParams) WithHTTPClient(client *http.Client) *PatchEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the patch edge router params
 func (o *PatchEdgeRouterParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithEdgeRouter adds the edgeRouter to the patch edge router params
 func (o *PatchEdgeRouterParams) WithEdgeRouter(edgeRouter *rest_model.EdgeRouterPatch) *PatchEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetEdgeRouter(edgeRouter)
 	return o
 }
 
 // SetEdgeRouter adds the edgeRouter to the patch edge router params
 func (o *PatchEdgeRouterParams) SetEdgeRouter(edgeRouter *rest_model.EdgeRouterPatch) {
+    logtrace.LogWithFunctionName()
 	o.EdgeRouter = edgeRouter
 }
 
 // WithID adds the id to the patch edge router params
 func (o *PatchEdgeRouterParams) WithID(id string) *PatchEdgeRouterParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the patch edge router params
 func (o *PatchEdgeRouterParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *PatchEdgeRouterParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

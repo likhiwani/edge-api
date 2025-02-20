@@ -30,6 +30,7 @@ package edge_router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime"
@@ -55,23 +56,27 @@ type ListEdgeRouterServiceEdgeRouterPoliciesOK struct {
 
 // NewListEdgeRouterServiceEdgeRouterPoliciesOK creates ListEdgeRouterServiceEdgeRouterPoliciesOK with default headers values
 func NewListEdgeRouterServiceEdgeRouterPoliciesOK() *ListEdgeRouterServiceEdgeRouterPoliciesOK {
+    logtrace.LogWithFunctionName()
 
 	return &ListEdgeRouterServiceEdgeRouterPoliciesOK{}
 }
 
 // WithPayload adds the payload to the list edge router service edge router policies o k response
 func (o *ListEdgeRouterServiceEdgeRouterPoliciesOK) WithPayload(payload *rest_model.ListServicePoliciesEnvelope) *ListEdgeRouterServiceEdgeRouterPoliciesOK {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list edge router service edge router policies o k response
 func (o *ListEdgeRouterServiceEdgeRouterPoliciesOK) SetPayload(payload *rest_model.ListServicePoliciesEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListEdgeRouterServiceEdgeRouterPoliciesOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(200)
 	if o.Payload != nil {
@@ -100,23 +105,27 @@ type ListEdgeRouterServiceEdgeRouterPoliciesUnauthorized struct {
 
 // NewListEdgeRouterServiceEdgeRouterPoliciesUnauthorized creates ListEdgeRouterServiceEdgeRouterPoliciesUnauthorized with default headers values
 func NewListEdgeRouterServiceEdgeRouterPoliciesUnauthorized() *ListEdgeRouterServiceEdgeRouterPoliciesUnauthorized {
+    logtrace.LogWithFunctionName()
 
 	return &ListEdgeRouterServiceEdgeRouterPoliciesUnauthorized{}
 }
 
 // WithPayload adds the payload to the list edge router service edge router policies unauthorized response
 func (o *ListEdgeRouterServiceEdgeRouterPoliciesUnauthorized) WithPayload(payload *rest_model.APIErrorEnvelope) *ListEdgeRouterServiceEdgeRouterPoliciesUnauthorized {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list edge router service edge router policies unauthorized response
 func (o *ListEdgeRouterServiceEdgeRouterPoliciesUnauthorized) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListEdgeRouterServiceEdgeRouterPoliciesUnauthorized) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(401)
 	if o.Payload != nil {
@@ -145,23 +154,27 @@ type ListEdgeRouterServiceEdgeRouterPoliciesNotFound struct {
 
 // NewListEdgeRouterServiceEdgeRouterPoliciesNotFound creates ListEdgeRouterServiceEdgeRouterPoliciesNotFound with default headers values
 func NewListEdgeRouterServiceEdgeRouterPoliciesNotFound() *ListEdgeRouterServiceEdgeRouterPoliciesNotFound {
+    logtrace.LogWithFunctionName()
 
 	return &ListEdgeRouterServiceEdgeRouterPoliciesNotFound{}
 }
 
 // WithPayload adds the payload to the list edge router service edge router policies not found response
 func (o *ListEdgeRouterServiceEdgeRouterPoliciesNotFound) WithPayload(payload *rest_model.APIErrorEnvelope) *ListEdgeRouterServiceEdgeRouterPoliciesNotFound {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list edge router service edge router policies not found response
 func (o *ListEdgeRouterServiceEdgeRouterPoliciesNotFound) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListEdgeRouterServiceEdgeRouterPoliciesNotFound) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(404)
 	if o.Payload != nil {
@@ -190,23 +203,27 @@ type ListEdgeRouterServiceEdgeRouterPoliciesTooManyRequests struct {
 
 // NewListEdgeRouterServiceEdgeRouterPoliciesTooManyRequests creates ListEdgeRouterServiceEdgeRouterPoliciesTooManyRequests with default headers values
 func NewListEdgeRouterServiceEdgeRouterPoliciesTooManyRequests() *ListEdgeRouterServiceEdgeRouterPoliciesTooManyRequests {
+    logtrace.LogWithFunctionName()
 
 	return &ListEdgeRouterServiceEdgeRouterPoliciesTooManyRequests{}
 }
 
 // WithPayload adds the payload to the list edge router service edge router policies too many requests response
 func (o *ListEdgeRouterServiceEdgeRouterPoliciesTooManyRequests) WithPayload(payload *rest_model.APIErrorEnvelope) *ListEdgeRouterServiceEdgeRouterPoliciesTooManyRequests {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list edge router service edge router policies too many requests response
 func (o *ListEdgeRouterServiceEdgeRouterPoliciesTooManyRequests) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListEdgeRouterServiceEdgeRouterPoliciesTooManyRequests) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(429)
 	if o.Payload != nil {
@@ -235,23 +252,27 @@ type ListEdgeRouterServiceEdgeRouterPoliciesServiceUnavailable struct {
 
 // NewListEdgeRouterServiceEdgeRouterPoliciesServiceUnavailable creates ListEdgeRouterServiceEdgeRouterPoliciesServiceUnavailable with default headers values
 func NewListEdgeRouterServiceEdgeRouterPoliciesServiceUnavailable() *ListEdgeRouterServiceEdgeRouterPoliciesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 
 	return &ListEdgeRouterServiceEdgeRouterPoliciesServiceUnavailable{}
 }
 
 // WithPayload adds the payload to the list edge router service edge router policies service unavailable response
 func (o *ListEdgeRouterServiceEdgeRouterPoliciesServiceUnavailable) WithPayload(payload *rest_model.APIErrorEnvelope) *ListEdgeRouterServiceEdgeRouterPoliciesServiceUnavailable {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list edge router service edge router policies service unavailable response
 func (o *ListEdgeRouterServiceEdgeRouterPoliciesServiceUnavailable) SetPayload(payload *rest_model.APIErrorEnvelope) {
+    logtrace.LogWithFunctionName()
 	o.Payload = payload
 }
 
 // WriteResponse to the client
 func (o *ListEdgeRouterServiceEdgeRouterPoliciesServiceUnavailable) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
+    logtrace.LogWithFunctionName()
 
 	rw.WriteHeader(503)
 	if o.Payload != nil {

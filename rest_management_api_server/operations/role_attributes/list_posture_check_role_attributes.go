@@ -30,6 +30,7 @@ package role_attributes
 // Editing this file might prove futile when you re-run the generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"net/http"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -40,6 +41,7 @@ type ListPostureCheckRoleAttributesHandlerFunc func(ListPostureCheckRoleAttribut
 
 // Handle executing the request and returning a response
 func (fn ListPostureCheckRoleAttributesHandlerFunc) Handle(params ListPostureCheckRoleAttributesParams, principal interface{}) middleware.Responder {
+    logtrace.LogWithFunctionName()
 	return fn(params, principal)
 }
 
@@ -50,6 +52,7 @@ type ListPostureCheckRoleAttributesHandler interface {
 
 // NewListPostureCheckRoleAttributes creates a new http.Handler for the list posture check role attributes operation
 func NewListPostureCheckRoleAttributes(ctx *middleware.Context, handler ListPostureCheckRoleAttributesHandler) *ListPostureCheckRoleAttributes {
+    logtrace.LogWithFunctionName()
 	return &ListPostureCheckRoleAttributes{Context: ctx, Handler: handler}
 }
 
@@ -66,6 +69,7 @@ type ListPostureCheckRoleAttributes struct {
 }
 
 func (o *ListPostureCheckRoleAttributes) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
+    logtrace.LogWithFunctionName()
 	route, rCtx, _ := o.Context.RouteInfo(r)
 	if rCtx != nil {
 		*r = *rCtx

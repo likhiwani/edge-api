@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -69,6 +70,7 @@ type ServiceCreate struct {
 
 // Validate validates this service create
 func (m *ServiceCreate) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateEncryptionRequired(formats); err != nil {
@@ -90,6 +92,7 @@ func (m *ServiceCreate) Validate(formats strfmt.Registry) error {
 }
 
 func (m *ServiceCreate) validateEncryptionRequired(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("encryptionRequired", "body", m.EncryptionRequired); err != nil {
 		return err
@@ -99,6 +102,7 @@ func (m *ServiceCreate) validateEncryptionRequired(formats strfmt.Registry) erro
 }
 
 func (m *ServiceCreate) validateName(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -108,6 +112,7 @@ func (m *ServiceCreate) validateName(formats strfmt.Registry) error {
 }
 
 func (m *ServiceCreate) validateTags(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	if swag.IsZero(m.Tags) { // not required
 		return nil
 	}
@@ -128,6 +133,7 @@ func (m *ServiceCreate) validateTags(formats strfmt.Registry) error {
 
 // ContextValidate validate this service create based on the context it is used
 func (m *ServiceCreate) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateTags(ctx, formats); err != nil {
@@ -141,6 +147,7 @@ func (m *ServiceCreate) ContextValidate(ctx context.Context, formats strfmt.Regi
 }
 
 func (m *ServiceCreate) contextValidateTags(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Tags != nil {
 
@@ -163,6 +170,7 @@ func (m *ServiceCreate) contextValidateTags(ctx context.Context, formats strfmt.
 
 // MarshalBinary interface implementation
 func (m *ServiceCreate) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -171,6 +179,7 @@ func (m *ServiceCreate) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *ServiceCreate) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res ServiceCreate
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

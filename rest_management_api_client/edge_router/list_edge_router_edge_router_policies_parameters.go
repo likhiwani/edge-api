@@ -30,6 +30,7 @@ package edge_router
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewListEdgeRouterEdgeRouterPoliciesParams() *ListEdgeRouterEdgeRouterPoliciesParams {
+    logtrace.LogWithFunctionName()
 	return &ListEdgeRouterEdgeRouterPoliciesParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewListEdgeRouterEdgeRouterPoliciesParams() *ListEdgeRouterEdgeRouterPolici
 // NewListEdgeRouterEdgeRouterPoliciesParamsWithTimeout creates a new ListEdgeRouterEdgeRouterPoliciesParams object
 // with the ability to set a timeout on a request.
 func NewListEdgeRouterEdgeRouterPoliciesParamsWithTimeout(timeout time.Duration) *ListEdgeRouterEdgeRouterPoliciesParams {
+    logtrace.LogWithFunctionName()
 	return &ListEdgeRouterEdgeRouterPoliciesParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewListEdgeRouterEdgeRouterPoliciesParamsWithTimeout(timeout time.Duration)
 // NewListEdgeRouterEdgeRouterPoliciesParamsWithContext creates a new ListEdgeRouterEdgeRouterPoliciesParams object
 // with the ability to set a context for a request.
 func NewListEdgeRouterEdgeRouterPoliciesParamsWithContext(ctx context.Context) *ListEdgeRouterEdgeRouterPoliciesParams {
+    logtrace.LogWithFunctionName()
 	return &ListEdgeRouterEdgeRouterPoliciesParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewListEdgeRouterEdgeRouterPoliciesParamsWithContext(ctx context.Context) *
 // NewListEdgeRouterEdgeRouterPoliciesParamsWithHTTPClient creates a new ListEdgeRouterEdgeRouterPoliciesParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewListEdgeRouterEdgeRouterPoliciesParamsWithHTTPClient(client *http.Client) *ListEdgeRouterEdgeRouterPoliciesParams {
+    logtrace.LogWithFunctionName()
 	return &ListEdgeRouterEdgeRouterPoliciesParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type ListEdgeRouterEdgeRouterPoliciesParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *ListEdgeRouterEdgeRouterPoliciesParams) WithDefaults() *ListEdgeRouterEdgeRouterPoliciesParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *ListEdgeRouterEdgeRouterPoliciesParams) WithDefaults() *ListEdgeRouterE
 //
 // All values with no default are reset to their zero value.
 func (o *ListEdgeRouterEdgeRouterPoliciesParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the list edge router edge router policies params
 func (o *ListEdgeRouterEdgeRouterPoliciesParams) WithTimeout(timeout time.Duration) *ListEdgeRouterEdgeRouterPoliciesParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the list edge router edge router policies params
 func (o *ListEdgeRouterEdgeRouterPoliciesParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the list edge router edge router policies params
 func (o *ListEdgeRouterEdgeRouterPoliciesParams) WithContext(ctx context.Context) *ListEdgeRouterEdgeRouterPoliciesParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the list edge router edge router policies params
 func (o *ListEdgeRouterEdgeRouterPoliciesParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the list edge router edge router policies params
 func (o *ListEdgeRouterEdgeRouterPoliciesParams) WithHTTPClient(client *http.Client) *ListEdgeRouterEdgeRouterPoliciesParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the list edge router edge router policies params
 func (o *ListEdgeRouterEdgeRouterPoliciesParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the list edge router edge router policies params
 func (o *ListEdgeRouterEdgeRouterPoliciesParams) WithID(id string) *ListEdgeRouterEdgeRouterPoliciesParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the list edge router edge router policies params
 func (o *ListEdgeRouterEdgeRouterPoliciesParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *ListEdgeRouterEdgeRouterPoliciesParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

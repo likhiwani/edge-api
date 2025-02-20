@@ -30,6 +30,7 @@ package identity
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewGetIdentityPolicyAdviceParams() *GetIdentityPolicyAdviceParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityPolicyAdviceParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewGetIdentityPolicyAdviceParams() *GetIdentityPolicyAdviceParams {
 // NewGetIdentityPolicyAdviceParamsWithTimeout creates a new GetIdentityPolicyAdviceParams object
 // with the ability to set a timeout on a request.
 func NewGetIdentityPolicyAdviceParamsWithTimeout(timeout time.Duration) *GetIdentityPolicyAdviceParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityPolicyAdviceParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewGetIdentityPolicyAdviceParamsWithTimeout(timeout time.Duration) *GetIden
 // NewGetIdentityPolicyAdviceParamsWithContext creates a new GetIdentityPolicyAdviceParams object
 // with the ability to set a context for a request.
 func NewGetIdentityPolicyAdviceParamsWithContext(ctx context.Context) *GetIdentityPolicyAdviceParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityPolicyAdviceParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewGetIdentityPolicyAdviceParamsWithContext(ctx context.Context) *GetIdenti
 // NewGetIdentityPolicyAdviceParamsWithHTTPClient creates a new GetIdentityPolicyAdviceParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewGetIdentityPolicyAdviceParamsWithHTTPClient(client *http.Client) *GetIdentityPolicyAdviceParams {
+    logtrace.LogWithFunctionName()
 	return &GetIdentityPolicyAdviceParams{
 		HTTPClient: client,
 	}
@@ -106,6 +111,7 @@ type GetIdentityPolicyAdviceParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *GetIdentityPolicyAdviceParams) WithDefaults() *GetIdentityPolicyAdviceParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -114,66 +120,78 @@ func (o *GetIdentityPolicyAdviceParams) WithDefaults() *GetIdentityPolicyAdviceP
 //
 // All values with no default are reset to their zero value.
 func (o *GetIdentityPolicyAdviceParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the get identity policy advice params
 func (o *GetIdentityPolicyAdviceParams) WithTimeout(timeout time.Duration) *GetIdentityPolicyAdviceParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the get identity policy advice params
 func (o *GetIdentityPolicyAdviceParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the get identity policy advice params
 func (o *GetIdentityPolicyAdviceParams) WithContext(ctx context.Context) *GetIdentityPolicyAdviceParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the get identity policy advice params
 func (o *GetIdentityPolicyAdviceParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the get identity policy advice params
 func (o *GetIdentityPolicyAdviceParams) WithHTTPClient(client *http.Client) *GetIdentityPolicyAdviceParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the get identity policy advice params
 func (o *GetIdentityPolicyAdviceParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the get identity policy advice params
 func (o *GetIdentityPolicyAdviceParams) WithID(id string) *GetIdentityPolicyAdviceParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the get identity policy advice params
 func (o *GetIdentityPolicyAdviceParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WithServiceID adds the serviceID to the get identity policy advice params
 func (o *GetIdentityPolicyAdviceParams) WithServiceID(serviceID string) *GetIdentityPolicyAdviceParams {
+    logtrace.LogWithFunctionName()
 	o.SetServiceID(serviceID)
 	return o
 }
 
 // SetServiceID adds the serviceId to the get identity policy advice params
 func (o *GetIdentityPolicyAdviceParams) SetServiceID(serviceID string) {
+    logtrace.LogWithFunctionName()
 	o.ServiceID = serviceID
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *GetIdentityPolicyAdviceParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

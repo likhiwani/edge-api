@@ -30,6 +30,7 @@ package service_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -49,6 +50,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewPatchServicePolicyParams() *PatchServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	return &PatchServicePolicyParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -57,6 +59,7 @@ func NewPatchServicePolicyParams() *PatchServicePolicyParams {
 // NewPatchServicePolicyParamsWithTimeout creates a new PatchServicePolicyParams object
 // with the ability to set a timeout on a request.
 func NewPatchServicePolicyParamsWithTimeout(timeout time.Duration) *PatchServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	return &PatchServicePolicyParams{
 		timeout: timeout,
 	}
@@ -65,6 +68,7 @@ func NewPatchServicePolicyParamsWithTimeout(timeout time.Duration) *PatchService
 // NewPatchServicePolicyParamsWithContext creates a new PatchServicePolicyParams object
 // with the ability to set a context for a request.
 func NewPatchServicePolicyParamsWithContext(ctx context.Context) *PatchServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	return &PatchServicePolicyParams{
 		Context: ctx,
 	}
@@ -73,6 +77,7 @@ func NewPatchServicePolicyParamsWithContext(ctx context.Context) *PatchServicePo
 // NewPatchServicePolicyParamsWithHTTPClient creates a new PatchServicePolicyParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewPatchServicePolicyParamsWithHTTPClient(client *http.Client) *PatchServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	return &PatchServicePolicyParams{
 		HTTPClient: client,
 	}
@@ -108,6 +113,7 @@ type PatchServicePolicyParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchServicePolicyParams) WithDefaults() *PatchServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -116,66 +122,78 @@ func (o *PatchServicePolicyParams) WithDefaults() *PatchServicePolicyParams {
 //
 // All values with no default are reset to their zero value.
 func (o *PatchServicePolicyParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the patch service policy params
 func (o *PatchServicePolicyParams) WithTimeout(timeout time.Duration) *PatchServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the patch service policy params
 func (o *PatchServicePolicyParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the patch service policy params
 func (o *PatchServicePolicyParams) WithContext(ctx context.Context) *PatchServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the patch service policy params
 func (o *PatchServicePolicyParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the patch service policy params
 func (o *PatchServicePolicyParams) WithHTTPClient(client *http.Client) *PatchServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the patch service policy params
 func (o *PatchServicePolicyParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the patch service policy params
 func (o *PatchServicePolicyParams) WithID(id string) *PatchServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the patch service policy params
 func (o *PatchServicePolicyParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WithPolicy adds the policy to the patch service policy params
 func (o *PatchServicePolicyParams) WithPolicy(policy *rest_model.ServicePolicyPatch) *PatchServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetPolicy(policy)
 	return o
 }
 
 // SetPolicy adds the policy to the patch service policy params
 func (o *PatchServicePolicyParams) SetPolicy(policy *rest_model.ServicePolicyPatch) {
+    logtrace.LogWithFunctionName()
 	o.Policy = policy
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *PatchServicePolicyParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

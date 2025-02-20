@@ -30,6 +30,7 @@ package service_policy
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 	"net/http"
 	"time"
@@ -47,6 +48,7 @@ import (
 //
 // To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewDeleteServicePolicyParams() *DeleteServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteServicePolicyParams{
 		timeout: cr.DefaultTimeout,
 	}
@@ -55,6 +57,7 @@ func NewDeleteServicePolicyParams() *DeleteServicePolicyParams {
 // NewDeleteServicePolicyParamsWithTimeout creates a new DeleteServicePolicyParams object
 // with the ability to set a timeout on a request.
 func NewDeleteServicePolicyParamsWithTimeout(timeout time.Duration) *DeleteServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteServicePolicyParams{
 		timeout: timeout,
 	}
@@ -63,6 +66,7 @@ func NewDeleteServicePolicyParamsWithTimeout(timeout time.Duration) *DeleteServi
 // NewDeleteServicePolicyParamsWithContext creates a new DeleteServicePolicyParams object
 // with the ability to set a context for a request.
 func NewDeleteServicePolicyParamsWithContext(ctx context.Context) *DeleteServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteServicePolicyParams{
 		Context: ctx,
 	}
@@ -71,6 +75,7 @@ func NewDeleteServicePolicyParamsWithContext(ctx context.Context) *DeleteService
 // NewDeleteServicePolicyParamsWithHTTPClient creates a new DeleteServicePolicyParams object
 // with the ability to set a custom HTTPClient for a request.
 func NewDeleteServicePolicyParamsWithHTTPClient(client *http.Client) *DeleteServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	return &DeleteServicePolicyParams{
 		HTTPClient: client,
 	}
@@ -100,6 +105,7 @@ type DeleteServicePolicyParams struct {
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteServicePolicyParams) WithDefaults() *DeleteServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetDefaults()
 	return o
 }
@@ -108,55 +114,65 @@ func (o *DeleteServicePolicyParams) WithDefaults() *DeleteServicePolicyParams {
 //
 // All values with no default are reset to their zero value.
 func (o *DeleteServicePolicyParams) SetDefaults() {
+    logtrace.LogWithFunctionName()
 	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the delete service policy params
 func (o *DeleteServicePolicyParams) WithTimeout(timeout time.Duration) *DeleteServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the delete service policy params
 func (o *DeleteServicePolicyParams) SetTimeout(timeout time.Duration) {
+    logtrace.LogWithFunctionName()
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the delete service policy params
 func (o *DeleteServicePolicyParams) WithContext(ctx context.Context) *DeleteServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the delete service policy params
 func (o *DeleteServicePolicyParams) SetContext(ctx context.Context) {
+    logtrace.LogWithFunctionName()
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the delete service policy params
 func (o *DeleteServicePolicyParams) WithHTTPClient(client *http.Client) *DeleteServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the delete service policy params
 func (o *DeleteServicePolicyParams) SetHTTPClient(client *http.Client) {
+    logtrace.LogWithFunctionName()
 	o.HTTPClient = client
 }
 
 // WithID adds the id to the delete service policy params
 func (o *DeleteServicePolicyParams) WithID(id string) *DeleteServicePolicyParams {
+    logtrace.LogWithFunctionName()
 	o.SetID(id)
 	return o
 }
 
 // SetID adds the id to the delete service policy params
 func (o *DeleteServicePolicyParams) SetID(id string) {
+    logtrace.LogWithFunctionName()
 	o.ID = id
 }
 
 // WriteToRequest writes these params to a swagger request
 func (o *DeleteServicePolicyParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

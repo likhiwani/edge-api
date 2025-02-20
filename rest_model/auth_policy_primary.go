@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -58,6 +59,7 @@ type AuthPolicyPrimary struct {
 
 // Validate validates this auth policy primary
 func (m *AuthPolicyPrimary) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateCert(formats); err != nil {
@@ -79,6 +81,7 @@ func (m *AuthPolicyPrimary) Validate(formats strfmt.Registry) error {
 }
 
 func (m *AuthPolicyPrimary) validateCert(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("cert", "body", m.Cert); err != nil {
 		return err
@@ -99,6 +102,7 @@ func (m *AuthPolicyPrimary) validateCert(formats strfmt.Registry) error {
 }
 
 func (m *AuthPolicyPrimary) validateExtJWT(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("extJwt", "body", m.ExtJWT); err != nil {
 		return err
@@ -119,6 +123,7 @@ func (m *AuthPolicyPrimary) validateExtJWT(formats strfmt.Registry) error {
 }
 
 func (m *AuthPolicyPrimary) validateUpdb(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("updb", "body", m.Updb); err != nil {
 		return err
@@ -140,6 +145,7 @@ func (m *AuthPolicyPrimary) validateUpdb(formats strfmt.Registry) error {
 
 // ContextValidate validate this auth policy primary based on the context it is used
 func (m *AuthPolicyPrimary) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.contextValidateCert(ctx, formats); err != nil {
@@ -161,6 +167,7 @@ func (m *AuthPolicyPrimary) ContextValidate(ctx context.Context, formats strfmt.
 }
 
 func (m *AuthPolicyPrimary) contextValidateCert(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Cert != nil {
 
@@ -178,6 +185,7 @@ func (m *AuthPolicyPrimary) contextValidateCert(ctx context.Context, formats str
 }
 
 func (m *AuthPolicyPrimary) contextValidateExtJWT(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.ExtJWT != nil {
 
@@ -195,6 +203,7 @@ func (m *AuthPolicyPrimary) contextValidateExtJWT(ctx context.Context, formats s
 }
 
 func (m *AuthPolicyPrimary) contextValidateUpdb(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if m.Updb != nil {
 
@@ -213,6 +222,7 @@ func (m *AuthPolicyPrimary) contextValidateUpdb(ctx context.Context, formats str
 
 // MarshalBinary interface implementation
 func (m *AuthPolicyPrimary) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -221,6 +231,7 @@ func (m *AuthPolicyPrimary) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *AuthPolicyPrimary) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res AuthPolicyPrimary
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

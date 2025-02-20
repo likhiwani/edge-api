@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/strfmt"
@@ -47,16 +48,19 @@ type SessionRoutePathDetail struct {
 
 // Validate validates this session route path detail
 func (m *SessionRoutePathDetail) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // ContextValidate validates this session route path detail based on context it is used
 func (m *SessionRoutePathDetail) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *SessionRoutePathDetail) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -65,6 +69,7 @@ func (m *SessionRoutePathDetail) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *SessionRoutePathDetail) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res SessionRoutePathDetail
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err

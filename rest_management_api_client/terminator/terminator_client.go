@@ -30,6 +30,7 @@ package terminator
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"fmt"
 
 	"github.com/go-openapi/runtime"
@@ -39,6 +40,7 @@ import (
 
 // New creates a new terminator API client.
 func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
+    logtrace.LogWithFunctionName()
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -50,6 +52,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientServi
 // - user: user for basic authentication header.
 // - password: password for basic authentication header.
 func NewClientWithBasicAuth(host, basePath, scheme, user, password string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BasicAuth(user, password)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -62,6 +65,7 @@ func NewClientWithBasicAuth(host, basePath, scheme, user, password string) Clien
 // - scheme: http scheme ("http", "https").
 // - bearerToken: bearer token for Bearer authentication header.
 func NewClientWithBearerToken(host, basePath, scheme, bearerToken string) ClientService {
+    logtrace.LogWithFunctionName()
 	transport := httptransport.New(host, basePath, []string{scheme})
 	transport.DefaultAuthentication = httptransport.BearerToken(bearerToken)
 	return &Client{transport: transport, formats: strfmt.Default}
@@ -101,6 +105,7 @@ CreateTerminator creates a terminator resource
 Create a terminator resource. Requires admin access.
 */
 func (a *Client) CreateTerminator(params *CreateTerminatorParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateTerminatorCreated, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreateTerminatorParams()
@@ -142,6 +147,7 @@ DeleteTerminator deletes a terminator
 Delete a terminator by id. Requires admin access.
 */
 func (a *Client) DeleteTerminator(params *DeleteTerminatorParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteTerminatorOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteTerminatorParams()
@@ -183,6 +189,7 @@ DetailTerminator retrieves a single terminator
 Retrieves a single terminator by id. Requires admin access.
 */
 func (a *Client) DetailTerminator(params *DetailTerminatorParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DetailTerminatorOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDetailTerminatorParams()
@@ -224,6 +231,7 @@ ListTerminators lists terminators
 Retrieves a list of terminator resources; supports filtering, sorting, and pagination. Requires admin access.
 */
 func (a *Client) ListTerminators(params *ListTerminatorsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ListTerminatorsOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewListTerminatorsParams()
@@ -265,6 +273,7 @@ PatchTerminator updates the supplied fields on a terminator
 Update the supplied fields on a terminator. Requires admin access.
 */
 func (a *Client) PatchTerminator(params *PatchTerminatorParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*PatchTerminatorOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPatchTerminatorParams()
@@ -306,6 +315,7 @@ UpdateTerminator updates all fields on a terminator
 Update all fields on a terminator by id. Requires admin access.
 */
 func (a *Client) UpdateTerminator(params *UpdateTerminatorParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*UpdateTerminatorOK, error) {
+    logtrace.LogWithFunctionName()
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewUpdateTerminatorParams()
@@ -343,5 +353,6 @@ func (a *Client) UpdateTerminator(params *UpdateTerminatorParams, authInfo runti
 
 // SetTransport changes the transport on the client
 func (a *Client) SetTransport(transport runtime.ClientTransport) {
+    logtrace.LogWithFunctionName()
 	a.transport = transport
 }

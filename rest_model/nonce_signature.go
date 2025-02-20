@@ -30,6 +30,7 @@ package rest_model
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"ztna-core/ztna/logtrace"
 	"context"
 
 	"github.com/go-openapi/errors"
@@ -62,6 +63,7 @@ type NonceSignature struct {
 
 // Validate validates this nonce signature
 func (m *NonceSignature) Validate(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	var res []error
 
 	if err := m.validateAlgorithm(formats); err != nil {
@@ -87,6 +89,7 @@ func (m *NonceSignature) Validate(formats strfmt.Registry) error {
 }
 
 func (m *NonceSignature) validateAlgorithm(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("algorithm", "body", m.Algorithm); err != nil {
 		return err
@@ -96,6 +99,7 @@ func (m *NonceSignature) validateAlgorithm(formats strfmt.Registry) error {
 }
 
 func (m *NonceSignature) validateCaPool(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("caPool", "body", m.CaPool); err != nil {
 		return err
@@ -105,6 +109,7 @@ func (m *NonceSignature) validateCaPool(formats strfmt.Registry) error {
 }
 
 func (m *NonceSignature) validateKid(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("kid", "body", m.Kid); err != nil {
 		return err
@@ -114,6 +119,7 @@ func (m *NonceSignature) validateKid(formats strfmt.Registry) error {
 }
 
 func (m *NonceSignature) validateSignature(formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 
 	if err := validate.Required("signature", "body", m.Signature); err != nil {
 		return err
@@ -124,11 +130,13 @@ func (m *NonceSignature) validateSignature(formats strfmt.Registry) error {
 
 // ContextValidate validates this nonce signature based on context it is used
 func (m *NonceSignature) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+    logtrace.LogWithFunctionName()
 	return nil
 }
 
 // MarshalBinary interface implementation
 func (m *NonceSignature) MarshalBinary() ([]byte, error) {
+    logtrace.LogWithFunctionName()
 	if m == nil {
 		return nil, nil
 	}
@@ -137,6 +145,7 @@ func (m *NonceSignature) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary interface implementation
 func (m *NonceSignature) UnmarshalBinary(b []byte) error {
+    logtrace.LogWithFunctionName()
 	var res NonceSignature
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
